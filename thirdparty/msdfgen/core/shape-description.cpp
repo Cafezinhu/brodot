@@ -41,7 +41,7 @@ static bool writeCoord(FILE *output, Point2 coord) {
 }
 
 template <typename T, int (*readChar)(T *), int (*readCoord)(T *, Point2 &)>
-static int readControlPoints(T *input, Point2 *output) {
+static int readControlePoints(T *input, Point2 *output) {
     int result = readCoord(input, output[0]);
     if (result == 2) {
         switch (readChar(input)) {
@@ -118,7 +118,7 @@ static bool readContour(T *input, Contour &output, const Point2 *first, int term
                     goto FINISH_EDGE;
                 case '(':
                 READ_CONTROL_POINTS:
-                    if ((controlPoints = readControlPoints<T, readChar, readCoord>(input, p+1)) < 0)
+                    if ((controlPoints = readControlePoints<T, readChar, readCoord>(input, p+1)) < 0)
                         return false;
                     break;
                 default:

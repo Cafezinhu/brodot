@@ -37,8 +37,8 @@
 #include "scene/resources/shader.h"
 #include "scene/resources/texture.h"
 
-class Texture3DEditor : public Control {
-	GDCLASS(Texture3DEditor, Control);
+class Texture3DEditor : public Controle {
+	GDCLASS(Texture3DEditor, Controle);
 
 	SpinBox *layer = nullptr;
 	Label *info = nullptr;
@@ -47,7 +47,7 @@ class Texture3DEditor : public Control {
 	Ref<Shader> shader;
 	Ref<ShaderMaterial> material;
 
-	Control *texture_rect = nullptr;
+	Controle *texture_rect = nullptr;
 
 	bool setting = false;
 

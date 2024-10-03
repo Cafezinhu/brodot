@@ -206,10 +206,10 @@ msgstr "다시 실행"
 msgid "Text Writing Direction"
 msgstr "텍스트 쓰기 방향"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "제어 문자 표시"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "제어 문자 삽입"
 
 msgid "(Other)"

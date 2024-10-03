@@ -43,8 +43,8 @@ class Panel;
 class ThemeOwner;
 class ThemeContext;
 
-class Control : public CanvasItem {
-	GDCLASS(Control, CanvasItem);
+class Controle : public CanvasItem {
+	GDCLASS(Controle, CanvasItem);
 
 #ifdef TOOLS_ENABLED
 	bool saving = false;
@@ -154,7 +154,7 @@ public:
 
 private:
 	struct CComparator {
-		bool operator()(const Control *p_a, const Control *p_b) const {
+		bool operator()(const Controle *p_a, const Controle *p_b) const {
 			if (p_a->get_canvas_layer() == p_b->get_canvas_layer()) {
 				return p_b->is_greater_than(p_a);
 			}
@@ -169,9 +169,9 @@ private:
 
 		// Global relations.
 
-		List<Control *>::Element *RI = nullptr;
+		List<Controle *>::Element *RI = nullptr;
 
-		Control *parent_control = nullptr;
+		Controle *parent_control = nullptr;
 		Window *parent_window = nullptr;
 		CanvasItem *parent_canvas_item = nullptr;
 		Callable forward_drag;
@@ -298,7 +298,7 @@ private:
 	void _update_minimum_size();
 	void _size_changed();
 
-	void _top_level_changed() override {} // Controls don't need to do anything, only other CanvasItems.
+	void _top_level_changed() override {} // Controles don't need to do anything, only other CanvasItems.
 	void _top_level_changed_on_parent() override;
 
 	void _clear_size_warning();
@@ -309,8 +309,8 @@ private:
 
 	// Focus.
 
-	void _window_find_focus_neighbor(const Vector2 &p_dir, Node *p_at, const Point2 *p_points, real_t p_min, real_t &r_closest_dist, Control **r_closest);
-	Control *_get_focus_neighbor(Side p_side, int p_count = 0);
+	void _window_find_focus_neighbor(const Vector2 &p_dir, Node *p_at, const Point2 *p_points, real_t p_min, real_t &r_closest_dist, Controle **r_closest);
+	Controle *_get_focus_neighbor(Side p_side, int p_count = 0);
 
 	// Theming.
 
@@ -421,9 +421,9 @@ public:
 
 	bool is_top_level_control() const;
 
-	Control *get_parent_control() const;
+	Controle *get_parent_control() const;
 	Window *get_parent_window() const;
-	Control *get_root_parent_control() const;
+	Controle *get_root_parent_control() const;
 
 	Size2 get_parent_area_size() const;
 	Rect2 get_parent_anchorable_rect() const;
@@ -523,8 +523,8 @@ public:
 	virtual Variant get_drag_data(const Point2 &p_point);
 	virtual bool can_drop_data(const Point2 &p_point, const Variant &p_data) const;
 	virtual void drop_data(const Point2 &p_point, const Variant &p_data);
-	void set_drag_preview(Control *p_control);
-	void force_drag(const Variant &p_data, Control *p_control);
+	void set_drag_preview(Controle *p_control);
+	void force_drag(const Variant &p_data, Controle *p_control);
 	bool is_drag_successful() const;
 
 	// Focus.
@@ -536,9 +536,9 @@ public:
 	void grab_click_focus();
 	void release_focus();
 
-	Control *find_next_valid_focus() const;
-	Control *find_prev_valid_focus() const;
-	Control *find_valid_focus_neighbor(Side p_size) const;
+	Controle *find_next_valid_focus() const;
+	Controle *find_prev_valid_focus() const;
+	Controle *find_valid_focus_neighbor(Side p_size) const;
 
 	void set_focus_neighbor(Side p_side, const NodePath &p_neighbor);
 	NodePath get_focus_neighbor(Side p_side) const;
@@ -641,23 +641,23 @@ public:
 
 	void set_tooltip_text(const String &text);
 	virtual String get_tooltip(const Point2 &p_pos) const;
-	virtual Control *make_custom_tooltip(const String &p_text) const;
+	virtual Controle *make_custom_tooltip(const String &p_text) const;
 
-	Control();
-	~Control();
+	Controle();
+	~Controle();
 };
 
-VARIANT_ENUM_CAST(Control::FocusMode);
-VARIANT_BITFIELD_CAST(Control::SizeFlags);
-VARIANT_ENUM_CAST(Control::CursorShape);
-VARIANT_ENUM_CAST(Control::LayoutPreset);
-VARIANT_ENUM_CAST(Control::LayoutPresetMode);
-VARIANT_ENUM_CAST(Control::MouseFilter);
-VARIANT_ENUM_CAST(Control::GrowDirection);
-VARIANT_ENUM_CAST(Control::Anchor);
-VARIANT_ENUM_CAST(Control::LayoutMode);
-VARIANT_ENUM_CAST(Control::LayoutDirection);
-VARIANT_ENUM_CAST(Control::TextDirection);
+VARIANT_ENUM_CAST(Controle::FocusMode);
+VARIANT_BITFIELD_CAST(Controle::SizeFlags);
+VARIANT_ENUM_CAST(Controle::CursorShape);
+VARIANT_ENUM_CAST(Controle::LayoutPreset);
+VARIANT_ENUM_CAST(Controle::LayoutPresetMode);
+VARIANT_ENUM_CAST(Controle::MouseFilter);
+VARIANT_ENUM_CAST(Controle::GrowDirection);
+VARIANT_ENUM_CAST(Controle::Anchor);
+VARIANT_ENUM_CAST(Controle::LayoutMode);
+VARIANT_ENUM_CAST(Controle::LayoutDirection);
+VARIANT_ENUM_CAST(Controle::TextDirection);
 
 // G = get_drag_data_fw, C = can_drop_data_fw, D = drop_data_fw, U = underscore
 #define SET_DRAG_FORWARDING_CD(from, to) from->set_drag_forwarding(Callable(), callable_mp(this, &to::can_drop_data_fw).bind(from), callable_mp(this, &to::drop_data_fw).bind(from));

@@ -65,7 +65,7 @@ protected:
 
 public:
 	void set_editor(VisualShaderEditor *p_editor);
-	virtual Control *create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node);
+	virtual Controle *create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node);
 };
 
 class VSGraphNode : public GraphNode {
@@ -594,9 +594,9 @@ class VisualShaderEditor : public ShaderEditor {
 	void _node_menu_id_pressed(int p_idx);
 	void _connection_menu_id_pressed(int p_idx);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	bool _is_available(int p_mode);
 	void _update_parameters(bool p_update_refs);
@@ -654,7 +654,7 @@ class VisualShaderNodePluginDefault : public VisualShaderNodePlugin {
 	GDCLASS(VisualShaderNodePluginDefault, VisualShaderNodePlugin);
 
 public:
-	virtual Control *create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) override;
+	virtual Controle *create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) override;
 };
 
 class EditorPropertyVisualShaderMode : public EditorProperty {
@@ -678,8 +678,8 @@ public:
 	virtual bool parse_property(Object *p_object, const Variant::Type p_type, const String &p_path, const PropertyHint p_hint, const String &p_hint_text, const BitField<PropertyUsageFlags> p_usage, const bool p_wide = false) override;
 };
 
-class VisualShaderNodePortPreview : public Control {
-	GDCLASS(VisualShaderNodePortPreview, Control);
+class VisualShaderNodePortPreview : public Controle {
+	GDCLASS(VisualShaderNodePortPreview, Controle);
 	Ref<VisualShader> shader;
 	Ref<ShaderMaterial> preview_mat;
 	VisualShader::Type type = VisualShader::Type::TYPE_MAX;

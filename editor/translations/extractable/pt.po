@@ -248,11 +248,11 @@ msgstr "Refazer"
 msgid "Text Writing Direction"
 msgstr "Direção da Escrita do Texto"
 
-msgid "Display Control Characters"
-msgstr "Exibir Caracteres de Controle"
+msgid "Display Controle Characters"
+msgstr "Exibir Caracteres de Controlee"
 
-msgid "Insert Control Character"
-msgstr "Inserir Caractere de Controle"
+msgid "Insert Controle Character"
+msgstr "Inserir Caractere de Controlee"
 
 msgid "(Other)"
 msgstr "(Outro)"

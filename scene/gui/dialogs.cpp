@@ -247,7 +247,7 @@ void AcceptDialog::_update_child_rects() {
 	Size2 content_size = Size2(dlg_size.x - h_margins, dlg_size.y - v_margins - buttons_size.y - theme_cache.buttons_separation);
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i));
+		Controle *c = Object::cast_to<Controle>(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -265,7 +265,7 @@ Size2 AcceptDialog::_get_contents_minimum_size() const {
 	// to try and find the size that encompasses all content.
 	Size2 content_minsize;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i));
+		Controle *c = Object::cast_to<Controle>(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -303,7 +303,7 @@ void AcceptDialog::_custom_action(const String &p_action) {
 }
 
 void AcceptDialog::_custom_button_visibility_changed(Button *button) {
-	Control *right_spacer = Object::cast_to<Control>(button->get_meta("__right_spacer"));
+	Controle *right_spacer = Object::cast_to<Controle>(button->get_meta("__right_spacer"));
 	if (right_spacer) {
 		right_spacer->set_visible(button->is_visible());
 	}
@@ -313,7 +313,7 @@ Button *AcceptDialog::add_button(const String &p_text, bool p_right, const Strin
 	Button *button = memnew(Button);
 	button->set_text(p_text);
 
-	Control *right_spacer;
+	Controle *right_spacer;
 	if (p_right) {
 		buttons_hbox->add_child(button);
 		right_spacer = buttons_hbox->add_spacer();
@@ -356,7 +356,7 @@ void AcceptDialog::remove_button(Button *p_button) {
 	ERR_FAIL_COND_MSG(p_button->get_parent() != buttons_hbox, vformat("Cannot remove button %s as it does not belong to this dialog.", p_button->get_name()));
 	ERR_FAIL_COND_MSG(p_button == ok_button, "Cannot remove dialog's OK button.");
 
-	Control *right_spacer = Object::cast_to<Control>(p_button->get_meta("__right_spacer"));
+	Controle *right_spacer = Object::cast_to<Controle>(p_button->get_meta("__right_spacer"));
 	if (right_spacer) {
 		ERR_FAIL_COND_MSG(right_spacer->get_parent() != buttons_hbox, vformat("Cannot remove button %s as its associated spacer does not belong to this dialog.", p_button->get_name()));
 	}
@@ -437,8 +437,8 @@ AcceptDialog::AcceptDialog() {
 	buttons_hbox = memnew(HBoxContainer);
 
 	message_label = memnew(Label);
-	message_label->set_anchor(SIDE_RIGHT, Control::ANCHOR_END);
-	message_label->set_anchor(SIDE_BOTTOM, Control::ANCHOR_END);
+	message_label->set_anchor(SIDE_RIGHT, Controle::ANCHOR_END);
+	message_label->set_anchor(SIDE_BOTTOM, Controle::ANCHOR_END);
 	add_child(message_label, false, INTERNAL_MODE_FRONT);
 
 	add_child(buttons_hbox, false, INTERNAL_MODE_FRONT);

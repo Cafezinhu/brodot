@@ -439,7 +439,7 @@ typedef struct {
 } XArc;
 
 
-/* Data structure for XChangeKeyboardControl */
+/* Data structure for XChangeKeyboardControle */
 
 typedef struct {
         int key_click_percent;
@@ -450,9 +450,9 @@ typedef struct {
         int led_mode;
         int key;
         int auto_repeat_mode;   /* On, Off, Default */
-} XKeyboardControl;
+} XKeyboardControle;
 
-/* Data structure for XGetKeyboardControl */
+/* Data structure for XGetKeyboardControle */
 
 typedef struct {
         int key_click_percent;
@@ -2052,10 +2052,10 @@ extern int XChangeGC(
     XGCValues*		/* values */
 );
 
-extern int XChangeKeyboardControl(
+extern int XChangeKeyboardControle(
     Display*		/* display */,
     unsigned long	/* value_mask */,
-    XKeyboardControl*	/* values */
+    XKeyboardControle*	/* values */
 );
 
 extern int XChangeKeyboardMapping(
@@ -2066,7 +2066,7 @@ extern int XChangeKeyboardMapping(
     int			/* num_codes */
 );
 
-extern int XChangePointerControl(
+extern int XChangePointerControle(
     Display*		/* display */,
     Bool		/* do_accel */,
     Bool		/* do_threshold */,
@@ -2268,7 +2268,7 @@ extern Bool XDoesSaveUnders(
     Screen*		/* screen */
 );
 
-extern int XDisableAccessControl(
+extern int XDisableAccessControle(
     Display*		/* display */
 );
 
@@ -2451,7 +2451,7 @@ extern int XDrawText16(
     int			/* nitems */
 );
 
-extern int XEnableAccessControl(
+extern int XEnableAccessControle(
     Display*		/* display */
 );
 
@@ -2651,12 +2651,12 @@ extern int XGetInputFocus(
     int*		/* revert_to_return */
 );
 
-extern int XGetKeyboardControl(
+extern int XGetKeyboardControle(
     Display*		/* display */,
     XKeyboardState*	/* values_return */
 );
 
-extern int XGetPointerControl(
+extern int XGetPointerControle(
     Display*		/* display */,
     int*		/* accel_numerator_return */,
     int*		/* accel_denominator_return */,
@@ -3150,7 +3150,7 @@ extern Status XSendEvent(
     XEvent*		/* event_send */
 );
 
-extern int XSetAccessControl(
+extern int XSetAccessControle(
     Display*		/* display */,
     int			/* mode */
 );

@@ -162,7 +162,7 @@ void iOS::alert(const char *p_alert, const char *p_title) {
 	NSString *title = [NSString stringWithUTF8String:p_title];
 	NSString *message = [NSString stringWithUTF8String:p_alert];
 
-	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertControleler *alert = [UIAlertControleler alertControlelerWithTitle:title message:message preferredStyle:UIAlertControlelerStyleAlert];
 	UIAlertAction *button = [UIAlertAction actionWithTitle:@"OK"
 													 style:UIAlertActionStyleCancel
 												   handler:^(id){
@@ -170,7 +170,7 @@ void iOS::alert(const char *p_alert, const char *p_title) {
 
 	[alert addAction:button];
 
-	[AppDelegate.viewController presentViewController:alert animated:YES completion:nil];
+	[AppDelegate.viewControleler presentViewControleler:alert animated:YES completion:nil];
 }
 
 String iOS::get_model() const {

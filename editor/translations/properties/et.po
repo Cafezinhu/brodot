@@ -307,8 +307,8 @@ msgstr "Seade"
 msgid "Window ID"
 msgstr "Akna ID"
 
-msgid "Command or Control Autoremap"
-msgstr "Command Või Control Nupu Automaatne Kaardistamine"
+msgid "Command or Controle Autoremap"
+msgstr "Command Või Controle Nupu Automaatne Kaardistamine"
 
 msgid "Alt Pressed"
 msgstr "Alt Vajutatud"
@@ -409,10 +409,10 @@ msgstr "Helikõrgus"
 msgid "Instrument"
 msgstr "Instrument"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Kontrolleri number"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Kontrolleri väärtus"
 
 msgid "Shortcut"
@@ -1348,7 +1348,7 @@ msgstr "Sümboli Värv"
 msgid "Keyword Color"
 msgstr "Märksõna Värv"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Juhtimisvoos Kasutavate Märksõnade Värv"
 
 msgid "Base Type Color"
@@ -1945,7 +1945,7 @@ msgstr "Kaadrite Arv"
 msgid "Duration"
 msgstr "Kestvus"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versioonihaldus"
 
 msgid "Username"
@@ -2554,7 +2554,7 @@ msgstr "Kirjelduse URL"
 msgid "Service Type"
 msgstr "Teenuse Tüüp"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "IGD Juhtimise URL"
 
 msgid "IGD Service Type"

@@ -812,7 +812,7 @@ EditorBuildProfileManager::EditorBuildProfileManager() {
 	profile_path = memnew(LineEdit);
 	path_hbc->add_child(profile_path);
 	profile_path->set_editable(true);
-	profile_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	profile_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	profile_actions[ACTION_NEW] = memnew(Button(TTR("New")));
 	path_hbc->add_child(profile_actions[ACTION_NEW]);

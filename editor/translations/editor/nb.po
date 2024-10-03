@@ -1610,7 +1610,7 @@ msgstr "Innstillinger for redigeringsverktøy …"
 msgid "Project"
 msgstr "Prosjekt"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versjonskontroll"
 
 msgid "Tools"
@@ -2721,7 +2721,7 @@ msgstr "Flytt Punkt på Kurve"
 msgid "Right Click: Delete Point"
 msgstr "Høyreklikk: Fjern Punkt"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Velg Kontrollpunkter (Shift+Dra)"
 
 msgid "Delete Point"

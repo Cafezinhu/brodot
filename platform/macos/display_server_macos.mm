@@ -618,7 +618,7 @@ void DisplayServerMacOS::send_event(NSEvent *p_event) {
 		}
 
 		// Ctrl+Tab and Ctrl+Shift+Tab
-		if (((flags == NSEventModifierFlagControl) || (flags == (NSEventModifierFlagControl | NSEventModifierFlagShift))) && [p_event keyCode] == 0x30) {
+		if (((flags == NSEventModifierFlagControle) || (flags == (NSEventModifierFlagControle | NSEventModifierFlagShift))) && [p_event keyCode] == 0x30) {
 			Ref<InputEventKey> k;
 			k.instantiate();
 
@@ -654,7 +654,7 @@ void DisplayServerMacOS::release_pressed_events() {
 
 void DisplayServerMacOS::get_key_modifier_state(unsigned int p_macos_state, Ref<InputEventWithModifiers> r_state) const {
 	r_state->set_shift_pressed((p_macos_state & NSEventModifierFlagShift));
-	r_state->set_ctrl_pressed((p_macos_state & NSEventModifierFlagControl));
+	r_state->set_ctrl_pressed((p_macos_state & NSEventModifierFlagControle));
 	r_state->set_alt_pressed((p_macos_state & NSEventModifierFlagOption));
 	r_state->set_meta_pressed((p_macos_state & NSEventModifierFlagCommand));
 }

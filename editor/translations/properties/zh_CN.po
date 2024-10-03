@@ -381,7 +381,7 @@ msgstr "工具提示延迟（毫秒）"
 msgid "Common"
 msgstr "通用"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "控件像素吸附"
 
 msgid "Fonts"
@@ -519,7 +519,7 @@ msgstr "设备"
 msgid "Window ID"
 msgstr "窗口 ID"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "自动重映射 Command 和 Ctrl"
 
 msgid "Alt Pressed"
@@ -630,10 +630,10 @@ msgstr "音高"
 msgid "Instrument"
 msgstr "乐器"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "控制器编号"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "控制器值"
 
 msgid "Shortcut"
@@ -1857,7 +1857,7 @@ msgstr "符号颜色"
 msgid "Keyword Color"
 msgstr "关键词颜色"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "流程控制关键词颜色"
 
 msgid "Base Type Color"
@@ -2794,7 +2794,7 @@ msgstr "帧数"
 msgid "Duration"
 msgstr "时长"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "版本控制"
 
 msgid "Username"
@@ -4033,7 +4033,7 @@ msgstr "描述 URL"
 msgid "Service Type"
 msgstr "服务类型"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "IGD 控制 URL"
 
 msgid "IGD Service Type"
@@ -7302,7 +7302,7 @@ msgstr "启用拖放选择"
 msgid "Right Icon"
 msgstr "右侧图标"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "绘制控制字符"
 
 msgid "Select All on Focus"
@@ -7611,7 +7611,7 @@ msgstr "语法高亮器"
 msgid "Visual Whitespace"
 msgstr "可视空白"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "控制字符"
 
 msgid "Spaces"
@@ -8038,7 +8038,7 @@ msgstr "当前屏幕"
 msgid "Mouse Passthrough Polygon"
 msgstr "鼠标穿透多边形"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "包裹控件"
 
 msgid "Transient"
@@ -9334,7 +9334,7 @@ msgstr "着色区域"
 msgid "Preserve Invalid"
 msgstr "保留无效字符"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "保留控制字符"
 
 msgid "Custom Punctuation"
@@ -10615,7 +10615,7 @@ msgstr "顶点"
 msgid "Fragment"
 msgstr "片段"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "镶嵌控制"
 
 msgid "Tesselation Evaluation"

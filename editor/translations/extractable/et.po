@@ -119,10 +119,10 @@ msgstr "Võta tagasi"
 msgid "Redo"
 msgstr "Tee uuesti"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Kuva Juhtmärgid"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Sisesta Juhtmärk"
 
 msgid "(Other)"

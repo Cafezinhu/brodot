@@ -279,7 +279,7 @@ void ProjectManager::_update_theme(bool p_skip_creation) {
 	}
 }
 
-Button *ProjectManager::_add_main_view(MainViewTab p_id, const String &p_name, const Ref<Texture2D> &p_icon, Control *p_view_control) {
+Button *ProjectManager::_add_main_view(MainViewTab p_id, const String &p_name, const Ref<Texture2D> &p_icon, Controle *p_view_control) {
 	ERR_FAIL_INDEX_V(p_id, MAIN_VIEW_MAX, nullptr);
 	ERR_FAIL_COND_V(main_view_map.has(p_id), nullptr);
 	ERR_FAIL_COND_V(main_view_toggle_map.has(p_id), nullptr);
@@ -312,13 +312,13 @@ void ProjectManager::_set_main_view_icon(MainViewTab p_id, const Ref<Texture2D> 
 
 	Ref<Texture2D> old_icon = toggle_button->get_icon();
 	if (old_icon.is_valid()) {
-		old_icon->disconnect_changed(callable_mp((Control *)toggle_button, &Control::update_minimum_size));
+		old_icon->disconnect_changed(callable_mp((Controle *)toggle_button, &Controle::update_minimum_size));
 	}
 
 	if (p_icon.is_valid()) {
 		toggle_button->set_icon(p_icon);
 		// Make sure the control is updated if the icon is reimported.
-		p_icon->connect_changed(callable_mp((Control *)toggle_button, &Control::update_minimum_size));
+		p_icon->connect_changed(callable_mp((Controle *)toggle_button, &Controle::update_minimum_size));
 	} else {
 		toggle_button->set_icon(Ref<Texture2D>());
 	}
@@ -1149,14 +1149,14 @@ ProjectManager::ProjectManager() {
 	// Initialize UI.
 	{
 		int pm_root_dir = EDITOR_GET("interface/editor/ui_layout_direction");
-		Control::set_root_layout_direction(pm_root_dir);
+		Controle::set_root_layout_direction(pm_root_dir);
 		Window::set_root_layout_direction(pm_root_dir);
 
 		EditorThemeManager::initialize();
 		theme = EditorThemeManager::generate_theme();
 		DisplayServer::set_early_window_clear_color_override(true, theme->get_color(SNAME("background"), EditorStringName(Editor)));
 
-		set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+		set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 		_build_icon_type_cache(theme);
 	}
@@ -1165,11 +1165,11 @@ ProjectManager::ProjectManager() {
 
 	background_panel = memnew(Panel);
 	add_child(background_panel);
-	background_panel->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	background_panel->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	root_container = memnew(MarginContainer);
 	add_child(root_container);
-	root_container->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	root_container->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	main_vbox = memnew(VBoxContainer);
 	root_container->add_child(main_vbox);
@@ -1183,14 +1183,14 @@ ProjectManager::ProjectManager() {
 
 		if (can_expand) {
 			// Add spacer to avoid other controls under window minimize/maximize/close buttons (left side).
-			left_menu_spacer = memnew(Control);
-			left_menu_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+			left_menu_spacer = memnew(Controle);
+			left_menu_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 			title_bar->add_child(left_menu_spacer);
 		}
 
 		HBoxContainer *left_hbox = memnew(HBoxContainer);
 		left_hbox->set_alignment(BoxContainer::ALIGNMENT_BEGIN);
-		left_hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		left_hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		left_hbox->set_stretch_ratio(1.0);
 		title_bar->add_child(left_hbox);
 
@@ -1201,21 +1201,21 @@ ProjectManager::ProjectManager() {
 
 		if (can_expand) {
 			// Spacer to center main toggles.
-			left_spacer = memnew(Control);
-			left_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+			left_spacer = memnew(Controle);
+			left_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 			title_bar->add_child(left_spacer);
 		}
 
 		main_view_toggles = memnew(HBoxContainer);
 		main_view_toggles->set_alignment(BoxContainer::ALIGNMENT_CENTER);
-		main_view_toggles->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		main_view_toggles->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		main_view_toggles->set_stretch_ratio(2.0);
 		title_bar->add_child(main_view_toggles);
 
 		if (can_expand) {
 			// Spacer to center main toggles.
-			right_spacer = memnew(Control);
-			right_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+			right_spacer = memnew(Controle);
+			right_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 			title_bar->add_child(right_spacer);
 		}
 
@@ -1223,7 +1223,7 @@ ProjectManager::ProjectManager() {
 
 		HBoxContainer *right_hbox = memnew(HBoxContainer);
 		right_hbox->set_alignment(BoxContainer::ALIGNMENT_END);
-		right_hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		right_hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		right_hbox->set_stretch_ratio(1.0);
 		title_bar->add_child(right_hbox);
 
@@ -1235,14 +1235,14 @@ ProjectManager::ProjectManager() {
 
 		if (can_expand) {
 			// Add spacer to avoid other controls under the window minimize/maximize/close buttons (right side).
-			right_menu_spacer = memnew(Control);
-			right_menu_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+			right_menu_spacer = memnew(Controle);
+			right_menu_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 			title_bar->add_child(right_menu_spacer);
 		}
 	}
 
 	main_view_container = memnew(PanelContainer);
-	main_view_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	main_view_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vbox->add_child(main_view_container);
 
 	// Project list view.
@@ -1254,7 +1254,7 @@ ProjectManager::ProjectManager() {
 		// Project list's top bar.
 		{
 			HBoxContainer *hb = memnew(HBoxContainer);
-			hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			local_projects_vb->add_child(hb);
 
 			create_btn = memnew(Button);
@@ -1276,7 +1276,7 @@ ProjectManager::ProjectManager() {
 			hb->add_child(scan_btn);
 
 			loading_label = memnew(Label(TTR("Loading, please wait...")));
-			loading_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			loading_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			loading_label->hide();
 			hb->add_child(loading_label);
 
@@ -1286,7 +1286,7 @@ ProjectManager::ProjectManager() {
 			search_box->set_clear_button_enabled(true);
 			search_box->connect(SceneStringName(text_changed), callable_mp(this, &ProjectManager::_on_search_term_changed));
 			search_box->connect("text_submitted", callable_mp(this, &ProjectManager::_on_search_term_submitted));
-			search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			hb->add_child(search_box);
 
 			Label *sort_label = memnew(Label);
@@ -1295,7 +1295,7 @@ ProjectManager::ProjectManager() {
 
 			filter_option = memnew(OptionButton);
 			filter_option->set_clip_text(true);
-			filter_option->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			filter_option->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			filter_option->set_stretch_ratio(0.3);
 			filter_option->connect(SceneStringName(item_selected), callable_mp(this, &ProjectManager::_on_order_option_changed));
 			hb->add_child(filter_option);
@@ -1315,10 +1315,10 @@ ProjectManager::ProjectManager() {
 		{
 			HBoxContainer *project_list_hbox = memnew(HBoxContainer);
 			local_projects_vb->add_child(project_list_hbox);
-			project_list_hbox->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+			project_list_hbox->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 			project_list_panel = memnew(PanelContainer);
-			project_list_panel->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			project_list_panel->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			project_list_hbox->add_child(project_list_panel);
 
 			project_list = memnew(ProjectList);
@@ -1332,7 +1332,7 @@ ProjectManager::ProjectManager() {
 			// Empty project list placeholder.
 			{
 				empty_list_placeholder = memnew(VBoxContainer);
-				empty_list_placeholder->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+				empty_list_placeholder->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 				empty_list_placeholder->add_theme_constant_override("separation", 16 * EDSCALE);
 				empty_list_placeholder->hide();
 				project_list_panel->add_child(empty_list_placeholder);
@@ -1374,7 +1374,7 @@ ProjectManager::ProjectManager() {
 				empty_list_online_warning->set_horizontal_alignment(HorizontalAlignment::HORIZONTAL_ALIGNMENT_CENTER);
 				empty_list_online_warning->set_custom_minimum_size(Size2(220, 0) * EDSCALE);
 				empty_list_online_warning->set_autowrap_mode(TextServer::AUTOWRAP_WORD);
-				empty_list_online_warning->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				empty_list_online_warning->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				empty_list_online_warning->set_text(TTR("Note: The Asset Library requires an online connection and involves sending data over the internet."));
 				empty_list_placeholder->add_child(empty_list_online_warning);
 			}
@@ -1415,8 +1415,8 @@ ProjectManager::ProjectManager() {
 			erase_btn->connect(SceneStringName(pressed), callable_mp(this, &ProjectManager::_erase_project));
 			project_list_sidebar->add_child(erase_btn);
 
-			Control *filler = memnew(Control);
-			filler->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+			Controle *filler = memnew(Controle);
+			filler->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 			project_list_sidebar->add_child(filler);
 
 			erase_missing_btn = memnew(Button);
@@ -1591,7 +1591,7 @@ ProjectManager::ProjectManager() {
 		new_tag_name->connect(SceneStringName(text_changed), callable_mp(this, &ProjectManager::_set_new_tag_name));
 		new_tag_name->connect("text_submitted", callable_mp(this, &ProjectManager::_create_new_tag).unbind(1));
 		create_tag_dialog->connect("about_to_popup", callable_mp(new_tag_name, &LineEdit::clear));
-		create_tag_dialog->connect("about_to_popup", callable_mp((Control *)new_tag_name, &Control::grab_focus), CONNECT_DEFERRED);
+		create_tag_dialog->connect("about_to_popup", callable_mp((Controle *)new_tag_name, &Controle::grab_focus), CONNECT_DEFERRED);
 
 		tag_error = memnew(Label);
 		tag_vb->add_child(tag_error);

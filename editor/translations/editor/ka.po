@@ -1613,7 +1613,7 @@ msgstr "პროექტის პარამეტრები..."
 msgid "Project Settings"
 msgstr "პროექტის პარამეტრები"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "ვერსიის კონტროლი"
 
 msgid "Tools"
@@ -1664,7 +1664,7 @@ msgstr "ფაილების მმართველში ჩვენე�
 msgid "Export Library"
 msgstr "ბიბლიოთეკის გატანა"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "ვერსიის კონტროლის მორგება..."
 
 msgid "Warning!"
@@ -3394,7 +3394,7 @@ msgstr "კომიტი:"
 msgid "Subtitle:"
 msgstr "სუბტიტრები:"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "ვერსიის კონტროლის ქვედა პანელის გადართვა"
 
 msgid "Apply"

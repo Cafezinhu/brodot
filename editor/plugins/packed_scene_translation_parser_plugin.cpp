@@ -119,7 +119,7 @@ Error PackedSceneEditorTranslationParserPlugin::parse_file(const String &p_path,
 				tabcontainer_paths.remove_at(tabcontainer_paths.size() - 1);
 			}
 
-			if (auto_translating && !tabcontainer_paths.is_empty() && ClassDB::is_parent_class(node_type, "Control") &&
+			if (auto_translating && !tabcontainer_paths.is_empty() && ClassDB::is_parent_class(node_type, "Controle") &&
 					parent_path == tabcontainer_paths[tabcontainer_paths.size() - 1]) {
 				parsed_strings.push_back(state->get_node_name(i));
 			}

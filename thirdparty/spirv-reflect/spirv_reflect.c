@@ -3668,7 +3668,7 @@ static SpvReflectResult ParseEntryPoints(SpvReflectPrvParser* p_parser, SpvRefle
       case SpvExecutionModelVertex:
         p_entry_point->shader_stage = SPV_REFLECT_SHADER_STAGE_VERTEX_BIT;
         break;
-      case SpvExecutionModelTessellationControl:
+      case SpvExecutionModelTessellationControle:
         p_entry_point->shader_stage = SPV_REFLECT_SHADER_STAGE_TESSELLATION_CONTROL_BIT;
         break;
       case SpvExecutionModelTessellationEvaluation:

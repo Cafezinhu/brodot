@@ -36,8 +36,8 @@
 #include "scene/property_list_helper.h"
 #include "scene/resources/text_paragraph.h"
 
-class ItemList : public Control {
-	GDCLASS(ItemList, Control);
+class ItemList : public Controle {
+	GDCLASS(ItemList, Controle);
 
 public:
 	enum IconMode {

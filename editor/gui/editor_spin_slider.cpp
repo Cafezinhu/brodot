@@ -671,7 +671,7 @@ void EditorSpinSlider::_focus_entered() {
 	value_input->set_focus_next(find_next_valid_focus()->get_path());
 	value_input->set_focus_previous(find_prev_valid_focus()->get_path());
 	callable_mp((CanvasItem *)value_input_popup, &CanvasItem::show).call_deferred();
-	callable_mp((Control *)value_input, &Control::grab_focus).call_deferred();
+	callable_mp((Controle *)value_input, &Controle::grab_focus).call_deferred();
 	callable_mp(value_input, &LineEdit ::select_all).call_deferred();
 	emit_signal("value_focus_entered");
 }
@@ -712,7 +712,7 @@ void EditorSpinSlider::_ensure_input_popup() {
 		return;
 	}
 
-	value_input_popup = memnew(Control);
+	value_input_popup = memnew(Controle);
 	value_input_popup->set_anchors_and_offsets_preset(PRESET_FULL_RECT);
 	add_child(value_input_popup);
 

@@ -47,7 +47,7 @@ void EditorToaster::_notification(int p_what) {
 
 			// Check if one element is hovered, if so, don't elapse time.
 			bool hovered = false;
-			for (const KeyValue<Control *, Toast> &element : toasts) {
+			for (const KeyValue<Controle *, Toast> &element : toasts) {
 				if (Rect2(Vector2(), element.key->get_size()).has_point(element.key->get_local_mouse_position())) {
 					hovered = true;
 					break;
@@ -56,7 +56,7 @@ void EditorToaster::_notification(int p_what) {
 
 			// Elapses the time and remove toasts if needed.
 			if (!hovered) {
-				for (const KeyValue<Control *, Toast> &element : toasts) {
+				for (const KeyValue<Controle *, Toast> &element : toasts) {
 					if (!element.value.popped || element.value.duration <= 0) {
 						continue;
 					}
@@ -68,7 +68,7 @@ void EditorToaster::_notification(int p_what) {
 				}
 			} else {
 				// Reset the timers when hovered.
-				for (const KeyValue<Control *, Toast> &element : toasts) {
+				for (const KeyValue<Controle *, Toast> &element : toasts) {
 					if (!element.value.popped || element.value.duration <= 0) {
 						continue;
 					}
@@ -79,7 +79,7 @@ void EditorToaster::_notification(int p_what) {
 
 			// Change alpha over time.
 			bool needs_update = false;
-			for (const KeyValue<Control *, Toast> &element : toasts) {
+			for (const KeyValue<Controle *, Toast> &element : toasts) {
 				Color modulate_fade = element.key->get_modulate();
 
 				// Change alpha over time.
@@ -190,7 +190,7 @@ void EditorToaster::_update_vbox_position() {
 
 void EditorToaster::_update_disable_notifications_button() {
 	bool any_visible = false;
-	for (KeyValue<Control *, Toast> element : toasts) {
+	for (KeyValue<Controle *, Toast> element : toasts) {
 		if (element.key->is_visible()) {
 			any_visible = true;
 			break;
@@ -209,9 +209,9 @@ void EditorToaster::_auto_hide_or_free_toasts() {
 	// Hide or free old temporary items.
 	int visible_temporary = 0;
 	int temporary = 0;
-	LocalVector<Control *> to_delete;
+	LocalVector<Controle *> to_delete;
 	for (int i = vbox_container->get_child_count() - 1; i >= 0; i--) {
-		Control *control = Object::cast_to<Control>(vbox_container->get_child(i));
+		Controle *control = Object::cast_to<Controle>(vbox_container->get_child(i));
 		if (toasts[control].duration <= 0) {
 			continue; // Ignore non-temporary toasts.
 		}
@@ -233,7 +233,7 @@ void EditorToaster::_auto_hide_or_free_toasts() {
 	}
 
 	// Delete the control right away (removed as child) as it might cause issues otherwise when iterative over the vbox_container children.
-	for (Control *c : to_delete) {
+	for (Controle *c : to_delete) {
 		vbox_container->remove_child(c);
 		c->queue_free();
 		toasts.erase(c);
@@ -253,7 +253,7 @@ void EditorToaster::_auto_hide_or_free_toasts() {
 void EditorToaster::_draw_button() {
 	bool has_one = false;
 	Severity highest_severity = SEVERITY_INFO;
-	for (const KeyValue<Control *, Toast> &element : toasts) {
+	for (const KeyValue<Controle *, Toast> &element : toasts) {
 		if (!element.key->is_visible()) {
 			continue;
 		}
@@ -285,7 +285,7 @@ void EditorToaster::_draw_button() {
 	main_button->draw_circle(Vector2(button_radius * 2, button_radius * 2), button_radius, color);
 }
 
-void EditorToaster::_draw_progress(Control *panel) {
+void EditorToaster::_draw_progress(Controle *panel) {
 	if (toasts.has(panel) && toasts[panel].remaining_time > 0 && toasts[panel].duration > 0) {
 		Size2 size = panel->get_size();
 		size.x *= MIN(1, Math::remap(toasts[panel].remaining_time, 0, toasts[panel].duration, 0, 2));
@@ -323,7 +323,7 @@ void EditorToaster::_repop_old() {
 	bool needs_update = false;
 	int visible_count = 0;
 	for (int i = vbox_container->get_child_count() - 1; i >= 0; i--) {
-		Control *control = Object::cast_to<Control>(vbox_container->get_child(i));
+		Controle *control = Object::cast_to<Controle>(vbox_container->get_child(i));
 		if (!control->is_visible()) {
 			control->show();
 			toasts[control].remaining_time = toasts[control].duration;
@@ -342,7 +342,7 @@ void EditorToaster::_repop_old() {
 	}
 }
 
-Control *EditorToaster::popup(Control *p_control, Severity p_severity, double p_time, const String &p_tooltip) {
+Controle *EditorToaster::popup(Controle *p_control, Severity p_severity, double p_time, const String &p_tooltip) {
 	// Create the panel according to the severity.
 	PanelContainer *panel = memnew(PanelContainer);
 	panel->set_tooltip_text(p_tooltip);
@@ -413,8 +413,8 @@ void EditorToaster::popup_str(const String &p_message, Severity p_severity, cons
 void EditorToaster::_popup_str(const String &p_message, Severity p_severity, const String &p_tooltip) {
 	is_processing_error = true;
 	// Check if we already have a popup with the given message.
-	Control *control = nullptr;
-	for (KeyValue<Control *, Toast> element : toasts) {
+	Controle *control = nullptr;
+	for (KeyValue<Controle *, Toast> element : toasts) {
 		if (element.value.message == p_message && element.value.severity == p_severity && element.value.tooltip == p_tooltip) {
 			control = element.key;
 			break;
@@ -482,13 +482,13 @@ void EditorToaster::_popup_str(const String &p_message, Severity p_severity, con
 	is_processing_error = false;
 }
 
-void EditorToaster::close(Control *p_control) {
+void EditorToaster::close(Controle *p_control) {
 	ERR_FAIL_COND(!toasts.has(p_control));
 	toasts[p_control].remaining_time = -1.0;
 	toasts[p_control].popped = false;
 }
 
-void EditorToaster::_close_button_theme_changed(Control *p_close_button) {
+void EditorToaster::_close_button_theme_changed(Controle *p_close_button) {
 	Button *close_button = Object::cast_to<Button>(p_close_button);
 	if (close_button) {
 		close_button->set_icon(get_editor_theme_icon(SNAME("Close")));

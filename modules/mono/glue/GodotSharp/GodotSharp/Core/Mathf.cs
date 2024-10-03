@@ -650,8 +650,8 @@ namespace Godot
         /// the given <paramref name="control1"/>, <paramref name="control2"/>, and <paramref name="end"/> points.
         /// </summary>
         /// <param name="start">The start value for the interpolation.</param>
-        /// <param name="control1">Control point that defines the bezier curve.</param>
-        /// <param name="control2">Control point that defines the bezier curve.</param>
+        /// <param name="control1">Controle point that defines the bezier curve.</param>
+        /// <param name="control2">Controle point that defines the bezier curve.</param>
         /// <param name="end">The destination value for the interpolation.</param>
         /// <param name="t">A value on the range of 0.0 to 1.0, representing the amount of interpolation.</param>
         /// <returns>The resulting value of the interpolation.</returns>
@@ -672,8 +672,8 @@ namespace Godot
         /// the given <paramref name="control1"/>, <paramref name="control2"/>, and <paramref name="end"/> points.
         /// </summary>
         /// <param name="start">The start value for the interpolation.</param>
-        /// <param name="control1">Control point that defines the bezier curve.</param>
-        /// <param name="control2">Control point that defines the bezier curve.</param>
+        /// <param name="control1">Controle point that defines the bezier curve.</param>
+        /// <param name="control2">Controle point that defines the bezier curve.</param>
         /// <param name="end">The destination value for the interpolation.</param>
         /// <param name="t">A value on the range of 0.0 to 1.0, representing the amount of interpolation.</param>
         /// <returns>The resulting value of the interpolation.</returns>
@@ -694,8 +694,8 @@ namespace Godot
         /// the given <paramref name="control1"/>, <paramref name="control2"/>, and <paramref name="end"/> points.
         /// </summary>
         /// <param name="start">The start value for the interpolation.</param>
-        /// <param name="control1">Control point that defines the bezier curve.</param>
-        /// <param name="control2">Control point that defines the bezier curve.</param>
+        /// <param name="control1">Controle point that defines the bezier curve.</param>
+        /// <param name="control2">Controle point that defines the bezier curve.</param>
         /// <param name="end">The destination value for the interpolation.</param>
         /// <param name="t">A value on the range of 0.0 to 1.0, representing the amount of interpolation.</param>
         /// <returns>The resulting value of the interpolation.</returns>
@@ -715,8 +715,8 @@ namespace Godot
         /// the given <paramref name="control1"/>, <paramref name="control2"/>, and <paramref name="end"/> points.
         /// </summary>
         /// <param name="start">The start value for the interpolation.</param>
-        /// <param name="control1">Control point that defines the bezier curve.</param>
-        /// <param name="control2">Control point that defines the bezier curve.</param>
+        /// <param name="control1">Controle point that defines the bezier curve.</param>
+        /// <param name="control2">Controle point that defines the bezier curve.</param>
         /// <param name="end">The destination value for the interpolation.</param>
         /// <param name="t">A value on the range of 0.0 to 1.0, representing the amount of interpolation.</param>
         /// <returns>The resulting value of the interpolation.</returns>

@@ -38,8 +38,8 @@ class Button;
 class EditorSpinSlider;
 class GradientTexture2D;
 
-class GradientTexture2DEdit : public Control {
-	GDCLASS(GradientTexture2DEdit, Control);
+class GradientTexture2DEdit : public Controle {
+	GDCLASS(GradientTexture2DEdit, Controle);
 
 	enum Handle {
 		HANDLE_NONE,

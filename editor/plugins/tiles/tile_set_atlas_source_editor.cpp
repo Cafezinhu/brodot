@@ -662,8 +662,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		TileDataTextureOriginEditor *tile_data_texture_origin_editor = memnew(TileDataTextureOriginEditor);
 		tile_data_texture_origin_editor->hide();
 		tile_data_texture_origin_editor->setup_property_editor(Variant::VECTOR2I, "texture_origin");
-		tile_data_texture_origin_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_texture_origin_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_texture_origin_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_texture_origin_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["texture_origin"] = tile_data_texture_origin_editor;
 	}
 
@@ -672,8 +672,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		TileDataDefaultEditor *tile_data_modulate_editor = memnew(TileDataDefaultEditor());
 		tile_data_modulate_editor->hide();
 		tile_data_modulate_editor->setup_property_editor(Variant::COLOR, "modulate", "", Color(1.0, 1.0, 1.0, 1.0));
-		tile_data_modulate_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_modulate_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_modulate_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_modulate_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["modulate"] = tile_data_modulate_editor;
 	}
 
@@ -682,8 +682,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		TileDataDefaultEditor *tile_data_z_index_editor = memnew(TileDataDefaultEditor());
 		tile_data_z_index_editor->hide();
 		tile_data_z_index_editor->setup_property_editor(Variant::INT, "z_index");
-		tile_data_z_index_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_z_index_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_z_index_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_z_index_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["z_index"] = tile_data_z_index_editor;
 	}
 
@@ -692,8 +692,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		TileDataYSortEditor *tile_data_y_sort_editor = memnew(TileDataYSortEditor);
 		tile_data_y_sort_editor->hide();
 		tile_data_y_sort_editor->setup_property_editor(Variant::INT, "y_sort_origin");
-		tile_data_y_sort_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_y_sort_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_y_sort_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_y_sort_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["y_sort_origin"] = tile_data_y_sort_editor;
 	}
 
@@ -703,8 +703,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 			TileDataOcclusionShapeEditor *tile_data_occlusion_shape_editor = memnew(TileDataOcclusionShapeEditor());
 			tile_data_occlusion_shape_editor->hide();
 			tile_data_occlusion_shape_editor->set_occlusion_layer(i);
-			tile_data_occlusion_shape_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-			tile_data_occlusion_shape_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+			tile_data_occlusion_shape_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+			tile_data_occlusion_shape_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 			tile_data_editors[vformat("occlusion_layer_%d", i)] = tile_data_occlusion_shape_editor;
 		}
 	}
@@ -718,8 +718,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 	if (!tile_data_editors.has("terrain_set")) {
 		TileDataTerrainsEditor *tile_data_terrains_editor = memnew(TileDataTerrainsEditor);
 		tile_data_terrains_editor->hide();
-		tile_data_terrains_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_terrains_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_terrains_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_terrains_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["terrain_set"] = tile_data_terrains_editor;
 	}
 
@@ -729,8 +729,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		TileDataDefaultEditor *tile_data_probability_editor = memnew(TileDataDefaultEditor());
 		tile_data_probability_editor->hide();
 		tile_data_probability_editor->setup_property_editor(Variant::FLOAT, "probability", "", 1.0);
-		tile_data_probability_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-		tile_data_probability_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+		tile_data_probability_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+		tile_data_probability_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 		tile_data_editors["probability"] = tile_data_probability_editor;
 	}
 
@@ -744,8 +744,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 			TileDataCollisionEditor *tile_data_collision_editor = memnew(TileDataCollisionEditor());
 			tile_data_collision_editor->hide();
 			tile_data_collision_editor->set_physics_layer(i);
-			tile_data_collision_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-			tile_data_collision_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+			tile_data_collision_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+			tile_data_collision_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 			tile_data_editors[vformat("physics_layer_%d", i)] = tile_data_collision_editor;
 		}
 	}
@@ -772,8 +772,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 			TileDataNavigationEditor *tile_data_navigation_editor = memnew(TileDataNavigationEditor());
 			tile_data_navigation_editor->hide();
 			tile_data_navigation_editor->set_navigation_layer(i);
-			tile_data_navigation_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-			tile_data_navigation_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+			tile_data_navigation_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+			tile_data_navigation_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 			tile_data_editors[vformat("navigation_layer_%d", i)] = tile_data_navigation_editor;
 		}
 	}
@@ -815,8 +815,8 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 			TileDataDefaultEditor *tile_data_custom_data_editor = memnew(TileDataDefaultEditor());
 			tile_data_custom_data_editor->hide();
 			tile_data_custom_data_editor->setup_property_editor(prop_type, editor_name, prop_name);
-			tile_data_custom_data_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Control::queue_redraw));
-			tile_data_custom_data_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Control::queue_redraw));
+			tile_data_custom_data_editor->connect("needs_redraw", callable_mp((CanvasItem *)tile_atlas_control_unscaled, &Controle::queue_redraw));
+			tile_data_custom_data_editor->connect("needs_redraw", callable_mp((CanvasItem *)alternative_tiles_control_unscaled, &Controle::queue_redraw));
 			tile_data_editors[editor_name] = tile_data_custom_data_editor;
 		}
 	}
@@ -850,7 +850,7 @@ void TileSetAtlasSourceEditor::_update_tile_data_editors() {
 		tile_data_editor->set_tile_set(tile_set);
 
 		// Toolbar.
-		Control *toolbar = tile_data_editor->get_toolbar();
+		Controle *toolbar = tile_data_editor->get_toolbar();
 		if (!toolbar->is_inside_tree()) {
 			tool_settings_tile_data_toolbar_container->add_child(toolbar);
 		}
@@ -912,7 +912,7 @@ void TileSetAtlasSourceEditor::_tile_data_editor_dropdown_button_draw() {
 	}
 
 	RID ci = tile_data_editor_dropdown_button->get_canvas_item();
-	Ref<Texture2D> arrow = Control::get_theme_icon(SNAME("arrow"), SNAME("OptionButton"));
+	Ref<Texture2D> arrow = Controle::get_theme_icon(SNAME("arrow"), SNAME("OptionButton"));
 	Color clr = Color(1, 1, 1);
 	if (get_theme_constant(SNAME("modulate_arrow"))) {
 		switch (tile_data_editor_dropdown_button->get_draw_mode()) {
@@ -2484,7 +2484,7 @@ void TileSetAtlasSourceEditor::_notification(int p_what) {
 
 		case NOTIFICATION_EXIT_TREE: {
 			for (KeyValue<String, TileDataEditor *> &E : tile_data_editors) {
-				Control *toolbar = E.value->get_toolbar();
+				Controle *toolbar = E.value->get_toolbar();
 				if (toolbar->get_parent() == tool_settings_tile_data_toolbar_container) {
 					tool_settings_tile_data_toolbar_container->remove_child(toolbar);
 				}
@@ -2594,7 +2594,7 @@ TileSetAtlasSourceEditor::TileSetAtlasSourceEditor() {
 
 	tile_data_editors_tree = memnew(Tree);
 	tile_data_editors_tree->set_hide_root(true);
-	tile_data_editors_tree->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	tile_data_editors_tree->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	tile_data_editors_tree->set_h_scroll_enabled(false);
 	tile_data_editors_tree->set_v_scroll_enabled(false);
 	tile_data_editors_tree->connect(SceneStringName(item_selected), callable_mp(this, &TileSetAtlasSourceEditor::_tile_data_editors_tree_selected));
@@ -2651,12 +2651,12 @@ TileSetAtlasSourceEditor::TileSetAtlasSourceEditor() {
 	_update_buttons();
 
 	// Right side of toolbar.
-	Control *middle_space = memnew(Control);
+	Controle *middle_space = memnew(Controle);
 	middle_space->set_h_size_flags(SIZE_EXPAND_FILL);
 	tool_settings->add_child(middle_space);
 
 	tool_tile_id_label = memnew(Label);
-	tool_tile_id_label->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	tool_tile_id_label->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	tool_settings->add_child(tool_tile_id_label);
 	_update_tile_id_label();
 
@@ -2685,8 +2685,8 @@ TileSetAtlasSourceEditor::TileSetAtlasSourceEditor() {
 	help_label = memnew(Label(TTR("Hold Shift to create big tiles.")));
 	tile_create_help->add_child(help_label);
 
-	tile_create_help->set_anchors_and_offsets_preset(Control::PRESET_BOTTOM_LEFT, Control::PRESET_MODE_MINSIZE, 8);
-	tile_create_help->set_grow_direction_preset(Control::PRESET_BOTTOM_LEFT);
+	tile_create_help->set_anchors_and_offsets_preset(Controle::PRESET_BOTTOM_LEFT, Controle::PRESET_MODE_MINSIZE, 8);
+	tile_create_help->set_grow_direction_preset(Controle::PRESET_BOTTOM_LEFT);
 
 	base_tile_popup_menu = memnew(PopupMenu);
 	base_tile_popup_menu->add_shortcut(ED_GET_SHORTCUT("tiles_editor/delete"), TILE_DELETE);
@@ -2699,32 +2699,32 @@ TileSetAtlasSourceEditor::TileSetAtlasSourceEditor() {
 	empty_base_tile_popup_menu->connect(SceneStringName(id_pressed), callable_mp(this, &TileSetAtlasSourceEditor::_menu_option));
 	tile_atlas_view->add_child(empty_base_tile_popup_menu);
 
-	tile_atlas_control = memnew(TileAtlasControl(this));
+	tile_atlas_control = memnew(TileAtlasControle(this));
 	tile_atlas_control->connect(SceneStringName(draw), callable_mp(this, &TileSetAtlasSourceEditor::_tile_atlas_control_draw));
 	tile_atlas_control->connect(SceneStringName(mouse_exited), callable_mp(this, &TileSetAtlasSourceEditor::_tile_atlas_control_mouse_exited));
 	tile_atlas_control->connect(SceneStringName(gui_input), callable_mp(this, &TileSetAtlasSourceEditor::_tile_atlas_control_gui_input));
 	tile_atlas_view->add_control_over_atlas_tiles(tile_atlas_control);
 
-	tile_atlas_control_unscaled = memnew(Control);
+	tile_atlas_control_unscaled = memnew(Controle);
 	tile_atlas_control_unscaled->connect(SceneStringName(draw), callable_mp(this, &TileSetAtlasSourceEditor::_tile_atlas_control_unscaled_draw));
 	tile_atlas_view->add_control_over_atlas_tiles(tile_atlas_control_unscaled, false);
-	tile_atlas_control_unscaled->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	tile_atlas_control_unscaled->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 
 	alternative_tile_popup_menu = memnew(PopupMenu);
 	alternative_tile_popup_menu->add_shortcut(ED_SHORTCUT("tiles_editor/delete_tile", TTR("Delete"), Key::KEY_DELETE), TILE_DELETE);
 	alternative_tile_popup_menu->connect(SceneStringName(id_pressed), callable_mp(this, &TileSetAtlasSourceEditor::_menu_option));
 	tile_atlas_view->add_child(alternative_tile_popup_menu);
 
-	alternative_tiles_control = memnew(Control);
+	alternative_tiles_control = memnew(Controle);
 	alternative_tiles_control->connect(SceneStringName(draw), callable_mp(this, &TileSetAtlasSourceEditor::_tile_alternatives_control_draw));
 	alternative_tiles_control->connect(SceneStringName(mouse_exited), callable_mp(this, &TileSetAtlasSourceEditor::_tile_alternatives_control_mouse_exited));
 	alternative_tiles_control->connect(SceneStringName(gui_input), callable_mp(this, &TileSetAtlasSourceEditor::_tile_alternatives_control_gui_input));
 	tile_atlas_view->add_control_over_alternative_tiles(alternative_tiles_control);
 
-	alternative_tiles_control_unscaled = memnew(Control);
+	alternative_tiles_control_unscaled = memnew(Controle);
 	alternative_tiles_control_unscaled->connect(SceneStringName(draw), callable_mp(this, &TileSetAtlasSourceEditor::_tile_alternatives_control_unscaled_draw));
 	tile_atlas_view->add_control_over_alternative_tiles(alternative_tiles_control_unscaled, false);
-	alternative_tiles_control_unscaled->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	alternative_tiles_control_unscaled->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 
 	EditorNode::get_editor_data().add_undo_redo_inspector_hook_callback(callable_mp(this, &TileSetAtlasSourceEditor::_undo_redo_inspector_callback));
 
@@ -2757,8 +2757,8 @@ TileSetAtlasSourceEditor::~TileSetAtlasSourceEditor() {
 ////// EditorPropertyTilePolygon //////
 
 void EditorPropertyTilePolygon::_add_focusable_children(Node *p_node) {
-	Control *control = Object::cast_to<Control>(p_node);
-	if (control && control->get_focus_mode() != Control::FOCUS_NONE) {
+	Controle *control = Object::cast_to<Controle>(p_node);
+	if (control && control->get_focus_mode() != Controle::FOCUS_NONE) {
 		add_focusable(control);
 	}
 	for (int i = 0; i < p_node->get_child_count(); i++) {
@@ -2970,8 +2970,8 @@ bool EditorInspectorPluginTileData::parse_property(Object *p_object, const Varia
 	return false;
 }
 
-Control::CursorShape TileSetAtlasSourceEditor::TileAtlasControl::get_cursor_shape(const Point2 &p_pos) const {
-	Control::CursorShape cursor_shape = get_default_cursor_shape();
+Controle::CursorShape TileSetAtlasSourceEditor::TileAtlasControle::get_cursor_shape(const Point2 &p_pos) const {
+	Controle::CursorShape cursor_shape = get_default_cursor_shape();
 	if (editor->drag_type == DRAG_TYPE_NONE) {
 		if (editor->selection.size() == 1) {
 			// Change the cursor depending on the hovered thing.

@@ -637,7 +637,7 @@ void CodeEdit::gui_input(const Ref<InputEvent> &p_gui_input) {
 }
 
 /* General overrides */
-Control::CursorShape CodeEdit::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape CodeEdit::get_cursor_shape(const Point2 &p_pos) const {
 	if (!symbol_lookup_word.is_empty()) {
 		return CURSOR_POINTING_HAND;
 	}

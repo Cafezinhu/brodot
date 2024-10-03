@@ -1863,10 +1863,10 @@ msgstr "Kullanımı"
 msgid "Misc"
 msgstr "Çeşitli"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Tıklanan Denetim:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Tıklanan Denetim Tipi:"
 
 msgid "Live Edit Root:"
@@ -3997,7 +3997,7 @@ msgstr "Proje Ayarları..."
 msgid "Project Settings"
 msgstr "Proje Ayarları"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Sürüm Kontrol"
 
 msgid "Export..."
@@ -4190,10 +4190,10 @@ msgstr "Yerel değişiklikleri yok say ve yeniden yükle"
 msgid "Keep local changes and overwrite"
 msgstr "Yerel değişiklikleri koru ve üzerine yaz"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "Sürüm Kontrol Meta Verileri Oluşturma/Üzerine Yazma..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Sürüm Denetim Ayarları..."
 
 msgid "New Inherited"
@@ -6518,11 +6518,11 @@ msgstr "Ek Seçenekler"
 msgid "Device:"
 msgstr "Aygıt:"
 
-msgid "Command / Control (auto)"
+msgid "Command / Controle (auto)"
 msgstr "Komut/Kontrol (otomatik)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
 "Geçerli platforma bağlı olarak, 'Meta' ('Komut') ve 'Kontrol' arasında "
@@ -6690,7 +6690,7 @@ msgstr "POT Üret"
 msgid "Add Built-in Strings to POT"
 msgstr "POT'a Yerleşik Dizeler Ekleme"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr "Bazı Kontrol düğümleri gibi yerleşik bileşenlerden dizeler ekleyin."
 
 msgid "Set %s on %d nodes"
@@ -7608,8 +7608,8 @@ msgstr "CanvasItem (kanvas öğesi) \"%s\" Çapasını Taşı"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Node2D (2B düğüm) \"%s\" 'yi, (%s, %s)'a ölçeklendir"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Control (denetim) \"%s\" 'yi, (%d, %d)'a boyutlandır"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Controle (denetim) \"%s\" 'yi, (%d, %d)'a boyutlandır"
 
 msgid "Scale %d CanvasItems"
 msgstr "CanvasItems'ı (kanvas öğeleri) %d ölçeklendir"
@@ -8171,7 +8171,7 @@ msgstr "Dikey Genişletme Bayrağını Değiştir"
 msgid "Change Horizontal Expand Flag"
 msgstr "Yatay Genişletme Bayrağını Değiştir"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "Denetim düğümü için çapa ve kayma değerleri için hazır-ayarlar."
 
 msgid "Anchor preset"
@@ -8185,7 +8185,7 @@ msgstr ""
 "Çapaları ve kaymaları, mevcut dikdörtgen boyutuna uyacak şekilde ayarla."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
 "Etkin olduğunda, Denetim düğümünü taşımak kaymayı değil çapaları değiştirir."
@@ -9816,10 +9816,10 @@ msgstr "En az/en fazla ile temel değer/yayılma kipleri arasında geçiş yap."
 msgid "Remove Point from Curve"
 msgstr "Noktayı Eğriden Kaldır"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Eğriden Çıkış-Kontrol'ü Kaldır"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Eğriden Giriş-Kontrol'ü Kaldır"
 
 msgid "Move Point in Curve"
@@ -9831,10 +9831,10 @@ msgstr "Eğriye Nokta Ekle"
 msgid "Split Curve"
 msgstr "Eğriyi Böl"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Eğride Giriş-Kontrol'ü Taşı"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Eğride Çıkış-Kontrol'ü Taşı"
 
 msgid "Close the Curve"
@@ -9846,7 +9846,7 @@ msgstr "Eğri Noktalarını Temizle"
 msgid "Select Points"
 msgstr "Noktaları Seç"
 
-msgid "Shift+Drag: Select Control Points"
+msgid "Shift+Drag: Select Controle Points"
 msgstr "ÜstKrkt+Sürükleme: Kontrol Noktalarını Seç"
 
 msgid "Click: Add Point"
@@ -9858,7 +9858,7 @@ msgstr "Sol Tıklama: Parçayı Böl (eğri içinde)"
 msgid "Right Click: Delete Point"
 msgstr "Sağ tıkla: Nokta Sil"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Denetim Noktalarını Seç (ÜstKrkt + Sürükle)"
 
 msgid "Add Point (in empty space)"
@@ -9915,10 +9915,10 @@ msgstr "Yolu Böl"
 msgid "Remove Path Point"
 msgstr "Yol Noktasını Kaldır"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "Çıkış-Kontrol Noktasını Sıfırla"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "Giriş-Kontrol Noktasını Sıfırla"
 
 msgid "Reset Point Tilt"
@@ -9927,10 +9927,10 @@ msgstr "Nokta Eğimini Sıfırla"
 msgid "Shift+Click: Select multiple Points"
 msgstr "ÜstKrkt+Tıklama: Birden fazla Nokta seçin"
 
-msgid "Select Control Points"
+msgid "Select Controle Points"
 msgstr "Kontrol Noktalarını Seçin"
 
-msgid "Shift+Click: Drag out Control Points"
+msgid "Shift+Click: Drag out Controle Points"
 msgstr "ÜstKrkt + Tıklama: Denetim Noktalarını Açığa çıkar"
 
 msgid "Select Tilt Handles"
@@ -11564,7 +11564,7 @@ msgstr ""
 "Geçersiz yol, PackedScene -paket sahne- kaynağı muhtemelen taşındı veya "
 "kaldırıldı."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
 "Geçersiz PackedScene -paket sahne- kaynağı, kökünde bir Kontrol düğümü "
 "olmalıdır."
@@ -12509,10 +12509,10 @@ msgstr "%s dalını silmek istiyor musun?"
 msgid "Do you want to remove the %s remote?"
 msgstr "%s uzak deposunu kaldırmak istiyor musun?"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "Sürüm Kontrolü Alt Panelini Aç/Kapat"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Sürüm Kontrol Metaverisi Oluştur"
 
 msgid "Create VCS metadata files for:"
@@ -14434,7 +14434,7 @@ msgstr ""
 "İşleyici daha sonra değiştirilebilir, ancak sahnelerin uyumlandırılması "
 "gerekebilir."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Sürüm Denetimi Metaverileri:"
 
 msgid "Git"
@@ -18067,13 +18067,13 @@ msgstr "Onaltılık (hexadecimal) ve kod değerleri arasında geçiş yapın."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Bir betik dosyası ile alt-öğelerinin yerleştirilme davranışı "
 "yapılandırılmadıkça, bir kapsayıcı (Container) kendi başına hiçbir amaca "
 "hizmet etmez.\n"
 "Eğer bir betik dosyası eklemeyi düşünmüyorsanız, bunun yerine düz bir denetim "
-"düğümü (Control) kullanın."
+"düğümü (Controle) kullanın."
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
@@ -18112,12 +18112,12 @@ msgstr "\"Üstel Düzenleme\" etkinse, \"En küçük Değer\" 0'dan büyük olma
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "Kaydırma Taşıyıcısı (ScrollContainer), tek bir alt-öğe denetim ile çalışmak "
 "için tasarlanmıştır.\n"
-"Bir taşıyıcıyı (VBox,HBox, vb) ya da denetimi (Control) alt-öğe olarak "
+"Bir taşıyıcıyı (VBox,HBox, vb) ya da denetimi (Controle) alt-öğe olarak "
 "kullanın, ve özel en küçük boyutu elle ayarlayın."
 
 msgid ""

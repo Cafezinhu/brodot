@@ -317,7 +317,7 @@ msgstr "Penundaan Tooltip (dtk)"
 msgid "Common"
 msgstr "Umum"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Kontrol Snap ke Piksel"
 
 msgid "Fonts"
@@ -443,8 +443,8 @@ msgstr "Perangkat"
 msgid "Window ID"
 msgstr "ID Jendela"
 
-msgid "Command or Control Autoremap"
-msgstr "Command atau Control Autoremap"
+msgid "Command or Controle Autoremap"
+msgstr "Command atau Controle Autoremap"
 
 msgid "Alt Pressed"
 msgstr "Alt Ditekan"
@@ -551,10 +551,10 @@ msgstr "Tingkat Nada"
 msgid "Instrument"
 msgstr "Instrumen"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Nomor Pengontrol"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Nilai Pengontrol"
 
 msgid "Shortcut"
@@ -1649,7 +1649,7 @@ msgstr "Warna Simbol"
 msgid "Keyword Color"
 msgstr "Warna Kata kunci"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Warna Kata Kunci Aliran Kontrol"
 
 msgid "Base Type Color"
@@ -2441,7 +2441,7 @@ msgstr "Jumlah Frame"
 msgid "Duration"
 msgstr "Durasi"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Kontrol Versi"
 
 msgid "Username"
@@ -3416,7 +3416,7 @@ msgstr "Deskripsi URL"
 msgid "Service Type"
 msgstr "Jenis Layanan"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL Kontrol IGD"
 
 msgid "IGD Service Type"
@@ -6386,7 +6386,7 @@ msgstr "Pilihan Seret dan Jatuhkan Diaktifkan"
 msgid "Right Icon"
 msgstr "Ikon Kanan"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Gambar Karakter Kontrol"
 
 msgid "Select All on Focus"
@@ -7079,7 +7079,7 @@ msgstr "Layar Saat Ini"
 msgid "Mouse Passthrough Polygon"
 msgstr "Mouse Melewati Poligon"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "Kontrol Bungkus"
 
 msgid "Transient"
@@ -8183,7 +8183,7 @@ msgstr "Wilayah Warna"
 msgid "Preserve Invalid"
 msgstr "Mempertahankan Tidak Valid"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Pertahankan Kontrol"
 
 msgid "Custom Punctuation"
@@ -9347,7 +9347,7 @@ msgstr "Titik"
 msgid "Fragment"
 msgstr "Fragmen"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Kontrol Tesselasi"
 
 msgid "Tesselation Evaluation"

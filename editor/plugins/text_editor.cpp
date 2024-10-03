@@ -120,7 +120,7 @@ void TextEditor::set_edited_resource(const Ref<Resource> &p_res) {
 	code_editor->update_line_and_column();
 }
 
-void TextEditor::enable_editor(Control *p_shortcut_context) {
+void TextEditor::enable_editor(Controle *p_shortcut_context) {
 	if (editor_enabled) {
 		return;
 	}
@@ -133,7 +133,7 @@ void TextEditor::enable_editor(Control *p_shortcut_context) {
 
 	if (p_shortcut_context) {
 		for (int i = 0; i < edit_hb->get_child_count(); ++i) {
-			Control *c = cast_to<Control>(edit_hb->get_child(i));
+			Controle *c = cast_to<Controle>(edit_hb->get_child(i));
 			if (c) {
 				c->set_shortcut_context(p_shortcut_context);
 			}
@@ -147,7 +147,7 @@ void TextEditor::add_callback(const String &p_function, const PackedStringArray 
 void TextEditor::set_debugger_active(bool p_active) {
 }
 
-Control *TextEditor::get_base_editor() const {
+Controle *TextEditor::get_base_editor() const {
 	return code_editor->get_text_editor();
 }
 
@@ -343,7 +343,7 @@ void TextEditor::set_tooltip_request_func(const Callable &p_toolip_callback) {
 	code_editor->get_text_editor()->set_tooltip_request_func(p_toolip_callback.bindp(argp, 1));
 }
 
-Control *TextEditor::get_edit_menu() {
+Controle *TextEditor::get_edit_menu() {
 	return edit_hb;
 }
 
@@ -362,27 +362,27 @@ void TextEditor::_edit_option(int p_op) {
 	switch (p_op) {
 		case EDIT_UNDO: {
 			tx->undo();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_REDO: {
 			tx->redo();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_CUT: {
 			tx->cut();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_COPY: {
 			tx->copy();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_PASTE: {
 			tx->paste();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_SELECT_ALL: {
 			tx->select_all();
-			callable_mp((Control *)tx, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)tx, &Controle::grab_focus).call_deferred();
 		} break;
 		case EDIT_MOVE_LINE_UP: {
 			code_editor->get_text_editor()->move_lines_up();
@@ -604,8 +604,8 @@ TextEditor::TextEditor() {
 	code_editor->add_theme_constant_override("separation", 0);
 	code_editor->connect("load_theme_settings", callable_mp(this, &TextEditor::_load_theme_settings));
 	code_editor->connect("validate_script", callable_mp(this, &TextEditor::_validate_script));
-	code_editor->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-	code_editor->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	code_editor->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+	code_editor->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	code_editor->show_toggle_scripts_button();
 	code_editor->set_toggle_list_control(ScriptEditor::get_singleton()->get_left_list_split());
 

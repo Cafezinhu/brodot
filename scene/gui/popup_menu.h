@@ -52,7 +52,7 @@ class PopupMenu : public Popup {
 		Ref<TextLine> accel_text_buf;
 
 		String language;
-		Control::TextDirection text_direction = Control::TEXT_DIRECTION_AUTO;
+		Controle::TextDirection text_direction = Controle::TEXT_DIRECTION_AUTO;
 
 		bool checked = false;
 		enum {
@@ -150,7 +150,7 @@ class PopupMenu : public Popup {
 	String search_string = "";
 
 	ScrollContainer *scroll_container = nullptr;
-	Control *control = nullptr;
+	Controle *control = nullptr;
 
 	const float DEFAULT_GAMEPAD_EVENT_DELAY_MS = 0.5;
 	const float GAMEPAD_EVENT_REPEAT_RATE_MS = 1.0 / 20;
@@ -269,7 +269,7 @@ public:
 
 	void set_item_text(int p_idx, const String &p_text);
 
-	void set_item_text_direction(int p_idx, Control::TextDirection p_text_direction);
+	void set_item_text_direction(int p_idx, Controle::TextDirection p_text_direction);
 	void set_item_language(int p_idx, const String &p_language);
 	void set_item_icon(int p_idx, const Ref<Texture2D> &p_icon);
 	void set_item_icon_max_width(int p_idx, int p_width);
@@ -296,7 +296,7 @@ public:
 
 	String get_item_text(int p_idx) const;
 	String get_item_xl_text(int p_idx) const;
-	Control::TextDirection get_item_text_direction(int p_idx) const;
+	Controle::TextDirection get_item_text_direction(int p_idx) const;
 	String get_item_language(int p_idx) const;
 	int get_item_idx_from_text(const String &text) const;
 	Ref<Texture2D> get_item_icon(int p_idx) const;

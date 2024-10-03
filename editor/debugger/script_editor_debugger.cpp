@@ -1779,11 +1779,11 @@ void ScriptEditorDebugger::_bind_methods() {
 	ADD_SIGNAL(MethodInfo("errors_cleared"));
 }
 
-void ScriptEditorDebugger::add_debugger_tab(Control *p_control) {
+void ScriptEditorDebugger::add_debugger_tab(Controle *p_control) {
 	tabs->add_child(p_control);
 }
 
-void ScriptEditorDebugger::remove_debugger_tab(Control *p_control) {
+void ScriptEditorDebugger::remove_debugger_tab(Controle *p_control) {
 	int idx = tabs->get_tab_idx_from_control(p_control);
 	ERR_FAIL_COND(idx < 0);
 	p_control->queue_free();
@@ -1818,7 +1818,7 @@ ScriptEditorDebugger::ScriptEditorDebugger() {
 	{ //debugger
 		VBoxContainer *vbc = memnew(VBoxContainer);
 		vbc->set_name(TTR("Stack Trace"));
-		Control *dbg = vbc;
+		Controle *dbg = vbc;
 
 		HBoxContainer *hbc = memnew(HBoxContainer);
 		vbc->add_child(hbc);
@@ -1829,7 +1829,7 @@ ScriptEditorDebugger::ScriptEditorDebugger() {
 		reason->set_h_size_flags(SIZE_EXPAND_FILL);
 		reason->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
 		reason->set_max_lines_visible(3);
-		reason->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		reason->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 
 		hbc->add_child(memnew(VSeparator));
 
@@ -1918,7 +1918,7 @@ ScriptEditorDebugger::ScriptEditorDebugger() {
 		inspector_vbox->add_child(tools_hb);
 
 		search = memnew(LineEdit);
-		search->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		search->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		search->set_placeholder(TTR("Filter Stack Variables"));
 		search->set_clear_button_enabled(true);
 		tools_hb->add_child(search);
@@ -1972,7 +1972,7 @@ ScriptEditorDebugger::ScriptEditorDebugger() {
 		collapse_all_button->connect(SceneStringName(pressed), callable_mp(this, &ScriptEditorDebugger::_collapse_errors_list));
 		error_hbox->add_child(collapse_all_button);
 
-		Control *space = memnew(Control);
+		Controle *space = memnew(Controle);
 		space->set_h_size_flags(SIZE_EXPAND_FILL);
 		error_hbox->add_child(space);
 
@@ -2103,11 +2103,11 @@ ScriptEditorDebugger::ScriptEditorDebugger() {
 		clicked_ctrl = memnew(LineEdit);
 		clicked_ctrl->set_editable(false);
 		clicked_ctrl->set_h_size_flags(SIZE_EXPAND_FILL);
-		info_left->add_child(memnew(Label(TTR("Clicked Control:"))));
+		info_left->add_child(memnew(Label(TTR("Clicked Controle:"))));
 		info_left->add_child(clicked_ctrl);
 		clicked_ctrl_type = memnew(LineEdit);
 		clicked_ctrl_type->set_editable(false);
-		info_left->add_child(memnew(Label(TTR("Clicked Control Type:"))));
+		info_left->add_child(memnew(Label(TTR("Clicked Controle Type:"))));
 		info_left->add_child(clicked_ctrl_type);
 
 		scene_tree = memnew(SceneDebuggerTree);

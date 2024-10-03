@@ -314,8 +314,8 @@ SOFTWARE.
 
 #define XK_Shift_L                       0xffe1  /* Left shift */
 #define XK_Shift_R                       0xffe2  /* Right shift */
-#define XK_Control_L                     0xffe3  /* Left control */
-#define XK_Control_R                     0xffe4  /* Right control */
+#define XK_Controle_L                     0xffe3  /* Left control */
+#define XK_Controle_R                     0xffe4  /* Right control */
 #define XK_Caps_Lock                     0xffe5  /* Caps lock */
 #define XK_Shift_Lock                    0xffe6  /* Shift lock */
 

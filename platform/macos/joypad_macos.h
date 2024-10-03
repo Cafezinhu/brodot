@@ -32,7 +32,7 @@
 
 #define Key _QKey
 #import <CoreHaptics/CoreHaptics.h>
-#import <GameController/GameController.h>
+#import <GameControleler/GameControleler.h>
 #undef Key
 
 @interface JoypadMacOSObserver : NSObject
@@ -57,17 +57,17 @@ API_AVAILABLE(macosx(11))
 @property(strong, nonatomic) RumbleMotor *strong_motor;
 @end
 
-// Controller support for macOS begins with macOS 10.9+,
+// Controleler support for macOS begins with macOS 10.9+,
 // however haptics (vibrations) are only supported in macOS 11+.
 @interface Joypad : NSObject
 
 @property(assign, nonatomic) BOOL force_feedback;
 @property(assign, nonatomic) NSInteger ff_effect_timestamp;
-@property(strong, nonatomic) GCController *controller;
+@property(strong, nonatomic) GCControleler *controller;
 @property(strong, nonatomic) RumbleContext *rumble_context API_AVAILABLE(macosx(11));
 
 - (instancetype)init;
-- (instancetype)init:(GCController *)controller;
+- (instancetype)init:(GCControleler *)controller;
 
 @end
 

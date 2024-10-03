@@ -799,10 +799,10 @@ msgstr "Uzo"
 msgid "Misc"
 msgstr "Diversa"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Alklakita stirilo:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Tipo de alklakita stirilo:"
 
 msgid "Set From Tree"
@@ -1762,7 +1762,7 @@ msgstr "Agordoj de la redaktilo..."
 msgid "Project"
 msgstr "Projekto"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versikontrolo"
 
 msgid "Install Android Build Template..."
@@ -3031,8 +3031,8 @@ msgstr "Movi la ankron de CanvasItem \"%s\""
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Skali Node2D \"%s\" al (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Regrandigi Control \"%s\" al (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Regrandigi Controle \"%s\" al (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "Skali %d CanvasItem-ojn"

@@ -650,7 +650,7 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	main_vbox->add_child(event_as_text);
 
 	event_listener = memnew(EventListenerLineEdit);
-	event_listener->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	event_listener->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	event_listener->set_stretch_ratio(0.75);
 	event_listener->connect("event_changed", callable_mp(this, &InputEventConfigurationDialog::_on_listen_input_changed));
 	event_listener->connect(SceneStringName(focus_entered), callable_mp((AcceptDialog *)this, &AcceptDialog::set_close_on_escape).bind(false));
@@ -662,11 +662,11 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	// List of all input options to manually select from.
 	VBoxContainer *manual_vbox = memnew(VBoxContainer);
 	manual_vbox->set_name(TTR("Manual Selection"));
-	manual_vbox->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	manual_vbox->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vbox->add_child(manual_vbox);
 
 	input_list_search = memnew(LineEdit);
-	input_list_search->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	input_list_search->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	input_list_search->set_placeholder(TTR("Filter Inputs"));
 	input_list_search->set_clear_button_enabled(true);
 	input_list_search->connect(SceneStringName(text_changed), callable_mp(this, &InputEventConfigurationDialog::_search_term_updated));
@@ -677,7 +677,7 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	input_list_tree->set_custom_minimum_size(Size2(0, 100 * EDSCALE)); // Min height for tree
 	input_list_tree->connect("item_activated", callable_mp(this, &InputEventConfigurationDialog::_input_list_item_activated));
 	input_list_tree->connect(SceneStringName(item_selected), callable_mp(this, &InputEventConfigurationDialog::_input_list_item_selected));
-	input_list_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	input_list_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	manual_vbox->add_child(input_list_tree);
 
 	input_list_tree->set_hide_root(true);
@@ -696,7 +696,7 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 
 	// Device Selection
 	device_container = memnew(HBoxContainer);
-	device_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	device_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	Label *device_label = memnew(Label);
 	device_label->set_theme_type_variation("HeaderSmall");
@@ -704,7 +704,7 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	device_container->add_child(device_label);
 
 	device_id_option = memnew(OptionButton);
-	device_id_option->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	device_id_option->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	for (int i = -1; i < 8; i++) {
 		device_id_option->add_item(EventListenerLineEdit::get_device_string(i));
 	}
@@ -731,8 +731,8 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	autoremap_command_or_control_checkbox = memnew(CheckBox);
 	autoremap_command_or_control_checkbox->connect(SceneStringName(toggled), callable_mp(this, &InputEventConfigurationDialog::_autoremap_command_or_control_toggled));
 	autoremap_command_or_control_checkbox->set_pressed(false);
-	autoremap_command_or_control_checkbox->set_text(TTR("Command / Control (auto)"));
-	autoremap_command_or_control_checkbox->set_tooltip_text(TTR("Automatically remaps between 'Meta' ('Command') and 'Control' depending on current platform."));
+	autoremap_command_or_control_checkbox->set_text(TTR("Command / Controle (auto)"));
+	autoremap_command_or_control_checkbox->set_tooltip_text(TTR("Automatically remaps between 'Meta' ('Command') and 'Controle' depending on current platform."));
 	mod_container->add_child(autoremap_command_or_control_checkbox);
 
 	mod_container->hide();
@@ -758,7 +758,7 @@ InputEventConfigurationDialog::InputEventConfigurationDialog() {
 	location_container->add_child(location_label);
 
 	key_location = memnew(OptionButton);
-	key_location->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	key_location->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	key_location->add_item(TTR("Any"), (int)KeyLocation::UNSPECIFIED);
 	key_location->add_item(TTR("Left"), (int)KeyLocation::LEFT);
 	key_location->add_item(TTR("Right"), (int)KeyLocation::RIGHT);

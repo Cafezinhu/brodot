@@ -179,7 +179,7 @@ static UniRange unicode_ranges[] = {
 	{ 0x2190, 0x21FF, U"Arrows" },
 	{ 0x2200, 0x22FF, U"Mathematical Operators" },
 	{ 0x2300, 0x23FF, U"Miscellaneous Technical" },
-	{ 0x2400, 0x243F, U"Control Pictures" },
+	{ 0x2400, 0x243F, U"Controle Pictures" },
 	{ 0x2440, 0x245F, U"Optical Character Recognition" },
 	{ 0x2460, 0x24FF, U"Enclosed Alphanumerics" },
 	{ 0x2500, 0x257F, U"Box Drawing" },
@@ -353,7 +353,7 @@ static UniRange unicode_ranges[] = {
 	{ 0x12480, 0x1254F, U"Early Dynastic Cuneiform" },
 	{ 0x12F90, 0x12FFF, U"Cypro-Minoan" },
 	{ 0x13000, 0x1342F, U"Egyptian Hieroglyphs" },
-	{ 0x13430, 0x1343F, U"Egyptian Hieroglyph Format Controls" },
+	{ 0x13430, 0x1343F, U"Egyptian Hieroglyph Format Controles" },
 	{ 0x14400, 0x1467F, U"Anatolian Hieroglyphs" },
 	{ 0x16800, 0x16A3F, U"Bamum Supplement" },
 	{ 0x16A40, 0x16A6F, U"Mro" },
@@ -373,7 +373,7 @@ static UniRange unicode_ranges[] = {
 	{ 0x1B130, 0x1B16F, U"Small Kana Extension" },
 	{ 0x1B170, 0x1B2FF, U"Nushu" },
 	{ 0x1BC00, 0x1BC9F, U"Duployan" },
-	{ 0x1BCA0, 0x1BCAF, U"Shorthand Format Controls" },
+	{ 0x1BCA0, 0x1BCAF, U"Shorthand Format Controles" },
 	{ 0x1CF00, 0x1CFCF, U"Znamenny Musical Notation" },
 	{ 0x1D000, 0x1D0FF, U"Byzantine Musical Symbols" },
 	{ 0x1D100, 0x1D1FF, U"Musical Symbols" },
@@ -1288,8 +1288,8 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	main_pages = memnew(TabContainer);
 	main_pages->set_tab_alignment(TabBar::ALIGNMENT_CENTER);
-	main_pages->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	main_pages->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	main_pages->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	main_pages->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_pages->set_theme_type_variation("TabContainerOdd");
 	root_vb->add_child(main_pages);
 
@@ -1307,23 +1307,23 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	page1_description = memnew(Label);
 	page1_description->set_text(TTR("Select font rendering options, fallback font, and metadata override:"));
-	page1_description->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page1_description->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page1_vb->add_child(page1_description);
 
 	HSplitContainer *page1_hb = memnew(HSplitContainer);
-	page1_hb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	page1_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page1_hb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	page1_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page1_vb->add_child(page1_hb);
 
 	VBoxContainer *page1_lbl_vb = memnew(VBoxContainer);
-	page1_lbl_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	page1_lbl_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page1_lbl_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	page1_lbl_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page1_hb->add_child(page1_lbl_vb);
 
 	font_name_label = memnew(Label);
 	font_name_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	font_name_label->set_clip_text(true);
-	font_name_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	font_name_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page1_lbl_vb->add_child(font_name_label);
 
 	font_preview_label = memnew(Label);
@@ -1331,12 +1331,12 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 	font_preview_label->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	font_preview_label->set_autowrap_mode(TextServer::AUTOWRAP_ARBITRARY);
 	font_preview_label->set_clip_text(true);
-	font_preview_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	font_preview_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	font_preview_label->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	font_preview_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page1_lbl_vb->add_child(font_preview_label);
 
 	inspector_general = memnew(EditorInspector);
-	inspector_general->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	inspector_general->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	inspector_general->set_custom_minimum_size(Size2(300 * EDSCALE, 250 * EDSCALE));
 	page1_hb->add_child(inspector_general);
 	inspector_general->connect("property_edited", callable_mp(this, &DynamicFontImportSettingsDialog::_main_prop_changed));
@@ -1348,14 +1348,14 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	page2_description = memnew(Label);
 	page2_description->set_text(TTR("Add font size, and variation coordinates, and select glyphs to pre-render:"));
-	page2_description->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_description->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_description->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
 	page2_description->set_custom_minimum_size(Size2(300 * EDSCALE, 1));
 	page2_vb->add_child(page2_description);
 
 	HSplitContainer *page2_hb = memnew(HSplitContainer);
-	page2_hb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	page2_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_hb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	page2_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_vb->add_child(page2_hb);
 
 	VBoxContainer *page2_side_vb = memnew(VBoxContainer);
@@ -1366,7 +1366,7 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	label_vars = memnew(Label);
 	label_vars->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
-	label_vars->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	label_vars->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	label_vars->set_text(TTR("Configuration:"));
 	page2_hb_vars->add_child(label_vars);
 
@@ -1384,13 +1384,13 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 	vars_list->set_column_custom_minimum_width(0, 80 * EDSCALE);
 	vars_list->set_column_expand(1, false);
 	vars_list->set_column_custom_minimum_width(1, 50 * EDSCALE);
-	vars_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	vars_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_side_vb->add_child(vars_list);
 	vars_list->connect(SceneStringName(item_selected), callable_mp(this, &DynamicFontImportSettingsDialog::_variation_selected));
 	vars_list->connect("button_clicked", callable_mp(this, &DynamicFontImportSettingsDialog::_variation_remove));
 
 	inspector_vars = memnew(EditorInspector);
-	inspector_vars->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	inspector_vars->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_side_vb->add_child(inspector_vars);
 	inspector_vars->connect("property_edited", callable_mp(this, &DynamicFontImportSettingsDialog::_variation_changed));
 
@@ -1399,12 +1399,12 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	preload_pages = memnew(TabContainer);
 	preload_pages->set_tab_alignment(TabBar::ALIGNMENT_CENTER);
-	preload_pages->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	preload_pages->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	preload_pages->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	preload_pages->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	preload_pages_vb->add_child(preload_pages);
 
 	HBoxContainer *gl_hb = memnew(HBoxContainer);
-	gl_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	gl_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	preload_pages_vb->add_child(gl_hb);
 
 	label_glyphs = memnew(Label);
@@ -1423,7 +1423,7 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	page2_0_description = memnew(Label);
 	page2_0_description->set_text(TTR("Select translations to add all required glyphs to pre-render list:"));
-	page2_0_description->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_0_description->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_0_description->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
 	page2_0_description->set_custom_minimum_size(Size2(300 * EDSCALE, 1));
 	page2_0_vb->add_child(page2_0_description);
@@ -1434,14 +1434,14 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 	locale_tree->set_hide_root(true);
 	locale_tree->set_column_expand(0, true);
 	locale_tree->set_column_custom_minimum_width(0, 120 * EDSCALE);
-	locale_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	locale_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_0_vb->add_child(locale_tree);
 	locale_tree->connect("item_activated", callable_mp(this, &DynamicFontImportSettingsDialog::_locale_edited));
 
 	locale_root = locale_tree->create_item();
 
 	HBoxContainer *locale_hb = memnew(HBoxContainer);
-	locale_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	locale_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_0_vb->add_child(locale_hb);
 
 	btn_fill_locales = memnew(Button);
@@ -1456,30 +1456,30 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	page2_1_description = memnew(Label);
 	page2_1_description->set_text(TTR("Enter a text and select OpenType features to shape and add all required glyphs to pre-render list:"));
-	page2_1_description->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_1_description->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_1_description->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
 	page2_1_description->set_custom_minimum_size(Size2(300 * EDSCALE, 1));
 	page2_1_vb->add_child(page2_1_description);
 
 	HSplitContainer *page2_1_hb = memnew(HSplitContainer);
-	page2_1_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	page2_1_hb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_1_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	page2_1_hb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_1_vb->add_child(page2_1_hb);
 
 	inspector_text = memnew(EditorInspector);
 
-	inspector_text->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	inspector_text->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	inspector_text->set_custom_minimum_size(Size2(300 * EDSCALE, 250 * EDSCALE));
 	page2_1_hb->add_child(inspector_text);
 	inspector_text->connect("property_edited", callable_mp(this, &DynamicFontImportSettingsDialog::_change_text_opts));
 
 	text_edit = memnew(TextEdit);
-	text_edit->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	text_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	text_edit->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	text_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_1_hb->add_child(text_edit);
 
 	HBoxContainer *text_hb = memnew(HBoxContainer);
-	text_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	text_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_1_vb->add_child(text_hb);
 
 	btn_fill = memnew(Button);
@@ -1494,14 +1494,14 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 
 	page2_2_description = memnew(Label);
 	page2_2_description->set_text(TTR("Add or remove glyphs from the character map to pre-render list:\nNote: Some stylistic alternatives and glyph variants do not have one-to-one correspondence to character, and not shown in this map, use \"Glyphs from the text\" tab to add these."));
-	page2_2_description->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	page2_2_description->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_2_description->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
 	page2_2_description->set_custom_minimum_size(Size2(300 * EDSCALE, 1));
 	page2_2_vb->add_child(page2_2_description);
 
 	HSplitContainer *glyphs_split = memnew(HSplitContainer);
-	glyphs_split->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	glyphs_split->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	glyphs_split->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	glyphs_split->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	page2_2_vb->add_child(glyphs_split);
 
 	glyph_table = memnew(Tree);
@@ -1519,8 +1519,8 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 	glyph_table->add_theme_style_override("selected", glyph_table->get_theme_stylebox(SceneStringName(panel)));
 	glyph_table->add_theme_style_override("selected_focus", glyph_table->get_theme_stylebox(SceneStringName(panel)));
 	glyph_table->add_theme_constant_override("h_separation", 0);
-	glyph_table->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	glyph_table->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	glyph_table->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	glyph_table->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	glyphs_split->add_child(glyph_table);
 	glyph_table->connect("item_activated", callable_mp(this, &DynamicFontImportSettingsDialog::_glyph_selected));
 
@@ -1532,7 +1532,7 @@ DynamicFontImportSettingsDialog::DynamicFontImportSettingsDialog() {
 	glyph_tree->set_column_expand(0, false);
 	glyph_tree->set_column_expand(1, true);
 	glyph_tree->set_column_custom_minimum_width(0, 120 * EDSCALE);
-	glyph_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	glyph_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	glyph_root = glyph_tree->create_item();
 	for (int i = 0; !unicode_ranges[i].name.is_empty(); i++) {
 		_add_glyph_range_item(unicode_ranges[i].start, unicode_ranges[i].end, unicode_ranges[i].name);

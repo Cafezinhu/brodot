@@ -30,7 +30,7 @@
 #include <pulse/channelmap.h>
 #include <pulse/version.h>
 
-/** \page volume Volume Control
+/** \page volume Volume Controle
  *
  * \section overv_sec Overview
  *

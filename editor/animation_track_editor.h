@@ -207,7 +207,7 @@ class AnimationTimelineEdit : public Range {
 	TextureRect *time_icon = nullptr;
 
 	MenuButton *add_track = nullptr;
-	Control *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
+	Controle *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
 	HScrollBar *hscroll = nullptr;
 
 	void _zoom_changed(double);
@@ -273,8 +273,8 @@ public:
 	AnimationTimelineEdit();
 };
 
-class AnimationMarkerEdit : public Control {
-	GDCLASS(AnimationMarkerEdit, Control);
+class AnimationMarkerEdit : public Controle {
+	GDCLASS(AnimationMarkerEdit, Controle);
 	friend class AnimationTimelineEdit;
 
 	enum {
@@ -285,7 +285,7 @@ class AnimationMarkerEdit : public Control {
 	};
 
 	AnimationTimelineEdit *timeline = nullptr;
-	Control *play_position = nullptr; // Separate control used to draw so updates for only position changed are much faster.
+	Controle *play_position = nullptr; // Separate control used to draw so updates for only position changed are much faster.
 	float play_position_pos = 0.0f;
 
 	HashSet<StringName> selection;
@@ -356,7 +356,7 @@ class AnimationMarkerEdit : public Control {
 
 	AnimationTrackEditor *editor = nullptr;
 
-	HBoxContainer *_create_hbox_labeled_control(const String &p_text, Control *p_control) const;
+	HBoxContainer *_create_hbox_labeled_control(const String &p_text, Controle *p_control) const;
 
 	void _update_key_edit();
 	void _clear_key_edit();
@@ -407,8 +407,8 @@ public:
 	~AnimationMarkerEdit();
 };
 
-class AnimationTrackEdit : public Control {
-	GDCLASS(AnimationTrackEdit, Control);
+class AnimationTrackEdit : public Controle {
+	GDCLASS(AnimationTrackEdit, Controle);
 	friend class AnimationTimelineEdit;
 
 	enum {
@@ -437,7 +437,7 @@ class AnimationTrackEdit : public Control {
 	Popup *path_popup = nullptr;
 	LineEdit *path = nullptr;
 	Node *root = nullptr;
-	Control *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
+	Controle *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
 	float play_position_pos = 0.0f;
 	NodePath node_path;
 
@@ -548,8 +548,8 @@ class AnimationTrackKeyEdit;
 class AnimationMultiTrackKeyEdit;
 class AnimationBezierTrackEdit;
 
-class AnimationTrackEditGroup : public Control {
-	GDCLASS(AnimationTrackEditGroup, Control);
+class AnimationTrackEditGroup : public Controle {
+	GDCLASS(AnimationTrackEditGroup, Controle);
 	Ref<Texture2D> icon;
 	Vector2 icon_size;
 	String node_name;
@@ -737,9 +737,9 @@ class AnimationTrackEditor : public VBoxContainer {
 	void _update_key_edit();
 	void _clear_key_edit();
 
-	Control *box_selection_container = nullptr;
+	Controle *box_selection_container = nullptr;
 
-	Control *box_selection = nullptr;
+	Controle *box_selection = nullptr;
 	void _box_selection_draw();
 	bool box_selecting = false;
 	Vector2 box_selecting_from;

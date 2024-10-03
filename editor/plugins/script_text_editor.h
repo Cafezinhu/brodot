@@ -202,9 +202,9 @@ protected:
 
 	void _convert_case(CodeTextEditor::CaseStyle p_case);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	String _get_absolute_path(const String &rel_path);
 
@@ -218,7 +218,7 @@ public:
 	virtual void apply_code() override;
 	virtual Ref<Resource> get_edited_resource() const override;
 	virtual void set_edited_resource(const Ref<Resource> &p_res) override;
-	virtual void enable_editor(Control *p_shortcut_context = nullptr) override;
+	virtual void enable_editor(Controle *p_shortcut_context = nullptr) override;
 	virtual Vector<String> get_functions() override;
 	virtual void reload_text() override;
 	virtual String get_name() override;
@@ -254,13 +254,13 @@ public:
 
 	virtual void set_debugger_active(bool p_active) override;
 
-	Control *get_edit_menu() override;
+	Controle *get_edit_menu() override;
 	virtual void clear_edit_menu() override;
 	virtual void set_find_replace_bar(FindReplaceBar *p_bar) override;
 
 	static void register_editor();
 
-	virtual Control *get_base_editor() const override;
+	virtual Controle *get_base_editor() const override;
 	virtual CodeTextEditor *get_code_editor() const override;
 
 	virtual void validate() override;

@@ -3524,7 +3524,7 @@ static inline const char* string_VkDriverId(VkDriverId input_value) {
             return "Unhandled VkDriverId";
     }
 }
-static inline const char* string_VkShaderFloatControlsIndependence(VkShaderFloatControlsIndependence input_value) {
+static inline const char* string_VkShaderFloatControlesIndependence(VkShaderFloatControlesIndependence input_value) {
     switch (input_value) {
         case VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY:
             return "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY";
@@ -3533,7 +3533,7 @@ static inline const char* string_VkShaderFloatControlsIndependence(VkShaderFloat
         case VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE:
             return "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE";
         default:
-            return "Unhandled VkShaderFloatControlsIndependence";
+            return "Unhandled VkShaderFloatControlesIndependence";
     }
 }
 static inline const char* string_VkSamplerReductionMode(VkSamplerReductionMode input_value) {
@@ -6412,28 +6412,28 @@ static inline std::string string_VkCommandBufferUsageFlags(VkCommandBufferUsageF
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkQueryControlFlagBits(VkQueryControlFlagBits input_value) {
+static inline const char* string_VkQueryControleFlagBits(VkQueryControleFlagBits input_value) {
     switch (input_value) {
         case VK_QUERY_CONTROL_PRECISE_BIT:
             return "VK_QUERY_CONTROL_PRECISE_BIT";
         default:
-            return "Unhandled VkQueryControlFlagBits";
+            return "Unhandled VkQueryControleFlagBits";
     }
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkQueryControlFlags(VkQueryControlFlags input_value) {
+static inline std::string string_VkQueryControleFlags(VkQueryControleFlags input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkQueryControlFlagBits(static_cast<VkQueryControlFlagBits>(1U << index)));
+            ret.append(string_VkQueryControleFlagBits(static_cast<VkQueryControleFlagBits>(1U << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkQueryControlFlags(0)");
+    if (ret.empty()) ret.append("VkQueryControleFlags(0)");
     return ret;
 }
 #endif // __cplusplus
@@ -7568,7 +7568,7 @@ static inline std::string string_VkVideoSessionCreateFlagsKHR(VkVideoSessionCrea
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkVideoCodingControlFlagBitsKHR(VkVideoCodingControlFlagBitsKHR input_value) {
+static inline const char* string_VkVideoCodingControleFlagBitsKHR(VkVideoCodingControleFlagBitsKHR input_value) {
     switch (input_value) {
         case VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR:
             return "VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR";
@@ -7577,23 +7577,23 @@ static inline const char* string_VkVideoCodingControlFlagBitsKHR(VkVideoCodingCo
         case VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR:
             return "VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR";
         default:
-            return "Unhandled VkVideoCodingControlFlagBitsKHR";
+            return "Unhandled VkVideoCodingControleFlagBitsKHR";
     }
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkVideoCodingControlFlagsKHR(VkVideoCodingControlFlagsKHR input_value) {
+static inline std::string string_VkVideoCodingControleFlagsKHR(VkVideoCodingControleFlagsKHR input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkVideoCodingControlFlagBitsKHR(static_cast<VkVideoCodingControlFlagBitsKHR>(1U << index)));
+            ret.append(string_VkVideoCodingControleFlagBitsKHR(static_cast<VkVideoCodingControleFlagBitsKHR>(1U << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkVideoCodingControlFlagsKHR(0)");
+    if (ret.empty()) ret.append("VkVideoCodingControleFlagsKHR(0)");
     return ret;
 }
 #endif // __cplusplus
@@ -7759,7 +7759,7 @@ static inline std::string string_VkVideoEncodeH264StdFlagsKHR(VkVideoEncodeH264S
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkVideoEncodeH264RateControlFlagBitsKHR(VkVideoEncodeH264RateControlFlagBitsKHR input_value) {
+static inline const char* string_VkVideoEncodeH264RateControleFlagBitsKHR(VkVideoEncodeH264RateControleFlagBitsKHR input_value) {
     switch (input_value) {
         case VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR:
             return "VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR";
@@ -7772,23 +7772,23 @@ static inline const char* string_VkVideoEncodeH264RateControlFlagBitsKHR(VkVideo
         case VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR:
             return "VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR";
         default:
-            return "Unhandled VkVideoEncodeH264RateControlFlagBitsKHR";
+            return "Unhandled VkVideoEncodeH264RateControleFlagBitsKHR";
     }
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkVideoEncodeH264RateControlFlagsKHR(VkVideoEncodeH264RateControlFlagsKHR input_value) {
+static inline std::string string_VkVideoEncodeH264RateControleFlagsKHR(VkVideoEncodeH264RateControleFlagsKHR input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkVideoEncodeH264RateControlFlagBitsKHR(static_cast<VkVideoEncodeH264RateControlFlagBitsKHR>(1U << index)));
+            ret.append(string_VkVideoEncodeH264RateControleFlagBitsKHR(static_cast<VkVideoEncodeH264RateControleFlagBitsKHR>(1U << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkVideoEncodeH264RateControlFlagsKHR(0)");
+    if (ret.empty()) ret.append("VkVideoEncodeH264RateControleFlagsKHR(0)");
     return ret;
 }
 #endif // __cplusplus
@@ -7960,7 +7960,7 @@ static inline std::string string_VkVideoEncodeH265TransformBlockSizeFlagsKHR(VkV
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkVideoEncodeH265RateControlFlagBitsKHR(VkVideoEncodeH265RateControlFlagBitsKHR input_value) {
+static inline const char* string_VkVideoEncodeH265RateControleFlagBitsKHR(VkVideoEncodeH265RateControleFlagBitsKHR input_value) {
     switch (input_value) {
         case VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR:
             return "VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR";
@@ -7973,23 +7973,23 @@ static inline const char* string_VkVideoEncodeH265RateControlFlagBitsKHR(VkVideo
         case VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR:
             return "VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR";
         default:
-            return "Unhandled VkVideoEncodeH265RateControlFlagBitsKHR";
+            return "Unhandled VkVideoEncodeH265RateControleFlagBitsKHR";
     }
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkVideoEncodeH265RateControlFlagsKHR(VkVideoEncodeH265RateControlFlagsKHR input_value) {
+static inline std::string string_VkVideoEncodeH265RateControleFlagsKHR(VkVideoEncodeH265RateControleFlagsKHR input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkVideoEncodeH265RateControlFlagBitsKHR(static_cast<VkVideoEncodeH265RateControlFlagBitsKHR>(1U << index)));
+            ret.append(string_VkVideoEncodeH265RateControleFlagBitsKHR(static_cast<VkVideoEncodeH265RateControleFlagBitsKHR>(1U << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkVideoEncodeH265RateControlFlagsKHR(0)");
+    if (ret.empty()) ret.append("VkVideoEncodeH265RateControleFlagsKHR(0)");
     return ret;
 }
 #endif // __cplusplus
@@ -8101,7 +8101,7 @@ static inline std::string string_VkVideoEncodeCapabilityFlagsKHR(VkVideoEncodeCa
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkVideoEncodeRateControlModeFlagBitsKHR(VkVideoEncodeRateControlModeFlagBitsKHR input_value) {
+static inline const char* string_VkVideoEncodeRateControleModeFlagBitsKHR(VkVideoEncodeRateControleModeFlagBitsKHR input_value) {
     switch (input_value) {
         case VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR:
             return "VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR";
@@ -8112,23 +8112,23 @@ static inline const char* string_VkVideoEncodeRateControlModeFlagBitsKHR(VkVideo
         case VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR:
             return "VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR";
         default:
-            return "Unhandled VkVideoEncodeRateControlModeFlagBitsKHR";
+            return "Unhandled VkVideoEncodeRateControleModeFlagBitsKHR";
     }
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkVideoEncodeRateControlModeFlagsKHR(VkVideoEncodeRateControlModeFlagsKHR input_value) {
+static inline std::string string_VkVideoEncodeRateControleModeFlagsKHR(VkVideoEncodeRateControleModeFlagsKHR input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkVideoEncodeRateControlModeFlagBitsKHR(static_cast<VkVideoEncodeRateControlModeFlagBitsKHR>(1U << index)));
+            ret.append(string_VkVideoEncodeRateControleModeFlagBitsKHR(static_cast<VkVideoEncodeRateControleModeFlagBitsKHR>(1U << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkVideoEncodeRateControlModeFlagsKHR(0)");
+    if (ret.empty()) ret.append("VkVideoEncodeRateControleModeFlagsKHR(0)");
     return ret;
 }
 #endif // __cplusplus
@@ -9116,24 +9116,24 @@ static inline std::string string_VkMicromapCreateFlagsEXT(VkMicromapCreateFlagsE
     return ret;
 }
 #endif // __cplusplus
-static inline const char* string_VkPhysicalDeviceSchedulingControlsFlagBitsARM(uint64_t input_value) {
+static inline const char* string_VkPhysicalDeviceSchedulingControlesFlagBitsARM(uint64_t input_value) {
     if (input_value == VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM) return "VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM";
-    return "Unhandled VkPhysicalDeviceSchedulingControlsFlagBitsARM";
+    return "Unhandled VkPhysicalDeviceSchedulingControlesFlagBitsARM";
 }
 
 #ifdef __cplusplus
-static inline std::string string_VkPhysicalDeviceSchedulingControlsFlagsARM(VkPhysicalDeviceSchedulingControlsFlagsARM input_value) {
+static inline std::string string_VkPhysicalDeviceSchedulingControlesFlagsARM(VkPhysicalDeviceSchedulingControlesFlagsARM input_value) {
     std::string ret;
     int index = 0;
     while(input_value) {
         if (input_value & 1) {
             if( !ret.empty()) ret.append("|");
-            ret.append(string_VkPhysicalDeviceSchedulingControlsFlagBitsARM(static_cast<uint64_t>(1ULL << index)));
+            ret.append(string_VkPhysicalDeviceSchedulingControlesFlagBitsARM(static_cast<uint64_t>(1ULL << index)));
         }
         ++index;
         input_value >>= 1;
     }
-    if (ret.empty()) ret.append("VkPhysicalDeviceSchedulingControlsFlagsARM(0)");
+    if (ret.empty()) ret.append("VkPhysicalDeviceSchedulingControlesFlagsARM(0)");
     return ret;
 }
 #endif // __cplusplus

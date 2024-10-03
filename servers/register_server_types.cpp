@@ -311,7 +311,7 @@ void register_server_types() {
 	GDREGISTER_ABSTRACT_CLASS(XRInterface);
 	GDREGISTER_CLASS(XRVRS);
 	GDREGISTER_CLASS(XRBodyTracker);
-	GDREGISTER_CLASS(XRControllerTracker);
+	GDREGISTER_CLASS(XRControlelerTracker);
 	GDREGISTER_CLASS(XRFaceTracker);
 	GDREGISTER_CLASS(XRHandTracker);
 	GDREGISTER_CLASS(XRInterfaceExtension); // can't register this as virtual because we need a creation function for our extensions.

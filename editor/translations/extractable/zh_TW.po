@@ -248,10 +248,10 @@ msgstr "重做"
 msgid "Text Writing Direction"
 msgstr "文字書寫方向"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "顯示控制字元"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "插入控制字元"
 
 msgid "(Other)"

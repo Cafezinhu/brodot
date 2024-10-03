@@ -61,7 +61,7 @@ protected:
 	static void _bind_methods();
 
 public:
-	Control *add_spacer(bool p_begin = false);
+	Controle *add_spacer(bool p_begin = false);
 
 	void set_alignment(AlignmentMode p_alignment);
 	AlignmentMode get_alignment() const;
@@ -90,7 +90,7 @@ class VBoxContainer : public BoxContainer {
 	GDCLASS(VBoxContainer, BoxContainer);
 
 public:
-	MarginContainer *add_margin_child(const String &p_label, Control *p_control, bool p_expand = false);
+	MarginContainer *add_margin_child(const String &p_label, Controle *p_control, bool p_expand = false);
 
 	VBoxContainer() :
 			BoxContainer(true) { is_fixed = true; }

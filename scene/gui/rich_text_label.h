@@ -40,8 +40,8 @@
 class CharFXTransform;
 class RichTextEffect;
 
-class RichTextLabel : public Control {
-	GDCLASS(RichTextLabel, Control);
+class RichTextLabel : public Controle {
+	GDCLASS(RichTextLabel, Controle);
 
 	enum RTLDrawStep {
 		DRAW_STEP_BACKGROUND,
@@ -307,7 +307,7 @@ private:
 	struct ItemParagraph : public Item {
 		HorizontalAlignment alignment = HORIZONTAL_ALIGNMENT_LEFT;
 		String language;
-		Control::TextDirection direction = Control::TEXT_DIRECTION_AUTO;
+		Controle::TextDirection direction = Controle::TEXT_DIRECTION_AUTO;
 		TextServer::StructuredTextParser st_parser = TextServer::STRUCTURED_TEXT_DEFAULT;
 		BitField<TextServer::JustificationFlag> jst_flags = TextServer::JUSTIFICATION_WORD_BOUND | TextServer::JUSTIFICATION_KASHIDA | TextServer::JUSTIFICATION_SKIP_LAST_LINE | TextServer::JUSTIFICATION_DO_NOT_SKIP_SINGLE_LINE;
 		PackedFloat32Array tab_stops;
@@ -695,7 +695,7 @@ public:
 	void push_underline();
 	void push_strikethrough();
 	void push_language(const String &p_language);
-	void push_paragraph(HorizontalAlignment p_alignment, Control::TextDirection p_direction = Control::TEXT_DIRECTION_INHERITED, const String &p_language = "", TextServer::StructuredTextParser p_st_parser = TextServer::STRUCTURED_TEXT_DEFAULT, BitField<TextServer::JustificationFlag> p_jst_flags = TextServer::JUSTIFICATION_WORD_BOUND | TextServer::JUSTIFICATION_KASHIDA | TextServer::JUSTIFICATION_SKIP_LAST_LINE | TextServer::JUSTIFICATION_DO_NOT_SKIP_SINGLE_LINE, const PackedFloat32Array &p_tab_stops = PackedFloat32Array());
+	void push_paragraph(HorizontalAlignment p_alignment, Controle::TextDirection p_direction = Controle::TEXT_DIRECTION_INHERITED, const String &p_language = "", TextServer::StructuredTextParser p_st_parser = TextServer::STRUCTURED_TEXT_DEFAULT, BitField<TextServer::JustificationFlag> p_jst_flags = TextServer::JUSTIFICATION_WORD_BOUND | TextServer::JUSTIFICATION_KASHIDA | TextServer::JUSTIFICATION_SKIP_LAST_LINE | TextServer::JUSTIFICATION_DO_NOT_SKIP_SINGLE_LINE, const PackedFloat32Array &p_tab_stops = PackedFloat32Array());
 	void push_indent(int p_level);
 	void push_list(int p_level, ListType p_list, bool p_capitalize, const String &p_bullet = String::utf8("•"));
 	void push_meta(const Variant &p_meta, MetaUnderline p_underline_mode = META_UNDERLINE_ALWAYS);

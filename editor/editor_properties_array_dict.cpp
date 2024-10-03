@@ -284,7 +284,7 @@ void EditorPropertyArray::_create_new_property_slot() {
 
 	Button *reorder_button = memnew(Button);
 	reorder_button->set_icon(get_editor_theme_icon(SNAME("TripleBar")));
-	reorder_button->set_default_cursor_shape(Control::CURSOR_MOVE);
+	reorder_button->set_default_cursor_shape(Controle::CURSOR_MOVE);
 	reorder_button->set_disabled(is_read_only());
 	reorder_button->connect(SceneStringName(gui_input), callable_mp(this, &EditorPropertyArray::_reorder_button_gui_input));
 	reorder_button->connect(SNAME("button_up"), callable_mp(this, &EditorPropertyArray::_reorder_button_up));
@@ -577,11 +577,11 @@ bool EditorPropertyArray::_is_drop_valid(const Dictionary &p_drag_data) const {
 	return false;
 }
 
-bool EditorPropertyArray::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorPropertyArray::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	return _is_drop_valid(p_data);
 }
 
-void EditorPropertyArray::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorPropertyArray::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	ERR_FAIL_COND(!_is_drop_valid(p_data));
 
 	Dictionary drag_data = p_data;
@@ -801,7 +801,7 @@ void EditorPropertyArray::_reorder_button_down(int p_slot_index) {
 	reorder_slot = slots[p_slot_index];
 	reorder_to_index = reorder_slot.index;
 	// Ideally it'd to be able to show the mouse but I had issues with
-	// Control's `mouse_exit()`/`mouse_entered()` signals not getting called.
+	// Controle's `mouse_exit()`/`mouse_entered()` signals not getting called.
 	Input::get_singleton()->set_mouse_mode(Input::MOUSE_MODE_CAPTURED);
 }
 

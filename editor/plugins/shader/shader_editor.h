@@ -34,8 +34,8 @@
 #include "scene/gui/control.h"
 #include "scene/resources/shader.h"
 
-class ShaderEditor : public Control {
-	GDCLASS(ShaderEditor, Control);
+class ShaderEditor : public Controle {
+	GDCLASS(ShaderEditor, Controle);
 
 public:
 	virtual void edit_shader(const Ref<Shader> &p_shader) = 0;

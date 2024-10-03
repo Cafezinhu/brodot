@@ -45,8 +45,8 @@ class SplitContainer;
 class EditorFileDialog;
 class EditorInspectorPlugin;
 
-class TileSetEditor : public Control {
-	GDCLASS(TileSetEditor, Control);
+class TileSetEditor : public Controle {
+	GDCLASS(TileSetEditor, Controle);
 
 	static TileSetEditor *singleton;
 
@@ -66,8 +66,8 @@ private:
 	TileSetAtlasSourceEditor *tile_set_atlas_source_editor = nullptr;
 	TileSetScenesCollectionSourceEditor *tile_set_scenes_collection_source_editor = nullptr;
 
-	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
-	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
+	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
+	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
 	void _load_texture_files(const Vector<String> &p_paths);
 
 	void _update_sources_list(int force_selected_id = -1);
@@ -101,7 +101,7 @@ private:
 
 	// Expanded editor.
 	PanelContainer *expanded_area = nullptr;
-	Control *expanded_editor = nullptr;
+	Controle *expanded_editor = nullptr;
 	ObjectID expanded_editor_parent;
 	LocalVector<SplitContainer *> disable_on_expand;
 
@@ -119,7 +119,7 @@ public:
 
 	void edit(Ref<TileSet> p_tile_set);
 
-	void add_expanded_editor(Control *p_editor);
+	void add_expanded_editor(Controle *p_editor);
 	void remove_expanded_editor();
 	void register_split(SplitContainer *p_split);
 

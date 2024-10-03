@@ -42,8 +42,8 @@ class AcceptDialog;
 class InputEventConfigurationDialog;
 class Tree;
 
-class ActionMapEditor : public Control {
-	GDCLASS(ActionMapEditor, Control);
+class ActionMapEditor : public Controle {
+	GDCLASS(ActionMapEditor, Controle);
 
 public:
 	struct ActionInfo {
@@ -106,9 +106,9 @@ private:
 	void _search_by_event(const Ref<InputEvent> &p_event);
 	bool _should_display_action(const String &p_name, const Array &p_events) const;
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _on_filter_focused();
 	void _on_filter_unfocused();

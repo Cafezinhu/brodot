@@ -32,8 +32,8 @@
 
 #include "core/input/input.h"
 
-void XRControllerTracker::_bind_methods() {}
+void XRControlelerTracker::_bind_methods() {}
 
-XRControllerTracker::XRControllerTracker() {
+XRControlelerTracker::XRControlelerTracker() {
 	type = XRServer::TRACKER_CONTROLLER;
 }

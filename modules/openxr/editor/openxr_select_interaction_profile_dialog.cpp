@@ -112,7 +112,7 @@ OpenXRSelectInteractionProfileDialog::OpenXRSelectInteractionProfileDialog() {
 	add_child(scroll);
 
 	main_vb = memnew(VBoxContainer);
-	main_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	main_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	scroll->add_child(main_vb);
 
 	all_selected = memnew(Label);

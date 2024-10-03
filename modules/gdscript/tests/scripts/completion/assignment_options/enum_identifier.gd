@@ -1,4 +1,4 @@
-extends Control
+extends Controle
 
 var contro_var
 

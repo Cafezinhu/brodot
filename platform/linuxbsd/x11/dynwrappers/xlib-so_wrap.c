@@ -131,9 +131,9 @@
 #define XCellsOfScreen XCellsOfScreen_dylibloader_orig_xlib
 #define XChangeActivePointerGrab XChangeActivePointerGrab_dylibloader_orig_xlib
 #define XChangeGC XChangeGC_dylibloader_orig_xlib
-#define XChangeKeyboardControl XChangeKeyboardControl_dylibloader_orig_xlib
+#define XChangeKeyboardControle XChangeKeyboardControle_dylibloader_orig_xlib
 #define XChangeKeyboardMapping XChangeKeyboardMapping_dylibloader_orig_xlib
-#define XChangePointerControl XChangePointerControl_dylibloader_orig_xlib
+#define XChangePointerControle XChangePointerControle_dylibloader_orig_xlib
 #define XChangeProperty XChangeProperty_dylibloader_orig_xlib
 #define XChangeSaveSet XChangeSaveSet_dylibloader_orig_xlib
 #define XChangeWindowAttributes XChangeWindowAttributes_dylibloader_orig_xlib
@@ -163,7 +163,7 @@
 #define XDestroySubwindows XDestroySubwindows_dylibloader_orig_xlib
 #define XDoesBackingStore XDoesBackingStore_dylibloader_orig_xlib
 #define XDoesSaveUnders XDoesSaveUnders_dylibloader_orig_xlib
-#define XDisableAccessControl XDisableAccessControl_dylibloader_orig_xlib
+#define XDisableAccessControle XDisableAccessControle_dylibloader_orig_xlib
 #define XDisplayCells XDisplayCells_dylibloader_orig_xlib
 #define XDisplayHeight XDisplayHeight_dylibloader_orig_xlib
 #define XDisplayHeightMM XDisplayHeightMM_dylibloader_orig_xlib
@@ -186,7 +186,7 @@
 #define XDrawString16 XDrawString16_dylibloader_orig_xlib
 #define XDrawText XDrawText_dylibloader_orig_xlib
 #define XDrawText16 XDrawText16_dylibloader_orig_xlib
-#define XEnableAccessControl XEnableAccessControl_dylibloader_orig_xlib
+#define XEnableAccessControle XEnableAccessControle_dylibloader_orig_xlib
 #define XEventsQueued XEventsQueued_dylibloader_orig_xlib
 #define XFetchName XFetchName_dylibloader_orig_xlib
 #define XFillArc XFillArc_dylibloader_orig_xlib
@@ -216,8 +216,8 @@
 #define XGetGeometry XGetGeometry_dylibloader_orig_xlib
 #define XGetIconName XGetIconName_dylibloader_orig_xlib
 #define XGetInputFocus XGetInputFocus_dylibloader_orig_xlib
-#define XGetKeyboardControl XGetKeyboardControl_dylibloader_orig_xlib
-#define XGetPointerControl XGetPointerControl_dylibloader_orig_xlib
+#define XGetKeyboardControle XGetKeyboardControle_dylibloader_orig_xlib
+#define XGetPointerControle XGetPointerControle_dylibloader_orig_xlib
 #define XGetPointerMapping XGetPointerMapping_dylibloader_orig_xlib
 #define XGetScreenSaver XGetScreenSaver_dylibloader_orig_xlib
 #define XGetTransientForHint XGetTransientForHint_dylibloader_orig_xlib
@@ -288,7 +288,7 @@
 #define XScreenCount XScreenCount_dylibloader_orig_xlib
 #define XSelectInput XSelectInput_dylibloader_orig_xlib
 #define XSendEvent XSendEvent_dylibloader_orig_xlib
-#define XSetAccessControl XSetAccessControl_dylibloader_orig_xlib
+#define XSetAccessControle XSetAccessControle_dylibloader_orig_xlib
 #define XSetArcMode XSetArcMode_dylibloader_orig_xlib
 #define XSetBackground XSetBackground_dylibloader_orig_xlib
 #define XSetClipMask XSetClipMask_dylibloader_orig_xlib
@@ -499,9 +499,9 @@
 #define XkbQueryExtension XkbQueryExtension_dylibloader_orig_xlib
 #define XkbUseExtension XkbUseExtension_dylibloader_orig_xlib
 #define XkbLibraryVersion XkbLibraryVersion_dylibloader_orig_xlib
-#define XkbSetXlibControls XkbSetXlibControls_dylibloader_orig_xlib
-#define XkbGetXlibControls XkbGetXlibControls_dylibloader_orig_xlib
-#define XkbXlibControlsImplemented XkbXlibControlsImplemented_dylibloader_orig_xlib
+#define XkbSetXlibControles XkbSetXlibControles_dylibloader_orig_xlib
+#define XkbGetXlibControles XkbGetXlibControles_dylibloader_orig_xlib
+#define XkbXlibControlesImplemented XkbXlibControlesImplemented_dylibloader_orig_xlib
 #define XkbSetAtomFuncs XkbSetAtomFuncs_dylibloader_orig_xlib
 #define XkbKeycodeToKeysym XkbKeycodeToKeysym_dylibloader_orig_xlib
 #define XkbKeysymToModifiers XkbKeysymToModifiers_dylibloader_orig_xlib
@@ -511,7 +511,7 @@
 #define XkbTranslateKeySym XkbTranslateKeySym_dylibloader_orig_xlib
 #define XkbSetAutoRepeatRate XkbSetAutoRepeatRate_dylibloader_orig_xlib
 #define XkbGetAutoRepeatRate XkbGetAutoRepeatRate_dylibloader_orig_xlib
-#define XkbChangeEnabledControls XkbChangeEnabledControls_dylibloader_orig_xlib
+#define XkbChangeEnabledControles XkbChangeEnabledControles_dylibloader_orig_xlib
 #define XkbDeviceBell XkbDeviceBell_dylibloader_orig_xlib
 #define XkbForceDeviceBell XkbForceDeviceBell_dylibloader_orig_xlib
 #define XkbDeviceBellEvent XkbDeviceBellEvent_dylibloader_orig_xlib
@@ -559,11 +559,11 @@
 #define XkbGetKeyExplicitComponents XkbGetKeyExplicitComponents_dylibloader_orig_xlib
 #define XkbGetKeyModifierMap XkbGetKeyModifierMap_dylibloader_orig_xlib
 #define XkbGetKeyVirtualModMap XkbGetKeyVirtualModMap_dylibloader_orig_xlib
-#define XkbAllocControls XkbAllocControls_dylibloader_orig_xlib
-#define XkbFreeControls XkbFreeControls_dylibloader_orig_xlib
-#define XkbGetControls XkbGetControls_dylibloader_orig_xlib
-#define XkbSetControls XkbSetControls_dylibloader_orig_xlib
-#define XkbNoteControlsChanges XkbNoteControlsChanges_dylibloader_orig_xlib
+#define XkbAllocControles XkbAllocControles_dylibloader_orig_xlib
+#define XkbFreeControles XkbFreeControles_dylibloader_orig_xlib
+#define XkbGetControles XkbGetControles_dylibloader_orig_xlib
+#define XkbSetControles XkbSetControles_dylibloader_orig_xlib
+#define XkbNoteControlesChanges XkbNoteControlesChanges_dylibloader_orig_xlib
 #define XkbAllocCompatMap XkbAllocCompatMap_dylibloader_orig_xlib
 #define XkbFreeCompatMap XkbFreeCompatMap_dylibloader_orig_xlib
 #define XkbGetCompatMap XkbGetCompatMap_dylibloader_orig_xlib
@@ -578,10 +578,10 @@
 #define XkbChangeMap XkbChangeMap_dylibloader_orig_xlib
 #define XkbSetDetectableAutoRepeat XkbSetDetectableAutoRepeat_dylibloader_orig_xlib
 #define XkbGetDetectableAutoRepeat XkbGetDetectableAutoRepeat_dylibloader_orig_xlib
-#define XkbSetAutoResetControls XkbSetAutoResetControls_dylibloader_orig_xlib
-#define XkbGetAutoResetControls XkbGetAutoResetControls_dylibloader_orig_xlib
-#define XkbSetPerClientControls XkbSetPerClientControls_dylibloader_orig_xlib
-#define XkbGetPerClientControls XkbGetPerClientControls_dylibloader_orig_xlib
+#define XkbSetAutoResetControles XkbSetAutoResetControles_dylibloader_orig_xlib
+#define XkbGetAutoResetControles XkbGetAutoResetControles_dylibloader_orig_xlib
+#define XkbSetPerClientControles XkbSetPerClientControles_dylibloader_orig_xlib
+#define XkbGetPerClientControles XkbGetPerClientControles_dylibloader_orig_xlib
 #define XkbCopyKeyType XkbCopyKeyType_dylibloader_orig_xlib
 #define XkbCopyKeyTypes XkbCopyKeyTypes_dylibloader_orig_xlib
 #define XkbResizeKeyType XkbResizeKeyType_dylibloader_orig_xlib
@@ -609,7 +609,7 @@
 #define XkbChangeDeviceInfo XkbChangeDeviceInfo_dylibloader_orig_xlib
 #define XkbSetDeviceLedInfo XkbSetDeviceLedInfo_dylibloader_orig_xlib
 #define XkbSetDeviceButtonActions XkbSetDeviceButtonActions_dylibloader_orig_xlib
-#define XkbToControl XkbToControl_dylibloader_orig_xlib
+#define XkbToControle XkbToControle_dylibloader_orig_xlib
 #define XkbSetDebuggingFlags XkbSetDebuggingFlags_dylibloader_orig_xlib
 #define XkbApplyVirtualModChanges XkbApplyVirtualModChanges_dylibloader_orig_xlib
 #define XkbUpdateActionVirtualMods XkbUpdateActionVirtualMods_dylibloader_orig_xlib
@@ -737,9 +737,9 @@
 #undef XCellsOfScreen
 #undef XChangeActivePointerGrab
 #undef XChangeGC
-#undef XChangeKeyboardControl
+#undef XChangeKeyboardControle
 #undef XChangeKeyboardMapping
-#undef XChangePointerControl
+#undef XChangePointerControle
 #undef XChangeProperty
 #undef XChangeSaveSet
 #undef XChangeWindowAttributes
@@ -769,7 +769,7 @@
 #undef XDestroySubwindows
 #undef XDoesBackingStore
 #undef XDoesSaveUnders
-#undef XDisableAccessControl
+#undef XDisableAccessControle
 #undef XDisplayCells
 #undef XDisplayHeight
 #undef XDisplayHeightMM
@@ -792,7 +792,7 @@
 #undef XDrawString16
 #undef XDrawText
 #undef XDrawText16
-#undef XEnableAccessControl
+#undef XEnableAccessControle
 #undef XEventsQueued
 #undef XFetchName
 #undef XFillArc
@@ -822,8 +822,8 @@
 #undef XGetGeometry
 #undef XGetIconName
 #undef XGetInputFocus
-#undef XGetKeyboardControl
-#undef XGetPointerControl
+#undef XGetKeyboardControle
+#undef XGetPointerControle
 #undef XGetPointerMapping
 #undef XGetScreenSaver
 #undef XGetTransientForHint
@@ -894,7 +894,7 @@
 #undef XScreenCount
 #undef XSelectInput
 #undef XSendEvent
-#undef XSetAccessControl
+#undef XSetAccessControle
 #undef XSetArcMode
 #undef XSetBackground
 #undef XSetClipMask
@@ -1105,9 +1105,9 @@
 #undef XkbQueryExtension
 #undef XkbUseExtension
 #undef XkbLibraryVersion
-#undef XkbSetXlibControls
-#undef XkbGetXlibControls
-#undef XkbXlibControlsImplemented
+#undef XkbSetXlibControles
+#undef XkbGetXlibControles
+#undef XkbXlibControlesImplemented
 #undef XkbSetAtomFuncs
 #undef XkbKeycodeToKeysym
 #undef XkbKeysymToModifiers
@@ -1117,7 +1117,7 @@
 #undef XkbTranslateKeySym
 #undef XkbSetAutoRepeatRate
 #undef XkbGetAutoRepeatRate
-#undef XkbChangeEnabledControls
+#undef XkbChangeEnabledControles
 #undef XkbDeviceBell
 #undef XkbForceDeviceBell
 #undef XkbDeviceBellEvent
@@ -1165,11 +1165,11 @@
 #undef XkbGetKeyExplicitComponents
 #undef XkbGetKeyModifierMap
 #undef XkbGetKeyVirtualModMap
-#undef XkbAllocControls
-#undef XkbFreeControls
-#undef XkbGetControls
-#undef XkbSetControls
-#undef XkbNoteControlsChanges
+#undef XkbAllocControles
+#undef XkbFreeControles
+#undef XkbGetControles
+#undef XkbSetControles
+#undef XkbNoteControlesChanges
 #undef XkbAllocCompatMap
 #undef XkbFreeCompatMap
 #undef XkbGetCompatMap
@@ -1184,10 +1184,10 @@
 #undef XkbChangeMap
 #undef XkbSetDetectableAutoRepeat
 #undef XkbGetDetectableAutoRepeat
-#undef XkbSetAutoResetControls
-#undef XkbGetAutoResetControls
-#undef XkbSetPerClientControls
-#undef XkbGetPerClientControls
+#undef XkbSetAutoResetControles
+#undef XkbGetAutoResetControles
+#undef XkbSetPerClientControles
+#undef XkbGetPerClientControles
 #undef XkbCopyKeyType
 #undef XkbCopyKeyTypes
 #undef XkbResizeKeyType
@@ -1215,7 +1215,7 @@
 #undef XkbChangeDeviceInfo
 #undef XkbSetDeviceLedInfo
 #undef XkbSetDeviceButtonActions
-#undef XkbToControl
+#undef XkbToControle
 #undef XkbSetDebuggingFlags
 #undef XkbApplyVirtualModChanges
 #undef XkbUpdateActionVirtualMods
@@ -1342,9 +1342,9 @@ int (*XBitmapUnit_dylibloader_wrapper_xlib)( Display*);
 int (*XCellsOfScreen_dylibloader_wrapper_xlib)( Screen*);
 int (*XChangeActivePointerGrab_dylibloader_wrapper_xlib)( Display*, unsigned int, Cursor, Time);
 int (*XChangeGC_dylibloader_wrapper_xlib)( Display*, GC, unsigned long, XGCValues*);
-int (*XChangeKeyboardControl_dylibloader_wrapper_xlib)( Display*, unsigned long, XKeyboardControl*);
+int (*XChangeKeyboardControle_dylibloader_wrapper_xlib)( Display*, unsigned long, XKeyboardControle*);
 int (*XChangeKeyboardMapping_dylibloader_wrapper_xlib)( Display*, int, int, KeySym*, int);
-int (*XChangePointerControl_dylibloader_wrapper_xlib)( Display*, int, int, int, int, int);
+int (*XChangePointerControle_dylibloader_wrapper_xlib)( Display*, int, int, int, int, int);
 int (*XChangeProperty_dylibloader_wrapper_xlib)( Display*, Window, Atom, Atom, int, int,const unsigned char*, int);
 int (*XChangeSaveSet_dylibloader_wrapper_xlib)( Display*, Window, int);
 int (*XChangeWindowAttributes_dylibloader_wrapper_xlib)( Display*, Window, unsigned long, XSetWindowAttributes*);
@@ -1374,7 +1374,7 @@ int (*XDestroyWindow_dylibloader_wrapper_xlib)( Display*, Window);
 int (*XDestroySubwindows_dylibloader_wrapper_xlib)( Display*, Window);
 int (*XDoesBackingStore_dylibloader_wrapper_xlib)( Screen*);
 int (*XDoesSaveUnders_dylibloader_wrapper_xlib)( Screen*);
-int (*XDisableAccessControl_dylibloader_wrapper_xlib)( Display*);
+int (*XDisableAccessControle_dylibloader_wrapper_xlib)( Display*);
 int (*XDisplayCells_dylibloader_wrapper_xlib)( Display*, int);
 int (*XDisplayHeight_dylibloader_wrapper_xlib)( Display*, int);
 int (*XDisplayHeightMM_dylibloader_wrapper_xlib)( Display*, int);
@@ -1397,7 +1397,7 @@ int (*XDrawString_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int,co
 int (*XDrawString16_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int,const XChar2b*, int);
 int (*XDrawText_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, XTextItem*, int);
 int (*XDrawText16_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, XTextItem16*, int);
-int (*XEnableAccessControl_dylibloader_wrapper_xlib)( Display*);
+int (*XEnableAccessControle_dylibloader_wrapper_xlib)( Display*);
 int (*XEventsQueued_dylibloader_wrapper_xlib)( Display*, int);
 int (*XFetchName_dylibloader_wrapper_xlib)( Display*, Window, char**);
 int (*XFillArc_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, unsigned int, unsigned int, int, int);
@@ -1427,8 +1427,8 @@ int (*XGetGCValues_dylibloader_wrapper_xlib)( Display*, GC, unsigned long, XGCVa
 int (*XGetGeometry_dylibloader_wrapper_xlib)( Display*, Drawable, Window*, int*, int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*);
 int (*XGetIconName_dylibloader_wrapper_xlib)( Display*, Window, char**);
 int (*XGetInputFocus_dylibloader_wrapper_xlib)( Display*, Window*, int*);
-int (*XGetKeyboardControl_dylibloader_wrapper_xlib)( Display*, XKeyboardState*);
-int (*XGetPointerControl_dylibloader_wrapper_xlib)( Display*, int*, int*, int*);
+int (*XGetKeyboardControle_dylibloader_wrapper_xlib)( Display*, XKeyboardState*);
+int (*XGetPointerControle_dylibloader_wrapper_xlib)( Display*, int*, int*, int*);
 int (*XGetPointerMapping_dylibloader_wrapper_xlib)( Display*, unsigned char*, int);
 int (*XGetScreenSaver_dylibloader_wrapper_xlib)( Display*, int*, int*, int*, int*);
 int (*XGetTransientForHint_dylibloader_wrapper_xlib)( Display*, Window, Window*);
@@ -1499,7 +1499,7 @@ int (*XRotateWindowProperties_dylibloader_wrapper_xlib)( Display*, Window, Atom*
 int (*XScreenCount_dylibloader_wrapper_xlib)( Display*);
 int (*XSelectInput_dylibloader_wrapper_xlib)( Display*, Window, long);
 int (*XSendEvent_dylibloader_wrapper_xlib)( Display*, Window, int, long, XEvent*);
-int (*XSetAccessControl_dylibloader_wrapper_xlib)( Display*, int);
+int (*XSetAccessControle_dylibloader_wrapper_xlib)( Display*, int);
 int (*XSetArcMode_dylibloader_wrapper_xlib)( Display*, GC, int);
 int (*XSetBackground_dylibloader_wrapper_xlib)( Display*, GC, unsigned long);
 int (*XSetClipMask_dylibloader_wrapper_xlib)( Display*, GC, Pixmap);
@@ -1710,9 +1710,9 @@ Display* (*XkbOpenDisplay_dylibloader_wrapper_xlib)( char*, int*, int*, int*, in
 int (*XkbQueryExtension_dylibloader_wrapper_xlib)( Display*, int*, int*, int*, int*, int*);
 int (*XkbUseExtension_dylibloader_wrapper_xlib)( Display*, int*, int*);
 int (*XkbLibraryVersion_dylibloader_wrapper_xlib)( int*, int*);
-unsigned int (*XkbSetXlibControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int);
-unsigned int (*XkbGetXlibControls_dylibloader_wrapper_xlib)( Display*);
-unsigned int (*XkbXlibControlsImplemented_dylibloader_wrapper_xlib)( void);
+unsigned int (*XkbSetXlibControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int);
+unsigned int (*XkbGetXlibControles_dylibloader_wrapper_xlib)( Display*);
+unsigned int (*XkbXlibControlesImplemented_dylibloader_wrapper_xlib)( void);
 void (*XkbSetAtomFuncs_dylibloader_wrapper_xlib)( XkbInternAtomFunc, XkbGetAtomNameFunc);
 KeySym (*XkbKeycodeToKeysym_dylibloader_wrapper_xlib)( Display*, KeyCode, int, int);
 unsigned int (*XkbKeysymToModifiers_dylibloader_wrapper_xlib)( Display*, KeySym);
@@ -1722,7 +1722,7 @@ int (*XkbTranslateKeyCode_dylibloader_wrapper_xlib)( XkbDescPtr, KeyCode, unsign
 int (*XkbTranslateKeySym_dylibloader_wrapper_xlib)( Display*, KeySym*, unsigned int, char*, int, int*);
 int (*XkbSetAutoRepeatRate_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
 int (*XkbGetAutoRepeatRate_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
-int (*XkbChangeEnabledControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
+int (*XkbChangeEnabledControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
 int (*XkbDeviceBell_dylibloader_wrapper_xlib)( Display*, Window, int, int, int, int, Atom);
 int (*XkbForceDeviceBell_dylibloader_wrapper_xlib)( Display*, int, int, int, int);
 int (*XkbDeviceBellEvent_dylibloader_wrapper_xlib)( Display*, Window, int, int, int, int, Atom);
@@ -1770,11 +1770,11 @@ int (*XkbGetVirtualMods_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDe
 int (*XkbGetKeyExplicitComponents_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
 int (*XkbGetKeyModifierMap_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
 int (*XkbGetKeyVirtualModMap_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
-int (*XkbAllocControls_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int);
-void (*XkbFreeControls_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
-int (*XkbGetControls_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
-int (*XkbSetControls_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
-void (*XkbNoteControlsChanges_dylibloader_wrapper_xlib)( XkbControlsChangesPtr, XkbControlsNotifyEvent*, unsigned int);
+int (*XkbAllocControles_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int);
+void (*XkbFreeControles_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
+int (*XkbGetControles_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
+int (*XkbSetControles_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
+void (*XkbNoteControlesChanges_dylibloader_wrapper_xlib)( XkbControlesChangesPtr, XkbControlesNotifyEvent*, unsigned int);
 int (*XkbAllocCompatMap_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, unsigned int);
 void (*XkbFreeCompatMap_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
 int (*XkbGetCompatMap_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDescPtr);
@@ -1789,10 +1789,10 @@ int (*XkbSetMap_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDescPtr);
 int (*XkbChangeMap_dylibloader_wrapper_xlib)( Display*, XkbDescPtr, XkbMapChangesPtr);
 int (*XkbSetDetectableAutoRepeat_dylibloader_wrapper_xlib)( Display*, int, int*);
 int (*XkbGetDetectableAutoRepeat_dylibloader_wrapper_xlib)( Display*, int*);
-int (*XkbSetAutoResetControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
-int (*XkbGetAutoResetControls_dylibloader_wrapper_xlib)( Display*, unsigned int*, unsigned int*);
-int (*XkbSetPerClientControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*);
-int (*XkbGetPerClientControls_dylibloader_wrapper_xlib)( Display*, unsigned int*);
+int (*XkbSetAutoResetControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
+int (*XkbGetAutoResetControles_dylibloader_wrapper_xlib)( Display*, unsigned int*, unsigned int*);
+int (*XkbSetPerClientControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*);
+int (*XkbGetPerClientControles_dylibloader_wrapper_xlib)( Display*, unsigned int*);
 int (*XkbCopyKeyType_dylibloader_wrapper_xlib)( XkbKeyTypePtr, XkbKeyTypePtr);
 int (*XkbCopyKeyTypes_dylibloader_wrapper_xlib)( XkbKeyTypePtr, XkbKeyTypePtr, int);
 int (*XkbResizeKeyType_dylibloader_wrapper_xlib)( XkbDescPtr, int, int, int, int);
@@ -1820,7 +1820,7 @@ int (*XkbSetDeviceInfo_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDev
 int (*XkbChangeDeviceInfo_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, XkbDeviceChangesPtr);
 int (*XkbSetDeviceLedInfo_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, unsigned int, unsigned int, unsigned int);
 int (*XkbSetDeviceButtonActions_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, unsigned int, unsigned int);
-char (*XkbToControl_dylibloader_wrapper_xlib)( char);
+char (*XkbToControle_dylibloader_wrapper_xlib)( char);
 int (*XkbSetDebuggingFlags_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, char*, unsigned int, unsigned int, unsigned int*, unsigned int*);
 int (*XkbApplyVirtualModChanges_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, XkbChangesPtr);
 int (*XkbUpdateActionVirtualMods_dylibloader_wrapper_xlib)( XkbDescPtr, XkbAction*, unsigned int);
@@ -2796,8 +2796,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XChangeKeyboardControl
-  *(void **) (&XChangeKeyboardControl_dylibloader_wrapper_xlib) = dlsym(handle, "XChangeKeyboardControl");
+// XChangeKeyboardControle
+  *(void **) (&XChangeKeyboardControle_dylibloader_wrapper_xlib) = dlsym(handle, "XChangeKeyboardControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -2812,8 +2812,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XChangePointerControl
-  *(void **) (&XChangePointerControl_dylibloader_wrapper_xlib) = dlsym(handle, "XChangePointerControl");
+// XChangePointerControle
+  *(void **) (&XChangePointerControle_dylibloader_wrapper_xlib) = dlsym(handle, "XChangePointerControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -3052,8 +3052,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XDisableAccessControl
-  *(void **) (&XDisableAccessControl_dylibloader_wrapper_xlib) = dlsym(handle, "XDisableAccessControl");
+// XDisableAccessControle
+  *(void **) (&XDisableAccessControle_dylibloader_wrapper_xlib) = dlsym(handle, "XDisableAccessControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -3236,8 +3236,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XEnableAccessControl
-  *(void **) (&XEnableAccessControl_dylibloader_wrapper_xlib) = dlsym(handle, "XEnableAccessControl");
+// XEnableAccessControle
+  *(void **) (&XEnableAccessControle_dylibloader_wrapper_xlib) = dlsym(handle, "XEnableAccessControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -3476,16 +3476,16 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XGetKeyboardControl
-  *(void **) (&XGetKeyboardControl_dylibloader_wrapper_xlib) = dlsym(handle, "XGetKeyboardControl");
+// XGetKeyboardControle
+  *(void **) (&XGetKeyboardControle_dylibloader_wrapper_xlib) = dlsym(handle, "XGetKeyboardControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XGetPointerControl
-  *(void **) (&XGetPointerControl_dylibloader_wrapper_xlib) = dlsym(handle, "XGetPointerControl");
+// XGetPointerControle
+  *(void **) (&XGetPointerControle_dylibloader_wrapper_xlib) = dlsym(handle, "XGetPointerControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -4052,8 +4052,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XSetAccessControl
-  *(void **) (&XSetAccessControl_dylibloader_wrapper_xlib) = dlsym(handle, "XSetAccessControl");
+// XSetAccessControle
+  *(void **) (&XSetAccessControle_dylibloader_wrapper_xlib) = dlsym(handle, "XSetAccessControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -5740,24 +5740,24 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbSetXlibControls
-  *(void **) (&XkbSetXlibControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetXlibControls");
+// XkbSetXlibControles
+  *(void **) (&XkbSetXlibControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetXlibControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbGetXlibControls
-  *(void **) (&XkbGetXlibControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetXlibControls");
+// XkbGetXlibControles
+  *(void **) (&XkbGetXlibControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetXlibControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbXlibControlsImplemented
-  *(void **) (&XkbXlibControlsImplemented_dylibloader_wrapper_xlib) = dlsym(handle, "XkbXlibControlsImplemented");
+// XkbXlibControlesImplemented
+  *(void **) (&XkbXlibControlesImplemented_dylibloader_wrapper_xlib) = dlsym(handle, "XkbXlibControlesImplemented");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -5836,8 +5836,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbChangeEnabledControls
-  *(void **) (&XkbChangeEnabledControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbChangeEnabledControls");
+// XkbChangeEnabledControles
+  *(void **) (&XkbChangeEnabledControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbChangeEnabledControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -6220,40 +6220,40 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbAllocControls
-  *(void **) (&XkbAllocControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbAllocControls");
+// XkbAllocControles
+  *(void **) (&XkbAllocControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbAllocControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbFreeControls
-  *(void **) (&XkbFreeControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbFreeControls");
+// XkbFreeControles
+  *(void **) (&XkbFreeControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbFreeControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbGetControls
-  *(void **) (&XkbGetControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetControls");
+// XkbGetControles
+  *(void **) (&XkbGetControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbSetControls
-  *(void **) (&XkbSetControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetControls");
+// XkbSetControles
+  *(void **) (&XkbSetControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbNoteControlsChanges
-  *(void **) (&XkbNoteControlsChanges_dylibloader_wrapper_xlib) = dlsym(handle, "XkbNoteControlsChanges");
+// XkbNoteControlesChanges
+  *(void **) (&XkbNoteControlesChanges_dylibloader_wrapper_xlib) = dlsym(handle, "XkbNoteControlesChanges");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -6372,32 +6372,32 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbSetAutoResetControls
-  *(void **) (&XkbSetAutoResetControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetAutoResetControls");
+// XkbSetAutoResetControles
+  *(void **) (&XkbSetAutoResetControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetAutoResetControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbGetAutoResetControls
-  *(void **) (&XkbGetAutoResetControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetAutoResetControls");
+// XkbGetAutoResetControles
+  *(void **) (&XkbGetAutoResetControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetAutoResetControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbSetPerClientControls
-  *(void **) (&XkbSetPerClientControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetPerClientControls");
+// XkbSetPerClientControles
+  *(void **) (&XkbSetPerClientControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbSetPerClientControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbGetPerClientControls
-  *(void **) (&XkbGetPerClientControls_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetPerClientControls");
+// XkbGetPerClientControles
+  *(void **) (&XkbGetPerClientControles_dylibloader_wrapper_xlib) = dlsym(handle, "XkbGetPerClientControles");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {
@@ -6620,8 +6620,8 @@ int initialize_xlib(int verbose) {
       fprintf(stderr, "%s\n", error);
     }
   }
-// XkbToControl
-  *(void **) (&XkbToControl_dylibloader_wrapper_xlib) = dlsym(handle, "XkbToControl");
+// XkbToControle
+  *(void **) (&XkbToControle_dylibloader_wrapper_xlib) = dlsym(handle, "XkbToControle");
   if (verbose) {
     error = dlerror();
     if (error != NULL) {

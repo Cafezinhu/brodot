@@ -161,9 +161,9 @@ class ProjectExportDialog : public ConfirmationDialog {
 	void _patch_delete_confirmed();
 	void _patch_add_pack_pressed();
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	EditorFileDialog *export_pck_zip = nullptr;
 	EditorFileDialog *export_project = nullptr;

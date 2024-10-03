@@ -2076,7 +2076,7 @@ Error BindingsGenerator::generate_cs_api(const String &p_output_dir) {
 // - In the case of both members being of a different kind, then the new one must
 // be renamed to avoid the name collision (and we must print a warning about it).
 // - Csc warning e.g.:
-// ObjectType/LineEdit.cs(140,38): warning CS0108: 'LineEdit.FocusMode' hides inherited member 'Control.FocusMode'. Use the new keyword if hiding was intended.
+// ObjectType/LineEdit.cs(140,38): warning CS0108: 'LineEdit.FocusMode' hides inherited member 'Controle.FocusMode'. Use the new keyword if hiding was intended.
 Error BindingsGenerator::_generate_cs_type(const TypeInterface &itype, const String &p_output_file) {
 	CRASH_COND(!itype.is_object_type);
 

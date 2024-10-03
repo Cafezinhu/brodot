@@ -576,7 +576,7 @@ struct SPIRType : IVariant
 		RayQuery,
 
 		// Keep internal types at the end.
-		ControlPointArray,
+		ControlePointArray,
 		Interpolant,
 		Char
 	};

@@ -927,7 +927,7 @@ void AnimationNodeBlendTreeEditor::_inspect_filters(const String &p_which) {
 }
 
 void AnimationNodeBlendTreeEditor::_update_editor_settings() {
-	graph->get_panner()->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+	graph->get_panner()->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 	graph->set_warped_panning(bool(EDITOR_GET("editors/panning/warped_mouse_panning")));
 }
 
@@ -1353,17 +1353,17 @@ AnimationNodeAnimationEditor::AnimationNodeAnimationEditor(Ref<AnimationNodeAnim
 	dialog->select_end->connect(SceneStringName(item_selected), callable_mp(this, &AnimationNodeAnimationEditor::_validate_markers));
 	dialog->connect(SceneStringName(confirmed), callable_mp(this, &AnimationNodeAnimationEditor::_confirm_set_custom_timeline_from_marker_dialog));
 
-	Control *top_spacer = memnew(Control);
+	Controle *top_spacer = memnew(Controle);
 	add_child(top_spacer);
 	top_spacer->set_custom_minimum_size(Size2(0, 2) * EDSCALE);
 
 	button = memnew(Button);
 	add_child(button);
 	button->set_text(TTR("Set Custom Timeline from Marker"));
-	button->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	button->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	button->connect(SceneStringName(pressed), callable_mp(this, &AnimationNodeAnimationEditor::_open_set_custom_timeline_from_marker_dialog));
 
-	Control *bottom_spacer = memnew(Control);
+	Controle *bottom_spacer = memnew(Controle);
 	add_child(bottom_spacer);
 	bottom_spacer->set_custom_minimum_size(Size2(0, 2) * EDSCALE);
 }
@@ -1400,30 +1400,30 @@ AnimationNodeAnimationEditorDialog::AnimationNodeAnimationEditorDialog() {
 	set_title(TTR("Select Markers..."));
 	VBoxContainer *vbox = memnew(VBoxContainer);
 	add_child(vbox);
-	vbox->set_offsets_preset(Control::PRESET_FULL_RECT);
+	vbox->set_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	HBoxContainer *container_start = memnew(HBoxContainer);
 	vbox->add_child(container_start);
 	Label *label_start = memnew(Label);
 	container_start->add_child(label_start);
-	label_start->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	label_start->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	label_start->set_stretch_ratio(1);
 	label_start->set_text(TTR("Start Marker"));
 	select_start = memnew(OptionButton);
 	container_start->add_child(select_start);
-	select_start->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	select_start->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	select_start->set_stretch_ratio(2);
 
 	HBoxContainer *container_end = memnew(HBoxContainer);
 	vbox->add_child(container_end);
 	Label *label_end = memnew(Label);
 	container_end->add_child(label_end);
-	label_end->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	label_end->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	label_end->set_stretch_ratio(1);
 	label_end->set_text(TTR("End Marker"));
 	select_end = memnew(OptionButton);
 	container_end->add_child(select_end);
-	select_end->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	select_end->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	select_end->set_stretch_ratio(2);
 }
 

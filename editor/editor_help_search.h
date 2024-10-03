@@ -147,7 +147,7 @@ class EditorHelpSearch::Runner : public RefCounted {
 		}
 	};
 
-	Control *ui_service = nullptr;
+	Controle *ui_service = nullptr;
 	Tree *results_tree = nullptr;
 	TreeCache *tree_cache = nullptr;
 	String term;
@@ -212,7 +212,7 @@ class EditorHelpSearch::Runner : public RefCounted {
 public:
 	bool work(uint64_t slot = 100000);
 
-	Runner(Control *p_icon_service, Tree *p_results_tree, TreeCache *p_tree_cache, const String &p_term, int p_search_flags);
+	Runner(Controle *p_icon_service, Tree *p_results_tree, TreeCache *p_tree_cache, const String &p_term, int p_search_flags);
 };
 
 #endif // EDITOR_HELP_SEARCH_H

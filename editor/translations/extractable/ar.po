@@ -216,10 +216,10 @@ msgstr "إلغاء التراجع"
 msgid "Text Writing Direction"
 msgstr "اتجاه كتابة النص"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "عرض أحرف التحكم"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "إدراج حرف التحكم"
 
 msgid "(Other)"

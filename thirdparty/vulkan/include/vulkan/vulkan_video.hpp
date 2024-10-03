@@ -123,7 +123,7 @@ namespace VULKAN_HPP_NAMESPACE
       eInvalid           = STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_INVALID
     };
 
-    enum class H264MemMgmtControlOp
+    enum class H264MemMgmtControleOp
     {
       eEnd                   = STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_END,
       eUnmarkShortTerm       = STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_UNMARK_SHORT_TERM,
@@ -1202,8 +1202,8 @@ namespace VULKAN_HPP_NAMESPACE
       }
 
     public:
-      VULKAN_HPP_NAMESPACE::VULKAN_HPP_VIDEO_NAMESPACE::H264MemMgmtControlOp memory_management_control_operation =
-        VULKAN_HPP_NAMESPACE::VULKAN_HPP_VIDEO_NAMESPACE::H264MemMgmtControlOp::eEnd;
+      VULKAN_HPP_NAMESPACE::VULKAN_HPP_VIDEO_NAMESPACE::H264MemMgmtControleOp memory_management_control_operation =
+        VULKAN_HPP_NAMESPACE::VULKAN_HPP_VIDEO_NAMESPACE::H264MemMgmtControleOp::eEnd;
       uint16_t difference_of_pic_nums_minus1 = {};
       uint16_t long_term_pic_num             = {};
       uint16_t long_term_frame_idx           = {};

@@ -473,7 +473,7 @@
 
     Int         numTurns;           /* number of Y-turns in outline        */
 
-    Byte        dropOutControl;     /* current drop_out control method     */
+    Byte        dropOutControle;     /* current drop_out control method     */
 
     UShort      bWidth;             /* target bitmap width                 */
     PByte       bOrigin;            /* target bitmap bottom-left origin    */
@@ -636,7 +636,7 @@
     ras.cProfile->offset = ras.top;
     ras.cProfile->link   = (PProfile)0;
     ras.cProfile->next   = (PProfile)0;
-    ras.cProfile->flags  = ras.dropOutControl;
+    ras.cProfile->flags  = ras.dropOutControle;
 
     switch ( aState )
     {
@@ -1779,7 +1779,7 @@
 
     /* set scan mode if necessary */
     if ( tags[0] & FT_CURVE_TAG_HAS_SCANMODE )
-      ras.dropOutControl = (Byte)tags[0] >> 5;
+      ras.dropOutControle = (Byte)tags[0] >> 5;
 
     tag = FT_CURVE_TAG( tags[0] );
 
@@ -2206,7 +2206,7 @@
   {
     Long  e1, e2;
 
-    Int  dropOutControl = left->flags & 7;
+    Int  dropOutControle = left->flags & 7;
 
     FT_UNUSED( y );
     FT_UNUSED( left );
@@ -2227,7 +2227,7 @@
 
     /* take care of the special case where both the left */
     /* and right contour lie exactly on pixel centers    */
-    if ( dropOutControl != 2                             &&
+    if ( dropOutControle != 2                             &&
          x2 - x1 - ras.precision <= ras.precision_jitter &&
          e1 != x1 && e2 != x2                            )
       e2 = e1;
@@ -2324,12 +2324,12 @@
 
     if ( e1 > e2 )
     {
-      Int  dropOutControl = left->flags & 7;
+      Int  dropOutControle = left->flags & 7;
 
 
       if ( e1 == e2 + ras.precision )
       {
-        switch ( dropOutControl )
+        switch ( dropOutControle )
         {
         case 0: /* simple drop-outs including stubs */
           pxl = e2;
@@ -2342,7 +2342,7 @@
         case 1: /* simple drop-outs excluding stubs */
         case 5: /* smart drop-outs excluding stubs  */
 
-          /* Drop-out Control Rules #4 and #6 */
+          /* Drop-out Controle Rules #4 and #6 */
 
           /* The specification neither provides an exact definition */
           /* of a `stub' nor gives exact rules to exclude them.     */
@@ -2382,7 +2382,7 @@
                   x2 - x1 >= ras.precision_half  ) )
             goto Exit;
 
-          if ( dropOutControl == 1 )
+          if ( dropOutControle == 1 )
             pxl = e2;
           else
             pxl = SMART( x1, x2 );
@@ -2567,12 +2567,12 @@
 
     if ( e1 > e2 )
     {
-      Int  dropOutControl = left->flags & 7;
+      Int  dropOutControle = left->flags & 7;
 
 
       if ( e1 == e2 + ras.precision )
       {
-        switch ( dropOutControl )
+        switch ( dropOutControle )
         {
         case 0: /* simple drop-outs including stubs */
           pxl = e2;
@@ -2600,7 +2600,7 @@
                   x2 - x1 >= ras.precision_half  ) )
             goto Exit;
 
-          if ( dropOutControl == 1 )
+          if ( dropOutControle == 1 )
             pxl = e2;
           else
             pxl = SMART( x1, x2 );
@@ -2802,10 +2802,10 @@
           {
             if ( e1 > e2 || e2 == e1 + ras.precision )
             {
-              Int  dropOutControl = P_Left->flags & 7;
+              Int  dropOutControle = P_Left->flags & 7;
 
 
-              if ( dropOutControl != 2 )
+              if ( dropOutControle != 2 )
               {
                 /* a drop-out was detected */
 
@@ -3082,16 +3082,16 @@
                                  FT_OUTLINE_HIGH_PRECISION );
 
     if ( ras.outline.flags & FT_OUTLINE_IGNORE_DROPOUTS )
-      ras.dropOutControl = 2;
+      ras.dropOutControle = 2;
     else
     {
       if ( ras.outline.flags & FT_OUTLINE_SMART_DROPOUTS )
-        ras.dropOutControl = 4;
+        ras.dropOutControle = 4;
       else
-        ras.dropOutControl = 0;
+        ras.dropOutControle = 0;
 
       if ( !( ras.outline.flags & FT_OUTLINE_INCLUDE_STUBS ) )
-        ras.dropOutControl += 1;
+        ras.dropOutControle += 1;
     }
 
     /* Vertical Sweep */

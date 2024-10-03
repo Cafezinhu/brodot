@@ -112,14 +112,14 @@ public:
 		}
 	};
 
-	class TileAtlasControl : public Control {
+	class TileAtlasControle : public Controle {
 		TileSetAtlasSourceEditor *editor = nullptr;
 
 	public:
 		virtual CursorShape get_cursor_shape(const Point2 &p_pos) const override;
-		TileAtlasControl(TileSetAtlasSourceEditor *p_editor) { editor = p_editor; }
+		TileAtlasControle(TileSetAtlasSourceEditor *p_editor) { editor = p_editor; }
 	};
-	friend class TileAtlasControl;
+	friend class TileAtlasControle;
 
 private:
 	bool read_only = false;
@@ -143,7 +143,7 @@ private:
 
 	// -- Tile data editors --
 	String current_property;
-	Control *current_tile_data_editor_toolbar = nullptr;
+	Controle *current_tile_data_editor_toolbar = nullptr;
 	HashMap<String, TileDataEditor *> tile_data_editors;
 	TileDataEditor *current_tile_data_editor = nullptr;
 	void _tile_data_editors_tree_selected();
@@ -239,8 +239,8 @@ private:
 	PopupMenu *empty_base_tile_popup_menu = nullptr;
 	Ref<Texture2D> resize_handle;
 	Ref<Texture2D> resize_handle_disabled;
-	Control *tile_atlas_control = nullptr;
-	Control *tile_atlas_control_unscaled = nullptr;
+	Controle *tile_atlas_control = nullptr;
+	Controle *tile_atlas_control_unscaled = nullptr;
 	void _tile_atlas_control_draw();
 	void _tile_atlas_control_unscaled_draw();
 	void _tile_atlas_control_mouse_exited();
@@ -251,8 +251,8 @@ private:
 	Vector3i hovered_alternative_tile_coords = Vector3i(TileSetSource::INVALID_ATLAS_COORDS.x, TileSetSource::INVALID_ATLAS_COORDS.y, TileSetSource::INVALID_TILE_ALTERNATIVE);
 
 	PopupMenu *alternative_tile_popup_menu = nullptr;
-	Control *alternative_tiles_control = nullptr;
-	Control *alternative_tiles_control_unscaled = nullptr;
+	Controle *alternative_tiles_control = nullptr;
+	Controle *alternative_tiles_control_unscaled = nullptr;
 	void _tile_alternatives_control_draw();
 	void _tile_alternatives_control_unscaled_draw();
 	void _tile_alternatives_control_mouse_exited();

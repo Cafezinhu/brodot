@@ -671,7 +671,7 @@ void TParseVersions::getPreamble(std::string& preamble)
     if (!isEsProfile()) {
         switch (language) {
         case EShLangVertex:         preamble += "#define GL_VERTEX_SHADER 1 \n";                    break;
-        case EShLangTessControl:    preamble += "#define GL_TESSELLATION_CONTROL_SHADER 1 \n";      break;
+        case EShLangTessControle:    preamble += "#define GL_TESSELLATION_CONTROL_SHADER 1 \n";      break;
         case EShLangTessEvaluation: preamble += "#define GL_TESSELLATION_EVALUATION_SHADER 1 \n";   break;
         case EShLangGeometry:       preamble += "#define GL_GEOMETRY_SHADER 1 \n";                  break;
         case EShLangFragment:       preamble += "#define GL_FRAGMENT_SHADER 1 \n";                  break;
@@ -698,7 +698,7 @@ const char* StageName(EShLanguage stage)
     case EShLangVertex:         return "vertex";
     case EShLangFragment:       return "fragment";
     case EShLangCompute:        return "compute";
-    case EShLangTessControl:    return "tessellation control";
+    case EShLangTessControle:    return "tessellation control";
     case EShLangTessEvaluation: return "tessellation evaluation";
     case EShLangGeometry:       return "geometry";
     case EShLangRayGen:         return "ray-generation";

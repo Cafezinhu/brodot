@@ -349,7 +349,7 @@ public:
         textureSamplerTransformMode(EShTexSampTransKeep),
         needToLegalize(false),
         binaryDoubleOutput(false),
-        subgroupUniformControlFlow(false),
+        subgroupUniformControleFlow(false),
         maximallyReconverges(false),
         usePhysicalStorageBuffer(false),
         spirvRequirement(nullptr),
@@ -971,8 +971,8 @@ public:
     void setBinaryDoubleOutput() { binaryDoubleOutput = true; }
     bool getBinaryDoubleOutput() { return binaryDoubleOutput; }
 
-    void setSubgroupUniformControlFlow() { subgroupUniformControlFlow = true; }
-    bool getSubgroupUniformControlFlow() const { return subgroupUniformControlFlow; }
+    void setSubgroupUniformControleFlow() { subgroupUniformControleFlow = true; }
+    bool getSubgroupUniformControleFlow() const { return subgroupUniformControleFlow; }
 
     void setMaximallyReconverges() { maximallyReconverges = true; }
     bool getMaximallyReconverges() const { return maximallyReconverges; }
@@ -1239,7 +1239,7 @@ protected:
 
     bool needToLegalize;
     bool binaryDoubleOutput;
-    bool subgroupUniformControlFlow;
+    bool subgroupUniformControleFlow;
     bool maximallyReconverges;
     bool usePhysicalStorageBuffer;
 

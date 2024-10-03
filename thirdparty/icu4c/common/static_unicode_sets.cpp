@@ -155,8 +155,8 @@ void U_CALLCONV initNumberParseUniSets(UErrorCode& status) {
     // These sets were decided after discussion with icu-design@. See tickets #13084 and #13309.
     // Zs+TAB is "horizontal whitespace" according to UTS #18 (blank property).
     gUnicodeSets[DEFAULT_IGNORABLES] = new UnicodeSet(
-            u"[[:Zs:][\\u0009][:Bidi_Control:][:Variation_Selector:]]", status);
-    gUnicodeSets[STRICT_IGNORABLES] = new UnicodeSet(u"[[:Bidi_Control:]]", status);
+            u"[[:Zs:][\\u0009][:Bidi_Controle:][:Variation_Selector:]]", status);
+    gUnicodeSets[STRICT_IGNORABLES] = new UnicodeSet(u"[[:Bidi_Controle:]]", status);
 
     LocalUResourceBundlePointer rb(ures_open(nullptr, "root", &status));
     if (U_FAILURE(status)) { return; }

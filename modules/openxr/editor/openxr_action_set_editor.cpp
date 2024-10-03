@@ -217,28 +217,28 @@ OpenXRActionSetEditor::OpenXRActionSetEditor(Ref<OpenXRActionMap> p_action_map, 
 	action_map = p_action_map;
 	action_set = p_action_set;
 
-	set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	panel = memnew(PanelContainer);
-	panel->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	panel->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_child(panel);
 
 	HBoxContainer *panel_hb = memnew(HBoxContainer);
-	panel_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	panel_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	panel->add_child(panel_hb);
 
 	fold_btn = memnew(Button);
-	fold_btn->set_v_size_flags(Control::SIZE_SHRINK_BEGIN);
+	fold_btn->set_v_size_flags(Controle::SIZE_SHRINK_BEGIN);
 	fold_btn->connect(SceneStringName(pressed), callable_mp(this, &OpenXRActionSetEditor::_on_toggle_expand));
 	fold_btn->set_flat(true);
 	panel_hb->add_child(fold_btn);
 
 	main_vb = memnew(VBoxContainer);
-	main_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	main_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	panel_hb->add_child(main_vb);
 
 	action_set_hb = memnew(HBoxContainer);
-	action_set_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	action_set_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vb->add_child(action_set_hb);
 
 	action_set_name = memnew(LineEdit);
@@ -250,7 +250,7 @@ OpenXRActionSetEditor::OpenXRActionSetEditor(Ref<OpenXRActionMap> p_action_map, 
 	action_set_localized_name = memnew(LineEdit);
 	action_set_localized_name->set_text(action_set->get_localized_name());
 	action_set_localized_name->set_custom_minimum_size(Size2(150.0, 0.0));
-	action_set_localized_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	action_set_localized_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	action_set_localized_name->connect(SceneStringName(text_changed), callable_mp(this, &OpenXRActionSetEditor::_on_action_set_localized_name_changed));
 	action_set_hb->add_child(action_set_localized_name);
 
@@ -273,7 +273,7 @@ OpenXRActionSetEditor::OpenXRActionSetEditor(Ref<OpenXRActionMap> p_action_map, 
 	action_set_hb->add_child(rem_action_set);
 
 	actions_vb = memnew(VBoxContainer);
-	actions_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	actions_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vb->add_child(actions_vb);
 
 	// Add our existing actions

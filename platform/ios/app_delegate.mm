@@ -60,16 +60,16 @@ enum {
 	SESSION_CATEGORY_SOLO_AMBIENT
 };
 
-static ViewController *mainViewController = nil;
+static ViewControleler *mainViewControleler = nil;
 
-+ (ViewController *)viewController {
-	return mainViewController;
++ (ViewControleler *)viewControleler {
+	return mainViewControleler;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// TODO: might be required to make an early return, so app wouldn't crash because of timeout.
 	// TODO: logo screen is not displayed while shaders are compiling
-	// DummyViewController(Splash/LoadingViewController) -> setup -> GodotViewController
+	// DummyViewControleler(Splash/LoadingViewControleler) -> setup -> GodotViewControleler
 
 	CGRect windowBounds = [[UIScreen mainScreen] bounds];
 
@@ -84,11 +84,11 @@ static ViewController *mainViewController = nil;
 		return NO;
 	}
 
-	ViewController *viewController = [[ViewController alloc] init];
-	viewController.godotView.useCADisplayLink = bool(GLOBAL_DEF("display.iOS/use_cadisplaylink", true)) ? YES : NO;
-	viewController.godotView.renderingInterval = 1.0 / kRenderingFrequency;
+	ViewControleler *viewControleler = [[ViewControleler alloc] init];
+	viewControleler.godotView.useCADisplayLink = bool(GLOBAL_DEF("display.iOS/use_cadisplaylink", true)) ? YES : NO;
+	viewControleler.godotView.renderingInterval = 1.0 / kRenderingFrequency;
 
-	self.window.rootViewController = viewController;
+	self.window.rootViewControleler = viewControleler;
 
 	// Show the window
 	[self.window makeKeyAndVisible];
@@ -99,7 +99,7 @@ static ViewController *mainViewController = nil;
 				   name:AVAudioSessionInterruptionNotification
 				 object:[AVAudioSession sharedInstance]];
 
-	mainViewController = viewController;
+	mainViewControleler = viewControleler;
 
 	int sessionCategorySetting = GLOBAL_GET("audio/general/ios/session_category");
 

@@ -414,7 +414,7 @@ void EditorAudioBus::_show_value(float slider_value) {
 		text = vformat("%+.1f dB", db);
 	}
 
-	// Also set the preview text as a standard Control tooltip.
+	// Also set the preview text as a standard Controle tooltip.
 	// This way, it can be seen when the slider is merely hovered (instead of dragged).
 	slider->set_tooltip_text(text);
 	audio_value_preview_label->set_text(text);
@@ -604,7 +604,7 @@ Variant EditorAudioBus::get_drag_data(const Point2 &p_point) {
 		return Variant();
 	}
 
-	Control *c = memnew(Control);
+	Controle *c = memnew(Controle);
 	Panel *p = memnew(Panel);
 	c->add_child(p);
 	p->set_modulate(Color(1, 1, 1, 0.7));
@@ -642,7 +642,7 @@ void EditorAudioBus::drop_data(const Point2 &p_point, const Variant &p_data) {
 	emit_signal(SNAME("dropped"), d["index"], get_index());
 }
 
-Variant EditorAudioBus::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant EditorAudioBus::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *item = effects->get_item_at_position(p_point);
 	if (!item) {
 		return Variant();
@@ -666,7 +666,7 @@ Variant EditorAudioBus::get_drag_data_fw(const Point2 &p_point, Control *p_from)
 	return Variant();
 }
 
-bool EditorAudioBus::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorAudioBus::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (!d.has("type") || String(d["type"]) != "audio_bus_effect") {
 		return false;
@@ -682,7 +682,7 @@ bool EditorAudioBus::can_drop_data_fw(const Point2 &p_point, const Variant &p_da
 	return true;
 }
 
-void EditorAudioBus::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorAudioBus::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	Dictionary d = p_data;
 
 	TreeItem *item = effects->get_item_at_position(p_point);
@@ -837,7 +837,7 @@ EditorAudioBus::EditorAudioBus(EditorAudioBuses *p_buses, bool p_is_master) {
 
 	Ref<StyleBoxEmpty> sbempty = memnew(StyleBoxEmpty);
 	for (int i = 0; i < hbc->get_child_count(); i++) {
-		Control *child = Object::cast_to<Control>(hbc->get_child(i));
+		Controle *child = Object::cast_to<Controle>(hbc->get_child(i));
 		child->begin_bulk_theme_override();
 		child->add_theme_style_override(CoreStringName(normal), sbempty);
 		child->add_theme_style_override("hover", sbempty);
@@ -856,14 +856,14 @@ EditorAudioBus::EditorAudioBus(EditorAudioBuses *p_buses, bool p_is_master) {
 	separator->set_mouse_filter(MOUSE_FILTER_PASS);
 	vb->add_child(separator);
 
-	Control *spacer_top = memnew(Control);
+	Controle *spacer_top = memnew(Controle);
 	spacer_top->set_custom_minimum_size(Size2(0, 6 * EDSCALE));
 	vb->add_child(spacer_top);
 
 	HBoxContainer *hb = memnew(HBoxContainer);
 	vb->add_child(hb);
 
-	Control *spacer_bottom = memnew(Control);
+	Controle *spacer_bottom = memnew(Controle);
 	spacer_bottom->set_custom_minimum_size(Size2(0, 2 * EDSCALE));
 	vb->add_child(spacer_bottom);
 
@@ -1199,7 +1199,7 @@ void EditorAudioBuses::_request_drop_end() {
 		drop_end = memnew(EditorAudioBusDrop);
 
 		bus_hb->add_child(drop_end);
-		drop_end->set_custom_minimum_size(Object::cast_to<Control>(bus_hb->get_child(0))->get_size());
+		drop_end->set_custom_minimum_size(Object::cast_to<Controle>(bus_hb->get_child(0))->get_size());
 		drop_end->connect("dropped", callable_mp(this, &EditorAudioBuses::_drop_at_index), CONNECT_DEFERRED);
 	}
 }
@@ -1451,7 +1451,7 @@ Size2 EditorAudioMeterNotches::get_minimum_size() const {
 }
 
 void EditorAudioMeterNotches::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.notch_color = get_theme_color(SceneStringName(font_color), EditorStringName(Editor));
 

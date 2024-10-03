@@ -134,9 +134,9 @@
 #define XCellsOfScreen XCellsOfScreen_dylibloader_orig_xlib
 #define XChangeActivePointerGrab XChangeActivePointerGrab_dylibloader_orig_xlib
 #define XChangeGC XChangeGC_dylibloader_orig_xlib
-#define XChangeKeyboardControl XChangeKeyboardControl_dylibloader_orig_xlib
+#define XChangeKeyboardControle XChangeKeyboardControle_dylibloader_orig_xlib
 #define XChangeKeyboardMapping XChangeKeyboardMapping_dylibloader_orig_xlib
-#define XChangePointerControl XChangePointerControl_dylibloader_orig_xlib
+#define XChangePointerControle XChangePointerControle_dylibloader_orig_xlib
 #define XChangeProperty XChangeProperty_dylibloader_orig_xlib
 #define XChangeSaveSet XChangeSaveSet_dylibloader_orig_xlib
 #define XChangeWindowAttributes XChangeWindowAttributes_dylibloader_orig_xlib
@@ -166,7 +166,7 @@
 #define XDestroySubwindows XDestroySubwindows_dylibloader_orig_xlib
 #define XDoesBackingStore XDoesBackingStore_dylibloader_orig_xlib
 #define XDoesSaveUnders XDoesSaveUnders_dylibloader_orig_xlib
-#define XDisableAccessControl XDisableAccessControl_dylibloader_orig_xlib
+#define XDisableAccessControle XDisableAccessControle_dylibloader_orig_xlib
 #define XDisplayCells XDisplayCells_dylibloader_orig_xlib
 #define XDisplayHeight XDisplayHeight_dylibloader_orig_xlib
 #define XDisplayHeightMM XDisplayHeightMM_dylibloader_orig_xlib
@@ -189,7 +189,7 @@
 #define XDrawString16 XDrawString16_dylibloader_orig_xlib
 #define XDrawText XDrawText_dylibloader_orig_xlib
 #define XDrawText16 XDrawText16_dylibloader_orig_xlib
-#define XEnableAccessControl XEnableAccessControl_dylibloader_orig_xlib
+#define XEnableAccessControle XEnableAccessControle_dylibloader_orig_xlib
 #define XEventsQueued XEventsQueued_dylibloader_orig_xlib
 #define XFetchName XFetchName_dylibloader_orig_xlib
 #define XFillArc XFillArc_dylibloader_orig_xlib
@@ -219,8 +219,8 @@
 #define XGetGeometry XGetGeometry_dylibloader_orig_xlib
 #define XGetIconName XGetIconName_dylibloader_orig_xlib
 #define XGetInputFocus XGetInputFocus_dylibloader_orig_xlib
-#define XGetKeyboardControl XGetKeyboardControl_dylibloader_orig_xlib
-#define XGetPointerControl XGetPointerControl_dylibloader_orig_xlib
+#define XGetKeyboardControle XGetKeyboardControle_dylibloader_orig_xlib
+#define XGetPointerControle XGetPointerControle_dylibloader_orig_xlib
 #define XGetPointerMapping XGetPointerMapping_dylibloader_orig_xlib
 #define XGetScreenSaver XGetScreenSaver_dylibloader_orig_xlib
 #define XGetTransientForHint XGetTransientForHint_dylibloader_orig_xlib
@@ -291,7 +291,7 @@
 #define XScreenCount XScreenCount_dylibloader_orig_xlib
 #define XSelectInput XSelectInput_dylibloader_orig_xlib
 #define XSendEvent XSendEvent_dylibloader_orig_xlib
-#define XSetAccessControl XSetAccessControl_dylibloader_orig_xlib
+#define XSetAccessControle XSetAccessControle_dylibloader_orig_xlib
 #define XSetArcMode XSetArcMode_dylibloader_orig_xlib
 #define XSetBackground XSetBackground_dylibloader_orig_xlib
 #define XSetClipMask XSetClipMask_dylibloader_orig_xlib
@@ -502,9 +502,9 @@
 #define XkbQueryExtension XkbQueryExtension_dylibloader_orig_xlib
 #define XkbUseExtension XkbUseExtension_dylibloader_orig_xlib
 #define XkbLibraryVersion XkbLibraryVersion_dylibloader_orig_xlib
-#define XkbSetXlibControls XkbSetXlibControls_dylibloader_orig_xlib
-#define XkbGetXlibControls XkbGetXlibControls_dylibloader_orig_xlib
-#define XkbXlibControlsImplemented XkbXlibControlsImplemented_dylibloader_orig_xlib
+#define XkbSetXlibControles XkbSetXlibControles_dylibloader_orig_xlib
+#define XkbGetXlibControles XkbGetXlibControles_dylibloader_orig_xlib
+#define XkbXlibControlesImplemented XkbXlibControlesImplemented_dylibloader_orig_xlib
 #define XkbSetAtomFuncs XkbSetAtomFuncs_dylibloader_orig_xlib
 #define XkbKeycodeToKeysym XkbKeycodeToKeysym_dylibloader_orig_xlib
 #define XkbKeysymToModifiers XkbKeysymToModifiers_dylibloader_orig_xlib
@@ -514,7 +514,7 @@
 #define XkbTranslateKeySym XkbTranslateKeySym_dylibloader_orig_xlib
 #define XkbSetAutoRepeatRate XkbSetAutoRepeatRate_dylibloader_orig_xlib
 #define XkbGetAutoRepeatRate XkbGetAutoRepeatRate_dylibloader_orig_xlib
-#define XkbChangeEnabledControls XkbChangeEnabledControls_dylibloader_orig_xlib
+#define XkbChangeEnabledControles XkbChangeEnabledControles_dylibloader_orig_xlib
 #define XkbDeviceBell XkbDeviceBell_dylibloader_orig_xlib
 #define XkbForceDeviceBell XkbForceDeviceBell_dylibloader_orig_xlib
 #define XkbDeviceBellEvent XkbDeviceBellEvent_dylibloader_orig_xlib
@@ -562,11 +562,11 @@
 #define XkbGetKeyExplicitComponents XkbGetKeyExplicitComponents_dylibloader_orig_xlib
 #define XkbGetKeyModifierMap XkbGetKeyModifierMap_dylibloader_orig_xlib
 #define XkbGetKeyVirtualModMap XkbGetKeyVirtualModMap_dylibloader_orig_xlib
-#define XkbAllocControls XkbAllocControls_dylibloader_orig_xlib
-#define XkbFreeControls XkbFreeControls_dylibloader_orig_xlib
-#define XkbGetControls XkbGetControls_dylibloader_orig_xlib
-#define XkbSetControls XkbSetControls_dylibloader_orig_xlib
-#define XkbNoteControlsChanges XkbNoteControlsChanges_dylibloader_orig_xlib
+#define XkbAllocControles XkbAllocControles_dylibloader_orig_xlib
+#define XkbFreeControles XkbFreeControles_dylibloader_orig_xlib
+#define XkbGetControles XkbGetControles_dylibloader_orig_xlib
+#define XkbSetControles XkbSetControles_dylibloader_orig_xlib
+#define XkbNoteControlesChanges XkbNoteControlesChanges_dylibloader_orig_xlib
 #define XkbAllocCompatMap XkbAllocCompatMap_dylibloader_orig_xlib
 #define XkbFreeCompatMap XkbFreeCompatMap_dylibloader_orig_xlib
 #define XkbGetCompatMap XkbGetCompatMap_dylibloader_orig_xlib
@@ -581,10 +581,10 @@
 #define XkbChangeMap XkbChangeMap_dylibloader_orig_xlib
 #define XkbSetDetectableAutoRepeat XkbSetDetectableAutoRepeat_dylibloader_orig_xlib
 #define XkbGetDetectableAutoRepeat XkbGetDetectableAutoRepeat_dylibloader_orig_xlib
-#define XkbSetAutoResetControls XkbSetAutoResetControls_dylibloader_orig_xlib
-#define XkbGetAutoResetControls XkbGetAutoResetControls_dylibloader_orig_xlib
-#define XkbSetPerClientControls XkbSetPerClientControls_dylibloader_orig_xlib
-#define XkbGetPerClientControls XkbGetPerClientControls_dylibloader_orig_xlib
+#define XkbSetAutoResetControles XkbSetAutoResetControles_dylibloader_orig_xlib
+#define XkbGetAutoResetControles XkbGetAutoResetControles_dylibloader_orig_xlib
+#define XkbSetPerClientControles XkbSetPerClientControles_dylibloader_orig_xlib
+#define XkbGetPerClientControles XkbGetPerClientControles_dylibloader_orig_xlib
 #define XkbCopyKeyType XkbCopyKeyType_dylibloader_orig_xlib
 #define XkbCopyKeyTypes XkbCopyKeyTypes_dylibloader_orig_xlib
 #define XkbResizeKeyType XkbResizeKeyType_dylibloader_orig_xlib
@@ -612,7 +612,7 @@
 #define XkbChangeDeviceInfo XkbChangeDeviceInfo_dylibloader_orig_xlib
 #define XkbSetDeviceLedInfo XkbSetDeviceLedInfo_dylibloader_orig_xlib
 #define XkbSetDeviceButtonActions XkbSetDeviceButtonActions_dylibloader_orig_xlib
-#define XkbToControl XkbToControl_dylibloader_orig_xlib
+#define XkbToControle XkbToControle_dylibloader_orig_xlib
 #define XkbSetDebuggingFlags XkbSetDebuggingFlags_dylibloader_orig_xlib
 #define XkbApplyVirtualModChanges XkbApplyVirtualModChanges_dylibloader_orig_xlib
 #define XkbUpdateActionVirtualMods XkbUpdateActionVirtualMods_dylibloader_orig_xlib
@@ -740,9 +740,9 @@
 #undef XCellsOfScreen
 #undef XChangeActivePointerGrab
 #undef XChangeGC
-#undef XChangeKeyboardControl
+#undef XChangeKeyboardControle
 #undef XChangeKeyboardMapping
-#undef XChangePointerControl
+#undef XChangePointerControle
 #undef XChangeProperty
 #undef XChangeSaveSet
 #undef XChangeWindowAttributes
@@ -772,7 +772,7 @@
 #undef XDestroySubwindows
 #undef XDoesBackingStore
 #undef XDoesSaveUnders
-#undef XDisableAccessControl
+#undef XDisableAccessControle
 #undef XDisplayCells
 #undef XDisplayHeight
 #undef XDisplayHeightMM
@@ -795,7 +795,7 @@
 #undef XDrawString16
 #undef XDrawText
 #undef XDrawText16
-#undef XEnableAccessControl
+#undef XEnableAccessControle
 #undef XEventsQueued
 #undef XFetchName
 #undef XFillArc
@@ -825,8 +825,8 @@
 #undef XGetGeometry
 #undef XGetIconName
 #undef XGetInputFocus
-#undef XGetKeyboardControl
-#undef XGetPointerControl
+#undef XGetKeyboardControle
+#undef XGetPointerControle
 #undef XGetPointerMapping
 #undef XGetScreenSaver
 #undef XGetTransientForHint
@@ -897,7 +897,7 @@
 #undef XScreenCount
 #undef XSelectInput
 #undef XSendEvent
-#undef XSetAccessControl
+#undef XSetAccessControle
 #undef XSetArcMode
 #undef XSetBackground
 #undef XSetClipMask
@@ -1108,9 +1108,9 @@
 #undef XkbQueryExtension
 #undef XkbUseExtension
 #undef XkbLibraryVersion
-#undef XkbSetXlibControls
-#undef XkbGetXlibControls
-#undef XkbXlibControlsImplemented
+#undef XkbSetXlibControles
+#undef XkbGetXlibControles
+#undef XkbXlibControlesImplemented
 #undef XkbSetAtomFuncs
 #undef XkbKeycodeToKeysym
 #undef XkbKeysymToModifiers
@@ -1120,7 +1120,7 @@
 #undef XkbTranslateKeySym
 #undef XkbSetAutoRepeatRate
 #undef XkbGetAutoRepeatRate
-#undef XkbChangeEnabledControls
+#undef XkbChangeEnabledControles
 #undef XkbDeviceBell
 #undef XkbForceDeviceBell
 #undef XkbDeviceBellEvent
@@ -1168,11 +1168,11 @@
 #undef XkbGetKeyExplicitComponents
 #undef XkbGetKeyModifierMap
 #undef XkbGetKeyVirtualModMap
-#undef XkbAllocControls
-#undef XkbFreeControls
-#undef XkbGetControls
-#undef XkbSetControls
-#undef XkbNoteControlsChanges
+#undef XkbAllocControles
+#undef XkbFreeControles
+#undef XkbGetControles
+#undef XkbSetControles
+#undef XkbNoteControlesChanges
 #undef XkbAllocCompatMap
 #undef XkbFreeCompatMap
 #undef XkbGetCompatMap
@@ -1187,10 +1187,10 @@
 #undef XkbChangeMap
 #undef XkbSetDetectableAutoRepeat
 #undef XkbGetDetectableAutoRepeat
-#undef XkbSetAutoResetControls
-#undef XkbGetAutoResetControls
-#undef XkbSetPerClientControls
-#undef XkbGetPerClientControls
+#undef XkbSetAutoResetControles
+#undef XkbGetAutoResetControles
+#undef XkbSetPerClientControles
+#undef XkbGetPerClientControles
 #undef XkbCopyKeyType
 #undef XkbCopyKeyTypes
 #undef XkbResizeKeyType
@@ -1218,7 +1218,7 @@
 #undef XkbChangeDeviceInfo
 #undef XkbSetDeviceLedInfo
 #undef XkbSetDeviceButtonActions
-#undef XkbToControl
+#undef XkbToControle
 #undef XkbSetDebuggingFlags
 #undef XkbApplyVirtualModChanges
 #undef XkbUpdateActionVirtualMods
@@ -1346,9 +1346,9 @@ extern "C" {
 #define XCellsOfScreen XCellsOfScreen_dylibloader_wrapper_xlib
 #define XChangeActivePointerGrab XChangeActivePointerGrab_dylibloader_wrapper_xlib
 #define XChangeGC XChangeGC_dylibloader_wrapper_xlib
-#define XChangeKeyboardControl XChangeKeyboardControl_dylibloader_wrapper_xlib
+#define XChangeKeyboardControle XChangeKeyboardControle_dylibloader_wrapper_xlib
 #define XChangeKeyboardMapping XChangeKeyboardMapping_dylibloader_wrapper_xlib
-#define XChangePointerControl XChangePointerControl_dylibloader_wrapper_xlib
+#define XChangePointerControle XChangePointerControle_dylibloader_wrapper_xlib
 #define XChangeProperty XChangeProperty_dylibloader_wrapper_xlib
 #define XChangeSaveSet XChangeSaveSet_dylibloader_wrapper_xlib
 #define XChangeWindowAttributes XChangeWindowAttributes_dylibloader_wrapper_xlib
@@ -1378,7 +1378,7 @@ extern "C" {
 #define XDestroySubwindows XDestroySubwindows_dylibloader_wrapper_xlib
 #define XDoesBackingStore XDoesBackingStore_dylibloader_wrapper_xlib
 #define XDoesSaveUnders XDoesSaveUnders_dylibloader_wrapper_xlib
-#define XDisableAccessControl XDisableAccessControl_dylibloader_wrapper_xlib
+#define XDisableAccessControle XDisableAccessControle_dylibloader_wrapper_xlib
 #define XDisplayCells XDisplayCells_dylibloader_wrapper_xlib
 #define XDisplayHeight XDisplayHeight_dylibloader_wrapper_xlib
 #define XDisplayHeightMM XDisplayHeightMM_dylibloader_wrapper_xlib
@@ -1401,7 +1401,7 @@ extern "C" {
 #define XDrawString16 XDrawString16_dylibloader_wrapper_xlib
 #define XDrawText XDrawText_dylibloader_wrapper_xlib
 #define XDrawText16 XDrawText16_dylibloader_wrapper_xlib
-#define XEnableAccessControl XEnableAccessControl_dylibloader_wrapper_xlib
+#define XEnableAccessControle XEnableAccessControle_dylibloader_wrapper_xlib
 #define XEventsQueued XEventsQueued_dylibloader_wrapper_xlib
 #define XFetchName XFetchName_dylibloader_wrapper_xlib
 #define XFillArc XFillArc_dylibloader_wrapper_xlib
@@ -1431,8 +1431,8 @@ extern "C" {
 #define XGetGeometry XGetGeometry_dylibloader_wrapper_xlib
 #define XGetIconName XGetIconName_dylibloader_wrapper_xlib
 #define XGetInputFocus XGetInputFocus_dylibloader_wrapper_xlib
-#define XGetKeyboardControl XGetKeyboardControl_dylibloader_wrapper_xlib
-#define XGetPointerControl XGetPointerControl_dylibloader_wrapper_xlib
+#define XGetKeyboardControle XGetKeyboardControle_dylibloader_wrapper_xlib
+#define XGetPointerControle XGetPointerControle_dylibloader_wrapper_xlib
 #define XGetPointerMapping XGetPointerMapping_dylibloader_wrapper_xlib
 #define XGetScreenSaver XGetScreenSaver_dylibloader_wrapper_xlib
 #define XGetTransientForHint XGetTransientForHint_dylibloader_wrapper_xlib
@@ -1503,7 +1503,7 @@ extern "C" {
 #define XScreenCount XScreenCount_dylibloader_wrapper_xlib
 #define XSelectInput XSelectInput_dylibloader_wrapper_xlib
 #define XSendEvent XSendEvent_dylibloader_wrapper_xlib
-#define XSetAccessControl XSetAccessControl_dylibloader_wrapper_xlib
+#define XSetAccessControle XSetAccessControle_dylibloader_wrapper_xlib
 #define XSetArcMode XSetArcMode_dylibloader_wrapper_xlib
 #define XSetBackground XSetBackground_dylibloader_wrapper_xlib
 #define XSetClipMask XSetClipMask_dylibloader_wrapper_xlib
@@ -1714,9 +1714,9 @@ extern "C" {
 #define XkbQueryExtension XkbQueryExtension_dylibloader_wrapper_xlib
 #define XkbUseExtension XkbUseExtension_dylibloader_wrapper_xlib
 #define XkbLibraryVersion XkbLibraryVersion_dylibloader_wrapper_xlib
-#define XkbSetXlibControls XkbSetXlibControls_dylibloader_wrapper_xlib
-#define XkbGetXlibControls XkbGetXlibControls_dylibloader_wrapper_xlib
-#define XkbXlibControlsImplemented XkbXlibControlsImplemented_dylibloader_wrapper_xlib
+#define XkbSetXlibControles XkbSetXlibControles_dylibloader_wrapper_xlib
+#define XkbGetXlibControles XkbGetXlibControles_dylibloader_wrapper_xlib
+#define XkbXlibControlesImplemented XkbXlibControlesImplemented_dylibloader_wrapper_xlib
 #define XkbSetAtomFuncs XkbSetAtomFuncs_dylibloader_wrapper_xlib
 #define XkbKeycodeToKeysym XkbKeycodeToKeysym_dylibloader_wrapper_xlib
 #define XkbKeysymToModifiers XkbKeysymToModifiers_dylibloader_wrapper_xlib
@@ -1726,7 +1726,7 @@ extern "C" {
 #define XkbTranslateKeySym XkbTranslateKeySym_dylibloader_wrapper_xlib
 #define XkbSetAutoRepeatRate XkbSetAutoRepeatRate_dylibloader_wrapper_xlib
 #define XkbGetAutoRepeatRate XkbGetAutoRepeatRate_dylibloader_wrapper_xlib
-#define XkbChangeEnabledControls XkbChangeEnabledControls_dylibloader_wrapper_xlib
+#define XkbChangeEnabledControles XkbChangeEnabledControles_dylibloader_wrapper_xlib
 #define XkbDeviceBell XkbDeviceBell_dylibloader_wrapper_xlib
 #define XkbForceDeviceBell XkbForceDeviceBell_dylibloader_wrapper_xlib
 #define XkbDeviceBellEvent XkbDeviceBellEvent_dylibloader_wrapper_xlib
@@ -1774,11 +1774,11 @@ extern "C" {
 #define XkbGetKeyExplicitComponents XkbGetKeyExplicitComponents_dylibloader_wrapper_xlib
 #define XkbGetKeyModifierMap XkbGetKeyModifierMap_dylibloader_wrapper_xlib
 #define XkbGetKeyVirtualModMap XkbGetKeyVirtualModMap_dylibloader_wrapper_xlib
-#define XkbAllocControls XkbAllocControls_dylibloader_wrapper_xlib
-#define XkbFreeControls XkbFreeControls_dylibloader_wrapper_xlib
-#define XkbGetControls XkbGetControls_dylibloader_wrapper_xlib
-#define XkbSetControls XkbSetControls_dylibloader_wrapper_xlib
-#define XkbNoteControlsChanges XkbNoteControlsChanges_dylibloader_wrapper_xlib
+#define XkbAllocControles XkbAllocControles_dylibloader_wrapper_xlib
+#define XkbFreeControles XkbFreeControles_dylibloader_wrapper_xlib
+#define XkbGetControles XkbGetControles_dylibloader_wrapper_xlib
+#define XkbSetControles XkbSetControles_dylibloader_wrapper_xlib
+#define XkbNoteControlesChanges XkbNoteControlesChanges_dylibloader_wrapper_xlib
 #define XkbAllocCompatMap XkbAllocCompatMap_dylibloader_wrapper_xlib
 #define XkbFreeCompatMap XkbFreeCompatMap_dylibloader_wrapper_xlib
 #define XkbGetCompatMap XkbGetCompatMap_dylibloader_wrapper_xlib
@@ -1793,10 +1793,10 @@ extern "C" {
 #define XkbChangeMap XkbChangeMap_dylibloader_wrapper_xlib
 #define XkbSetDetectableAutoRepeat XkbSetDetectableAutoRepeat_dylibloader_wrapper_xlib
 #define XkbGetDetectableAutoRepeat XkbGetDetectableAutoRepeat_dylibloader_wrapper_xlib
-#define XkbSetAutoResetControls XkbSetAutoResetControls_dylibloader_wrapper_xlib
-#define XkbGetAutoResetControls XkbGetAutoResetControls_dylibloader_wrapper_xlib
-#define XkbSetPerClientControls XkbSetPerClientControls_dylibloader_wrapper_xlib
-#define XkbGetPerClientControls XkbGetPerClientControls_dylibloader_wrapper_xlib
+#define XkbSetAutoResetControles XkbSetAutoResetControles_dylibloader_wrapper_xlib
+#define XkbGetAutoResetControles XkbGetAutoResetControles_dylibloader_wrapper_xlib
+#define XkbSetPerClientControles XkbSetPerClientControles_dylibloader_wrapper_xlib
+#define XkbGetPerClientControles XkbGetPerClientControles_dylibloader_wrapper_xlib
 #define XkbCopyKeyType XkbCopyKeyType_dylibloader_wrapper_xlib
 #define XkbCopyKeyTypes XkbCopyKeyTypes_dylibloader_wrapper_xlib
 #define XkbResizeKeyType XkbResizeKeyType_dylibloader_wrapper_xlib
@@ -1824,7 +1824,7 @@ extern "C" {
 #define XkbChangeDeviceInfo XkbChangeDeviceInfo_dylibloader_wrapper_xlib
 #define XkbSetDeviceLedInfo XkbSetDeviceLedInfo_dylibloader_wrapper_xlib
 #define XkbSetDeviceButtonActions XkbSetDeviceButtonActions_dylibloader_wrapper_xlib
-#define XkbToControl XkbToControl_dylibloader_wrapper_xlib
+#define XkbToControle XkbToControle_dylibloader_wrapper_xlib
 #define XkbSetDebuggingFlags XkbSetDebuggingFlags_dylibloader_wrapper_xlib
 #define XkbApplyVirtualModChanges XkbApplyVirtualModChanges_dylibloader_wrapper_xlib
 #define XkbUpdateActionVirtualMods XkbUpdateActionVirtualMods_dylibloader_wrapper_xlib
@@ -1949,9 +1949,9 @@ extern int (*XBitmapUnit_dylibloader_wrapper_xlib)( Display*);
 extern int (*XCellsOfScreen_dylibloader_wrapper_xlib)( Screen*);
 extern int (*XChangeActivePointerGrab_dylibloader_wrapper_xlib)( Display*, unsigned int, Cursor, Time);
 extern int (*XChangeGC_dylibloader_wrapper_xlib)( Display*, GC, unsigned long, XGCValues*);
-extern int (*XChangeKeyboardControl_dylibloader_wrapper_xlib)( Display*, unsigned long, XKeyboardControl*);
+extern int (*XChangeKeyboardControle_dylibloader_wrapper_xlib)( Display*, unsigned long, XKeyboardControle*);
 extern int (*XChangeKeyboardMapping_dylibloader_wrapper_xlib)( Display*, int, int, KeySym*, int);
-extern int (*XChangePointerControl_dylibloader_wrapper_xlib)( Display*, int, int, int, int, int);
+extern int (*XChangePointerControle_dylibloader_wrapper_xlib)( Display*, int, int, int, int, int);
 extern int (*XChangeProperty_dylibloader_wrapper_xlib)( Display*, Window, Atom, Atom, int, int,const unsigned char*, int);
 extern int (*XChangeSaveSet_dylibloader_wrapper_xlib)( Display*, Window, int);
 extern int (*XChangeWindowAttributes_dylibloader_wrapper_xlib)( Display*, Window, unsigned long, XSetWindowAttributes*);
@@ -1981,7 +1981,7 @@ extern int (*XDestroyWindow_dylibloader_wrapper_xlib)( Display*, Window);
 extern int (*XDestroySubwindows_dylibloader_wrapper_xlib)( Display*, Window);
 extern int (*XDoesBackingStore_dylibloader_wrapper_xlib)( Screen*);
 extern int (*XDoesSaveUnders_dylibloader_wrapper_xlib)( Screen*);
-extern int (*XDisableAccessControl_dylibloader_wrapper_xlib)( Display*);
+extern int (*XDisableAccessControle_dylibloader_wrapper_xlib)( Display*);
 extern int (*XDisplayCells_dylibloader_wrapper_xlib)( Display*, int);
 extern int (*XDisplayHeight_dylibloader_wrapper_xlib)( Display*, int);
 extern int (*XDisplayHeightMM_dylibloader_wrapper_xlib)( Display*, int);
@@ -2004,7 +2004,7 @@ extern int (*XDrawString_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int,
 extern int (*XDrawString16_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int,const XChar2b*, int);
 extern int (*XDrawText_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, XTextItem*, int);
 extern int (*XDrawText16_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, XTextItem16*, int);
-extern int (*XEnableAccessControl_dylibloader_wrapper_xlib)( Display*);
+extern int (*XEnableAccessControle_dylibloader_wrapper_xlib)( Display*);
 extern int (*XEventsQueued_dylibloader_wrapper_xlib)( Display*, int);
 extern int (*XFetchName_dylibloader_wrapper_xlib)( Display*, Window, char**);
 extern int (*XFillArc_dylibloader_wrapper_xlib)( Display*, Drawable, GC, int, int, unsigned int, unsigned int, int, int);
@@ -2034,8 +2034,8 @@ extern int (*XGetGCValues_dylibloader_wrapper_xlib)( Display*, GC, unsigned long
 extern int (*XGetGeometry_dylibloader_wrapper_xlib)( Display*, Drawable, Window*, int*, int*, unsigned int*, unsigned int*, unsigned int*, unsigned int*);
 extern int (*XGetIconName_dylibloader_wrapper_xlib)( Display*, Window, char**);
 extern int (*XGetInputFocus_dylibloader_wrapper_xlib)( Display*, Window*, int*);
-extern int (*XGetKeyboardControl_dylibloader_wrapper_xlib)( Display*, XKeyboardState*);
-extern int (*XGetPointerControl_dylibloader_wrapper_xlib)( Display*, int*, int*, int*);
+extern int (*XGetKeyboardControle_dylibloader_wrapper_xlib)( Display*, XKeyboardState*);
+extern int (*XGetPointerControle_dylibloader_wrapper_xlib)( Display*, int*, int*, int*);
 extern int (*XGetPointerMapping_dylibloader_wrapper_xlib)( Display*, unsigned char*, int);
 extern int (*XGetScreenSaver_dylibloader_wrapper_xlib)( Display*, int*, int*, int*, int*);
 extern int (*XGetTransientForHint_dylibloader_wrapper_xlib)( Display*, Window, Window*);
@@ -2106,7 +2106,7 @@ extern int (*XRotateWindowProperties_dylibloader_wrapper_xlib)( Display*, Window
 extern int (*XScreenCount_dylibloader_wrapper_xlib)( Display*);
 extern int (*XSelectInput_dylibloader_wrapper_xlib)( Display*, Window, long);
 extern int (*XSendEvent_dylibloader_wrapper_xlib)( Display*, Window, int, long, XEvent*);
-extern int (*XSetAccessControl_dylibloader_wrapper_xlib)( Display*, int);
+extern int (*XSetAccessControle_dylibloader_wrapper_xlib)( Display*, int);
 extern int (*XSetArcMode_dylibloader_wrapper_xlib)( Display*, GC, int);
 extern int (*XSetBackground_dylibloader_wrapper_xlib)( Display*, GC, unsigned long);
 extern int (*XSetClipMask_dylibloader_wrapper_xlib)( Display*, GC, Pixmap);
@@ -2317,9 +2317,9 @@ extern Display* (*XkbOpenDisplay_dylibloader_wrapper_xlib)( char*, int*, int*, i
 extern int (*XkbQueryExtension_dylibloader_wrapper_xlib)( Display*, int*, int*, int*, int*, int*);
 extern int (*XkbUseExtension_dylibloader_wrapper_xlib)( Display*, int*, int*);
 extern int (*XkbLibraryVersion_dylibloader_wrapper_xlib)( int*, int*);
-extern unsigned int (*XkbSetXlibControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int);
-extern unsigned int (*XkbGetXlibControls_dylibloader_wrapper_xlib)( Display*);
-extern unsigned int (*XkbXlibControlsImplemented_dylibloader_wrapper_xlib)( void);
+extern unsigned int (*XkbSetXlibControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int);
+extern unsigned int (*XkbGetXlibControles_dylibloader_wrapper_xlib)( Display*);
+extern unsigned int (*XkbXlibControlesImplemented_dylibloader_wrapper_xlib)( void);
 extern void (*XkbSetAtomFuncs_dylibloader_wrapper_xlib)( XkbInternAtomFunc, XkbGetAtomNameFunc);
 extern KeySym (*XkbKeycodeToKeysym_dylibloader_wrapper_xlib)( Display*, KeyCode, int, int);
 extern unsigned int (*XkbKeysymToModifiers_dylibloader_wrapper_xlib)( Display*, KeySym);
@@ -2329,7 +2329,7 @@ extern int (*XkbTranslateKeyCode_dylibloader_wrapper_xlib)( XkbDescPtr, KeyCode,
 extern int (*XkbTranslateKeySym_dylibloader_wrapper_xlib)( Display*, KeySym*, unsigned int, char*, int, int*);
 extern int (*XkbSetAutoRepeatRate_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
 extern int (*XkbGetAutoRepeatRate_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
-extern int (*XkbChangeEnabledControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
+extern int (*XkbChangeEnabledControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, unsigned int);
 extern int (*XkbDeviceBell_dylibloader_wrapper_xlib)( Display*, Window, int, int, int, int, Atom);
 extern int (*XkbForceDeviceBell_dylibloader_wrapper_xlib)( Display*, int, int, int, int);
 extern int (*XkbDeviceBellEvent_dylibloader_wrapper_xlib)( Display*, Window, int, int, int, int, Atom);
@@ -2377,11 +2377,11 @@ extern int (*XkbGetVirtualMods_dylibloader_wrapper_xlib)( Display*, unsigned int
 extern int (*XkbGetKeyExplicitComponents_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
 extern int (*XkbGetKeyModifierMap_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
 extern int (*XkbGetKeyVirtualModMap_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, XkbDescPtr);
-extern int (*XkbAllocControls_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int);
-extern void (*XkbFreeControls_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
-extern int (*XkbGetControls_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
-extern int (*XkbSetControls_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
-extern void (*XkbNoteControlsChanges_dylibloader_wrapper_xlib)( XkbControlsChangesPtr, XkbControlsNotifyEvent*, unsigned int);
+extern int (*XkbAllocControles_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int);
+extern void (*XkbFreeControles_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
+extern int (*XkbGetControles_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
+extern int (*XkbSetControles_dylibloader_wrapper_xlib)( Display*, unsigned long, XkbDescPtr);
+extern void (*XkbNoteControlesChanges_dylibloader_wrapper_xlib)( XkbControlesChangesPtr, XkbControlesNotifyEvent*, unsigned int);
 extern int (*XkbAllocCompatMap_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, unsigned int);
 extern void (*XkbFreeCompatMap_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, int);
 extern int (*XkbGetCompatMap_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDescPtr);
@@ -2396,10 +2396,10 @@ extern int (*XkbSetMap_dylibloader_wrapper_xlib)( Display*, unsigned int, XkbDes
 extern int (*XkbChangeMap_dylibloader_wrapper_xlib)( Display*, XkbDescPtr, XkbMapChangesPtr);
 extern int (*XkbSetDetectableAutoRepeat_dylibloader_wrapper_xlib)( Display*, int, int*);
 extern int (*XkbGetDetectableAutoRepeat_dylibloader_wrapper_xlib)( Display*, int*);
-extern int (*XkbSetAutoResetControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
-extern int (*XkbGetAutoResetControls_dylibloader_wrapper_xlib)( Display*, unsigned int*, unsigned int*);
-extern int (*XkbSetPerClientControls_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*);
-extern int (*XkbGetPerClientControls_dylibloader_wrapper_xlib)( Display*, unsigned int*);
+extern int (*XkbSetAutoResetControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*, unsigned int*);
+extern int (*XkbGetAutoResetControles_dylibloader_wrapper_xlib)( Display*, unsigned int*, unsigned int*);
+extern int (*XkbSetPerClientControles_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int*);
+extern int (*XkbGetPerClientControles_dylibloader_wrapper_xlib)( Display*, unsigned int*);
 extern int (*XkbCopyKeyType_dylibloader_wrapper_xlib)( XkbKeyTypePtr, XkbKeyTypePtr);
 extern int (*XkbCopyKeyTypes_dylibloader_wrapper_xlib)( XkbKeyTypePtr, XkbKeyTypePtr, int);
 extern int (*XkbResizeKeyType_dylibloader_wrapper_xlib)( XkbDescPtr, int, int, int, int);
@@ -2427,7 +2427,7 @@ extern int (*XkbSetDeviceInfo_dylibloader_wrapper_xlib)( Display*, unsigned int,
 extern int (*XkbChangeDeviceInfo_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, XkbDeviceChangesPtr);
 extern int (*XkbSetDeviceLedInfo_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, unsigned int, unsigned int, unsigned int);
 extern int (*XkbSetDeviceButtonActions_dylibloader_wrapper_xlib)( Display*, XkbDeviceInfoPtr, unsigned int, unsigned int);
-extern char (*XkbToControl_dylibloader_wrapper_xlib)( char);
+extern char (*XkbToControle_dylibloader_wrapper_xlib)( char);
 extern int (*XkbSetDebuggingFlags_dylibloader_wrapper_xlib)( Display*, unsigned int, unsigned int, char*, unsigned int, unsigned int, unsigned int*, unsigned int*);
 extern int (*XkbApplyVirtualModChanges_dylibloader_wrapper_xlib)( XkbDescPtr, unsigned int, XkbChangesPtr);
 extern int (*XkbUpdateActionVirtualMods_dylibloader_wrapper_xlib)( XkbDescPtr, XkbAction*, unsigned int);

@@ -37,8 +37,8 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	X_kbBell			 3
 #define	X_kbGetState			 4
 #define	X_kbLatchLockState		 5
-#define	X_kbGetControls			 6
-#define	X_kbSetControls			 7
+#define	X_kbGetControles			 6
+#define	X_kbSetControles			 7
 #define	X_kbGetMap			 8
 #define	X_kbSetMap			 9
 #define	X_kbGetCompatMap		10
@@ -76,7 +76,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbNewKeyboardNotify		0
 #define XkbMapNotify			1
 #define	XkbStateNotify			2
-#define XkbControlsNotify		3
+#define XkbControlesNotify		3
 #define	XkbIndicatorStateNotify		4
 #define	XkbIndicatorMapNotify		5
 #define	XkbNamesNotify			6
@@ -93,7 +93,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbNewKeyboardNotifyMask	(1L << 0)
 #define XkbMapNotifyMask		(1L << 1)
 #define	XkbStateNotifyMask		(1L << 2)
-#define XkbControlsNotifyMask		(1L << 3)
+#define XkbControlesNotifyMask		(1L << 3)
 #define	XkbIndicatorStateNotifyMask	(1L << 4)
 #define	XkbIndicatorMapNotifyMask	(1L << 5)
 #define	XkbNamesNotifyMask		(1L << 6)
@@ -146,7 +146,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
      */
 #define	XkbAllStateEventsMask		XkbAllStateComponentsMask
 #define	XkbAllMapEventsMask		XkbAllMapComponentsMask
-#define	XkbAllControlEventsMask		XkbAllControlsMask
+#define	XkbAllControleEventsMask		XkbAllControlesMask
 #define	XkbAllIndicatorEventsMask	XkbAllIndicatorsMask
 #define	XkbAllNameEventsMask		XkbAllNamesMask
 #define	XkbAllCompatMapEventsMask	XkbAllCompatMask
@@ -183,7 +183,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbIndicatorMapMask		(1L << 3)
 #define	XkbNamesMask			(1L << 4)
 #define	XkbGeometryMask			(1L << 5)
-#define	XkbControlsMask			(1L << 6)
+#define	XkbControlesMask			(1L << 6)
 #define	XkbAllComponentsMask		(0x7f)
 
     /*
@@ -210,32 +210,32 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbAllStateComponentsMask	(0x3fff)
 
     /*
-     * Controls detail masks:
-     *  The controls specified in XkbAllControlsMask:
-     *  - The 'changed' field of ControlsNotify events reports which of
+     * Controles detail masks:
+     *  The controls specified in XkbAllControlesMask:
+     *  - The 'changed' field of ControlesNotify events reports which of
      *    the keyboard controls have changed.
-     *  - The 'changeControls' field of the SetControls request specifies
+     *  - The 'changeControles' field of the SetControles request specifies
      *    the controls for which values are to be changed.
      *  - Used as an event detail mask to limit the conditions under
-     *    which ControlsNotify events are reported.
+     *    which ControlesNotify events are reported.
      *
      *  The controls specified in the XkbAllBooleanCtrlsMask:
-     *  - The 'enabledControls' field of ControlsNotify events reports the
+     *  - The 'enabledControles' field of ControlesNotify events reports the
      *    current status of the boolean controls.
-     *  - The 'enabledControlsChanges' field of ControlsNotify events reports
+     *  - The 'enabledControlesChanges' field of ControlesNotify events reports
      *    any boolean controls that have been turned on or off.
-     *  - The 'affectEnabledControls' and 'enabledControls' fields of the
-     *    kbSetControls request change the set of enabled controls.
+     *  - The 'affectEnabledControles' and 'enabledControles' fields of the
+     *    kbSetControles request change the set of enabled controls.
      *  - The 'accessXTimeoutMask' and 'accessXTimeoutValues' fields of
-     *    an XkbControlsRec specify the controls to be changed if the keyboard
+     *    an XkbControlesRec specify the controls to be changed if the keyboard
      *    times out and the values to which they should be changed.
      *  - The 'autoCtrls' and 'autoCtrlsValues' fields of the PerClientFlags
      *    request specifies the specify the controls to be reset when the
      *    client exits and the values to which they should be reset.
      *  - The 'ctrls' field of an indicator map specifies the controls
      *    that drive the indicator.
-     *  - Specifies the boolean controls affected by the SetControls and
-     *    LockControls key actions.
+     *  - Specifies the boolean controls affected by the SetControles and
+     *    LockControles key actions.
      */
 #define	XkbRepeatKeysMask	 (1L << 0)
 #define	XkbSlowKeysMask		 (1L << 1)
@@ -254,20 +254,20 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbInternalModsMask	 (1L << 28)
 #define	XkbIgnoreLockModsMask	 (1L << 29)
 #define	XkbPerKeyRepeatMask	 (1L << 30)
-#define	XkbControlsEnabledMask	 (1L << 31)
+#define	XkbControlesEnabledMask	 (1L << 31)
 
 #define	XkbAccessXOptionsMask    (XkbStickyKeysMask|XkbAccessXFeedbackMask)
 
 #define	XkbAllBooleanCtrlsMask	 (0x00001FFF)
-#define	XkbAllControlsMask	 (0xF8001FFF)
-#define	XkbAllControlEventsMask	 XkbAllControlsMask
+#define	XkbAllControlesMask	 (0xF8001FFF)
+#define	XkbAllControleEventsMask	 XkbAllControlesMask
 
     /*
      * AccessX Options Mask
-     *  - The 'accessXOptions' field of an XkbControlsRec specifies the
+     *  - The 'accessXOptions' field of an XkbControlesRec specifies the
      *    AccessX options that are currently in effect.
      *  - The 'accessXTimeoutOptionsMask' and 'accessXTimeoutOptionsValues'
-     *    fields of an XkbControlsRec specify the Access X options to be
+     *    fields of an XkbControlesRec specify the Access X options to be
      *    changed if the keyboard times out and the values to which they
      *    should be changed.
      */
@@ -382,7 +382,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
     /*
      * GroupsWrap values:
-     *  - The 'groupsWrap' field of an XkbControlsRec specifies the
+     *  - The 'groupsWrap' field of an XkbControlesRec specifies the
      *    treatment of out of range groups.
      *  - Bits 6 and 7 of the group info field of a key symbol map
      *    specify the interpretation of out of range groups for the
@@ -490,8 +490,8 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #define	XkbSA_ISOLock		0x0b
 #define	XkbSA_Terminate		0x0c
 #define	XkbSA_SwitchScreen	0x0d
-#define	XkbSA_SetControls	0x0e
-#define	XkbSA_LockControls	0x0f
+#define	XkbSA_SetControles	0x0e
+#define	XkbSA_LockControles	0x0f
 #define	XkbSA_ActionMessage	0x10
 #define	XkbSA_RedirectKey	0x11
 #define	XkbSA_DeviceBtn		0x12
@@ -507,8 +507,8 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
      */
 #define	XkbSA_BreakLatch \
 	((1<<XkbSA_NoAction)|(1<<XkbSA_PtrBtn)|(1<<XkbSA_LockPtrBtn)|\
-	(1<<XkbSA_Terminate)|(1<<XkbSA_SwitchScreen)|(1<<XkbSA_SetControls)|\
-	(1<<XkbSA_LockControls)|(1<<XkbSA_ActionMessage)|\
+	(1<<XkbSA_Terminate)|(1<<XkbSA_SwitchScreen)|(1<<XkbSA_SetControles)|\
+	(1<<XkbSA_LockControles)|(1<<XkbSA_ActionMessage)|\
 	(1<<XkbSA_RedirectKey)|(1<<XkbSA_DeviceBtn)|(1<<XkbSA_LockDeviceBtn))
 
     /*
@@ -773,7 +773,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
      */
 #define	XkbPCF_DetectableAutoRepeatMask	(1L << 0)
 #define	XkbPCF_GrabsUseXKBStateMask	(1L << 1)
-#define	XkbPCF_AutoResetControlsMask	(1L << 2)
+#define	XkbPCF_AutoResetControlesMask	(1L << 2)
 #define	XkbPCF_LookupStateWhenGrabbed	(1L << 3)
 #define	XkbPCF_SendEventUsesXKBState	(1L << 4)
 #define	XkbPCF_AllFlagsMask		(0x1F)

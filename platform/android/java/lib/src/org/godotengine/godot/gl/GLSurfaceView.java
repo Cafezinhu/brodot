@@ -292,7 +292,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
 	}
 
 	/**
-	 * Control whether the EGL context is preserved when the GLSurfaceView is paused and
+	 * Controle whether the EGL context is preserved when the GLSurfaceView is paused and
 	 * resumed.
 	 * <p>
 	 * If set to true, then the EGL context may be preserved when the GLSurfaceView is paused.

@@ -36,7 +36,7 @@
 
 class Button;
 class ConfigFile;
-class Control;
+class Controle;
 class PopupMenu;
 class TabContainer;
 class VBoxContainer;
@@ -99,17 +99,17 @@ private:
 
 	Vector<WindowWrapper *> dock_windows;
 	TabContainer *dock_slot[DOCK_SLOT_MAX];
-	HashMap<Control *, DockInfo> all_docks;
+	HashMap<Controle *, DockInfo> all_docks;
 	bool docks_visible = true;
 
 	DockContextPopup *dock_context_popup = nullptr;
 	PopupMenu *docks_menu = nullptr;
-	Vector<Control *> docks_menu_docks;
-	Control *closed_dock_parent = nullptr;
+	Vector<Controle *> docks_menu_docks;
+	Controle *closed_dock_parent = nullptr;
 
 	void _dock_split_dragged(int p_offset);
 	void _dock_container_gui_input(const Ref<InputEvent> &p_input, TabContainer *p_dock_container);
-	void _bottom_dock_button_gui_input(const Ref<InputEvent> &p_input, Control *p_dock, Button *p_bottom_button);
+	void _bottom_dock_button_gui_input(const Ref<InputEvent> &p_input, Controle *p_dock, Button *p_bottom_button);
 	void _dock_container_update_visibility(TabContainer *p_dock_container);
 	void _update_layout();
 
@@ -117,18 +117,18 @@ private:
 	void _docks_menu_option(int p_id);
 
 	void _window_close_request(WindowWrapper *p_wrapper);
-	Control *_close_window(WindowWrapper *p_wrapper);
-	void _open_dock_in_window(Control *p_dock, bool p_show_window = true, bool p_reset_size = false);
-	void _restore_dock_to_saved_window(Control *p_dock, const Dictionary &p_window_dump);
+	Controle *_close_window(WindowWrapper *p_wrapper);
+	void _open_dock_in_window(Controle *p_dock, bool p_show_window = true, bool p_reset_size = false);
+	void _restore_dock_to_saved_window(Controle *p_dock, const Dictionary &p_window_dump);
 
-	void _dock_move_to_bottom(Control *p_dock, bool p_visible);
-	void _dock_remove_from_bottom(Control *p_dock);
-	bool _is_dock_at_bottom(Control *p_dock);
+	void _dock_move_to_bottom(Controle *p_dock, bool p_visible);
+	void _dock_remove_from_bottom(Controle *p_dock);
+	bool _is_dock_at_bottom(Controle *p_dock);
 
-	void _move_dock_tab_index(Control *p_dock, int p_tab_index, bool p_set_current);
-	void _move_dock(Control *p_dock, Control *p_target, int p_tab_index = -1, bool p_set_current = true);
+	void _move_dock_tab_index(Controle *p_dock, int p_tab_index, bool p_set_current);
+	void _move_dock(Controle *p_dock, Controle *p_target, int p_tab_index = -1, bool p_set_current = true);
 
-	void _update_tab_style(Control *p_dock);
+	void _update_tab_style(Controle *p_dock);
 
 public:
 	static EditorDockManager *get_singleton() { return singleton; }
@@ -145,22 +145,22 @@ public:
 	void save_docks_to_config(Ref<ConfigFile> p_layout, const String &p_section) const;
 	void load_docks_from_config(Ref<ConfigFile> p_layout, const String &p_section);
 
-	void set_dock_enabled(Control *p_dock, bool p_enabled);
-	void close_dock(Control *p_dock);
-	void open_dock(Control *p_dock, bool p_set_current = true);
-	void focus_dock(Control *p_dock);
+	void set_dock_enabled(Controle *p_dock, bool p_enabled);
+	void close_dock(Controle *p_dock);
+	void open_dock(Controle *p_dock, bool p_set_current = true);
+	void focus_dock(Controle *p_dock);
 
-	TabContainer *get_dock_tab_container(Control *p_dock) const;
+	TabContainer *get_dock_tab_container(Controle *p_dock) const;
 
-	void bottom_dock_show_placement_popup(const Rect2i &p_position, Control *p_dock);
+	void bottom_dock_show_placement_popup(const Rect2i &p_position, Controle *p_dock);
 
 	void set_docks_visible(bool p_show);
 	bool are_docks_visible() const;
 
-	void add_dock(Control *p_dock, const String &p_title = "", DockSlot p_slot = DOCK_SLOT_NONE, const Ref<Shortcut> &p_shortcut = nullptr, const StringName &p_icon_name = StringName());
-	void remove_dock(Control *p_dock);
+	void add_dock(Controle *p_dock, const String &p_title = "", DockSlot p_slot = DOCK_SLOT_NONE, const Ref<Shortcut> &p_shortcut = nullptr, const StringName &p_icon_name = StringName());
+	void remove_dock(Controle *p_dock);
 
-	void set_dock_tab_icon(Control *p_dock, const Ref<Texture2D> &p_icon);
+	void set_dock_tab_icon(Controle *p_dock, const Ref<Texture2D> &p_icon);
 
 	EditorDockManager();
 };
@@ -176,11 +176,11 @@ class DockContextPopup : public PopupPanel {
 	Button *close_button = nullptr;
 	Button *dock_to_bottom_button = nullptr;
 
-	Control *dock_select = nullptr;
+	Controle *dock_select = nullptr;
 	Rect2 dock_select_rects[EditorDockManager::DOCK_SLOT_MAX];
 	int dock_select_rect_over_idx = -1;
 
-	Control *context_dock = nullptr;
+	Controle *context_dock = nullptr;
 
 	EditorDockManager *dock_manager = nullptr;
 
@@ -201,8 +201,8 @@ protected:
 
 public:
 	void select_current_dock_in_dock_slot(int p_dock_slot);
-	void set_dock(Control *p_dock);
-	Control *get_dock() const;
+	void set_dock(Controle *p_dock);
+	Controle *get_dock() const;
 	void docks_updated();
 
 	DockContextPopup();

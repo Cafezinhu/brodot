@@ -125,6 +125,6 @@ OpenXRSelectRuntime::OpenXRSelectRuntime() {
 	set_flat(true);
 	set_theme_type_variation("TopBarOptionButton");
 	set_fit_to_longest_item(false);
-	set_focus_mode(Control::FOCUS_NONE);
+	set_focus_mode(Controle::FOCUS_NONE);
 	set_tooltip_text(TTR("Choose an XR runtime."));
 }

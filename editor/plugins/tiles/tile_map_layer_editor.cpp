@@ -784,7 +784,7 @@ bool TileMapLayerEditorTilesPlugin::forward_canvas_gui_input(const Ref<InputEven
 	return false;
 }
 
-void TileMapLayerEditorTilesPlugin::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void TileMapLayerEditorTilesPlugin::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	TileMapLayer *edited_layer = _get_edited_layer();
 	if (!edited_layer) {
 		return;
@@ -2369,21 +2369,21 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 
 	missing_source_label = memnew(Label);
 	missing_source_label->set_text(TTR("This TileMap's TileSet has no Tile Source configured. Go to the TileSet bottom panel to add one."));
-	missing_source_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	missing_source_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	missing_source_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	missing_source_label->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	missing_source_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	missing_source_label->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	missing_source_label->hide();
 	tiles_bottom_panel->add_child(missing_source_label);
 
 	atlas_sources_split_container = memnew(HSplitContainer);
-	atlas_sources_split_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	atlas_sources_split_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	atlas_sources_split_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	atlas_sources_split_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tiles_bottom_panel->add_child(atlas_sources_split_container);
 
 	VBoxContainer *split_container_left_side = memnew(VBoxContainer);
-	split_container_left_side->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	split_container_left_side->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	split_container_left_side->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	split_container_left_side->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	split_container_left_side->set_stretch_ratio(0.25);
 	split_container_left_side->set_custom_minimum_size(Size2(70, 0) * EDSCALE);
 	atlas_sources_split_container->add_child(split_container_left_side);
@@ -2408,8 +2408,8 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 	sources_list = memnew(ItemList);
 	sources_list->set_auto_translate_mode(Node::AUTO_TRANSLATE_MODE_DISABLED);
 	sources_list->set_fixed_icon_size(Size2(60, 60) * EDSCALE);
-	sources_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	sources_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	sources_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	sources_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	sources_list->set_stretch_ratio(0.25);
 	sources_list->set_custom_minimum_size(Size2(70, 0) * EDSCALE);
 	sources_list->set_texture_filter(CanvasItem::TEXTURE_FILTER_NEAREST);
@@ -2424,20 +2424,20 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 
 	// Tile atlas source.
 	tile_atlas_view = memnew(TileAtlasView);
-	tile_atlas_view->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	tile_atlas_view->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tile_atlas_view->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	tile_atlas_view->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tile_atlas_view->set_texture_grid_visible(false);
 	tile_atlas_view->set_tile_shape_grid_visible(false);
 	tile_atlas_view->connect("transform_changed", callable_mp(TilesEditorUtils::get_singleton(), &TilesEditorUtils::set_atlas_view_transform));
 	atlas_sources_split_container->add_child(tile_atlas_view);
 
-	tile_atlas_control = memnew(Control);
+	tile_atlas_control = memnew(Controle);
 	tile_atlas_control->connect(SceneStringName(draw), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_atlas_control_draw));
 	tile_atlas_control->connect(SceneStringName(mouse_exited), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_atlas_control_mouse_exited));
 	tile_atlas_control->connect(SceneStringName(gui_input), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_atlas_control_gui_input));
 	tile_atlas_view->add_control_over_atlas_tiles(tile_atlas_control);
 
-	alternative_tiles_control = memnew(Control);
+	alternative_tiles_control = memnew(Controle);
 	alternative_tiles_control->connect(SceneStringName(draw), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_alternatives_control_draw));
 	alternative_tiles_control->connect(SceneStringName(mouse_exited), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_alternatives_control_mouse_exited));
 	alternative_tiles_control->connect(SceneStringName(gui_input), callable_mp(this, &TileMapLayerEditorTilesPlugin::_tile_alternatives_control_gui_input));
@@ -2446,8 +2446,8 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 	// Scenes collection source.
 	scene_tiles_list = memnew(ItemList);
 	scene_tiles_list->set_auto_translate_mode(Node::AUTO_TRANSLATE_MODE_DISABLED);
-	scene_tiles_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	scene_tiles_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	scene_tiles_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	scene_tiles_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	scene_tiles_list->set_select_mode(ItemList::SELECT_MULTI);
 	scene_tiles_list->connect("multi_selected", callable_mp(this, &TileMapLayerEditorTilesPlugin::_scenes_list_multi_selected));
 	scene_tiles_list->connect("empty_clicked", callable_mp(this, &TileMapLayerEditorTilesPlugin::_scenes_list_lmb_empty_clicked));
@@ -2457,8 +2457,8 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 	// Invalid source label.
 	invalid_source_label = memnew(Label);
 	invalid_source_label->set_text(TTR("Invalid source selected."));
-	invalid_source_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	invalid_source_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	invalid_source_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	invalid_source_label->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	invalid_source_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	invalid_source_label->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	invalid_source_label->hide();
@@ -2477,7 +2477,7 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 	patterns_item_list->set_fixed_column_width(thumbnail_size * 3 / 2);
 	patterns_item_list->set_max_text_lines(2);
 	patterns_item_list->set_fixed_icon_size(Size2(thumbnail_size, thumbnail_size));
-	patterns_item_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	patterns_item_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	patterns_item_list->connect(SceneStringName(gui_input), callable_mp(this, &TileMapLayerEditorTilesPlugin::_patterns_item_list_gui_input));
 	patterns_item_list->connect(SceneStringName(item_selected), callable_mp(this, &TileMapLayerEditorTilesPlugin::_update_selection_pattern_from_tileset_pattern_selection).unbind(1));
 	patterns_item_list->connect("item_activated", callable_mp(this, &TileMapLayerEditorTilesPlugin::_update_selection_pattern_from_tileset_pattern_selection).unbind(1));
@@ -2487,7 +2487,7 @@ TileMapLayerEditorTilesPlugin::TileMapLayerEditorTilesPlugin() {
 	patterns_help_label = memnew(Label);
 	patterns_help_label->set_text(TTR("Drag and drop or paste a TileMap selection here to store a pattern."));
 	patterns_help_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
-	patterns_help_label->set_anchors_and_offsets_preset(Control::PRESET_CENTER);
+	patterns_help_label->set_anchors_and_offsets_preset(Controle::PRESET_CENTER);
 	patterns_item_list->add_child(patterns_help_label);
 
 	// Update.
@@ -3148,7 +3148,7 @@ bool TileMapLayerEditorTerrainsPlugin::forward_canvas_gui_input(const Ref<InputE
 	return false;
 }
 
-void TileMapLayerEditorTerrainsPlugin::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void TileMapLayerEditorTerrainsPlugin::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	const TileMapLayer *edited_layer = _get_edited_layer();
 	if (!edited_layer) {
 		return;
@@ -3519,12 +3519,12 @@ TileMapLayerEditorTerrainsPlugin::TileMapLayerEditorTerrainsPlugin() {
 	main_vbox_container->set_name(TTR("Terrains"));
 
 	HSplitContainer *tilemap_tab_terrains = memnew(HSplitContainer);
-	tilemap_tab_terrains->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	tilemap_tab_terrains->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tilemap_tab_terrains->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	tilemap_tab_terrains->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vbox_container->add_child(tilemap_tab_terrains);
 
 	terrains_tree = memnew(Tree);
-	terrains_tree->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	terrains_tree->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	terrains_tree->set_stretch_ratio(0.25);
 	terrains_tree->set_custom_minimum_size(Size2(70, 0) * EDSCALE);
 	terrains_tree->set_texture_filter(CanvasItem::TEXTURE_FILTER_NEAREST);
@@ -3534,7 +3534,7 @@ TileMapLayerEditorTerrainsPlugin::TileMapLayerEditorTerrainsPlugin() {
 
 	terrains_tile_list = memnew(ItemList);
 	terrains_tile_list->set_auto_translate_mode(Node::AUTO_TRANSLATE_MODE_DISABLED);
-	terrains_tile_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	terrains_tile_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	terrains_tile_list->set_max_columns(0);
 	terrains_tile_list->set_same_column_width(true);
 	terrains_tile_list->set_fixed_icon_size(Size2(32, 32) * EDSCALE);
@@ -4231,7 +4231,7 @@ bool TileMapLayerEditor::forward_canvas_gui_input(const Ref<InputEvent> &p_event
 	return tabs_plugins[tabs_bar->get_current_tab()]->forward_canvas_gui_input(p_event);
 }
 
-void TileMapLayerEditor::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void TileMapLayerEditor::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	const TileMapLayer *edited_layer = _get_edited_layer();
 	if (!edited_layer) {
 		return;
@@ -4446,7 +4446,7 @@ TileMapLayerEditor::TileMapLayerEditor() {
 	}
 
 	// Wide empty separation control. (like BoxContainer::add_spacer())
-	Control *c = memnew(Control);
+	Controle *c = memnew(Controle);
 	c->set_mouse_filter(MOUSE_FILTER_PASS);
 	c->set_h_size_flags(SIZE_EXPAND_FILL);
 	tile_map_toolbar->add_child(c);

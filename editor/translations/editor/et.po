@@ -882,10 +882,10 @@ msgstr "Kasutus"
 msgid "Misc"
 msgstr "Muud"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Klõpsatud juhtelement:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Klõpsatud juhtelemendi tüüp:"
 
 msgid "Live Edit Root:"
@@ -2278,7 +2278,7 @@ msgstr "Projekt"
 msgid "Project Settings"
 msgstr "Projekti sätted"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versioonihaldus"
 
 msgid "Tools"
@@ -5074,10 +5074,10 @@ msgstr ""
 "Suurusele."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
-"Kui Aktiivne, siis Control Sõlmede liigutamine muudab nende Ankruid, mitte "
+"Kui Aktiivne, siis Controle Sõlmede liigutamine muudab nende Ankruid, mitte "
 "nende Nihkeid."
 
 msgid "Sizing settings for children of a Container node."
@@ -6354,7 +6354,7 @@ msgstr "Tükelda Kõver"
 msgid "Right Click: Delete Point"
 msgstr "Parem Klõps: Kustuda Punkt"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Vali Kontroll Punktid (Shift+Lohista)"
 
 msgid "Delete Point"
@@ -7744,8 +7744,8 @@ msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr ""
 "Vale tee, PackedScene'i ressurss on tõenäoliselt teisaldatud või eemaldatud."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
-msgstr "Väär PackedScene'i ressurss, selle juures peab olema Control sõlm."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
+msgstr "Väär PackedScene'i ressurss, selle juures peab olema Controle sõlm."
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "Vigane fail, ei ole PackedScene'i resurss."
@@ -8213,7 +8213,7 @@ msgstr "Kas soovite haru %s eemaldada?"
 msgid "Do you want to remove the %s remote?"
 msgstr "Kas soovite kaugharu %s eemaldada?"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Loo Verisoonikontrolli Metaandmed"
 
 msgid "Create VCS metadata files for:"
@@ -8701,7 +8701,7 @@ msgstr "Projekti Nimi"
 msgid "Project Path:"
 msgstr "Projekti Tee:"
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Versioonikontrolli Metadata"
 
 msgid "Restart Now"

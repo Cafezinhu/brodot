@@ -1,5 +1,5 @@
 /*
- * uapi/sound/asoc.h -- ALSA SoC Firmware Controls and DAPM
+ * uapi/sound/asoc.h -- ALSA SoC Firmware Controles and DAPM
  *
  * Copyright (C) 2012 Texas Instruments Inc.
  * Copyright (C) 2015 Intel Corporation.

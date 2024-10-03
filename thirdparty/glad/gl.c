@@ -159,7 +159,7 @@ PFNGLCREATEPROGRAMPROC glad_glCreateProgram = NULL;
 PFNGLCREATESHADERPROC glad_glCreateShader = NULL;
 PFNGLCULLFACEPROC glad_glCullFace = NULL;
 PFNGLDEBUGMESSAGECALLBACKARBPROC glad_glDebugMessageCallbackARB = NULL;
-PFNGLDEBUGMESSAGECONTROLARBPROC glad_glDebugMessageControlARB = NULL;
+PFNGLDEBUGMESSAGECONTROLARBPROC glad_glDebugMessageControleARB = NULL;
 PFNGLDEBUGMESSAGEINSERTARBPROC glad_glDebugMessageInsertARB = NULL;
 PFNGLDELETEBUFFERSPROC glad_glDeleteBuffers = NULL;
 PFNGLDELETEFRAMEBUFFERSPROC glad_glDeleteFramebuffers = NULL;
@@ -815,7 +815,7 @@ PFNGLCLEARDEPTHFPROC glad_glClearDepthf = NULL;
 PFNGLCOPYIMAGESUBDATAPROC glad_glCopyImageSubData = NULL;
 PFNGLCREATESHADERPROGRAMVPROC glad_glCreateShaderProgramv = NULL;
 PFNGLDEBUGMESSAGECALLBACKPROC glad_glDebugMessageCallback = NULL;
-PFNGLDEBUGMESSAGECONTROLPROC glad_glDebugMessageControl = NULL;
+PFNGLDEBUGMESSAGECONTROLPROC glad_glDebugMessageControle = NULL;
 PFNGLDEBUGMESSAGEINSERTPROC glad_glDebugMessageInsert = NULL;
 PFNGLDELETEPROGRAMPIPELINESPROC glad_glDeleteProgramPipelines = NULL;
 PFNGLDELETETRANSFORMFEEDBACKSPROC glad_glDeleteTransformFeedbacks = NULL;
@@ -2004,7 +2004,7 @@ static void glad_gl_load_GL_ES_VERSION_3_2( GLADuserptrloadfunc load, void* user
     glad_glColorMaski = (PFNGLCOLORMASKIPROC) load(userptr, "glColorMaski");
     glad_glCopyImageSubData = (PFNGLCOPYIMAGESUBDATAPROC) load(userptr, "glCopyImageSubData");
     glad_glDebugMessageCallback = (PFNGLDEBUGMESSAGECALLBACKPROC) load(userptr, "glDebugMessageCallback");
-    glad_glDebugMessageControl = (PFNGLDEBUGMESSAGECONTROLPROC) load(userptr, "glDebugMessageControl");
+    glad_glDebugMessageControle = (PFNGLDEBUGMESSAGECONTROLPROC) load(userptr, "glDebugMessageControle");
     glad_glDebugMessageInsert = (PFNGLDEBUGMESSAGEINSERTPROC) load(userptr, "glDebugMessageInsert");
     glad_glDisablei = (PFNGLDISABLEIPROC) load(userptr, "glDisablei");
     glad_glDrawElementsBaseVertex = (PFNGLDRAWELEMENTSBASEVERTEXPROC) load(userptr, "glDrawElementsBaseVertex");
@@ -2044,7 +2044,7 @@ static void glad_gl_load_GL_ES_VERSION_3_2( GLADuserptrloadfunc load, void* user
 static void glad_gl_load_GL_ARB_debug_output( GLADuserptrloadfunc load, void* userptr) {
     if(!GLAD_GL_ARB_debug_output) return;
     glad_glDebugMessageCallbackARB = (PFNGLDEBUGMESSAGECALLBACKARBPROC) load(userptr, "glDebugMessageCallbackARB");
-    glad_glDebugMessageControlARB = (PFNGLDEBUGMESSAGECONTROLARBPROC) load(userptr, "glDebugMessageControlARB");
+    glad_glDebugMessageControleARB = (PFNGLDEBUGMESSAGECONTROLARBPROC) load(userptr, "glDebugMessageControleARB");
     glad_glDebugMessageInsertARB = (PFNGLDEBUGMESSAGEINSERTARBPROC) load(userptr, "glDebugMessageInsertARB");
     glad_glGetDebugMessageLogARB = (PFNGLGETDEBUGMESSAGELOGARBPROC) load(userptr, "glGetDebugMessageLogARB");
 }

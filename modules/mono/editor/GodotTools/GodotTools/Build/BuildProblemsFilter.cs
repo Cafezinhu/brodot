@@ -31,7 +31,7 @@ namespace GodotTools.Build
                 ToggleMode = true,
                 ButtonPressed = true,
                 Text = "0",
-                FocusMode = Control.FocusModeEnum.None,
+                FocusMode = Controle.FocusModeEnum.None,
                 ThemeTypeVariation = "EditorLogFilterButton",
             };
         }

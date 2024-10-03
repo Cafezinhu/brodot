@@ -59,7 +59,7 @@ class ImportDock : public VBoxContainer {
 	Button *import = nullptr;
 	List<String> need_cleanup;
 
-	Control *advanced_spacer = nullptr;
+	Controle *advanced_spacer = nullptr;
 	Button *advanced = nullptr;
 
 	ImportDockParameters *params = nullptr;

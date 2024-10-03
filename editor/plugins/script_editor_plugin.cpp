@@ -677,7 +677,7 @@ void ScriptEditor::_go_to_tab(int p_idx) {
 		}
 	}
 
-	Control *c = tab_container->get_tab_control(p_idx);
+	Controle *c = tab_container->get_tab_control(p_idx);
 	if (!c) {
 		return;
 	}
@@ -1362,7 +1362,7 @@ void ScriptEditor::_menu_option(int p_option) {
 			help_search_dialog->popup_dialog();
 		} break;
 		case SEARCH_WEBSITE: {
-			Control *tab = tab_container->get_current_tab_control();
+			Controle *tab = tab_container->get_current_tab_control();
 
 			EditorHelp *eh = Object::cast_to<EditorHelp>(tab);
 			bool native_class_doc = false;
@@ -1393,7 +1393,7 @@ void ScriptEditor::_menu_option(int p_option) {
 			if (current) {
 				current->update_toggle_scripts_button();
 			} else {
-				Control *tab = tab_container->get_current_tab_control();
+				Controle *tab = tab_container->get_current_tab_control();
 				EditorHelp *editor_help = Object::cast_to<EditorHelp>(tab);
 				if (editor_help) {
 					editor_help->update_toggle_scripts_button();
@@ -3074,7 +3074,7 @@ void ScriptEditor::_split_dragged(float) {
 	_save_layout();
 }
 
-Variant ScriptEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant ScriptEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (tab_container->get_tab_count() == 0) {
 		return Variant();
 	}
@@ -3114,7 +3114,7 @@ Variant ScriptEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
 	return drag_data;
 }
 
-bool ScriptEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ScriptEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (!d.has("type")) {
 		return false;
@@ -3183,7 +3183,7 @@ bool ScriptEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data
 	return false;
 }
 
-void ScriptEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ScriptEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -4621,7 +4621,7 @@ ScriptEditorPlugin::ScriptEditorPlugin() {
 	window_wrapper->set_wrapped_control(script_editor, make_floating_shortcut);
 
 	EditorNode::get_singleton()->get_editor_main_screen()->get_control()->add_child(window_wrapper);
-	window_wrapper->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	window_wrapper->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	window_wrapper->hide();
 	window_wrapper->connect("window_visibility_changed", callable_mp(this, &ScriptEditorPlugin::_window_visibility_changed));
 

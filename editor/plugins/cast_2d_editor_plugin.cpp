@@ -109,7 +109,7 @@ bool Cast2DEditor::forward_canvas_gui_input(const Ref<InputEvent> &p_event) {
 	return false;
 }
 
-void Cast2DEditor::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void Cast2DEditor::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	if (!node || !node->is_visible_in_tree()) {
 		return;
 	}

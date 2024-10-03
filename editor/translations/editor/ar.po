@@ -1845,11 +1845,11 @@ msgstr "الاستخدام"
 msgid "Misc"
 msgstr "المتنوعات"
 
-msgid "Clicked Control:"
-msgstr "التحكم بالنقر Clicked Control:"
+msgid "Clicked Controle:"
+msgstr "التحكم بالنقر Clicked Controle:"
 
-msgid "Clicked Control Type:"
-msgstr "نوع التحكم بالنقر Clicked Control:"
+msgid "Clicked Controle Type:"
+msgstr "نوع التحكم بالنقر Clicked Controle:"
 
 msgid "Live Edit Root:"
 msgstr "جذر التعديل المباشر:"
@@ -3818,8 +3818,8 @@ msgstr "إعدادات المشروع..."
 msgid "Project Settings"
 msgstr "إعدادات المشروع"
 
-msgid "Version Control"
-msgstr "إدارة الإصدارات (Version Control)"
+msgid "Version Controle"
+msgstr "إدارة الإصدارات (Version Controle)"
 
 msgid "Export..."
 msgstr "تصدير بنوع..."
@@ -3981,7 +3981,7 @@ msgstr ""
 msgid "Discard local changes and reload"
 msgstr "إلغاء التعديلات المحلية و اعادة التحميل"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "إعدادات التحكم في الإصدارات..."
 
 msgid "New Inherited"
@@ -5994,11 +5994,11 @@ msgstr "خيارات إضافية"
 msgid "Device:"
 msgstr "الجهاز:"
 
-msgid "Command / Control (auto)"
+msgid "Command / Controle (auto)"
 msgstr "الأمر\\ الضبط (تلقائي)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
 "يتم إعادة التعيين تلقائيًا بين \"Meta\" (\"الأمر\") و\"التحكم\" اعتمادًا على "
@@ -6150,7 +6150,7 @@ msgstr "الملفات ذات سلاسل الترجمة:"
 msgid "Generate POT"
 msgstr "POT المولدة"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr "أضف أسماء من العناصر المدمجة كبعض عُقد التحكم."
 
 msgid "Set %s on %d nodes"
@@ -6972,7 +6972,7 @@ msgstr "تحريك مرساة عنصر-اللوحة \"%s\""
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "تعديل حجم العقدة \"Node2D \"%s إلى (%s,%s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "تغيير حجم عنصر التحكم \"%s\" إلى (%d،% d)"
 
 msgid "Scale %d CanvasItems"
@@ -7448,7 +7448,7 @@ msgstr "تغيير أعلام الحجم العامودي"
 msgid "Change Horizontal Size Flags"
 msgstr "تغيير أعلام الحجم الأفقي"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "تجهيزات المراسي والإزاحة لعقدة التحكم."
 
 msgid "Anchor preset"
@@ -7461,7 +7461,7 @@ msgid "Adjust anchors and offsets to match the current rect size."
 msgstr "عدّلْ المراسي والإزاحات لتوافقَ حجمَ المستطيل الحالي."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr "إذا كان مُفعّلا، فإن نقل عُقد التحكم يُغيّر مراسيها بدلا من تغيير إزاحاتها."
 
@@ -8887,11 +8887,11 @@ msgstr "حدد ملف لدمج الخريطة الضوئية :"
 msgid "Remove Point from Curve"
 msgstr "إزالة النقطة من المنحنى"
 
-msgid "Remove Out-Control from Curve"
-msgstr "أزل Out-Control من المنحنى"
+msgid "Remove Out-Controle from Curve"
+msgstr "أزل Out-Controle من المنحنى"
 
-msgid "Remove In-Control from Curve"
-msgstr "أزل In-Control من المنحنى"
+msgid "Remove In-Controle from Curve"
+msgstr "أزل In-Controle من المنحنى"
 
 msgid "Move Point in Curve"
 msgstr "حرك النقطة داخل المنحنى"
@@ -8902,11 +8902,11 @@ msgstr "أضف نقطة للمنحنى"
 msgid "Split Curve"
 msgstr "تقسيم المنحنى"
 
-msgid "Move In-Control in Curve"
-msgstr "حرك In-Control داخل المنحنى"
+msgid "Move In-Controle in Curve"
+msgstr "حرك In-Controle داخل المنحنى"
 
-msgid "Move Out-Control in Curve"
-msgstr "حرك Out-Control داخل المنحنى"
+msgid "Move Out-Controle in Curve"
+msgstr "حرك Out-Controle داخل المنحنى"
 
 msgid "Clear Curve Points"
 msgstr "مسح نقاط المُنحنى"
@@ -8914,7 +8914,7 @@ msgstr "مسح نقاط المُنحنى"
 msgid "Right Click: Delete Point"
 msgstr "بالزر الأيمن: احذف النقطة"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "اختر العُقد الآباء (بالسحب + Shift)"
 
 msgid "Delete Point"
@@ -8965,10 +8965,10 @@ msgstr "فصل المسار"
 msgid "Remove Path Point"
 msgstr "إزالة نُقطة المسار"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "إعادة ضبط نقطة التحكم الخارجية"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "إعادة ضبط نقطة التحكم"
 
 msgid "Reset Point Tilt"
@@ -10478,9 +10478,9 @@ msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr ""
 "مسار غير صالح، غالباً مصدر المشهد الموضب PackedScene قد تمت إزالته أو نقله."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
-"مصدر للمشهد الموضب PackedScene غير صالح، يجب أن يملك عقدة تحكم Control node "
+"مصدر للمشهد الموضب PackedScene غير صالح، يجب أن يملك عقدة تحكم Controle node "
 "كعقدة رئيسة."
 
 msgid "Invalid file, not a PackedScene resource."
@@ -11122,7 +11122,7 @@ msgstr "هل تريد إزالة فرع %s؟"
 msgid "Do you want to remove the %s remote?"
 msgstr "هل ترغب في حذف هذي النسخة %s؟"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "إنشاء بيانات تعريف التحكم في الإصدار"
 
 msgid "Create VCS metadata files for:"
@@ -12813,7 +12813,7 @@ msgstr "مُحرك الإخراج البصري:"
 msgid "The renderer can be changed later, but scenes may need to be adjusted."
 msgstr "نظام التكوين يمكن تغييره لاحقا، ولكن المَشاهد قد تحتاج إلى تعديل."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "البيانات الوصفية للتحكم في الإصدار:"
 
 msgid "Git"
@@ -15422,7 +15422,7 @@ msgstr "بدّل بين القيم البرمجية والسداسية العش�
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "لا تخدم الحاوية في حد ذاتها أي غرض ما لم يقم النص البرمجي بتكوين سلوك وضع "
 "الأتباع الخاص به .\n"
@@ -15449,7 +15449,7 @@ msgstr "إذا تم تفعيل ال\"Exp Edit\" يجب على ان يكون \"Mi
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "تم تصميم ScrollContainer للعمل مع عنصر تحكم تابع واحد.\n"

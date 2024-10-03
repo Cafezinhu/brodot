@@ -3409,7 +3409,7 @@ FORCE_INLINE __m128 _mm_castsi128_ps(__m128i a)
 // cache hierarchy.
 // https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm_clflush
 #if defined(__APPLE__)
-#include <libkern/OSCacheControl.h>
+#include <libkern/OSCacheControle.h>
 #endif
 FORCE_INLINE void _mm_clflush(void const *p)
 {

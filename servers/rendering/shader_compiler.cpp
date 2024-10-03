@@ -1395,7 +1395,7 @@ String ShaderCompiler::_dump_node_code(const SL::Node *p_node, int p_level, Gene
 
 		} break;
 		case SL::Node::NODE_TYPE_CONTROL_FLOW: {
-			SL::ControlFlowNode *cfnode = (SL::ControlFlowNode *)p_node;
+			SL::ControleFlowNode *cfnode = (SL::ControleFlowNode *)p_node;
 			if (cfnode->flow_op == SL::FLOW_OP_IF) {
 				code += _mktab(p_level) + "if (" + _dump_node_code(cfnode->expressions[0], p_level, r_gen_code, p_actions, p_default_actions, p_assigning) + ")\n";
 				code += _dump_node_code(cfnode->blocks[0], p_level + 1, r_gen_code, p_actions, p_default_actions, p_assigning);

@@ -485,14 +485,14 @@ PackedStringArray XRNode3D::get_configuration_warnings() const {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void XRController3D::_bind_methods() {
+void XRControleler3D::_bind_methods() {
 	// passthroughs to information about our related joystick
-	ClassDB::bind_method(D_METHOD("is_button_pressed", "name"), &XRController3D::is_button_pressed);
-	ClassDB::bind_method(D_METHOD("get_input", "name"), &XRController3D::get_input);
-	ClassDB::bind_method(D_METHOD("get_float", "name"), &XRController3D::get_float);
-	ClassDB::bind_method(D_METHOD("get_vector2", "name"), &XRController3D::get_vector2);
+	ClassDB::bind_method(D_METHOD("is_button_pressed", "name"), &XRControleler3D::is_button_pressed);
+	ClassDB::bind_method(D_METHOD("get_input", "name"), &XRControleler3D::get_input);
+	ClassDB::bind_method(D_METHOD("get_float", "name"), &XRControleler3D::get_float);
+	ClassDB::bind_method(D_METHOD("get_vector2", "name"), &XRControleler3D::get_vector2);
 
-	ClassDB::bind_method(D_METHOD("get_tracker_hand"), &XRController3D::get_tracker_hand);
+	ClassDB::bind_method(D_METHOD("get_tracker_hand"), &XRControleler3D::get_tracker_hand);
 
 	ADD_SIGNAL(MethodInfo("button_pressed", PropertyInfo(Variant::STRING, "name")));
 	ADD_SIGNAL(MethodInfo("button_released", PropertyInfo(Variant::STRING, "name")));
@@ -501,52 +501,52 @@ void XRController3D::_bind_methods() {
 	ADD_SIGNAL(MethodInfo("profile_changed", PropertyInfo(Variant::STRING, "role")));
 };
 
-void XRController3D::_bind_tracker() {
+void XRControleler3D::_bind_tracker() {
 	XRNode3D::_bind_tracker();
 	if (tracker.is_valid()) {
 		// bind to input signals
-		tracker->connect("button_pressed", callable_mp(this, &XRController3D::_button_pressed));
-		tracker->connect("button_released", callable_mp(this, &XRController3D::_button_released));
-		tracker->connect("input_float_changed", callable_mp(this, &XRController3D::_input_float_changed));
-		tracker->connect("input_vector2_changed", callable_mp(this, &XRController3D::_input_vector2_changed));
-		tracker->connect("profile_changed", callable_mp(this, &XRController3D::_profile_changed));
+		tracker->connect("button_pressed", callable_mp(this, &XRControleler3D::_button_pressed));
+		tracker->connect("button_released", callable_mp(this, &XRControleler3D::_button_released));
+		tracker->connect("input_float_changed", callable_mp(this, &XRControleler3D::_input_float_changed));
+		tracker->connect("input_vector2_changed", callable_mp(this, &XRControleler3D::_input_vector2_changed));
+		tracker->connect("profile_changed", callable_mp(this, &XRControleler3D::_profile_changed));
 	}
 }
 
-void XRController3D::_unbind_tracker() {
+void XRControleler3D::_unbind_tracker() {
 	if (tracker.is_valid()) {
 		// unbind input signals
-		tracker->disconnect("button_pressed", callable_mp(this, &XRController3D::_button_pressed));
-		tracker->disconnect("button_released", callable_mp(this, &XRController3D::_button_released));
-		tracker->disconnect("input_float_changed", callable_mp(this, &XRController3D::_input_float_changed));
-		tracker->disconnect("input_vector2_changed", callable_mp(this, &XRController3D::_input_vector2_changed));
-		tracker->disconnect("profile_changed", callable_mp(this, &XRController3D::_profile_changed));
+		tracker->disconnect("button_pressed", callable_mp(this, &XRControleler3D::_button_pressed));
+		tracker->disconnect("button_released", callable_mp(this, &XRControleler3D::_button_released));
+		tracker->disconnect("input_float_changed", callable_mp(this, &XRControleler3D::_input_float_changed));
+		tracker->disconnect("input_vector2_changed", callable_mp(this, &XRControleler3D::_input_vector2_changed));
+		tracker->disconnect("profile_changed", callable_mp(this, &XRControleler3D::_profile_changed));
 	}
 
 	XRNode3D::_unbind_tracker();
 }
 
-void XRController3D::_button_pressed(const String &p_name) {
+void XRControleler3D::_button_pressed(const String &p_name) {
 	emit_signal(SNAME("button_pressed"), p_name);
 }
 
-void XRController3D::_button_released(const String &p_name) {
+void XRControleler3D::_button_released(const String &p_name) {
 	emit_signal(SNAME("button_released"), p_name);
 }
 
-void XRController3D::_input_float_changed(const String &p_name, float p_value) {
+void XRControleler3D::_input_float_changed(const String &p_name, float p_value) {
 	emit_signal(SNAME("input_float_changed"), p_name, p_value);
 }
 
-void XRController3D::_input_vector2_changed(const String &p_name, Vector2 p_value) {
+void XRControleler3D::_input_vector2_changed(const String &p_name, Vector2 p_value) {
 	emit_signal(SNAME("input_vector2_changed"), p_name, p_value);
 }
 
-void XRController3D::_profile_changed(const String &p_role) {
+void XRControleler3D::_profile_changed(const String &p_role) {
 	emit_signal(SNAME("profile_changed"), p_role);
 }
 
-bool XRController3D::is_button_pressed(const StringName &p_name) const {
+bool XRControleler3D::is_button_pressed(const StringName &p_name) const {
 	if (tracker.is_valid()) {
 		// Inputs should already be of the correct type, our XR runtime handles conversions between raw input and the desired type
 		bool pressed = tracker->get_input(p_name);
@@ -556,7 +556,7 @@ bool XRController3D::is_button_pressed(const StringName &p_name) const {
 	}
 }
 
-Variant XRController3D::get_input(const StringName &p_name) const {
+Variant XRControleler3D::get_input(const StringName &p_name) const {
 	if (tracker.is_valid()) {
 		return tracker->get_input(p_name);
 	} else {
@@ -564,7 +564,7 @@ Variant XRController3D::get_input(const StringName &p_name) const {
 	}
 }
 
-float XRController3D::get_float(const StringName &p_name) const {
+float XRControleler3D::get_float(const StringName &p_name) const {
 	if (tracker.is_valid()) {
 		// Inputs should already be of the correct type, our XR runtime handles conversions between raw input and the desired type, but just in case we convert
 		Variant input = tracker->get_input(p_name);
@@ -585,7 +585,7 @@ float XRController3D::get_float(const StringName &p_name) const {
 	}
 }
 
-Vector2 XRController3D::get_vector2(const StringName &p_name) const {
+Vector2 XRControleler3D::get_vector2(const StringName &p_name) const {
 	if (tracker.is_valid()) {
 		// Inputs should already be of the correct type, our XR runtime handles conversions between raw input and the desired type, but just in case we convert
 		Variant input = tracker->get_input(p_name);
@@ -610,7 +610,7 @@ Vector2 XRController3D::get_vector2(const StringName &p_name) const {
 	}
 }
 
-XRPositionalTracker::TrackerHand XRController3D::get_tracker_hand() const {
+XRPositionalTracker::TrackerHand XRControleler3D::get_tracker_hand() const {
 	// get our XRServer
 	if (!tracker.is_valid()) {
 		return XRPositionalTracker::TRACKER_HAND_UNKNOWN;

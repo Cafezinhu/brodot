@@ -45,7 +45,7 @@ class AudioListener2D;
 class Camera2D;
 class CanvasItem;
 class CanvasLayer;
-class Control;
+class Controle;
 class Label;
 class SceneTreeTimer;
 class Viewport;
@@ -352,17 +352,17 @@ private:
 	struct GUI {
 		bool mouse_in_viewport = false;
 		HashMap<int, ObjectID> touch_focus;
-		Control *mouse_focus = nullptr;
-		Control *mouse_click_grabber = nullptr;
+		Controle *mouse_focus = nullptr;
+		Controle *mouse_click_grabber = nullptr;
 		BitField<MouseButtonMask> mouse_focus_mask;
-		Control *key_focus = nullptr;
-		Control *mouse_over = nullptr;
-		LocalVector<Control *> mouse_over_hierarchy;
+		Controle *key_focus = nullptr;
+		Controle *mouse_over = nullptr;
+		LocalVector<Controle *> mouse_over_hierarchy;
 		bool sending_mouse_enter_exit_notifications = false;
 		Window *subwindow_over = nullptr; // mouse_over and subwindow_over are mutually exclusive. At all times at least one of them is nullptr.
 		Window *windowmanager_window_over = nullptr; // Only used in root Viewport.
-		Control *drag_mouse_over = nullptr;
-		Control *tooltip_control = nullptr;
+		Controle *drag_mouse_over = nullptr;
+		Controle *tooltip_control = nullptr;
 		Window *tooltip_popup = nullptr;
 		Label *tooltip_label = nullptr;
 		String tooltip_text;
@@ -375,13 +375,13 @@ private:
 		Ref<SceneTreeTimer> tooltip_timer;
 		double tooltip_delay = 0.0;
 		bool roots_order_dirty = false;
-		List<Control *> roots;
+		List<Controle *> roots;
 		HashSet<ObjectID> canvas_parents_with_dirty_order;
 		int canvas_sort_index = 0; //for sorting items with canvas as root
 		bool dragging = false; // Is true in the viewport in which dragging started while dragging is active.
 		bool global_dragging = false; // Is true while dragging is active. Only used in root-Viewport and SubViewports that are not children of a SubViewportContainer.
 		bool drag_successful = false;
-		Control *target_control = nullptr; // Control that the mouse is over in the innermost nested Viewport. Only used in root-Viewport and SubViewports, that are not children of a SubViewportContainer.
+		Controle *target_control = nullptr; // Controle that the mouse is over in the innermost nested Viewport. Only used in root-Viewport and SubViewports, that are not children of a SubViewportContainer.
 		bool embed_subwindows_hint = false;
 
 		Window *subwindow_focused = nullptr;
@@ -402,53 +402,53 @@ private:
 
 	bool disable_input = false;
 
-	void _gui_call_input(Control *p_control, const Ref<InputEvent> &p_input);
-	void _gui_call_notification(Control *p_control, int p_what);
+	void _gui_call_input(Controle *p_control, const Ref<InputEvent> &p_input);
+	void _gui_call_notification(Controle *p_control, int p_what);
 
 	void _gui_sort_roots();
-	Control *_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_global, const Transform2D &p_xform);
+	Controle *_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_global, const Transform2D &p_xform);
 
 	void _gui_input_event(Ref<InputEvent> p_event);
-	void _perform_drop(Control *p_control = nullptr);
+	void _perform_drop(Controle *p_control = nullptr);
 	void _gui_cleanup_internal_state(Ref<InputEvent> p_event);
 
 	void _push_unhandled_input_internal(const Ref<InputEvent> &p_event);
 
 	Ref<InputEvent> _make_input_local(const Ref<InputEvent> &ev);
 
-	friend class Control;
+	friend class Controle;
 
-	List<Control *>::Element *_gui_add_root_control(Control *p_control);
+	List<Controle *>::Element *_gui_add_root_control(Controle *p_control);
 
-	void _gui_remove_root_control(List<Control *>::Element *RI);
+	void _gui_remove_root_control(List<Controle *>::Element *RI);
 
-	String _gui_get_tooltip(Control *p_control, const Vector2 &p_pos, Control **r_tooltip_owner = nullptr);
+	String _gui_get_tooltip(Controle *p_control, const Vector2 &p_pos, Controle **r_tooltip_owner = nullptr);
 	void _gui_cancel_tooltip();
 	void _gui_show_tooltip();
 
-	void _gui_remove_control(Control *p_control);
-	void _gui_hide_control(Control *p_control);
+	void _gui_remove_control(Controle *p_control);
+	void _gui_hide_control(Controle *p_control);
 	void _gui_update_mouse_over();
 
-	void _gui_force_drag(Control *p_base, const Variant &p_data, Control *p_control);
-	void _gui_set_drag_preview(Control *p_base, Control *p_control);
-	Control *_gui_get_drag_preview();
+	void _gui_force_drag(Controle *p_base, const Variant &p_data, Controle *p_control);
+	void _gui_set_drag_preview(Controle *p_base, Controle *p_control);
+	Controle *_gui_get_drag_preview();
 
 	void _gui_remove_focus_for_window(Node *p_window);
-	void _gui_unfocus_control(Control *p_control);
-	bool _gui_control_has_focus(const Control *p_control);
-	void _gui_control_grab_focus(Control *p_control);
-	void _gui_grab_click_focus(Control *p_control);
+	void _gui_unfocus_control(Controle *p_control);
+	bool _gui_control_has_focus(const Controle *p_control);
+	void _gui_control_grab_focus(Controle *p_control);
+	void _gui_grab_click_focus(Controle *p_control);
 	void _post_gui_grab_click_focus();
 	void _gui_accept_event();
 
-	bool _gui_drop(Control *p_at_control, Point2 p_at_pos, bool p_just_check);
+	bool _gui_drop(Controle *p_at_control, Point2 p_at_pos, bool p_just_check);
 
 	friend class CanvasLayer;
 	void _canvas_layer_add(CanvasLayer *p_canvas_layer);
 	void _canvas_layer_remove(CanvasLayer *p_canvas_layer);
 
-	void _drop_mouse_over(Control *p_until_control = nullptr);
+	void _drop_mouse_over(Controle *p_until_control = nullptr);
 	void _drop_mouse_focus();
 	void _drop_physics_mouseover(bool p_paused_only = false);
 
@@ -597,8 +597,8 @@ public:
 	int gui_get_canvas_sort_index();
 
 	void gui_release_focus();
-	Control *gui_get_focus_owner() const;
-	Control *gui_get_hovered_control() const;
+	Controle *gui_get_focus_owner() const;
+	Controle *gui_get_hovered_control() const;
 
 	PackedStringArray get_configuration_warnings() const override;
 
@@ -626,7 +626,7 @@ public:
 	bool gui_is_drag_successful() const;
 	void gui_cancel_drag();
 
-	Control *gui_find_control(const Point2 &p_global);
+	Controle *gui_find_control(const Point2 &p_global);
 
 	void set_sdf_oversize(SDFOversize p_sdf_oversize);
 	SDFOversize get_sdf_oversize() const;
@@ -678,7 +678,7 @@ public:
 	virtual bool is_sub_viewport() const { return false; }
 
 private:
-	// 2D audio, camera, and physics. (don't put World2D here because World2D is needed for Control nodes).
+	// 2D audio, camera, and physics. (don't put World2D here because World2D is needed for Controle nodes).
 	friend class AudioListener2D; // Needs _audio_listener_2d_set and _audio_listener_2d_remove
 	AudioListener2D *audio_listener_2d = nullptr;
 	void _audio_listener_2d_set(AudioListener2D *p_audio_listener);

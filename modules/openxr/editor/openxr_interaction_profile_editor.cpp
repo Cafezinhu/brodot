@@ -187,12 +187,12 @@ void OpenXRInteractionProfileEditor::_on_remove_pressed(const String p_action, c
 
 void OpenXRInteractionProfileEditor::_add_io_path(VBoxContainer *p_container, const OpenXRInteractionProfileMetadata::IOPath *p_io_path) {
 	HBoxContainer *path_hb = memnew(HBoxContainer);
-	path_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	path_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	p_container->add_child(path_hb);
 
 	Label *path_label = memnew(Label);
 	path_label->set_text(p_io_path->display_name);
-	path_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	path_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	path_hb->add_child(path_label);
 
 	Label *type_label = memnew(Label);
@@ -234,16 +234,16 @@ void OpenXRInteractionProfileEditor::_add_io_path(VBoxContainer *p_container, co
 				Ref<OpenXRAction> action = binding->get_action();
 
 				HBoxContainer *action_hb = memnew(HBoxContainer);
-				action_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				action_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				p_container->add_child(action_hb);
 
-				Control *indent_node = memnew(Control);
+				Controle *indent_node = memnew(Controle);
 				indent_node->set_custom_minimum_size(Size2(10.0, 0.0));
 				action_hb->add_child(indent_node);
 
 				Label *action_label = memnew(Label);
 				action_label->set_text(action->get_name_with_set() + ": " + action->get_localized_name());
-				action_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				action_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				action_hb->add_child(action_label);
 
 				Button *action_rem = memnew(Button);
@@ -283,7 +283,7 @@ void OpenXRInteractionProfileEditor::_update_interaction_profile() {
 
 	for (int i = 0; i < top_level_paths.size(); i++) {
 		PanelContainer *panel = memnew(PanelContainer);
-		panel->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		panel->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		main_hb->add_child(panel);
 		panel->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SceneStringName(panel), SNAME("TabContainer")));
 
@@ -308,7 +308,7 @@ void OpenXRInteractionProfileEditor::_update_interaction_profile() {
 
 void OpenXRInteractionProfileEditor::_theme_changed() {
 	for (int i = 0; i < main_hb->get_child_count(); i++) {
-		Control *panel = Object::cast_to<Control>(main_hb->get_child(i));
+		Controle *panel = Object::cast_to<Controle>(main_hb->get_child(i));
 		if (panel) {
 			panel->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SceneStringName(panel), SNAME("TabContainer")));
 		}

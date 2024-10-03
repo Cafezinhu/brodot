@@ -163,7 +163,7 @@ void WindowWrapper::shortcut_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-void WindowWrapper::set_wrapped_control(Control *p_control, const Ref<Shortcut> &p_enable_shortcut) {
+void WindowWrapper::set_wrapped_control(Controle *p_control, const Ref<Shortcut> &p_enable_shortcut) {
 	ERR_FAIL_NULL(p_control);
 	ERR_FAIL_COND(wrapped_control);
 
@@ -172,14 +172,14 @@ void WindowWrapper::set_wrapped_control(Control *p_control, const Ref<Shortcut> 
 	add_child(p_control);
 }
 
-Control *WindowWrapper::get_wrapped_control() const {
+Controle *WindowWrapper::get_wrapped_control() const {
 	return wrapped_control;
 }
 
-Control *WindowWrapper::release_wrapped_control() {
+Controle *WindowWrapper::release_wrapped_control() {
 	set_window_enabled(false);
 	if (wrapped_control) {
-		Control *old_wrapped = wrapped_control;
+		Controle *old_wrapped = wrapped_control;
 		wrapped_control->get_parent()->remove_child(wrapped_control);
 		wrapped_control = nullptr;
 

@@ -60,7 +60,7 @@ EditorQuickOpenDialog::EditorQuickOpenDialog() {
 		vbc->add_child(mc);
 
 		search_box = memnew(LineEdit);
-		search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		search_box->set_placeholder(TTR("Search files..."));
 		search_box->set_clear_button_enabled(true);
 		mc->add_child(search_box);
@@ -127,21 +127,21 @@ void EditorQuickOpenDialog::_search_box_text_changed(const String &p_query) {
 //------------------------- Result Container
 
 QuickOpenResultContainer::QuickOpenResultContainer() {
-	set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_theme_constant_override("separation", 0);
 
 	{
 		// Results section
 		panel_container = memnew(PanelContainer);
-		panel_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		panel_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		add_child(panel_container);
 
 		{
 			// No search results
 			no_results_container = memnew(CenterContainer);
-			no_results_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-			no_results_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+			no_results_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+			no_results_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 			panel_container->add_child(no_results_container);
 
 			no_results_label = memnew(Label);
@@ -153,20 +153,20 @@ QuickOpenResultContainer::QuickOpenResultContainer() {
 		{
 			// Search results
 			scroll_container = memnew(ScrollContainer);
-			scroll_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-			scroll_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+			scroll_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+			scroll_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 			scroll_container->set_horizontal_scroll_mode(ScrollContainer::SCROLL_MODE_DISABLED);
 			scroll_container->hide();
 			panel_container->add_child(scroll_container);
 
 			list = memnew(VBoxContainer);
-			list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			list->hide();
 			scroll_container->add_child(list);
 
 			grid = memnew(HFlowContainer);
-			grid->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-			grid->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+			grid->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+			grid->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 			grid->add_theme_constant_override("v_separation", 18);
 			grid->add_theme_constant_override("h_separation", 4);
 			grid->hide();
@@ -180,7 +180,7 @@ QuickOpenResultContainer::QuickOpenResultContainer() {
 		add_child(bottom_bar);
 
 		file_details_path = memnew(Label);
-		file_details_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		file_details_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		file_details_path->set_horizontal_alignment(HorizontalAlignment::HORIZONTAL_ALIGNMENT_CENTER);
 		file_details_path->set_text_overrun_behavior(TextServer::OVERRUN_TRIM_ELLIPSIS);
 		bottom_bar->add_child(file_details_path);
@@ -192,20 +192,20 @@ QuickOpenResultContainer::QuickOpenResultContainer() {
 
 			include_addons_toggle = memnew(CheckButton);
 			include_addons_toggle->set_flat(true);
-			include_addons_toggle->set_focus_mode(Control::FOCUS_NONE);
+			include_addons_toggle->set_focus_mode(Controle::FOCUS_NONE);
 			include_addons_toggle->set_default_cursor_shape(CURSOR_POINTING_HAND);
 			include_addons_toggle->set_tooltip_text(TTR("Include files from addons"));
 			include_addons_toggle->connect(SceneStringName(toggled), callable_mp(this, &QuickOpenResultContainer::_toggle_include_addons));
 			hbc->add_child(include_addons_toggle);
 
 			VSeparator *vsep = memnew(VSeparator);
-			vsep->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+			vsep->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 			vsep->set_custom_minimum_size(Size2i(0, 14 * EDSCALE));
 			hbc->add_child(vsep);
 
 			display_mode_toggle = memnew(Button);
 			display_mode_toggle->set_flat(true);
-			display_mode_toggle->set_focus_mode(Control::FOCUS_NONE);
+			display_mode_toggle->set_focus_mode(Controle::FOCUS_NONE);
 			display_mode_toggle->set_default_cursor_shape(CURSOR_POINTING_HAND);
 			display_mode_toggle->connect(SceneStringName(pressed), callable_mp(this, &QuickOpenResultContainer::_toggle_display_mode));
 			hbc->add_child(display_mode_toggle);
@@ -826,7 +826,7 @@ void QuickOpenResultItem::_notification(int p_what) {
 //----------------- List item
 
 QuickOpenResultListItem::QuickOpenResultListItem() {
-	set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_theme_constant_override("separation", 4 * EDSCALE);
 
 	{
@@ -838,8 +838,8 @@ QuickOpenResultListItem::QuickOpenResultListItem() {
 		add_child(image_container);
 
 		thumbnail = memnew(TextureRect);
-		thumbnail->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
-		thumbnail->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+		thumbnail->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
+		thumbnail->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 		thumbnail->set_expand_mode(TextureRect::EXPAND_IGNORE_SIZE);
 		thumbnail->set_stretch_mode(TextureRect::StretchMode::STRETCH_SCALE);
 		image_container->add_child(thumbnail);
@@ -848,18 +848,18 @@ QuickOpenResultListItem::QuickOpenResultListItem() {
 	{
 		text_container = memnew(VBoxContainer);
 		text_container->add_theme_constant_override("separation", -6 * EDSCALE);
-		text_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-		text_container->set_v_size_flags(Control::SIZE_FILL);
+		text_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+		text_container->set_v_size_flags(Controle::SIZE_FILL);
 		add_child(text_container);
 
 		name = memnew(Label);
-		name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		name->set_text_overrun_behavior(TextServer::OVERRUN_TRIM_ELLIPSIS);
 		name->set_horizontal_alignment(HorizontalAlignment::HORIZONTAL_ALIGNMENT_LEFT);
 		text_container->add_child(name);
 
 		path = memnew(Label);
-		path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		path->set_text_overrun_behavior(TextServer::OVERRUN_TRIM_ELLIPSIS);
 		path->add_theme_font_size_override(SceneStringName(font_size), 12 * EDSCALE);
 		text_container->add_child(path);
@@ -912,18 +912,18 @@ void QuickOpenResultListItem::_notification(int p_what) {
 //--------------- Grid Item
 
 QuickOpenResultGridItem::QuickOpenResultGridItem() {
-	set_h_size_flags(Control::SIZE_FILL);
-	set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	set_h_size_flags(Controle::SIZE_FILL);
+	set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_theme_constant_override("separation", -2 * EDSCALE);
 
 	thumbnail = memnew(TextureRect);
-	thumbnail->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
-	thumbnail->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	thumbnail->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
+	thumbnail->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	thumbnail->set_custom_minimum_size(Size2i(80 * EDSCALE, 64 * EDSCALE));
 	add_child(thumbnail);
 
 	name = memnew(Label);
-	name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	name->set_text_overrun_behavior(TextServer::OVERRUN_TRIM_ELLIPSIS);
 	name->set_horizontal_alignment(HorizontalAlignment::HORIZONTAL_ALIGNMENT_CENTER);
 	name->add_theme_font_size_override(SceneStringName(font_size), 13 * EDSCALE);

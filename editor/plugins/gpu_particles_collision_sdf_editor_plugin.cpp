@@ -177,7 +177,7 @@ void GPUParticlesCollisionSDF3DEditorPlugin::_sdf_save_path_and_bake(const Strin
 
 GPUParticlesCollisionSDF3DEditorPlugin::GPUParticlesCollisionSDF3DEditorPlugin() {
 	bake_hb = memnew(HBoxContainer);
-	bake_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	bake_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	bake_hb->hide();
 	bake = memnew(Button);
 	bake->set_theme_type_variation("FlatButton");

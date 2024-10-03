@@ -54,8 +54,8 @@ void KeyMappingX11::initialize() {
 	xkeysym_map[XK_Shift_L] = Key::SHIFT;
 	xkeysym_map[XK_Shift_R] = Key::SHIFT;
 	xkeysym_map[XK_Shift_Lock] = Key::SHIFT;
-	xkeysym_map[XK_Control_L] = Key::CTRL;
-	xkeysym_map[XK_Control_R] = Key::CTRL;
+	xkeysym_map[XK_Controle_L] = Key::CTRL;
+	xkeysym_map[XK_Controle_R] = Key::CTRL;
 	xkeysym_map[XK_Meta_L] = Key::META;
 	xkeysym_map[XK_Meta_R] = Key::META;
 	xkeysym_map[XK_Alt_L] = Key::ALT;

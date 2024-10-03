@@ -41,7 +41,7 @@
 
 @implementation RumbleMotor
 
-- (instancetype)initWithController:(GCController *)controller locality:(GCHapticsLocality)locality {
+- (instancetype)initWithControleler:(GCControleler *)controller locality:(GCHapticsLocality)locality {
 	self = [super init];
 	self.engine = [controller.haptics createEngineWithLocality:locality];
 	self.player = nil;
@@ -104,7 +104,7 @@
 	self = [super init];
 	return self;
 }
-- (instancetype)init:(GCController *)controller {
+- (instancetype)init:(GCControleler *)controller {
 	self = [super init];
 	self.controller = controller;
 
@@ -113,8 +113,8 @@
 		self.rumble_context = [[RumbleContext alloc] init];
 
 		// Create Weak and Strong motors for controller.
-		self.rumble_context.weak_motor = [[RumbleMotor alloc] initWithController:controller locality:GCHapticsLocalityRightHandle];
-		self.rumble_context.strong_motor = [[RumbleMotor alloc] initWithController:controller locality:GCHapticsLocalityLeftHandle];
+		self.rumble_context.weak_motor = [[RumbleMotor alloc] initWithControleler:controller locality:GCHapticsLocalityRightHandle];
+		self.rumble_context.strong_motor = [[RumbleMotor alloc] initWithControleler:controller locality:GCHapticsLocalityLeftHandle];
 
 		// If the rumble motors aren't available, disable force feedback.
 		if (![self.rumble_context hasMotors]) {
@@ -138,7 +138,7 @@ JoypadMacOS::JoypadMacOS() {
 	[observer startObserving];
 
 	if (@available(macOS 11.3, *)) {
-		GCController.shouldMonitorBackgroundEvents = YES;
+		GCControleler.shouldMonitorBackgroundEvents = YES;
 	}
 }
 
@@ -228,7 +228,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 @property(assign, nonatomic) BOOL isObserving;
 @property(assign, nonatomic) BOOL isProcessing;
 @property(strong, nonatomic) NSMutableDictionary<NSNumber *, Joypad *> *connectedJoypads;
-@property(strong, nonatomic) NSMutableArray<GCController *> *joypadsQueue;
+@property(strong, nonatomic) NSMutableArray<GCControleler *> *joypadsQueue;
 
 @end
 
@@ -252,7 +252,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 - (void)startProcessing {
 	self.isProcessing = YES;
 
-	for (GCController *controller in self.joypadsQueue) {
+	for (GCControleler *controller in self.joypadsQueue) {
 		[self addMacOSJoypad:controller];
 	}
 
@@ -274,14 +274,14 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	[[NSNotificationCenter defaultCenter]
 			addObserver:self
 			   selector:@selector(controllerWasConnected:)
-				   name:GCControllerDidConnectNotification
+				   name:GCControlelerDidConnectNotification
 				 object:nil];
 
 	// Get told when controllers disconnect.
 	[[NSNotificationCenter defaultCenter]
 			addObserver:self
 			   selector:@selector(controllerWasDisconnected:)
-				   name:GCControllerDidDisconnectNotification
+				   name:GCControlelerDidDisconnectNotification
 				 object:nil];
 }
 
@@ -301,7 +301,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	[self finishObserving];
 }
 
-- (NSArray<NSNumber *> *)getAllKeysForController:(GCController *)controller {
+- (NSArray<NSNumber *> *)getAllKeysForControleler:(GCControleler *)controller {
 	NSArray *keys = [self.connectedJoypads allKeys];
 	NSMutableArray *final_keys = [NSMutableArray array];
 
@@ -315,8 +315,8 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	return final_keys;
 }
 
-- (int)getJoyIdForController:(GCController *)controller {
-	NSArray *keys = [self getAllKeysForController:controller];
+- (int)getJoyIdForControleler:(GCControleler *)controller {
+	NSArray *keys = [self getAllKeysForControleler:controller];
 
 	for (NSNumber *key in keys) {
 		int joy_id = [key intValue];
@@ -326,7 +326,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	return -1;
 }
 
-- (void)addMacOSJoypad:(GCController *)controller {
+- (void)addMacOSJoypad:(GCControleler *)controller {
 	// Get a new id for our controller.
 	int joy_id = Input::get_singleton()->get_unused_joy_id();
 
@@ -336,7 +336,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	}
 
 	// Assign our player index.
-	if (controller.playerIndex == GCControllerPlayerIndexUnset) {
+	if (controller.playerIndex == GCControlelerPlayerIndexUnset) {
 		controller.playerIndex = [self getFreePlayerIndex];
 	}
 
@@ -349,20 +349,20 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	[self.connectedJoypads setObject:joypad forKey:[NSNumber numberWithInt:joy_id]];
 
 	// Set our input handler.
-	[self setControllerInputHandler:controller];
+	[self setControlelerInputHandler:controller];
 }
 
 - (void)controllerWasConnected:(NSNotification *)notification {
 	// Get our controller.
-	GCController *controller = (GCController *)notification.object;
+	GCControleler *controller = (GCControleler *)notification.object;
 
 	if (!controller) {
 		print_verbose("Couldn't retrieve new controller.");
 		return;
 	}
 
-	if ([[self getAllKeysForController:controller] count] > 0) {
-		print_verbose("Controller is already registered.");
+	if ([[self getAllKeysForControleler:controller] count] > 0) {
+		print_verbose("Controleler is already registered.");
 	} else if (!self.isProcessing) {
 		[self.joypadsQueue addObject:controller];
 	} else {
@@ -372,13 +372,13 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 
 - (void)controllerWasDisconnected:(NSNotification *)notification {
 	// Find our joystick, there should be only one in our dictionary.
-	GCController *controller = (GCController *)notification.object;
+	GCControleler *controller = (GCControleler *)notification.object;
 
 	if (!controller) {
 		return;
 	}
 
-	NSArray *keys = [self getAllKeysForController:controller];
+	NSArray *keys = [self getAllKeysForControleler:controller];
 	for (NSNumber *key in keys) {
 		// Tell Godot this joystick is no longer there.
 		int joy_id = [key intValue];
@@ -389,7 +389,7 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 	}
 }
 
-- (GCControllerPlayerIndex)getFreePlayerIndex {
+- (GCControlelerPlayerIndex)getFreePlayerIndex {
 	bool have_player_1 = false;
 	bool have_player_2 = false;
 	bool have_player_3 = false;
@@ -399,33 +399,33 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 		NSArray *keys = [self.connectedJoypads allKeys];
 		for (NSNumber *key in keys) {
 			Joypad *joypad = [self.connectedJoypads objectForKey:key];
-			GCController *controller = joypad.controller;
-			if (controller.playerIndex == GCControllerPlayerIndex1) {
+			GCControleler *controller = joypad.controller;
+			if (controller.playerIndex == GCControlelerPlayerIndex1) {
 				have_player_1 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex2) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex2) {
 				have_player_2 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex3) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex3) {
 				have_player_3 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex4) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex4) {
 				have_player_4 = true;
 			}
 		}
 	}
 
 	if (!have_player_1) {
-		return GCControllerPlayerIndex1;
+		return GCControlelerPlayerIndex1;
 	} else if (!have_player_2) {
-		return GCControllerPlayerIndex2;
+		return GCControlelerPlayerIndex2;
 	} else if (!have_player_3) {
-		return GCControllerPlayerIndex3;
+		return GCControlelerPlayerIndex3;
 	} else if (!have_player_4) {
-		return GCControllerPlayerIndex4;
+		return GCControlelerPlayerIndex4;
 	} else {
-		return GCControllerPlayerIndexUnset;
+		return GCControlelerPlayerIndexUnset;
 	}
 }
 
-- (void)setControllerInputHandler:(GCController *)controller {
+- (void)setControlelerInputHandler:(GCControleler *)controller {
 	// Hook in the callback handler for the correct gamepad profile.
 	// This is a bit of a weird design choice on Apples part.
 	// You need to select the most capable gamepad profile for the
@@ -437,11 +437,11 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 		_weakify(self);
 		_weakify(controller);
 
-		controller.extendedGamepad.valueChangedHandler = ^(GCExtendedGamepad *gamepad, GCControllerElement *element) {
+		controller.extendedGamepad.valueChangedHandler = ^(GCExtendedGamepad *gamepad, GCControlelerElement *element) {
 			_strongify(self);
 			_strongify(controller);
 
-			int joy_id = [self getJoyIdForController:controller];
+			int joy_id = [self getJoyIdForControleler:controller];
 
 			if (element == gamepad.buttonA) {
 				Input::get_singleton()->joy_button(joy_id, JoyButton::A,
@@ -548,11 +548,11 @@ void JoypadMacOS::joypad_vibration_stop(Joypad *p_joypad, uint64_t p_timestamp) 
 		_weakify(self);
 		_weakify(controller);
 
-		controller.microGamepad.valueChangedHandler = ^(GCMicroGamepad *gamepad, GCControllerElement *element) {
+		controller.microGamepad.valueChangedHandler = ^(GCMicroGamepad *gamepad, GCControlelerElement *element) {
 			_strongify(self);
 			_strongify(controller);
 
-			int joy_id = [self getJoyIdForController:controller];
+			int joy_id = [self getJoyIdForControleler:controller];
 
 			if (element == gamepad.buttonA) {
 				Input::get_singleton()->joy_button(joy_id, JoyButton::A,

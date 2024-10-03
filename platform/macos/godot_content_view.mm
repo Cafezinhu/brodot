@@ -394,7 +394,7 @@
 }
 
 - (void)mouseDown:(NSEvent *)event {
-	if (([event modifierFlags] & NSEventModifierFlagControl)) {
+	if (([event modifierFlags] & NSEventModifierFlagControle)) {
 		mouse_down_control = true;
 		[self processMouseEvent:event index:MouseButton::RIGHT pressed:true outofstream:false];
 	} else {
@@ -676,8 +676,8 @@
 			ke.pressed = false;
 		}
 	} else if (key == 0x3b || key == 0x3e) {
-		if (mod & NSEventModifierFlagControl) {
-			mod &= ~NSEventModifierFlagControl;
+		if (mod & NSEventModifierFlagControle) {
+			mod &= ~NSEventModifierFlagControle;
 			ke.pressed = true;
 		} else {
 			ke.pressed = false;

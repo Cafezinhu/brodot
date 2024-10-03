@@ -85,7 +85,7 @@ class Polygon2DEditor : public AbstractPolygon2DEditor {
 	Button *b_snap_grid = nullptr;
 	Panel *uv_edit_background = nullptr;
 	Polygon2D *preview_polygon = nullptr;
-	Control *uv_edit_draw = nullptr;
+	Controle *uv_edit_draw = nullptr;
 	EditorZoomWidget *zoom_widget = nullptr;
 	HScrollBar *uv_hscroll = nullptr;
 	VScrollBar *uv_vscroll = nullptr;

@@ -292,8 +292,8 @@ UPNP_GetLinkLayerMaxBitRates(const char * controlURL,
  * 0 : SUCCESS
  * NON ZERO : ERROR Either an UPnP error code or an unknown error.
  *
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
- * 501 Action Failed - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
+ * 501 Action Failed - See UPnP Device Architecture section on Controle.
  */
 MINIUPNP_LIBSPEC int
 UPNP_GetExternalIPAddress(const char * controlURL,
@@ -876,7 +876,7 @@ UPNP_GetListOfPortMappings(const char * controlURL,
 	return ret;
 }
 
-/* IGD:2, functions for service WANIPv6FirewallControl:1 */
+/* IGD:2, functions for service WANIPv6FirewallControle:1 */
 MINIUPNP_LIBSPEC int
 UPNP_GetFirewallStatus(const char * controlURL,
 				const char * servicetype,

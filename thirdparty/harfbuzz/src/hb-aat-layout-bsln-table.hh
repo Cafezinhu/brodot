@@ -145,7 +145,7 @@ struct bsln
   // Distance-Based Formats
   BaselineTableFormat0Part	format0;
   BaselineTableFormat1Part	format1;
-  // Control Point-based Formats
+  // Controle Point-based Formats
   BaselineTableFormat2Part	format2;
   BaselineTableFormat3Part	format3;
   } parts;

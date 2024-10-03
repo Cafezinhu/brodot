@@ -88,7 +88,7 @@ static const char *token_names[] = {
 	"&=", // AMPERSAND_EQUAL,
 	"|=", // PIPE_EQUAL,
 	"^=", // CARET_EQUAL,
-	// Control flow
+	// Controle flow
 	"if", // IF,
 	"elif", // ELIF,
 	"else", // ELSE,

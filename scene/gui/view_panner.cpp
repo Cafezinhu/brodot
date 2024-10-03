@@ -175,7 +175,7 @@ void ViewPanner::set_callbacks(Callable p_pan_callback, Callable p_zoom_callback
 	zoom_callback = p_zoom_callback;
 }
 
-void ViewPanner::set_control_scheme(ControlScheme p_scheme) {
+void ViewPanner::set_control_scheme(ControleScheme p_scheme) {
 	control_scheme = p_scheme;
 }
 
@@ -206,7 +206,7 @@ void ViewPanner::set_pan_axis(PanAxis p_pan_axis) {
 	pan_axis = p_pan_axis;
 }
 
-void ViewPanner::setup(ControlScheme p_scheme, Ref<Shortcut> p_shortcut, bool p_simple_panning) {
+void ViewPanner::setup(ControleScheme p_scheme, Ref<Shortcut> p_shortcut, bool p_simple_panning) {
 	set_control_scheme(p_scheme);
 	set_pan_shortcut(p_shortcut);
 	set_simple_panning_enabled(p_simple_panning);

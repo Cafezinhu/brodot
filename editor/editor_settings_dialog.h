@@ -48,8 +48,8 @@ class EditorSettingsDialog : public AcceptDialog {
 	bool updating = false;
 
 	TabContainer *tabs = nullptr;
-	Control *tab_general = nullptr;
-	Control *tab_shortcuts = nullptr;
+	Controle *tab_general = nullptr;
+	Controle *tab_shortcuts = nullptr;
 
 	LineEdit *search_box = nullptr;
 	CheckButton *advanced_switch = nullptr;
@@ -95,9 +95,9 @@ class EditorSettingsDialog : public AcceptDialog {
 	void _update_builtin_action(const String &p_name, const Array &p_events);
 	void _update_shortcut_events(const String &p_path, const Array &p_events);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _tabs_tab_changed(int p_tab);
 	void _focus_current_search_box();

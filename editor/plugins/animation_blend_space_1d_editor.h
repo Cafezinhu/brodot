@@ -76,7 +76,7 @@ class AnimationNodeBlendSpace1DEditor : public AnimationTreeNodeEditorPlugin {
 
 	int selected_point = -1;
 
-	Control *blend_space_draw = nullptr;
+	Controle *blend_space_draw = nullptr;
 
 	PanelContainer *error_panel = nullptr;
 	Label *error_label = nullptr;

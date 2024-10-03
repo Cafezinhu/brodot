@@ -52,7 +52,7 @@ class EditorSceneTabs : public MarginContainer {
 	TabBar *scene_tabs = nullptr;
 	PopupMenu *scene_tabs_context_menu = nullptr;
 	Button *scene_tab_add = nullptr;
-	Control *scene_tab_add_ph = nullptr;
+	Controle *scene_tab_add_ph = nullptr;
 
 	Panel *tab_preview_panel = nullptr;
 	TextureRect *tab_preview = nullptr;

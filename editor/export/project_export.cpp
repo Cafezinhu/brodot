@@ -85,7 +85,7 @@ ProjectExportTextureFormatError::ProjectExportTextureFormatError() {
 	add_child(texture_format_error_label);
 	// Set up the fix button.
 	fix_texture_format_button = memnew(LinkButton);
-	fix_texture_format_button->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	fix_texture_format_button->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	fix_texture_format_button->set_text(TTR("Fix Import"));
 	add_child(fix_texture_format_button);
 	fix_texture_format_button->connect(SceneStringName(pressed), callable_mp(this, &ProjectExportTextureFormatError::_on_fix_texture_format_pressed));
@@ -717,7 +717,7 @@ void ProjectExportDialog::_delete_preset_confirm() {
 	_update_export_all();
 }
 
-Variant ProjectExportDialog::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant ProjectExportDialog::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (p_from == presets) {
 		int pos = presets->get_item_at_position(p_point, true);
 
@@ -758,7 +758,7 @@ Variant ProjectExportDialog::get_drag_data_fw(const Point2 &p_point, Control *p_
 	return Variant();
 }
 
-bool ProjectExportDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ProjectExportDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (p_from == presets) {
 		Dictionary d = p_data;
 		if (!d.has("type") || String(d["type"]) != "export_preset") {
@@ -785,7 +785,7 @@ bool ProjectExportDialog::can_drop_data_fw(const Point2 &p_point, const Variant 
 	return true;
 }
 
-void ProjectExportDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ProjectExportDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (p_from == presets) {
 		Dictionary d = p_data;
 		int from_pos = d["preset"];
@@ -1366,12 +1366,12 @@ ProjectExportDialog::ProjectExportDialog() {
 
 	HSplitContainer *hbox = memnew(HSplitContainer);
 	main_vb->add_child(hbox);
-	hbox->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	hbox->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	// Presets list.
 
 	VBoxContainer *preset_vb = memnew(VBoxContainer);
-	preset_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	preset_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hbox->add_child(preset_vb);
 
 	Label *l = memnew(Label(TTR("Presets")));
@@ -1388,7 +1388,7 @@ ProjectExportDialog::ProjectExportDialog() {
 	preset_hb->add_child(add_preset);
 	MarginContainer *mc = memnew(MarginContainer);
 	preset_vb->add_child(mc);
-	mc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	mc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	presets = memnew(ItemList);
 	presets->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	SET_DRAG_FORWARDING_GCD(presets, ProjectExportDialog);
@@ -1408,7 +1408,7 @@ ProjectExportDialog::ProjectExportDialog() {
 	// Preset settings.
 
 	VBoxContainer *settings_vb = memnew(VBoxContainer);
-	settings_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	settings_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hbox->add_child(settings_vb);
 
 	name = memnew(LineEdit);
@@ -1444,14 +1444,14 @@ ProjectExportDialog::ProjectExportDialog() {
 	sections->set_use_hidden_tabs_for_min_size(true);
 	sections->set_theme_type_variation("TabContainerOdd");
 	settings_vb->add_child(sections);
-	sections->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	sections->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	// Main preset parameters.
 
 	parameters = memnew(EditorInspector);
 	sections->add_child(parameters);
 	parameters->set_name(TTR("Options"));
-	parameters->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	parameters->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	parameters->set_use_doc_hints(true);
 	parameters->connect("property_edited", callable_mp(this, &ProjectExportDialog::_update_parameters));
 	EditorExport::get_singleton()->connect("export_presets_updated", callable_mp(this, &ProjectExportDialog::_force_update_current_preset_parameters));
@@ -1464,8 +1464,8 @@ ProjectExportDialog::ProjectExportDialog() {
 	sections->add_child(resources_scroll_container);
 
 	VBoxContainer *resources_vb = memnew(VBoxContainer);
-	resources_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	resources_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	resources_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	resources_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	resources_scroll_container->add_child(resources_vb);
 
 	export_filter = memnew(OptionButton);
@@ -1481,7 +1481,7 @@ ProjectExportDialog::ProjectExportDialog() {
 	include_label->set_text(TTR("Resources to export:"));
 	resources_vb->add_child(include_label);
 	include_margin = memnew(MarginContainer);
-	include_margin->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	include_margin->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	resources_vb->add_child(include_margin);
 
 	include_files = memnew(Tree);
@@ -1541,7 +1541,7 @@ ProjectExportDialog::ProjectExportDialog() {
 	patch_vb->set_name(TTR("Patches"));
 
 	patches = memnew(Tree);
-	patches->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	patches->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	patches->set_hide_root(true);
 	patches->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	patches->connect("button_clicked", callable_mp(this, &ProjectExportDialog::_patch_tree_button_clicked));
@@ -1564,7 +1564,7 @@ ProjectExportDialog::ProjectExportDialog() {
 
 	patch_add_btn = memnew(Button);
 	patch_add_btn->set_text(TTR("Add Pack"));
-	patch_add_btn->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	patch_add_btn->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	patch_add_btn->connect(SceneStringName(pressed), callable_mp(this, &ProjectExportDialog::_patch_add_pack_pressed));
 	patch_vb->add_child(patch_add_btn);
 
@@ -1572,13 +1572,13 @@ ProjectExportDialog::ProjectExportDialog() {
 
 	VBoxContainer *feature_vb = memnew(VBoxContainer);
 	feature_vb->set_name(TTR("Features"));
-	feature_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	feature_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	custom_features = memnew(LineEdit);
 	custom_features->connect(SceneStringName(text_changed), callable_mp(this, &ProjectExportDialog::_custom_features_changed));
 	feature_vb->add_margin_child(TTR("Custom (comma-separated):"), custom_features);
 	custom_feature_display = memnew(RichTextLabel);
 	custom_feature_display->set_custom_minimum_size(Size2(1, 75 * EDSCALE));
-	custom_feature_display->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	custom_feature_display->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	feature_vb->add_margin_child(TTR("Feature List:"), custom_feature_display, true);
 	sections->add_child(feature_vb);
 
@@ -1589,7 +1589,7 @@ ProjectExportDialog::ProjectExportDialog() {
 	sec_scroll_container->set_horizontal_scroll_mode(ScrollContainer::SCROLL_MODE_DISABLED);
 
 	VBoxContainer *sec_vb = memnew(VBoxContainer);
-	sec_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	sec_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	sec_scroll_container->add_child(sec_vb);
 
 	enc_pck = memnew(CheckButton);
@@ -1737,7 +1737,7 @@ ProjectExportDialog::ProjectExportDialog() {
 
 	LinkButton *download_templates = memnew(LinkButton);
 	download_templates->set_text(TTR("Manage Export Templates"));
-	download_templates->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	download_templates->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	export_templates_error->add_child(download_templates);
 	download_templates->connect(SceneStringName(pressed), callable_mp(this, &ProjectExportDialog::_open_export_template_manager));
 

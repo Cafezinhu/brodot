@@ -324,7 +324,7 @@ public:
 
 // Custom `Label` needed to use `EditorHelpBit` to display theme item documentation.
 class ThemeItemLabel : public Label {
-	virtual Control *make_custom_tooltip(const String &p_text) const;
+	virtual Controle *make_custom_tooltip(const String &p_text) const;
 };
 
 class ThemeTypeEditor : public MarginContainer {
@@ -368,7 +368,7 @@ class ThemeTypeEditor : public MarginContainer {
 	TypeDialogMode add_type_mode = ADD_THEME_TYPE;
 	ThemeTypeDialog *add_type_dialog = nullptr;
 
-	Vector<Control *> focusables;
+	Vector<Controle *> focusables;
 	Timer *update_debounce_timer = nullptr;
 
 	VBoxContainer *_create_item_list(Theme::DataType p_data_type);
@@ -376,7 +376,7 @@ class ThemeTypeEditor : public MarginContainer {
 	void _update_type_list_debounced();
 	HashMap<StringName, bool> _get_type_items(String p_type_name, Theme::DataType p_type, bool p_include_default);
 	HBoxContainer *_create_property_control(Theme::DataType p_data_type, String p_item_name, bool p_editable);
-	void _add_focusable(Control *p_control);
+	void _add_focusable(Controle *p_control);
 	void _update_type_items();
 
 	void _list_type_selected(int p_index);
@@ -384,14 +384,14 @@ class ThemeTypeEditor : public MarginContainer {
 	void _add_default_type_items();
 
 	void _update_add_button(const String &p_text, LineEdit *p_for_edit);
-	void _item_add_cbk(int p_data_type, Control *p_control);
-	void _item_add_lineedit_cbk(String p_value, int p_data_type, Control *p_control);
+	void _item_add_cbk(int p_data_type, Controle *p_control);
+	void _item_add_lineedit_cbk(String p_value, int p_data_type, Controle *p_control);
 	void _item_override_cbk(int p_data_type, String p_item_name);
 	void _item_remove_cbk(int p_data_type, String p_item_name);
-	void _item_rename_cbk(int p_data_type, String p_item_name, Control *p_control);
-	void _item_rename_confirmed(int p_data_type, String p_item_name, Control *p_control);
-	void _item_rename_entered(String p_value, int p_data_type, String p_item_name, Control *p_control);
-	void _item_rename_canceled(int p_data_type, String p_item_name, Control *p_control);
+	void _item_rename_cbk(int p_data_type, String p_item_name, Controle *p_control);
+	void _item_rename_confirmed(int p_data_type, String p_item_name, Controle *p_control);
+	void _item_rename_entered(String p_value, int p_data_type, String p_item_name, Controle *p_control);
+	void _item_rename_canceled(int p_data_type, String p_item_name, Controle *p_control);
 
 	void _color_item_changed(Color p_value, String p_item_name);
 	void _constant_item_changed(float p_value, String p_item_name);
@@ -401,7 +401,7 @@ class ThemeTypeEditor : public MarginContainer {
 	void _icon_item_changed(Ref<Texture2D> p_value, String p_item_name);
 	void _stylebox_item_changed(Ref<StyleBox> p_value, String p_item_name);
 	void _change_pinned_stylebox();
-	void _on_pin_leader_button_pressed(Control *p_editor, String p_item_name);
+	void _on_pin_leader_button_pressed(Controle *p_editor, String p_item_name);
 	void _pin_leading_stylebox(String p_item_name, Ref<StyleBox> p_stylebox);
 	void _on_unpin_leader_button_pressed();
 	void _unpin_leading_stylebox();

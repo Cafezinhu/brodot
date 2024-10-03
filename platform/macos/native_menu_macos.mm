@@ -780,7 +780,7 @@ Key NativeMenuMacOS::get_item_accelerator(const RID &p_rid, int p_idx) const {
 		String ret = String::utf8([[menu_item keyEquivalent] UTF8String]);
 		Key keycode = find_keycode(ret);
 		NSUInteger mask = [menu_item keyEquivalentModifierMask];
-		if (mask & NSEventModifierFlagControl) {
+		if (mask & NSEventModifierFlagControle) {
 			keycode |= KeyModifierMask::CTRL;
 		}
 		if (mask & NSEventModifierFlagOption) {
@@ -945,9 +945,9 @@ void NativeMenuMacOS::set_item_checked(const RID &p_rid, int p_idx, bool p_check
 		if (obj) {
 			obj->checked = p_checked;
 			if (p_checked) {
-				[menu_item setState:NSControlStateValueOn];
+				[menu_item setState:NSControleStateValueOn];
 			} else {
-				[menu_item setState:NSControlStateValueOff];
+				[menu_item setState:NSControleStateValueOff];
 			}
 		}
 	}

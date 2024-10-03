@@ -138,7 +138,7 @@ MeshEditor::MeshEditor() {
 
 	HBoxContainer *hb = memnew(HBoxContainer);
 	add_child(hb);
-	hb->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT, Control::PRESET_MODE_MINSIZE, 2);
+	hb->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT, Controle::PRESET_MODE_MINSIZE, 2);
 
 	hb->add_spacer();
 

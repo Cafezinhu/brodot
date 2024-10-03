@@ -21558,9 +21558,9 @@ EXTERN_C const IID IID_ID3D12Device9;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE ShaderCacheControl( 
+        virtual HRESULT STDMETHODCALLTYPE ShaderCacheControle( 
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control) = 0;
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE CreateCommandQueue1( 
             _In_  const D3D12_COMMAND_QUEUE_DESC *pDesc,
@@ -22188,11 +22188,11 @@ EXTERN_C const IID IID_ID3D12Device9;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession);
         
-        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControl)
-        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControl )( 
+        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControle)
+        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControle )( 
             ID3D12Device9 * This,
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle);
         
         DECLSPEC_XFGVIRT(ID3D12Device9, CreateCommandQueue1)
         HRESULT ( STDMETHODCALLTYPE *CreateCommandQueue1 )( 
@@ -22473,8 +22473,8 @@ EXTERN_C const IID IID_ID3D12Device9;
 #define ID3D12Device9_CreateShaderCacheSession(This,pDesc,riid,ppvSession)	\
     ( (This)->lpVtbl -> CreateShaderCacheSession(This,pDesc,riid,ppvSession) ) 
 
-#define ID3D12Device9_ShaderCacheControl(This,Kinds,Control)	\
-    ( (This)->lpVtbl -> ShaderCacheControl(This,Kinds,Control) ) 
+#define ID3D12Device9_ShaderCacheControle(This,Kinds,Controle)	\
+    ( (This)->lpVtbl -> ShaderCacheControle(This,Kinds,Controle) ) 
 
 #define ID3D12Device9_CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue)	\
     ( (This)->lpVtbl -> CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue) ) 
@@ -23158,11 +23158,11 @@ EXTERN_C const IID IID_ID3D12Device10;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession);
         
-        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControl)
-        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControl )( 
+        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControle)
+        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControle )( 
             ID3D12Device10 * This,
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle);
         
         DECLSPEC_XFGVIRT(ID3D12Device9, CreateCommandQueue1)
         HRESULT ( STDMETHODCALLTYPE *CreateCommandQueue1 )( 
@@ -23482,8 +23482,8 @@ EXTERN_C const IID IID_ID3D12Device10;
 #define ID3D12Device10_CreateShaderCacheSession(This,pDesc,riid,ppvSession)	\
     ( (This)->lpVtbl -> CreateShaderCacheSession(This,pDesc,riid,ppvSession) ) 
 
-#define ID3D12Device10_ShaderCacheControl(This,Kinds,Control)	\
-    ( (This)->lpVtbl -> ShaderCacheControl(This,Kinds,Control) ) 
+#define ID3D12Device10_ShaderCacheControle(This,Kinds,Controle)	\
+    ( (This)->lpVtbl -> ShaderCacheControle(This,Kinds,Controle) ) 
 
 #define ID3D12Device10_CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue)	\
     ( (This)->lpVtbl -> CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue) ) 
@@ -24148,11 +24148,11 @@ EXTERN_C const IID IID_ID3D12Device11;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession);
         
-        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControl)
-        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControl )( 
+        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControle)
+        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControle )( 
             ID3D12Device11 * This,
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle);
         
         DECLSPEC_XFGVIRT(ID3D12Device9, CreateCommandQueue1)
         HRESULT ( STDMETHODCALLTYPE *CreateCommandQueue1 )( 
@@ -24478,8 +24478,8 @@ EXTERN_C const IID IID_ID3D12Device11;
 #define ID3D12Device11_CreateShaderCacheSession(This,pDesc,riid,ppvSession)	\
     ( (This)->lpVtbl -> CreateShaderCacheSession(This,pDesc,riid,ppvSession) ) 
 
-#define ID3D12Device11_ShaderCacheControl(This,Kinds,Control)	\
-    ( (This)->lpVtbl -> ShaderCacheControl(This,Kinds,Control) ) 
+#define ID3D12Device11_ShaderCacheControle(This,Kinds,Controle)	\
+    ( (This)->lpVtbl -> ShaderCacheControle(This,Kinds,Controle) ) 
 
 #define ID3D12Device11_CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue)	\
     ( (This)->lpVtbl -> CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue) ) 
@@ -25163,11 +25163,11 @@ EXTERN_C const IID IID_ID3D12Device12;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession);
         
-        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControl)
-        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControl )( 
+        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControle)
+        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControle )( 
             ID3D12Device12 * This,
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle);
         
         DECLSPEC_XFGVIRT(ID3D12Device9, CreateCommandQueue1)
         HRESULT ( STDMETHODCALLTYPE *CreateCommandQueue1 )( 
@@ -25517,8 +25517,8 @@ EXTERN_C const IID IID_ID3D12Device12;
 #define ID3D12Device12_CreateShaderCacheSession(This,pDesc,riid,ppvSession)	\
     ( (This)->lpVtbl -> CreateShaderCacheSession(This,pDesc,riid,ppvSession) ) 
 
-#define ID3D12Device12_ShaderCacheControl(This,Kinds,Control)	\
-    ( (This)->lpVtbl -> ShaderCacheControl(This,Kinds,Control) ) 
+#define ID3D12Device12_ShaderCacheControle(This,Kinds,Controle)	\
+    ( (This)->lpVtbl -> ShaderCacheControle(This,Kinds,Controle) ) 
 
 #define ID3D12Device12_CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue)	\
     ( (This)->lpVtbl -> CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue) ) 
@@ -26198,11 +26198,11 @@ EXTERN_C const IID IID_ID3D12Device13;
             REFIID riid,
             _COM_Outptr_opt_  void **ppvSession);
         
-        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControl)
-        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControl )( 
+        DECLSPEC_XFGVIRT(ID3D12Device9, ShaderCacheControle)
+        HRESULT ( STDMETHODCALLTYPE *ShaderCacheControle )( 
             ID3D12Device13 * This,
             D3D12_SHADER_CACHE_KIND_FLAGS Kinds,
-            D3D12_SHADER_CACHE_CONTROL_FLAGS Control);
+            D3D12_SHADER_CACHE_CONTROL_FLAGS Controle);
         
         DECLSPEC_XFGVIRT(ID3D12Device9, CreateCommandQueue1)
         HRESULT ( STDMETHODCALLTYPE *CreateCommandQueue1 )( 
@@ -26560,8 +26560,8 @@ EXTERN_C const IID IID_ID3D12Device13;
 #define ID3D12Device13_CreateShaderCacheSession(This,pDesc,riid,ppvSession)	\
     ( (This)->lpVtbl -> CreateShaderCacheSession(This,pDesc,riid,ppvSession) ) 
 
-#define ID3D12Device13_ShaderCacheControl(This,Kinds,Control)	\
-    ( (This)->lpVtbl -> ShaderCacheControl(This,Kinds,Control) ) 
+#define ID3D12Device13_ShaderCacheControle(This,Kinds,Controle)	\
+    ( (This)->lpVtbl -> ShaderCacheControle(This,Kinds,Controle) ) 
 
 #define ID3D12Device13_CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue)	\
     ( (This)->lpVtbl -> CreateCommandQueue1(This,pDesc,CreatorID,riid,ppCommandQueue) ) 

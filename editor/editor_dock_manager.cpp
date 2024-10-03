@@ -60,7 +60,7 @@ void DockSplitContainer::_update_visibility() {
 	is_updating = true;
 	bool any_visible = false;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i, false));
+		Controle *c = Object::cast_to<Controle>(get_child(i, false));
 		if (!c || !c->is_visible() || c->is_set_as_top_level()) {
 			continue;
 		}
@@ -74,9 +74,9 @@ void DockSplitContainer::_update_visibility() {
 void DockSplitContainer::add_child_notify(Node *p_child) {
 	SplitContainer::add_child_notify(p_child);
 
-	Control *child_control = nullptr;
+	Controle *child_control = nullptr;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i, false));
+		Controle *c = Object::cast_to<Controle>(get_child(i, false));
 		if (!c || c->is_set_as_top_level()) {
 			continue;
 		}
@@ -96,9 +96,9 @@ void DockSplitContainer::add_child_notify(Node *p_child) {
 void DockSplitContainer::remove_child_notify(Node *p_child) {
 	SplitContainer::remove_child_notify(p_child);
 
-	Control *child_control = nullptr;
+	Controle *child_control = nullptr;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i, false));
+		Controle *c = Object::cast_to<Controle>(get_child(i, false));
 		if (!c || c->is_set_as_top_level()) {
 			continue;
 		}
@@ -135,7 +135,7 @@ void EditorDockManager::_dock_container_gui_input(const Ref<InputEvent> &p_input
 	}
 }
 
-void EditorDockManager::_bottom_dock_button_gui_input(const Ref<InputEvent> &p_input, Control *p_dock, Button *p_bottom_button) {
+void EditorDockManager::_bottom_dock_button_gui_input(const Ref<InputEvent> &p_input, Controle *p_dock, Button *p_bottom_button) {
 	Ref<InputEventMouseButton> mb = p_input;
 
 	if (mb.is_valid() && mb->get_button_index() == MouseButton::RIGHT && mb->is_pressed()) {
@@ -173,7 +173,7 @@ void EditorDockManager::_update_docks_menu() {
 	// Add docks.
 	docks_menu_docks.clear();
 	int id = 0;
-	for (const KeyValue<Control *, DockInfo> &dock : all_docks) {
+	for (const KeyValue<Controle *, DockInfo> &dock : all_docks) {
 		if (dock.value.shortcut.is_valid()) {
 			docks_menu->add_shortcut(dock.value.shortcut, id);
 			docks_menu->set_item_text(id, dock.value.title);
@@ -192,7 +192,7 @@ void EditorDockManager::_update_docks_menu() {
 }
 
 void EditorDockManager::_docks_menu_option(int p_id) {
-	Control *dock = docks_menu_docks[p_id];
+	Controle *dock = docks_menu_docks[p_id];
 	ERR_FAIL_NULL(dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(dock), vformat("Menu option for unknown dock '%s'.", dock->get_name()));
 	if (all_docks[dock].enabled && all_docks[dock].open) {
@@ -205,7 +205,7 @@ void EditorDockManager::_docks_menu_option(int p_id) {
 
 void EditorDockManager::_window_close_request(WindowWrapper *p_wrapper) {
 	// Give the dock back to the original owner.
-	Control *dock = _close_window(p_wrapper);
+	Controle *dock = _close_window(p_wrapper);
 	ERR_FAIL_COND(!all_docks.has(dock));
 
 	if (all_docks[dock].previous_at_bottom || all_docks[dock].dock_slot_index != DOCK_SLOT_NONE) {
@@ -217,9 +217,9 @@ void EditorDockManager::_window_close_request(WindowWrapper *p_wrapper) {
 	}
 }
 
-Control *EditorDockManager::_close_window(WindowWrapper *p_wrapper) {
+Controle *EditorDockManager::_close_window(WindowWrapper *p_wrapper) {
 	p_wrapper->set_block_signals(true);
-	Control *dock = p_wrapper->release_wrapped_control();
+	Controle *dock = p_wrapper->release_wrapped_control();
 	p_wrapper->set_block_signals(false);
 	ERR_FAIL_COND_V(!all_docks.has(dock), nullptr);
 
@@ -229,7 +229,7 @@ Control *EditorDockManager::_close_window(WindowWrapper *p_wrapper) {
 	return dock;
 }
 
-void EditorDockManager::_open_dock_in_window(Control *p_dock, bool p_show_window, bool p_reset_size) {
+void EditorDockManager::_open_dock_in_window(Controle *p_dock, bool p_show_window, bool p_reset_size) {
 	ERR_FAIL_NULL(p_dock);
 
 	Size2 borders = Size2(4, 4) * EDSCALE;
@@ -266,7 +266,7 @@ void EditorDockManager::_open_dock_in_window(Control *p_dock, bool p_show_window
 	}
 }
 
-void EditorDockManager::_restore_dock_to_saved_window(Control *p_dock, const Dictionary &p_window_dump) {
+void EditorDockManager::_restore_dock_to_saved_window(Controle *p_dock, const Dictionary &p_window_dump) {
 	if (!all_docks[p_dock].dock_window) {
 		_open_dock_in_window(p_dock, false);
 	}
@@ -277,7 +277,7 @@ void EditorDockManager::_restore_dock_to_saved_window(Control *p_dock, const Dic
 			p_window_dump.get("window_screen_rect", Rect2i()));
 }
 
-void EditorDockManager::_dock_move_to_bottom(Control *p_dock, bool p_visible) {
+void EditorDockManager::_dock_move_to_bottom(Controle *p_dock, bool p_visible) {
 	_move_dock(p_dock, nullptr);
 
 	all_docks[p_dock].at_bottom = true;
@@ -291,7 +291,7 @@ void EditorDockManager::_dock_move_to_bottom(Control *p_dock, bool p_visible) {
 	EditorNode::get_bottom_panel()->make_item_visible(p_dock, p_visible);
 }
 
-void EditorDockManager::_dock_remove_from_bottom(Control *p_dock) {
+void EditorDockManager::_dock_remove_from_bottom(Controle *p_dock) {
 	all_docks[p_dock].at_bottom = false;
 	all_docks[p_dock].previous_at_bottom = true;
 
@@ -299,12 +299,12 @@ void EditorDockManager::_dock_remove_from_bottom(Control *p_dock) {
 	p_dock->call("_set_dock_horizontal", false);
 }
 
-bool EditorDockManager::_is_dock_at_bottom(Control *p_dock) {
+bool EditorDockManager::_is_dock_at_bottom(Controle *p_dock) {
 	ERR_FAIL_COND_V(!all_docks.has(p_dock), false);
 	return all_docks[p_dock].at_bottom;
 }
 
-void EditorDockManager::_move_dock_tab_index(Control *p_dock, int p_tab_index, bool p_set_current) {
+void EditorDockManager::_move_dock_tab_index(Controle *p_dock, int p_tab_index, bool p_set_current) {
 	TabContainer *dock_tab_container = Object::cast_to<TabContainer>(p_dock->get_parent());
 	if (!dock_tab_container) {
 		return;
@@ -321,7 +321,7 @@ void EditorDockManager::_move_dock_tab_index(Control *p_dock, int p_tab_index, b
 	dock_tab_container->set_block_signals(false);
 }
 
-void EditorDockManager::_move_dock(Control *p_dock, Control *p_target, int p_tab_index, bool p_set_current) {
+void EditorDockManager::_move_dock(Controle *p_dock, Controle *p_target, int p_tab_index, bool p_set_current) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot move unknown dock '%s'.", p_dock->get_name()));
 
@@ -374,7 +374,7 @@ void EditorDockManager::_move_dock(Control *p_dock, Control *p_target, int p_tab
 	}
 }
 
-void EditorDockManager::_update_tab_style(Control *p_dock) {
+void EditorDockManager::_update_tab_style(Controle *p_dock) {
 	const DockInfo &dock_info = all_docks[p_dock];
 	if (!dock_info.enabled || !dock_info.open) {
 		return; // Disabled by feature profile or manually closed by user.
@@ -445,7 +445,7 @@ void EditorDockManager::save_docks_to_config(Ref<ConfigFile> p_layout, const Str
 	// Save docks in windows.
 	Dictionary floating_docks_dump;
 	for (WindowWrapper *wrapper : dock_windows) {
-		Control *dock = wrapper->get_wrapped_control();
+		Controle *dock = wrapper->get_wrapped_control();
 
 		Dictionary window_dump;
 		window_dump["window_rect"] = wrapper->get_window_rect();
@@ -474,11 +474,11 @@ void EditorDockManager::save_docks_to_config(Ref<ConfigFile> p_layout, const Str
 	// Save closed and bottom docks.
 	Array bottom_docks_dump;
 	Array closed_docks_dump;
-	for (const KeyValue<Control *, DockInfo> &d : all_docks) {
+	for (const KeyValue<Controle *, DockInfo> &d : all_docks) {
 		if (!d.value.at_bottom && d.value.open && (!d.value.previous_at_bottom || !d.value.dock_window)) {
 			continue;
 		}
-		// Use the name of the Control since it isn't translated.
+		// Use the name of the Controle since it isn't translated.
 		String name = d.key->get_name();
 		if (d.value.at_bottom || (d.value.previous_at_bottom && d.value.dock_window)) {
 			bottom_docks_dump.push_back(name);
@@ -523,8 +523,8 @@ void EditorDockManager::load_docks_from_config(Ref<ConfigFile> p_layout, const S
 	bool restore_window_on_load = EDITOR_GET("interface/multi_window/restore_windows_on_load");
 
 	// Store the docks by name for easy lookup.
-	HashMap<String, Control *> dock_map;
-	for (const KeyValue<Control *, DockInfo> &dock : all_docks) {
+	HashMap<String, Controle *> dock_map;
+	for (const KeyValue<Controle *, DockInfo> &dock : all_docks) {
 		dock_map[dock.key->get_name()] = dock.key;
 	}
 
@@ -542,7 +542,7 @@ void EditorDockManager::load_docks_from_config(Ref<ConfigFile> p_layout, const S
 			if (!dock_map.has(name)) {
 				continue;
 			}
-			Control *dock = dock_map[name];
+			Controle *dock = dock_map[name];
 
 			if (!all_docks[dock].enabled) {
 				// Don't open disabled docks.
@@ -613,7 +613,7 @@ void EditorDockManager::load_docks_from_config(Ref<ConfigFile> p_layout, const S
 	_update_docks_menu();
 }
 
-void EditorDockManager::bottom_dock_show_placement_popup(const Rect2i &p_position, Control *p_dock) {
+void EditorDockManager::bottom_dock_show_placement_popup(const Rect2i &p_position, Controle *p_dock) {
 	ERR_FAIL_COND(!all_docks.has(p_dock));
 
 	dock_context_popup->set_dock(p_dock);
@@ -629,7 +629,7 @@ void EditorDockManager::bottom_dock_show_placement_popup(const Rect2i &p_positio
 	dock_context_popup->popup();
 }
 
-void EditorDockManager::set_dock_enabled(Control *p_dock, bool p_enabled) {
+void EditorDockManager::set_dock_enabled(Controle *p_dock, bool p_enabled) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot set enabled unknown dock '%s'.", p_dock->get_name()));
 
@@ -645,7 +645,7 @@ void EditorDockManager::set_dock_enabled(Control *p_dock, bool p_enabled) {
 	}
 }
 
-void EditorDockManager::close_dock(Control *p_dock) {
+void EditorDockManager::close_dock(Controle *p_dock) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot close unknown dock '%s'.", p_dock->get_name()));
 
@@ -661,7 +661,7 @@ void EditorDockManager::close_dock(Control *p_dock) {
 	_update_layout();
 }
 
-void EditorDockManager::open_dock(Control *p_dock, bool p_set_current) {
+void EditorDockManager::open_dock(Controle *p_dock, bool p_set_current) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot open unknown dock '%s'.", p_dock->get_name()));
 
@@ -690,11 +690,11 @@ void EditorDockManager::open_dock(Control *p_dock, bool p_set_current) {
 	_update_layout();
 }
 
-TabContainer *EditorDockManager::get_dock_tab_container(Control *p_dock) const {
+TabContainer *EditorDockManager::get_dock_tab_container(Controle *p_dock) const {
 	return Object::cast_to<TabContainer>(p_dock->get_parent());
 }
 
-void EditorDockManager::focus_dock(Control *p_dock) {
+void EditorDockManager::focus_dock(Controle *p_dock) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot focus unknown dock '%s'.", p_dock->get_name()));
 
@@ -729,7 +729,7 @@ void EditorDockManager::focus_dock(Control *p_dock) {
 	tab_container->set_current_tab(tab_index);
 }
 
-void EditorDockManager::add_dock(Control *p_dock, const String &p_title, DockSlot p_slot, const Ref<Shortcut> &p_shortcut, const StringName &p_icon_name) {
+void EditorDockManager::add_dock(Controle *p_dock, const String &p_title, DockSlot p_slot, const Ref<Shortcut> &p_shortcut, const StringName &p_icon_name) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(all_docks.has(p_dock), vformat("Cannot add dock '%s', already added.", p_dock->get_name()));
 
@@ -750,7 +750,7 @@ void EditorDockManager::add_dock(Control *p_dock, const String &p_title, DockSlo
 	}
 }
 
-void EditorDockManager::remove_dock(Control *p_dock) {
+void EditorDockManager::remove_dock(Controle *p_dock) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot remove unknown dock '%s'.", p_dock->get_name()));
 
@@ -760,7 +760,7 @@ void EditorDockManager::remove_dock(Control *p_dock) {
 	_update_layout();
 }
 
-void EditorDockManager::set_dock_tab_icon(Control *p_dock, const Ref<Texture2D> &p_icon) {
+void EditorDockManager::set_dock_tab_icon(Controle *p_dock, const Ref<Texture2D> &p_icon) {
 	ERR_FAIL_NULL(p_dock);
 	ERR_FAIL_COND_MSG(!all_docks.has(p_dock), vformat("Cannot set tab icon for unknown dock '%s'.", p_dock->get_name()));
 
@@ -784,7 +784,7 @@ bool EditorDockManager::are_docks_visible() const {
 }
 
 void EditorDockManager::update_tab_styles() {
-	for (const KeyValue<Control *, DockInfo> &dock : all_docks) {
+	for (const KeyValue<Controle *, DockInfo> &dock : all_docks) {
 		_update_tab_style(dock.key);
 	}
 }
@@ -813,7 +813,7 @@ void EditorDockManager::register_dock_slot(DockSlot p_dock_slot, TabContainer *p
 	dock_slot[p_dock_slot] = p_tab_container;
 
 	p_tab_container->set_custom_minimum_size(Size2(170, 0) * EDSCALE);
-	p_tab_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	p_tab_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	p_tab_container->set_popup(dock_context_popup);
 	p_tab_container->connect("pre_popup_pressed", callable_mp(dock_context_popup, &DockContextPopup::select_current_dock_in_dock_slot).bind(p_dock_slot));
 	p_tab_container->set_drag_to_rearrange_enabled(true);
@@ -865,7 +865,7 @@ void DockContextPopup::_notification(int p_what) {
 				tab_move_left_button->set_tooltip_text(TTR("Move this dock left one tab."));
 				tab_move_right_button->set_tooltip_text(TTR("Move this dock right one tab."));
 			}
-			dock_to_bottom_button->set_icon(get_editor_theme_icon(SNAME("ControlAlignBottomWide")));
+			dock_to_bottom_button->set_icon(get_editor_theme_icon(SNAME("ControleAlignBottomWide")));
 			close_button->set_icon(get_editor_theme_icon(SNAME("Close")));
 		} break;
 	}
@@ -1060,12 +1060,12 @@ void DockContextPopup::select_current_dock_in_dock_slot(int p_dock_slot) {
 	_update_buttons();
 }
 
-void DockContextPopup::set_dock(Control *p_dock) {
+void DockContextPopup::set_dock(Controle *p_dock) {
 	context_dock = p_dock;
 	_update_buttons();
 }
 
-Control *DockContextPopup::get_dock() const {
+Controle *DockContextPopup::get_dock() const {
 	return context_dock;
 }
 
@@ -1085,30 +1085,30 @@ DockContextPopup::DockContextPopup() {
 	HBoxContainer *header_hb = memnew(HBoxContainer);
 	tab_move_left_button = memnew(Button);
 	tab_move_left_button->set_flat(true);
-	tab_move_left_button->set_focus_mode(Control::FOCUS_NONE);
+	tab_move_left_button->set_focus_mode(Controle::FOCUS_NONE);
 	tab_move_left_button->connect(SceneStringName(pressed), callable_mp(this, &DockContextPopup::_tab_move_left));
 	header_hb->add_child(tab_move_left_button);
 
 	Label *position_label = memnew(Label);
 	position_label->set_text(TTR("Dock Position"));
-	position_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	position_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	position_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	header_hb->add_child(position_label);
 
 	tab_move_right_button = memnew(Button);
 	tab_move_right_button->set_flat(true);
-	tab_move_right_button->set_focus_mode(Control::FOCUS_NONE);
+	tab_move_right_button->set_focus_mode(Controle::FOCUS_NONE);
 	tab_move_right_button->connect(SceneStringName(pressed), callable_mp(this, &DockContextPopup::_tab_move_right));
 
 	header_hb->add_child(tab_move_right_button);
 	dock_select_popup_vb->add_child(header_hb);
 
-	dock_select = memnew(Control);
+	dock_select = memnew(Controle);
 	dock_select->set_custom_minimum_size(Size2(128, 64) * EDSCALE);
 	dock_select->connect(SceneStringName(gui_input), callable_mp(this, &DockContextPopup::_dock_select_input));
 	dock_select->connect(SceneStringName(draw), callable_mp(this, &DockContextPopup::_dock_select_draw));
 	dock_select->connect(SceneStringName(mouse_exited), callable_mp(this, &DockContextPopup::_dock_select_mouse_exited));
-	dock_select->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	dock_select->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	dock_select_popup_vb->add_child(dock_select);
 
 	make_float_button = memnew(Button);
@@ -1119,16 +1119,16 @@ DockContextPopup::DockContextPopup() {
 	} else {
 		make_float_button->set_tooltip_text(TTR("Make this dock floating."));
 	}
-	make_float_button->set_focus_mode(Control::FOCUS_NONE);
-	make_float_button->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	make_float_button->set_focus_mode(Controle::FOCUS_NONE);
+	make_float_button->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	make_float_button->connect(SceneStringName(pressed), callable_mp(this, &DockContextPopup::_float_dock));
 	dock_select_popup_vb->add_child(make_float_button);
 
 	dock_to_bottom_button = memnew(Button);
 	dock_to_bottom_button->set_text(TTR("Move to Bottom"));
 	dock_to_bottom_button->set_tooltip_text(TTR("Move this dock to the bottom panel."));
-	dock_to_bottom_button->set_focus_mode(Control::FOCUS_NONE);
-	dock_to_bottom_button->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	dock_to_bottom_button->set_focus_mode(Controle::FOCUS_NONE);
+	dock_to_bottom_button->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	dock_to_bottom_button->connect(SceneStringName(pressed), callable_mp(this, &DockContextPopup::_move_dock_to_bottom));
 	dock_to_bottom_button->hide();
 	dock_select_popup_vb->add_child(dock_to_bottom_button);
@@ -1136,8 +1136,8 @@ DockContextPopup::DockContextPopup() {
 	close_button = memnew(Button);
 	close_button->set_text(TTR("Close"));
 	close_button->set_tooltip_text(TTR("Close this dock."));
-	close_button->set_focus_mode(Control::FOCUS_NONE);
-	close_button->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	close_button->set_focus_mode(Controle::FOCUS_NONE);
+	close_button->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	close_button->connect(SceneStringName(pressed), callable_mp(this, &DockContextPopup::_close_dock));
 	dock_select_popup_vb->add_child(close_button);
 }

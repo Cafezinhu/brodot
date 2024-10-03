@@ -41,7 +41,7 @@ FT_BEGIN_HEADER
    *   The auto-hinter
    *
    * @abstract:
-   *   Controlling the auto-hinting module.
+   *   Controleling the auto-hinting module.
    *
    * @description:
    *   While FreeType's auto-hinter doesn't expose API functions by itself,
@@ -70,7 +70,7 @@ FT_BEGIN_HEADER
    *   The CFF driver
    *
    * @abstract:
-   *   Controlling the CFF driver module.
+   *   Controleling the CFF driver module.
    *
    * @description:
    *   While FreeType's CFF driver doesn't expose API functions by itself, it
@@ -153,7 +153,7 @@ FT_BEGIN_HEADER
    *   The PCF driver
    *
    * @abstract:
-   *   Controlling the PCF driver module.
+   *   Controleling the PCF driver module.
    *
    * @description:
    *   While FreeType's PCF driver doesn't expose API functions by itself, it
@@ -176,7 +176,7 @@ FT_BEGIN_HEADER
    *   The Type 1 and CID drivers
    *
    * @abstract:
-   *   Controlling the Type~1 and CID driver modules.
+   *   Controleling the Type~1 and CID driver modules.
    *
    * @description:
    *   It is possible to control the behaviour of FreeType's Type~1 and
@@ -207,7 +207,7 @@ FT_BEGIN_HEADER
    *   The TrueType driver
    *
    * @abstract:
-   *   Controlling the TrueType driver module.
+   *   Controleling the TrueType driver module.
    *
    * @description:
    *   While FreeType's TrueType driver doesn't expose API functions by
@@ -307,7 +307,7 @@ FT_BEGIN_HEADER
    *   The SVG driver
    *
    * @abstract:
-   *   Controlling the external rendering of OT-SVG glyphs.
+   *   Controleling the external rendering of OT-SVG glyphs.
    *
    * @description:
    *   By default, FreeType can only load the 'SVG~' table of OpenType fonts
@@ -332,7 +332,7 @@ FT_BEGIN_HEADER
    *   Driver properties
    *
    * @abstract:
-   *   Controlling driver modules.
+   *   Controleling driver modules.
    *
    * @description:
    *   Driver modules can be controlled by setting and unsetting properties,

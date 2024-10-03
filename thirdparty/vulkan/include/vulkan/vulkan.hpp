@@ -1894,7 +1894,7 @@ namespace VULKAN_HPP_NAMESPACE
                                      pImageMemoryBarriers );
     }
 
-    void vkCmdBeginQuery( VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags ) const VULKAN_HPP_NOEXCEPT
+    void vkCmdBeginQuery( VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControleFlags flags ) const VULKAN_HPP_NOEXCEPT
     {
       return ::vkCmdBeginQuery( commandBuffer, queryPool, query, flags );
     }
@@ -2841,9 +2841,9 @@ namespace VULKAN_HPP_NAMESPACE
       return ::vkCmdEndVideoCodingKHR( commandBuffer, pEndCodingInfo );
     }
 
-    void vkCmdControlVideoCodingKHR( VkCommandBuffer commandBuffer, const VkVideoCodingControlInfoKHR * pCodingControlInfo ) const VULKAN_HPP_NOEXCEPT
+    void vkCmdControleVideoCodingKHR( VkCommandBuffer commandBuffer, const VkVideoCodingControleInfoKHR * pCodingControleInfo ) const VULKAN_HPP_NOEXCEPT
     {
-      return ::vkCmdControlVideoCodingKHR( commandBuffer, pCodingControlInfo );
+      return ::vkCmdControleVideoCodingKHR( commandBuffer, pCodingControleInfo );
     }
 
     //=== VK_KHR_video_decode_queue ===
@@ -2883,7 +2883,7 @@ namespace VULKAN_HPP_NAMESPACE
       return ::vkCmdEndTransformFeedbackEXT( commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets );
     }
 
-    void vkCmdBeginQueryIndexedEXT( VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags, uint32_t index ) const
+    void vkCmdBeginQueryIndexedEXT( VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControleFlags flags, uint32_t index ) const
       VULKAN_HPP_NOEXCEPT
     {
       return ::vkCmdBeginQueryIndexedEXT( commandBuffer, queryPool, query, flags, index );
@@ -3318,9 +3318,9 @@ namespace VULKAN_HPP_NAMESPACE
 
     //=== VK_EXT_display_control ===
 
-    VkResult vkDisplayPowerControlEXT( VkDevice device, VkDisplayKHR display, const VkDisplayPowerInfoEXT * pDisplayPowerInfo ) const VULKAN_HPP_NOEXCEPT
+    VkResult vkDisplayPowerControleEXT( VkDevice device, VkDisplayKHR display, const VkDisplayPowerInfoEXT * pDisplayPowerInfo ) const VULKAN_HPP_NOEXCEPT
     {
-      return ::vkDisplayPowerControlEXT( device, display, pDisplayPowerInfo );
+      return ::vkDisplayPowerControleEXT( device, display, pDisplayPowerInfo );
     }
 
     VkResult vkRegisterDeviceEventEXT( VkDevice                      device,
@@ -5207,9 +5207,9 @@ namespace VULKAN_HPP_NAMESPACE
 
     //=== VK_EXT_extended_dynamic_state2 ===
 
-    void vkCmdSetPatchControlPointsEXT( VkCommandBuffer commandBuffer, uint32_t patchControlPoints ) const VULKAN_HPP_NOEXCEPT
+    void vkCmdSetPatchControlePointsEXT( VkCommandBuffer commandBuffer, uint32_t patchControlePoints ) const VULKAN_HPP_NOEXCEPT
     {
-      return ::vkCmdSetPatchControlPointsEXT( commandBuffer, patchControlPoints );
+      return ::vkCmdSetPatchControlePointsEXT( commandBuffer, patchControlePoints );
     }
 
     void vkCmdSetRasterizerDiscardEnableEXT( VkCommandBuffer commandBuffer, VkBool32 rasterizerDiscardEnable ) const VULKAN_HPP_NOEXCEPT
@@ -7325,8 +7325,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTDisplaySurfaceCounterSpecVersion   = VK_EXT_DISPLAY_SURFACE_COUNTER_SPEC_VERSION;
 
   //=== VK_EXT_display_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDisplayControlExtensionName = VK_EXT_DISPLAY_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDisplayControlSpecVersion   = VK_EXT_DISPLAY_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDisplayControleExtensionName = VK_EXT_DISPLAY_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDisplayControleSpecVersion   = VK_EXT_DISPLAY_CONTROL_SPEC_VERSION;
 
   //=== VK_GOOGLE_display_timing ===
   VULKAN_HPP_CONSTEXPR_INLINE auto GOOGLEDisplayTimingExtensionName = VK_GOOGLE_DISPLAY_TIMING_EXTENSION_NAME;
@@ -7685,8 +7685,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderClockSpecVersion   = VK_KHR_SHADER_CLOCK_SPEC_VERSION;
 
   //=== VK_AMD_pipeline_compiler_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto AMDPipelineCompilerControlExtensionName = VK_AMD_PIPELINE_COMPILER_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto AMDPipelineCompilerControlSpecVersion   = VK_AMD_PIPELINE_COMPILER_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto AMDPipelineCompilerControleExtensionName = VK_AMD_PIPELINE_COMPILER_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto AMDPipelineCompilerControleSpecVersion   = VK_AMD_PIPELINE_COMPILER_CONTROL_SPEC_VERSION;
 
   //=== VK_EXT_calibrated_timestamps ===
   VULKAN_HPP_DEPRECATED( "The VK_EXT_calibrated_timestamps extension has been promoted to VK_KHR_calibrated_timestamps." )
@@ -7736,9 +7736,9 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_KHR_shader_float_controls ===
   VULKAN_HPP_DEPRECATED( "The VK_KHR_shader_float_controls extension has been promoted to core in version 1.2." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControlsExtensionName = VK_KHR_SHADER_FLOAT_CONTROLS_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControlesExtensionName = VK_KHR_SHADER_FLOAT_CONTROLS_EXTENSION_NAME;
   VULKAN_HPP_DEPRECATED( "The VK_KHR_shader_float_controls extension has been promoted to core in version 1.2." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControlsSpecVersion = VK_KHR_SHADER_FLOAT_CONTROLS_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControlesSpecVersion = VK_KHR_SHADER_FLOAT_CONTROLS_SPEC_VERSION;
 
   //=== VK_NV_shader_subgroup_partitioned ===
   VULKAN_HPP_CONSTEXPR_INLINE auto NVShaderSubgroupPartitionedExtensionName = VK_NV_SHADER_SUBGROUP_PARTITIONED_EXTENSION_NAME;
@@ -7846,9 +7846,9 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_subgroup_size_control ===
   VULKAN_HPP_DEPRECATED( "The VK_EXT_subgroup_size_control extension has been promoted to core in version 1.3." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTSubgroupSizeControlExtensionName = VK_EXT_SUBGROUP_SIZE_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTSubgroupSizeControleExtensionName = VK_EXT_SUBGROUP_SIZE_CONTROL_EXTENSION_NAME;
   VULKAN_HPP_DEPRECATED( "The VK_EXT_subgroup_size_control extension has been promoted to core in version 1.3." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTSubgroupSizeControlSpecVersion = VK_EXT_SUBGROUP_SIZE_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTSubgroupSizeControleSpecVersion = VK_EXT_SUBGROUP_SIZE_CONTROL_SPEC_VERSION;
 
   //=== VK_KHR_fragment_shading_rate ===
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRFragmentShadingRateExtensionName = VK_KHR_FRAGMENT_SHADING_RATE_EXTENSION_NAME;
@@ -7871,8 +7871,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTShaderImageAtomicInt64SpecVersion   = VK_EXT_SHADER_IMAGE_ATOMIC_INT64_SPEC_VERSION;
 
   //=== VK_KHR_shader_quad_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderQuadControlExtensionName = VK_KHR_SHADER_QUAD_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderQuadControlSpecVersion   = VK_KHR_SHADER_QUAD_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderQuadControleExtensionName = VK_KHR_SHADER_QUAD_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderQuadControleSpecVersion   = VK_KHR_SHADER_QUAD_CONTROL_SPEC_VERSION;
 
   //=== VK_KHR_spirv_1_4 ===
   VULKAN_HPP_DEPRECATED( "The VK_KHR_spirv_1_4 extension has been promoted to core in version 1.2." )
@@ -8063,8 +8063,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto QCOMRenderPassTransformSpecVersion   = VK_QCOM_RENDER_PASS_TRANSFORM_SPEC_VERSION;
 
   //=== VK_EXT_depth_bias_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthBiasControlExtensionName = VK_EXT_DEPTH_BIAS_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthBiasControlSpecVersion   = VK_EXT_DEPTH_BIAS_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthBiasControleExtensionName = VK_EXT_DEPTH_BIAS_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthBiasControleSpecVersion   = VK_EXT_DEPTH_BIAS_CONTROL_SPEC_VERSION;
 
   //=== VK_EXT_device_memory_report ===
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTDeviceMemoryReportExtensionName = VK_EXT_DEVICE_MEMORY_REPORT_EXTENSION_NAME;
@@ -8112,9 +8112,9 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_pipeline_creation_cache_control ===
   VULKAN_HPP_DEPRECATED( "The VK_EXT_pipeline_creation_cache_control extension has been promoted to core in version 1.3." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTPipelineCreationCacheControlExtensionName = VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTPipelineCreationCacheControleExtensionName = VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_EXTENSION_NAME;
   VULKAN_HPP_DEPRECATED( "The VK_EXT_pipeline_creation_cache_control extension has been promoted to core in version 1.3." )
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTPipelineCreationCacheControlSpecVersion = VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTPipelineCreationCacheControleSpecVersion = VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_SPEC_VERSION;
 
   //=== VK_KHR_video_encode_queue ===
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRVideoEncodeQueueExtensionName = VK_KHR_VIDEO_ENCODE_QUEUE_EXTENSION_NAME;
@@ -8167,8 +8167,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRFragmentShaderBarycentricSpecVersion   = VK_KHR_FRAGMENT_SHADER_BARYCENTRIC_SPEC_VERSION;
 
   //=== VK_KHR_shader_subgroup_uniform_control_flow ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderSubgroupUniformControlFlowExtensionName = VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderSubgroupUniformControlFlowSpecVersion   = VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderSubgroupUniformControleFlowExtensionName = VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderSubgroupUniformControleFlowSpecVersion   = VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_SPEC_VERSION;
 
   //=== VK_KHR_zero_initialize_workgroup_memory ===
   VULKAN_HPP_DEPRECATED( "The VK_KHR_zero_initialize_workgroup_memory extension has been promoted to core in version 1.3." )
@@ -8219,8 +8219,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRCopyCommands2SpecVersion = VK_KHR_COPY_COMMANDS_2_SPEC_VERSION;
 
   //=== VK_EXT_image_compression_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControlExtensionName = VK_EXT_IMAGE_COMPRESSION_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControlSpecVersion   = VK_EXT_IMAGE_COMPRESSION_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControleExtensionName = VK_EXT_IMAGE_COMPRESSION_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControleSpecVersion   = VK_EXT_IMAGE_COMPRESSION_CONTROL_SPEC_VERSION;
 
   //=== VK_EXT_attachment_feedback_loop_layout ===
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTAttachmentFeedbackLoopLayoutExtensionName = VK_EXT_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_EXTENSION_NAME;
@@ -8277,8 +8277,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTDeviceAddressBindingReportSpecVersion   = VK_EXT_DEVICE_ADDRESS_BINDING_REPORT_SPEC_VERSION;
 
   //=== VK_EXT_depth_clip_control ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthClipControlExtensionName = VK_EXT_DEPTH_CLIP_CONTROL_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthClipControlSpecVersion   = VK_EXT_DEPTH_CLIP_CONTROL_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthClipControleExtensionName = VK_EXT_DEPTH_CLIP_CONTROL_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTDepthClipControleSpecVersion   = VK_EXT_DEPTH_CLIP_CONTROL_SPEC_VERSION;
 
   //=== VK_EXT_primitive_topology_list_restart ===
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTPrimitiveTopologyListRestartExtensionName = VK_EXT_PRIMITIVE_TOPOLOGY_LIST_RESTART_EXTENSION_NAME;
@@ -8425,8 +8425,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderSubgroupRotateSpecVersion   = VK_KHR_SHADER_SUBGROUP_ROTATE_SPEC_VERSION;
 
   //=== VK_ARM_scheduling_controls ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto ARMSchedulingControlsExtensionName = VK_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto ARMSchedulingControlsSpecVersion   = VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto ARMSchedulingControlesExtensionName = VK_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto ARMSchedulingControlesSpecVersion   = VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION;
 
   //=== VK_EXT_image_sliced_view_of_3d ===
   VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageSlicedViewOf3DExtensionName = VK_EXT_IMAGE_SLICED_VIEW_OF_3D_EXTENSION_NAME;
@@ -8477,8 +8477,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderMaximalReconvergenceSpecVersion   = VK_KHR_SHADER_MAXIMAL_RECONVERGENCE_SPEC_VERSION;
 
   //=== VK_EXT_image_compression_control_swapchain ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControlSwapchainExtensionName = VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControlSwapchainSpecVersion   = VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControleSwapchainExtensionName = VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto EXTImageCompressionControleSwapchainSpecVersion   = VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_SPEC_VERSION;
 
   //=== VK_QCOM_image_processing ===
   VULKAN_HPP_CONSTEXPR_INLINE auto QCOMImageProcessingExtensionName = VK_QCOM_IMAGE_PROCESSING_EXTENSION_NAME;
@@ -8635,8 +8635,8 @@ namespace VULKAN_HPP_NAMESPACE
   VULKAN_HPP_CONSTEXPR_INLINE auto KHRLoadStoreOpNoneSpecVersion   = VK_KHR_LOAD_STORE_OP_NONE_SPEC_VERSION;
 
   //=== VK_KHR_shader_float_controls2 ===
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControls2ExtensionName = VK_KHR_SHADER_FLOAT_CONTROLS_2_EXTENSION_NAME;
-  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControls2SpecVersion   = VK_KHR_SHADER_FLOAT_CONTROLS_2_SPEC_VERSION;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControles2ExtensionName = VK_KHR_SHADER_FLOAT_CONTROLS_2_EXTENSION_NAME;
+  VULKAN_HPP_CONSTEXPR_INLINE auto KHRShaderFloatControles2SpecVersion   = VK_KHR_SHADER_FLOAT_CONTROLS_2_SPEC_VERSION;
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
   //=== VK_QNX_external_memory_screen_buffer ===
@@ -9335,7 +9335,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceFloatControlsProperties, PhysicalDeviceProperties2>
+  struct StructExtends<PhysicalDeviceFloatControlesProperties, PhysicalDeviceProperties2>
   {
     enum
     {
@@ -9849,7 +9849,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDevicePipelineCreationCacheControlFeatures, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDevicePipelineCreationCacheControleFeatures, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -9858,7 +9858,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDevicePipelineCreationCacheControlFeatures, DeviceCreateInfo>
+  struct StructExtends<PhysicalDevicePipelineCreationCacheControleFeatures, DeviceCreateInfo>
   {
     enum
     {
@@ -9930,7 +9930,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSubgroupSizeControlFeatures, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceSubgroupSizeControleFeatures, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -9939,7 +9939,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSubgroupSizeControlFeatures, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceSubgroupSizeControleFeatures, DeviceCreateInfo>
   {
     enum
     {
@@ -9948,7 +9948,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSubgroupSizeControlProperties, PhysicalDeviceProperties2>
+  struct StructExtends<PhysicalDeviceSubgroupSizeControleProperties, PhysicalDeviceProperties2>
   {
     enum
     {
@@ -10470,7 +10470,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH264RateControlInfoKHR, VideoCodingControlInfoKHR>
+  struct StructExtends<VideoEncodeH264RateControleInfoKHR, VideoCodingControleInfoKHR>
   {
     enum
     {
@@ -10479,7 +10479,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH264RateControlInfoKHR, VideoBeginCodingInfoKHR>
+  struct StructExtends<VideoEncodeH264RateControleInfoKHR, VideoBeginCodingInfoKHR>
   {
     enum
     {
@@ -10488,7 +10488,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH264RateControlLayerInfoKHR, VideoEncodeRateControlLayerInfoKHR>
+  struct StructExtends<VideoEncodeH264RateControleLayerInfoKHR, VideoEncodeRateControleLayerInfoKHR>
   {
     enum
     {
@@ -10606,7 +10606,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH265RateControlInfoKHR, VideoCodingControlInfoKHR>
+  struct StructExtends<VideoEncodeH265RateControleInfoKHR, VideoCodingControleInfoKHR>
   {
     enum
     {
@@ -10615,7 +10615,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH265RateControlInfoKHR, VideoBeginCodingInfoKHR>
+  struct StructExtends<VideoEncodeH265RateControleInfoKHR, VideoBeginCodingInfoKHR>
   {
     enum
     {
@@ -10624,7 +10624,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeH265RateControlLayerInfoKHR, VideoEncodeRateControlLayerInfoKHR>
+  struct StructExtends<VideoEncodeH265RateControleLayerInfoKHR, VideoEncodeRateControleLayerInfoKHR>
   {
     enum
     {
@@ -11898,7 +11898,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_AMD_pipeline_compiler_control ===
   template <>
-  struct StructExtends<PipelineCompilerControlCreateInfoAMD, GraphicsPipelineCreateInfo>
+  struct StructExtends<PipelineCompilerControleCreateInfoAMD, GraphicsPipelineCreateInfo>
   {
     enum
     {
@@ -11907,7 +11907,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PipelineCompilerControlCreateInfoAMD, ComputePipelineCreateInfo>
+  struct StructExtends<PipelineCompilerControleCreateInfoAMD, ComputePipelineCreateInfo>
   {
     enum
     {
@@ -11916,7 +11916,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 #  if defined( VK_ENABLE_BETA_EXTENSIONS )
   template <>
-  struct StructExtends<PipelineCompilerControlCreateInfoAMD, ExecutionGraphPipelineCreateInfoAMDX>
+  struct StructExtends<PipelineCompilerControleCreateInfoAMD, ExecutionGraphPipelineCreateInfoAMDX>
   {
     enum
     {
@@ -12427,7 +12427,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_KHR_shader_quad_control ===
   template <>
-  struct StructExtends<PhysicalDeviceShaderQuadControlFeaturesKHR, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceShaderQuadControleFeaturesKHR, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -12436,7 +12436,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceShaderQuadControlFeaturesKHR, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceShaderQuadControleFeaturesKHR, DeviceCreateInfo>
   {
     enum
     {
@@ -13094,7 +13094,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_depth_bias_control ===
   template <>
-  struct StructExtends<PhysicalDeviceDepthBiasControlFeaturesEXT, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceDepthBiasControleFeaturesEXT, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -13103,7 +13103,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceDepthBiasControlFeaturesEXT, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceDepthBiasControleFeaturesEXT, DeviceCreateInfo>
   {
     enum
     {
@@ -13335,7 +13335,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeRateControlInfoKHR, VideoCodingControlInfoKHR>
+  struct StructExtends<VideoEncodeRateControleInfoKHR, VideoCodingControleInfoKHR>
   {
     enum
     {
@@ -13344,7 +13344,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeRateControlInfoKHR, VideoBeginCodingInfoKHR>
+  struct StructExtends<VideoEncodeRateControleInfoKHR, VideoBeginCodingInfoKHR>
   {
     enum
     {
@@ -13353,7 +13353,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<VideoEncodeQualityLevelInfoKHR, VideoCodingControlInfoKHR>
+  struct StructExtends<VideoEncodeQualityLevelInfoKHR, VideoCodingControleInfoKHR>
   {
     enum
     {
@@ -13799,7 +13799,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_KHR_shader_subgroup_uniform_control_flow ===
   template <>
-  struct StructExtends<PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -13808,7 +13808,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR, DeviceCreateInfo>
   {
     enum
     {
@@ -14005,7 +14005,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_image_compression_control ===
   template <>
-  struct StructExtends<PhysicalDeviceImageCompressionControlFeaturesEXT, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceImageCompressionControleFeaturesEXT, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -14014,7 +14014,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceImageCompressionControlFeaturesEXT, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceImageCompressionControleFeaturesEXT, DeviceCreateInfo>
   {
     enum
     {
@@ -14023,7 +14023,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<ImageCompressionControlEXT, ImageCreateInfo>
+  struct StructExtends<ImageCompressionControleEXT, ImageCreateInfo>
   {
     enum
     {
@@ -14032,7 +14032,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<ImageCompressionControlEXT, SwapchainCreateInfoKHR>
+  struct StructExtends<ImageCompressionControleEXT, SwapchainCreateInfoKHR>
   {
     enum
     {
@@ -14041,7 +14041,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<ImageCompressionControlEXT, PhysicalDeviceImageFormatInfo2>
+  struct StructExtends<ImageCompressionControleEXT, PhysicalDeviceImageFormatInfo2>
   {
     enum
     {
@@ -14211,7 +14211,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_depth_clip_control ===
   template <>
-  struct StructExtends<PhysicalDeviceDepthClipControlFeaturesEXT, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceDepthClipControleFeaturesEXT, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -14220,7 +14220,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceDepthClipControlFeaturesEXT, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceDepthClipControleFeaturesEXT, DeviceCreateInfo>
   {
     enum
     {
@@ -14229,7 +14229,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PipelineViewportDepthClipControlCreateInfoEXT, PipelineViewportStateCreateInfo>
+  struct StructExtends<PipelineViewportDepthClipControleCreateInfoEXT, PipelineViewportStateCreateInfo>
   {
     enum
     {
@@ -14872,7 +14872,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_ARM_scheduling_controls ===
   template <>
-  struct StructExtends<DeviceQueueShaderCoreControlCreateInfoARM, DeviceQueueCreateInfo>
+  struct StructExtends<DeviceQueueShaderCoreControleCreateInfoARM, DeviceQueueCreateInfo>
   {
     enum
     {
@@ -14881,7 +14881,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<DeviceQueueShaderCoreControlCreateInfoARM, DeviceCreateInfo>
+  struct StructExtends<DeviceQueueShaderCoreControleCreateInfoARM, DeviceCreateInfo>
   {
     enum
     {
@@ -14890,7 +14890,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSchedulingControlsFeaturesARM, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceSchedulingControlesFeaturesARM, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -14899,7 +14899,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSchedulingControlsFeaturesARM, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceSchedulingControlesFeaturesARM, DeviceCreateInfo>
   {
     enum
     {
@@ -14908,7 +14908,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceSchedulingControlsPropertiesARM, PhysicalDeviceProperties2>
+  struct StructExtends<PhysicalDeviceSchedulingControlesPropertiesARM, PhysicalDeviceProperties2>
   {
     enum
     {
@@ -15217,7 +15217,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_image_compression_control_swapchain ===
   template <>
-  struct StructExtends<PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceImageCompressionControleSwapchainFeaturesEXT, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -15226,7 +15226,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceImageCompressionControleSwapchainFeaturesEXT, DeviceCreateInfo>
   {
     enum
     {
@@ -15384,7 +15384,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<RenderPassCreationControlEXT, RenderPassCreateInfo2>
+  struct StructExtends<RenderPassCreationControleEXT, RenderPassCreateInfo2>
   {
     enum
     {
@@ -15393,7 +15393,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<RenderPassCreationControlEXT, SubpassDescription2>
+  struct StructExtends<RenderPassCreationControleEXT, SubpassDescription2>
   {
     enum
     {
@@ -16391,7 +16391,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_KHR_shader_float_controls2 ===
   template <>
-  struct StructExtends<PhysicalDeviceShaderFloatControls2FeaturesKHR, PhysicalDeviceFeatures2>
+  struct StructExtends<PhysicalDeviceShaderFloatControles2FeaturesKHR, PhysicalDeviceFeatures2>
   {
     enum
     {
@@ -16400,7 +16400,7 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <>
-  struct StructExtends<PhysicalDeviceShaderFloatControls2FeaturesKHR, DeviceCreateInfo>
+  struct StructExtends<PhysicalDeviceShaderFloatControles2FeaturesKHR, DeviceCreateInfo>
   {
     enum
     {
@@ -17106,7 +17106,7 @@ namespace VULKAN_HPP_NAMESPACE
     PFN_vkDestroyVideoSessionParametersKHR          vkDestroyVideoSessionParametersKHR          = 0;
     PFN_vkCmdBeginVideoCodingKHR                    vkCmdBeginVideoCodingKHR                    = 0;
     PFN_vkCmdEndVideoCodingKHR                      vkCmdEndVideoCodingKHR                      = 0;
-    PFN_vkCmdControlVideoCodingKHR                  vkCmdControlVideoCodingKHR                  = 0;
+    PFN_vkCmdControleVideoCodingKHR                  vkCmdControleVideoCodingKHR                  = 0;
 
     //=== VK_KHR_video_decode_queue ===
     PFN_vkCmdDecodeVideoKHR vkCmdDecodeVideoKHR = 0;
@@ -17249,7 +17249,7 @@ namespace VULKAN_HPP_NAMESPACE
     PFN_vkGetPhysicalDeviceSurfaceCapabilities2EXT vkGetPhysicalDeviceSurfaceCapabilities2EXT = 0;
 
     //=== VK_EXT_display_control ===
-    PFN_vkDisplayPowerControlEXT  vkDisplayPowerControlEXT  = 0;
+    PFN_vkDisplayPowerControleEXT  vkDisplayPowerControleEXT  = 0;
     PFN_vkRegisterDeviceEventEXT  vkRegisterDeviceEventEXT  = 0;
     PFN_vkRegisterDisplayEventEXT vkRegisterDisplayEventEXT = 0;
     PFN_vkGetSwapchainCounterEXT  vkGetSwapchainCounterEXT  = 0;
@@ -17747,7 +17747,7 @@ namespace VULKAN_HPP_NAMESPACE
     PFN_vkGetPipelinePropertiesEXT vkGetPipelinePropertiesEXT = 0;
 
     //=== VK_EXT_extended_dynamic_state2 ===
-    PFN_vkCmdSetPatchControlPointsEXT      vkCmdSetPatchControlPointsEXT      = 0;
+    PFN_vkCmdSetPatchControlePointsEXT      vkCmdSetPatchControlePointsEXT      = 0;
     PFN_vkCmdSetRasterizerDiscardEnableEXT vkCmdSetRasterizerDiscardEnableEXT = 0;
     PFN_vkCmdSetDepthBiasEnableEXT         vkCmdSetDepthBiasEnableEXT         = 0;
     PFN_vkCmdSetLogicOpEXT                 vkCmdSetLogicOpEXT                 = 0;
@@ -18315,7 +18315,7 @@ namespace VULKAN_HPP_NAMESPACE
       vkDestroyVideoSessionParametersKHR = PFN_vkDestroyVideoSessionParametersKHR( vkGetInstanceProcAddr( instance, "vkDestroyVideoSessionParametersKHR" ) );
       vkCmdBeginVideoCodingKHR           = PFN_vkCmdBeginVideoCodingKHR( vkGetInstanceProcAddr( instance, "vkCmdBeginVideoCodingKHR" ) );
       vkCmdEndVideoCodingKHR             = PFN_vkCmdEndVideoCodingKHR( vkGetInstanceProcAddr( instance, "vkCmdEndVideoCodingKHR" ) );
-      vkCmdControlVideoCodingKHR         = PFN_vkCmdControlVideoCodingKHR( vkGetInstanceProcAddr( instance, "vkCmdControlVideoCodingKHR" ) );
+      vkCmdControleVideoCodingKHR         = PFN_vkCmdControleVideoCodingKHR( vkGetInstanceProcAddr( instance, "vkCmdControleVideoCodingKHR" ) );
 
       //=== VK_KHR_video_decode_queue ===
       vkCmdDecodeVideoKHR = PFN_vkCmdDecodeVideoKHR( vkGetInstanceProcAddr( instance, "vkCmdDecodeVideoKHR" ) );
@@ -18499,7 +18499,7 @@ namespace VULKAN_HPP_NAMESPACE
         PFN_vkGetPhysicalDeviceSurfaceCapabilities2EXT( vkGetInstanceProcAddr( instance, "vkGetPhysicalDeviceSurfaceCapabilities2EXT" ) );
 
       //=== VK_EXT_display_control ===
-      vkDisplayPowerControlEXT  = PFN_vkDisplayPowerControlEXT( vkGetInstanceProcAddr( instance, "vkDisplayPowerControlEXT" ) );
+      vkDisplayPowerControleEXT  = PFN_vkDisplayPowerControleEXT( vkGetInstanceProcAddr( instance, "vkDisplayPowerControleEXT" ) );
       vkRegisterDeviceEventEXT  = PFN_vkRegisterDeviceEventEXT( vkGetInstanceProcAddr( instance, "vkRegisterDeviceEventEXT" ) );
       vkRegisterDisplayEventEXT = PFN_vkRegisterDisplayEventEXT( vkGetInstanceProcAddr( instance, "vkRegisterDisplayEventEXT" ) );
       vkGetSwapchainCounterEXT  = PFN_vkGetSwapchainCounterEXT( vkGetInstanceProcAddr( instance, "vkGetSwapchainCounterEXT" ) );
@@ -19124,7 +19124,7 @@ namespace VULKAN_HPP_NAMESPACE
       vkGetPipelinePropertiesEXT = PFN_vkGetPipelinePropertiesEXT( vkGetInstanceProcAddr( instance, "vkGetPipelinePropertiesEXT" ) );
 
       //=== VK_EXT_extended_dynamic_state2 ===
-      vkCmdSetPatchControlPointsEXT      = PFN_vkCmdSetPatchControlPointsEXT( vkGetInstanceProcAddr( instance, "vkCmdSetPatchControlPointsEXT" ) );
+      vkCmdSetPatchControlePointsEXT      = PFN_vkCmdSetPatchControlePointsEXT( vkGetInstanceProcAddr( instance, "vkCmdSetPatchControlePointsEXT" ) );
       vkCmdSetRasterizerDiscardEnableEXT = PFN_vkCmdSetRasterizerDiscardEnableEXT( vkGetInstanceProcAddr( instance, "vkCmdSetRasterizerDiscardEnableEXT" ) );
       if ( !vkCmdSetRasterizerDiscardEnable )
         vkCmdSetRasterizerDiscardEnable = vkCmdSetRasterizerDiscardEnableEXT;
@@ -19552,7 +19552,7 @@ namespace VULKAN_HPP_NAMESPACE
       vkDestroyVideoSessionParametersKHR = PFN_vkDestroyVideoSessionParametersKHR( vkGetDeviceProcAddr( device, "vkDestroyVideoSessionParametersKHR" ) );
       vkCmdBeginVideoCodingKHR           = PFN_vkCmdBeginVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdBeginVideoCodingKHR" ) );
       vkCmdEndVideoCodingKHR             = PFN_vkCmdEndVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdEndVideoCodingKHR" ) );
-      vkCmdControlVideoCodingKHR         = PFN_vkCmdControlVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdControlVideoCodingKHR" ) );
+      vkCmdControleVideoCodingKHR         = PFN_vkCmdControleVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdControleVideoCodingKHR" ) );
 
       //=== VK_KHR_video_decode_queue ===
       vkCmdDecodeVideoKHR = PFN_vkCmdDecodeVideoKHR( vkGetDeviceProcAddr( device, "vkCmdDecodeVideoKHR" ) );
@@ -19661,7 +19661,7 @@ namespace VULKAN_HPP_NAMESPACE
       vkCmdSetViewportWScalingNV = PFN_vkCmdSetViewportWScalingNV( vkGetDeviceProcAddr( device, "vkCmdSetViewportWScalingNV" ) );
 
       //=== VK_EXT_display_control ===
-      vkDisplayPowerControlEXT  = PFN_vkDisplayPowerControlEXT( vkGetDeviceProcAddr( device, "vkDisplayPowerControlEXT" ) );
+      vkDisplayPowerControleEXT  = PFN_vkDisplayPowerControleEXT( vkGetDeviceProcAddr( device, "vkDisplayPowerControleEXT" ) );
       vkRegisterDeviceEventEXT  = PFN_vkRegisterDeviceEventEXT( vkGetDeviceProcAddr( device, "vkRegisterDeviceEventEXT" ) );
       vkRegisterDisplayEventEXT = PFN_vkRegisterDisplayEventEXT( vkGetDeviceProcAddr( device, "vkRegisterDisplayEventEXT" ) );
       vkGetSwapchainCounterEXT  = PFN_vkGetSwapchainCounterEXT( vkGetDeviceProcAddr( device, "vkGetSwapchainCounterEXT" ) );
@@ -20187,7 +20187,7 @@ namespace VULKAN_HPP_NAMESPACE
       vkGetPipelinePropertiesEXT = PFN_vkGetPipelinePropertiesEXT( vkGetDeviceProcAddr( device, "vkGetPipelinePropertiesEXT" ) );
 
       //=== VK_EXT_extended_dynamic_state2 ===
-      vkCmdSetPatchControlPointsEXT      = PFN_vkCmdSetPatchControlPointsEXT( vkGetDeviceProcAddr( device, "vkCmdSetPatchControlPointsEXT" ) );
+      vkCmdSetPatchControlePointsEXT      = PFN_vkCmdSetPatchControlePointsEXT( vkGetDeviceProcAddr( device, "vkCmdSetPatchControlePointsEXT" ) );
       vkCmdSetRasterizerDiscardEnableEXT = PFN_vkCmdSetRasterizerDiscardEnableEXT( vkGetDeviceProcAddr( device, "vkCmdSetRasterizerDiscardEnableEXT" ) );
       if ( !vkCmdSetRasterizerDiscardEnable )
         vkCmdSetRasterizerDiscardEnable = vkCmdSetRasterizerDiscardEnableEXT;

@@ -300,13 +300,13 @@ int snd_use_case_get_list(snd_use_case_mgr_t *uc_mgr,
  *      - name of capture mixer
  *   - CaptureMixerID
  *      - mixer capture ID
- *   - JackControl, JackDev, JackHWMute
+ *   - JackControle, JackDev, JackHWMute
  *      - Jack information for a device. The jack status can be reported via
- *        a kcontrol and/or via an input device. **JackControl** is the
+ *        a kcontrol and/or via an input device. **JackControle** is the
  *        kcontrol name of the jack, and **JackDev** is the input device id of
  *        the jack (if the full input device path is /dev/input/by-id/foo, the
  *        JackDev value should be "foo"). UCM configuration files should
- *        contain both JackControl and JackDev when possible, because
+ *        contain both JackControle and JackDev when possible, because
  *        applications are likely to support only one or the other.
  *
  *        If **JackHWMute** is set, it indicates that when the jack is plugged

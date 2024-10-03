@@ -308,7 +308,7 @@ RunInstancesDialog::RunInstancesDialog() {
 	instance_count->set_editable(enable_multiple_instances_checkbox->is_pressed());
 
 	main_args_edit = memnew(LineEdit);
-	main_args_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	main_args_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_args_edit->set_placeholder(TTR("Space-separated arguments, example: host player1 blue"));
 	args_gc->add_child(main_args_edit);
 	_fetch_main_args();
@@ -316,7 +316,7 @@ RunInstancesDialog::RunInstancesDialog() {
 	main_args_edit->connect(SceneStringName(text_changed), callable_mp(this, &RunInstancesDialog::_start_main_timer).unbind(1));
 
 	main_features_edit = memnew(LineEdit);
-	main_features_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	main_features_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_features_edit->set_placeholder(TTR("Comma-separated tags, example: demo, steam, event"));
 	main_features_edit->set_text(EditorSettings::get_singleton()->get_project_metadata("debug_options", "run_main_feature_tags", ""));
 	args_gc->add_child(main_features_edit);
@@ -325,13 +325,13 @@ RunInstancesDialog::RunInstancesDialog() {
 	{
 		Label *l = memnew(Label);
 		l->set_text(TTR("Instance Configuration"));
-		l->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+		l->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 		l->set_theme_type_variation("HeaderSmall");
 		main_vb->add_child(l);
 	}
 
 	instance_tree = memnew(Tree);
-	instance_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	instance_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	instance_tree->set_h_scroll_enabled(false);
 	instance_tree->set_columns(4);
 	instance_tree->set_column_titles_visible(true);

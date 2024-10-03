@@ -118,19 +118,19 @@ EditorLayoutsDialog::EditorLayoutsDialog() {
 	layout_names->set_custom_minimum_size(Size2(300 * EDSCALE, 50 * EDSCALE));
 	layout_names->set_visible(true);
 	layout_names->set_offset(SIDE_TOP, 5);
-	layout_names->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	layout_names->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	layout_names->set_select_mode(ItemList::SELECT_MULTI);
 	layout_names->set_allow_rmb_select(true);
 	layout_names->connect("multi_selected", callable_mp(this, &EditorLayoutsDialog::_update_ok_disable_state).unbind(2));
 	MarginContainer *mc = makevb->add_margin_child(TTR("Select existing layout:"), layout_names);
-	mc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	mc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	name = memnew(LineEdit);
 	makevb->add_child(name);
 	name->set_placeholder(TTR("Or enter new layout name"));
 	name->set_offset(SIDE_TOP, 5);
-	name->set_anchor_and_offset(SIDE_LEFT, Control::ANCHOR_BEGIN, 5);
-	name->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, -5);
+	name->set_anchor_and_offset(SIDE_LEFT, Controle::ANCHOR_BEGIN, 5);
+	name->set_anchor_and_offset(SIDE_RIGHT, Controle::ANCHOR_END, -5);
 	name->connect(SceneStringName(gui_input), callable_mp(this, &EditorLayoutsDialog::_line_gui_input));
 	name->connect(SceneStringName(focus_entered), callable_mp(this, &EditorLayoutsDialog::_deselect_layout_names));
 	name->connect(SceneStringName(text_changed), callable_mp(this, &EditorLayoutsDialog::_update_ok_disable_state).unbind(1));

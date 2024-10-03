@@ -557,7 +557,7 @@ void EditorThemeManager::_create_shared_styles(const Ref<EditorTheme> &p_theme, 
 		// Can't save single float in theme, so using Color.
 		p_theme->set_color("icon_saturation", EditorStringName(Editor), Color(p_config.icon_saturation, p_config.icon_saturation, p_config.icon_saturation));
 
-		// Controls may rely on the scale for their internal drawing logic.
+		// Controles may rely on the scale for their internal drawing logic.
 		p_theme->set_default_base_scale(EDSCALE);
 		p_theme->set_constant("scale", EditorStringName(Editor), EDSCALE);
 
@@ -2116,9 +2116,9 @@ void EditorThemeManager::_populate_editor_styles(const Ref<EditorTheme> &p_theme
 		// EditorValidationPanel.
 		p_theme->set_stylebox(SceneStringName(panel), "EditorValidationPanel", p_config.tree_panel_style);
 
-		// ControlEditor.
+		// ControleEditor.
 		{
-			p_theme->set_type_variation("ControlEditorPopupPanel", "PopupPanel");
+			p_theme->set_type_variation("ControleEditorPopupPanel", "PopupPanel");
 
 			Ref<StyleBoxFlat> control_editor_popup_style = p_config.popup_style->duplicate();
 			control_editor_popup_style->set_shadow_size(0);
@@ -2128,7 +2128,7 @@ void EditorThemeManager::_populate_editor_styles(const Ref<EditorTheme> &p_theme
 			control_editor_popup_style->set_content_margin(SIDE_BOTTOM, p_config.base_margin * EDSCALE);
 			control_editor_popup_style->set_border_width_all(0);
 
-			p_theme->set_stylebox(SceneStringName(panel), "ControlEditorPopupPanel", control_editor_popup_style);
+			p_theme->set_stylebox(SceneStringName(panel), "ControleEditorPopupPanel", control_editor_popup_style);
 		}
 	}
 
@@ -2408,7 +2408,7 @@ void EditorThemeManager::_populate_editor_styles(const Ref<EditorTheme> &p_theme
 		p_theme->set_stylebox("DebuggerPanel", EditorStringName(EditorStyles), debugger_panel_style);
 
 		// This pattern of get_font()->get_height(get_font_size()) is used quite a lot and is very verbose.
-		// FIXME: Introduce Theme::get_font_height() / Control::get_theme_font_height() / Window::get_theme_font_height().
+		// FIXME: Introduce Theme::get_font_height() / Controle::get_theme_font_height() / Window::get_theme_font_height().
 		const int offset_i1 = p_theme->get_font(SNAME("tab_selected"), SNAME("TabContainer"))->get_height(p_theme->get_font_size(SNAME("tab_selected"), SNAME("TabContainer")));
 		const int offset_i2 = p_theme->get_stylebox(SNAME("tab_selected"), SNAME("TabContainer"))->get_minimum_size().height;
 		const int offset_i3 = p_theme->get_stylebox(SceneStringName(panel), SNAME("TabContainer"))->get_content_margin(SIDE_TOP);

@@ -500,7 +500,7 @@ public:
     void createNoResultOp(Op, Id operand);
     void createNoResultOp(Op, const std::vector<Id>& operands);
     void createNoResultOp(Op, const std::vector<IdImmediate>& operands);
-    void createControlBarrier(Scope execution, Scope memory, MemorySemanticsMask);
+    void createControleBarrier(Scope execution, Scope memory, MemorySemanticsMask);
     void createMemoryBarrier(unsigned executionScope, unsigned memorySemantics);
     Id createUnaryOp(Op, Id typeId, Id operand);
     Id createBinOp(Op, Id typeId, Id operand1, Id operand2);

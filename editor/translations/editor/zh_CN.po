@@ -1833,10 +1833,10 @@ msgstr "占用"
 msgid "Misc"
 msgstr "其他"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "点击的控件："
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "点击的控件类型："
 
 msgid "Live Edit Root:"
@@ -3866,7 +3866,7 @@ msgstr "项目设置..."
 msgid "Project Settings"
 msgstr "项目设置"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "版本控制"
 
 msgid "Export..."
@@ -4058,10 +4058,10 @@ msgstr "丢弃本地修改并重新加载"
 msgid "Keep local changes and overwrite"
 msgstr "保持本地修改并覆盖"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "创建/覆盖版本控制元数据..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "版本控制设置..."
 
 msgid "New Inherited"
@@ -6274,11 +6274,11 @@ msgstr "额外选项"
 msgid "Device:"
 msgstr "设备："
 
-msgid "Command / Control (auto)"
+msgid "Command / Controle (auto)"
 msgstr "Command / Ctrl（自动）"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr "根据当前平台，在“Meta”（“Command”）和“Ctrl”之间自动重映射。"
 
@@ -6443,8 +6443,8 @@ msgstr "生成 POT"
 msgid "Add Built-in Strings to POT"
 msgstr "向 POT 添加内置字符串"
 
-msgid "Add strings from built-in components such as certain Control nodes."
-msgstr "添加 Control 节点等内置组件中的字符串。"
+msgid "Add strings from built-in components such as certain Controle nodes."
+msgstr "添加 Controle 节点等内置组件中的字符串。"
 
 msgid "Set %s on %d nodes"
 msgstr "设置 %s 共 %d 个节点"
@@ -7342,8 +7342,8 @@ msgstr "移动 CanvasItem“%s”的锚点"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "将 Node2D“%s”缩放为 (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "将 Control“%s”的大小更改为 (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "将 Controle“%s”的大小更改为 (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "缩放 %d 个 CanvasItem"
@@ -7883,7 +7883,7 @@ msgstr "更改垂直扩展标志"
 msgid "Change Horizontal Expand Flag"
 msgstr "更改水平扩展标志"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "控制节点的锚点和偏移值的预设。"
 
 msgid "Anchor preset"
@@ -7896,9 +7896,9 @@ msgid "Adjust anchors and offsets to match the current rect size."
 msgstr "调整锚点和偏移量以匹配当前的矩形尺寸。"
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
-msgstr "激活后，移动 Control 节点会更改变锚点，而非边距。"
+msgstr "激活后，移动 Controle 节点会更改变锚点，而非边距。"
 
 msgid "Sizing settings for children of a Container node."
 msgstr "Container 节点的子节点的大小设置。"
@@ -9465,10 +9465,10 @@ msgstr "切换“最小/最大”模式和“基础/分布”模式。"
 msgid "Remove Point from Curve"
 msgstr "从曲线中移除顶点"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "移除曲线外控制点"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "从曲线中移除顶点"
 
 msgid "Move Point in Curve"
@@ -9480,10 +9480,10 @@ msgstr "向曲线添加顶点"
 msgid "Split Curve"
 msgstr "拆分曲线"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "移动曲线内控制点"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "移动曲线外控制点"
 
 msgid "Close the Curve"
@@ -9495,7 +9495,7 @@ msgstr "清除曲线顶点"
 msgid "Select Points"
 msgstr "选择顶点"
 
-msgid "Shift+Drag: Select Control Points"
+msgid "Shift+Drag: Select Controle Points"
 msgstr "Shift+拖动：选择控制点"
 
 msgid "Click: Add Point"
@@ -9507,7 +9507,7 @@ msgstr "左键点击：分段（在曲线中）"
 msgid "Right Click: Delete Point"
 msgstr "鼠标右键：删除点"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "选择控制点（Shift+拖动）"
 
 msgid "Add Point (in empty space)"
@@ -9564,10 +9564,10 @@ msgstr "拆分路径"
 msgid "Remove Path Point"
 msgstr "移除路径顶点"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "重置外控点"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "重置内控点"
 
 msgid "Reset Point Tilt"
@@ -9576,10 +9576,10 @@ msgstr "重置点倾斜"
 msgid "Shift+Click: Select multiple Points"
 msgstr "Shift+点击：选择多个点"
 
-msgid "Select Control Points"
+msgid "Select Controle Points"
 msgstr "选择控制点"
 
-msgid "Shift+Click: Drag out Control Points"
+msgid "Shift+Click: Drag out Controle Points"
 msgstr "Shift+点击：拖出控制点"
 
 msgid "Select Tilt Handles"
@@ -11165,8 +11165,8 @@ msgstr "有, 很多, 选项"
 msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr "无效路径，PackedScene 资源可能已被移动或移除。"
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
-msgstr "无效 PackedScene 资源，根节点必须是 Control 节点。"
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
+msgstr "无效 PackedScene 资源，根节点必须是 Controle 节点。"
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "无效文件，不是 PackedScene 资源。"
@@ -12052,10 +12052,10 @@ msgstr "是否要移除 %s 分支？"
 msgid "Do you want to remove the %s remote?"
 msgstr "是否要移除 %s 远程仓库？"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "开关版本控制底部面板"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "创建版本控制元数据"
 
 msgid "Create VCS metadata files for:"
@@ -13853,7 +13853,7 @@ msgstr "渲染器："
 msgid "The renderer can be changed later, but scenes may need to be adjusted."
 msgstr "渲染器可以稍后更改，但可能需要调整场景。"
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "版本控制元数据："
 
 msgid "Git"
@@ -17151,10 +17151,10 @@ msgstr "在十六进制值和代码值之间切换。"
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "除非脚本配置其子节点放置行为，否则容器本身没有任何作用。\n"
-"如果你不想添加脚本，请改用普通的 Control 节点。"
+"如果你不想添加脚本，请改用普通的 Controle 节点。"
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
@@ -17187,7 +17187,7 @@ msgstr "如果启用了 “Exp Edit”，则 “Min Value” 必须大于 0。"
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer 适用于与单个子控件一起使用。\n"

@@ -55,7 +55,7 @@ See also: [product page on GPUOpen](https://gpuopen.com/gaming-product/vulkan-me
     - [Cache flush and invalidate](@ref memory_mapping_cache_control)
   - \subpage staying_within_budget
     - [Querying for budget](@ref staying_within_budget_querying_for_budget)
-    - [Controlling memory usage](@ref staying_within_budget_controlling_memory_usage)
+    - [Controleling memory usage](@ref staying_within_budget_controlling_memory_usage)
   - \subpage resource_aliasing
   - \subpage custom_memory_pools
     - [Choosing memory type index](@ref custom_memory_pools_MemTypeIndex)
@@ -17038,7 +17038,7 @@ which may be less precise. In order to use this extension:
 3. Make sure to call vmaSetCurrentFrameIndex() every frame. Budget is queried from
    Vulkan inside of it to avoid overhead of querying it with every allocation.
 
-\section staying_within_budget_controlling_memory_usage Controlling memory usage
+\section staying_within_budget_controlling_memory_usage Controleling memory usage
 
 There are many ways in which you can try to stay within the budget.
 

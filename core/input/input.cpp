@@ -1668,8 +1668,8 @@ Input::Input() {
 	// Parse default mappings.
 	{
 		int i = 0;
-		while (DefaultControllerMappings::mappings[i]) {
-			parse_mapping(DefaultControllerMappings::mappings[i++]);
+		while (DefaultControlelerMappings::mappings[i]) {
+			parse_mapping(DefaultControlelerMappings::mappings[i++]);
 		}
 	}
 

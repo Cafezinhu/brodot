@@ -411,7 +411,7 @@ ParticleProcessMaterialMinMaxPropertyEditor::ParticleProcessMaterialMinMaxProper
 	HBoxContainer *hb = memnew(HBoxContainer);
 	content_vb->add_child(hb);
 
-	range_edit_widget = memnew(Control);
+	range_edit_widget = memnew(Controle);
 	range_edit_widget->set_h_size_flags(SIZE_EXPAND_FILL);
 	range_edit_widget->set_tooltip_text(TTR("Hold Shift to scale around midpoint instead of moving."));
 	hb->add_child(range_edit_widget);

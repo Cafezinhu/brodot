@@ -81,7 +81,7 @@
 		if (values.is_empty()) {
 			NSButton *popup_check = [NSButton checkboxWithTitle:@"" target:self action:@selector(popupCheckAction:)];
 			int tag = [self setDefaultBool:name value:(bool)default_idx];
-			popup_check.state = (default_idx) ? NSControlStateValueOn : NSControlStateValueOff;
+			popup_check.state = (default_idx) ? NSControleStateValueOn : NSControleStateValueOff;
 			popup_check.tag = tag;
 			popup = popup_check;
 		} else {
@@ -230,7 +230,7 @@
 - (void)popupCheckAction:(id)p_sender {
 	NSButton *btn = p_sender;
 	if (btn && ctr_ids.has(btn.tag)) {
-		options[ctr_ids[btn.tag]] = ([btn state] == NSControlStateValueOn);
+		options[ctr_ids[btn.tag]] = ([btn state] == NSControleStateValueOn);
 	}
 }
 

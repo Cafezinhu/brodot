@@ -1349,10 +1349,10 @@ msgstr "ব্যবহার"
 msgid "Misc"
 msgstr "বিবিধ"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "ক্লিক-কৃত কন্ট্রোল:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "ক্লিক-কৃত কন্ট্রোলের ধরণ:"
 
 msgid "Live Edit Root:"
@@ -2254,7 +2254,7 @@ msgstr "এডিটরের সেটিংস…"
 msgid "Project Settings..."
 msgstr "প্রকল্পের সেটিংস…"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "ভার্সন কন্ট্রোল"
 
 msgid "Export..."
@@ -2336,10 +2336,10 @@ msgstr ""
 msgid "Discard local changes and reload"
 msgstr "স্থানীয় পরিবর্তন বাতিল করুন এবং পুনরায় লোড করুন"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "সংস্করণ নিয়ন্ত্রণ মেটাডেটা তৈরি/ওভাররাইড করুন..।"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "সংস্করণ নিয়ন্ত্রণ সেটিংস..।"
 
 msgid "New Inherited"
@@ -4353,16 +4353,16 @@ msgstr "বক্ররেখায় বিন্দু সরান"
 msgid "Add Point to Curve"
 msgstr "বক্ররেখায় বিন্দু যোগ করুন"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "বক্ররেখা আন্ত-নিয়ন্ত্রণে সরান"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "বক্ররেখা বহিঃ-নিয়ন্ত্রণে সরান"
 
 msgid "Right Click: Delete Point"
 msgstr "ডান ক্লিক: বিন্দু অপসারণ করুন"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "নিয়ন্ত্রণ বিন্দুসমূহ নির্বাচন করুন (শিফট + টান)"
 
 msgid "Delete Point"
@@ -5021,10 +5021,10 @@ msgstr "কমিটি:"
 msgid "Do you want to remove the %s remote?"
 msgstr "আপনি কি %s রিমোট সরাতে চান?"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "ভার্সন কন্ট্রোল বটম প্যানেল টগল করুন"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "ভার্সন কন্ট্রোল মেটাডেটা তৈরি করুন"
 
 msgid "Create VCS metadata files for:"

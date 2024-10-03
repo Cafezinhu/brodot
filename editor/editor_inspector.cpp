@@ -76,7 +76,7 @@ Size2 EditorProperty::get_minimum_size() const {
 	ms.height = label.is_empty() ? 0 : font->get_height(font_size) + 4 * EDSCALE;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -141,7 +141,7 @@ void EditorProperty::_notification(int p_what) {
 
 				//compute room needed
 				for (int i = 0; i < get_child_count(); i++) {
-					Control *c = as_sortable_control(get_child(i));
+					Controle *c = as_sortable_control(get_child(i));
 					if (!c) {
 						continue;
 					}
@@ -221,7 +221,7 @@ void EditorProperty::_notification(int p_what) {
 
 			//set children
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}
@@ -660,7 +660,7 @@ void EditorProperty::_focusable_focused(int p_index) {
 	}
 }
 
-void EditorProperty::add_focusable(Control *p_control) {
+void EditorProperty::add_focusable(Controle *p_control) {
 	p_control->connect(SceneStringName(focus_entered), callable_mp(this, &EditorProperty::_focusable_focused).bind(focusables.size()));
 	focusables.push_back(p_control);
 }
@@ -843,11 +843,11 @@ const Color *EditorProperty::_get_property_colors() {
 	return c;
 }
 
-void EditorProperty::set_label_reference(Control *p_control) {
+void EditorProperty::set_label_reference(Controle *p_control) {
 	label_reference = p_control;
 }
 
-void EditorProperty::set_bottom_editor(Control *p_control) {
+void EditorProperty::set_bottom_editor(Controle *p_control) {
 	bottom_editor = p_control;
 	if (has_borders) {
 		_update_property_bg();
@@ -987,7 +987,7 @@ void EditorProperty::_update_pin_flags() {
 	}
 }
 
-Control *EditorProperty::make_custom_tooltip(const String &p_text) const {
+Controle *EditorProperty::make_custom_tooltip(const String &p_text) const {
 	String custom_warning;
 	if (object->has_method("_get_property_warning")) {
 		custom_warning = object->call("_get_property_warning", property);
@@ -1017,7 +1017,7 @@ Control *EditorProperty::make_custom_tooltip(const String &p_text) const {
 		}
 
 		EditorHelpBitTooltip::show_tooltip(help_bit, const_cast<EditorProperty *>(this));
-		return memnew(Control); // Make the standard tooltip invisible.
+		return memnew(Controle); // Make the standard tooltip invisible.
 	}
 
 	return nullptr;
@@ -1150,13 +1150,13 @@ void EditorProperty::_update_popup() {
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
-void EditorInspectorPlugin::add_custom_control(Control *control) {
+void EditorInspectorPlugin::add_custom_control(Controle *control) {
 	AddedEditor ae;
 	ae.property_editor = control;
 	added_editors.push_back(ae);
 }
 
-void EditorInspectorPlugin::add_property_editor(const String &p_for_property, Control *p_prop, bool p_add_to_end, const String &p_label) {
+void EditorInspectorPlugin::add_property_editor(const String &p_for_property, Controle *p_prop, bool p_add_to_end, const String &p_label) {
 	AddedEditor ae;
 	ae.properties.push_back(p_for_property);
 	ae.property_editor = p_prop;
@@ -1165,7 +1165,7 @@ void EditorInspectorPlugin::add_property_editor(const String &p_for_property, Co
 	added_editors.push_back(ae);
 }
 
-void EditorInspectorPlugin::add_property_editor_for_multiple_properties(const String &p_label, const Vector<String> &p_properties, Control *p_prop) {
+void EditorInspectorPlugin::add_property_editor_for_multiple_properties(const String &p_label, const Vector<String> &p_properties, Controle *p_prop) {
 	AddedEditor ae;
 	ae.properties = p_properties;
 	ae.property_editor = p_prop;
@@ -1267,7 +1267,7 @@ void EditorInspectorCategory::_notification(int p_what) {
 	}
 }
 
-Control *EditorInspectorCategory::make_custom_tooltip(const String &p_text) const {
+Controle *EditorInspectorCategory::make_custom_tooltip(const String &p_text) const {
 	// If it's not a doc tooltip, fallback to the default one.
 	if (doc_class_name.is_empty()) {
 		return nullptr;
@@ -1275,7 +1275,7 @@ Control *EditorInspectorCategory::make_custom_tooltip(const String &p_text) cons
 
 	EditorHelpBit *help_bit = memnew(EditorHelpBit(p_text));
 	EditorHelpBitTooltip::show_tooltip(help_bit, const_cast<EditorInspectorCategory *>(this));
-	return memnew(Control); // Make the standard tooltip invisible.
+	return memnew(Controle); // Make the standard tooltip invisible.
 }
 
 Size2 EditorInspectorCategory::get_minimum_size() const {
@@ -1397,7 +1397,7 @@ void EditorInspectorSection::_notification(int p_what) {
 			int header_height = _get_header_height();
 			Vector2 offset = Vector2(is_layout_rtl() ? 0 : inspector_margin, header_height);
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}
@@ -1542,7 +1542,7 @@ void EditorInspectorSection::_notification(int p_what) {
 Size2 EditorInspectorSection::get_minimum_size() const {
 	Size2 ms;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -1764,11 +1764,11 @@ void EditorInspectorArray::_control_dropping_draw() {
 		Vector2 from;
 		Vector2 to;
 		if (drop_position < elements_vbox->get_child_count()) {
-			Transform2D xform = Object::cast_to<Control>(elements_vbox->get_child(drop_position))->get_transform();
+			Transform2D xform = Object::cast_to<Controle>(elements_vbox->get_child(drop_position))->get_transform();
 			from = xform.xform(Vector2());
 			to = xform.xform(Vector2(elements_vbox->get_size().x, 0));
 		} else {
-			Control *child = Object::cast_to<Control>(elements_vbox->get_child(drop_position - 1));
+			Controle *child = Object::cast_to<Controle>(elements_vbox->get_child(drop_position - 1));
 			Transform2D xform = child->get_transform();
 			from = xform.xform(Vector2(0, child->get_size().y));
 			to = xform.xform(Vector2(elements_vbox->get_size().x, child->get_size().y));
@@ -2241,7 +2241,7 @@ void EditorInspectorArray::_setup() {
 
 			ae.move_texture_rect = memnew(TextureRect);
 			ae.move_texture_rect->set_stretch_mode(TextureRect::STRETCH_KEEP_CENTERED);
-			ae.move_texture_rect->set_default_cursor_shape(Control::CURSOR_MOVE);
+			ae.move_texture_rect->set_default_cursor_shape(Controle::CURSOR_MOVE);
 
 			if (is_inside_tree()) {
 				ae.move_texture_rect->set_texture(get_editor_theme_icon(SNAME("TripleBar")));
@@ -2295,7 +2295,7 @@ void EditorInspectorArray::_remove_item(int p_index) {
 	_move_element(p_index, -1);
 }
 
-Variant EditorInspectorArray::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant EditorInspectorArray::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (!movable) {
 		return Variant();
 	}
@@ -2308,7 +2308,7 @@ Variant EditorInspectorArray::get_drag_data_fw(const Point2 &p_point, Control *p
 	return dict;
 }
 
-void EditorInspectorArray::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorInspectorArray::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	Dictionary dict = p_data;
 
 	int to_drop = dict["index"];
@@ -2319,7 +2319,7 @@ void EditorInspectorArray::drop_data_fw(const Point2 &p_point, const Variant &p_
 	_move_element(to_drop, begin_array_index + drop_position);
 }
 
-bool EditorInspectorArray::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorInspectorArray::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (!movable || read_only) {
 		return false;
 	}
@@ -2441,7 +2441,7 @@ VBoxContainer *EditorInspectorArray::get_vbox(int p_index) {
 EditorInspectorArray::EditorInspectorArray(bool p_read_only) {
 	read_only = p_read_only;
 
-	set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 
 	odd_style.instantiate();
 	even_style.instantiate();
@@ -2469,9 +2469,9 @@ EditorInspectorArray::EditorInspectorArray(bool p_read_only) {
 	add_button->set_disabled(read_only);
 	vbox->add_child(add_button);
 
-	control_dropping = memnew(Control);
+	control_dropping = memnew(Controle);
 	control_dropping->connect(SceneStringName(draw), callable_mp(this, &EditorInspectorArray::_control_dropping_draw));
-	control_dropping->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	control_dropping->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	add_child(control_dropping);
 
 	resize_dialog = memnew(AcceptDialog);
@@ -2770,7 +2770,7 @@ void EditorInspector::update_tree() {
 	if (property_focusable != -1) {
 		// Check that focusable is actually focusable.
 		bool restore_focus = false;
-		Control *focused = get_viewport() ? get_viewport()->gui_get_focus_owner() : nullptr;
+		Controle *focused = get_viewport() ? get_viewport()->gui_get_focus_owner() : nullptr;
 		if (focused) {
 			Node *parent = focused->get_parent();
 			while (parent) {
@@ -3319,8 +3319,8 @@ void EditorInspector::update_tree() {
 			StringName propname = property_prefix + p.name;
 			bool found = false;
 
-			// Small hack for theme_overrides. They are listed under Control, but come from another class.
-			if (classname == "Control" && p.name.begins_with("theme_override_")) {
+			// Small hack for theme_overrides. They are listed under Controle, but come from another class.
+			if (classname == "Controle" && p.name.begins_with("theme_override_")) {
 				classname = get_edited_object()->get_class();
 			}
 
@@ -3508,7 +3508,7 @@ void EditorInspector::update_tree() {
 
 	if (!hide_metadata && !object->call("_hide_metadata_from_inspector")) {
 		// Add 4px of spacing between the "Add Metadata" button and the content above it.
-		Control *spacer = memnew(Control);
+		Controle *spacer = memnew(Controle);
 		spacer->set_custom_minimum_size(Size2(0, 4) * EDSCALE);
 		main_vbox->add_child(spacer);
 

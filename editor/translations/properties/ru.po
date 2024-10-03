@@ -466,7 +466,7 @@ msgstr "Задержка подсказки (сек)"
 msgid "Common"
 msgstr "Общий"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Пиксельная привязка управления"
 
 msgid "Fonts"
@@ -604,8 +604,8 @@ msgstr "Устройство"
 msgid "Window ID"
 msgstr "Идентификатор окна"
 
-msgid "Command or Control Autoremap"
-msgstr "Автоматическое переназначение Cmd или Control"
+msgid "Command or Controle Autoremap"
+msgstr "Автоматическое переназначение Cmd или Controle"
 
 msgid "Alt Pressed"
 msgstr "Нажатие Alt"
@@ -715,10 +715,10 @@ msgstr "Высота"
 msgid "Instrument"
 msgstr "Инструмент"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Номер контроллера"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Значение контроллера"
 
 msgid "Shortcut"
@@ -1945,7 +1945,7 @@ msgstr "Цвет символа"
 msgid "Keyword Color"
 msgstr "Цвет ключевого слова"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Цвет ключевого слова потока управления"
 
 msgid "Base Type Color"
@@ -2882,7 +2882,7 @@ msgstr "Количество кадров"
 msgid "Duration"
 msgstr "Продолжительность"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Управление версиями"
 
 msgid "Username"
@@ -4124,7 +4124,7 @@ msgstr "URL описания"
 msgid "Service Type"
 msgstr "Тип сервиса"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL управления IDG"
 
 msgid "IGD Service Type"
@@ -7397,7 +7397,7 @@ msgstr "Включить перетаскивание выделенного"
 msgid "Right Icon"
 msgstr "Значок справа"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Рисовать управляющие символы"
 
 msgid "Select All on Focus"
@@ -7707,7 +7707,7 @@ msgstr "Подсветка синтаксиса"
 msgid "Visual Whitespace"
 msgstr "Визуальный пробел"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Управляющие символы"
 
 msgid "Spaces"
@@ -8134,7 +8134,7 @@ msgstr "Текущий экран"
 msgid "Mouse Passthrough Polygon"
 msgstr "Полигональная область принятия событий мыши"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr ""
 "Автоматически обновлять размер окна при добавлении или удалении дочернего узла"
 
@@ -9433,7 +9433,7 @@ msgstr "Области цвета"
 msgid "Preserve Invalid"
 msgstr "Сохранять некорректные"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Сохранять управляющие"
 
 msgid "Custom Punctuation"
@@ -10729,7 +10729,7 @@ msgstr "Вершина"
 msgid "Fragment"
 msgstr "Фрагмент"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Настройка тесселяции"
 
 msgid "Tesselation Evaluation"

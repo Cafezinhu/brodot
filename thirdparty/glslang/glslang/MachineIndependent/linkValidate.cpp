@@ -206,7 +206,7 @@ void TIntermediate::mergeModes(TInfoSink& infoSink, TIntermediate& unit)
     else if (unit.vertices != TQualifier::layoutNotSet && vertices != unit.vertices) {
         if (language == EShLangGeometry || language == EShLangMesh)
             error(infoSink, "Contradictory layout max_vertices values");
-        else if (language == EShLangTessControl)
+        else if (language == EShLangTessControle)
             error(infoSink, "Contradictory layout vertices values");
         else
             assert(0);
@@ -1291,7 +1291,7 @@ void TIntermediate::finalCheck(TInfoSink& infoSink, bool keepUncalled)
     switch (language) {
     case EShLangVertex:
         break;
-    case EShLangTessControl:
+    case EShLangTessControle:
         if (vertices == TQualifier::layoutNotSet)
             error(infoSink, "At least one shader must specify an output layout(vertices=...)");
         break;
@@ -2378,7 +2378,7 @@ int TIntermediate::computeBufferReferenceTypeSize(const TType& type)
 bool TIntermediate::isIoResizeArray(const TType& type, EShLanguage language) {
     return type.isArray() &&
             ((language == EShLangGeometry    && type.getQualifier().storage == EvqVaryingIn) ||
-            (language == EShLangTessControl && (type.getQualifier().storage == EvqVaryingIn || type.getQualifier().storage == EvqVaryingOut) &&
+            (language == EShLangTessControle && (type.getQualifier().storage == EvqVaryingIn || type.getQualifier().storage == EvqVaryingOut) &&
                 ! type.getQualifier().patch) ||
             (language == EShLangTessEvaluation && type.getQualifier().storage == EvqVaryingIn) ||
             (language == EShLangFragment && type.getQualifier().storage == EvqVaryingIn &&

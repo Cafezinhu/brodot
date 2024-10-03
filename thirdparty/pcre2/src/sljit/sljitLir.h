@@ -1060,11 +1060,11 @@ SLJIT_API_FUNC_ATTRIBUTE sljit_s32 sljit_emit_return_to(struct sljit_compiler *c
 #define SLJIT_DIV_S32			(SLJIT_DIV_SW | SLJIT_32)
 /* Flags: - (does not modify flags)
    ENDBR32 instruction for x86-32 and ENDBR64 instruction for x86-64
-   when Intel Control-flow Enforcement Technology (CET) is enabled.
+   when Intel Controle-flow Enforcement Technology (CET) is enabled.
    No instructions are emitted for other architectures. */
 #define SLJIT_ENDBR			(SLJIT_OP0_BASE + 8)
 /* Flags: - (may destroy flags)
-   Skip stack frames before return when Intel Control-flow
+   Skip stack frames before return when Intel Controle-flow
    Enforcement Technology (CET) is enabled. No instructions
    are emitted for other architectures. */
 #define SLJIT_SKIP_FRAMES_BEFORE_RETURN	(SLJIT_OP0_BASE + 9)
@@ -1495,7 +1495,7 @@ SLJIT_API_FUNC_ATTRIBUTE struct sljit_label* sljit_emit_label(struct sljit_compi
    Although returning to different address by SLJIT_FAST_RETURN is possible,
    this address usually cannot be predicted by the return address predictor of
    modern CPUs which may reduce performance. Furthermore certain security
-   enhancement technologies such as Intel Control-flow Enforcement Technology
+   enhancement technologies such as Intel Controle-flow Enforcement Technology
    (CET) may disallow returning to a different address (indirect jumps
    can be used instead, see SLJIT_SKIP_FRAMES_BEFORE_FAST_RETURN). */
 

@@ -175,7 +175,7 @@ void BonePicker::create_editors() {
 	bones = memnew(Tree);
 	bones->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	bones->set_select_mode(Tree::SELECT_SINGLE);
-	bones->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	bones->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	bones->set_hide_root(true);
 	bones->connect("item_activated", callable_mp(this, &BonePicker::_confirm));
 	vbox->add_child(bones);
@@ -304,20 +304,20 @@ void BoneMapper::create_editor() {
 	bone_mapper_field = memnew(AspectRatioContainer);
 	bone_mapper_field->set_stretch_mode(AspectRatioContainer::STRETCH_FIT);
 	bone_mapper_field->set_custom_minimum_size(Vector2(0, 256.0) * EDSCALE);
-	bone_mapper_field->set_h_size_flags(Control::SIZE_FILL);
+	bone_mapper_field->set_h_size_flags(Controle::SIZE_FILL);
 	add_child(bone_mapper_field);
 
 	profile_bg = memnew(ColorRect);
 	profile_bg->set_color(Color(0, 0, 0, 1));
-	profile_bg->set_h_size_flags(Control::SIZE_FILL);
-	profile_bg->set_v_size_flags(Control::SIZE_FILL);
+	profile_bg->set_h_size_flags(Controle::SIZE_FILL);
+	profile_bg->set_v_size_flags(Controle::SIZE_FILL);
 	bone_mapper_field->add_child(profile_bg);
 
 	profile_texture = memnew(TextureRect);
 	profile_texture->set_stretch_mode(TextureRect::STRETCH_KEEP_ASPECT_CENTERED);
 	profile_texture->set_expand_mode(TextureRect::EXPAND_IGNORE_SIZE);
-	profile_texture->set_h_size_flags(Control::SIZE_FILL);
-	profile_texture->set_v_size_flags(Control::SIZE_FILL);
+	profile_texture->set_h_size_flags(Controle::SIZE_FILL);
+	profile_texture->set_v_size_flags(Controle::SIZE_FILL);
 	bone_mapper_field->add_child(profile_texture);
 
 	mapper_item_vbox = memnew(VBoxContainer);

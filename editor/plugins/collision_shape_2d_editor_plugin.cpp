@@ -422,7 +422,7 @@ void CollisionShape2DEditor::_shape_changed() {
 	}
 }
 
-void CollisionShape2DEditor::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void CollisionShape2DEditor::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	if (!node) {
 		return;
 	}

@@ -72,7 +72,7 @@ private:
 	static constexpr uint8_t input_source_count = 16;
 
 	struct InputSource {
-		Ref<XRControllerTracker> tracker;
+		Ref<XRControlelerTracker> tracker;
 		bool active = false;
 		TargetRayMode target_ray_mode;
 		int touch_index = -1;
@@ -106,7 +106,7 @@ public:
 	virtual String get_reference_space_type() const override;
 	virtual String get_enabled_features() const override;
 	virtual bool is_input_source_active(int p_input_source_id) const override;
-	virtual Ref<XRControllerTracker> get_input_source_tracker(int p_input_source_id) const override;
+	virtual Ref<XRControlelerTracker> get_input_source_tracker(int p_input_source_id) const override;
 	virtual TargetRayMode get_input_source_target_ray_mode(int p_input_source_id) const override;
 	virtual String get_visibility_state() const override;
 	virtual PackedVector3Array get_play_area() const override;

@@ -38,7 +38,7 @@ void ItemList::_shape_text(int p_idx) {
 	Item &item = items.write[p_idx];
 
 	item.text_buf->clear();
-	if (item.text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (item.text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		item.text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		item.text_buf->set_direction((TextServer::Direction)item.text_direction);
@@ -105,7 +105,7 @@ String ItemList::get_item_text(int p_idx) const {
 	return items[p_idx].text;
 }
 
-void ItemList::set_item_text_direction(int p_idx, Control::TextDirection p_text_direction) {
+void ItemList::set_item_text_direction(int p_idx, Controle::TextDirection p_text_direction) {
 	if (p_idx < 0) {
 		p_idx += get_item_count();
 	}
@@ -118,7 +118,7 @@ void ItemList::set_item_text_direction(int p_idx, Control::TextDirection p_text_
 	}
 }
 
-Control::TextDirection ItemList::get_item_text_direction(int p_idx) const {
+Controle::TextDirection ItemList::get_item_text_direction(int p_idx) const {
 	ERR_FAIL_INDEX_V(p_idx, items.size(), TEXT_DIRECTION_INHERITED);
 	return items[p_idx].text_direction;
 }
@@ -1612,7 +1612,7 @@ String ItemList::get_tooltip(const Point2 &p_pos) const {
 		}
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void ItemList::sort_items_by_text() {

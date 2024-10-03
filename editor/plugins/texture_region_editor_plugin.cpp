@@ -220,8 +220,8 @@ void TextureRegionEditor::_texture_overlay_draw() {
 	Size2 vmin = vscroll->get_combined_minimum_size();
 
 	// Avoid scrollbar overlapping.
-	hscroll->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, vscroll->is_visible() ? -vmin.width : 0);
-	vscroll->set_anchor_and_offset(SIDE_BOTTOM, Control::ANCHOR_END, hscroll->is_visible() ? -hmin.height : 0);
+	hscroll->set_anchor_and_offset(SIDE_RIGHT, Controle::ANCHOR_END, vscroll->is_visible() ? -vmin.width : 0);
+	vscroll->set_anchor_and_offset(SIDE_BOTTOM, Controle::ANCHOR_END, hscroll->is_visible() ? -hmin.height : 0);
 
 	updating_scroll = false;
 
@@ -825,7 +825,7 @@ void TextureRegionEditor::_notification(int p_what) {
 		}
 
 		case NOTIFICATION_READY: {
-			panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 		} break;
 
 		case NOTIFICATION_ENTER_TREE: {
@@ -1210,13 +1210,13 @@ TextureRegionEditor::TextureRegionEditor() {
 
 	texture_preview = memnew(PanelContainer);
 	vb->add_child(texture_preview);
-	texture_preview->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	texture_preview->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	texture_preview->set_clip_contents(true);
 	texture_preview->connect(SceneStringName(draw), callable_mp(this, &TextureRegionEditor::_texture_preview_draw));
 
 	texture_overlay = memnew(Panel);
 	texture_preview->add_child(texture_overlay);
-	texture_overlay->set_focus_mode(Control::FOCUS_CLICK);
+	texture_overlay->set_focus_mode(Controle::FOCUS_CLICK);
 	texture_overlay->connect(SceneStringName(draw), callable_mp(this, &TextureRegionEditor::_texture_overlay_draw));
 	texture_overlay->connect(SceneStringName(gui_input), callable_mp(this, &TextureRegionEditor::_texture_overlay_input));
 	texture_overlay->connect(SceneStringName(focus_exited), callable_mp(panner.ptr(), &ViewPanner::release_pan_key));
@@ -1244,13 +1244,13 @@ TextureRegionEditor::TextureRegionEditor() {
 	zoom_hb->add_child(zoom_in);
 
 	vscroll = memnew(VScrollBar);
-	vscroll->set_anchors_and_offsets_preset(Control::PRESET_RIGHT_WIDE);
+	vscroll->set_anchors_and_offsets_preset(Controle::PRESET_RIGHT_WIDE);
 	vscroll->set_step(0.001);
 	vscroll->connect(SceneStringName(value_changed), callable_mp(this, &TextureRegionEditor::_scroll_changed));
 	texture_overlay->add_child(vscroll);
 
 	hscroll = memnew(HScrollBar);
-	hscroll->set_anchors_and_offsets_preset(Control::PRESET_BOTTOM_WIDE);
+	hscroll->set_anchors_and_offsets_preset(Controle::PRESET_BOTTOM_WIDE);
 	hscroll->set_step(0.001);
 	hscroll->connect(SceneStringName(value_changed), callable_mp(this, &TextureRegionEditor::_scroll_changed));
 	texture_overlay->add_child(hscroll);

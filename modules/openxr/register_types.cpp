@@ -118,16 +118,16 @@ void initialize_openxr_module(ModuleInitializationLevel p_level) {
 			// register our other extensions
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRPalmPoseExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRLocalFloorExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRPicoControllerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRPicoControlelerExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRCompositionLayerDepthExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRCompositionLayerExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHTCControllerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHTCControlelerExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHTCViveTrackerExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHuaweiControllerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHuaweiControlelerExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRDisplayRefreshRateExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRWMRControllerExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRML2ControllerExtension));
-			OpenXRAPI::register_extension_wrapper(memnew(OpenXRMetaControllerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRWMRControlelerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRML2ControlelerExtension));
+			OpenXRAPI::register_extension_wrapper(memnew(OpenXRMetaControlelerExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXREyeGazeInteractionExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRHandInteractionExtension));
 			OpenXRAPI::register_extension_wrapper(memnew(OpenXRMxInkExtension));

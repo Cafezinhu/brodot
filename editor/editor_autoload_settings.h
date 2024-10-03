@@ -92,9 +92,9 @@ class EditorAutoloadSettings : public VBoxContainer {
 
 	void _script_created(Ref<Script> p_script);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_control);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_control) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_control);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_control);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_control) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_control);
 
 	void _set_autoload_add_path(const String &p_text);
 	void _browse_autoload_add_path();

@@ -47,8 +47,8 @@ class SubViewportContainer;
 class Button;
 class Label;
 
-class MaterialEditor : public Control {
-	GDCLASS(MaterialEditor, Control);
+class MaterialEditor : public Controle {
+	GDCLASS(MaterialEditor, Controle);
 
 	Vector2 rot;
 

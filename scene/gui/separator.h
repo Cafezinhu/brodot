@@ -32,8 +32,8 @@
 #define SEPARATOR_H
 
 #include "scene/gui/control.h"
-class Separator : public Control {
-	GDCLASS(Separator, Control);
+class Separator : public Controle {
+	GDCLASS(Separator, Controle);
 
 	struct ThemeCache {
 		int separation = 0;

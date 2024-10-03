@@ -232,7 +232,7 @@
 #undef FT_ERR_PREFIX
 #endif
 
-  /* FT_INCLUDE_ERR_PROTOS: Control whether function prototypes should be */
+  /* FT_INCLUDE_ERR_PROTOS: Controle whether function prototypes should be */
   /*                        included with                                 */
   /*                                                                      */
   /*                          #include <freetype/fterrors.h>              */

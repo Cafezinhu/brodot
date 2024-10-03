@@ -37,8 +37,8 @@
 #include "scene/resources/shader.h"
 #include "scene/resources/texture.h"
 
-class TextureLayeredEditor : public Control {
-	GDCLASS(TextureLayeredEditor, Control);
+class TextureLayeredEditor : public Controle {
+	GDCLASS(TextureLayeredEditor, Controle);
 
 	SpinBox *layer = nullptr;
 	Label *info = nullptr;
@@ -49,7 +49,7 @@ class TextureLayeredEditor : public Control {
 
 	float x_rot = 0;
 	float y_rot = 0;
-	Control *texture_rect = nullptr;
+	Controle *texture_rect = nullptr;
 
 	bool setting = false;
 

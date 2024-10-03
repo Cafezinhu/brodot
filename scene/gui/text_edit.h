@@ -38,8 +38,8 @@
 #include "scene/resources/syntax_highlighter.h"
 #include "scene/resources/text_paragraph.h"
 
-class TextEdit : public Control {
-	GDCLASS(TextEdit, Control);
+class TextEdit : public Controle {
+	GDCLASS(TextEdit, Controle);
 
 public:
 	/* Edit Actions. */

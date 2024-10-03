@@ -36,9 +36,9 @@ void Container::_child_minsize_changed() {
 }
 
 void Container::add_child_notify(Node *p_child) {
-	Control::add_child_notify(p_child);
+	Controle::add_child_notify(p_child);
 
-	Control *control = Object::cast_to<Control>(p_child);
+	Controle *control = Object::cast_to<Controle>(p_child);
 	if (!control) {
 		return;
 	}
@@ -52,9 +52,9 @@ void Container::add_child_notify(Node *p_child) {
 }
 
 void Container::move_child_notify(Node *p_child) {
-	Control::move_child_notify(p_child);
+	Controle::move_child_notify(p_child);
 
-	if (!Object::cast_to<Control>(p_child)) {
+	if (!Object::cast_to<Controle>(p_child)) {
 		return;
 	}
 
@@ -63,9 +63,9 @@ void Container::move_child_notify(Node *p_child) {
 }
 
 void Container::remove_child_notify(Node *p_child) {
-	Control::remove_child_notify(p_child);
+	Controle::remove_child_notify(p_child);
 
-	Control *control = Object::cast_to<Control>(p_child);
+	Controle *control = Object::cast_to<Controle>(p_child);
 	if (!control) {
 		return;
 	}
@@ -92,7 +92,7 @@ void Container::_sort_children() {
 	pending_sort = false;
 }
 
-void Container::fit_child_in_rect(Control *p_child, const Rect2 &p_rect) {
+void Container::fit_child_in_rect(Controle *p_child, const Rect2 &p_rect) {
 	ERR_FAIL_NULL(p_child);
 	ERR_FAIL_COND(p_child->get_parent() != this);
 
@@ -140,8 +140,8 @@ void Container::queue_sort() {
 	pending_sort = true;
 }
 
-Control *Container::as_sortable_control(Node *p_node, SortableVisbilityMode p_visibility_mode) const {
-	Control *c = Object::cast_to<Control>(p_node);
+Controle *Container::as_sortable_control(Node *p_node, SortableVisbilityMode p_visibility_mode) const {
+	Controle *c = Object::cast_to<Controle>(p_node);
 	if (!c || c->is_set_as_top_level()) {
 		return nullptr;
 	}
@@ -199,10 +199,10 @@ void Container::_notification(int p_what) {
 }
 
 PackedStringArray Container::get_configuration_warnings() const {
-	PackedStringArray warnings = Control::get_configuration_warnings();
+	PackedStringArray warnings = Controle::get_configuration_warnings();
 
 	if (get_class() == "Container" && get_script().is_null()) {
-		warnings.push_back(RTR("Container by itself serves no purpose unless a script configures its children placement behavior.\nIf you don't intend to add a script, use a plain Control node instead."));
+		warnings.push_back(RTR("Container by itself serves no purpose unless a script configures its children placement behavior.\nIf you don't intend to add a script, use a plain Controle node instead."));
 	}
 
 	return warnings;

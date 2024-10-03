@@ -82,7 +82,7 @@ private:
 protected:
 	Size2 get_minimum_size() const override;
 
-	void _gui_focus_changed(Control *p_control);
+	void _gui_focus_changed(Controle *p_control);
 	void _reposition_children();
 
 	void _notification(int p_what);
@@ -121,7 +121,7 @@ public:
 
 	HScrollBar *get_h_scroll_bar();
 	VScrollBar *get_v_scroll_bar();
-	void ensure_control_visible(Control *p_control);
+	void ensure_control_visible(Controle *p_control);
 
 	PackedStringArray get_configuration_warnings() const override;
 

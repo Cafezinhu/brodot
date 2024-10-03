@@ -136,8 +136,8 @@ typedef struct _D3D12_SHADER_DESC
     UINT                    FloatInstructionCount;       // Number of floating point arithmetic instructions used
     UINT                    IntInstructionCount;         // Number of signed integer arithmetic instructions used
     UINT                    UintInstructionCount;        // Number of unsigned integer arithmetic instructions used
-    UINT                    StaticFlowControlCount;      // Number of static flow control instructions used
-    UINT                    DynamicFlowControlCount;     // Number of dynamic flow control instructions used
+    UINT                    StaticFlowControleCount;      // Number of static flow control instructions used
+    UINT                    DynamicFlowControleCount;     // Number of dynamic flow control instructions used
     UINT                    MacroInstructionCount;       // Number of macro instructions used
     UINT                    ArrayInstructionCount;       // Number of array instructions used
     UINT                    CutInstructionCount;         // Number of cut instructions used
@@ -147,7 +147,7 @@ typedef struct _D3D12_SHADER_DESC
     D3D_PRIMITIVE           InputPrimitive;              // GS/HS input primitive
     UINT                    PatchConstantParameters;     // Number of parameters in the patch constant signature
     UINT                    cGSInstanceCount;            // Number of Geometry shader instances
-    UINT                    cControlPoints;              // Number of control points in the HS->DS stage
+    UINT                    cControlePoints;              // Number of control points in the HS->DS stage
     D3D_TESSELLATOR_OUTPUT_PRIMITIVE HSOutputPrimitive;  // Primitive output by the tessellator
     D3D_TESSELLATOR_PARTITIONING HSPartitioning;         // Partitioning mode of the tessellator
     D3D_TESSELLATOR_DOMAIN  TessellatorDomain;           // Domain of the tessellator (quad, tri, isoline)
@@ -234,8 +234,8 @@ typedef struct _D3D12_FUNCTION_DESC
     UINT                    FloatInstructionCount;       // Number of floating point arithmetic instructions used
     UINT                    IntInstructionCount;         // Number of signed integer arithmetic instructions used
     UINT                    UintInstructionCount;        // Number of unsigned integer arithmetic instructions used
-    UINT                    StaticFlowControlCount;      // Number of static flow control instructions used
-    UINT                    DynamicFlowControlCount;     // Number of dynamic flow control instructions used
+    UINT                    StaticFlowControleCount;      // Number of static flow control instructions used
+    UINT                    DynamicFlowControleCount;     // Number of dynamic flow control instructions used
     UINT                    MacroInstructionCount;       // Number of macro instructions used
     UINT                    ArrayInstructionCount;       // Number of array instructions used
     UINT                    MovInstructionCount;         // Number of mov instructions used

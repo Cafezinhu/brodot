@@ -35,8 +35,8 @@
 #include "scene/property_list_helper.h"
 #include "scene/resources/text_line.h"
 
-class TabBar : public Control {
-	GDCLASS(TabBar, Control);
+class TabBar : public Controle {
+	GDCLASS(TabBar, Controle);
 
 public:
 	enum AlignmentMode {
@@ -59,7 +59,7 @@ private:
 		String tooltip;
 
 		String language;
-		Control::TextDirection text_direction = Control::TEXT_DIRECTION_INHERITED;
+		Controle::TextDirection text_direction = Controle::TEXT_DIRECTION_INHERITED;
 
 		Ref<TextLine> text_buf;
 		Ref<Texture2D> icon;

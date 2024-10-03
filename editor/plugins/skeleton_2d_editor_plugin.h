@@ -37,8 +37,8 @@
 class AcceptDialog;
 class MenuButton;
 
-class Skeleton2DEditor : public Control {
-	GDCLASS(Skeleton2DEditor, Control);
+class Skeleton2DEditor : public Controle {
+	GDCLASS(Skeleton2DEditor, Controle);
 
 	enum Menu {
 		MENU_OPTION_SET_REST,

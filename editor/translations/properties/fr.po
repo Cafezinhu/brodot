@@ -422,7 +422,7 @@ msgstr "Délai d'Info-bulle (sec)"
 msgid "Common"
 msgstr "Commun"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Aimanter les contrôles aux pixels"
 
 msgid "Fonts"
@@ -560,7 +560,7 @@ msgstr "Périphérique"
 msgid "Window ID"
 msgstr "ID de la fenêtre"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Re-mappage automatique des commandes ou des contrôles"
 
 msgid "Alt Pressed"
@@ -671,10 +671,10 @@ msgstr "Angle d'attaque"
 msgid "Instrument"
 msgstr "Appareil"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Numéro du contrôleur"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Valeur du controller"
 
 msgid "Shortcut"
@@ -1895,7 +1895,7 @@ msgstr "Couleur de symbole"
 msgid "Keyword Color"
 msgstr "Couleur des mots-clés"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Couleur de mot clé de contrôle de flux"
 
 msgid "Base Type Color"
@@ -2820,7 +2820,7 @@ msgstr "Nombre de frames"
 msgid "Duration"
 msgstr "Durée"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Contrôle de version"
 
 msgid "Username"
@@ -3960,7 +3960,7 @@ msgstr "URL de description"
 msgid "Service Type"
 msgstr "Type du service"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL de contrôle IGD"
 
 msgid "IGD Service Type"
@@ -7397,7 +7397,7 @@ msgstr "Coloration syntaxique"
 msgid "Visual Whitespace"
 msgstr "Espacement visuel"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Contrôle des caractères"
 
 msgid "Spaces"
@@ -9786,7 +9786,7 @@ msgstr "Sommet"
 msgid "Fragment"
 msgstr "Fragment"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Contrôle de tesselation"
 
 msgid "Tesselation Evaluation"

@@ -431,7 +431,7 @@ String KeyMappingMacOS::keycode_get_native_string(Key p_keycode) {
 unsigned int KeyMappingMacOS::keycode_get_native_mask(Key p_keycode) {
 	unsigned int mask = 0;
 	if ((p_keycode & KeyModifierMask::CTRL) != Key::NONE) {
-		mask |= NSEventModifierFlagControl;
+		mask |= NSEventModifierFlagControle;
 	}
 	if ((p_keycode & KeyModifierMask::ALT) != Key::NONE) {
 		mask |= NSEventModifierFlagOption;

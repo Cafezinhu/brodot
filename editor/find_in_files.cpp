@@ -303,10 +303,10 @@ FindInFilesDialog::FindInFilesDialog() {
 	set_title(TTR("Find in Files"));
 
 	VBoxContainer *vbc = memnew(VBoxContainer);
-	vbc->set_anchor_and_offset(SIDE_LEFT, Control::ANCHOR_BEGIN, 8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_TOP, Control::ANCHOR_BEGIN, 8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, -8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_BOTTOM, Control::ANCHOR_END, -8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_LEFT, Controle::ANCHOR_BEGIN, 8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_TOP, Controle::ANCHOR_BEGIN, 8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_RIGHT, Controle::ANCHOR_END, -8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_BOTTOM, Controle::ANCHOR_END, -8 * EDSCALE);
 	add_child(vbc);
 
 	GridContainer *gc = memnew(GridContainer);
@@ -318,7 +318,7 @@ FindInFilesDialog::FindInFilesDialog() {
 	gc->add_child(find_label);
 
 	_search_text_line_edit = memnew(LineEdit);
-	_search_text_line_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	_search_text_line_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	_search_text_line_edit->connect(SceneStringName(text_changed), callable_mp(this, &FindInFilesDialog::_on_search_text_modified));
 	_search_text_line_edit->connect("text_submitted", callable_mp(this, &FindInFilesDialog::_on_search_text_submitted));
 	gc->add_child(_search_text_line_edit);
@@ -329,12 +329,12 @@ FindInFilesDialog::FindInFilesDialog() {
 	gc->add_child(_replace_label);
 
 	_replace_text_line_edit = memnew(LineEdit);
-	_replace_text_line_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	_replace_text_line_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	_replace_text_line_edit->connect("text_submitted", callable_mp(this, &FindInFilesDialog::_on_replace_text_submitted));
 	_replace_text_line_edit->hide();
 	gc->add_child(_replace_text_line_edit);
 
-	gc->add_child(memnew(Control)); // Space to maintain the grid alignment.
+	gc->add_child(memnew(Controle)); // Space to maintain the grid alignment.
 
 	{
 		HBoxContainer *hbc = memnew(HBoxContainer);
@@ -362,7 +362,7 @@ FindInFilesDialog::FindInFilesDialog() {
 		hbc->add_child(prefix_label);
 
 		_folder_line_edit = memnew(LineEdit);
-		_folder_line_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		_folder_line_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		hbc->add_child(_folder_line_edit);
 
 		Button *folder_button = memnew(Button);
@@ -404,16 +404,16 @@ void FindInFilesDialog::set_search_text(const String &text) {
 			_search_text_line_edit->set_text(text);
 			_on_search_text_modified(text);
 		}
-		callable_mp((Control *)_search_text_line_edit, &Control::grab_focus).call_deferred();
+		callable_mp((Controle *)_search_text_line_edit, &Controle::grab_focus).call_deferred();
 		_search_text_line_edit->select_all();
 	} else if (_mode == REPLACE_MODE) {
 		if (!text.is_empty()) {
 			_search_text_line_edit->set_text(text);
-			callable_mp((Control *)_replace_text_line_edit, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)_replace_text_line_edit, &Controle::grab_focus).call_deferred();
 			_replace_text_line_edit->select_all();
 			_on_search_text_modified(text);
 		} else {
-			callable_mp((Control *)_search_text_line_edit, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)_search_text_line_edit, &Controle::grab_focus).call_deferred();
 			_search_text_line_edit->select_all();
 		}
 	}

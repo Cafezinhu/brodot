@@ -907,7 +907,7 @@ uint32_t RenderingDeviceCommons::get_format_vertex_size(DataFormat p_format) {
 const char *RenderingDeviceCommons::SHADER_STAGE_NAMES[SHADER_STAGE_MAX] = {
 	"Vertex",
 	"Fragment",
-	"TesselationControl",
+	"TesselationControle",
 	"TesselationEvaluation",
 	"Compute",
 };

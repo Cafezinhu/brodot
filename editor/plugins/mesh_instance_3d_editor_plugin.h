@@ -40,8 +40,8 @@ class ConfirmationDialog;
 class MenuButton;
 class SpinBox;
 
-class MeshInstance3DEditor : public Control {
-	GDCLASS(MeshInstance3DEditor, Control);
+class MeshInstance3DEditor : public Controle {
+	GDCLASS(MeshInstance3DEditor, Controle);
 
 	enum Menu {
 		MENU_OPTION_CREATE_COLLISION_SHAPE,
@@ -79,7 +79,7 @@ class MeshInstance3DEditor : public Control {
 	AcceptDialog *err_dialog = nullptr;
 
 	AcceptDialog *debug_uv_dialog = nullptr;
-	Control *debug_uv = nullptr;
+	Controle *debug_uv = nullptr;
 	Vector<Vector2> uv_lines;
 
 	ConfirmationDialog *navigation_mesh_dialog = nullptr;

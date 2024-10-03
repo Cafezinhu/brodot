@@ -48,10 +48,10 @@ void BackgroundProgress::_add_task(const String &p_task, const String &p_label, 
 	t.progress = memnew(ProgressBar);
 	t.progress->set_max(p_steps);
 	t.progress->set_value(p_steps);
-	Control *ec = memnew(Control);
+	Controle *ec = memnew(Controle);
 	ec->set_h_size_flags(SIZE_EXPAND_FILL);
 	ec->set_v_size_flags(SIZE_EXPAND_FILL);
-	t.progress->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	t.progress->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	ec->add_child(t.progress);
 	ec->set_custom_minimum_size(Size2(80, 5) * EDSCALE);
 	t.hb->add_child(ec);
@@ -248,7 +248,7 @@ void ProgressDialog::_cancel_pressed() {
 ProgressDialog::ProgressDialog() {
 	main = memnew(VBoxContainer);
 	add_child(main);
-	main->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	main->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	set_exclusive(true);
 	set_flag(Window::FLAG_POPUP, false);
 	singleton = this;

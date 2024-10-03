@@ -267,7 +267,7 @@ Error DisplayServerWindows::file_dialog_with_options_show(const String &p_title,
 #pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
 #endif
 
-class FileDialogEventHandler : public IFileDialogEvents, public IFileDialogControlEvents {
+class FileDialogEventHandler : public IFileDialogEvents, public IFileDialogControleEvents {
 	LONG ref_count = 1;
 	int ctl_id = 1;
 
@@ -281,10 +281,10 @@ public:
 		static const QITAB qit[] = {
 #ifdef __MINGW32__
 			{ &__uuidof(IFileDialogEvents), static_cast<decltype(qit[0].dwOffset)>(OFFSETOFCLASS(IFileDialogEvents, FileDialogEventHandler)) },
-			{ &__uuidof(IFileDialogControlEvents), static_cast<decltype(qit[0].dwOffset)>(OFFSETOFCLASS(IFileDialogControlEvents, FileDialogEventHandler)) },
+			{ &__uuidof(IFileDialogControleEvents), static_cast<decltype(qit[0].dwOffset)>(OFFSETOFCLASS(IFileDialogControleEvents, FileDialogEventHandler)) },
 #else
 			QITABENT(FileDialogEventHandler, IFileDialogEvents),
-			QITABENT(FileDialogEventHandler, IFileDialogControlEvents),
+			QITABENT(FileDialogEventHandler, IFileDialogControleEvents),
 #endif
 			{ nullptr, 0 },
 		};
@@ -330,7 +330,7 @@ public:
 	HRESULT STDMETHODCALLTYPE OnTypeChange(IFileDialog *pfd) { return S_OK; };
 	HRESULT STDMETHODCALLTYPE OnOverwrite(IFileDialog *, IShellItem *, FDE_OVERWRITE_RESPONSE *) { return S_OK; };
 
-	// IFileDialogControlEvents methods
+	// IFileDialogControleEvents methods
 	HRESULT STDMETHODCALLTYPE OnItemSelected(IFileDialogCustomize *p_pfdc, DWORD p_ctl_id, DWORD p_item_idx) {
 		if (ctls.has(p_ctl_id)) {
 			selected[ctls[p_ctl_id]] = (int)p_item_idx;
@@ -345,7 +345,7 @@ public:
 		}
 		return S_OK;
 	}
-	HRESULT STDMETHODCALLTYPE OnControlActivating(IFileDialogCustomize *, DWORD) { return S_OK; };
+	HRESULT STDMETHODCALLTYPE OnControleActivating(IFileDialogCustomize *, DWORD) { return S_OK; };
 
 	Dictionary get_selected() {
 		return selected;
@@ -363,18 +363,18 @@ public:
 			// Add check box.
 			p_pfdc->StartVisualGroup(gid, L"");
 			p_pfdc->AddCheckButton(cid, (LPCWSTR)p_name.utf16().get_data(), p_default);
-			p_pfdc->SetControlState(cid, CDCS_VISIBLE | CDCS_ENABLED);
+			p_pfdc->SetControleState(cid, CDCS_VISIBLE | CDCS_ENABLED);
 			p_pfdc->EndVisualGroup();
 			selected[p_name] = (bool)p_default;
 		} else {
 			// Add combo box.
 			p_pfdc->StartVisualGroup(gid, (LPCWSTR)p_name.utf16().get_data());
 			p_pfdc->AddComboBox(cid);
-			p_pfdc->SetControlState(cid, CDCS_VISIBLE | CDCS_ENABLED);
+			p_pfdc->SetControleState(cid, CDCS_VISIBLE | CDCS_ENABLED);
 			for (int i = 0; i < p_options.size(); i++) {
-				p_pfdc->AddControlItem(cid, i, (LPCWSTR)p_options[i].utf16().get_data());
+				p_pfdc->AddControleItem(cid, i, (LPCWSTR)p_options[i].utf16().get_data());
 			}
-			p_pfdc->SetSelectedControlItem(cid, p_default);
+			p_pfdc->SetSelectedControleItem(cid, p_default);
 			p_pfdc->EndVisualGroup();
 			selected[p_name] = p_default;
 		}
@@ -3077,7 +3077,7 @@ Key DisplayServerWindows::keyboard_get_label_from_physical(Key p_keycode) const 
 String DisplayServerWindows::_get_keyboard_layout_display_name(const String &p_klid) const {
 	String ret;
 	HKEY key;
-	if (RegOpenKeyW(HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControlSet\\Control\\Keyboard Layouts", &key) != ERROR_SUCCESS) {
+	if (RegOpenKeyW(HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControleSet\\Controle\\Keyboard Layouts", &key) != ERROR_SUCCESS) {
 		return String();
 	}
 
@@ -3107,7 +3107,7 @@ String DisplayServerWindows::_get_klid(HKL p_hkl) const {
 		WORD layout_id = device & 0x0fff;
 
 		HKEY key;
-		if (RegOpenKeyW(HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControlSet\\Control\\Keyboard Layouts", &key) != ERROR_SUCCESS) {
+		if (RegOpenKeyW(HKEY_LOCAL_MACHINE, L"SYSTEM\\CurrentControleSet\\Controle\\Keyboard Layouts", &key) != ERROR_SUCCESS) {
 			return String();
 		}
 
@@ -6097,8 +6097,8 @@ DisplayServerWindows::DisplayServerWindows(const String &p_rendering_driver, Win
 
 	HMODULE comctl32 = LoadLibraryW(L"comctl32.dll");
 	if (comctl32) {
-		typedef BOOL(WINAPI * InitCommonControlsExPtr)(_In_ const INITCOMMONCONTROLSEX *picce);
-		InitCommonControlsExPtr init_common_controls_ex = (InitCommonControlsExPtr)GetProcAddress(comctl32, "InitCommonControlsEx");
+		typedef BOOL(WINAPI * InitCommonControlesExPtr)(_In_ const INITCOMMONCONTROLSEX *picce);
+		InitCommonControlesExPtr init_common_controls_ex = (InitCommonControlesExPtr)GetProcAddress(comctl32, "InitCommonControlesEx");
 
 		// Fails if the incorrect version was loaded. Probably not a big enough deal to print an error about.
 		if (init_common_controls_ex) {

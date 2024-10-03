@@ -429,7 +429,7 @@ struct TessEvaluationShader : BaseShader<TessEvaluationShader<T, Res>>
 	Res resources;
 };
 
-struct TessControlResources
+struct TessControleResources
 {
 	inline void init(spirv_cross_shader &)
 	{
@@ -437,14 +437,14 @@ struct TessControlResources
 };
 
 template <typename T, typename Res>
-struct TessControlShader : BaseShader<TessControlShader<T, Res>>
+struct TessControleShader : BaseShader<TessControleShader<T, Res>>
 {
 	inline void main()
 	{
 		impl.main();
 	}
 
-	TessControlShader()
+	TessControleShader()
 	{
 		resources.init(*this);
 		impl.__res = &resources;

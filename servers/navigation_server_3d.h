@@ -330,7 +330,7 @@ public:
 	/// Destroy the `RID`
 	virtual void free(RID p_object) = 0;
 
-	/// Control activation of this server.
+	/// Controle activation of this server.
 	virtual void set_active(bool p_active) = 0;
 
 	/// Process the collision avoidance agents.

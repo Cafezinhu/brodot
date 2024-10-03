@@ -8032,7 +8032,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			cf->flow_op = FLOW_OP_IF;
 #ifdef DEBUG_ENABLED
 			keyword_completion_context = CF_IF_DECL;
@@ -8087,7 +8087,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				_set_expected_after_error("(", "switch");
 				return ERR_PARSE_ERROR;
 			}
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			cf->flow_op = FLOW_OP_SWITCH;
 			Node *n = _parse_and_reduce_expression(p_block, p_function_info);
 			if (!n) {
@@ -8259,7 +8259,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			cf->flow_op = FLOW_OP_CASE;
 
 			BlockNode *case_block = alloc_node<BlockNode>();
@@ -8294,7 +8294,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			cf->flow_op = FLOW_OP_DEFAULT;
 
 			BlockNode *default_block = alloc_node<BlockNode>();
@@ -8338,7 +8338,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			if (is_do) {
 				cf->flow_op = FLOW_OP_DO;
 			} else {
@@ -8384,7 +8384,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *cf = alloc_node<ControlFlowNode>();
+			ControleFlowNode *cf = alloc_node<ControleFlowNode>();
 			cf->flow_op = FLOW_OP_FOR;
 
 			BlockNode *init_block = alloc_node<BlockNode>();
@@ -8464,7 +8464,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				array_size_string = "[" + itos(b->parent_function->return_array_size) + "]";
 			}
 
-			ControlFlowNode *flow = alloc_node<ControlFlowNode>();
+			ControleFlowNode *flow = alloc_node<ControleFlowNode>();
 			flow->flow_op = FLOW_OP_RETURN;
 
 			pos = _get_tkpos();
@@ -8539,7 +8539,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *flow = alloc_node<ControlFlowNode>();
+			ControleFlowNode *flow = alloc_node<ControleFlowNode>();
 			flow->flow_op = FLOW_OP_DISCARD;
 
 			pos = _get_tkpos();
@@ -8556,7 +8556,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *flow = alloc_node<ControlFlowNode>();
+			ControleFlowNode *flow = alloc_node<ControleFlowNode>();
 			flow->flow_op = FLOW_OP_BREAK;
 
 			pos = _get_tkpos();
@@ -8582,7 +8582,7 @@ Error ShaderLanguage::_parse_block(BlockNode *p_block, const FunctionInfo &p_fun
 				return ERR_PARSE_ERROR;
 			}
 
-			ControlFlowNode *flow = alloc_node<ControlFlowNode>();
+			ControleFlowNode *flow = alloc_node<ControleFlowNode>();
 			flow->flow_op = FLOW_OP_CONTINUE;
 
 			pos = _get_tkpos();
@@ -10583,7 +10583,7 @@ bool ShaderLanguage::has_builtin(const HashMap<StringName, ShaderLanguage::Funct
 	return false;
 }
 
-Error ShaderLanguage::_find_last_flow_op_in_op(ControlFlowNode *p_flow, FlowOperation p_op) {
+Error ShaderLanguage::_find_last_flow_op_in_op(ControleFlowNode *p_flow, FlowOperation p_op) {
 	bool found = false;
 
 	for (int i = p_flow->blocks.size() - 1; i >= 0; i--) {
@@ -10606,7 +10606,7 @@ Error ShaderLanguage::_find_last_flow_op_in_block(BlockNode *p_block, FlowOperat
 
 	for (List<ShaderLanguage::Node *>::Element *E = p_block->statements.back(); E; E = E->prev()) {
 		if (E->get()->type == Node::NODE_TYPE_CONTROL_FLOW) {
-			ControlFlowNode *flow = static_cast<ControlFlowNode *>(E->get());
+			ControleFlowNode *flow = static_cast<ControleFlowNode *>(E->get());
 			if (flow->flow_op == p_op) {
 				found = true;
 				break;

@@ -116,9 +116,9 @@ class EditorAudioBus : public PanelContainer {
 	virtual bool can_drop_data(const Point2 &p_point, const Variant &p_data) const override;
 	virtual void drop_data(const Point2 &p_point, const Variant &p_data) override;
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	friend class EditorAudioBuses;
 
@@ -135,8 +135,8 @@ public:
 	EditorAudioBus(EditorAudioBuses *p_buses = nullptr, bool p_is_master = false);
 };
 
-class EditorAudioBusDrop : public Control {
-	GDCLASS(EditorAudioBusDrop, Control);
+class EditorAudioBusDrop : public Controle {
+	GDCLASS(EditorAudioBusDrop, Controle);
 
 	virtual bool can_drop_data(const Point2 &p_point, const Variant &p_data) const override;
 	virtual void drop_data(const Point2 &p_point, const Variant &p_data) override;
@@ -209,8 +209,8 @@ public:
 	EditorAudioBuses();
 };
 
-class EditorAudioMeterNotches : public Control {
-	GDCLASS(EditorAudioMeterNotches, Control);
+class EditorAudioMeterNotches : public Controle {
+	GDCLASS(EditorAudioMeterNotches, Controle);
 
 private:
 	struct AudioNotch {

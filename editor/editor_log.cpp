@@ -463,7 +463,7 @@ EditorLog::EditorLog() {
 
 	// Search box
 	search_box = memnew(LineEdit);
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_box->set_placeholder(TTR("Filter Messages"));
 	search_box->set_clear_button_enabled(true);
 	search_box->set_visible(true);

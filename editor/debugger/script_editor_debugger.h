@@ -309,8 +309,8 @@ public:
 
 	virtual Size2 get_minimum_size() const override;
 
-	void add_debugger_tab(Control *p_control);
-	void remove_debugger_tab(Control *p_control);
+	void add_debugger_tab(Controle *p_control);
+	void remove_debugger_tab(Controle *p_control);
 	int get_current_debugger_tab() const;
 	void switch_to_debugger(int p_debugger_tab_idx);
 

@@ -39,8 +39,8 @@ class ColorPicker;
 class PopupPanel;
 class GradientTexture1D;
 
-class GradientEdit : public Control {
-	GDCLASS(GradientEdit, Control);
+class GradientEdit : public Controle {
+	GDCLASS(GradientEdit, Controle);
 
 	Ref<Gradient> gradient;
 	Ref<GradientTexture1D> preview_texture;

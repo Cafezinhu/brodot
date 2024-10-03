@@ -266,7 +266,7 @@ ShaderFileEditor::ShaderFileEditor() {
 	static const char *stage_str[RD::SHADER_STAGE_MAX] = {
 		"Vertex",
 		"Fragment",
-		"TessControl",
+		"TessControle",
 		"TessEval",
 		"Compute"
 	};

@@ -370,7 +370,7 @@ real_t Curve::sample_local_nocheck(int p_index, real_t p_local_offset) const {
 	 * d1 == d2 == d3 == d / 3
 	 */
 
-	// Control points are chosen at equal distances
+	// Controle points are chosen at equal distances
 	real_t d = b.position.x - a.position.x;
 	if (Math::is_zero_approx(d)) {
 		return b.position.y;

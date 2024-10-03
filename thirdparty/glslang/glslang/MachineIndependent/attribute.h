@@ -56,7 +56,7 @@ namespace glslang {
         EatMaxTessFactor,
         EatNumThreads,
         EatMaxVertexCount,
-        EatOutputControlPoints,
+        EatOutputControlePoints,
         EatOutputTopology,
         EatPartitioning,
         EatPatchConstantFunc,
@@ -119,7 +119,7 @@ namespace glslang {
         EatFormatUnknown,
         EatNonWritable,
         EatNonReadable,
-        EatSubgroupUniformControlFlow,
+        EatSubgroupUniformControleFlow,
         EatExport,
         EatMaximallyReconverges,
     };

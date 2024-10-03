@@ -1458,7 +1458,7 @@ void AnimationTimelineEdit::_notification(int p_what) {
 
 		case EditorSettings::NOTIFICATION_EDITOR_SETTINGS_CHANGED: {
 			if (EditorSettings::get_singleton()->check_changed_settings_in_group("editors/panning")) {
-				panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+				panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 			}
 		} break;
 
@@ -1923,10 +1923,10 @@ void AnimationTimelineEdit::gui_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-Control::CursorShape AnimationTimelineEdit::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape AnimationTimelineEdit::get_cursor_shape(const Point2 &p_pos) const {
 	if (dragging_hsize || hsize_rect.has_point(p_pos)) {
 		// Indicate that the track name column's width can be adjusted
-		return Control::CURSOR_HSIZE;
+		return Controle::CURSOR_HSIZE;
 	} else {
 		return get_default_cursor_shape();
 	}
@@ -1973,7 +1973,7 @@ void AnimationTimelineEdit::_bind_methods() {
 AnimationTimelineEdit::AnimationTimelineEdit() {
 	name_limit = 150 * EDSCALE;
 
-	play_position = memnew(Control);
+	play_position = memnew(Controle);
 	play_position->set_mouse_filter(MOUSE_FILTER_PASS);
 	add_child(play_position);
 	play_position->set_anchors_and_offsets_preset(PRESET_FULL_RECT);
@@ -1986,7 +1986,7 @@ AnimationTimelineEdit::AnimationTimelineEdit() {
 
 	len_hb = memnew(HBoxContainer);
 
-	Control *expander = memnew(Control);
+	Controle *expander = memnew(Controle);
 	expander->set_h_size_flags(SIZE_EXPAND_FILL);
 	expander->set_mouse_filter(MOUSE_FILTER_IGNORE);
 	len_hb->add_child(expander);
@@ -2021,7 +2021,7 @@ AnimationTimelineEdit::AnimationTimelineEdit() {
 	panner->set_callbacks(callable_mp(this, &AnimationTimelineEdit::_pan_callback), callable_mp(this, &AnimationTimelineEdit::_zoom_callback));
 	panner->set_pan_axis(ViewPanner::PAN_AXIS_HORIZONTAL);
 
-	set_layout_direction(Control::LAYOUT_DIRECTION_LTR);
+	set_layout_direction(Controle::LAYOUT_DIRECTION_LTR);
 }
 
 ////////////////////////////////////
@@ -2886,7 +2886,7 @@ String AnimationTrackEdit::get_tooltip(const Point2 &p_pos) const {
 		}
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void AnimationTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
@@ -3532,7 +3532,7 @@ void AnimationTrackEdit::_bind_methods() {
 }
 
 AnimationTrackEdit::AnimationTrackEdit() {
-	play_position = memnew(Control);
+	play_position = memnew(Controle);
 	play_position->set_mouse_filter(MOUSE_FILTER_PASS);
 	add_child(play_position);
 	play_position->set_anchors_and_offsets_preset(PRESET_FULL_RECT);
@@ -5094,7 +5094,7 @@ void AnimationTrackEditor::_notification(int p_what) {
 		}
 
 		case NOTIFICATION_ENTER_TREE: {
-			panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 			[[fallthrough]];
 		}
 		case NOTIFICATION_THEME_CHANGED: {
@@ -7469,7 +7469,7 @@ AnimationTrackEditor::AnimationTrackEditor() {
 	panner->set_scroll_zoom_factor(AnimationTimelineEdit::SCROLL_ZOOM_FACTOR_IN);
 	panner->set_callbacks(callable_mp(this, &AnimationTrackEditor::_pan_callback), callable_mp(this, &AnimationTrackEditor::_zoom_callback));
 
-	box_selection_container = memnew(Control);
+	box_selection_container = memnew(Controle);
 	box_selection_container->set_v_size_flags(SIZE_EXPAND_FILL);
 	box_selection_container->set_clip_contents(true);
 	timeline_vbox->add_child(box_selection_container);
@@ -7479,7 +7479,7 @@ AnimationTrackEditor::AnimationTrackEditor() {
 	marker_edit->set_editor(this);
 	marker_edit->set_timeline(timeline);
 	marker_edit->set_h_size_flags(SIZE_EXPAND_FILL);
-	marker_edit->set_anchors_and_offsets_preset(Control::LayoutPreset::PRESET_FULL_RECT);
+	marker_edit->set_anchors_and_offsets_preset(Controle::LayoutPreset::PRESET_FULL_RECT);
 	marker_edit->connect(SceneStringName(draw), callable_mp(this, &AnimationTrackEditor::_redraw_groups));
 	marker_edit->connect(SceneStringName(draw), callable_mp(this, &AnimationTrackEditor::_redraw_tracks));
 
@@ -7707,7 +7707,7 @@ AnimationTrackEditor::AnimationTrackEditor() {
 	insert_confirm_reset->set_pressed(EDITOR_GET("editors/animation/default_create_reset_tracks"));
 	ichb->add_child(insert_confirm_reset);
 
-	box_selection = memnew(Control);
+	box_selection = memnew(Controle);
 	box_selection_container->add_child(box_selection);
 	box_selection->set_mouse_filter(MOUSE_FILTER_IGNORE);
 	box_selection->hide();
@@ -7970,7 +7970,7 @@ AnimationTrackKeyEditEditor::AnimationTrackKeyEditEditor(Ref<Animation> p_animat
 	set_label("Time");
 
 	spinner = memnew(EditorSpinSlider);
-	spinner->set_focus_mode(Control::FOCUS_CLICK);
+	spinner->set_focus_mode(Controle::FOCUS_CLICK);
 	spinner->set_min(0);
 	spinner->set_allow_greater(true);
 	spinner->set_allow_lesser(true);
@@ -8132,7 +8132,7 @@ bool AnimationMarkerEdit::_is_ui_pos_in_current_section(const Point2 &p_pos) {
 	return false;
 }
 
-HBoxContainer *AnimationMarkerEdit::_create_hbox_labeled_control(const String &p_text, Control *p_control) const {
+HBoxContainer *AnimationMarkerEdit::_create_hbox_labeled_control(const String &p_text, Controle *p_control) const {
 	HBoxContainer *hbox = memnew(HBoxContainer);
 	Label *label = memnew(Label);
 	label->set_text(p_text);
@@ -8510,7 +8510,7 @@ void AnimationMarkerEdit::gui_input(const Ref<InputEvent> &p_event) {
 
 String AnimationMarkerEdit::get_tooltip(const Point2 &p_pos) const {
 	if (animation.is_null()) {
-		return Control::get_tooltip(p_pos);
+		return Controle::get_tooltip(p_pos);
 	}
 
 	int limit = timeline->get_name_limit();
@@ -8554,7 +8554,7 @@ String AnimationMarkerEdit::get_tooltip(const Point2 &p_pos) const {
 		}
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 int AnimationMarkerEdit::get_key_height() const {
@@ -8943,7 +8943,7 @@ void AnimationMarkerEdit::_marker_rename_new_name_changed(const String &p_text) 
 }
 
 AnimationMarkerEdit::AnimationMarkerEdit() {
-	play_position = memnew(Control);
+	play_position = memnew(Controle);
 	play_position->set_mouse_filter(MOUSE_FILTER_PASS);
 	add_child(play_position);
 	play_position->connect(SceneStringName(draw), callable_mp(this, &AnimationMarkerEdit::_play_position_draw));
@@ -8963,7 +8963,7 @@ AnimationMarkerEdit::AnimationMarkerEdit() {
 	marker_insert_confirm->connect(SceneStringName(confirmed), callable_mp(this, &AnimationMarkerEdit::_marker_insert_confirmed));
 	add_child(marker_insert_confirm);
 	VBoxContainer *marker_insert_vbox = memnew(VBoxContainer);
-	marker_insert_vbox->set_anchors_and_offsets_preset(Control::LayoutPreset::PRESET_FULL_RECT);
+	marker_insert_vbox->set_anchors_and_offsets_preset(Controle::LayoutPreset::PRESET_FULL_RECT);
 	marker_insert_confirm->add_child(marker_insert_vbox);
 	marker_insert_new_name = memnew(LineEdit);
 	marker_insert_new_name->connect(SceneStringName(text_changed), callable_mp(this, &AnimationMarkerEdit::_marker_insert_new_name_changed));
@@ -8984,7 +8984,7 @@ AnimationMarkerEdit::AnimationMarkerEdit() {
 	marker_rename_confirm->connect(SceneStringName(confirmed), callable_mp(this, &AnimationMarkerEdit::_marker_rename_confirmed));
 	add_child(marker_rename_confirm);
 	VBoxContainer *marker_rename_vbox = memnew(VBoxContainer);
-	marker_rename_vbox->set_anchors_and_offsets_preset(Control::LayoutPreset::PRESET_FULL_RECT);
+	marker_rename_vbox->set_anchors_and_offsets_preset(Controle::LayoutPreset::PRESET_FULL_RECT);
 	marker_rename_confirm->add_child(marker_rename_vbox);
 	Label *marker_rename_new_name_label = memnew(Label);
 	marker_rename_new_name_label->set_text(TTR("Change Marker Name:"));
@@ -9168,7 +9168,7 @@ AnimationMarkerKeyEditEditor::AnimationMarkerKeyEditEditor(Ref<Animation> p_anim
 	set_label("Time");
 
 	spinner = memnew(EditorSpinSlider);
-	spinner->set_focus_mode(Control::FOCUS_CLICK);
+	spinner->set_focus_mode(Controle::FOCUS_CLICK);
 	spinner->set_min(0);
 	spinner->set_allow_greater(true);
 	spinner->set_allow_lesser(true);

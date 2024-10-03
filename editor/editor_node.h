@@ -44,7 +44,7 @@ typedef bool (*EditorBuildCallback)();
 class AcceptDialog;
 class ColorPicker;
 class ConfirmationDialog;
-class Control;
+class Controle;
 class FileDialog;
 class MenuBar;
 class MenuButton;
@@ -281,7 +281,7 @@ private:
 	HashMap<ObjectID, HashSet<EditorPlugin *>> active_plugins;
 	bool is_main_screen_editing = false;
 
-	Control *gui_base = nullptr;
+	Controle *gui_base = nullptr;
 	VBoxContainer *main_vbox = nullptr;
 	OptionButton *renderer = nullptr;
 
@@ -314,11 +314,11 @@ private:
 	DisplayServer::WindowMode prev_mode = DisplayServer::WINDOW_MODE_MAXIMIZED;
 	int old_split_ofs = 0;
 	VSplitContainer *top_split = nullptr;
-	Control *vp_base = nullptr;
+	Controle *vp_base = nullptr;
 
 	Label *project_title = nullptr;
-	Control *left_menu_spacer = nullptr;
-	Control *right_menu_spacer = nullptr;
+	Controle *left_menu_spacer = nullptr;
+	Controle *right_menu_spacer = nullptr;
 	EditorTitleBar *title_bar = nullptr;
 	EditorRunBar *project_run_bar = nullptr;
 	MenuBar *main_menu = nullptr;
@@ -885,7 +885,7 @@ public:
 	Error export_preset(const String &p_preset, const String &p_path, bool p_debug, bool p_pack_only, bool p_android_build_template, bool p_patch, const Vector<String> &p_patches);
 	bool is_project_exporting() const;
 
-	Control *get_gui_base() { return gui_base; }
+	Controle *get_gui_base() { return gui_base; }
 
 	void save_scene_to_path(String p_file, bool p_with_preview = true) {
 		if (p_with_preview) {
@@ -910,8 +910,8 @@ public:
 
 	bool is_exiting() const { return exiting; }
 
-	Dictionary drag_resource(const Ref<Resource> &p_res, Control *p_from);
-	Dictionary drag_files_and_dirs(const Vector<String> &p_paths, Control *p_from);
+	Dictionary drag_resource(const Ref<Resource> &p_res, Controle *p_from);
+	Dictionary drag_files_and_dirs(const Vector<String> &p_paths, Controle *p_from);
 
 	EditorQuickOpenDialog *get_quick_open_dialog() { return quick_open_dialog; }
 
@@ -968,11 +968,11 @@ public:
 	void make_visible(bool p_visible);
 	void edit(Object *p_object);
 	bool forward_gui_input(const Ref<InputEvent> &p_event);
-	void forward_canvas_draw_over_viewport(Control *p_overlay);
-	void forward_canvas_force_draw_over_viewport(Control *p_overlay);
+	void forward_canvas_draw_over_viewport(Controle *p_overlay);
+	void forward_canvas_force_draw_over_viewport(Controle *p_overlay);
 	EditorPlugin::AfterGUIInput forward_3d_gui_input(Camera3D *p_camera, const Ref<InputEvent> &p_event, bool serve_when_force_input_enabled);
-	void forward_3d_draw_over_viewport(Control *p_overlay);
-	void forward_3d_force_draw_over_viewport(Control *p_overlay);
+	void forward_3d_draw_over_viewport(Controle *p_overlay);
+	void forward_3d_force_draw_over_viewport(Controle *p_overlay);
 	void add_plugin(EditorPlugin *p_plugin);
 	void remove_plugin(EditorPlugin *p_plugin);
 	void clear();

@@ -249,10 +249,10 @@ msgstr "Ponów"
 msgid "Text Writing Direction"
 msgstr "Kierunek pisania tekstu"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Pokaż znaki kontrolne"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Wstaw znak kontrolny"
 
 msgid "(Other)"

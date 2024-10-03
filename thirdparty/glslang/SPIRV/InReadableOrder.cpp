@@ -71,8 +71,8 @@ public:
     void visit(Block* block, spv::ReachReason why, Block* header)
     {
         assert(block);
-        if (why == spv::ReachViaControlFlow) {
-            reachableViaControlFlow_.insert(block);
+        if (why == spv::ReachViaControleFlow) {
+            reachableViaControleFlow_.insert(block);
         }
         if (visited_.count(block) || delayed_.count(block))
             return;
@@ -92,23 +92,23 @@ public:
                 delayed_.insert(continueBlock);
             }
         }
-        if (why == spv::ReachViaControlFlow) {
+        if (why == spv::ReachViaControleFlow) {
             const auto& successors = block->getSuccessors();
             for (auto it = successors.cbegin(); it != successors.cend(); ++it)
                 visit(*it, why, nullptr);
         }
         if (continueBlock) {
             const spv::ReachReason continueWhy =
-                (reachableViaControlFlow_.count(continueBlock) > 0)
-                    ? spv::ReachViaControlFlow
+                (reachableViaControleFlow_.count(continueBlock) > 0)
+                    ? spv::ReachViaControleFlow
                     : spv::ReachDeadContinue;
             delayed_.erase(continueBlock);
             visit(continueBlock, continueWhy, block);
         }
         if (mergeBlock) {
             const spv::ReachReason mergeWhy =
-                (reachableViaControlFlow_.count(mergeBlock) > 0)
-                    ? spv::ReachViaControlFlow
+                (reachableViaControleFlow_.count(mergeBlock) > 0)
+                    ? spv::ReachViaControleFlow
                     : spv::ReachDeadMerge;
             delayed_.erase(mergeBlock);
             visit(mergeBlock, mergeWhy, block);
@@ -121,11 +121,11 @@ private:
     std::unordered_set<Block *> visited_, delayed_;
 
     // The set of blocks that actually are reached via control flow.
-    std::unordered_set<Block *> reachableViaControlFlow_;
+    std::unordered_set<Block *> reachableViaControleFlow_;
 };
 }
 
 void spv::inReadableOrder(Block* root, std::function<void(Block*, spv::ReachReason, Block*)> callback)
 {
-    ReadableOrderTraverser(callback).visit(root, spv::ReachViaControlFlow, nullptr);
+    ReadableOrderTraverser(callback).visit(root, spv::ReachViaControleFlow, nullptr);
 }

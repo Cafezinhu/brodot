@@ -690,7 +690,7 @@ void EditorSettingsDialog::_shortcut_cell_double_clicked() {
 	}
 }
 
-Variant EditorSettingsDialog::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant EditorSettingsDialog::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *selected = shortcuts->get_selected();
 
 	// Only allow drag for events
@@ -708,7 +708,7 @@ Variant EditorSettingsDialog::get_drag_data_fw(const Point2 &p_point, Control *p
 	return Dictionary(); // No data required
 }
 
-bool EditorSettingsDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorSettingsDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	TreeItem *selected = shortcuts->get_selected();
 	TreeItem *item = shortcuts->get_item_at_position(p_point);
 	if (!selected || !item || item == selected || (String)item->get_meta("type", "") != "event") {
@@ -723,7 +723,7 @@ bool EditorSettingsDialog::can_drop_data_fw(const Point2 &p_point, const Variant
 	return true;
 }
 
-void EditorSettingsDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorSettingsDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -791,7 +791,7 @@ String EditorSettingsDialog::_get_shortcut_button_string(const String &p_shortcu
 }
 
 void EditorSettingsDialog::_focus_current_search_box() {
-	Control *tab = tabs->get_current_tab_control();
+	Controle *tab = tabs->get_current_tab_control();
 	LineEdit *current_search_box = nullptr;
 	if (tab == tab_general) {
 		current_search_box = search_box;
@@ -843,12 +843,12 @@ EditorSettingsDialog::EditorSettingsDialog() {
 	tab_general->set_name(TTR("General"));
 
 	HBoxContainer *hbc = memnew(HBoxContainer);
-	hbc->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hbc->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	tab_general->add_child(hbc);
 
 	search_box = memnew(LineEdit);
 	search_box->set_placeholder(TTR("Filter Settings"));
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hbc->add_child(search_box);
 
 	advanced_switch = memnew(CheckButton(TTR("Advanced Settings")));
@@ -862,7 +862,7 @@ EditorSettingsDialog::EditorSettingsDialog() {
 	inspector->get_inspector()->set_use_filter(true);
 	inspector->register_search_box(search_box);
 	inspector->register_advanced_toggle(advanced_switch);
-	inspector->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	inspector->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tab_general->add_child(inspector);
 	inspector->get_inspector()->connect("property_edited", callable_mp(this, &EditorSettingsDialog::_settings_property_edited));
 	inspector->get_inspector()->connect("restart_requested", callable_mp(this, &EditorSettingsDialog::_editor_restart_request));
@@ -872,7 +872,7 @@ EditorSettingsDialog::EditorSettingsDialog() {
 	HBoxContainer *restart_hb = memnew(HBoxContainer);
 	restart_container->add_child(restart_hb);
 	restart_icon = memnew(TextureRect);
-	restart_icon->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	restart_icon->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	restart_hb->add_child(restart_icon);
 	restart_label = memnew(Label);
 	restart_label->set_text(TTR("The editor must be restarted for changes to take effect."));
@@ -896,17 +896,17 @@ EditorSettingsDialog::EditorSettingsDialog() {
 	tab_shortcuts->set_name(TTR("Shortcuts"));
 
 	HBoxContainer *top_hbox = memnew(HBoxContainer);
-	top_hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	top_hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	tab_shortcuts->add_child(top_hbox);
 
 	shortcut_search_box = memnew(LineEdit);
 	shortcut_search_box->set_placeholder(TTR("Filter by Name"));
-	shortcut_search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	shortcut_search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	top_hbox->add_child(shortcut_search_box);
 	shortcut_search_box->connect(SceneStringName(text_changed), callable_mp(this, &EditorSettingsDialog::_filter_shortcuts));
 
 	shortcut_search_by_event = memnew(EventListenerLineEdit);
-	shortcut_search_by_event->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	shortcut_search_by_event->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	shortcut_search_by_event->set_stretch_ratio(0.75);
 	shortcut_search_by_event->set_allowed_input_types(INPUT_KEY);
 	shortcut_search_by_event->connect("event_changed", callable_mp(this, &EditorSettingsDialog::_filter_shortcuts_by_event));
@@ -923,7 +923,7 @@ EditorSettingsDialog::EditorSettingsDialog() {
 
 	shortcuts = memnew(Tree);
 	shortcuts->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	shortcuts->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	shortcuts->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	shortcuts->set_columns(2);
 	shortcuts->set_hide_root(true);
 	shortcuts->set_column_titles_visible(true);

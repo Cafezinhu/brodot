@@ -84,7 +84,7 @@ DisplayServerIOS::DisplayServerIOS(const String &p_rendering_driver, WindowMode 
 
 #if defined(VULKAN_ENABLED)
 	if (rendering_driver == "vulkan") {
-		layer = [AppDelegate.viewController.godotView initializeRenderingForDriver:@"vulkan"];
+		layer = [AppDelegate.viewControleler.godotView initializeRenderingForDriver:@"vulkan"];
 		if (!layer) {
 			ERR_FAIL_MSG("Failed to create iOS Vulkan rendering layer.");
 		}
@@ -95,7 +95,7 @@ DisplayServerIOS::DisplayServerIOS(const String &p_rendering_driver, WindowMode 
 #ifdef METAL_ENABLED
 	if (rendering_driver == "metal") {
 		if (@available(iOS 14.0, *)) {
-			layer = [AppDelegate.viewController.godotView initializeRenderingForDriver:@"metal"];
+			layer = [AppDelegate.viewControleler.godotView initializeRenderingForDriver:@"metal"];
 			wpd.metal.layer = (CAMetalLayer *)layer;
 			rendering_context = memnew(RenderingContextDriverMetal);
 		} else {
@@ -150,7 +150,7 @@ DisplayServerIOS::DisplayServerIOS(const String &p_rendering_driver, WindowMode 
 
 #if defined(GLES3_ENABLED)
 	if (rendering_driver == "opengl3") {
-		CALayer *layer = [AppDelegate.viewController.godotView initializeRenderingForDriver:@"opengl3"];
+		CALayer *layer = [AppDelegate.viewControleler.godotView initializeRenderingForDriver:@"opengl3"];
 
 		if (!layer) {
 			ERR_FAIL_MSG("Failed to create iOS OpenGLES rendering layer.");
@@ -310,7 +310,7 @@ void DisplayServerIOS::key(Key p_key, char32_t p_char, Key p_unshifted, Key p_ph
 			ev->set_shift_pressed(p_modifier & UIKeyModifierShift);
 		}
 		if (p_key != Key::CTRL) {
-			ev->set_ctrl_pressed(p_modifier & UIKeyModifierControl);
+			ev->set_ctrl_pressed(p_modifier & UIKeyModifierControle);
 		}
 		if (p_key != Key::ALT) {
 			ev->set_alt_pressed(p_modifier & UIKeyModifierAlternate);
@@ -449,7 +449,7 @@ void DisplayServerIOS::emit_system_theme_changed() {
 
 Rect2i DisplayServerIOS::get_display_safe_area() const {
 	UIEdgeInsets insets = UIEdgeInsetsZero;
-	UIView *view = AppDelegate.viewController.godotView;
+	UIView *view = AppDelegate.viewControleler.godotView;
 	if ([view respondsToSelector:@selector(safeAreaInsets)]) {
 		insets = [view safeAreaInsets];
 	}
@@ -472,7 +472,7 @@ Point2i DisplayServerIOS::screen_get_position(int p_screen) const {
 }
 
 Size2i DisplayServerIOS::screen_get_size(int p_screen) const {
-	CALayer *layer = AppDelegate.viewController.godotView.renderingLayer;
+	CALayer *layer = AppDelegate.viewControleler.godotView.renderingLayer;
 
 	if (!layer) {
 		return Size2i();
@@ -551,10 +551,10 @@ int64_t DisplayServerIOS::window_get_native_handle(HandleType p_handle_type, Win
 			return 0; // Not supported.
 		}
 		case WINDOW_HANDLE: {
-			return (int64_t)AppDelegate.viewController;
+			return (int64_t)AppDelegate.viewControleler;
 		}
 		case WINDOW_VIEW: {
-			return (int64_t)AppDelegate.viewController.godotView;
+			return (int64_t)AppDelegate.viewControleler.godotView;
 		}
 		default: {
 			return 0;
@@ -666,9 +666,9 @@ float DisplayServerIOS::screen_get_max_scale() const {
 void DisplayServerIOS::screen_set_orientation(DisplayServer::ScreenOrientation p_orientation, int p_screen) {
 	screen_orientation = p_orientation;
 	if (@available(iOS 16.0, *)) {
-		[AppDelegate.viewController setNeedsUpdateOfSupportedInterfaceOrientations];
+		[AppDelegate.viewControleler setNeedsUpdateOfSupportedInterfaceOrientations];
 	} else {
-		[UIViewController attemptRotationToDeviceOrientation];
+		[UIViewControleler attemptRotationToDeviceOrientation];
 	}
 }
 
@@ -701,51 +701,51 @@ _FORCE_INLINE_ int _convert_utf32_offset_to_utf16(const String &p_existing_text,
 void DisplayServerIOS::virtual_keyboard_show(const String &p_existing_text, const Rect2 &p_screen_rect, VirtualKeyboardType p_type, int p_max_length, int p_cursor_start, int p_cursor_end) {
 	NSString *existingString = [[NSString alloc] initWithUTF8String:p_existing_text.utf8().get_data()];
 
-	AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeDefault;
-	AppDelegate.viewController.keyboardView.textContentType = nil;
+	AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeDefault;
+	AppDelegate.viewControleler.keyboardView.textContentType = nil;
 	switch (p_type) {
 		case KEYBOARD_TYPE_DEFAULT: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeDefault;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeDefault;
 		} break;
 		case KEYBOARD_TYPE_MULTILINE: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeDefault;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeDefault;
 		} break;
 		case KEYBOARD_TYPE_NUMBER: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeNumberPad;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeNumberPad;
 		} break;
 		case KEYBOARD_TYPE_NUMBER_DECIMAL: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeDecimalPad;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeDecimalPad;
 		} break;
 		case KEYBOARD_TYPE_PHONE: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypePhonePad;
-			AppDelegate.viewController.keyboardView.textContentType = UITextContentTypeTelephoneNumber;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypePhonePad;
+			AppDelegate.viewControleler.keyboardView.textContentType = UITextContentTypeTelephoneNumber;
 		} break;
 		case KEYBOARD_TYPE_EMAIL_ADDRESS: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeEmailAddress;
-			AppDelegate.viewController.keyboardView.textContentType = UITextContentTypeEmailAddress;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeEmailAddress;
+			AppDelegate.viewControleler.keyboardView.textContentType = UITextContentTypeEmailAddress;
 		} break;
 		case KEYBOARD_TYPE_PASSWORD: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeDefault;
-			AppDelegate.viewController.keyboardView.textContentType = UITextContentTypePassword;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeDefault;
+			AppDelegate.viewControleler.keyboardView.textContentType = UITextContentTypePassword;
 		} break;
 		case KEYBOARD_TYPE_URL: {
-			AppDelegate.viewController.keyboardView.keyboardType = UIKeyboardTypeWebSearch;
-			AppDelegate.viewController.keyboardView.textContentType = UITextContentTypeURL;
+			AppDelegate.viewControleler.keyboardView.keyboardType = UIKeyboardTypeWebSearch;
+			AppDelegate.viewControleler.keyboardView.textContentType = UITextContentTypeURL;
 		} break;
 	}
 
-	[AppDelegate.viewController.keyboardView
+	[AppDelegate.viewControleler.keyboardView
 			becomeFirstResponderWithString:existingString
 							   cursorStart:_convert_utf32_offset_to_utf16(p_existing_text, p_cursor_start)
 								 cursorEnd:_convert_utf32_offset_to_utf16(p_existing_text, p_cursor_end)];
 }
 
 bool DisplayServerIOS::is_keyboard_active() const {
-	return [AppDelegate.viewController.keyboardView isFirstResponder];
+	return [AppDelegate.viewControleler.keyboardView isFirstResponder];
 }
 
 void DisplayServerIOS::virtual_keyboard_hide() {
-	[AppDelegate.viewController.keyboardView resignFirstResponder];
+	[AppDelegate.viewControleler.keyboardView resignFirstResponder];
 }
 
 void DisplayServerIOS::virtual_keyboard_set_height(int height) {

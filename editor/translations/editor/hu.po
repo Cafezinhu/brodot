@@ -2002,7 +2002,7 @@ msgstr "Szerkesztő beállításai..."
 msgid "Project"
 msgstr "Projekt"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Verziókezelés"
 
 msgid "Tools"
@@ -3614,10 +3614,10 @@ msgstr "Tonemap"
 msgid "Remove Point from Curve"
 msgstr "Pont Eltávolítása Görbéről"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Ki-Vezérlő Eltávolítása Görbéből"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Be-Vezérlő Eltávolítása Görbéből"
 
 msgid "Move Point in Curve"
@@ -3626,16 +3626,16 @@ msgstr "Pont Mozgatása a Görbén"
 msgid "Add Point to Curve"
 msgstr "Pont Hozzáadása a Görbéhez"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Be-Vezérlő Mozgatása a Görbén"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Ki-Vezérlő Mozgatása a Görbén"
 
 msgid "Right Click: Delete Point"
 msgstr "Jobb Kattintás: Pont Törlése"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Vezérlőpontok Kiválasztása (Shift + Húzás)"
 
 msgid "Delete Point"

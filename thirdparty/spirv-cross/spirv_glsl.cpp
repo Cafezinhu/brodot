@@ -457,7 +457,7 @@ void CompilerGLSL::find_static_extensions()
 		break;
 
 	case ExecutionModelTessellationEvaluation:
-	case ExecutionModelTessellationControl:
+	case ExecutionModelTessellationControle:
 		if (options.es && options.version < 320)
 			require_extension_internal("GL_EXT_tessellation_shader");
 		if (!options.es && options.version < 400)
@@ -1055,7 +1055,7 @@ void CompilerGLSL::emit_header()
 		}
 		break;
 
-	case ExecutionModelTessellationControl:
+	case ExecutionModelTessellationControle:
 		if (execution.flags.get(ExecutionModeOutputVertices))
 			outputs.push_back(join("vertices = ", execution.output_vertices));
 		break;
@@ -2811,7 +2811,7 @@ void CompilerGLSL::emit_interface_block(const SPIRVariable &var)
 			// Opt for unsized as it's the more "correct" variant to use.
 			if (type.storage == StorageClassInput && !type.array.empty() &&
 			    !has_decoration(var.self, DecorationPatch) &&
-			    (get_entry_point().model == ExecutionModelTessellationControl ||
+			    (get_entry_point().model == ExecutionModelTessellationControle ||
 			     get_entry_point().model == ExecutionModelTessellationEvaluation))
 			{
 				newtype.array.back() = 0;
@@ -3206,7 +3206,7 @@ bool CompilerGLSL::should_force_emit_builtin_block(StorageClass storage)
 	});
 
 	// If we're declaring clip/cull planes with control points we need to force block declaration.
-	if ((get_execution_model() == ExecutionModelTessellationControl ||
+	if ((get_execution_model() == ExecutionModelTessellationControle ||
 	     get_execution_model() == ExecutionModelMeshEXT) &&
 	    (clip_distance_count || cull_distance_count))
 	{
@@ -3500,7 +3500,7 @@ void CompilerGLSL::emit_declared_builtin_block(StorageClass storage, ExecutionMo
 			statement("float gl_CullDistance[", cull_distance_size, "];");
 	}
 
-	bool builtin_array = model == ExecutionModelTessellationControl ||
+	bool builtin_array = model == ExecutionModelTessellationControle ||
 	                     (model == ExecutionModelMeshEXT && storage == StorageClassOutput) ||
 	                     (model == ExecutionModelGeometry && storage == StorageClassInput) ||
 	                     (model == ExecutionModelTessellationEvaluation && storage == StorageClassInput);
@@ -3513,7 +3513,7 @@ void CompilerGLSL::emit_declared_builtin_block(StorageClass storage, ExecutionMo
 		else
 			instance_name = storage == StorageClassInput ? "gl_in" : "gl_out";
 
-		if (model == ExecutionModelTessellationControl && storage == StorageClassOutput)
+		if (model == ExecutionModelTessellationControle && storage == StorageClassOutput)
 			end_scope_decl(join(instance_name, "[", get_entry_point().output_vertices, "]"));
 		else
 			end_scope_decl(join(instance_name, "[]"));
@@ -3555,7 +3555,7 @@ void CompilerGLSL::emit_resources()
 	switch (execution.model)
 	{
 	case ExecutionModelGeometry:
-	case ExecutionModelTessellationControl:
+	case ExecutionModelTessellationControle:
 	case ExecutionModelTessellationEvaluation:
 	case ExecutionModelMeshEXT:
 		fixup_implicit_builtin_block_names(execution.model);
@@ -3573,7 +3573,7 @@ void CompilerGLSL::emit_resources()
 		switch (execution.model)
 		{
 		case ExecutionModelGeometry:
-		case ExecutionModelTessellationControl:
+		case ExecutionModelTessellationControle:
 		case ExecutionModelTessellationEvaluation:
 			emit_declared_builtin_block(StorageClassInput, execution.model);
 			emit_declared_builtin_block(StorageClassOutput, execution.model);
@@ -3933,7 +3933,7 @@ void CompilerGLSL::emit_output_variable_initializer(const SPIRVariable &var)
 	auto &type = get<SPIRType>(var.basetype);
 	bool is_patch = has_decoration(var.self, DecorationPatch);
 	bool is_block = has_decoration(type.self, DecorationBlock);
-	bool is_control_point = get_execution_model() == ExecutionModelTessellationControl && !is_patch;
+	bool is_control_point = get_execution_model() == ExecutionModelTessellationControle && !is_patch;
 
 	if (is_block)
 	{
@@ -7606,7 +7606,7 @@ bool CompilerGLSL::is_supported_subgroup_op_in_opengl(spv::Op op, const uint32_t
 	case OpGroupNonUniformAll:
 	case OpGroupNonUniformAny:
 	case OpGroupNonUniformAllEqual:
-	case OpControlBarrier:
+	case OpControleBarrier:
 	case OpMemoryBarrier:
 	case OpGroupNonUniformBallotBitCount:
 	case OpGroupNonUniformBallotBitExtract:
@@ -10323,7 +10323,7 @@ string CompilerGLSL::access_chain_internal(uint32_t base, const uint32_t *indice
 					append_index(index, is_literal, true);
 			}
 
-			if (type->basetype == SPIRType::ControlPointArray)
+			if (type->basetype == SPIRType::ControlePointArray)
 			{
 				type_id = type->parent_type;
 				type = &get<SPIRType>(type_id);
@@ -10598,13 +10598,13 @@ string CompilerGLSL::access_chain_internal(uint32_t base, const uint32_t *indice
 					effective_storage = get_expression_effective_storage_class(base);
 
 				// Special consideration for control points.
-				// Control points can only be written by InvocationID, so there is no need
+				// Controle points can only be written by InvocationID, so there is no need
 				// to consider scalar access chains here.
 				// Cleans up some cases where it's very painful to determine the accurate storage class
 				// since blocks can be partially masked ...
 				auto *var = maybe_get_backing_variable(base);
 				if (var && var->storage == StorageClassOutput &&
-				    get_execution_model() == ExecutionModelTessellationControl &&
+				    get_execution_model() == ExecutionModelTessellationControle &&
 				    !has_decoration(var->self, DecorationPatch))
 				{
 					ignore_potential_sliced_writes = true;
@@ -14482,7 +14482,7 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 	}
 
 	// Compute
-	case OpControlBarrier:
+	case OpControleBarrier:
 	case OpMemoryBarrier:
 	{
 		uint32_t execution_scope = 0;
@@ -14503,8 +14503,8 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 
 		if (execution_scope == ScopeSubgroup || memory == ScopeSubgroup)
 		{
-			// OpControlBarrier with ScopeSubgroup is subgroupBarrier()
-			if (opcode != OpControlBarrier)
+			// OpControleBarrier with ScopeSubgroup is subgroupBarrier()
+			if (opcode != OpControleBarrier)
 			{
 				request_subgroup_feature(ShaderSubgroupSupportHelper::SubgroupMemBarrier);
 			}
@@ -14514,10 +14514,10 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 			}
 		}
 
-		if (execution_scope != ScopeSubgroup && get_entry_point().model == ExecutionModelTessellationControl)
+		if (execution_scope != ScopeSubgroup && get_entry_point().model == ExecutionModelTessellationControle)
 		{
-			// Control shaders only have barriers, and it implies memory barriers.
-			if (opcode == OpControlBarrier)
+			// Controle shaders only have barriers, and it implies memory barriers.
+			if (opcode == OpControleBarrier)
 				statement("barrier();");
 			break;
 		}
@@ -14530,7 +14530,7 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 			// If we are a memory barrier, and the next instruction is a control barrier, check if that memory barrier
 			// does what we need, so we avoid redundant barriers.
 			const Instruction *next = get_next_instruction_in_block(instruction);
-			if (next && next->op == OpControlBarrier)
+			if (next && next->op == OpControleBarrier)
 			{
 				auto *next_ops = stream(*next);
 				uint32_t next_memory = evaluate_constant_u32(next_ops[1]);
@@ -14564,7 +14564,7 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 
 		// We are synchronizing some memory or syncing execution,
 		// so we cannot forward any loads beyond the memory barrier.
-		if (semantics || opcode == OpControlBarrier)
+		if (semantics || opcode == OpControleBarrier)
 		{
 			assert(current_emitting_block);
 			flush_control_dependent_expressions(current_emitting_block->self);
@@ -14575,8 +14575,8 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 		{
 			if (semantics == MemorySemanticsWorkgroupMemoryMask)
 			{
-				// OpControlBarrier implies a memory barrier for shared memory as well.
-				bool implies_shared_barrier = opcode == OpControlBarrier && execution_scope == ScopeWorkgroup;
+				// OpControleBarrier implies a memory barrier for shared memory as well.
+				bool implies_shared_barrier = opcode == OpControleBarrier && execution_scope == ScopeWorkgroup;
 				if (!implies_shared_barrier)
 					statement("memoryBarrierShared();");
 			}
@@ -14638,7 +14638,7 @@ void CompilerGLSL::emit_instruction(const Instruction &instruction)
 			}
 		}
 
-		if (opcode == OpControlBarrier)
+		if (opcode == OpControleBarrier)
 		{
 			if (execution_scope == ScopeSubgroup)
 				statement("subgroupBarrier();");

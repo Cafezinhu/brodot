@@ -88,7 +88,7 @@ struct ColladaImport {
 	Error _create_scene(Collada::Node *p_node, Node3D *p_parent);
 	Error _create_resources(Collada::Node *p_node, bool p_use_compression);
 	Error _create_material(const String &p_target);
-	Error _create_mesh_surfaces(bool p_optimize, Ref<ImporterMesh> &p_mesh, const HashMap<String, Collada::NodeGeometry::Material> &p_material_map, const Collada::MeshData &meshdata, const Transform3D &p_local_xform, const Vector<int> &bone_remap, const Collada::SkinControllerData *p_skin_controller, const Collada::MorphControllerData *p_morph_data, const Vector<Ref<ImporterMesh>> &p_morph_meshes = Vector<Ref<ImporterMesh>>(), bool p_use_compression = false, bool p_use_mesh_material = false);
+	Error _create_mesh_surfaces(bool p_optimize, Ref<ImporterMesh> &p_mesh, const HashMap<String, Collada::NodeGeometry::Material> &p_material_map, const Collada::MeshData &meshdata, const Transform3D &p_local_xform, const Vector<int> &bone_remap, const Collada::SkinControlelerData *p_skin_controller, const Collada::MorphControlelerData *p_morph_data, const Vector<Ref<ImporterMesh>> &p_morph_meshes = Vector<Ref<ImporterMesh>>(), bool p_use_compression = false, bool p_use_mesh_material = false);
 	Error load(const String &p_path, int p_flags, bool p_force_make_tangents = false, bool p_use_compression = false);
 	void _fix_param_animation_tracks();
 	void create_animation(int p_clip, bool p_import_value_tracks);
@@ -467,7 +467,7 @@ Error ColladaImport::_create_material(const String &p_target) {
 	return OK;
 }
 
-Error ColladaImport::_create_mesh_surfaces(bool p_optimize, Ref<ImporterMesh> &p_mesh, const HashMap<String, Collada::NodeGeometry::Material> &p_material_map, const Collada::MeshData &meshdata, const Transform3D &p_local_xform, const Vector<int> &bone_remap, const Collada::SkinControllerData *p_skin_controller, const Collada::MorphControllerData *p_morph_data, const Vector<Ref<ImporterMesh>> &p_morph_meshes, bool p_use_compression, bool p_use_mesh_material) {
+Error ColladaImport::_create_mesh_surfaces(bool p_optimize, Ref<ImporterMesh> &p_mesh, const HashMap<String, Collada::NodeGeometry::Material> &p_material_map, const Collada::MeshData &meshdata, const Transform3D &p_local_xform, const Vector<int> &bone_remap, const Collada::SkinControlelerData *p_skin_controller, const Collada::MorphControlelerData *p_morph_data, const Vector<Ref<ImporterMesh>> &p_morph_meshes, bool p_use_compression, bool p_use_mesh_material) {
 	bool local_xform_mirror = p_local_xform.basis.determinant() < 0;
 
 	if (p_morph_data) {
@@ -642,7 +642,7 @@ Error ColladaImport::_create_mesh_surfaces(bool p_optimize, Ref<ImporterMesh> &p
 		bool has_weights = false;
 
 		if (p_skin_controller) {
-			const Collada::SkinControllerData::Source *weight_src = nullptr;
+			const Collada::SkinControlelerData::Source *weight_src = nullptr;
 			int weight_ofs = 0;
 
 			if (p_skin_controller->weights.sources.has("WEIGHT")) {
@@ -1155,8 +1155,8 @@ Error ColladaImport::_create_resources(Collada::Node *p_node, bool p_use_compres
 
 			ERR_FAIL_NULL_V(mi, ERR_BUG);
 
-			Collada::SkinControllerData *skin = nullptr;
-			Collada::MorphControllerData *morph = nullptr;
+			Collada::SkinControlelerData *skin = nullptr;
+			Collada::MorphControlelerData *morph = nullptr;
 			String meshid;
 			Transform3D apply_xform;
 			Vector<int> bone_remap;
@@ -1204,7 +1204,7 @@ Error ColladaImport::_create_resources(Collada::Node *p_node, bool p_use_compres
 					String joint_id = skin->weights.sources["JOINT"].source;
 					ERR_FAIL_COND_V(!skin->sources.has(joint_id), ERR_INVALID_DATA);
 
-					Collada::SkinControllerData::Source *joint_src = &skin->sources[joint_id];
+					Collada::SkinControlelerData::Source *joint_src = &skin->sources[joint_id];
 
 					bone_remap.resize(joint_src->sarray.size());
 
@@ -1249,7 +1249,7 @@ Error ColladaImport::_create_resources(Collada::Node *p_node, bool p_use_compres
 					}
 				}
 
-				ERR_FAIL_COND_V_MSG(!ngsource.is_empty(), ERR_INVALID_DATA, "Controller instance source '" + ngsource + "' is neither skin or morph!");
+				ERR_FAIL_COND_V_MSG(!ngsource.is_empty(), ERR_INVALID_DATA, "Controleler instance source '" + ngsource + "' is neither skin or morph!");
 
 			} else {
 				meshid = ng2->source;
@@ -1396,13 +1396,13 @@ void ColladaImport::_fix_param_animation_tracks() {
 
 				while (!source.is_empty()) {
 					if (collada.state.skin_controller_data_map.has(source)) {
-						const Collada::SkinControllerData &skin = collada.state.skin_controller_data_map[source];
+						const Collada::SkinControlelerData &skin = collada.state.skin_controller_data_map[source];
 
 						//nothing to animate here i think
 
 						source = skin.base;
 					} else if (collada.state.morph_controller_data_map.has(source)) {
-						const Collada::MorphControllerData &morph = collada.state.morph_controller_data_map[source];
+						const Collada::MorphControlelerData &morph = collada.state.morph_controller_data_map[source];
 
 						if (morph.targets.has("MORPH_WEIGHT") && morph.targets.has("MORPH_TARGET")) {
 							String weights = morph.targets["MORPH_WEIGHT"];
@@ -1410,8 +1410,8 @@ void ColladaImport::_fix_param_animation_tracks() {
 							//fails here
 
 							if (morph.sources.has(targets) && morph.sources.has(weights)) {
-								const Collada::MorphControllerData::Source &weight_src = morph.sources[weights];
-								const Collada::MorphControllerData::Source &target_src = morph.sources[targets];
+								const Collada::MorphControlelerData::Source &weight_src = morph.sources[weights];
+								const Collada::MorphControlelerData::Source &target_src = morph.sources[targets];
 
 								ERR_FAIL_COND(weight_src.array.size() != target_src.sarray.size());
 

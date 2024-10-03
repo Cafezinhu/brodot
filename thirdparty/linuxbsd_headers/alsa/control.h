@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /**
- *  \defgroup Control Control Interface
+ *  \defgroup Controle Controle Interface
  *  The control interface.
  *  See \ref control page for more details.
  *  \{
@@ -509,8 +509,8 @@ int snd_ctl_convert_from_dB(snd_ctl_t *ctl, const snd_ctl_elem_id_t *id,
 			    long db_gain, long *value, int xdir);
 
 /**
- *  \defgroup HControl High level Control Interface
- *  \ingroup Control
+ *  \defgroup HControle High level Controle Interface
+ *  \ingroup Controle
  *  The high level control interface.
  *  See \ref hcontrol page for more details.
  *  \{
@@ -601,8 +601,8 @@ void snd_hctl_elem_set_callback_private(snd_hctl_elem_t *obj, void * val);
 /** \} */
 
 /**
- *  \defgroup SControl Setup Control Interface
- *  \ingroup Control
+ *  \defgroup SControle Setup Controle Interface
+ *  \ingroup Controle
  *  The setup control interface - set or modify control elements from a configuration file.
  *  \{
  */

@@ -235,7 +235,7 @@ typedef struct snd_seq_ev_note {
 	unsigned int duration;		/**< duration until note-off; only for #SND_SEQ_EVENT_NOTE */
 } snd_seq_ev_note_t;
 
-/** Controller event */
+/** Controleler event */
 typedef struct snd_seq_ev_ctrl {
 	unsigned char channel;		/**< channel number */
 	unsigned char unused[3];	/**< reserved */

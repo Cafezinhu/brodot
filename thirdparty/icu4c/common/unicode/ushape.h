@@ -424,7 +424,7 @@ u_shapeArabic(const UChar *source, int32_t sourceLength,
 #define U_SHAPE_TASHKEEL_MASK                       0xE0000
 
 
-/* Space location Control options */ 
+/* Space location Controle options */ 
 /**
  * This option affect the meaning of BEGIN and END options. if this option is not used the default
  * for BEGIN and END will be as following: 

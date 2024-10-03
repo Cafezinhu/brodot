@@ -1257,7 +1257,7 @@ void AnimationPlayerEditor::edit(AnimationMixer *p_node, AnimationPlayer *p_play
 	_ensure_dummy_player();
 }
 
-void AnimationPlayerEditor::forward_force_draw_over_viewport(Control *p_overlay) {
+void AnimationPlayerEditor::forward_force_draw_over_viewport(Controle *p_overlay) {
 	if (!onion.can_overlay) {
 		return;
 	}

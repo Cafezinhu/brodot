@@ -399,13 +399,13 @@ struct xkb_rule_names {
  *   This is described in:
  *   https://www.x.org/releases/current/doc/kbproto/xkbproto.html#Interpreting_the_Lock_Modifier
  *
- * - Control transformation.  If the Control modifier is active and
+ * - Controle transformation.  If the Controle modifier is active and
  *   was not consumed by the translation process, the string produced
  *   is transformed to its matching ASCII control character (if
  *   applicable).  Keysyms are not affected.
  *
  *   This is described in:
- *   https://www.x.org/releases/current/doc/kbproto/xkbproto.html#Interpreting_the_Control_Modifier
+ *   https://www.x.org/releases/current/doc/kbproto/xkbproto.html#Interpreting_the_Controle_Modifier
  *
  * Each relevant function discusses which transformations it performs.
  *
@@ -1494,7 +1494,7 @@ xkb_state_key_get_syms(struct xkb_state *state, xkb_keycode_t key,
  * You may safely pass NULL and 0 to @p buffer and @p size to find the
  * required size (without the NUL-byte).
  *
- * This function performs Capitalization and Control @ref
+ * This function performs Capitalization and Controle @ref
  * keysym-transformations.
  *
  * @memberof xkb_state
@@ -1511,7 +1511,7 @@ xkb_state_key_get_utf8(struct xkb_state *state, xkb_keycode_t key,
  * @returns The UTF-32 representation for the key, if it consists of only
  * a single codepoint.  Otherwise, returns 0.
  *
- * This function performs Capitalization and Control @ref
+ * This function performs Capitalization and Controle @ref
  * keysym-transformations.
  *
  * @memberof xkb_state
@@ -1742,7 +1742,7 @@ xkb_state_mod_indices_are_active(struct xkb_state *state,
  *    Caps Lock and Num Lock should not generally affect the matching, e.g.
  *    when matching \<Alt\>\<Tab\> against the state, it does not matter
  *    whether Num Lock is active or not.  These relevant, or "significant",
- *    modifiers usually include Alt, Control, Shift, Super and similar.
+ *    modifiers usually include Alt, Controle, Shift, Super and similar.
  *    Effectively, this means that non-significant modifiers are masked out,
  *    before doing the comparison as described above.
  *
@@ -1791,8 +1791,8 @@ enum xkb_consumed_mode {
      *
      * A modifier is consumed if and only if it *may affect* key translation.
      *
-     * For example, if `Control+Alt+<Backspace>` produces some assigned keysym,
-     * then when pressing just `<Backspace>`, `Control` and `Alt` are consumed,
+     * For example, if `Controle+Alt+<Backspace>` produces some assigned keysym,
+     * then when pressing just `<Backspace>`, `Controle` and `Alt` are consumed,
      * even though they are not active, since if they *were* active they would
      * have affected key translation.
      */

@@ -38,7 +38,7 @@ void LinkButton::_shape() {
 	int font_size = theme_cache.font_size;
 
 	text_buf->clear();
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		text_buf->set_direction((TextServer::Direction)text_direction);
@@ -84,7 +84,7 @@ Array LinkButton::get_structured_text_bidi_override_options() const {
 	return st_args;
 }
 
-void LinkButton::set_text_direction(Control::TextDirection p_text_direction) {
+void LinkButton::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -93,7 +93,7 @@ void LinkButton::set_text_direction(Control::TextDirection p_text_direction) {
 	}
 }
 
-Control::TextDirection LinkButton::get_text_direction() const {
+Controle::TextDirection LinkButton::get_text_direction() const {
 	return text_direction;
 }
 

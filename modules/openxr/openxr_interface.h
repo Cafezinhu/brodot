@@ -98,7 +98,7 @@ private:
 	struct Tracker { // A tracker we've registered with OpenXR
 		String tracker_name; // Name of our tracker (can be altered from the action map)
 		Vector<Action *> actions; // Actions related to this tracker
-		Ref<XRControllerTracker> controller_tracker; // Our positional tracker object that holds our tracker state
+		Ref<XRControlelerTracker> controller_tracker; // Our positional tracker object that holds our tracker state
 		RID tracker_rid; // RID of the tracker registered with our OpenXR API
 		RID interaction_profile; // RID of the interaction profile bound to this tracker (can be null)
 	};

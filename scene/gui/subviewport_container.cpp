@@ -153,7 +153,7 @@ void SubViewportContainer::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_FOCUS_EXIT: {
-			// A different Control has focus and should receive Gui-Input before the InputEvent is sent to the SubViewport.
+			// A different Controle has focus and should receive Gui-Input before the InputEvent is sent to the SubViewport.
 			set_process_input(false);
 			set_process_unhandled_input(true);
 		} break;
@@ -272,7 +272,7 @@ PackedStringArray SubViewportContainer::get_configuration_warnings() const {
 		warnings.push_back(RTR("This node doesn't have a SubViewport as child, so it can't display its intended content.\nConsider adding a SubViewport as a child to provide something displayable."));
 	}
 
-	if (get_default_cursor_shape() != Control::CURSOR_ARROW) {
+	if (get_default_cursor_shape() != Controle::CURSOR_ARROW) {
 		warnings.push_back(RTR("The default mouse cursor shape of SubViewportContainer has no effect.\nConsider leaving it at its initial value `CURSOR_ARROW`."));
 	}
 

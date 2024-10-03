@@ -339,7 +339,7 @@ bool InitializeSymbolTables(TInfoSink& infoSink, TSymbolTable** commonTable,  TS
     // check for tessellation
     if ((profile != EEsProfile && version >= 150) ||
         (profile == EEsProfile && version >= 310)) {
-        InitializeStageSymbolTable(*builtInParseables, version, profile, spvVersion, EShLangTessControl, source,
+        InitializeStageSymbolTable(*builtInParseables, version, profile, spvVersion, EShLangTessControle, source,
                                    infoSink, commonTable, symbolTables);
         InitializeStageSymbolTable(*builtInParseables, version, profile, spvVersion, EShLangTessEvaluation, source,
                                    infoSink, commonTable, symbolTables);
@@ -594,7 +594,7 @@ bool DeduceVersionProfile(TInfoSink& infoSink, EShLanguage stage, bool versionNo
                 profile = ECoreProfile;
         }
         break;
-    case EShLangTessControl:
+    case EShLangTessControle:
     case EShLangTessEvaluation:
         if ((profile == EEsProfile && version < 310) ||
             (profile != EEsProfile && version < 150)) {

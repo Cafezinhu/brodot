@@ -50,10 +50,10 @@ class EditorSelection;
 class GridContainer;
 
 // Inspector controls.
-class ControlPositioningWarning : public MarginContainer {
-	GDCLASS(ControlPositioningWarning, MarginContainer);
+class ControlePositioningWarning : public MarginContainer {
+	GDCLASS(ControlePositioningWarning, MarginContainer);
 
-	Control *control_node = nullptr;
+	Controle *control_node = nullptr;
 
 	PanelContainer *bg_panel = nullptr;
 	GridContainer *grid = nullptr;
@@ -61,8 +61,8 @@ class ControlPositioningWarning : public MarginContainer {
 	TextureRect *hint_icon = nullptr;
 	Label *title_label = nullptr;
 	Label *hint_label = nullptr;
-	Control *hint_filler_left = nullptr;
-	Control *hint_filler_right = nullptr;
+	Controle *hint_filler_left = nullptr;
+	Controle *hint_filler_right = nullptr;
 
 	void _update_warning();
 	void _update_toggler();
@@ -72,9 +72,9 @@ protected:
 	void _notification(int p_notification);
 
 public:
-	void set_control(Control *p_node);
+	void set_control(Controle *p_node);
 
-	ControlPositioningWarning();
+	ControlePositioningWarning();
 };
 
 class EditorPropertyAnchorsPreset : public EditorProperty {
@@ -125,8 +125,8 @@ public:
 	EditorPropertySizeFlags();
 };
 
-class EditorInspectorPluginControl : public EditorInspectorPlugin {
-	GDCLASS(EditorInspectorPluginControl, EditorInspectorPlugin);
+class EditorInspectorPluginControle : public EditorInspectorPlugin {
+	GDCLASS(EditorInspectorPluginControle, EditorInspectorPlugin);
 
 	bool inside_control_category = false;
 
@@ -138,8 +138,8 @@ public:
 };
 
 // Toolbar controls.
-class ControlEditorPopupButton : public Button {
-	GDCLASS(ControlEditorPopupButton, Button);
+class ControleEditorPopupButton : public Button {
+	GDCLASS(ControleEditorPopupButton, Button);
 
 	Ref<Texture2D> arrow_icon;
 
@@ -157,11 +157,11 @@ public:
 
 	VBoxContainer *get_popup_hbox() const { return popup_vbox; }
 
-	ControlEditorPopupButton();
+	ControleEditorPopupButton();
 };
 
-class ControlEditorPresetPicker : public MarginContainer {
-	GDCLASS(ControlEditorPresetPicker, MarginContainer);
+class ControleEditorPresetPicker : public MarginContainer {
+	GDCLASS(ControleEditorPresetPicker, MarginContainer);
 
 	virtual void _preset_button_pressed(const int p_preset) {}
 
@@ -173,11 +173,11 @@ protected:
 	void _add_separator(BoxContainer *p_box, Separator *p_separator);
 
 public:
-	ControlEditorPresetPicker() {}
+	ControleEditorPresetPicker() {}
 };
 
-class AnchorPresetPicker : public ControlEditorPresetPicker {
-	GDCLASS(AnchorPresetPicker, ControlEditorPresetPicker);
+class AnchorPresetPicker : public ControleEditorPresetPicker {
+	GDCLASS(AnchorPresetPicker, ControleEditorPresetPicker);
 
 	virtual void _preset_button_pressed(const int p_preset) override;
 
@@ -189,8 +189,8 @@ public:
 	AnchorPresetPicker();
 };
 
-class SizeFlagPresetPicker : public ControlEditorPresetPicker {
-	GDCLASS(SizeFlagPresetPicker, ControlEditorPresetPicker);
+class SizeFlagPresetPicker : public ControleEditorPresetPicker {
+	GDCLASS(SizeFlagPresetPicker, ControleEditorPresetPicker);
 
 	CheckButton *expand_button = nullptr;
 
@@ -210,13 +210,13 @@ public:
 	SizeFlagPresetPicker(bool p_vertical);
 };
 
-class ControlEditorToolbar : public HBoxContainer {
-	GDCLASS(ControlEditorToolbar, HBoxContainer);
+class ControleEditorToolbar : public HBoxContainer {
+	GDCLASS(ControleEditorToolbar, HBoxContainer);
 
 	EditorSelection *editor_selection = nullptr;
 
-	ControlEditorPopupButton *anchors_button = nullptr;
-	ControlEditorPopupButton *containers_button = nullptr;
+	ControleEditorPopupButton *anchors_button = nullptr;
+	ControleEditorPopupButton *containers_button = nullptr;
 	Button *anchor_mode_button = nullptr;
 
 	SizeFlagPresetPicker *container_h_picker = nullptr;
@@ -230,34 +230,34 @@ class ControlEditorToolbar : public HBoxContainer {
 	void _container_flags_selected(int p_flags, bool p_vertical);
 	void _expand_flag_toggled(bool p_expand, bool p_vertical);
 
-	Vector2 _position_to_anchor(const Control *p_control, Vector2 position);
+	Vector2 _position_to_anchor(const Controle *p_control, Vector2 position);
 	bool _is_node_locked(const Node *p_node);
-	List<Control *> _get_edited_controls();
+	List<Controle *> _get_edited_controls();
 	void _selection_changed();
 
 protected:
 	void _notification(int p_notification);
 
-	static ControlEditorToolbar *singleton;
+	static ControleEditorToolbar *singleton;
 
 public:
 	bool is_anchors_mode_enabled() { return anchors_mode; };
 
-	static ControlEditorToolbar *get_singleton() { return singleton; }
+	static ControleEditorToolbar *get_singleton() { return singleton; }
 
-	ControlEditorToolbar();
+	ControleEditorToolbar();
 };
 
 // Editor plugin.
-class ControlEditorPlugin : public EditorPlugin {
-	GDCLASS(ControlEditorPlugin, EditorPlugin);
+class ControleEditorPlugin : public EditorPlugin {
+	GDCLASS(ControleEditorPlugin, EditorPlugin);
 
-	ControlEditorToolbar *toolbar = nullptr;
+	ControleEditorToolbar *toolbar = nullptr;
 
 public:
-	virtual String get_name() const override { return "Control"; }
+	virtual String get_name() const override { return "Controle"; }
 
-	ControlEditorPlugin();
+	ControleEditorPlugin();
 };
 
 #endif // CONTROL_EDITOR_PLUGIN_H

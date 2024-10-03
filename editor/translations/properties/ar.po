@@ -421,7 +421,7 @@ msgstr "الجهاز"
 msgid "Window ID"
 msgstr "معرف النافذة"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "القيادة أو التحكم التلقائي في الخريطة"
 
 msgid "Alt Pressed"
@@ -517,10 +517,10 @@ msgstr "الحدّة"
 msgid "Instrument"
 msgstr "أداة"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "رقم وحدة التحكم"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "قيمة/(رقم تعريف) وحدة التحكم"
 
 msgid "Shortcut"
@@ -1276,7 +1276,7 @@ msgstr "لون الرمز"
 msgid "Keyword Color"
 msgstr "لون الكلمة المفتاحية"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "لون الكلمة المفتاحية لتدفق التحكم"
 
 msgid "Engine Type Color"
@@ -1648,8 +1648,8 @@ msgstr "عدد الإطارات"
 msgid "Duration"
 msgstr "المدة"
 
-msgid "Version Control"
-msgstr "إدارة الإصدارات (Version Control)"
+msgid "Version Controle"
+msgstr "إدارة الإصدارات (Version Controle)"
 
 msgid "Username"
 msgstr "اسم المستخدم"

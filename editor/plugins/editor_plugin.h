@@ -70,7 +70,7 @@ class EditorPlugin : public Node {
 #endif
 
 public:
-	enum CustomControlContainer {
+	enum CustomControleContainer {
 		CONTAINER_TOOLBAR,
 		CONTAINER_SPATIAL_EDITOR_MENU,
 		CONTAINER_SPATIAL_EDITOR_SIDE_LEFT,
@@ -113,11 +113,11 @@ protected:
 	void remove_custom_type(const String &p_type);
 
 	GDVIRTUAL1R(bool, _forward_canvas_gui_input, Ref<InputEvent>)
-	GDVIRTUAL1(_forward_canvas_draw_over_viewport, Control *)
-	GDVIRTUAL1(_forward_canvas_force_draw_over_viewport, Control *)
+	GDVIRTUAL1(_forward_canvas_draw_over_viewport, Controle *)
+	GDVIRTUAL1(_forward_canvas_force_draw_over_viewport, Controle *)
 	GDVIRTUAL2R(int, _forward_3d_gui_input, Camera3D *, Ref<InputEvent>)
-	GDVIRTUAL1(_forward_3d_draw_over_viewport, Control *)
-	GDVIRTUAL1(_forward_3d_force_draw_over_viewport, Control *)
+	GDVIRTUAL1(_forward_3d_draw_over_viewport, Controle *)
+	GDVIRTUAL1(_forward_3d_force_draw_over_viewport, Controle *)
 	GDVIRTUAL0RC(String, _get_plugin_name)
 	GDVIRTUAL0RC(Ref<Texture2D>, _get_plugin_icon)
 	GDVIRTUAL0RC(bool, _has_main_screen)
@@ -138,22 +138,22 @@ protected:
 	GDVIRTUAL0(_disable_plugin)
 
 #ifndef DISABLE_DEPRECATED
-	Button *_add_control_to_bottom_panel_compat_88081(Control *p_control, const String &p_title);
-	void _add_control_to_dock_compat_88081(DockSlot p_slot, Control *p_control);
+	Button *_add_control_to_bottom_panel_compat_88081(Controle *p_control, const String &p_title);
+	void _add_control_to_dock_compat_88081(DockSlot p_slot, Controle *p_control);
 	static void _bind_compatibility_methods();
 #endif
 
 public:
 	//TODO: send a resource for editing to the editor node?
 
-	void add_control_to_container(CustomControlContainer p_location, Control *p_control);
-	void remove_control_from_container(CustomControlContainer p_location, Control *p_control);
-	Button *add_control_to_bottom_panel(Control *p_control, const String &p_title, const Ref<Shortcut> &p_shortcut = nullptr);
-	void add_control_to_dock(DockSlot p_slot, Control *p_control, const Ref<Shortcut> &p_shortcut = nullptr);
-	void remove_control_from_docks(Control *p_control);
-	void remove_control_from_bottom_panel(Control *p_control);
+	void add_control_to_container(CustomControleContainer p_location, Controle *p_control);
+	void remove_control_from_container(CustomControleContainer p_location, Controle *p_control);
+	Button *add_control_to_bottom_panel(Controle *p_control, const String &p_title, const Ref<Shortcut> &p_shortcut = nullptr);
+	void add_control_to_dock(DockSlot p_slot, Controle *p_control, const Ref<Shortcut> &p_shortcut = nullptr);
+	void remove_control_from_docks(Controle *p_control);
+	void remove_control_from_bottom_panel(Controle *p_control);
 
-	void set_dock_tab_icon(Control *p_control, const Ref<Texture2D> &p_icon);
+	void set_dock_tab_icon(Controle *p_control, const Ref<Texture2D> &p_icon);
 
 	void add_tool_menu_item(const String &p_name, const Callable &p_callable);
 	void add_tool_submenu_item(const String &p_name, PopupMenu *p_submenu);
@@ -174,12 +174,12 @@ public:
 	void notify_scene_saved(const String &p_scene_filepath);
 
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event);
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay);
-	virtual void forward_canvas_force_draw_over_viewport(Control *p_overlay);
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay);
+	virtual void forward_canvas_force_draw_over_viewport(Controle *p_overlay);
 
 	virtual EditorPlugin::AfterGUIInput forward_3d_gui_input(Camera3D *p_camera, const Ref<InputEvent> &p_event);
-	virtual void forward_3d_draw_over_viewport(Control *p_overlay);
-	virtual void forward_3d_force_draw_over_viewport(Control *p_overlay);
+	virtual void forward_3d_draw_over_viewport(Controle *p_overlay);
+	virtual void forward_3d_force_draw_over_viewport(Controle *p_overlay);
 
 	virtual String get_name() const;
 	virtual const Ref<Texture2D> get_icon() const;
@@ -214,7 +214,7 @@ public:
 
 	void queue_save_layout();
 
-	void make_bottom_panel_item_visible(Control *p_item);
+	void make_bottom_panel_item_visible(Controle *p_item);
 	void hide_bottom_panel();
 
 	void add_translation_parser_plugin(const Ref<EditorTranslationParserPlugin> &p_parser);
@@ -260,7 +260,7 @@ public:
 	virtual ~EditorPlugin() {}
 };
 
-VARIANT_ENUM_CAST(EditorPlugin::CustomControlContainer);
+VARIANT_ENUM_CAST(EditorPlugin::CustomControleContainer);
 VARIANT_ENUM_CAST(EditorPlugin::DockSlot);
 VARIANT_ENUM_CAST(EditorPlugin::AfterGUIInput);
 

@@ -40,7 +40,7 @@
 
 #import <AudioToolbox/AudioServices.h>
 #import <CoreMotion/CoreMotion.h>
-#import <GameController/GameController.h>
+#import <GameControleler/GameControleler.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 

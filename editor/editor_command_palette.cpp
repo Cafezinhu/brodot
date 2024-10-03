@@ -346,7 +346,7 @@ EditorCommandPalette::EditorCommandPalette() {
 	command_search_box->set_placeholder(TTR("Filter Commands"));
 	command_search_box->connect(SceneStringName(gui_input), callable_mp(this, &EditorCommandPalette::_sbox_input));
 	command_search_box->connect(SceneStringName(text_changed), callable_mp(this, &EditorCommandPalette::_update_command_search));
-	command_search_box->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	command_search_box->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	command_search_box->set_clear_button_enabled(true);
 	MarginContainer *margin_container_csb = memnew(MarginContainer);
 	margin_container_csb->add_child(command_search_box);
@@ -360,8 +360,8 @@ EditorCommandPalette::EditorCommandPalette() {
 	search_options->create_item();
 	search_options->set_hide_root(true);
 	search_options->set_columns(2);
-	search_options->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	search_options->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_options->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	search_options->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_options->set_column_custom_minimum_width(0, int(8 * EDSCALE));
 	vbc->add_child(search_options, true);
 }

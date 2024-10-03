@@ -124,9 +124,9 @@ private:
 
 	float split_ratio;
 
-	Vector<Control *> focusables;
-	Control *label_reference = nullptr;
-	Control *bottom_editor = nullptr;
+	Vector<Controle *> focusables;
+	Controle *label_reference = nullptr;
+	Controle *bottom_editor = nullptr;
 	PopupMenu *menu = nullptr;
 
 	HashMap<StringName, Variant> cache;
@@ -192,14 +192,14 @@ public:
 
 	void set_deletable(bool p_enable);
 	bool is_deletable() const;
-	void add_focusable(Control *p_control);
+	void add_focusable(Controle *p_control);
 	void grab_focus(int p_focusable = -1);
 	void select(int p_focusable = -1);
 	void deselect();
 	bool is_selected() const;
 
-	void set_label_reference(Control *p_control);
-	void set_bottom_editor(Control *p_control);
+	void set_label_reference(Controle *p_control);
+	void set_bottom_editor(Controle *p_control);
 
 	void set_use_folding(bool p_use_folding);
 	bool is_using_folding() const;
@@ -219,7 +219,7 @@ public:
 	float get_name_split_ratio() const;
 
 	void set_object_and_property(Object *p_object, const StringName &p_property);
-	virtual Control *make_custom_tooltip(const String &p_text) const override;
+	virtual Controle *make_custom_tooltip(const String &p_text) const override;
 
 	void set_draw_top_bg(bool p_draw) { draw_top_bg = p_draw; }
 
@@ -236,7 +236,7 @@ class EditorInspectorPlugin : public RefCounted {
 public:
 	friend class EditorInspector;
 	struct AddedEditor {
-		Control *property_editor = nullptr;
+		Controle *property_editor = nullptr;
 		Vector<String> properties;
 		String label;
 		bool add_to_end = false;
@@ -255,13 +255,13 @@ protected:
 	GDVIRTUAL1(_parse_end, Object *)
 
 #ifndef DISABLE_DEPRECATED
-	void _add_property_editor_bind_compat_92322(const String &p_for_property, Control *p_prop, bool p_add_to_end);
+	void _add_property_editor_bind_compat_92322(const String &p_for_property, Controle *p_prop, bool p_add_to_end);
 	static void _bind_compatibility_methods();
 #endif // DISABLE_DEPRECATED
 public:
-	void add_custom_control(Control *control);
-	void add_property_editor(const String &p_for_property, Control *p_prop, bool p_add_to_end = false, const String &p_label = String());
-	void add_property_editor_for_multiple_properties(const String &p_label, const Vector<String> &p_properties, Control *p_prop);
+	void add_custom_control(Controle *control);
+	void add_property_editor(const String &p_for_property, Controle *p_prop, bool p_add_to_end = false, const String &p_label = String());
+	void add_property_editor_for_multiple_properties(const String &p_label, const Vector<String> &p_properties, Controle *p_prop);
 
 	virtual bool can_handle(Object *p_object);
 	virtual void parse_begin(Object *p_object);
@@ -271,8 +271,8 @@ public:
 	virtual void parse_end(Object *p_object);
 };
 
-class EditorInspectorCategory : public Control {
-	GDCLASS(EditorInspectorCategory, Control);
+class EditorInspectorCategory : public Controle {
+	GDCLASS(EditorInspectorCategory, Controle);
 
 	friend class EditorInspector;
 
@@ -294,7 +294,7 @@ protected:
 
 public:
 	virtual Size2 get_minimum_size() const override;
-	virtual Control *make_custom_tooltip(const String &p_text) const override;
+	virtual Controle *make_custom_tooltip(const String &p_text) const override;
 
 	EditorInspectorCategory();
 };
@@ -359,7 +359,7 @@ class EditorInspectorArray : public EditorInspectorSection {
 
 	VBoxContainer *elements_vbox = nullptr;
 
-	Control *control_dropping = nullptr;
+	Controle *control_dropping = nullptr;
 	bool dropping = false;
 
 	Button *add_button = nullptr;
@@ -431,9 +431,9 @@ class EditorInspectorArray : public EditorInspectorSection {
 	void _update_elements_visibility();
 	void _setup();
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
 
 	void _remove_item(int p_index);
 

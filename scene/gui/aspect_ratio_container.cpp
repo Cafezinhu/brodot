@@ -35,7 +35,7 @@
 Size2 AspectRatioContainer::get_minimum_size() const {
 	Size2 ms;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}
@@ -101,7 +101,7 @@ void AspectRatioContainer::_notification(int p_what) {
 			bool rtl = is_layout_rtl();
 			Size2 size = get_size();
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}
@@ -186,7 +186,7 @@ void AspectRatioContainer::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_alignment_vertical"), &AspectRatioContainer::get_alignment_vertical);
 
 	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "ratio", PROPERTY_HINT_RANGE, "0.001,10.0,0.0001,or_greater"), "set_ratio", "get_ratio");
-	ADD_PROPERTY(PropertyInfo(Variant::INT, "stretch_mode", PROPERTY_HINT_ENUM, "Width Controls Height,Height Controls Width,Fit,Cover"), "set_stretch_mode", "get_stretch_mode");
+	ADD_PROPERTY(PropertyInfo(Variant::INT, "stretch_mode", PROPERTY_HINT_ENUM, "Width Controles Height,Height Controles Width,Fit,Cover"), "set_stretch_mode", "get_stretch_mode");
 
 	ADD_GROUP("Alignment", "alignment_");
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "alignment_horizontal", PROPERTY_HINT_ENUM, "Begin,Center,End"), "set_alignment_horizontal", "get_alignment_horizontal");

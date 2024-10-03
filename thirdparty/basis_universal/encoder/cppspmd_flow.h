@@ -1,5 +1,5 @@
 // Do not include this header directly.
-// Control flow functionality in common between all the headers.
+// Controle flow functionality in common between all the headers.
 //
 // Copyright 2020-2021 Binomial LLC
 //

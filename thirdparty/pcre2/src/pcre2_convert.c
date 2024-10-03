@@ -1159,7 +1159,7 @@ for (i = 0; i < 2; i++)
   use_length = *bufflenptr + 1;
   }
 
-/* Control should never get here. */
+/* Controle should never get here. */
 
 return PCRE2_ERROR_INTERNAL;
 }

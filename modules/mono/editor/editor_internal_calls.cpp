@@ -177,7 +177,7 @@ void godot_icall_Internal_EditorRunStop() {
 	EditorRunBar::get_singleton()->stop_playing();
 }
 
-void godot_icall_Internal_EditorPlugin_AddControlToEditorRunBar(Control *p_control) {
+void godot_icall_Internal_EditorPlugin_AddControleToEditorRunBar(Controle *p_control) {
 	EditorRunBar::get_singleton()->get_buttons_container()->add_child(p_control);
 }
 
@@ -278,7 +278,7 @@ static const void *unmanaged_callbacks[]{
 	(void *)godot_icall_Internal_EditorNodeShowScriptScreen,
 	(void *)godot_icall_Internal_EditorRunPlay,
 	(void *)godot_icall_Internal_EditorRunStop,
-	(void *)godot_icall_Internal_EditorPlugin_AddControlToEditorRunBar,
+	(void *)godot_icall_Internal_EditorPlugin_AddControleToEditorRunBar,
 	(void *)godot_icall_Internal_ScriptEditorDebugger_ReloadScripts,
 	(void *)godot_icall_Internal_CodeCompletionRequest,
 	(void *)godot_icall_Globals_EditorScale,

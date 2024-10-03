@@ -3200,7 +3200,7 @@ int DisplayServerX11::keyboard_get_layout_count() const {
 	XkbDescRec *kbd = XkbAllocKeyboard();
 	if (kbd) {
 		kbd->dpy = x11_display;
-		XkbGetControls(x11_display, XkbAllControlsMask, kbd);
+		XkbGetControles(x11_display, XkbAllControlesMask, kbd);
 		XkbGetNames(x11_display, XkbSymbolsNameMask, kbd);
 
 		const Atom *groups = kbd->names->groups;
@@ -3232,7 +3232,7 @@ String DisplayServerX11::keyboard_get_layout_language(int p_index) const {
 	XkbDescRec *kbd = XkbAllocKeyboard();
 	if (kbd) {
 		kbd->dpy = x11_display;
-		XkbGetControls(x11_display, XkbAllControlsMask, kbd);
+		XkbGetControles(x11_display, XkbAllControlesMask, kbd);
 		XkbGetNames(x11_display, XkbSymbolsNameMask, kbd);
 		XkbGetNames(x11_display, XkbGroupNamesMask, kbd);
 
@@ -3269,7 +3269,7 @@ String DisplayServerX11::keyboard_get_layout_name(int p_index) const {
 	XkbDescRec *kbd = XkbAllocKeyboard();
 	if (kbd) {
 		kbd->dpy = x11_display;
-		XkbGetControls(x11_display, XkbAllControlsMask, kbd);
+		XkbGetControles(x11_display, XkbAllControlesMask, kbd);
 		XkbGetNames(x11_display, XkbSymbolsNameMask, kbd);
 		XkbGetNames(x11_display, XkbGroupNamesMask, kbd);
 
@@ -3396,7 +3396,7 @@ static Atom pick_target_from_atoms(Display *p_disp, Atom p_t1, Atom p_t2, Atom p
 
 void DisplayServerX11::_get_key_modifier_state(unsigned int p_x11_state, Ref<InputEventWithModifiers> state) {
 	state->set_shift_pressed((p_x11_state & ShiftMask));
-	state->set_ctrl_pressed((p_x11_state & ControlMask));
+	state->set_ctrl_pressed((p_x11_state & ControleMask));
 	state->set_alt_pressed((p_x11_state & Mod1Mask /*|| p_x11_state&Mod5Mask*/)); //altgr should not count as alt
 	state->set_meta_pressed((p_x11_state & Mod4Mask));
 }
@@ -3442,7 +3442,7 @@ void DisplayServerX11::_handle_key_event(WindowID p_window, XKeyEvent *p_event, 
 	char str[256] = {};
 	XKeyEvent xkeyevent_no_mod = *xkeyevent;
 	xkeyevent_no_mod.state &= ~ShiftMask;
-	xkeyevent_no_mod.state &= ~ControlMask;
+	xkeyevent_no_mod.state &= ~ControleMask;
 	XLookupString(xkeyevent, str, 255, &keysym_unicode, nullptr);
 	XLookupString(&xkeyevent_no_mod, nullptr, 0, &keysym_keycode, nullptr);
 

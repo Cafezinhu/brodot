@@ -184,7 +184,7 @@ void ConnectDialog::_focus_currently_connected() {
 }
 
 void ConnectDialog::_unbind_count_changed(double p_count) {
-	for (Control *control : bind_controls) {
+	for (Controle *control : bind_controls) {
 		BaseButton *b = Object::cast_to<BaseButton>(control);
 		if (b) {
 			b->set_disabled(p_count > 0);
@@ -470,7 +470,7 @@ void ConnectDialog::_update_warning_label() {
 }
 
 void ConnectDialog::_post_popup() {
-	callable_mp((Control *)dst_method, &Control::grab_focus).call_deferred();
+	callable_mp((Controle *)dst_method, &Controle::grab_focus).call_deferred();
 	callable_mp(dst_method, &LineEdit::select_all).call_deferred();
 }
 
@@ -727,7 +727,7 @@ ConnectDialog::ConnectDialog() {
 
 	VBoxContainer *vbc_left = memnew(VBoxContainer);
 	main_hb->add_child(vbc_left);
-	vbc_left->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	vbc_left->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	vbc_left->set_custom_minimum_size(Vector2(400 * EDSCALE, 0));
 
 	from_signal = memnew(LineEdit);
@@ -737,7 +737,7 @@ ConnectDialog::ConnectDialog() {
 	tree = memnew(SceneTreeEditor(false));
 	tree->set_connecting_signal(true);
 	tree->set_show_enabled_subscene(true);
-	tree->set_v_size_flags(Control::SIZE_FILL | Control::SIZE_EXPAND);
+	tree->set_v_size_flags(Controle::SIZE_FILL | Controle::SIZE_EXPAND);
 	tree->get_scene_tree()->connect("item_activated", callable_mp(this, &ConnectDialog::_item_activated));
 	tree->connect("node_selected", callable_mp(this, &ConnectDialog::_tree_node_selected));
 	tree->set_connect_to_script_mode(true);
@@ -746,7 +746,7 @@ ConnectDialog::ConnectDialog() {
 
 	filter_nodes = memnew(LineEdit);
 	hbc_filter->add_child(filter_nodes);
-	filter_nodes->set_h_size_flags(Control::SIZE_FILL | Control::SIZE_EXPAND);
+	filter_nodes->set_h_size_flags(Controle::SIZE_FILL | Controle::SIZE_EXPAND);
 	filter_nodes->set_placeholder(TTR("Filter Nodes"));
 	filter_nodes->set_clear_button_enabled(true);
 	filter_nodes->connect(SceneStringName(text_changed), callable_mp(tree, &SceneTreeEditor::set_filter));
@@ -786,7 +786,7 @@ ConnectDialog::ConnectDialog() {
 	method_tree = memnew(Tree);
 	method_vbc->add_child(method_tree);
 	method_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	method_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	method_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	method_tree->set_hide_root(true);
 	method_tree->connect(SceneStringName(item_selected), callable_mp(this, &ConnectDialog::_method_selected));
 	method_tree->connect("item_activated", callable_mp((Window *)method_popup, &Window::hide));
@@ -799,26 +799,26 @@ ConnectDialog::ConnectDialog() {
 
 	script_methods_only = memnew(CheckButton(TTR("Script Methods Only")));
 	method_vbc->add_child(script_methods_only);
-	script_methods_only->set_h_size_flags(Control::SIZE_SHRINK_END);
+	script_methods_only->set_h_size_flags(Controle::SIZE_SHRINK_END);
 	script_methods_only->set_pressed(EditorSettings::get_singleton()->get_project_metadata("editor_metadata", "show_script_methods_only", true));
 	script_methods_only->connect(SceneStringName(pressed), callable_mp(this, &ConnectDialog::_method_check_button_pressed).bind(script_methods_only));
 
 	compatible_methods_only = memnew(CheckButton(TTR("Compatible Methods Only")));
 	method_vbc->add_child(compatible_methods_only);
-	compatible_methods_only->set_h_size_flags(Control::SIZE_SHRINK_END);
+	compatible_methods_only->set_h_size_flags(Controle::SIZE_SHRINK_END);
 	compatible_methods_only->set_pressed(EditorSettings::get_singleton()->get_project_metadata("editor_metadata", "show_compatible_methods_only", true));
 	compatible_methods_only->connect(SceneStringName(pressed), callable_mp(this, &ConnectDialog::_method_check_button_pressed).bind(compatible_methods_only));
 
 	vbc_right = memnew(VBoxContainer);
 	main_hb->add_child(vbc_right);
-	vbc_right->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	vbc_right->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	vbc_right->set_custom_minimum_size(Vector2(150 * EDSCALE, 0));
 	vbc_right->hide();
 
 	HBoxContainer *add_bind_hb = memnew(HBoxContainer);
 
 	type_list = memnew(OptionButton);
-	type_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	type_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_bind_hb->add_child(type_list);
 	for (int i = 0; i < Variant::VARIANT_MAX; i++) {
 		if (i == Variant::NIL || i == Variant::OBJECT || i == Variant::CALLABLE || i == Variant::SIGNAL || i == Variant::RID) {
@@ -859,7 +859,7 @@ ConnectDialog::ConnectDialog() {
 	vbc_left->add_margin_child(TTR("Receiver Method:"), hbc_method);
 
 	dst_method = memnew(LineEdit);
-	dst_method->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	dst_method->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	dst_method->connect(SceneStringName(text_changed), callable_mp(method_tree, &Tree::deselect_all).unbind(1));
 	hbc_method->add_child(dst_method);
 	register_text_enter(dst_method);
@@ -871,7 +871,7 @@ ConnectDialog::ConnectDialog() {
 
 	advanced = memnew(CheckButton(TTR("Advanced")));
 	vbc_left->add_child(advanced);
-	advanced->set_h_size_flags(Control::SIZE_SHRINK_BEGIN | Control::SIZE_EXPAND);
+	advanced->set_h_size_flags(Controle::SIZE_SHRINK_BEGIN | Controle::SIZE_EXPAND);
 	advanced->set_pressed(EditorSettings::get_singleton()->get_project_metadata("editor_metadata", "use_advanced_connections", false));
 	advanced->connect(SceneStringName(pressed), callable_mp(this, &ConnectDialog::_advanced_pressed));
 
@@ -905,7 +905,7 @@ ConnectDialog::~ConnectDialog() {
 
 //////////////////////////////////////////
 
-Control *ConnectionsDockTree::make_custom_tooltip(const String &p_text) const {
+Controle *ConnectionsDockTree::make_custom_tooltip(const String &p_text) const {
 	// If it's not a doc tooltip, fallback to the default one.
 	if (p_text.contains("::")) {
 		return nullptr;
@@ -913,7 +913,7 @@ Control *ConnectionsDockTree::make_custom_tooltip(const String &p_text) const {
 
 	EditorHelpBit *help_bit = memnew(EditorHelpBit(p_text));
 	EditorHelpBitTooltip::show_tooltip(help_bit, const_cast<ConnectionsDockTree *>(this));
-	return memnew(Control); // Make the standard tooltip invisible.
+	return memnew(Controle); // Make the standard tooltip invisible.
 }
 
 struct _ConnectionsDockMethodInfoSort {
@@ -1596,7 +1596,7 @@ ConnectionsDock::ConnectionsDock() {
 	VBoxContainer *vbc = this;
 
 	search_box = memnew(LineEdit);
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_box->set_placeholder(TTR("Filter Signals"));
 	search_box->set_clear_button_enabled(true);
 	search_box->connect(SceneStringName(text_changed), callable_mp(this, &ConnectionsDock::_filter_changed));
@@ -1609,7 +1609,7 @@ ConnectionsDock::ConnectionsDock() {
 	tree->set_hide_root(true);
 	tree->set_column_clip_content(0, true);
 	vbc->add_child(tree);
-	tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tree->set_allow_rmb_select(true);
 
 	connect_button = memnew(Button);

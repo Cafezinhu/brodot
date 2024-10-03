@@ -33,9 +33,9 @@
 
 #include "openxr_extension_wrapper.h"
 
-class OpenXRMetaControllerExtension : public OpenXRExtensionWrapper {
+class OpenXRMetaControlelerExtension : public OpenXRExtensionWrapper {
 public:
-	enum MetaControllers {
+	enum MetaControlelers {
 		META_TOUCH_PROXIMITY, // Proximity extensions for normal touch controllers
 		META_TOUCH_PRO, // Touch controller for the Quest Pro
 		META_TOUCH_PLUS, // Touch controller for the Quest Plus
@@ -44,7 +44,7 @@ public:
 
 	virtual HashMap<String, bool *> get_requested_extensions() override;
 
-	bool is_available(MetaControllers p_type);
+	bool is_available(MetaControlelers p_type);
 
 	virtual void on_register_metadata() override;
 

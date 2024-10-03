@@ -36,8 +36,8 @@
 
 class ViewPanner;
 
-class AnimationBezierTrackEdit : public Control {
-	GDCLASS(AnimationBezierTrackEdit, Control);
+class AnimationBezierTrackEdit : public Controle {
+	GDCLASS(AnimationBezierTrackEdit, Controle);
 
 	enum {
 		MENU_KEY_INSERT,
@@ -56,7 +56,7 @@ class AnimationBezierTrackEdit : public Control {
 
 	AnimationTimelineEdit *timeline = nullptr;
 	Node *root = nullptr;
-	Control *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
+	Controle *play_position = nullptr; //separate control used to draw so updates for only position changed are much faster
 	real_t play_position_pos = 0;
 
 	Ref<Animation> animation;

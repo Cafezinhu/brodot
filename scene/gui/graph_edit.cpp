@@ -64,12 +64,12 @@ GraphEditFilter::GraphEditFilter(GraphEdit *p_edit) {
 	ge = p_edit;
 }
 
-Control::CursorShape GraphEditMinimap::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape GraphEditMinimap::get_cursor_shape(const Point2 &p_pos) const {
 	if (is_resizing || (p_pos.x < theme_cache.resizer->get_width() && p_pos.y < theme_cache.resizer->get_height())) {
 		return CURSOR_FDIAGSIZE;
 	}
 
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 void GraphEditMinimap::update_minimap() {
@@ -243,16 +243,16 @@ void GraphEdit::finish_shaders() {
 	default_connections_shader.unref();
 }
 
-Control::CursorShape GraphEdit::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape GraphEdit::get_cursor_shape(const Point2 &p_pos) const {
 	if (moving_selection) {
 		return CURSOR_MOVE;
 	}
 
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 PackedStringArray GraphEdit::get_configuration_warnings() const {
-	PackedStringArray warnings = Control::get_configuration_warnings();
+	PackedStringArray warnings = Controle::get_configuration_warnings();
 
 	warnings.push_back(RTR("Please be aware that GraphEdit and GraphNode will undergo extensive refactoring in a future 4.x version involving compatibility-breaking API changes."));
 
@@ -603,7 +603,7 @@ void GraphEdit::_ensure_node_order_from_root(const StringName &p_node) {
 }
 
 void GraphEdit::add_child_notify(Node *p_child) {
-	Control::add_child_notify(p_child);
+	Controle::add_child_notify(p_child);
 
 	// Keep the top layer always on top!
 	callable_mp((CanvasItem *)top_layer, &CanvasItem::move_to_front).call_deferred();
@@ -646,7 +646,7 @@ void GraphEdit::add_child_notify(Node *p_child) {
 }
 
 void GraphEdit::remove_child_notify(Node *p_child) {
-	Control::remove_child_notify(p_child);
+	Controle::remove_child_notify(p_child);
 
 	if (p_child == top_layer) {
 		top_layer = nullptr;
@@ -723,7 +723,7 @@ void GraphEdit::remove_child_notify(Node *p_child) {
 }
 
 void GraphEdit::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.base_scale = get_theme_default_base_scale();
 }
@@ -904,7 +904,7 @@ bool GraphEdit::_filter_input(const Point2 &p_point) {
 
 			// Determine slot height.
 			int slot_index = graph_node->get_input_port_slot(j);
-			Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+			Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 
 			port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
@@ -918,7 +918,7 @@ bool GraphEdit::_filter_input(const Point2 &p_point) {
 
 			// Determine slot height.
 			int slot_index = graph_node->get_output_port_slot(j);
-			Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+			Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 			port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
 			if (is_in_output_hotzone(graph_node, j, p_point / zoom, port_size)) {
@@ -955,7 +955,7 @@ void GraphEdit::_top_connection_layer_input(const Ref<InputEvent> &p_ev) {
 
 				// Determine slot height.
 				int slot_index = graph_node->get_output_port_slot(j);
-				Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+				Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 				port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
 				if (is_in_output_hotzone(graph_node, j, click_pos, port_size)) {
@@ -1012,7 +1012,7 @@ void GraphEdit::_top_connection_layer_input(const Ref<InputEvent> &p_ev) {
 
 				// Determine slot height.
 				int slot_index = graph_node->get_input_port_slot(j);
-				Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+				Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 				port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
 				if (is_in_input_hotzone(graph_node, j, click_pos, port_size)) {
@@ -1088,7 +1088,7 @@ void GraphEdit::_top_connection_layer_input(const Ref<InputEvent> &p_ev) {
 
 						// Determine slot height.
 						int slot_index = graph_node->get_output_port_slot(j);
-						Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+						Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 						port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
 						int type = graph_node->get_output_port_type(j);
@@ -1113,7 +1113,7 @@ void GraphEdit::_top_connection_layer_input(const Ref<InputEvent> &p_ev) {
 
 						// Determine slot height.
 						int slot_index = graph_node->get_input_port_slot(j);
-						Control *child = Object::cast_to<Control>(graph_node->get_child(slot_index, false));
+						Controle *child = Object::cast_to<Controle>(graph_node->get_child(slot_index, false));
 						port_size.height = MAX(port_size.height, child ? child->get_size().y : 0);
 
 						int type = graph_node->get_input_port_type(j);
@@ -1166,7 +1166,7 @@ void GraphEdit::_top_connection_layer_input(const Ref<InputEvent> &p_ev) {
 	}
 }
 
-bool GraphEdit::_check_clickable_control(Control *p_control, const Vector2 &mpos, const Vector2 &p_offset) {
+bool GraphEdit::_check_clickable_control(Controle *p_control, const Vector2 &mpos, const Vector2 &p_offset) {
 	if (p_control->is_set_as_top_level() || !p_control->is_visible() || !p_control->is_inside_tree()) {
 		return false;
 	}
@@ -1179,7 +1179,7 @@ bool GraphEdit::_check_clickable_control(Control *p_control, const Vector2 &mpos
 	if (!control_rect.has_point(mpos) || p_control->get_mouse_filter() == MOUSE_FILTER_IGNORE) {
 		// Test children.
 		for (int i = 0; i < p_control->get_child_count(); i++) {
-			Control *child_rect = Object::cast_to<Control>(p_control->get_child(i));
+			Controle *child_rect = Object::cast_to<Controle>(p_control->get_child(i));
 			if (!child_rect) {
 				continue;
 			}
@@ -1242,7 +1242,7 @@ bool GraphEdit::is_in_port_hotzone(const Vector2 &p_pos, const Vector2 &p_mouse_
 		Rect2 child_rect = child->get_rect();
 		if (child_rect.has_point(p_mouse_pos * zoom)) {
 			for (int j = 0; j < child->get_child_count(); j++) {
-				Control *subchild = Object::cast_to<Control>(child->get_child(j));
+				Controle *subchild = Object::cast_to<Controle>(child->get_child(j));
 				if (!subchild) {
 					continue;
 				}
@@ -2129,7 +2129,7 @@ bool GraphEdit::is_node_hover_valid(const StringName &p_from, const int p_from_p
 
 void GraphEdit::set_panning_scheme(PanningScheme p_scheme) {
 	panning_scheme = p_scheme;
-	panner->set_control_scheme((ViewPanner::ControlScheme)p_scheme);
+	panner->set_control_scheme((ViewPanner::ControleScheme)p_scheme);
 }
 
 GraphEdit::PanningScheme GraphEdit::get_panning_scheme() const {
@@ -2452,7 +2452,7 @@ void GraphEdit::set_minimap_size(Vector2 p_size) {
 	minimap->set_size(p_size);
 	Vector2 minimap_size = minimap->get_size(); // The size might've been adjusted by the minimum size.
 
-	minimap->set_anchors_preset(Control::PRESET_BOTTOM_RIGHT);
+	minimap->set_anchors_preset(Controle::PRESET_BOTTOM_RIGHT);
 	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.width - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_TOP, -minimap_size.height - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_RIGHT, -MINIMAP_OFFSET);
@@ -2837,14 +2837,14 @@ GraphEdit::GraphEdit() {
 	panner.instantiate();
 	panner->set_callbacks(callable_mp(this, &GraphEdit::_pan_callback), callable_mp(this, &GraphEdit::_zoom_callback));
 
-	top_layer = memnew(Control);
+	top_layer = memnew(Controle);
 	add_child(top_layer, false, INTERNAL_MODE_BACK);
 	top_layer->set_mouse_filter(MOUSE_FILTER_IGNORE);
-	top_layer->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	top_layer->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	top_layer->connect(SceneStringName(draw), callable_mp(this, &GraphEdit::_top_layer_draw));
 	top_layer->connect(SceneStringName(focus_exited), callable_mp(panner.ptr(), &ViewPanner::release_pan_key));
 
-	connections_layer = memnew(Control);
+	connections_layer = memnew(Controle);
 	add_child(connections_layer, false);
 	connections_layer->connect(SceneStringName(draw), callable_mp(this, &GraphEdit::_update_connections));
 	connections_layer->set_name("_connection_layer");
@@ -2857,7 +2857,7 @@ GraphEdit::GraphEdit() {
 	connections_shader = default_connections_shader;
 
 	top_connection_layer->set_mouse_filter(MOUSE_FILTER_PASS);
-	top_connection_layer->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	top_connection_layer->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	top_connection_layer->connect(SceneStringName(gui_input), callable_mp(this, &GraphEdit::_top_connection_layer_input));
 
 	dragged_connection_line = memnew(Line2D);
@@ -2896,7 +2896,7 @@ GraphEdit::GraphEdit() {
 
 	zoom_label = memnew(Label);
 	zoom_label->set_visible(show_zoom_label);
-	zoom_label->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	zoom_label->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	zoom_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	zoom_label->set_custom_minimum_size(Size2(48, 0));
 	menu_hbox->add_child(zoom_label);
@@ -2990,7 +2990,7 @@ GraphEdit::GraphEdit() {
 	minimap->set_mouse_filter(MOUSE_FILTER_PASS);
 	minimap->set_custom_minimum_size(Vector2(50, 50));
 	minimap->set_size(minimap_size);
-	minimap->set_anchors_preset(Control::PRESET_BOTTOM_RIGHT);
+	minimap->set_anchors_preset(Controle::PRESET_BOTTOM_RIGHT);
 	minimap->set_offset(Side::SIDE_LEFT, -minimap_size.width - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_TOP, -minimap_size.height - MINIMAP_OFFSET);
 	minimap->set_offset(Side::SIDE_RIGHT, -MINIMAP_OFFSET);

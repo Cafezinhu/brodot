@@ -215,7 +215,7 @@ StringName _scs_create(const char *p_chr, bool p_static = false);
  * The SNAME macro is used to speed up StringName creation, as it allows caching it after the first usage in a very efficient way.
  * It should NOT be used everywhere, but instead in places where high performance is required and the creation of a StringName
  * can be costly. Places where it should be used are:
- * - Control::get_theme_*(<name> and Window::get_theme_*(<name> functions.
+ * - Controle::get_theme_*(<name> and Window::get_theme_*(<name> functions.
  * - emit_signal(<name>,..) function
  * - call_deferred(<name>,..) function
  * - Comparisons to a StringName in overridden _set and _get methods.

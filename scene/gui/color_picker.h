@@ -136,14 +136,14 @@ private:
 	Color picker_color;
 
 	MarginContainer *internal_margin = nullptr;
-	Control *uv_edit = nullptr;
-	Control *w_edit = nullptr;
+	Controle *uv_edit = nullptr;
+	Controle *w_edit = nullptr;
 	AspectRatioContainer *wheel_edit = nullptr;
 	MarginContainer *wheel_margin = nullptr;
 	Ref<ShaderMaterial> wheel_mat;
 	Ref<ShaderMaterial> circle_mat;
-	Control *wheel = nullptr;
-	Control *wheel_uv = nullptr;
+	Controle *wheel = nullptr;
+	Controle *wheel_uv = nullptr;
 	TextureRect *sample = nullptr;
 	GridContainer *preset_container = nullptr;
 	HBoxContainer *recent_preset_hbc = nullptr;
@@ -265,10 +265,10 @@ private:
 	void _text_type_toggled();
 	void _sample_input(const Ref<InputEvent> &p_event);
 	void _sample_draw();
-	void _hsv_draw(int p_which, Control *c);
+	void _hsv_draw(int p_which, Controle *c);
 	void _slider_draw(int p_which);
 
-	void _uv_input(const Ref<InputEvent> &p_event, Control *c);
+	void _uv_input(const Ref<InputEvent> &p_event, Controle *c);
 	void _w_input(const Ref<InputEvent> &p_event);
 	void _slider_or_spin_input(const Ref<InputEvent> &p_event);
 	void _line_edit_input(const Ref<InputEvent> &p_event);
@@ -292,9 +292,9 @@ private:
 
 	void _set_mode_popup_value(ColorModeType p_mode);
 
-	Variant _get_drag_data_fw(const Point2 &p_point, Control *p_from_control);
-	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) const;
-	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control);
+	Variant _get_drag_data_fw(const Point2 &p_point, Controle *p_from_control);
+	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) const;
+	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control);
 
 protected:
 	virtual void _update_theme_item_cache() override;

@@ -52,10 +52,10 @@ void BoxContainer::_resort() {
 	int stretch_min = 0;
 	int stretch_avail = 0;
 	float stretch_ratio_total = 0.0;
-	HashMap<Control *, _MinSizeCache> min_size_cache;
+	HashMap<Controle *, _MinSizeCache> min_size_cache;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -106,7 +106,7 @@ void BoxContainer::_resort() {
 		float error = 0.0; // Keep track of accumulated error in pixels
 
 		for (int i = 0; i < get_child_count(); i++) {
-			Control *c = as_sortable_control(get_child(i));
+			Controle *c = as_sortable_control(get_child(i));
 			if (!c) {
 				continue;
 			}
@@ -195,7 +195,7 @@ void BoxContainer::_resort() {
 	}
 
 	for (int i = start; i != end; i += delta) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -243,7 +243,7 @@ Size2 BoxContainer::get_minimum_size() const {
 	bool first = true;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}
@@ -319,8 +319,8 @@ bool BoxContainer::is_vertical() const {
 	return vertical;
 }
 
-Control *BoxContainer::add_spacer(bool p_begin) {
-	Control *c = memnew(Control);
+Controle *BoxContainer::add_spacer(bool p_begin) {
+	Controle *c = memnew(Controle);
 	c->set_mouse_filter(MOUSE_FILTER_PASS); //allow spacer to pass mouse events
 
 	if (vertical) {
@@ -382,7 +382,7 @@ void BoxContainer::_bind_methods() {
 	BIND_THEME_ITEM(Theme::DATA_TYPE_CONSTANT, BoxContainer, separation);
 }
 
-MarginContainer *VBoxContainer::add_margin_child(const String &p_label, Control *p_control, bool p_expand) {
+MarginContainer *VBoxContainer::add_margin_child(const String &p_label, Controle *p_control, bool p_expand) {
 	Label *l = memnew(Label);
 	l->set_theme_type_variation("HeaderSmall");
 	l->set_text(p_label);

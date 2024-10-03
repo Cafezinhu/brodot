@@ -523,7 +523,7 @@ bool EditorFileSystemImportFormatSupportQueryBlend::query() {
 		HBoxContainer *hb = memnew(HBoxContainer);
 
 		blender_path = memnew(LineEdit);
-		blender_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		blender_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		hb->add_child(blender_path);
 
 		blender_path_browse = memnew(Button);
@@ -531,7 +531,7 @@ bool EditorFileSystemImportFormatSupportQueryBlend::query() {
 		blender_path_browse->connect(SceneStringName(pressed), callable_mp(this, &EditorFileSystemImportFormatSupportQueryBlend::_browse_install));
 		hb->add_child(blender_path_browse);
 
-		hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		hb->set_custom_minimum_size(Size2(400 * EDSCALE, 0));
 
 		vb->add_child(hb);

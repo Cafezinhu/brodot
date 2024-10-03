@@ -202,7 +202,7 @@
  * record. Make sure you do not overflow the playback buffers as data will be
  * dropped.
  *
- * \section bufctl_sec Buffer Control
+ * \section bufctl_sec Buffer Controle
  *
  * The transfer buffers can be controlled through a number of operations:
  *

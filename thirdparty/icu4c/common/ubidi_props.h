@@ -49,10 +49,10 @@ U_CFUNC UChar32
 ubidi_getMirror(UChar32 c);
 
 U_CFUNC UBool
-ubidi_isBidiControl(UChar32 c);
+ubidi_isBidiControle(UChar32 c);
 
 U_CFUNC UBool
-ubidi_isJoinControl(UChar32 c);
+ubidi_isJoinControle(UChar32 c);
 
 U_CFUNC UJoiningType
 ubidi_getJoiningType(UChar32 c);

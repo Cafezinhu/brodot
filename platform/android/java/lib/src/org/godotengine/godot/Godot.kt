@@ -51,7 +51,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsAnimationCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.WindowInsetsControlelerCompat
 import com.google.android.vending.expansion.downloader.*
 import org.godotengine.godot.error.Error
 import org.godotengine.godot.input.GodotEditText
@@ -339,10 +339,10 @@ class Godot(private val context: Context) {
 		}
 
 		WindowCompat.setDecorFitsSystemWindows(window, !enabled)
-		val controller = WindowInsetsControllerCompat(window, window.decorView)
+		val controller = WindowInsetsControlelerCompat(window, window.decorView)
 		if (enabled) {
 			controller.hide(WindowInsetsCompat.Type.systemBars())
-			controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+			controller.systemBarsBehavior = WindowInsetsControlelerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 		} else {
 			val fullScreenThemeValue = TypedValue()
 			val hasStatusBar = if (activity.theme.resolveAttribute(android.R.attr.windowFullscreen, fullScreenThemeValue, true) && fullScreenThemeValue.type == TypedValue.TYPE_INT_BOOLEAN) {

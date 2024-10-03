@@ -270,7 +270,7 @@ public:
 	void ensure_visibility();
 
 	void edit(AnimationMixer *p_node, AnimationPlayer *p_player, bool p_is_dummy);
-	void forward_force_draw_over_viewport(Control *p_overlay);
+	void forward_force_draw_over_viewport(Controle *p_overlay);
 
 	AnimationPlayerEditor(AnimationPlayerEditorPlugin *p_plugin);
 };
@@ -305,8 +305,8 @@ public:
 	virtual bool handles(Object *p_object) const override;
 	virtual void make_visible(bool p_visible) override;
 
-	virtual void forward_canvas_force_draw_over_viewport(Control *p_overlay) override { anim_editor->forward_force_draw_over_viewport(p_overlay); }
-	virtual void forward_3d_force_draw_over_viewport(Control *p_overlay) override { anim_editor->forward_force_draw_over_viewport(p_overlay); }
+	virtual void forward_canvas_force_draw_over_viewport(Controle *p_overlay) override { anim_editor->forward_force_draw_over_viewport(p_overlay); }
+	virtual void forward_3d_force_draw_over_viewport(Controle *p_overlay) override { anim_editor->forward_force_draw_over_viewport(p_overlay); }
 
 	AnimationPlayerEditorPlugin();
 	~AnimationPlayerEditorPlugin();

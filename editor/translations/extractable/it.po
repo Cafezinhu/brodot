@@ -167,10 +167,10 @@ msgstr "Rifai"
 msgid "Text Writing Direction"
 msgstr "Direzione di scrittura del testo"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Mostra i caratteri di controllo"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Inserisci un carattere di controllo"
 
 msgid "(Other)"

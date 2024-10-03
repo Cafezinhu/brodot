@@ -85,12 +85,12 @@ void SplitContainerDragger::gui_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-Control::CursorShape SplitContainerDragger::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape SplitContainerDragger::get_cursor_shape(const Point2 &p_pos) const {
 	SplitContainer *sc = Object::cast_to<SplitContainer>(get_parent());
 	if (!sc->collapsed && sc->dragging_enabled) {
 		return (sc->vertical ? CURSOR_VSPLIT : CURSOR_HSPLIT);
 	}
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 void SplitContainerDragger::_notification(int p_what) {
@@ -126,10 +126,10 @@ void SplitContainerDragger::_notification(int p_what) {
 	}
 }
 
-Control *SplitContainer::_get_sortable_child(int p_idx, SortableVisbilityMode p_visibility_mode) const {
+Controle *SplitContainer::_get_sortable_child(int p_idx, SortableVisbilityMode p_visibility_mode) const {
 	int idx = 0;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *c = as_sortable_control(get_child(i, false), p_visibility_mode);
+		Controle *c = as_sortable_control(get_child(i, false), p_visibility_mode);
 		if (!c) {
 			continue;
 		}
@@ -165,8 +165,8 @@ int SplitContainer::_get_separation() const {
 }
 
 void SplitContainer::_compute_split_offset(bool p_clamp) {
-	Control *first = _get_sortable_child(0);
-	Control *second = _get_sortable_child(1);
+	Controle *first = _get_sortable_child(0);
+	Controle *second = _get_sortable_child(1);
 	int axis_index = vertical ? 1 : 0;
 	int size = get_size()[axis_index];
 	int sep = _get_separation();
@@ -201,8 +201,8 @@ void SplitContainer::_compute_split_offset(bool p_clamp) {
 }
 
 void SplitContainer::_resort() {
-	Control *first = _get_sortable_child(0);
-	Control *second = _get_sortable_child(1);
+	Controle *first = _get_sortable_child(0);
+	Controle *second = _get_sortable_child(1);
 
 	if (!first || !second) { // Only one child.
 		if (first) {
@@ -259,7 +259,7 @@ Size2 SplitContainer::get_minimum_size() const {
 	int sep = _get_separation();
 
 	for (int i = 0; i < 2; i++) {
-		Control *child = _get_sortable_child(i, SortableVisbilityMode::VISIBLE);
+		Controle *child = _get_sortable_child(i, SortableVisbilityMode::VISIBLE);
 		if (!child) {
 			break;
 		}

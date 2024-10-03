@@ -778,7 +778,7 @@ ucase_isCaseSensitive(UChar32 c) {
  *     if it meets either of the following criteria:
  *
  *   - The general category of C is
- *     Nonspacing Mark (Mn), or Enclosing Mark (Me), or Format Control (Cf), or
+ *     Nonspacing Mark (Mn), or Enclosing Mark (Me), or Format Controle (Cf), or
  *     Letter Modifier (Lm), or Symbol Modifier (Sk)
  *   - C is one of the following characters
  *     U+0027 APOSTROPHE

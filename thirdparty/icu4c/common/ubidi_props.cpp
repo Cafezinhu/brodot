@@ -181,13 +181,13 @@ ubidi_getMirror(UChar32 c) {
 }
 
 U_CFUNC UBool
-ubidi_isBidiControl(UChar32 c) {
+ubidi_isBidiControle(UChar32 c) {
     uint16_t props=UTRIE2_GET16(&ubidi_props_singleton.trie, c);
     return (UBool)UBIDI_GET_FLAG(props, UBIDI_BIDI_CONTROL_SHIFT);
 }
 
 U_CFUNC UBool
-ubidi_isJoinControl(UChar32 c) {
+ubidi_isJoinControle(UChar32 c) {
     uint16_t props=UTRIE2_GET16(&ubidi_props_singleton.trie, c);
     return (UBool)UBIDI_GET_FLAG(props, UBIDI_JOIN_CONTROL_SHIFT);
 }

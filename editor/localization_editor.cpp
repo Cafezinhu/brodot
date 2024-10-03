@@ -625,7 +625,7 @@ LocalizationEditor::LocalizationEditor() {
 	localization_changed = "localization_changed";
 
 	TabContainer *translations = memnew(TabContainer);
-	translations->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	translations->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_child(translations);
 
 	{
@@ -645,11 +645,11 @@ LocalizationEditor::LocalizationEditor() {
 		thb->add_child(addtr);
 
 		VBoxContainer *tmc = memnew(VBoxContainer);
-		tmc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		tmc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		tvb->add_child(tmc);
 
 		translation_list = memnew(Tree);
-		translation_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		translation_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		tmc->add_child(translation_list);
 
 		locale_select = memnew(EditorLocaleDialog);
@@ -679,11 +679,11 @@ LocalizationEditor::LocalizationEditor() {
 		thb->add_child(addtr);
 
 		VBoxContainer *tmc = memnew(VBoxContainer);
-		tmc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		tmc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		tvb->add_child(tmc);
 
 		translation_remap = memnew(Tree);
-		translation_remap->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		translation_remap->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		translation_remap->connect("cell_selected", callable_mp(this, &LocalizationEditor::_translation_res_select));
 		translation_remap->connect("button_clicked", callable_mp(this, &LocalizationEditor::_translation_res_delete));
 		tmc->add_child(translation_remap);
@@ -706,11 +706,11 @@ LocalizationEditor::LocalizationEditor() {
 		thb->add_child(addtr);
 
 		tmc = memnew(VBoxContainer);
-		tmc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		tmc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		tvb->add_child(tmc);
 
 		translation_remap_options = memnew(Tree);
-		translation_remap_options->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		translation_remap_options->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		translation_remap_options->set_columns(2);
 		translation_remap_options->set_column_title(0, TTR("Path"));
 		translation_remap_options->set_column_title(1, TTR("Locale"));
@@ -752,11 +752,11 @@ LocalizationEditor::LocalizationEditor() {
 		thb->add_child(pot_generate_button);
 
 		translation_pot_list = memnew(Tree);
-		translation_pot_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		translation_pot_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		tvb->add_child(translation_pot_list);
 
 		translation_pot_add_builtin = memnew(CheckBox(TTR("Add Built-in Strings to POT")));
-		translation_pot_add_builtin->set_tooltip_text(TTR("Add strings from built-in components such as certain Control nodes."));
+		translation_pot_add_builtin->set_tooltip_text(TTR("Add strings from built-in components such as certain Controle nodes."));
 		translation_pot_add_builtin->connect(SceneStringName(pressed), callable_mp(this, &LocalizationEditor::_pot_add_builtin_toggled));
 		tvb->add_child(translation_pot_add_builtin);
 

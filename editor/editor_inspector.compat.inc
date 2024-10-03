@@ -30,7 +30,7 @@
 
 #ifndef DISABLE_DEPRECATED
 
-void EditorInspectorPlugin::_add_property_editor_bind_compat_92322(const String &p_for_property, Control *p_prop, bool p_add_to_end) {
+void EditorInspectorPlugin::_add_property_editor_bind_compat_92322(const String &p_for_property, Controle *p_prop, bool p_add_to_end) {
 	add_property_editor(p_for_property, p_prop, p_add_to_end, "");
 }
 

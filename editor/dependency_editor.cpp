@@ -268,7 +268,7 @@ DependencyEditor::DependencyEditor() {
 	vb->add_child(hbc);
 
 	MarginContainer *mc = memnew(MarginContainer);
-	mc->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	mc->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	mc->add_child(tree);
 	vb->add_child(mc);
@@ -675,7 +675,7 @@ DependencyRemoveDialog::DependencyRemoveDialog() {
 	owners->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	owners->set_hide_root(true);
 	vb->add_child(owners);
-	owners->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	owners->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 }
 
 //////////////
@@ -728,7 +728,7 @@ DependencyErrorDialog::DependencyErrorDialog() {
 	files->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	files->set_hide_root(true);
 	vb->add_margin_child(TTR("Load failed due to missing dependencies:"), files, true);
-	files->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	files->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	set_min_size(Size2(500, 220) * EDSCALE);
 	set_ok_button_text(TTR("Open Anyway"));

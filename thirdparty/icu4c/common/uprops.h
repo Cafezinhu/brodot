@@ -352,8 +352,8 @@ u_isalnumPOSIX(UChar32 c);
 
 /**
  * Checks if c is in
- * [^\p{space}\p{gc=Control}\p{gc=Surrogate}\p{gc=Unassigned}]
- * with space=\p{Whitespace} and Control=Cc.
+ * [^\p{space}\p{gc=Controle}\p{gc=Surrogate}\p{gc=Unassigned}]
+ * with space=\p{Whitespace} and Controle=Cc.
  * Implements UCHAR_POSIX_GRAPH.
  * @internal
  */

@@ -418,7 +418,7 @@ void ShaderEditorPlugin::_make_script_list_context_menu() {
 		return;
 	}
 
-	Control *control = shader_tabs->get_tab_control(selected);
+	Controle *control = shader_tabs->get_tab_control(selected);
 	bool is_valid_editor_control = Object::cast_to<TextShaderEditor>(control) || Object::cast_to<VisualShaderEditor>(control);
 
 	_setup_popup_menu(is_valid_editor_control ? CONTEXT_VALID_ITEM : CONTEXT, context_menu);
@@ -433,7 +433,7 @@ void ShaderEditorPlugin::_make_script_list_context_menu() {
 
 void ShaderEditorPlugin::_close_shader(int p_index) {
 	ERR_FAIL_INDEX(p_index, shader_tabs->get_tab_count());
-	Control *c = shader_tabs->get_tab_control(p_index);
+	Controle *c = shader_tabs->get_tab_control(p_index);
 	memdelete(c);
 	edited_shaders.remove_at(p_index);
 	_update_shader_list();
@@ -593,7 +593,7 @@ void ShaderEditorPlugin::_shader_include_created(Ref<ShaderInclude> p_shader_inc
 	EditorNode::get_singleton()->push_item(p_shader_inc.ptr());
 }
 
-Variant ShaderEditorPlugin::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant ShaderEditorPlugin::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (shader_list->get_item_count() == 0) {
 		return Variant();
 	}
@@ -625,7 +625,7 @@ Variant ShaderEditorPlugin::get_drag_data_fw(const Point2 &p_point, Control *p_f
 	return drag_data;
 }
 
-bool ShaderEditorPlugin::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ShaderEditorPlugin::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (!d.has("type")) {
 		return false;
@@ -663,7 +663,7 @@ bool ShaderEditorPlugin::can_drop_data_fw(const Point2 &p_point, const Variant &
 	return false;
 }
 
-void ShaderEditorPlugin::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ShaderEditorPlugin::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -795,8 +795,8 @@ ShaderEditorPlugin::ShaderEditorPlugin() {
 	add_child(context_menu);
 	context_menu->connect(SceneStringName(id_pressed), callable_mp(this, &ShaderEditorPlugin::_menu_item_pressed));
 
-	Control *padding = memnew(Control);
-	padding->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	Controle *padding = memnew(Controle);
+	padding->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	menu_hb->add_child(padding);
 
 	make_floating = memnew(ScreenSelect);
@@ -812,7 +812,7 @@ ShaderEditorPlugin::ShaderEditorPlugin() {
 
 	shader_list = memnew(ItemList);
 	shader_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	shader_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	shader_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	left_panel->add_child(shader_list);
 	shader_list->connect(SceneStringName(item_selected), callable_mp(this, &ShaderEditorPlugin::_shader_selected));
 	shader_list->connect("item_clicked", callable_mp(this, &ShaderEditorPlugin::_shader_list_clicked));
@@ -824,7 +824,7 @@ ShaderEditorPlugin::ShaderEditorPlugin() {
 
 	shader_tabs = memnew(TabContainer);
 	shader_tabs->set_tabs_visible(false);
-	shader_tabs->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	shader_tabs->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_split->add_child(shader_tabs);
 	Ref<StyleBoxEmpty> empty;
 	empty.instantiate();

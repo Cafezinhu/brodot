@@ -1852,7 +1852,7 @@ typedef struct {
 typedef struct {
   uint8_t script;     /* ucp_Arabic, etc. */
   uint8_t chartype;   /* ucp_Cc, etc. (general categories) */
-  uint8_t gbprop;     /* ucp_gbControl, etc. (grapheme break property) */
+  uint8_t gbprop;     /* ucp_gbControle, etc. (grapheme break property) */
   uint8_t caseset;    /* offset to multichar other cases or zero */
   int32_t other_case; /* offset to other case, or zero if none */
   uint16_t scriptx_bidiclass; /* script extension (11 bit) and bidi class (5 bit) values */

@@ -129,7 +129,7 @@ OpenXRActionEditor::OpenXRActionEditor(Ref<OpenXRAction> p_action) {
 	undo_redo = EditorUndoRedoManager::get_singleton();
 	action = p_action;
 
-	set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	action_name = memnew(LineEdit);
 	action_name->set_text(action->get_name());
@@ -140,7 +140,7 @@ OpenXRActionEditor::OpenXRActionEditor(Ref<OpenXRAction> p_action) {
 	action_localized_name = memnew(LineEdit);
 	action_localized_name->set_text(action->get_localized_name());
 	action_localized_name->set_custom_minimum_size(Size2(150.0, 0.0));
-	action_localized_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	action_localized_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	action_localized_name->connect(SceneStringName(text_changed), callable_mp(this, &OpenXRActionEditor::_on_action_localized_name_changed));
 	add_child(action_localized_name);
 

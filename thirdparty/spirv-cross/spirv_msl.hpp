@@ -582,7 +582,7 @@ public:
 	bool get_is_rasterization_disabled() const
 	{
 		return is_rasterization_disabled && (get_entry_point().model == spv::ExecutionModelVertex ||
-		                                     get_entry_point().model == spv::ExecutionModelTessellationControl ||
+		                                     get_entry_point().model == spv::ExecutionModelTessellationControle ||
 		                                     get_entry_point().model == spv::ExecutionModelTessellationEvaluation);
 	}
 

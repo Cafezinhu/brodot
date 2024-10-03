@@ -67,9 +67,9 @@ class ResourcePreloaderEditor : public PanelContainer {
 	void _cell_button_pressed(Object *p_item, int p_column, int p_id, MouseButton p_button);
 	void _item_edited();
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 protected:
 	void _notification(int p_what);

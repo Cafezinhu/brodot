@@ -409,7 +409,7 @@ struct VolkDeviceTable
 	PFN_vkCmdSetDiscardRectangleModeEXT vkCmdSetDiscardRectangleModeEXT;
 #endif /* defined(VK_EXT_discard_rectangles) && VK_EXT_DISCARD_RECTANGLES_SPEC_VERSION >= 2 */
 #if defined(VK_EXT_display_control)
-	PFN_vkDisplayPowerControlEXT vkDisplayPowerControlEXT;
+	PFN_vkDisplayPowerControleEXT vkDisplayPowerControleEXT;
 	PFN_vkGetSwapchainCounterEXT vkGetSwapchainCounterEXT;
 	PFN_vkRegisterDeviceEventEXT vkRegisterDeviceEventEXT;
 	PFN_vkRegisterDisplayEventEXT vkRegisterDisplayEventEXT;
@@ -764,7 +764,7 @@ struct VolkDeviceTable
 #if defined(VK_KHR_video_queue)
 	PFN_vkBindVideoSessionMemoryKHR vkBindVideoSessionMemoryKHR;
 	PFN_vkCmdBeginVideoCodingKHR vkCmdBeginVideoCodingKHR;
-	PFN_vkCmdControlVideoCodingKHR vkCmdControlVideoCodingKHR;
+	PFN_vkCmdControleVideoCodingKHR vkCmdControleVideoCodingKHR;
 	PFN_vkCmdEndVideoCodingKHR vkCmdEndVideoCodingKHR;
 	PFN_vkCreateVideoSessionKHR vkCreateVideoSessionKHR;
 	PFN_vkCreateVideoSessionParametersKHR vkCreateVideoSessionParametersKHR;
@@ -900,7 +900,7 @@ struct VolkDeviceTable
 #if (defined(VK_EXT_extended_dynamic_state2)) || (defined(VK_EXT_shader_object))
 	PFN_vkCmdSetDepthBiasEnableEXT vkCmdSetDepthBiasEnableEXT;
 	PFN_vkCmdSetLogicOpEXT vkCmdSetLogicOpEXT;
-	PFN_vkCmdSetPatchControlPointsEXT vkCmdSetPatchControlPointsEXT;
+	PFN_vkCmdSetPatchControlePointsEXT vkCmdSetPatchControlePointsEXT;
 	PFN_vkCmdSetPrimitiveRestartEnableEXT vkCmdSetPrimitiveRestartEnableEXT;
 	PFN_vkCmdSetRasterizerDiscardEnableEXT vkCmdSetRasterizerDiscardEnableEXT;
 #endif /* (defined(VK_EXT_extended_dynamic_state2)) || (defined(VK_EXT_shader_object)) */
@@ -1327,7 +1327,7 @@ extern PFN_vkCmdSetDiscardRectangleEnableEXT vkCmdSetDiscardRectangleEnableEXT;
 extern PFN_vkCmdSetDiscardRectangleModeEXT vkCmdSetDiscardRectangleModeEXT;
 #endif /* defined(VK_EXT_discard_rectangles) && VK_EXT_DISCARD_RECTANGLES_SPEC_VERSION >= 2 */
 #if defined(VK_EXT_display_control)
-extern PFN_vkDisplayPowerControlEXT vkDisplayPowerControlEXT;
+extern PFN_vkDisplayPowerControleEXT vkDisplayPowerControleEXT;
 extern PFN_vkGetSwapchainCounterEXT vkGetSwapchainCounterEXT;
 extern PFN_vkRegisterDeviceEventEXT vkRegisterDeviceEventEXT;
 extern PFN_vkRegisterDisplayEventEXT vkRegisterDisplayEventEXT;
@@ -1760,7 +1760,7 @@ extern PFN_vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR vkGetPhysical
 #if defined(VK_KHR_video_queue)
 extern PFN_vkBindVideoSessionMemoryKHR vkBindVideoSessionMemoryKHR;
 extern PFN_vkCmdBeginVideoCodingKHR vkCmdBeginVideoCodingKHR;
-extern PFN_vkCmdControlVideoCodingKHR vkCmdControlVideoCodingKHR;
+extern PFN_vkCmdControleVideoCodingKHR vkCmdControleVideoCodingKHR;
 extern PFN_vkCmdEndVideoCodingKHR vkCmdEndVideoCodingKHR;
 extern PFN_vkCreateVideoSessionKHR vkCreateVideoSessionKHR;
 extern PFN_vkCreateVideoSessionParametersKHR vkCreateVideoSessionParametersKHR;
@@ -1941,7 +1941,7 @@ extern PFN_vkCmdSetViewportWithCountEXT vkCmdSetViewportWithCountEXT;
 #if (defined(VK_EXT_extended_dynamic_state2)) || (defined(VK_EXT_shader_object))
 extern PFN_vkCmdSetDepthBiasEnableEXT vkCmdSetDepthBiasEnableEXT;
 extern PFN_vkCmdSetLogicOpEXT vkCmdSetLogicOpEXT;
-extern PFN_vkCmdSetPatchControlPointsEXT vkCmdSetPatchControlPointsEXT;
+extern PFN_vkCmdSetPatchControlePointsEXT vkCmdSetPatchControlePointsEXT;
 extern PFN_vkCmdSetPrimitiveRestartEnableEXT vkCmdSetPrimitiveRestartEnableEXT;
 extern PFN_vkCmdSetRasterizerDiscardEnableEXT vkCmdSetRasterizerDiscardEnableEXT;
 #endif /* (defined(VK_EXT_extended_dynamic_state2)) || (defined(VK_EXT_shader_object)) */

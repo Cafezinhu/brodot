@@ -44,7 +44,7 @@ void GridContainer::_notification(int p_what) {
 			// Compute the per-column/per-row data.
 			int valid_controls_index = 0;
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}
@@ -183,7 +183,7 @@ void GridContainer::_notification(int p_what) {
 
 			valid_controls_index = 0;
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}
@@ -279,7 +279,7 @@ Size2 GridContainer::get_minimum_size() const {
 
 	int valid_controls_index = 0;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}

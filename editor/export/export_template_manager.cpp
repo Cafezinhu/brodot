@@ -958,14 +958,14 @@ ExportTemplateManager::ExportTemplateManager() {
 	current_missing_label = memnew(Label);
 	current_missing_label->set_theme_type_variation("HeaderSmall");
 
-	current_missing_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	current_missing_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	current_missing_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT);
 	current_hb->add_child(current_missing_label);
 
 	// Status: Current version is installed.
 	current_installed_label = memnew(Label);
 	current_installed_label->set_theme_type_variation("HeaderSmall");
-	current_installed_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	current_installed_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	current_installed_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT);
 	current_installed_label->set_text(TTR("Export templates are installed and ready to be used."));
 	current_hb->add_child(current_installed_label);
@@ -977,7 +977,7 @@ ExportTemplateManager::ExportTemplateManager() {
 
 	current_installed_path = memnew(LineEdit);
 	current_installed_path->set_editable(false);
-	current_installed_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	current_installed_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	current_installed_hb->add_child(current_installed_path);
 
 #ifndef ANDROID_ENABLED
@@ -1002,7 +1002,7 @@ ExportTemplateManager::ExportTemplateManager() {
 
 	// Download and install buttons are available.
 	install_options_vb = memnew(VBoxContainer);
-	install_options_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	install_options_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	install_templates_hb->add_child(install_options_vb);
 
 	HBoxContainer *download_install_hb = memnew(HBoxContainer);
@@ -1046,13 +1046,13 @@ ExportTemplateManager::ExportTemplateManager() {
 
 	// Templates are being downloaded; buttons unavailable.
 	download_progress_hb = memnew(HBoxContainer);
-	download_progress_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	download_progress_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	install_templates_hb->add_child(download_progress_hb);
 	download_progress_hb->hide();
 
 	download_progress_bar = memnew(ProgressBar);
-	download_progress_bar->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	download_progress_bar->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	download_progress_bar->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	download_progress_bar->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	download_progress_bar->set_min(0);
 	download_progress_bar->set_max(1);
 	download_progress_bar->set_value(0);
@@ -1061,7 +1061,7 @@ ExportTemplateManager::ExportTemplateManager() {
 	download_progress_hb->add_child(download_progress_bar);
 
 	download_progress_label = memnew(Label);
-	download_progress_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	download_progress_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	download_progress_hb->add_child(download_progress_label);
 
 	Button *download_cancel_button = memnew(Button);
@@ -1088,7 +1088,7 @@ ExportTemplateManager::ExportTemplateManager() {
 	installed_table->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	installed_table->set_hide_root(true);
 	installed_table->set_custom_minimum_size(Size2(0, 100) * EDSCALE);
-	installed_table->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	installed_table->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_vb->add_child(installed_table);
 	installed_table->connect("button_clicked", callable_mp(this, &ExportTemplateManager::_installed_table_button_cbk));
 

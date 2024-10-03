@@ -219,7 +219,7 @@ def configure(env: "SConsEnvironment"):
             "-framework",
             "IOKit",
             "-framework",
-            "GameController",
+            "GameControleler",
             "-framework",
             "CoreHaptics",
             "-framework",

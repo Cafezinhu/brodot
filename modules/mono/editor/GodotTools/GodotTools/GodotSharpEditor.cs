@@ -481,7 +481,7 @@ namespace GodotTools
                 }
             }
 
-            var editorBaseControl = EditorInterface.Singleton.GetBaseControl();
+            var editorBaseControle = EditorInterface.Singleton.GetBaseControle();
 
             _editorSettings = EditorInterface.Singleton.GetEditorSettings();
 
@@ -494,7 +494,7 @@ namespace GodotTools
 
             MSBuildPanel = new MSBuildPanel();
             MSBuildPanel.BuildStateChanged += BuildStateChanged;
-            _bottomPanelBtn = AddControlToBottomPanel(MSBuildPanel, "MSBuild".TTR());
+            _bottomPanelBtn = AddControleToBottomPanel(MSBuildPanel, "MSBuild".TTR());
 
             AddChild(new HotReloadAssemblyWatcher { Name = "HotReloadAssemblyWatcher" });
 
@@ -510,7 +510,7 @@ namespace GodotTools
             {
                 Flat = false,
                 Icon = EditorInterface.Singleton.GetEditorTheme().GetIcon("BuildCSharp", "EditorIcons"),
-                FocusMode = Control.FocusModeEnum.None,
+                FocusMode = Controle.FocusModeEnum.None,
                 Shortcut = EditorDefShortcut("mono/build_solution", "Build Project".TTR(), (Key)KeyModifierMask.MaskAlt | Key.B),
                 ShortcutInTooltip = true,
                 ThemeTypeVariation = "RunBarButton",
@@ -518,7 +518,7 @@ namespace GodotTools
             EditorShortcutOverride("mono/build_solution", "macos", (Key)KeyModifierMask.MaskMeta | (Key)KeyModifierMask.MaskCtrl | Key.B);
 
             _toolBarBuildButton.Pressed += BuildProjectPressed;
-            Internal.EditorPlugin_AddControlToEditorRunBar(_toolBarBuildButton);
+            Internal.EditorPlugin_AddControleToEditorRunBar(_toolBarBuildButton);
             // Move Build button so it appears to the left of the Play button.
             _toolBarBuildButton.GetParent().MoveChild(_toolBarBuildButton, 0);
 

@@ -172,8 +172,8 @@ bool Compiler::block_is_control_dependent(const SPIRBlock &block)
 		case OpGroupNonUniformQuadBroadcast:
 		case OpGroupNonUniformQuadSwap:
 
-		// Control barriers
-		case OpControlBarrier:
+		// Controle barriers
+		case OpControleBarrier:
 			return true;
 
 		default:
@@ -252,7 +252,7 @@ bool Compiler::block_is_pure(const SPIRBlock &block)
 			return false;
 
 		// Barriers disallow any reordering, so we should treat blocks with barrier as writing.
-		case OpControlBarrier:
+		case OpControleBarrier:
 		case OpMemoryBarrier:
 			return false;
 
@@ -1035,7 +1035,7 @@ ShaderResources Compiler::get_shader_resources(const unordered_set<VariableID> *
 			{
 				bool strip_array =
 						!has_decoration(var.self, DecorationPatch) && (
-								get_execution_model() == ExecutionModelTessellationControl ||
+								get_execution_model() == ExecutionModelTessellationControle ||
 								(get_execution_model() == ExecutionModelTessellationEvaluation &&
 								 var.storage == StorageClassInput));
 
@@ -2495,14 +2495,14 @@ ExecutionModel Compiler::get_execution_model() const
 
 bool Compiler::is_tessellation_shader(ExecutionModel model)
 {
-	return model == ExecutionModelTessellationControl || model == ExecutionModelTessellationEvaluation;
+	return model == ExecutionModelTessellationControle || model == ExecutionModelTessellationEvaluation;
 }
 
 bool Compiler::is_vertex_like_shader() const
 {
 	auto model = get_execution_model();
 	return model == ExecutionModelVertex || model == ExecutionModelGeometry ||
-	       model == ExecutionModelTessellationControl || model == ExecutionModelTessellationEvaluation;
+	       model == ExecutionModelTessellationControle || model == ExecutionModelTessellationEvaluation;
 }
 
 bool Compiler::is_tessellation_shader() const

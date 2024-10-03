@@ -2290,7 +2290,7 @@ typedef struct ufbx_material_map {
 	// for example missing factors are set to `1.0` if a color is defined.
 	bool has_value;
 
-	// Controls whether shading should use `texture`.
+	// Controles whether shading should use `texture`.
 	// NOTE: Some shading models allow this to be `true` even if `texture == NULL`.
 	bool texture_enabled;
 
@@ -2772,7 +2772,7 @@ typedef struct ufbx_shader_texture_input {
 	// Index of the output to use if `texture` is a multi-output shader node.
 	int64_t texture_output_index;
 
-	// Controls whether shading should use `texture`.
+	// Controles whether shading should use `texture`.
 	// NOTE: Some shading models allow this to be `true` even if `texture == NULL`.
 	bool texture_enabled;
 
@@ -5867,7 +5867,7 @@ public:
 // Affected by `UFBX_RotationPivot` but not `UFBX_RotationOrder`.
 #define UFBX_PostRotation "PostRotation"
 
-// Controls whether the node should be displayed or not.
+// Controles whether the node should be displayed or not.
 // Used by: `ufbx_node`.
 #define UFBX_Visibility "Visibility"
 

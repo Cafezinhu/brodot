@@ -391,7 +391,7 @@ void register_scene_types() {
 
 	OS::get_singleton()->yield(); // may take time to init
 
-	GDREGISTER_CLASS(Control);
+	GDREGISTER_CLASS(Controle);
 	GDREGISTER_CLASS(Button);
 	GDREGISTER_CLASS(Label);
 	GDREGISTER_ABSTRACT_CLASS(ScrollBar);
@@ -490,7 +490,7 @@ void register_scene_types() {
 #endif
 
 	int root_dir = GLOBAL_GET("internationalization/rendering/root_node_layout_direction");
-	Control::set_root_layout_direction(root_dir);
+	Controle::set_root_layout_direction(root_dir);
 	Window::set_root_layout_direction(root_dir);
 
 	/* REGISTER ANIMATION */
@@ -546,7 +546,7 @@ void register_scene_types() {
 	GDREGISTER_CLASS(AudioListener3D);
 	GDREGISTER_CLASS(XRCamera3D);
 	GDREGISTER_CLASS(XRNode3D);
-	GDREGISTER_CLASS(XRController3D);
+	GDREGISTER_CLASS(XRControleler3D);
 	GDREGISTER_CLASS(XRAnchor3D);
 	GDREGISTER_CLASS(XROrigin3D);
 	GDREGISTER_CLASS(XRBodyModifier3D);
@@ -1051,7 +1051,7 @@ void register_scene_types() {
 	ClassDB::add_compatibility_class("AnimatedSprite", "AnimatedSprite2D");
 	ClassDB::add_compatibility_class("Area", "Area3D");
 	ClassDB::add_compatibility_class("ARVRCamera", "XRCamera3D");
-	ClassDB::add_compatibility_class("ARVRController", "XRController3D");
+	ClassDB::add_compatibility_class("ARVRControleler", "XRControleler3D");
 	ClassDB::add_compatibility_class("ARVRAnchor", "XRAnchor3D");
 	ClassDB::add_compatibility_class("ARVRInterface", "XRInterface");
 	ClassDB::add_compatibility_class("ARVROrigin", "XROrigin3D");

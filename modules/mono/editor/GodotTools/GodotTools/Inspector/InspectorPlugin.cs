@@ -33,7 +33,7 @@ namespace GodotTools.Inspector
                 {
                     // Generic types used empty paths in older versions of Godot
                     // so we assume your project is out of sync.
-                    AddCustomControl(new InspectorOutOfSyncWarning());
+                    AddCustomControle(new InspectorOutOfSyncWarning());
                     break;
                 }
 
@@ -47,7 +47,7 @@ namespace GodotTools.Inspector
 
                 if (File.GetLastWriteTime(scriptPath) > BuildManager.LastValidBuildDateTime)
                 {
-                    AddCustomControl(new InspectorOutOfSyncWarning());
+                    AddCustomControle(new InspectorOutOfSyncWarning());
                     break;
                 }
             }

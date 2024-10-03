@@ -34,7 +34,7 @@
 @class GodotNativeVideoView;
 @class GodotKeyboardInputView;
 
-@interface ViewController : UIViewController
+@interface ViewControleler : UIViewControleler
 
 @property(nonatomic, readonly, strong) GodotView *godotView;
 @property(nonatomic, readonly, strong) GodotKeyboardInputView *keyboardView;

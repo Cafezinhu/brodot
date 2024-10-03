@@ -36,7 +36,7 @@ Size2 MarginContainer::get_minimum_size() const {
 	Size2 max;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}
@@ -97,7 +97,7 @@ void MarginContainer::_notification(int p_what) {
 			Size2 s = get_size();
 
 			for (int i = 0; i < get_child_count(); i++) {
-				Control *c = as_sortable_control(get_child(i));
+				Controle *c = as_sortable_control(get_child(i));
 				if (!c) {
 					continue;
 				}

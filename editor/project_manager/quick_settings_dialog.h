@@ -57,7 +57,7 @@ class QuickSettingsDialog : public AcceptDialog {
 	PanelContainer *settings_list_panel = nullptr;
 	VBoxContainer *settings_list = nullptr;
 
-	void _add_setting_control(const String &p_text, Control *p_control);
+	void _add_setting_control(const String &p_text, Controle *p_control);
 
 #ifndef ANDROID_ENABLED
 	// The language selection dropdown doesn't work on Android (as the setting isn't saved), see GH-60353.

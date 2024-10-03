@@ -44,7 +44,7 @@ class EditorBottomPanel : public PanelContainer {
 
 	struct BottomPanelItem {
 		String name;
-		Control *control = nullptr;
+		Controle *control = nullptr;
 		Button *button = nullptr;
 	};
 
@@ -55,13 +55,13 @@ class EditorBottomPanel : public PanelContainer {
 	HBoxContainer *button_hbox = nullptr;
 	EditorToaster *editor_toaster = nullptr;
 	Button *expand_button = nullptr;
-	Control *last_opened_control = nullptr;
+	Controle *last_opened_control = nullptr;
 
-	void _switch_by_control(bool p_visible, Control *p_control);
+	void _switch_by_control(bool p_visible, Controle *p_control);
 	void _switch_to_item(bool p_visible, int p_idx);
 	void _expand_button_toggled(bool p_pressed);
 
-	bool _button_drag_hover(const Vector2 &, const Variant &, Button *p_button, Control *p_control);
+	bool _button_drag_hover(const Vector2 &, const Variant &, Button *p_button, Controle *p_control);
 
 protected:
 	void _notification(int p_what);
@@ -70,10 +70,10 @@ public:
 	void save_layout_to_config(Ref<ConfigFile> p_config_file, const String &p_section) const;
 	void load_layout_from_config(Ref<ConfigFile> p_config_file, const String &p_section);
 
-	Button *add_item(String p_text, Control *p_item, const Ref<Shortcut> &p_shortcut = nullptr, bool p_at_front = false);
-	void remove_item(Control *p_item);
-	void make_item_visible(Control *p_item, bool p_visible = true);
-	void move_item_to_end(Control *p_item);
+	Button *add_item(String p_text, Controle *p_item, const Ref<Shortcut> &p_shortcut = nullptr, bool p_at_front = false);
+	void remove_item(Controle *p_item);
+	void make_item_visible(Controle *p_item, bool p_visible = true);
+	void move_item_to_end(Controle *p_item);
 	void hide_bottom_panel();
 	void toggle_last_opened_bottom_panel();
 

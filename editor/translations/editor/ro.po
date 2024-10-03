@@ -1688,8 +1688,8 @@ msgstr "Setări Editor..."
 msgid "Project"
 msgstr "Proiect"
 
-msgid "Version Control"
-msgstr "Control versiune"
+msgid "Version Controle"
+msgstr "Controle versiune"
 
 msgid "Tools"
 msgstr "Unelte"
@@ -3079,11 +3079,11 @@ msgstr "Dimensiune (raport):"
 msgid "Remove Point from Curve"
 msgstr "Ștergere Punt din Curbă"
 
-msgid "Remove Out-Control from Curve"
-msgstr "Eliminare Out-Control de pe Curbă"
+msgid "Remove Out-Controle from Curve"
+msgstr "Eliminare Out-Controle de pe Curbă"
 
-msgid "Remove In-Control from Curve"
-msgstr "Eliminare In-Control de pe Curbă"
+msgid "Remove In-Controle from Curve"
+msgstr "Eliminare In-Controle de pe Curbă"
 
 msgid "Move Point in Curve"
 msgstr "Deplasare punct pe curbă"
@@ -3091,16 +3091,16 @@ msgstr "Deplasare punct pe curbă"
 msgid "Add Point to Curve"
 msgstr "Adăugare punct pe curbă"
 
-msgid "Move In-Control in Curve"
-msgstr "Deplasare In-Control pe curbă"
+msgid "Move In-Controle in Curve"
+msgstr "Deplasare In-Controle pe curbă"
 
-msgid "Move Out-Control in Curve"
-msgstr "Deplasare Out-Control pe curbă"
+msgid "Move Out-Controle in Curve"
+msgstr "Deplasare Out-Controle pe curbă"
 
 msgid "Right Click: Delete Point"
 msgstr "Click Drept: Ștergere punct"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Selectare puncte de control (Shift+Tragere)"
 
 msgid "Delete Point"

@@ -454,7 +454,7 @@ void CreateDialog::_notification(int p_what) {
 
 		case NOTIFICATION_VISIBILITY_CHANGED: {
 			if (is_visible()) {
-				callable_mp((Control *)search_box, &Control::grab_focus).call_deferred(); // Still not visible.
+				callable_mp((Controle *)search_box, &Controle::grab_focus).call_deferred(); // Still not visible.
 				search_box->select_all();
 			} else {
 				EditorSettings::get_singleton()->set_project_metadata("dialog_bounds", "create_new_node", Rect2(get_position(), get_size()));
@@ -604,7 +604,7 @@ void CreateDialog::_favorite_activated() {
 	_confirmed();
 }
 
-Variant CreateDialog::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant CreateDialog::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *ti = favorites->get_item_at_position(p_point);
 	if (ti) {
 		Dictionary d;
@@ -624,7 +624,7 @@ Variant CreateDialog::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
 	return Variant();
 }
 
-bool CreateDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool CreateDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (d.has("type") && String(d["type"]) == "create_favorite_drag") {
 		favorites->set_drop_mode_flags(Tree::DROP_MODE_INBETWEEN);
@@ -634,7 +634,7 @@ bool CreateDialog::can_drop_data_fw(const Point2 &p_point, const Variant &p_data
 	return false;
 }
 
-void CreateDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void CreateDialog::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	Dictionary d = p_data;
 
 	TreeItem *ti = favorites->get_item_at_position(p_point);
@@ -753,7 +753,7 @@ CreateDialog::CreateDialog() {
 
 	VBoxContainer *fav_vb = memnew(VBoxContainer);
 	fav_vb->set_custom_minimum_size(Size2(150, 100) * EDSCALE);
-	fav_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	fav_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	vsc->add_child(fav_vb);
 
 	favorites = memnew(Tree);
@@ -770,7 +770,7 @@ CreateDialog::CreateDialog() {
 	VBoxContainer *rec_vb = memnew(VBoxContainer);
 	vsc->add_child(rec_vb);
 	rec_vb->set_custom_minimum_size(Size2(150, 100) * EDSCALE);
-	rec_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	rec_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	recent = memnew(ItemList);
 	recent->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
@@ -782,12 +782,12 @@ CreateDialog::CreateDialog() {
 
 	VBoxContainer *vbc = memnew(VBoxContainer);
 	vbc->set_custom_minimum_size(Size2(300, 0) * EDSCALE);
-	vbc->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	vbc->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hsc->add_child(vbc);
 
 	search_box = memnew(LineEdit);
 	search_box->set_clear_button_enabled(true);
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_box->connect(SceneStringName(text_changed), callable_mp(this, &CreateDialog::_text_changed));
 	search_box->connect(SceneStringName(gui_input), callable_mp(this, &CreateDialog::_sbox_input));
 

@@ -51,7 +51,7 @@
 #include "scene/gui/separator.h"
 #include "scene/resources/atlas_texture.h"
 
-static void _draw_shadowed_line(Control *p_control, const Point2 &p_from, const Size2 &p_size, const Size2 &p_shadow_offset, Color p_color, Color p_shadow_color) {
+static void _draw_shadowed_line(Controle *p_control, const Point2 &p_from, const Size2 &p_size, const Size2 &p_shadow_offset, Color p_color, Color p_shadow_color) {
 	p_control->draw_line(p_from, p_from + p_size, p_color);
 	p_control->draw_line(p_from + p_shadow_offset, p_from + p_size + p_shadow_offset, p_shadow_color);
 }
@@ -1598,7 +1598,7 @@ Ref<SpriteFrames> SpriteFramesEditor::get_sprite_frames() const {
 	return frames;
 }
 
-Variant SpriteFramesEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant SpriteFramesEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (read_only) {
 		return false;
 	}
@@ -1624,7 +1624,7 @@ Variant SpriteFramesEditor::get_drag_data_fw(const Point2 &p_point, Control *p_f
 	return drag_data;
 }
 
-bool SpriteFramesEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool SpriteFramesEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (read_only) {
 		return false;
 	}
@@ -1671,7 +1671,7 @@ bool SpriteFramesEditor::can_drop_data_fw(const Point2 &p_point, const Variant &
 	return false;
 }
 
-void SpriteFramesEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void SpriteFramesEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -2089,7 +2089,7 @@ SpriteFramesEditor::SpriteFramesEditor() {
 	hbc_frame_duration->add_child(frame_duration);
 
 	// Wide empty separation control. (like BoxContainer::add_spacer())
-	Control *c = memnew(Control);
+	Controle *c = memnew(Controle);
 	c->set_mouse_filter(MOUSE_FILTER_PASS);
 	c->set_h_size_flags(SIZE_EXPAND_FILL);
 	hfc->add_child(c);

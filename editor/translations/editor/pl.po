@@ -1850,10 +1850,10 @@ msgstr "Użycie"
 msgid "Misc"
 msgstr "Różne"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Kliknięta kontrolka:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Typ klikniętej kontrolki:"
 
 msgid "Live Edit Root:"
@@ -3967,7 +3967,7 @@ msgstr "Ustawienia projektu..."
 msgid "Project Settings"
 msgstr "Ustawienia projektu"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Kontrola wersji"
 
 msgid "Export..."
@@ -4162,10 +4162,10 @@ msgstr "Odrzuć lokalne zmiany i przeładuj"
 msgid "Keep local changes and overwrite"
 msgstr "Zachowaj lokalne zmiany i nadpisz"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "Utwórz/nadpisz metadane kontroli wersji..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Ustawienia kontroli wersji..."
 
 msgid "New Inherited"
@@ -6473,14 +6473,14 @@ msgstr "Opcje dodatkowe"
 msgid "Device:"
 msgstr "Urządzenie:"
 
-msgid "Command / Control (auto)"
-msgstr "Command / Control (automatyczne)"
+msgid "Command / Controle (auto)"
+msgstr "Command / Controle (automatyczne)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
-"Automatycznie zmienia pomiędzy \"Meta\" (\"Command\") i \"Control\" w "
+"Automatycznie zmienia pomiędzy \"Meta\" (\"Command\") i \"Controle\" w "
 "zależności od aktualnej platformy."
 
 msgid "Keycode (Latin Equivalent)"
@@ -6645,9 +6645,9 @@ msgstr "Generuj POT"
 msgid "Add Built-in Strings to POT"
 msgstr "Dodaj wbudowane ciągi znaków do POT"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr ""
-"Dodaj ciągi z wbudowanych komponentów, takich jak niektóre węzły Control."
+"Dodaj ciągi z wbudowanych komponentów, takich jak niektóre węzły Controle."
 
 msgid "Set %s on %d nodes"
 msgstr "Ustaw %s na %d węzłach"
@@ -7564,8 +7564,8 @@ msgstr "Przesuń Anchor dla CanvasItem \"%s\""
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Przeskaluj Node2D \"%s\" do (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Zmień rozmiar Control \"%s\" na (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Zmień rozmiar Controle \"%s\" na (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "Przeskaluj %d węzłów CanvasItem"
@@ -8128,8 +8128,8 @@ msgstr "Zmień pionową flagę rozszerzenia"
 msgid "Change Horizontal Expand Flag"
 msgstr "Zmień poziomą flagę rozszerzenia"
 
-msgid "Presets for the anchor and offset values of a Control node."
-msgstr "Ustawienia wstępne dla wartości zakotwiczeń i przesunięć węzła Control."
+msgid "Presets for the anchor and offset values of a Controle node."
+msgstr "Ustawienia wstępne dla wartości zakotwiczeń i przesunięć węzła Controle."
 
 msgid "Anchor preset"
 msgstr "Ustawienia wstępne zakotwiczeń"
@@ -8143,10 +8143,10 @@ msgstr ""
 "prostokąta."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
-"Kiedy aktywne, poruszanie węzłów typu Control zmienia ich zakotwiczenia, "
+"Kiedy aktywne, poruszanie węzłów typu Controle zmienia ich zakotwiczenia, "
 "zamiast przesunięć."
 
 msgid "Sizing settings for children of a Container node."
@@ -9770,10 +9770,10 @@ msgstr "Przełącz pomiędzy trybami minimum/maksimum i podstawa/rozrzut."
 msgid "Remove Point from Curve"
 msgstr "Usuń punkt z krzywej"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Usuń punkt kontrolny wychodzący z krzywej"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Usuń punkt kontrolny wchodzący z krzywej"
 
 msgid "Move Point in Curve"
@@ -9785,10 +9785,10 @@ msgstr "Dodaj punkt do krzywej"
 msgid "Split Curve"
 msgstr "Podziel krzywą"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Przesuń punkt kontrolny wchodzący z krzywej"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Przesuń punkt kontrolny wychodzący z krzywej"
 
 msgid "Close the Curve"
@@ -9800,7 +9800,7 @@ msgstr "Wyczyść punkty krzywej"
 msgid "Select Points"
 msgstr "Zaznacz punkty"
 
-msgid "Shift+Drag: Select Control Points"
+msgid "Shift+Drag: Select Controle Points"
 msgstr "Shift+Przeciągnij: Zaznacz punkty kontrolne"
 
 msgid "Click: Add Point"
@@ -9812,7 +9812,7 @@ msgstr "Lewy klik: Podziel segment (w krzywej)"
 msgid "Right Click: Delete Point"
 msgstr "Prawy Klik: Usuń Punkt"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Zaznacz Punkty Kontrolne (Shift+Drag)"
 
 msgid "Add Point (in empty space)"
@@ -9869,10 +9869,10 @@ msgstr "Podziel Ścieżkę"
 msgid "Remove Path Point"
 msgstr "Usuń punkt ścieżki"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "Zresetuj punkt kontrolny wychodzący"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "Zresetuj punkt kontrolny wchodzący"
 
 msgid "Reset Point Tilt"
@@ -9881,10 +9881,10 @@ msgstr "Zresetuj nachylenie punktu"
 msgid "Shift+Click: Select multiple Points"
 msgstr "Shift+Klik: Zaznacz wiele punktów"
 
-msgid "Select Control Points"
+msgid "Select Controle Points"
 msgstr "Zaznacz punkty kontrolne"
 
-msgid "Shift+Click: Drag out Control Points"
+msgid "Shift+Click: Drag out Controle Points"
 msgstr "Shift+Klik: Przeciągnij wyjściowe punkty kontrolne"
 
 msgid "Select Tilt Handles"
@@ -11516,9 +11516,9 @@ msgstr ""
 "Nieprawidłowa ścieżka, zasób PackedScene został prawdopodobnie przeniesiony "
 "lub usunięty."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
-"Nieprawidłowy zasób PackedScene, musi posiadać węzeł Control jako korzeń."
+"Nieprawidłowy zasób PackedScene, musi posiadać węzeł Controle jako korzeń."
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "Nieprawidłowy plik, nie jest zasobem PackedScene."
@@ -12454,10 +12454,10 @@ msgstr "Czy chcesz usunąć gałąź %s ?"
 msgid "Do you want to remove the %s remote?"
 msgstr "Czy chcesz usunąć zdalne %s ?"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "Przełącz dolny panel kontroli wersji"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Utwórz metadane kontroli wersji"
 
 msgid "Create VCS metadata files for:"
@@ -14372,7 +14372,7 @@ msgstr ""
 "Renderer może zostać później zmieniony, ale sceny mogą potrzebować "
 "dostosowania."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Metadane kontroli wersji:"
 
 msgid "Git"
@@ -17978,11 +17978,11 @@ msgstr "Przełącz między szesnastkowymi i kodowymi wartościami."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Kontener sam w sobie nie spełnia żadnego celu, chyba że jakiś skrypt "
 "konfiguruje sposób ustawiania jego podrzędnych węzłów.\n"
-"Jeśli nie zamierzasz dodać skryptu, zamiast tego użyj zwykłego węzła Control."
+"Jeśli nie zamierzasz dodać skryptu, zamiast tego użyj zwykłego węzła Controle."
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
@@ -18018,11 +18018,11 @@ msgstr "Jeśli \"Exp Edit\" jest włączone, \"Min Value\" musi być większe od
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer jest zaprojektowany do działania z jedną potomną kontrolką.\n"
-"Użyj kontenera jako dziecko (VBox, HBox, itp.) lub węzła typu Control i ustaw "
+"Użyj kontenera jako dziecko (VBox, HBox, itp.) lub węzła typu Controle i ustaw "
 "minimalny rozmiar ręcznie."
 
 msgid ""

@@ -50,7 +50,7 @@ void FlowContainer::_resort() {
 
 	bool rtl = is_layout_rtl();
 
-	HashMap<Control *, Size2i> children_minsize_cache;
+	HashMap<Controle *, Size2i> children_minsize_cache;
 
 	Vector<_LineData> lines_data;
 
@@ -60,11 +60,11 @@ void FlowContainer::_resort() {
 	float line_stretch_ratio_total = 0;
 	int current_container_size = vertical ? get_size().y : get_size().x;
 	int children_in_current_line = 0;
-	Control *last_child = nullptr;
+	Controle *last_child = nullptr;
 
 	// First pass for line wrapping and minimum size calculation.
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *child = as_sortable_control(get_child(i));
+		Controle *child = as_sortable_control(get_child(i));
 		if (!child) {
 			continue;
 		}
@@ -136,7 +136,7 @@ void FlowContainer::_resort() {
 	ofs.y = 0;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *child = as_sortable_control(get_child(i));
+		Controle *child = as_sortable_control(get_child(i));
 		if (!child) {
 			continue;
 		}
@@ -268,7 +268,7 @@ Size2 FlowContainer::get_minimum_size() const {
 	Size2i minimum;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}

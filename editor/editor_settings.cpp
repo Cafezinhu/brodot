@@ -864,7 +864,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	_initial_set("editors/bone_mapper/handle_colors/error", Color(0.8, 0.2, 0.2));
 
 	// Panning
-	// Enum should be in sync with ControlScheme in ViewPanner.
+	// Enum should be in sync with ControleScheme in ViewPanner.
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/panning/2d_editor_panning_scheme", 0, "Scroll Zooms,Scroll Pans");
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/panning/sub_editors_panning_scheme", 0, "Scroll Zooms,Scroll Pans");
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/panning/animation_editors_panning_scheme", 1, "Scroll Zooms,Scroll Pans");
@@ -973,7 +973,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	EDITOR_SETTING(Variant::FLOAT, PROPERTY_HINT_RANGE, "debugger/remote_inspect_refresh_interval", 0.2, "0.02,10,0.01,or_greater")
 	EDITOR_SETTING_BASIC(Variant::BOOL, PROPERTY_HINT_NONE, "debugger/profile_native_calls", false, "")
 
-	// Version control (VersionControlEditorPlugin)
+	// Version control (VersionControleEditorPlugin)
 	_initial_set("version_control/username", "", true);
 	_initial_set("version_control/ssh_public_key_path", "");
 	_initial_set("version_control/ssh_private_key_path", "");

@@ -35,7 +35,7 @@
 #include "scene/property_list_helper.h"
 #include "scene/resources/2d/tile_set.h"
 
-class Control;
+class Controle;
 class TileMapLayer;
 class TerrainConstraint;
 

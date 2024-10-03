@@ -554,7 +554,7 @@ struct KerxSubTableFormat4
 	hb_glyph_position_t &o = buffer->cur_pos();
 	switch (action_type)
 	{
-	  case 0: /* Control Point Actions.*/
+	  case 0: /* Controle Point Actions.*/
 	  {
 	    /* Indexed into glyph outline. */
 	    /* Each action (record in ankrData) contains two 16-bit fields, so we must
@@ -562,18 +562,18 @@ struct KerxSubTableFormat4
 	    const HBUINT16 *data = &ankrData[entry.data.ankrActionIndex * 2];
 	    if (!c->sanitizer.check_array (data, 2)) return;
 	    hb_barrier ();
-	    unsigned int markControlPoint = *data++;
-	    unsigned int currControlPoint = *data++;
+	    unsigned int markControlePoint = *data++;
+	    unsigned int currControlePoint = *data++;
 	    hb_position_t markX = 0;
 	    hb_position_t markY = 0;
 	    hb_position_t currX = 0;
 	    hb_position_t currY = 0;
 	    if (!c->font->get_glyph_contour_point_for_origin (c->buffer->info[mark].codepoint,
-							      markControlPoint,
+							      markControlePoint,
 							      HB_DIRECTION_LTR /*XXX*/,
 							      &markX, &markY) ||
 		!c->font->get_glyph_contour_point_for_origin (c->buffer->cur ().codepoint,
-							      currControlPoint,
+							      currControlePoint,
 							      HB_DIRECTION_LTR /*XXX*/,
 							      &currX, &currY))
 	      return;
@@ -605,7 +605,7 @@ struct KerxSubTableFormat4
 	  }
 	  break;
 
-	  case 2: /* Control Point Coordinate Actions. */
+	  case 2: /* Controle Point Coordinate Actions. */
 	  {
 	    /* Each action contains four 16-bit fields, so we multiply the ankrActionIndex
 	       by 4 to get the correct offset for the given action. */

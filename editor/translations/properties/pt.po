@@ -334,8 +334,8 @@ msgstr "Delay do Tooltip (seg)"
 msgid "Common"
 msgstr "Comum"
 
-msgid "Snap Controls to Pixels"
-msgstr "Fixar Controles em Pixels"
+msgid "Snap Controles to Pixels"
+msgstr "Fixar Controlees em Pixels"
 
 msgid "Fonts"
 msgstr "Fontes"
@@ -472,8 +472,8 @@ msgstr "Aparelho"
 msgid "Window ID"
 msgstr "ID da Janela"
 
-msgid "Command or Control Autoremap"
-msgstr "Comando ou Controle Autoremap"
+msgid "Command or Controle Autoremap"
+msgstr "Comando ou Controlee Autoremap"
 
 msgid "Alt Pressed"
 msgstr "Alt Pressionado"
@@ -580,11 +580,11 @@ msgstr "Inclinação"
 msgid "Instrument"
 msgstr "Instrumento"
 
-msgid "Controller Number"
-msgstr "Número do Controlador"
+msgid "Controleler Number"
+msgstr "Número do Controleador"
 
-msgid "Controller Value"
-msgstr "Valor do Controlador"
+msgid "Controleler Value"
+msgstr "Valor do Controleador"
 
 msgid "Shortcut"
 msgstr "Atalho"
@@ -764,10 +764,10 @@ msgid "Type"
 msgstr "Tipo"
 
 msgid "In Handle"
-msgstr "Dentro do Controle"
+msgstr "Dentro do Controlee"
 
 msgid "Out Handle"
-msgstr "Fora do Controle"
+msgstr "Fora do Controlee"
 
 msgid "Handle Mode"
 msgstr "Modo de Manuseio"
@@ -1633,8 +1633,8 @@ msgstr "Cor do Símbolo"
 msgid "Keyword Color"
 msgstr "Cor da Palavra-Chave"
 
-msgid "Control Flow Keyword Color"
-msgstr "Cor da Palavra-Chave do Fluxo de Controle"
+msgid "Controle Flow Keyword Color"
+msgstr "Cor da Palavra-Chave do Fluxo de Controlee"
 
 msgid "Base Type Color"
 msgstr "Cor do Tipo Base"
@@ -2398,8 +2398,8 @@ msgstr "Contagem de Frames"
 msgid "Duration"
 msgstr "Duração"
 
-msgid "Version Control"
-msgstr "Controle de Versões"
+msgid "Version Controle"
+msgstr "Controlee de Versões"
 
 msgid "Username"
 msgstr "Nome de Utilizador"
@@ -3301,7 +3301,7 @@ msgstr "URL Descritiva"
 msgid "Service Type"
 msgstr "Tipo de Serviço"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL de controle IGD"
 
 msgid "IGD Service Type"
@@ -5509,8 +5509,8 @@ msgstr "Tela Atual"
 msgid "Mouse Passthrough Polygon"
 msgstr "Polígono de Passagem do Rato"
 
-msgid "Wrap Controls"
-msgstr "Ajustar Controles"
+msgid "Wrap Controles"
+msgstr "Ajustar Controlees"
 
 msgid "Transient"
 msgstr "Transitória"

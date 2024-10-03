@@ -33,8 +33,8 @@
 
 #include "scene/gui/control.h"
 
-class ColorRect : public Control {
-	GDCLASS(ColorRect, Control);
+class ColorRect : public Controle {
+	GDCLASS(ColorRect, Controle);
 
 	Color color = Color(1, 1, 1);
 

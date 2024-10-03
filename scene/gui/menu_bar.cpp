@@ -492,7 +492,7 @@ void MenuBar::_draw_menu_item(int p_index) {
 
 void MenuBar::shape(Menu &p_menu) {
 	p_menu.text_buf->clear();
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		p_menu.text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		p_menu.text_buf->set_direction((TextServer::Direction)text_direction);
@@ -547,7 +547,7 @@ int MenuBar::get_menu_idx_from_control(PopupMenu *p_child) const {
 }
 
 void MenuBar::add_child_notify(Node *p_child) {
-	Control::add_child_notify(p_child);
+	Controle::add_child_notify(p_child);
 
 	PopupMenu *pm = Object::cast_to<PopupMenu>(p_child);
 	if (!pm) {
@@ -575,7 +575,7 @@ void MenuBar::add_child_notify(Node *p_child) {
 }
 
 void MenuBar::move_child_notify(Node *p_child) {
-	Control::move_child_notify(p_child);
+	Controle::move_child_notify(p_child);
 
 	PopupMenu *pm = Object::cast_to<PopupMenu>(p_child);
 	if (!pm) {
@@ -616,7 +616,7 @@ void MenuBar::move_child_notify(Node *p_child) {
 }
 
 void MenuBar::remove_child_notify(Node *p_child) {
-	Control::remove_child_notify(p_child);
+	Controle::remove_child_notify(p_child);
 
 	PopupMenu *pm = Object::cast_to<PopupMenu>(p_child);
 	if (!pm) {
@@ -732,7 +732,7 @@ void MenuBar::set_disable_shortcuts(bool p_disabled) {
 	disable_shortcuts = p_disabled;
 }
 
-void MenuBar::set_text_direction(Control::TextDirection p_text_direction) {
+void MenuBar::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -741,7 +741,7 @@ void MenuBar::set_text_direction(Control::TextDirection p_text_direction) {
 	}
 }
 
-Control::TextDirection MenuBar::get_text_direction() const {
+Controle::TextDirection MenuBar::get_text_direction() const {
 	return text_direction;
 }
 

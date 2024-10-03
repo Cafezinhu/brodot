@@ -71,8 +71,8 @@ UPNP_GetConnectionTypeInfo(const char * controlURL,
  * NON ZERO : ERROR Either an UPnP error code or an unknown error.
  *
  * possible UPnP Errors :
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
- * 501 Action Failed - See UPnP Device Architecture section on Control. */
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
+ * 501 Action Failed - See UPnP Device Architecture section on Controle. */
 MINIUPNP_LIBSPEC int
 UPNP_GetExternalIPAddress(const char * controlURL,
                           const char * servicetype,
@@ -100,8 +100,8 @@ UPNP_GetLinkLayerMaxBitRates(const char* controlURL,
  *
  * List of possible UPnP errors for AddPortMapping :
  * errorCode errorDescription (short) - Description (long)
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
- * 501 Action Failed - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
+ * 501 Action Failed - See UPnP Device Architecture section on Controle.
  * 606 Action not authorized - The action requested REQUIRES authorization and
  *                             the sender was not authorized.
  * 715 WildCardNotPermittedInSrcIP - The source IP address cannot be
@@ -143,8 +143,8 @@ UPNP_AddPortMapping(const char * controlURL, const char * servicetype,
  *
  * List of possible UPnP errors for AddPortMapping :
  * errorCode errorDescription (short) - Description (long)
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
- * 501 Action Failed - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
+ * 501 Action Failed - See UPnP Device Architecture section on Controle.
  * 606 Action not authorized - The action requested REQUIRES authorization and
  *                             the sender was not authorized.
  * 715 WildCardNotPermittedInSrcIP - The source IP address cannot be
@@ -175,7 +175,7 @@ UPNP_AddAnyPortMapping(const char * controlURL, const char * servicetype,
  * NON ZERO : error. Either an UPnP error code or an undefined error.
  *
  * List of possible UPnP errors for DeletePortMapping :
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
  * 606 Action not authorized - The action requested REQUIRES authorization
  *                             and the sender was not authorized.
  * 714 NoSuchEntryInArray - The specified value does not exist in the array */
@@ -227,8 +227,8 @@ UPNP_GetPortMappingNumberOfEntries(const char * controlURL,
  * or a UPnP Error Code.
  *
  * List of possible UPnP errors for _GetSpecificPortMappingEntry :
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
- * 501 Action Failed - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
+ * 501 Action Failed - See UPnP Device Architecture section on Controle.
  * 606 Action not authorized - The action requested REQUIRES authorization
  *                             and the sender was not authorized.
  * 714 NoSuchEntryInArray - The specified value does not exist in the array.
@@ -262,7 +262,7 @@ UPNP_GetSpecificPortMappingEntry(const char * controlURL,
  * or a UPnP Error Code.
  *
  * Possible UPNP Error codes :
- * 402 Invalid Args - See UPnP Device Architecture section on Control.
+ * 402 Invalid Args - See UPnP Device Architecture section on Controle.
  * 606 Action not authorized - The action requested REQUIRES authorization
  *                             and the sender was not authorized.
  * 713 SpecifiedArrayIndexInvalid - The specified array index is out of bounds
@@ -298,7 +298,7 @@ UPNP_GetListOfPortMappings(const char * controlURL,
                            const char * numberOfPorts,
                            struct PortMappingParserData * data);
 
-/* IGD:2, functions for service WANIPv6FirewallControl:1 */
+/* IGD:2, functions for service WANIPv6FirewallControle:1 */
 MINIUPNP_LIBSPEC int
 UPNP_GetFirewallStatus(const char * controlURL,
 				const char * servicetype,

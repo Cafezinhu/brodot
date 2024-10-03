@@ -212,7 +212,7 @@ typedef enum UProperty {
     UCHAR_BINARY_START=UCHAR_ALPHABETIC,
     /** Binary property ASCII_Hex_Digit. 0-9 A-F a-f @stable ICU 2.1 */
     UCHAR_ASCII_HEX_DIGIT=1,
-    /** Binary property Bidi_Control.
+    /** Binary property Bidi_Controle.
         Format controls which have specific functions
         in the Bidi Algorithm. @stable ICU 2.1 */
     UCHAR_BIDI_CONTROL=2,
@@ -278,7 +278,7 @@ typedef enum UProperty {
         For programmatic determination of
         Ideographic Description Sequences. @stable ICU 2.1 */
     UCHAR_IDS_TRINARY_OPERATOR=19,
-    /** Binary property Join_Control.
+    /** Binary property Join_Controle.
         Format controls for cursive joining and ligation. @stable ICU 2.1 */
     UCHAR_JOIN_CONTROL=20,
     /** Binary property Logical_Order_Exception (new in Unicode 3.2).
@@ -3382,7 +3382,7 @@ u_isJavaSpaceChar(UChar32 c);
  * difference.
  *
  * Note: Unicode 4.0.1 changed U+200B ZERO WIDTH SPACE from a Space Separator (Zs)
- * to a Format Control (Cf). Since then, isWhitespace(0x200b) returns false.
+ * to a Format Controle (Cf). Since then, isWhitespace(0x200b) returns false.
  * See http://www.unicode.org/versions/Unicode4.0.1/
  *
  * Note: There are several ICU whitespace functions; please see the uchar.h
@@ -3427,7 +3427,7 @@ u_iscntrl(UChar32 c);
  * Determines whether the specified code point is an ISO control code.
  * True for U+0000..U+001f and U+007f..U+009f (general category "Cc").
  *
- * Same as java.lang.Character.isISOControl().
+ * Same as java.lang.Character.isISOControle().
  *
  * @param c the code point to be tested
  * @return true if the code point is an ISO control code
@@ -3436,7 +3436,7 @@ u_iscntrl(UChar32 c);
  * @stable ICU 2.6
  */
 U_CAPI UBool U_EXPORT2
-u_isISOControl(UChar32 c);
+u_isISOControle(UChar32 c);
 
 /**
  * Determines whether the specified code point is a printable character.

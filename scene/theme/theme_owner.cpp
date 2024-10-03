@@ -40,7 +40,7 @@ void ThemeOwner::set_owner_node(Node *p_node) {
 	owner_control = nullptr;
 	owner_window = nullptr;
 
-	Control *c = Object::cast_to<Control>(p_node);
+	Controle *c = Object::cast_to<Controle>(p_node);
 	if (c) {
 		owner_control = c;
 		return;
@@ -94,11 +94,11 @@ void ThemeOwner::_owner_context_changed() {
 		return;
 	}
 
-	Control *c = Object::cast_to<Control>(holder);
+	Controle *c = Object::cast_to<Controle>(holder);
 	Window *w = c == nullptr ? Object::cast_to<Window>(holder) : nullptr;
 
 	if (c) {
-		c->notification(Control::NOTIFICATION_THEME_CHANGED);
+		c->notification(Controle::NOTIFICATION_THEME_CHANGED);
 	} else if (w) {
 		w->notification(Window::NOTIFICATION_THEME_CHANGED);
 	}
@@ -122,7 +122,7 @@ void ThemeOwner::assign_theme_on_parented(Node *p_for_node) {
 
 	Node *parent = p_for_node->get_parent();
 
-	Control *parent_c = Object::cast_to<Control>(parent);
+	Controle *parent_c = Object::cast_to<Controle>(parent);
 	if (parent_c && parent_c->has_theme_owner_node()) {
 		propagate_theme_changed(p_for_node, parent_c->get_theme_owner_node(), false, true);
 	} else {
@@ -140,7 +140,7 @@ void ThemeOwner::clear_theme_on_unparented(Node *p_for_node) {
 
 	Node *parent = p_for_node->get_parent();
 
-	Control *parent_c = Object::cast_to<Control>(parent);
+	Controle *parent_c = Object::cast_to<Controle>(parent);
 	if (parent_c && parent_c->has_theme_owner_node()) {
 		propagate_theme_changed(p_for_node, nullptr, false, true);
 	} else {
@@ -152,11 +152,11 @@ void ThemeOwner::clear_theme_on_unparented(Node *p_for_node) {
 }
 
 void ThemeOwner::propagate_theme_changed(Node *p_to_node, Node *p_owner_node, bool p_notify, bool p_assign) {
-	Control *c = Object::cast_to<Control>(p_to_node);
+	Controle *c = Object::cast_to<Controle>(p_to_node);
 	Window *w = c == nullptr ? Object::cast_to<Window>(p_to_node) : nullptr;
 
 	if (!c && !w) {
-		// Theme inheritance chains are broken by nodes that aren't Control or Window.
+		// Theme inheritance chains are broken by nodes that aren't Controle or Window.
 		return;
 	}
 
@@ -175,7 +175,7 @@ void ThemeOwner::propagate_theme_changed(Node *p_to_node, Node *p_owner_node, bo
 		}
 
 		if (p_notify) {
-			c->notification(Control::NOTIFICATION_THEME_CHANGED);
+			c->notification(Controle::NOTIFICATION_THEME_CHANGED);
 		}
 	} else if (w) {
 		if (w != p_owner_node && w->get_theme().is_valid()) {
@@ -200,9 +200,9 @@ void ThemeOwner::propagate_theme_changed(Node *p_to_node, Node *p_owner_node, bo
 // Theme lookup.
 
 void ThemeOwner::get_theme_type_dependencies(const Node *p_for_node, const StringName &p_theme_type, Vector<StringName> &r_result) const {
-	const Control *for_c = Object::cast_to<Control>(p_for_node);
+	const Controle *for_c = Object::cast_to<Controle>(p_for_node);
 	const Window *for_w = Object::cast_to<Window>(p_for_node);
-	ERR_FAIL_COND_MSG(!for_c && !for_w, "Only Control and Window nodes and derivatives can be polled for theming.");
+	ERR_FAIL_COND_MSG(!for_c && !for_w, "Only Controle and Window nodes and derivatives can be polled for theming.");
 
 	StringName type_name = p_for_node->get_class_name();
 	StringName type_variation;
@@ -412,7 +412,7 @@ int ThemeOwner::get_theme_default_font_size() {
 }
 
 Ref<Theme> ThemeOwner::_get_owner_node_theme(Node *p_owner_node) const {
-	const Control *owner_c = Object::cast_to<Control>(p_owner_node);
+	const Controle *owner_c = Object::cast_to<Controle>(p_owner_node);
 	if (owner_c) {
 		return owner_c->get_theme();
 	}
@@ -428,7 +428,7 @@ Ref<Theme> ThemeOwner::_get_owner_node_theme(Node *p_owner_node) const {
 Node *ThemeOwner::_get_next_owner_node(Node *p_from_node) const {
 	Node *parent = p_from_node->get_parent();
 
-	Control *parent_c = Object::cast_to<Control>(parent);
+	Controle *parent_c = Object::cast_to<Controle>(parent);
 	if (parent_c) {
 		return parent_c->get_theme_owner_node();
 	} else {

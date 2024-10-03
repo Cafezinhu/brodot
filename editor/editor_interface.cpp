@@ -211,7 +211,7 @@ Ref<Theme> EditorInterface::get_editor_theme() const {
 	return EditorNode::get_singleton()->get_editor_theme();
 }
 
-Control *EditorInterface::get_base_control() const {
+Controle *EditorInterface::get_base_control() const {
 	return EditorNode::get_singleton()->get_gui_base();
 }
 

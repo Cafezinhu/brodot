@@ -388,7 +388,7 @@
 #define XF86XK_Buttonconfig		_EVDEVK(0x240)		/* v3.16 KEY_BUTTONCONFIG */
 #define XF86XK_Taskmanager		_EVDEVK(0x241)		/* v3.16 KEY_TASKMANAGER */
 #define XF86XK_Journal			_EVDEVK(0x242)		/* v3.16 KEY_JOURNAL */
-#define XF86XK_ControlPanel		_EVDEVK(0x243)		/* v3.16 KEY_CONTROLPANEL */
+#define XF86XK_ControlePanel		_EVDEVK(0x243)		/* v3.16 KEY_CONTROLPANEL */
 #define XF86XK_AppSelect		_EVDEVK(0x244)		/* v3.16 KEY_APPSELECT */
 #define XF86XK_Screensaver		_EVDEVK(0x245)		/* v3.16 KEY_SCREENSAVER */
 #define XF86XK_VoiceCommand		_EVDEVK(0x246)		/* v3.16 KEY_VOICECOMMAND */

@@ -41,8 +41,8 @@
 
 class ViewPanner;
 
-class TileAtlasView : public Control {
-	GDCLASS(TileAtlasView, Control);
+class TileAtlasView : public Controle {
+	GDCLASS(TileAtlasView, Controle);
 
 private:
 	Ref<TileSet> tile_set;
@@ -77,39 +77,39 @@ private:
 	Label *missing_source_label = nullptr;
 
 	// Background
-	Control *background_left = nullptr;
+	Controle *background_left = nullptr;
 	void _draw_background_left();
-	Control *background_right = nullptr;
+	Controle *background_right = nullptr;
 	void _draw_background_right();
 
 	// Left side.
-	Control *base_tiles_root_control = nullptr;
+	Controle *base_tiles_root_control = nullptr;
 	void _base_tiles_root_control_gui_input(const Ref<InputEvent> &p_event);
 
-	Control *base_tiles_drawing_root = nullptr;
+	Controle *base_tiles_drawing_root = nullptr;
 
-	Control *base_tiles_draw = nullptr;
+	Controle *base_tiles_draw = nullptr;
 	HashMap<Ref<Material>, RID> material_tiles_draw;
 	HashMap<Ref<Material>, RID> material_alternatives_draw;
 	void _draw_base_tiles();
 	RID _get_canvas_item_to_draw(const TileData *p_for_data, const CanvasItem *p_base_item, HashMap<Ref<Material>, RID> &p_material_map);
 	void _clear_material_canvas_items();
 
-	Control *base_tiles_texture_grid = nullptr;
+	Controle *base_tiles_texture_grid = nullptr;
 	void _draw_base_tiles_texture_grid();
 
-	Control *base_tiles_shape_grid = nullptr;
+	Controle *base_tiles_shape_grid = nullptr;
 	void _draw_base_tiles_shape_grid();
 
 	Size2i _compute_base_tiles_control_size();
 
 	// Right side.
-	Control *alternative_tiles_root_control = nullptr;
+	Controle *alternative_tiles_root_control = nullptr;
 	void _alternative_tiles_root_control_gui_input(const Ref<InputEvent> &p_event);
 
-	Control *alternative_tiles_drawing_root = nullptr;
+	Controle *alternative_tiles_drawing_root = nullptr;
 
-	Control *alternatives_draw = nullptr;
+	Controle *alternatives_draw = nullptr;
 	void _draw_alternatives();
 
 	Size2i _compute_alternative_tiles_control_size();
@@ -140,28 +140,28 @@ public:
 
 	Vector2i get_atlas_tile_coords_at_pos(const Vector2 p_pos, bool p_clamp = false) const;
 
-	void add_control_over_atlas_tiles(Control *p_control, bool scaled = true) {
+	void add_control_over_atlas_tiles(Controle *p_control, bool scaled = true) {
 		if (scaled) {
 			base_tiles_drawing_root->add_child(p_control);
 		} else {
 			base_tiles_root_control->add_child(p_control);
 		}
-		p_control->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-		p_control->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		p_control->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+		p_control->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 	};
 
 	// Right side.
 	Vector3i get_alternative_tile_at_pos(const Vector2 p_pos) const;
 	Rect2i get_alternative_tile_rect(const Vector2i p_coords, int p_alternative_tile);
 
-	void add_control_over_alternative_tiles(Control *p_control, bool scaled = true) {
+	void add_control_over_alternative_tiles(Controle *p_control, bool scaled = true) {
 		if (scaled) {
 			alternative_tiles_drawing_root->add_child(p_control);
 		} else {
 			alternative_tiles_root_control->add_child(p_control);
 		}
-		p_control->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-		p_control->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		p_control->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+		p_control->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 	};
 
 	// Redraw everything.

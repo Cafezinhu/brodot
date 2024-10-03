@@ -33,8 +33,8 @@
 
 #include "scene/gui/control.h"
 
-class Container : public Control {
-	GDCLASS(Container, Control);
+class Container : public Controle {
+	GDCLASS(Container, Controle);
 
 	bool pending_sort = false;
 	void _sort_children();
@@ -48,7 +48,7 @@ protected:
 	};
 
 	void queue_sort();
-	Control *as_sortable_control(Node *p_node, SortableVisbilityMode p_visibility_mode = SortableVisbilityMode::VISIBLE_IN_TREE) const;
+	Controle *as_sortable_control(Node *p_node, SortableVisbilityMode p_visibility_mode = SortableVisbilityMode::VISIBLE_IN_TREE) const;
 
 	virtual void add_child_notify(Node *p_child) override;
 	virtual void move_child_notify(Node *p_child) override;
@@ -66,7 +66,7 @@ public:
 		NOTIFICATION_SORT_CHILDREN = 51,
 	};
 
-	void fit_child_in_rect(Control *p_child, const Rect2 &p_rect);
+	void fit_child_in_rect(Controle *p_child, const Rect2 &p_rect);
 
 	virtual Vector<int> get_allowed_size_flags_horizontal() const;
 	virtual Vector<int> get_allowed_size_flags_vertical() const;

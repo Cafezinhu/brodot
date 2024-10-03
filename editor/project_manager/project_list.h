@@ -41,8 +41,8 @@ class ProjectList;
 class TextureButton;
 class TextureRect;
 
-class ProjectListItemControl : public HBoxContainer {
-	GDCLASS(ProjectListItemControl, HBoxContainer)
+class ProjectListItemControle : public HBoxContainer {
+	GDCLASS(ProjectListItemControle, HBoxContainer)
 
 	VBoxContainer *main_vbox = nullptr;
 	TextureButton *favorite_button = nullptr;
@@ -84,7 +84,7 @@ public:
 	void set_is_missing(bool p_missing);
 	void set_is_grayed(bool p_grayed);
 
-	ProjectListItemControl();
+	ProjectListItemControle();
 };
 
 class ProjectList : public ScrollContainer {
@@ -117,7 +117,7 @@ public:
 		bool missing = false;
 		int version = 0;
 
-		ProjectListItemControl *control = nullptr;
+		ProjectListItemControle *control = nullptr;
 
 		Item() {}
 

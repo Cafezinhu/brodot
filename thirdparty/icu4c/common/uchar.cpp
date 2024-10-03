@@ -188,7 +188,7 @@ u_iscntrl(UChar32 c) {
 }
 
 U_CAPI UBool U_EXPORT2
-u_isISOControl(UChar32 c) {
+u_isISOControle(UChar32 c) {
     return (uint32_t)c<=0x9f && (c<=0x1f || c>=0x7f);
 }
 
@@ -281,8 +281,8 @@ u_isgraph(UChar32 c) {
 
 /**
  * Checks if c is in
- * [^\p{space}\p{gc=Control}\p{gc=Surrogate}\p{gc=Unassigned}]
- * with space=\p{Whitespace} and Control=Cc.
+ * [^\p{space}\p{gc=Controle}\p{gc=Surrogate}\p{gc=Unassigned}]
+ * with space=\p{Whitespace} and Controle=Cc.
  * Implements UCHAR_POSIX_GRAPH.
  * @internal
  */
@@ -290,7 +290,7 @@ U_CFUNC UBool
 u_isgraphPOSIX(UChar32 c) {
     uint32_t props;
     GET_PROPS(c, props);
-    /* \p{space}\p{gc=Control} == \p{gc=Z}\p{Control} */
+    /* \p{space}\p{gc=Controle} == \p{gc=Z}\p{Controle} */
     /* comparing ==0 returns false for the categories mentioned */
     return (UBool)((CAT_MASK(props)&
                     (U_GC_CC_MASK|U_GC_CS_MASK|U_GC_CN_MASK|U_GC_Z_MASK))
@@ -308,7 +308,7 @@ u_ispunct(UChar32 c) {
 U_CAPI UBool U_EXPORT2
 u_isIDIgnorable(UChar32 c) {
     if(c<=0x9f) {
-        return u_isISOControl(c) && !IS_THAT_ASCII_CONTROL_SPACE(c);
+        return u_isISOControle(c) && !IS_THAT_ASCII_CONTROL_SPACE(c);
     } else {
         uint32_t props;
         GET_PROPS(c, props);

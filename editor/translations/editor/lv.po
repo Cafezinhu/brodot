@@ -1996,7 +1996,7 @@ msgstr "Redaktora iestatījumi..."
 msgid "Project"
 msgstr "Projekts"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versiju Kontrole"
 
 msgid "Install Android Build Template..."

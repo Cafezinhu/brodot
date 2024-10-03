@@ -2874,7 +2874,7 @@ void TextEdit::_update_placeholder() {
 		flags.set_flag(TextServer::BREAK_TRIM_INDENT);
 	}
 	placeholder_data_buf->set_break_flags(flags);
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		placeholder_data_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		placeholder_data_buf->set_direction((TextServer::Direction)text_direction);
@@ -2916,7 +2916,7 @@ bool TextEdit::_using_placeholder() const {
 }
 
 void TextEdit::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.base_scale = get_theme_default_base_scale();
 	use_selected_font_color = theme_cache.font_selected_color != Color(0, 0, 0, 0);
@@ -2929,7 +2929,7 @@ void TextEdit::_update_theme_item_cache() {
 void TextEdit::_update_caches() {
 	/* Text properties. */
 	TextServer::Direction dir;
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		dir = is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR;
 	} else {
 		dir = (TextServer::Direction)text_direction;
@@ -3026,7 +3026,7 @@ bool TextEdit::is_text_field() const {
 }
 
 Variant TextEdit::get_drag_data(const Point2 &p_point) {
-	Variant ret = Control::get_drag_data(p_point);
+	Variant ret = Controle::get_drag_data(p_point);
 	if (ret != Variant()) {
 		return ret;
 	}
@@ -3044,7 +3044,7 @@ Variant TextEdit::get_drag_data(const Point2 &p_point) {
 }
 
 bool TextEdit::can_drop_data(const Point2 &p_point, const Variant &p_data) const {
-	bool drop_override = Control::can_drop_data(p_point, p_data); // In case user wants to drop custom data.
+	bool drop_override = Controle::can_drop_data(p_point, p_data); // In case user wants to drop custom data.
 	if (drop_override) {
 		return drop_override;
 	}
@@ -3053,7 +3053,7 @@ bool TextEdit::can_drop_data(const Point2 &p_point, const Variant &p_data) const
 }
 
 void TextEdit::drop_data(const Point2 &p_point, const Variant &p_data) {
-	Control::drop_data(p_point, p_data);
+	Controle::drop_data(p_point, p_data);
 
 	if (p_data.is_string() && is_editable()) {
 		Point2i pos = get_line_column_at_pos(get_local_mouse_pos());
@@ -3102,7 +3102,7 @@ void TextEdit::drop_data(const Point2 &p_point, const Variant &p_data) {
 	}
 }
 
-Control::CursorShape TextEdit::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape TextEdit::get_cursor_shape(const Point2 &p_pos) const {
 	Point2i pos = get_line_column_at_pos(p_pos);
 	int row = pos.y;
 
@@ -3133,7 +3133,7 @@ Control::CursorShape TextEdit::get_cursor_shape(const Point2 &p_pos) const {
 
 String TextEdit::get_tooltip(const Point2 &p_pos) const {
 	if (!tooltip_callback.is_valid()) {
-		return Control::get_tooltip(p_pos);
+		return Controle::get_tooltip(p_pos);
 	}
 	Point2i pos = get_line_column_at_pos(p_pos);
 	int row = pos.y;
@@ -3141,7 +3141,7 @@ String TextEdit::get_tooltip(const Point2 &p_pos) const {
 
 	String s = text[row];
 	if (s.length() == 0) {
-		return Control::get_tooltip(p_pos);
+		return Controle::get_tooltip(p_pos);
 	}
 	int beg, end;
 	if (select_word(s, col, beg, end)) {
@@ -3154,7 +3154,7 @@ String TextEdit::get_tooltip(const Point2 &p_pos) const {
 		return ret;
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void TextEdit::set_tooltip_request_func(const Callable &p_tooltip_callback) {
@@ -3211,7 +3211,7 @@ bool TextEdit::is_editable() const {
 	return editable;
 }
 
-void TextEdit::set_text_direction(Control::TextDirection p_text_direction) {
+void TextEdit::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -3219,7 +3219,7 @@ void TextEdit::set_text_direction(Control::TextDirection p_text_direction) {
 			input_direction = text_direction;
 		}
 		TextServer::Direction dir;
-		if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+		if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 			dir = is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR;
 		} else {
 			dir = (TextServer::Direction)text_direction;
@@ -3238,7 +3238,7 @@ void TextEdit::set_text_direction(Control::TextDirection p_text_direction) {
 	}
 }
 
-Control::TextDirection TextEdit::get_text_direction() const {
+Controle::TextDirection TextEdit::get_text_direction() const {
 	return text_direction;
 }
 
@@ -3246,7 +3246,7 @@ void TextEdit::set_language(const String &p_language) {
 	if (language != p_language) {
 		language = p_language;
 		TextServer::Direction dir;
-		if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+		if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 			dir = is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR;
 		} else {
 			dir = (TextServer::Direction)text_direction;
@@ -7426,8 +7426,8 @@ void TextEdit::_generate_context_menu() {
 	menu->add_separator();
 	menu->add_submenu_node_item(ETR("Text Writing Direction"), menu_dir, MENU_SUBMENU_TEXT_DIR);
 	menu->add_separator();
-	menu->add_check_item(ETR("Display Control Characters"), MENU_DISPLAY_UCC);
-	menu->add_submenu_node_item(ETR("Insert Control Character"), menu_ctl, MENU_SUBMENU_INSERT_UCC);
+	menu->add_check_item(ETR("Display Controle Characters"), MENU_DISPLAY_UCC);
+	menu->add_submenu_node_item(ETR("Insert Controle Character"), menu_ctl, MENU_SUBMENU_INSERT_UCC);
 
 	menu->connect(SceneStringName(id_pressed), callable_mp(this, &TextEdit::menu_option));
 	menu_dir->connect(SceneStringName(id_pressed), callable_mp(this, &TextEdit::menu_option));

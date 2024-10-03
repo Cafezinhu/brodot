@@ -57,9 +57,9 @@ const char* StorageClassString(int);
 const char* DecorationString(int);
 const char* BuiltInString(int);
 const char* DimensionString(int);
-const char* SelectControlString(int);
-const char* LoopControlString(int);
-const char* FunctionControlString(int);
+const char* SelectControleString(int);
+const char* LoopControleString(int);
+const char* FunctionControleString(int);
 const char* SamplerAddressingModeString(int);
 const char* SamplerFilterModeString(int);
 const char* ImageFormatString(int);
@@ -101,7 +101,7 @@ enum OpcodeClass {
     OpClassBit,
     OpClassRelationalLogical,
     OpClassDerivative,
-    OpClassFlowControl,
+    OpClassFlowControle,
     OpClassAtomic,
     OpClassPrimitive,
     OpClassBarrier,

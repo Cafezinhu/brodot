@@ -32,7 +32,7 @@
 
 #include "../action_map/openxr_interaction_profile_metadata.h"
 
-HashMap<String, bool *> OpenXRMetaControllerExtension::get_requested_extensions() {
+HashMap<String, bool *> OpenXRMetaControlelerExtension::get_requested_extensions() {
 	HashMap<String, bool *> request_extensions;
 
 	request_extensions[XR_FB_TOUCH_CONTROLLER_PROXIMITY_EXTENSION_NAME] = &available[META_TOUCH_PROXIMITY];
@@ -42,11 +42,11 @@ HashMap<String, bool *> OpenXRMetaControllerExtension::get_requested_extensions(
 	return request_extensions;
 }
 
-bool OpenXRMetaControllerExtension::is_available(MetaControllers p_type) {
+bool OpenXRMetaControlelerExtension::is_available(MetaControlelers p_type) {
 	return available[p_type];
 }
 
-void OpenXRMetaControllerExtension::on_register_metadata() {
+void OpenXRMetaControlelerExtension::on_register_metadata() {
 	OpenXRInteractionProfileMetadata *metadata = OpenXRInteractionProfileMetadata::get_singleton();
 	ERR_FAIL_NULL(metadata);
 

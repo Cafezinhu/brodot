@@ -48,7 +48,7 @@ def make_default_controller_mappings(target, source, env):
             "Web": "#ifdef WEB_ENABLED",
         }
 
-        g.write("const char* DefaultControllerMappings::mappings[] = {\n")
+        g.write("const char* DefaultControlelerMappings::mappings[] = {\n")
         for platform, mappings in platform_mappings.items():
             variable = platform_variables[platform]
             g.write("{}\n".format(variable))

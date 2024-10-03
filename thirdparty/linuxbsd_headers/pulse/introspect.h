@@ -33,7 +33,7 @@
 #include <pulse/format.h>
 #include <pulse/version.h>
 
-/** \page introspect Server Query and Control
+/** \page introspect Server Query and Controle
  *
  * \section overv_sec Overview
  *
@@ -134,7 +134,7 @@
  * either pa_context_get_client_info() or pa_context_get_client_info_list().
  * The information structure is called pa_client_info.
  *
- * \section ctrl_sec Control
+ * \section ctrl_sec Controle
  *
  * Some parts of the server are only possible to read, but most can also be
  * modified in different ways. Note that these changes will affect all

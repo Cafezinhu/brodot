@@ -2228,7 +2228,7 @@ msgstr "Tetapan Editor..."
 msgid "Project"
 msgstr "Projek"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Kawalan Versi"
 
 msgid "Install Android Build Template..."
@@ -3635,7 +3635,7 @@ msgstr "Alih CanvasItem \"%s\" Anchor"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Skala Node2D \"%s\" ke (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "Ubah Saiz Kawalan \"%s\" kepada (%d, %d)"
 
 msgid "Scale %d CanvasItems"

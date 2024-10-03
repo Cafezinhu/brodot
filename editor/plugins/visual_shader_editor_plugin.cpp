@@ -95,10 +95,10 @@ void VisualShaderNodePlugin::set_editor(VisualShaderEditor *p_editor) {
 	vseditor = p_editor;
 }
 
-Control *VisualShaderNodePlugin::create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) {
+Controle *VisualShaderNodePlugin::create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) {
 	Object *ret = nullptr;
 	GDVIRTUAL_CALL(_create_editor, p_parent_resource, p_node, ret);
-	return Object::cast_to<Control>(ret);
+	return Object::cast_to<Controle>(ret);
 }
 
 void VisualShaderNodePlugin::_bind_methods() {
@@ -158,9 +158,9 @@ VSRerouteNode::VSRerouteNode() {
 
 	const Size2 size = Size2(32, 32) * EDSCALE;
 
-	Control *slot_area = memnew(Control);
+	Controle *slot_area = memnew(Controle);
 	slot_area->set_custom_minimum_size(size);
-	slot_area->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	slot_area->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	add_child(slot_area);
 
 	// Lay the input and output ports on top of each other to create the illusion of a single port.
@@ -253,13 +253,13 @@ void VisualShaderGraphPlugin::show_port_preview(VisualShader::Type p_type, int p
 				graph_node->set_slot_draw_stylebox(vbox->get_index(false), false);
 			}
 
-			Control *offset = memnew(Control);
+			Controle *offset = memnew(Controle);
 			offset->set_custom_minimum_size(Size2(0, 5 * EDSCALE));
 			vbox->add_child(offset);
 
 			VisualShaderNodePortPreview *port_preview = memnew(VisualShaderNodePortPreview);
 			port_preview->setup(visual_shader, editor->preview_material, visual_shader->get_shader_type(), p_node_id, p_port_id, p_is_valid);
-			port_preview->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+			port_preview->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 			vbox->add_child(port_preview);
 			link.preview_visible = true;
 			link.preview_box = vbox;
@@ -612,7 +612,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 	}
 	Shader::Mode mode = visual_shader->get_mode();
 
-	Control *offset;
+	Controle *offset;
 
 	const Color type_color[] = {
 		EDITOR_GET("editors/visual_editors/connection_colors/scalar_color"),
@@ -735,7 +735,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 
 	node->connect("dragged", callable_mp(editor, &VisualShaderEditor::_node_dragged).bind(p_id));
 
-	Control *custom_editor = nullptr;
+	Controle *custom_editor = nullptr;
 	int port_offset = 1;
 
 	if (p_update_frames) {
@@ -758,8 +758,8 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		node->add_child(frame_hint_label);
 		frame_hint_label->set_horizontal_alignment(HorizontalAlignment::HORIZONTAL_ALIGNMENT_CENTER);
 		frame_hint_label->set_vertical_alignment(VerticalAlignment::VERTICAL_ALIGNMENT_CENTER);
-		frame_hint_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-		frame_hint_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		frame_hint_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+		frame_hint_label->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		frame_hint_label->set_text(TTR("Drag and drop nodes here to attach them."));
 		frame_hint_label->set_modulate(Color(1.0, 1.0, 1.0, 0.3));
 		graph_frame->set_autoshrink_enabled(frame_node->is_autoshrink_enabled());
@@ -782,7 +782,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 	}
 
 	if (!is_reroute) {
-		Control *content_offset = memnew(Control);
+		Controle *content_offset = memnew(Controle);
 		content_offset->set_custom_minimum_size(Size2(0, 5 * EDSCALE));
 		node->add_child(content_offset);
 	}
@@ -820,7 +820,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 	if (parameter.is_valid()) {
 		LineEdit *parameter_name = memnew(LineEdit);
 		register_parameter_name(p_id, parameter_name);
-		parameter_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		parameter_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		parameter_name->set_text(parameter->get_parameter_name());
 		parameter_name->connect("text_submitted", callable_mp(editor, &VisualShaderEditor::_parameter_line_edit_changed).bind(p_id));
 		parameter_name->connect(SceneStringName(focus_exited), callable_mp(editor, &VisualShaderEditor::_parameter_line_edit_focus_out).bind(parameter_name, p_id));
@@ -866,7 +866,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 
 			HBoxContainer *hbox = memnew(HBoxContainer);
 			vbox->add_child(hbox);
-			hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 			String prop_name = dp.name.strip_edges();
 			if (!prop_name.is_empty()) {
@@ -878,7 +878,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 
 			OptionButton *op = memnew(OptionButton);
 			hbox->add_child(op);
-			op->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			op->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			op->connect(SceneStringName(item_selected), callable_mp(editor, &VisualShaderEditor::_set_custom_node_option).bind(p_id, i), CONNECT_DEFERRED);
 
 			for (const String &s : dp.options) {
@@ -902,7 +902,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 	}
 
 	if (curve.is_valid()) {
-		custom_editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		custom_editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 		if (curve->get_texture().is_valid()) {
 			curve->get_texture()->connect_changed(callable_mp(graph_plugin, &VisualShaderGraphPlugin::update_curve).bind(p_id));
@@ -912,14 +912,14 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		node->add_child(curve_editor);
 		register_curve_editor(p_id, 0, curve_editor);
 		curve_editor->set_custom_minimum_size(Size2(300, 0));
-		curve_editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		curve_editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		if (curve->get_texture().is_valid()) {
 			curve_editor->set_curve(curve->get_texture()->get_curve());
 		}
 	}
 
 	if (curve_xyz.is_valid()) {
-		custom_editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		custom_editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 		if (curve_xyz->get_texture().is_valid()) {
 			curve_xyz->get_texture()->connect_changed(callable_mp(graph_plugin, &VisualShaderGraphPlugin::update_curve_xyz).bind(p_id));
@@ -929,7 +929,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		node->add_child(curve_editor_x);
 		register_curve_editor(p_id, 0, curve_editor_x);
 		curve_editor_x->set_custom_minimum_size(Size2(300, 0));
-		curve_editor_x->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		curve_editor_x->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		if (curve_xyz->get_texture().is_valid()) {
 			curve_editor_x->set_curve(curve_xyz->get_texture()->get_curve_x());
 		}
@@ -938,7 +938,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		node->add_child(curve_editor_y);
 		register_curve_editor(p_id, 1, curve_editor_y);
 		curve_editor_y->set_custom_minimum_size(Size2(300, 0));
-		curve_editor_y->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		curve_editor_y->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		if (curve_xyz->get_texture().is_valid()) {
 			curve_editor_y->set_curve(curve_xyz->get_texture()->get_curve_y());
 		}
@@ -947,7 +947,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		node->add_child(curve_editor_z);
 		register_curve_editor(p_id, 2, curve_editor_z);
 		curve_editor_z->set_custom_minimum_size(Size2(300, 0));
-		curve_editor_z->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		curve_editor_z->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		if (curve_xyz->get_texture().is_valid()) {
 			curve_editor_z->set_curve(curve_xyz->get_texture()->get_curve_z());
 		}
@@ -1110,7 +1110,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 
 		if (j == 0 && custom_editor) {
 			hb->add_child(custom_editor);
-			custom_editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			custom_editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		} else {
 			if (valid_left) {
 				if (is_group) {
@@ -1132,7 +1132,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 					LineEdit *name_box = memnew(LineEdit);
 					hb->add_child(name_box);
 					name_box->set_custom_minimum_size(Size2(65 * EDSCALE, 0));
-					name_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+					name_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 					name_box->set_text(name_left);
 					name_box->connect("text_submitted", callable_mp(editor, &VisualShaderEditor::_change_input_port_name).bind(name_box, p_id, j), CONNECT_DEFERRED);
 					name_box->connect(SceneStringName(focus_exited), callable_mp(editor, &VisualShaderEditor::_port_name_focus_out).bind(name_box, p_id, j, false), CONNECT_DEFERRED);
@@ -1174,7 +1174,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 					LineEdit *name_box = memnew(LineEdit);
 					hb->add_child(name_box);
 					name_box->set_custom_minimum_size(Size2(65 * EDSCALE, 0));
-					name_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+					name_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 					name_box->set_text(name_right);
 					name_box->connect("text_submitted", callable_mp(editor, &VisualShaderEditor::_change_output_port_name).bind(name_box, p_id, i), CONNECT_DEFERRED);
 					name_box->connect(SceneStringName(focus_exited), callable_mp(editor, &VisualShaderEditor::_port_name_focus_out).bind(name_box, p_id, i, true), CONNECT_DEFERRED);
@@ -1208,7 +1208,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 				expand->set_toggle_mode(true);
 				expand->set_texture_normal(editor->get_editor_theme_icon(SNAME("GuiTreeArrowRight")));
 				expand->set_texture_pressed(editor->get_editor_theme_icon(SNAME("GuiTreeArrowDown")));
-				expand->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+				expand->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 				expand->set_pressed(vsnode->_is_output_port_expanded(i));
 				expand->connect(SceneStringName(pressed), callable_mp(editor, &VisualShaderEditor::_expand_output_port).bind(p_id, i, !vsnode->_is_output_port_expanded(i)), CONNECT_DEFERRED);
 				hb->add_child(expand);
@@ -1218,7 +1218,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 				preview->set_toggle_mode(true);
 				preview->set_texture_normal(editor->get_editor_theme_icon(SNAME("GuiVisibilityHidden")));
 				preview->set_texture_pressed(editor->get_editor_theme_icon(SNAME("GuiVisibilityVisible")));
-				preview->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+				preview->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 
 				register_output_port(p_id, j, preview);
 
@@ -1228,7 +1228,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		}
 
 		if (is_group) {
-			offset = memnew(Control);
+			offset = memnew(Controle);
 			offset->set_custom_minimum_size(Size2(0, 5 * EDSCALE));
 			node->add_child(offset);
 			port_offset++;
@@ -1349,7 +1349,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		has_relative_parameter_instances = is_node_has_parameter_instances_relatively(p_type, p_id);
 		show_port_preview(p_type, p_id, vsnode->get_output_port_for_preview(), !has_relative_parameter_instances);
 	} else if (!is_reroute) {
-		offset = memnew(Control);
+		offset = memnew(Controle);
 		offset->set_custom_minimum_size(Size2(0, 4 * EDSCALE));
 		node->add_child(offset);
 	}
@@ -1371,7 +1371,7 @@ void VisualShaderGraphPlugin::add_node(VisualShader::Type p_type, int p_id, bool
 		Ref<CodeHighlighter> expression_syntax_highlighter;
 		expression_syntax_highlighter.instantiate();
 		expression_node->set_ctrl_pressed(expression_box, 0);
-		expression_box->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		expression_box->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		node->add_child(expression_box);
 		register_expression_edit(p_id, expression_box);
 
@@ -2928,7 +2928,7 @@ void VisualShaderEditor::_set_node_size(int p_type, int p_node, const Vector2 &p
 
 	if (get_current_shader_type() == type) {
 		Ref<VisualShaderNodeExpression> expression_node = Object::cast_to<VisualShaderNodeExpression>(node.ptr());
-		Control *text_box = nullptr;
+		Controle *text_box = nullptr;
 		if (!expression_node.is_null()) {
 			text_box = expression_node->is_ctrl_pressed(0);
 			if (text_box) {
@@ -5069,7 +5069,7 @@ void VisualShaderEditor::_notification(int p_what) {
 
 		case EditorSettings::NOTIFICATION_EDITOR_SETTINGS_CHANGED: {
 			if (EditorSettings::get_singleton()->check_changed_settings_in_group("editors/panning")) {
-				graph->get_panner()->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+				graph->get_panner()->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 				graph->set_warped_panning(bool(EDITOR_GET("editors/panning/warped_mouse_panning")));
 			}
 			if (EditorSettings::get_singleton()->check_changed_settings_in_group("editors/visual_editors")) {
@@ -5097,18 +5097,18 @@ void VisualShaderEditor::_notification(int p_what) {
 				category = category->get_next();
 			}
 
-			graph->get_panner()->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			graph->get_panner()->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 			graph->set_warped_panning(bool(EDITOR_GET("editors/panning/warped_mouse_panning")));
 		} break;
 
 		case NOTIFICATION_THEME_CHANGED: {
 			highend_label->set_modulate(get_theme_color(SNAME("highend_color"), EditorStringName(Editor)));
 
-			param_filter->set_right_icon(Control::get_editor_theme_icon(SNAME("Search")));
-			node_filter->set_right_icon(Control::get_editor_theme_icon(SNAME("Search")));
+			param_filter->set_right_icon(Controle::get_editor_theme_icon(SNAME("Search")));
+			node_filter->set_right_icon(Controle::get_editor_theme_icon(SNAME("Search")));
 
-			code_preview_button->set_icon(Control::get_editor_theme_icon(SNAME("Shader")));
-			shader_preview_button->set_icon(Control::get_editor_theme_icon(SNAME("SubViewport")));
+			code_preview_button->set_icon(Controle::get_editor_theme_icon(SNAME("Shader")));
+			shader_preview_button->set_icon(Controle::get_editor_theme_icon(SNAME("SubViewport")));
 
 			{
 				Color background_color = EDITOR_GET("text_editor/theme/highlighting/background_color");
@@ -5986,7 +5986,7 @@ void VisualShaderEditor::_connection_menu_id_pressed(int p_idx) {
 	}
 }
 
-Variant VisualShaderEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant VisualShaderEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (p_from == members) {
 		TreeItem *it = members->get_item_at_position(p_point);
 		if (!it) {
@@ -6011,7 +6011,7 @@ Variant VisualShaderEditor::get_drag_data_fw(const Point2 &p_point, Control *p_f
 	return Variant();
 }
 
-bool VisualShaderEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool VisualShaderEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (p_from == graph) {
 		Dictionary d = p_data;
 
@@ -6026,7 +6026,7 @@ bool VisualShaderEditor::can_drop_data_fw(const Point2 &p_point, const Variant &
 	return false;
 }
 
-void VisualShaderEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void VisualShaderEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (p_from == graph) {
 		Dictionary d = p_data;
 
@@ -6266,7 +6266,7 @@ VisualShaderEditor::VisualShaderEditor() {
 	FileSystemDock::get_singleton()->connect("resource_removed", callable_mp(this, &VisualShaderEditor::_resource_removed));
 
 	HSplitContainer *main_box = memnew(HSplitContainer);
-	main_box->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	main_box->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	add_child(main_box);
 
 	graph = memnew(GraphEdit);
@@ -6367,8 +6367,8 @@ VisualShaderEditor::VisualShaderEditor() {
 	graph->add_valid_connection_type(VisualShaderNode::PORT_TYPE_SAMPLER, VisualShaderNode::PORT_TYPE_SAMPLER);
 
 	PanelContainer *toolbar_panel = static_cast<PanelContainer *>(graph->get_menu_hbox()->get_parent());
-	toolbar_panel->set_anchors_and_offsets_preset(Control::PRESET_TOP_WIDE, PRESET_MODE_MINSIZE, 10);
-	toolbar_panel->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	toolbar_panel->set_anchors_and_offsets_preset(Controle::PRESET_TOP_WIDE, PRESET_MODE_MINSIZE, 10);
+	toolbar_panel->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 
 	HFlowContainer *toolbar = memnew(HFlowContainer);
 	{
@@ -6488,7 +6488,7 @@ VisualShaderEditor::VisualShaderEditor() {
 	preview_text = memnew(CodeEdit);
 	syntax_highlighter.instantiate();
 	code_preview_vbox->add_child(preview_text);
-	preview_text->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	preview_text->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	preview_text->set_syntax_highlighter(syntax_highlighter);
 	preview_text->set_draw_line_numbers(true);
 	preview_text->set_editable(false);
@@ -6640,7 +6640,7 @@ VisualShaderEditor::VisualShaderEditor() {
 	desc_hbox->add_child(highend_label);
 	highend_label->set_visible(false);
 	highend_label->set_text("Vulkan");
-	highend_label->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	highend_label->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	highend_label->set_tooltip_text(TTR("High-end node"));
 
 	node_desc = memnew(RichTextLabel);
@@ -7793,7 +7793,7 @@ public:
 	}
 };
 
-Control *VisualShaderNodePluginDefault::create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) {
+Controle *VisualShaderNodePluginDefault::create_editor(const Ref<Resource> &p_parent_resource, const Ref<VisualShaderNode> &p_node) {
 	Ref<VisualShader> p_shader = Ref<VisualShader>(p_parent_resource.ptr());
 
 	if (p_shader.is_valid() && (p_node->is_class("VisualShaderNodeVaryingGetter") || p_node->is_class("VisualShaderNodeVaryingSetter"))) {

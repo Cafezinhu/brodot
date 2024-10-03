@@ -1201,7 +1201,7 @@ GridMapEditor::GridMapEditor() {
 	ED_SHORTCUT("grid_map/fill_selection", TTR("Fill Selection"), KeyModifierMask::CTRL + Key::F);
 
 	int mw = EDITOR_GET("editors/grid_map/palette_min_width");
-	Control *ec = memnew(Control);
+	Controle *ec = memnew(Controle);
 	ec->set_custom_minimum_size(Size2(mw, 0) * EDSCALE);
 	add_child(ec);
 

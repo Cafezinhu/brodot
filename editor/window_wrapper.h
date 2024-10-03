@@ -41,7 +41,7 @@ class HBoxContainer;
 class WindowWrapper : public MarginContainer {
 	GDCLASS(WindowWrapper, MarginContainer);
 
-	Control *wrapped_control = nullptr;
+	Controle *wrapped_control = nullptr;
 	MarginContainer *margins = nullptr;
 	Window *window = nullptr;
 
@@ -62,9 +62,9 @@ protected:
 	virtual void shortcut_input(const Ref<InputEvent> &p_event) override;
 
 public:
-	void set_wrapped_control(Control *p_control, const Ref<Shortcut> &p_enable_shortcut = Ref<Shortcut>());
-	Control *get_wrapped_control() const;
-	Control *release_wrapped_control();
+	void set_wrapped_control(Controle *p_control, const Ref<Shortcut> &p_enable_shortcut = Ref<Shortcut>());
+	Controle *get_wrapped_control() const;
+	Controle *release_wrapped_control();
 
 	bool is_window_available() const;
 

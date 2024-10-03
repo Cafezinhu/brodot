@@ -54,7 +54,7 @@ private:
 	mutable ObjectID popup_obj_id;
 	bool use_hidden_tabs_for_min_size = false;
 	bool theme_changing = false;
-	Vector<Control *> children_removing;
+	Vector<Controle *> children_removing;
 	bool drag_to_rearrange_enabled = false;
 	// Set the default setup current tab to be an invalid index.
 	int setup_current_tab = -2;
@@ -98,7 +98,7 @@ private:
 	} theme_cache;
 
 	int _get_tab_height() const;
-	Vector<Control *> _get_tab_controls() const;
+	Vector<Controle *> _get_tab_controls() const;
 	void _on_theme_changed();
 	void _repaint();
 	void _refresh_tab_indices();
@@ -111,11 +111,11 @@ private:
 	void _on_tab_selected(int p_tab);
 	void _on_tab_button_pressed(int p_tab);
 	void _on_active_tab_rearranged(int p_tab);
-	void _on_tab_visibility_changed(Control *p_child);
+	void _on_tab_visibility_changed(Controle *p_child);
 
-	Variant _get_drag_data_fw(const Point2 &p_point, Control *p_from_control);
-	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) const;
-	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control);
+	Variant _get_drag_data_fw(const Point2 &p_point, Controle *p_from_control);
+	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) const;
+	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control);
 	void _drag_move_tab(int p_from_index, int p_to_index);
 	void _drag_move_tab_from(TabBar *p_from_tabbar, int p_from_index, int p_to_index);
 
@@ -132,7 +132,7 @@ public:
 	TabBar *get_tab_bar() const;
 
 	int get_tab_idx_at_point(const Point2 &p_point) const;
-	int get_tab_idx_from_control(Control *p_child) const;
+	int get_tab_idx_from_control(Controle *p_child) const;
 
 	void set_tab_alignment(TabBar::AlignmentMode p_alignment);
 	TabBar::AlignmentMode get_tab_alignment() const;
@@ -187,8 +187,8 @@ public:
 	void set_deselect_enabled(bool p_enabled);
 	bool get_deselect_enabled() const;
 
-	Control *get_tab_control(int p_idx) const;
-	Control *get_current_tab_control() const;
+	Controle *get_tab_control(int p_idx) const;
+	Controle *get_current_tab_control() const;
 
 	virtual Size2 get_minimum_size() const override;
 

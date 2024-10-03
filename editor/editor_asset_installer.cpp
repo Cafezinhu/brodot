@@ -709,7 +709,7 @@ EditorAssetInstaller::EditorAssetInstaller() {
 	remapping_tools->add_child(asset_conflicts_label);
 	asset_conflicts_link = memnew(LinkButton);
 	asset_conflicts_link->set_theme_type_variation("HeaderSmallLink");
-	asset_conflicts_link->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	asset_conflicts_link->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	asset_conflicts_link->set_tooltip_text(TTR("Show contents of the asset and conflicting files."));
 	asset_conflicts_link->set_visible(false);
 	remapping_tools->add_child(asset_conflicts_link);
@@ -718,11 +718,11 @@ EditorAssetInstaller::EditorAssetInstaller() {
 	// File hierarchy trees.
 
 	HSplitContainer *tree_split = memnew(HSplitContainer);
-	tree_split->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tree_split->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	vb->add_child(tree_split);
 
 	source_tree_vb = memnew(VBoxContainer);
-	source_tree_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	source_tree_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	source_tree_vb->set_visible(show_source_files_button->is_pressed());
 	tree_split->add_child(source_tree_vb);
 
@@ -733,12 +733,12 @@ EditorAssetInstaller::EditorAssetInstaller() {
 
 	source_tree = memnew(Tree);
 	source_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	source_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	source_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	source_tree->connect("item_edited", callable_mp(this, &EditorAssetInstaller::_item_checked_cbk));
 	source_tree_vb->add_child(source_tree);
 
 	VBoxContainer *destination_tree_vb = memnew(VBoxContainer);
-	destination_tree_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	destination_tree_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	tree_split->add_child(destination_tree_vb);
 
 	Label *destination_tree_label = memnew(Label);
@@ -748,7 +748,7 @@ EditorAssetInstaller::EditorAssetInstaller() {
 
 	destination_tree = memnew(Tree);
 	destination_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	destination_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	destination_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	destination_tree->connect("item_edited", callable_mp(this, &EditorAssetInstaller::_item_checked_cbk));
 	destination_tree_vb->add_child(destination_tree);
 

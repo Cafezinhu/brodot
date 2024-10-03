@@ -278,7 +278,7 @@ ReplicationEditor::ReplicationEditor() {
 	drop_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	drop_label->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	tree->add_child(drop_label);
-	drop_label->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	drop_label->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	SET_DRAG_FORWARDING_CDU(tree, ReplicationEditor);
 }
@@ -288,7 +288,7 @@ void ReplicationEditor::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("_update_value", "property", "column", "value"), &ReplicationEditor::_update_value);
 }
 
-bool ReplicationEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ReplicationEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (!d.has("type")) {
 		return false;
@@ -309,7 +309,7 @@ bool ReplicationEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &
 	return true;
 }
 
-void ReplicationEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ReplicationEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (current == nullptr) {
 		EditorNode::get_singleton()->show_warning(TTR("Select a replicator node in order to pick a property to add to it."));
 		return;

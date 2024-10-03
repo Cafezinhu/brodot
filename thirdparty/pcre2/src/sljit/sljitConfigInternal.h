@@ -105,7 +105,7 @@ extern "C" {
 */
 
 /***********************************************************/
-/* Intel Control-flow Enforcement Technology (CET) spport. */
+/* Intel Controle-flow Enforcement Technology (CET) spport. */
 /***********************************************************/
 
 #ifdef SLJIT_CONFIG_X86
@@ -267,7 +267,7 @@ extern "C" {
 /* Supported by all macs since Mac OS 10.5.
    However, it does not work on non-jailbroken iOS devices,
    although the compilation is successful. */
-#include <libkern/OSCacheControl.h>
+#include <libkern/OSCacheControle.h>
 #define SLJIT_CACHE_FLUSH(from, to) \
 	sys_icache_invalidate((void*)(from), (size_t)((char*)(to) - (char*)(from)))
 

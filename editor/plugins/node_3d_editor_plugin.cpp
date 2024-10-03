@@ -124,14 +124,14 @@ constexpr real_t MAX_Z = 1000000.0;
 constexpr real_t MIN_FOV = 0.01;
 constexpr real_t MAX_FOV = 179;
 
-void ViewportNavigationControl::_notification(int p_what) {
+void ViewportNavigationControle::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_ENTER_TREE: {
-			if (!is_connected(SceneStringName(mouse_exited), callable_mp(this, &ViewportNavigationControl::_on_mouse_exited))) {
-				connect(SceneStringName(mouse_exited), callable_mp(this, &ViewportNavigationControl::_on_mouse_exited));
+			if (!is_connected(SceneStringName(mouse_exited), callable_mp(this, &ViewportNavigationControle::_on_mouse_exited))) {
+				connect(SceneStringName(mouse_exited), callable_mp(this, &ViewportNavigationControle::_on_mouse_exited));
 			}
-			if (!is_connected(SceneStringName(mouse_entered), callable_mp(this, &ViewportNavigationControl::_on_mouse_entered))) {
-				connect(SceneStringName(mouse_entered), callable_mp(this, &ViewportNavigationControl::_on_mouse_entered));
+			if (!is_connected(SceneStringName(mouse_entered), callable_mp(this, &ViewportNavigationControle::_on_mouse_entered))) {
+				connect(SceneStringName(mouse_entered), callable_mp(this, &ViewportNavigationControle::_on_mouse_entered));
 			}
 		} break;
 
@@ -144,7 +144,7 @@ void ViewportNavigationControl::_notification(int p_what) {
 	}
 }
 
-void ViewportNavigationControl::_draw() {
+void ViewportNavigationControle::_draw() {
 	if (nav_mode == Node3DEditorViewport::NAVIGATION_NONE) {
 		return;
 	}
@@ -163,7 +163,7 @@ void ViewportNavigationControl::_draw() {
 	draw_circle(circle_pos, AXIS_CIRCLE_RADIUS * 0.8, c.darkened(0.4));
 }
 
-void ViewportNavigationControl::_process_click(int p_index, Vector2 p_position, bool p_pressed) {
+void ViewportNavigationControle::_process_click(int p_index, Vector2 p_position, bool p_pressed) {
 	hovered = false;
 	queue_redraw();
 
@@ -185,7 +185,7 @@ void ViewportNavigationControl::_process_click(int p_index, Vector2 p_position, 
 	}
 }
 
-void ViewportNavigationControl::_process_drag(int p_index, Vector2 p_position, Vector2 p_relative_position) {
+void ViewportNavigationControle::_process_drag(int p_index, Vector2 p_position, Vector2 p_relative_position) {
 	if (focused_index == p_index) {
 		if (Input::get_singleton()->get_mouse_mode() == Input::MOUSE_MODE_VISIBLE) {
 			Input::get_singleton()->set_mouse_mode(Input::MOUSE_MODE_CAPTURED);
@@ -196,7 +196,7 @@ void ViewportNavigationControl::_process_drag(int p_index, Vector2 p_position, V
 	}
 }
 
-void ViewportNavigationControl::gui_input(const Ref<InputEvent> &p_event) {
+void ViewportNavigationControle::gui_input(const Ref<InputEvent> &p_event) {
 	// Mouse events
 	const Ref<InputEventMouseButton> mouse_button = p_event;
 	if (mouse_button.is_valid() && mouse_button->get_button_index() == MouseButton::LEFT) {
@@ -220,7 +220,7 @@ void ViewportNavigationControl::gui_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-void ViewportNavigationControl::_update_navigation() {
+void ViewportNavigationControle::_update_navigation() {
 	if (focused_index == -1) {
 		return;
 	}
@@ -277,25 +277,25 @@ void ViewportNavigationControl::_update_navigation() {
 	}
 }
 
-void ViewportNavigationControl::_on_mouse_entered() {
+void ViewportNavigationControle::_on_mouse_entered() {
 	hovered = true;
 	queue_redraw();
 }
 
-void ViewportNavigationControl::_on_mouse_exited() {
+void ViewportNavigationControle::_on_mouse_exited() {
 	hovered = false;
 	queue_redraw();
 }
 
-void ViewportNavigationControl::set_navigation_mode(Node3DEditorViewport::NavigationMode p_nav_mode) {
+void ViewportNavigationControle::set_navigation_mode(Node3DEditorViewport::NavigationMode p_nav_mode) {
 	nav_mode = p_nav_mode;
 }
 
-void ViewportNavigationControl::set_viewport(Node3DEditorViewport *p_viewport) {
+void ViewportNavigationControle::set_viewport(Node3DEditorViewport *p_viewport) {
 	viewport = p_viewport;
 }
 
-void ViewportRotationControl::_notification(int p_what) {
+void ViewportRotationControle::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_ENTER_TREE: {
 			axis_menu_options.clear();
@@ -312,8 +312,8 @@ void ViewportRotationControl::_notification(int p_what) {
 			axis_colors.push_back(get_theme_color(SNAME("axis_z_color"), EditorStringName(Editor)));
 			queue_redraw();
 
-			if (!is_connected(SceneStringName(mouse_exited), callable_mp(this, &ViewportRotationControl::_on_mouse_exited))) {
-				connect(SceneStringName(mouse_exited), callable_mp(this, &ViewportRotationControl::_on_mouse_exited));
+			if (!is_connected(SceneStringName(mouse_exited), callable_mp(this, &ViewportRotationControle::_on_mouse_exited))) {
+				connect(SceneStringName(mouse_exited), callable_mp(this, &ViewportRotationControle::_on_mouse_exited));
 			}
 		} break;
 
@@ -325,7 +325,7 @@ void ViewportRotationControl::_notification(int p_what) {
 	}
 }
 
-void ViewportRotationControl::_draw() {
+void ViewportRotationControle::_draw() {
 	const Vector2 center = get_size() / 2.0;
 	const real_t radius = get_size().x / 2.0;
 
@@ -340,7 +340,7 @@ void ViewportRotationControl::_draw() {
 	}
 }
 
-void ViewportRotationControl::_draw_axis(const Axis2D &p_axis) {
+void ViewportRotationControle::_draw_axis(const Axis2D &p_axis) {
 	const bool focused = focused_axis == p_axis.axis;
 	const bool positive = p_axis.axis < 3;
 	const int direction = p_axis.axis % 3;
@@ -374,7 +374,7 @@ void ViewportRotationControl::_draw_axis(const Axis2D &p_axis) {
 	}
 }
 
-void ViewportRotationControl::_get_sorted_axis(Vector<Axis2D> &r_axis) {
+void ViewportRotationControle::_get_sorted_axis(Vector<Axis2D> &r_axis) {
 	const Vector2 center = get_size() / 2.0;
 	const real_t radius = get_size().x / 2.0 - AXIS_CIRCLE_RADIUS - 2.0 * EDSCALE;
 	const Basis camera_basis = viewport->to_camera_transform(viewport->cursor).get_basis().inverse();
@@ -408,7 +408,7 @@ void ViewportRotationControl::_get_sorted_axis(Vector<Axis2D> &r_axis) {
 	r_axis.sort_custom<Axis2DCompare>();
 }
 
-void ViewportRotationControl::_process_click(int p_index, Vector2 p_position, bool p_pressed) {
+void ViewportRotationControle::_process_click(int p_index, Vector2 p_position, bool p_pressed) {
 	if (orbiting_index != -1 && orbiting_index != p_index) {
 		return;
 	}
@@ -429,7 +429,7 @@ void ViewportRotationControl::_process_click(int p_index, Vector2 p_position, bo
 	}
 }
 
-void ViewportRotationControl::_process_drag(Ref<InputEventWithModifiers> p_event, int p_index, Vector2 p_position, Vector2 p_relative_position) {
+void ViewportRotationControle::_process_drag(Ref<InputEventWithModifiers> p_event, int p_index, Vector2 p_position, Vector2 p_relative_position) {
 	if (orbiting_index == p_index) {
 		if (Input::get_singleton()->get_mouse_mode() == Input::MOUSE_MODE_VISIBLE) {
 			Input::get_singleton()->set_mouse_mode(Input::MOUSE_MODE_CAPTURED);
@@ -442,7 +442,7 @@ void ViewportRotationControl::_process_drag(Ref<InputEventWithModifiers> p_event
 	}
 }
 
-void ViewportRotationControl::gui_input(const Ref<InputEvent> &p_event) {
+void ViewportRotationControle::gui_input(const Ref<InputEvent> &p_event) {
 	ERR_FAIL_COND(p_event.is_null());
 
 	// Mouse events
@@ -468,7 +468,7 @@ void ViewportRotationControl::gui_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-void ViewportRotationControl::_update_focus() {
+void ViewportRotationControle::_update_focus() {
 	int original_focus = focused_axis;
 	focused_axis = -2;
 	Vector2 mouse_pos = get_local_mouse_position();
@@ -492,12 +492,12 @@ void ViewportRotationControl::_update_focus() {
 	}
 }
 
-void ViewportRotationControl::_on_mouse_exited() {
+void ViewportRotationControle::_on_mouse_exited() {
 	focused_axis = -2;
 	queue_redraw();
 }
 
-void ViewportRotationControl::set_viewport(Node3DEditorViewport *p_viewport) {
+void ViewportRotationControle::set_viewport(Node3DEditorViewport *p_viewport) {
 	viewport = p_viewport;
 }
 
@@ -2779,7 +2779,7 @@ void Node3DEditorPlugin::edited_scene_changed() {
 	for (uint32_t i = 0; i < Node3DEditor::VIEWPORTS_COUNT; i++) {
 		Node3DEditorViewport *viewport = Node3DEditor::get_singleton()->get_editor_viewport(i);
 		if (viewport->is_visible()) {
-			viewport->notification(Control::NOTIFICATION_VISIBILITY_CHANGED);
+			viewport->notification(Controle::NOTIFICATION_VISIBILITY_CHANGED);
 		}
 	}
 }
@@ -3115,7 +3115,7 @@ void Node3DEditorViewport::_notification(int p_what) {
 		case NOTIFICATION_THEME_CHANGED: {
 			view_menu->set_icon(get_editor_theme_icon(SNAME("GuiTabMenuHl")));
 			preview_camera->set_icon(get_editor_theme_icon(SNAME("Camera3D")));
-			Control *gui_base = EditorNode::get_singleton()->get_gui_base();
+			Controle *gui_base = EditorNode::get_singleton()->get_gui_base();
 
 			const Ref<StyleBox> &information_3d_stylebox = gui_base->get_theme_stylebox(SNAME("Information3dViewport"), EditorStringName(EditorStyles));
 
@@ -3179,7 +3179,7 @@ void Node3DEditorViewport::_notification(int p_what) {
 	}
 }
 
-static void draw_indicator_bar(Control &p_surface, real_t p_fill, const Ref<Texture2D> p_icon, const Ref<Font> p_font, int p_font_size, const String &p_text, const Color &p_color) {
+static void draw_indicator_bar(Controle &p_surface, real_t p_fill, const Ref<Texture2D> p_icon, const Ref<Font> p_font, int p_font_size, const String &p_text, const Color &p_color) {
 	// Adjust bar size from control height
 	const Vector2 surface_size = p_surface.get_size();
 	const real_t h = surface_size.y / 2.0;
@@ -4687,7 +4687,7 @@ void Node3DEditorViewport::_perform_drop_data() {
 	}
 }
 
-bool Node3DEditorViewport::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+bool Node3DEditorViewport::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	preview_node_viewport_pos = p_point;
 
 	bool can_instantiate = false;
@@ -4796,7 +4796,7 @@ bool Node3DEditorViewport::can_drop_data_fw(const Point2 &p_point, const Variant
 	return false;
 }
 
-void Node3DEditorViewport::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void Node3DEditorViewport::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -5309,15 +5309,15 @@ Node3DEditorViewport::Node3DEditorViewport(Node3DEditor *p_spatial_editor, int p
 	subviewport_container = c;
 	c->set_stretch(true);
 	add_child(c);
-	c->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	c->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	viewport = memnew(SubViewport);
 	viewport->set_disable_input(true);
 
 	c->add_child(viewport);
-	surface = memnew(Control);
+	surface = memnew(Controle);
 	SET_DRAG_FORWARDING_CD(surface, Node3DEditorViewport);
 	add_child(surface);
-	surface->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	surface->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	surface->set_clip_contents(true);
 	camera = memnew(Camera3D);
 	camera->set_disable_gizmos(true);
@@ -5478,7 +5478,7 @@ Node3DEditorViewport::Node3DEditorViewport(Node3DEditor *p_spatial_editor, int p
 
 	preview_camera = memnew(CheckBox);
 	preview_camera->set_text(TTR("Preview"));
-	// Using Control even on macOS to avoid conflict with Quick Open shortcut.
+	// Using Controle even on macOS to avoid conflict with Quick Open shortcut.
 	preview_camera->set_shortcut(ED_SHORTCUT("spatial_editor/toggle_camera_preview", TTR("Toggle Camera Preview"), KeyModifierMask::CTRL | Key::P));
 	vbox->add_child(preview_camera);
 	preview_camera->set_h_size_flags(0);
@@ -5565,7 +5565,7 @@ Node3DEditorViewport::Node3DEditorViewport(Node3DEditor *p_spatial_editor, int p
 
 	const int navigation_control_size = 150;
 
-	position_control = memnew(ViewportNavigationControl);
+	position_control = memnew(ViewportNavigationControle);
 	position_control->set_navigation_mode(Node3DEditorViewport::NAVIGATION_MOVE);
 	position_control->set_custom_minimum_size(Size2(navigation_control_size, navigation_control_size) * EDSCALE);
 	position_control->set_h_size_flags(SIZE_SHRINK_END);
@@ -5576,7 +5576,7 @@ Node3DEditorViewport::Node3DEditorViewport(Node3DEditor *p_spatial_editor, int p
 	position_control->set_viewport(this);
 	surface->add_child(position_control);
 
-	look_control = memnew(ViewportNavigationControl);
+	look_control = memnew(ViewportNavigationControle);
 	look_control->set_navigation_mode(Node3DEditorViewport::NAVIGATION_LOOK);
 	look_control->set_custom_minimum_size(Size2(navigation_control_size, navigation_control_size) * EDSCALE);
 	look_control->set_h_size_flags(SIZE_SHRINK_END);
@@ -5587,7 +5587,7 @@ Node3DEditorViewport::Node3DEditorViewport(Node3DEditor *p_spatial_editor, int p
 	look_control->set_viewport(this);
 	surface->add_child(look_control);
 
-	rotation_control = memnew(ViewportRotationControl);
+	rotation_control = memnew(ViewportRotationControle);
 	rotation_control->set_custom_minimum_size(Size2(80, 80) * EDSCALE);
 	rotation_control->set_h_size_flags(SIZE_SHRINK_END);
 	rotation_control->set_viewport(this);
@@ -8067,7 +8067,7 @@ void Node3DEditor::clear_subgizmo_selection(Object *p_obj) {
 	_clear_subgizmo_selection(p_obj);
 }
 
-void Node3DEditor::add_control_to_menu_panel(Control *p_control) {
+void Node3DEditor::add_control_to_menu_panel(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	ERR_FAIL_COND(p_control->get_parent());
 
@@ -8081,7 +8081,7 @@ void Node3DEditor::add_control_to_menu_panel(Control *p_control) {
 	_update_context_toolbar();
 }
 
-void Node3DEditor::remove_control_from_menu_panel(Control *p_control) {
+void Node3DEditor::remove_control_from_menu_panel(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	ERR_FAIL_COND(p_control->get_parent() != context_toolbar_hbox);
 
@@ -8101,7 +8101,7 @@ void Node3DEditor::_update_context_toolbar() {
 	bool first_visible = false;
 
 	for (int i = 0; i < context_toolbar_hbox->get_child_count(); i++) {
-		Control *child = Object::cast_to<Control>(context_toolbar_hbox->get_child(i));
+		Controle *child = Object::cast_to<Controle>(context_toolbar_hbox->get_child(i));
 		if (!child || !context_toolbar_separators.has(child)) {
 			continue;
 		}
@@ -8127,25 +8127,25 @@ VSplitContainer *Node3DEditor::get_shader_split() {
 	return shader_split;
 }
 
-void Node3DEditor::add_control_to_left_panel(Control *p_control) {
+void Node3DEditor::add_control_to_left_panel(Controle *p_control) {
 	left_panel_split->add_child(p_control);
 	left_panel_split->move_child(p_control, 0);
 }
 
-void Node3DEditor::add_control_to_right_panel(Control *p_control) {
+void Node3DEditor::add_control_to_right_panel(Controle *p_control) {
 	right_panel_split->add_child(p_control);
 	right_panel_split->move_child(p_control, 1);
 }
 
-void Node3DEditor::remove_control_from_left_panel(Control *p_control) {
+void Node3DEditor::remove_control_from_left_panel(Controle *p_control) {
 	left_panel_split->remove_child(p_control);
 }
 
-void Node3DEditor::remove_control_from_right_panel(Control *p_control) {
+void Node3DEditor::remove_control_from_right_panel(Controle *p_control) {
 	right_panel_split->remove_child(p_control);
 }
 
-void Node3DEditor::move_control_to_left_panel(Control *p_control) {
+void Node3DEditor::move_control_to_left_panel(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	if (p_control->get_parent() == left_panel_split) {
 		return;
@@ -8157,7 +8157,7 @@ void Node3DEditor::move_control_to_left_panel(Control *p_control) {
 	add_control_to_left_panel(p_control);
 }
 
-void Node3DEditor::move_control_to_right_panel(Control *p_control) {
+void Node3DEditor::move_control_to_right_panel(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	if (p_control->get_parent() == right_panel_split) {
 		return;
@@ -8278,7 +8278,7 @@ void Node3DEditor::_toggle_maximize_view(Object *p_viewport) {
 	if (!maximized) {
 		for (uint32_t i = 0; i < VIEWPORTS_COUNT; i++) {
 			if (i == (uint32_t)index) {
-				viewports[i]->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+				viewports[i]->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 			} else {
 				viewports[i]->hide();
 			}
@@ -9024,7 +9024,7 @@ Node3DEditor::Node3DEditor() {
 		sun_title->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 
 		CenterContainer *sun_direction_center = memnew(CenterContainer);
-		sun_direction = memnew(Control);
+		sun_direction = memnew(Controle);
 		sun_direction->set_custom_minimum_size(Size2(128, 128) * EDSCALE);
 		sun_direction_center->add_child(sun_direction);
 		sun_vb->add_margin_child(TTR("Sun Direction"), sun_direction_center);
@@ -9366,7 +9366,7 @@ Vector<Node3D *> Node3DEditor::gizmo_bvh_frustum_query(const Vector<Plane> &p_fr
 
 Node3DEditorPlugin::Node3DEditorPlugin() {
 	spatial_editor = memnew(Node3DEditor);
-	spatial_editor->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	spatial_editor->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	EditorNode::get_singleton()->get_editor_main_screen()->get_control()->add_child(spatial_editor);
 
 	spatial_editor->hide();

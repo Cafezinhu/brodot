@@ -88,7 +88,7 @@ InputEventConfigContainer::InputEventConfigContainer() {
 	open_config_button->connect(SceneStringName(pressed), callable_mp(this, &InputEventConfigContainer::_configure_pressed));
 	add_child(open_config_button);
 
-	add_child(memnew(Control));
+	add_child(memnew(Controle));
 
 	config_dialog = memnew(InputEventConfigurationDialog);
 	config_dialog->connect(SceneStringName(confirmed), callable_mp(this, &InputEventConfigContainer::_config_dialog_confirmed));

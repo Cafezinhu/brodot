@@ -473,7 +473,7 @@ bool TileMapEditorPlugin::forward_canvas_gui_input(const Ref<InputEvent> &p_even
 	return editor->forward_canvas_gui_input(p_event);
 }
 
-void TileMapEditorPlugin::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void TileMapEditorPlugin::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	editor->forward_canvas_draw_over_viewport(p_overlay);
 }
 
@@ -494,8 +494,8 @@ TileMapEditorPlugin::TileMapEditorPlugin() {
 	tile_map_plugin_singleton = this;
 
 	editor = memnew(TileMapLayerEditor);
-	editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	editor->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	editor->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	editor->set_custom_minimum_size(Size2(0, 200) * EDSCALE);
 	editor->hide();
 
@@ -545,8 +545,8 @@ TileSetEditorPlugin::TileSetEditorPlugin() {
 	tile_set_plugin_singleton = this;
 
 	editor = memnew(TileSetEditor);
-	editor->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	editor->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	editor->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	editor->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	editor->set_custom_minimum_size(Size2(0, 200) * EDSCALE);
 	editor->hide();
 

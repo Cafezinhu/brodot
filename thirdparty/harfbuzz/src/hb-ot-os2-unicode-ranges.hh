@@ -112,7 +112,7 @@ static const OS2Range _hb_os2_unicode_ranges[] =
   {  0x2190,   0x21FF,  37}, // Arrows
   {  0x2200,   0x22FF,  38}, // Mathematical Operators
   {  0x2300,   0x23FF,  39}, // Miscellaneous Technical
-  {  0x2400,   0x243F,  40}, // Control Pictures
+  {  0x2400,   0x243F,  40}, // Controle Pictures
   {  0x2440,   0x245F,  41}, // Optical Character Recognition
   {  0x2460,   0x24FF,  42}, // Enclosed Alphanumerics
   {  0x2500,   0x257F,  43}, // Box Drawing

@@ -40,8 +40,8 @@ class EditorSpinSlider;
 class MenuButton;
 class PopupMenu;
 
-class CurveEdit : public Control {
-	GDCLASS(CurveEdit, Control);
+class CurveEdit : public Controle {
+	GDCLASS(CurveEdit, Controle);
 
 public:
 	CurveEdit();

@@ -1808,10 +1808,10 @@ msgstr "사용례"
 msgid "Misc"
 msgstr "기타"
 
-msgid "Clicked Control:"
-msgstr "클릭된 Control:"
+msgid "Clicked Controle:"
+msgstr "클릭된 Controle:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "클릭된 컨트롤 타입:"
 
 msgid "Live Edit Root:"
@@ -3779,7 +3779,7 @@ msgstr "프로젝트"
 msgid "Project Settings"
 msgstr "프로젝트 설정"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "버전 컨트롤"
 
 msgid "Install Android Build Template..."
@@ -3944,10 +3944,10 @@ msgstr ""
 msgid "Keep local changes and overwrite"
 msgstr "로컬 변경사항을 유지하고 덮어쓰기"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "버전 관리 메타데이터 (재)생성..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "버전 관리 설정..."
 
 msgid "New Inherited"
@@ -6076,11 +6076,11 @@ msgstr "추가 설정"
 msgid "Device:"
 msgstr "기기:"
 
-msgid "Command / Control (auto)"
+msgid "Command / Controle (auto)"
 msgstr "Cmd / Ctrl (자동)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
 "현재 플랫폼에 따라 '메타'('커맨드')와 '컨트롤' 사이를 자동으로 재지정합니다."
@@ -6237,8 +6237,8 @@ msgstr "POT 생성"
 msgid "Add Built-in Strings to POT"
 msgstr "POT에 내장 문자열 추가"
 
-msgid "Add strings from built-in components such as certain Control nodes."
-msgstr "일부 Control 노드 등의 내장 컴포넌트에서 사용하는 문자열을 추가합니다."
+msgid "Add strings from built-in components such as certain Controle nodes."
+msgstr "일부 Controle 노드 등의 내장 컴포넌트에서 사용하는 문자열을 추가합니다."
 
 msgid "Set %s on %d nodes"
 msgstr "%s를 %d개 노드에 설정"
@@ -7127,7 +7127,7 @@ msgstr "CanvasItem \"%s\" 앵커 이동"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Node2D \"%s\"를 (%s, %s)로 스케일 조절"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "컨트롤 \"%s\"를 (%d, %d)로 크기 조절"
 
 msgid "Scale %d CanvasItems"
@@ -7516,7 +7516,7 @@ msgid "Set Handle"
 msgstr "핸들 설정"
 
 msgid "This node doesn't have a control parent."
-msgstr "이 노드에는 Control 부모가 없습니다."
+msgstr "이 노드에는 Controle 부모가 없습니다."
 
 msgid ""
 "Use the appropriate layout properties depending on where you are going to put "
@@ -7530,7 +7530,7 @@ msgid "Use container properties for positioning."
 msgstr "위치를 잡는 데 컨테이너의 속성을 사용하세요."
 
 msgid "This node is a child of a regular control."
-msgstr "이 노드는 일반적인 Control의 자식입니다."
+msgstr "이 노드는 일반적인 Controle의 자식입니다."
 
 msgid "Use anchors and the rectangle for positioning."
 msgstr "위치를 잡는 데 앵커와 크기를 사용하세요."
@@ -7632,8 +7632,8 @@ msgstr "세로 방향 크기 플래그 변경"
 msgid "Change Horizontal Size Flags"
 msgstr "가로 방향 크기 플래그 변경"
 
-msgid "Presets for the anchor and offset values of a Control node."
-msgstr "Control 노드의 앵커와 오프셋 값의 프리셋입니다."
+msgid "Presets for the anchor and offset values of a Controle node."
+msgstr "Controle 노드의 앵커와 오프셋 값의 프리셋입니다."
 
 msgid "Anchor preset"
 msgstr "앵커 프리셋"
@@ -7645,9 +7645,9 @@ msgid "Adjust anchors and offsets to match the current rect size."
 msgstr "현재 크기에 맞게 앵커와 오프셋을 조정합니다."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
-msgstr "이 설정을 켜면, Control 노드를 움직일 때 오프셋이 아닌 앵커를 바꿉니다."
+msgstr "이 설정을 켜면, Controle 노드를 움직일 때 오프셋이 아닌 앵커를 바꿉니다."
 
 msgid "Sizing settings for children of a Container node."
 msgstr "Container 노드의 자식 크기 설정입니다."
@@ -9123,10 +9123,10 @@ msgstr "ParallaxBackground"
 msgid "Remove Point from Curve"
 msgstr "곡선에서 점 제거"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "곡선의 아웃-컨트롤 제거"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "곡선의 인-컨트롤 제거"
 
 msgid "Move Point in Curve"
@@ -9138,10 +9138,10 @@ msgstr "곡선에 점 추가"
 msgid "Split Curve"
 msgstr "곡선 가르기"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "곡선의 인-컨트롤 이동"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "곡선의 아웃-컨트롤 이동"
 
 msgid "Close the Curve"
@@ -9153,7 +9153,7 @@ msgstr "곡선 지점 모두 제거"
 msgid "Right Click: Delete Point"
 msgstr "우클릭: 점 삭제"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "컨트롤 점 선택 (Shift+드래그)"
 
 msgid "Delete Point"
@@ -9207,10 +9207,10 @@ msgstr "경로 가르기"
 msgid "Remove Path Point"
 msgstr "경로 점 제거"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "아웃-컨트롤 점 초기화"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "인-컨트롤 점 초기화"
 
 msgid "Reset Point Tilt"
@@ -10718,7 +10718,7 @@ msgstr "갖춤,많은,옵션"
 msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr "잘못된 경로, PackedScene 리소스가 이동되었거나 제거되었을 수 있습니다."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr "잘못된 PackedScene 리소스, 루트에 컨트롤 노드가 있어야 합니다."
 
 msgid "Invalid file, not a PackedScene resource."
@@ -11369,7 +11369,7 @@ msgstr "%s 분기를 제거하시겠습니까?"
 msgid "Do you want to remove the %s remote?"
 msgstr "%s 리모트를 제거하시겠습니까?"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "버전 관리 메타데이터 생성"
 
 msgid "Create VCS metadata files for:"
@@ -13055,7 +13055,7 @@ msgstr "렌더러:"
 msgid "The renderer can be changed later, but scenes may need to be adjusted."
 msgstr "렌더러는 나중에 바꿀 수 있지만, 씬을 조정해야 할 수도 있습니다."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "버전 컨트롤 메타데이터:"
 
 msgid "Git"
@@ -15560,16 +15560,16 @@ msgstr "헥스 코드와 코드 값의 사이를 전환합니다."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Container 자체는 자식 배치 작업을 구성하는 스크립트 외에는 목적이 없습니다.\n"
-"스크립트를 추가할 목적이 아니면, 일반적인 Control 노드를 사용해주세요."
+"스크립트를 추가할 목적이 아니면, 일반적인 Controle 노드를 사용해주세요."
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
 "\"Ignore\". To solve this, set the Mouse Filter to \"Stop\" or \"Pass\"."
 msgstr ""
-"Hint Tooltip은 Control의 Mouse Filter가 \"Ignore\"으로 설정되어 있기 때문에 보"
+"Hint Tooltip은 Controle의 Mouse Filter가 \"Ignore\"으로 설정되어 있기 때문에 보"
 "이지 않습니다. 해결하려면 Mouse Filter를 \"Stop\"이나 \"Pass\"로 설정하세요."
 
 msgid ""
@@ -15599,11 +15599,11 @@ msgstr "\"Exp Edit\"을 활성화하면, \"Min Value\"는 반드시 0보다 커�
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
-"ScrollContainer는 단일 자식 Control을 작업하기 위한 것입니다.\n"
-"(VBox, HBox 등) 컨테이너를 자식으로 사용하거나, Control을 사용하고 사용자 지"
+"ScrollContainer는 단일 자식 Controle을 작업하기 위한 것입니다.\n"
+"(VBox, HBox 등) 컨테이너를 자식으로 사용하거나, Controle을 사용하고 사용자 지"
 "정 최소 수치를 수동으로 설정하세요."
 
 msgid ""

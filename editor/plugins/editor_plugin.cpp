@@ -81,32 +81,32 @@ void EditorPlugin::remove_autoload_singleton(const String &p_name) {
 	EditorNode::get_singleton()->get_project_settings()->get_autoload_settings()->autoload_remove(p_name);
 }
 
-Button *EditorPlugin::add_control_to_bottom_panel(Control *p_control, const String &p_title, const Ref<Shortcut> &p_shortcut) {
+Button *EditorPlugin::add_control_to_bottom_panel(Controle *p_control, const String &p_title, const Ref<Shortcut> &p_shortcut) {
 	ERR_FAIL_NULL_V(p_control, nullptr);
 	return EditorNode::get_bottom_panel()->add_item(p_title, p_control, p_shortcut);
 }
 
-void EditorPlugin::add_control_to_dock(DockSlot p_slot, Control *p_control, const Ref<Shortcut> &p_shortcut) {
+void EditorPlugin::add_control_to_dock(DockSlot p_slot, Controle *p_control, const Ref<Shortcut> &p_shortcut) {
 	ERR_FAIL_NULL(p_control);
 	EditorDockManager::get_singleton()->add_dock(p_control, String(), EditorDockManager::DockSlot(p_slot), p_shortcut);
 }
 
-void EditorPlugin::remove_control_from_docks(Control *p_control) {
+void EditorPlugin::remove_control_from_docks(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	EditorDockManager::get_singleton()->remove_dock(p_control);
 }
 
-void EditorPlugin::remove_control_from_bottom_panel(Control *p_control) {
+void EditorPlugin::remove_control_from_bottom_panel(Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	EditorNode::get_bottom_panel()->remove_item(p_control);
 }
 
-void EditorPlugin::set_dock_tab_icon(Control *p_control, const Ref<Texture2D> &p_icon) {
+void EditorPlugin::set_dock_tab_icon(Controle *p_control, const Ref<Texture2D> &p_icon) {
 	ERR_FAIL_NULL(p_control);
 	EditorDockManager::get_singleton()->set_dock_tab_icon(p_control, p_icon);
 }
 
-void EditorPlugin::add_control_to_container(CustomControlContainer p_location, Control *p_control) {
+void EditorPlugin::add_control_to_container(CustomControleContainer p_location, Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 
 	switch (p_location) {
@@ -159,7 +159,7 @@ void EditorPlugin::add_control_to_container(CustomControlContainer p_location, C
 	}
 }
 
-void EditorPlugin::remove_control_from_container(CustomControlContainer p_location, Control *p_control) {
+void EditorPlugin::remove_control_from_container(CustomControleContainer p_location, Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 
 	switch (p_location) {
@@ -267,11 +267,11 @@ bool EditorPlugin::forward_canvas_gui_input(const Ref<InputEvent> &p_event) {
 	return success;
 }
 
-void EditorPlugin::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void EditorPlugin::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	GDVIRTUAL_CALL(_forward_canvas_draw_over_viewport, p_overlay);
 }
 
-void EditorPlugin::forward_canvas_force_draw_over_viewport(Control *p_overlay) {
+void EditorPlugin::forward_canvas_force_draw_over_viewport(Controle *p_overlay) {
 	GDVIRTUAL_CALL(_forward_canvas_force_draw_over_viewport, p_overlay);
 }
 
@@ -300,11 +300,11 @@ EditorPlugin::AfterGUIInput EditorPlugin::forward_3d_gui_input(Camera3D *p_camer
 	return static_cast<EditorPlugin::AfterGUIInput>(success);
 }
 
-void EditorPlugin::forward_3d_draw_over_viewport(Control *p_overlay) {
+void EditorPlugin::forward_3d_draw_over_viewport(Controle *p_overlay) {
 	GDVIRTUAL_CALL(_forward_3d_draw_over_viewport, p_overlay);
 }
 
-void EditorPlugin::forward_3d_force_draw_over_viewport(Control *p_overlay) {
+void EditorPlugin::forward_3d_force_draw_over_viewport(Controle *p_overlay) {
 	GDVIRTUAL_CALL(_forward_3d_force_draw_over_viewport, p_overlay);
 }
 
@@ -538,7 +538,7 @@ void EditorPlugin::queue_save_layout() {
 	EditorNode::get_singleton()->save_editor_layout_delayed();
 }
 
-void EditorPlugin::make_bottom_panel_item_visible(Control *p_item) {
+void EditorPlugin::make_bottom_panel_item_visible(Controle *p_item) {
 	EditorNode::get_bottom_panel()->make_item_visible(p_item);
 }
 

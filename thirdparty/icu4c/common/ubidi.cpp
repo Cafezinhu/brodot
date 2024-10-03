@@ -441,7 +441,7 @@ getDirProps(UBiDi *pBiDi) {
              pBiDi->reorderingMode==UBIDI_REORDER_INVERSE_FOR_NUMBERS_SPECIAL);
     int32_t lastArabicPos=-1;
     int32_t controlCount=0;
-    UBool removeBiDiControls = (UBool)(pBiDi->reorderingOptions &
+    UBool removeBiDiControles = (UBool)(pBiDi->reorderingOptions &
                                        UBIDI_OPTION_REMOVE_CONTROLS);
 
     enum State {
@@ -501,7 +501,7 @@ getDirProps(UBiDi *pBiDi) {
             flags|=DIRPROP_FLAG(BN);
             dirProps[i-2]=BN;
         }
-        if(removeBiDiControls && IS_BIDI_CONTROL_CHAR(uchar))
+        if(removeBiDiControles && IS_BIDI_CONTROL_CHAR(uchar))
             controlCount++;
         if(dirProp==L) {
             if(state==SEEKING_STRONG_FOR_PARA) {

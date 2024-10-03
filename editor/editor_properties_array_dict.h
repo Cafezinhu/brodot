@@ -164,8 +164,8 @@ protected:
 
 	virtual void _button_draw();
 	virtual bool _is_drop_valid(const Dictionary &p_drag_data) const;
-	virtual bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	virtual void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	virtual bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	virtual void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 public:
 	void setup(Variant::Type p_array_type, const String &p_hint_string = "");

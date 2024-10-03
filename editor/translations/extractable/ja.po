@@ -248,10 +248,10 @@ msgstr "やり直し"
 msgid "Text Writing Direction"
 msgstr "テキストの書き込み方向"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "制御文字を表示"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "制御文字を挿入"
 
 msgid "(Other)"

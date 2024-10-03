@@ -220,7 +220,7 @@ extern "C" {
 /** \} */
 
 /**
- * \defgroup MIDI_Controllers MIDI Controllers
+ * \defgroup MIDI_Controlelers MIDI Controlelers
  * MIDI controller numbers.
  * \{
  */
@@ -291,7 +291,7 @@ extern "C" {
 #define MIDI_CTL_REGIST_PARM_NUM_LSB  	0x64	/**< Registered parameter number */
 #define MIDI_CTL_REGIST_PARM_NUM_MSB	0x65	/**< Registered parameter number */
 #define MIDI_CTL_ALL_SOUNDS_OFF		0x78	/**< All sounds off */
-#define MIDI_CTL_RESET_CONTROLLERS	0x79	/**< Reset Controllers */
+#define MIDI_CTL_RESET_CONTROLLERS	0x79	/**< Reset Controlelers */
 #define MIDI_CTL_LOCAL_CONTROL_SWITCH	0x7a	/**< Local control switch */
 #define MIDI_CTL_ALL_NOTES_OFF		0x7b	/**< All notes off */
 #define MIDI_CTL_OMNI_OFF		0x7c	/**< Omni off */

@@ -395,7 +395,7 @@ EditorSceneTabs::EditorSceneTabs() {
 	scene_tabs->set_max_tab_width(int(EDITOR_GET("interface/scene_tabs/maximum_width")) * EDSCALE);
 	scene_tabs->set_drag_to_rearrange_enabled(true);
 	scene_tabs->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	scene_tabs->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	scene_tabs->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	tabbar_container->add_child(scene_tabs);
 
 	scene_tabs->connect("tab_changed", callable_mp(this, &EditorSceneTabs::_scene_tab_changed));
@@ -417,15 +417,15 @@ EditorSceneTabs::EditorSceneTabs() {
 	scene_tabs->add_child(scene_tab_add);
 	scene_tab_add->connect(SceneStringName(pressed), callable_mp(EditorNode::get_singleton(), &EditorNode::trigger_menu_option).bind(EditorNode::FILE_NEW_SCENE, false));
 
-	scene_tab_add_ph = memnew(Control);
-	scene_tab_add_ph->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	scene_tab_add_ph = memnew(Controle);
+	scene_tab_add_ph->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	scene_tab_add_ph->set_custom_minimum_size(scene_tab_add->get_minimum_size());
 	tabbar_container->add_child(scene_tab_add_ph);
 
 	// On-hover tab preview.
 
-	Control *tab_preview_anchor = memnew(Control);
-	tab_preview_anchor->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	Controle *tab_preview_anchor = memnew(Controle);
+	tab_preview_anchor->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	add_child(tab_preview_anchor);
 
 	tab_preview_panel = memnew(Panel);

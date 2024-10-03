@@ -900,7 +900,7 @@ namespace VULKAN_HPP_NAMESPACE
         vkDestroyVideoSessionParametersKHR = PFN_vkDestroyVideoSessionParametersKHR( vkGetDeviceProcAddr( device, "vkDestroyVideoSessionParametersKHR" ) );
         vkCmdBeginVideoCodingKHR           = PFN_vkCmdBeginVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdBeginVideoCodingKHR" ) );
         vkCmdEndVideoCodingKHR             = PFN_vkCmdEndVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdEndVideoCodingKHR" ) );
-        vkCmdControlVideoCodingKHR         = PFN_vkCmdControlVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdControlVideoCodingKHR" ) );
+        vkCmdControleVideoCodingKHR         = PFN_vkCmdControleVideoCodingKHR( vkGetDeviceProcAddr( device, "vkCmdControleVideoCodingKHR" ) );
 
         //=== VK_KHR_video_decode_queue ===
         vkCmdDecodeVideoKHR = PFN_vkCmdDecodeVideoKHR( vkGetDeviceProcAddr( device, "vkCmdDecodeVideoKHR" ) );
@@ -1012,7 +1012,7 @@ namespace VULKAN_HPP_NAMESPACE
         vkCmdSetViewportWScalingNV = PFN_vkCmdSetViewportWScalingNV( vkGetDeviceProcAddr( device, "vkCmdSetViewportWScalingNV" ) );
 
         //=== VK_EXT_display_control ===
-        vkDisplayPowerControlEXT  = PFN_vkDisplayPowerControlEXT( vkGetDeviceProcAddr( device, "vkDisplayPowerControlEXT" ) );
+        vkDisplayPowerControleEXT  = PFN_vkDisplayPowerControleEXT( vkGetDeviceProcAddr( device, "vkDisplayPowerControleEXT" ) );
         vkRegisterDeviceEventEXT  = PFN_vkRegisterDeviceEventEXT( vkGetDeviceProcAddr( device, "vkRegisterDeviceEventEXT" ) );
         vkRegisterDisplayEventEXT = PFN_vkRegisterDisplayEventEXT( vkGetDeviceProcAddr( device, "vkRegisterDisplayEventEXT" ) );
         vkGetSwapchainCounterEXT  = PFN_vkGetSwapchainCounterEXT( vkGetDeviceProcAddr( device, "vkGetSwapchainCounterEXT" ) );
@@ -1544,7 +1544,7 @@ namespace VULKAN_HPP_NAMESPACE
         vkGetPipelinePropertiesEXT = PFN_vkGetPipelinePropertiesEXT( vkGetDeviceProcAddr( device, "vkGetPipelinePropertiesEXT" ) );
 
         //=== VK_EXT_extended_dynamic_state2 ===
-        vkCmdSetPatchControlPointsEXT      = PFN_vkCmdSetPatchControlPointsEXT( vkGetDeviceProcAddr( device, "vkCmdSetPatchControlPointsEXT" ) );
+        vkCmdSetPatchControlePointsEXT      = PFN_vkCmdSetPatchControlePointsEXT( vkGetDeviceProcAddr( device, "vkCmdSetPatchControlePointsEXT" ) );
         vkCmdSetRasterizerDiscardEnableEXT = PFN_vkCmdSetRasterizerDiscardEnableEXT( vkGetDeviceProcAddr( device, "vkCmdSetRasterizerDiscardEnableEXT" ) );
         if ( !vkCmdSetRasterizerDiscardEnable )
           vkCmdSetRasterizerDiscardEnable = vkCmdSetRasterizerDiscardEnableEXT;
@@ -1949,7 +1949,7 @@ namespace VULKAN_HPP_NAMESPACE
       PFN_vkDestroyVideoSessionParametersKHR     vkDestroyVideoSessionParametersKHR     = 0;
       PFN_vkCmdBeginVideoCodingKHR               vkCmdBeginVideoCodingKHR               = 0;
       PFN_vkCmdEndVideoCodingKHR                 vkCmdEndVideoCodingKHR                 = 0;
-      PFN_vkCmdControlVideoCodingKHR             vkCmdControlVideoCodingKHR             = 0;
+      PFN_vkCmdControleVideoCodingKHR             vkCmdControleVideoCodingKHR             = 0;
 
       //=== VK_KHR_video_decode_queue ===
       PFN_vkCmdDecodeVideoKHR vkCmdDecodeVideoKHR = 0;
@@ -2042,7 +2042,7 @@ namespace VULKAN_HPP_NAMESPACE
       PFN_vkCmdSetViewportWScalingNV vkCmdSetViewportWScalingNV = 0;
 
       //=== VK_EXT_display_control ===
-      PFN_vkDisplayPowerControlEXT  vkDisplayPowerControlEXT  = 0;
+      PFN_vkDisplayPowerControleEXT  vkDisplayPowerControleEXT  = 0;
       PFN_vkRegisterDeviceEventEXT  vkRegisterDeviceEventEXT  = 0;
       PFN_vkRegisterDisplayEventEXT vkRegisterDisplayEventEXT = 0;
       PFN_vkGetSwapchainCounterEXT  vkGetSwapchainCounterEXT  = 0;
@@ -2454,7 +2454,7 @@ namespace VULKAN_HPP_NAMESPACE
       PFN_vkGetPipelinePropertiesEXT vkGetPipelinePropertiesEXT = 0;
 
       //=== VK_EXT_extended_dynamic_state2 ===
-      PFN_vkCmdSetPatchControlPointsEXT      vkCmdSetPatchControlPointsEXT      = 0;
+      PFN_vkCmdSetPatchControlePointsEXT      vkCmdSetPatchControlePointsEXT      = 0;
       PFN_vkCmdSetRasterizerDiscardEnableEXT vkCmdSetRasterizerDiscardEnableEXT = 0;
       PFN_vkCmdSetDepthBiasEnableEXT         vkCmdSetDepthBiasEnableEXT         = 0;
       PFN_vkCmdSetLogicOpEXT                 vkCmdSetLogicOpEXT                 = 0;
@@ -3992,7 +3992,7 @@ namespace VULKAN_HPP_NAMESPACE
 
       //=== VK_EXT_display_control ===
 
-      void displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR display, const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT & displayPowerInfo ) const;
+      void displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR display, const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT & displayPowerInfo ) const;
 
       VULKAN_HPP_NODISCARD VULKAN_HPP_NAMESPACE::VULKAN_HPP_RAII_NAMESPACE::CreateReturnType<VULKAN_HPP_NAMESPACE::VULKAN_HPP_RAII_NAMESPACE::Fence>::Type
                            registerEventEXT( VULKAN_HPP_NAMESPACE::DeviceEventInfoEXT const &                                deviceEventInfo,
@@ -5585,7 +5585,7 @@ namespace VULKAN_HPP_NAMESPACE
 
       void beginQuery( VULKAN_HPP_NAMESPACE::QueryPool               queryPool,
                        uint32_t                                      query,
-                       VULKAN_HPP_NAMESPACE::QueryControlFlags flags VULKAN_HPP_DEFAULT_ARGUMENT_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
+                       VULKAN_HPP_NAMESPACE::QueryControleFlags flags VULKAN_HPP_DEFAULT_ARGUMENT_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 
       void endQuery( VULKAN_HPP_NAMESPACE::QueryPool queryPool, uint32_t query ) const VULKAN_HPP_NOEXCEPT;
 
@@ -5733,7 +5733,7 @@ namespace VULKAN_HPP_NAMESPACE
 
       void endVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoEndCodingInfoKHR & endCodingInfo ) const VULKAN_HPP_NOEXCEPT;
 
-      void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR & codingControlInfo ) const VULKAN_HPP_NOEXCEPT;
+      void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR & codingControleInfo ) const VULKAN_HPP_NOEXCEPT;
 
       //=== VK_KHR_video_decode_queue ===
 
@@ -5759,7 +5759,7 @@ namespace VULKAN_HPP_NAMESPACE
 
       void beginQueryIndexedEXT( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                  uint32_t                                query,
-                                 VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                                 VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                                  uint32_t                                index ) const VULKAN_HPP_NOEXCEPT;
 
       void endQueryIndexedEXT( VULKAN_HPP_NAMESPACE::QueryPool queryPool, uint32_t query, uint32_t index ) const VULKAN_HPP_NOEXCEPT;
@@ -6189,7 +6189,7 @@ namespace VULKAN_HPP_NAMESPACE
 
       //=== VK_EXT_extended_dynamic_state2 ===
 
-      void setPatchControlPointsEXT( uint32_t patchControlPoints ) const VULKAN_HPP_NOEXCEPT;
+      void setPatchControlePointsEXT( uint32_t patchControlePoints ) const VULKAN_HPP_NOEXCEPT;
 
       void setRasterizerDiscardEnableEXT( VULKAN_HPP_NAMESPACE::Bool32 rasterizerDiscardEnable ) const VULKAN_HPP_NOEXCEPT;
 
@@ -13683,12 +13683,12 @@ namespace VULKAN_HPP_NAMESPACE
 
     VULKAN_HPP_INLINE void CommandBuffer::beginQuery( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                                       uint32_t                                query,
-                                                      VULKAN_HPP_NAMESPACE::QueryControlFlags flags ) const VULKAN_HPP_NOEXCEPT
+                                                      VULKAN_HPP_NAMESPACE::QueryControleFlags flags ) const VULKAN_HPP_NOEXCEPT
     {
       VULKAN_HPP_ASSERT( getDispatcher()->vkCmdBeginQuery && "Function <vkCmdBeginQuery> requires <VK_VERSION_1_0>" );
 
       getDispatcher()->vkCmdBeginQuery(
-        static_cast<VkCommandBuffer>( m_commandBuffer ), static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControlFlags>( flags ) );
+        static_cast<VkCommandBuffer>( m_commandBuffer ), static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControleFlags>( flags ) );
     }
 
     VULKAN_HPP_INLINE void CommandBuffer::endQuery( VULKAN_HPP_NAMESPACE::QueryPool queryPool, uint32_t query ) const VULKAN_HPP_NOEXCEPT
@@ -15944,12 +15944,12 @@ namespace VULKAN_HPP_NAMESPACE
     }
 
     VULKAN_HPP_INLINE void
-      CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR & codingControlInfo ) const VULKAN_HPP_NOEXCEPT
+      CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR & codingControleInfo ) const VULKAN_HPP_NOEXCEPT
     {
-      VULKAN_HPP_ASSERT( getDispatcher()->vkCmdControlVideoCodingKHR && "Function <vkCmdControlVideoCodingKHR> requires <VK_KHR_video_queue>" );
+      VULKAN_HPP_ASSERT( getDispatcher()->vkCmdControleVideoCodingKHR && "Function <vkCmdControleVideoCodingKHR> requires <VK_KHR_video_queue>" );
 
-      getDispatcher()->vkCmdControlVideoCodingKHR( static_cast<VkCommandBuffer>( m_commandBuffer ),
-                                                   reinterpret_cast<const VkVideoCodingControlInfoKHR *>( &codingControlInfo ) );
+      getDispatcher()->vkCmdControleVideoCodingKHR( static_cast<VkCommandBuffer>( m_commandBuffer ),
+                                                   reinterpret_cast<const VkVideoCodingControleInfoKHR *>( &codingControleInfo ) );
     }
 
     //=== VK_KHR_video_decode_queue ===
@@ -16039,13 +16039,13 @@ namespace VULKAN_HPP_NAMESPACE
 
     VULKAN_HPP_INLINE void CommandBuffer::beginQueryIndexedEXT( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                                                 uint32_t                                query,
-                                                                VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                                                                VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                                                                 uint32_t                                index ) const VULKAN_HPP_NOEXCEPT
     {
       VULKAN_HPP_ASSERT( getDispatcher()->vkCmdBeginQueryIndexedEXT && "Function <vkCmdBeginQueryIndexedEXT> requires <VK_EXT_transform_feedback>" );
 
       getDispatcher()->vkCmdBeginQueryIndexedEXT(
-        static_cast<VkCommandBuffer>( m_commandBuffer ), static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControlFlags>( flags ), index );
+        static_cast<VkCommandBuffer>( m_commandBuffer ), static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControleFlags>( flags ), index );
     }
 
     VULKAN_HPP_INLINE void
@@ -16978,14 +16978,14 @@ namespace VULKAN_HPP_NAMESPACE
 
     //=== VK_EXT_display_control ===
 
-    VULKAN_HPP_INLINE void Device::displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
+    VULKAN_HPP_INLINE void Device::displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
                                                            const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT & displayPowerInfo ) const
     {
-      VULKAN_HPP_ASSERT( getDispatcher()->vkDisplayPowerControlEXT && "Function <vkDisplayPowerControlEXT> requires <VK_EXT_display_control>" );
+      VULKAN_HPP_ASSERT( getDispatcher()->vkDisplayPowerControleEXT && "Function <vkDisplayPowerControleEXT> requires <VK_EXT_display_control>" );
 
-      VULKAN_HPP_NAMESPACE::Result result = static_cast<VULKAN_HPP_NAMESPACE::Result>( getDispatcher()->vkDisplayPowerControlEXT(
+      VULKAN_HPP_NAMESPACE::Result result = static_cast<VULKAN_HPP_NAMESPACE::Result>( getDispatcher()->vkDisplayPowerControleEXT(
         static_cast<VkDevice>( m_device ), static_cast<VkDisplayKHR>( display ), reinterpret_cast<const VkDisplayPowerInfoEXT *>( &displayPowerInfo ) ) );
-      VULKAN_HPP_NAMESPACE::detail::resultCheck( result, VULKAN_HPP_NAMESPACE_STRING "::Device::displayPowerControlEXT" );
+      VULKAN_HPP_NAMESPACE::detail::resultCheck( result, VULKAN_HPP_NAMESPACE_STRING "::Device::displayPowerControleEXT" );
     }
 
     VULKAN_HPP_NODISCARD
@@ -21395,12 +21395,12 @@ namespace VULKAN_HPP_NAMESPACE
 
     //=== VK_EXT_extended_dynamic_state2 ===
 
-    VULKAN_HPP_INLINE void CommandBuffer::setPatchControlPointsEXT( uint32_t patchControlPoints ) const VULKAN_HPP_NOEXCEPT
+    VULKAN_HPP_INLINE void CommandBuffer::setPatchControlePointsEXT( uint32_t patchControlePoints ) const VULKAN_HPP_NOEXCEPT
     {
-      VULKAN_HPP_ASSERT( getDispatcher()->vkCmdSetPatchControlPointsEXT &&
-                         "Function <vkCmdSetPatchControlPointsEXT> requires <VK_EXT_extended_dynamic_state2> or <VK_EXT_shader_object>" );
+      VULKAN_HPP_ASSERT( getDispatcher()->vkCmdSetPatchControlePointsEXT &&
+                         "Function <vkCmdSetPatchControlePointsEXT> requires <VK_EXT_extended_dynamic_state2> or <VK_EXT_shader_object>" );
 
-      getDispatcher()->vkCmdSetPatchControlPointsEXT( static_cast<VkCommandBuffer>( m_commandBuffer ), patchControlPoints );
+      getDispatcher()->vkCmdSetPatchControlePointsEXT( static_cast<VkCommandBuffer>( m_commandBuffer ), patchControlePoints );
     }
 
     VULKAN_HPP_INLINE void CommandBuffer::setRasterizerDiscardEnableEXT( VULKAN_HPP_NAMESPACE::Bool32 rasterizerDiscardEnable ) const VULKAN_HPP_NOEXCEPT

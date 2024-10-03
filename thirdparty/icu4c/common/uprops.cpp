@@ -174,16 +174,16 @@ static UBool caseBinaryPropertyContains(const BinaryProperty &/*prop*/, UChar32 
     return static_cast<UBool>(ucase_hasBinaryProperty(c, which));
 }
 
-static UBool isBidiControl(const BinaryProperty &/*prop*/, UChar32 c, UProperty /*which*/) {
-    return ubidi_isBidiControl(c);
+static UBool isBidiControle(const BinaryProperty &/*prop*/, UChar32 c, UProperty /*which*/) {
+    return ubidi_isBidiControle(c);
 }
 
 static UBool isMirrored(const BinaryProperty &/*prop*/, UChar32 c, UProperty /*which*/) {
     return ubidi_isMirrored(c);
 }
 
-static UBool isJoinControl(const BinaryProperty &/*prop*/, UChar32 c, UProperty /*which*/) {
-    return ubidi_isJoinControl(c);
+static UBool isJoinControle(const BinaryProperty &/*prop*/, UChar32 c, UProperty /*which*/) {
+    return ubidi_isJoinControle(c);
 }
 
 #if UCONFIG_NO_NORMALIZATION
@@ -386,7 +386,7 @@ static const BinaryProperty binProps[UCHAR_BINARY_LIMIT]={
      */
     { 1,                U_MASK(UPROPS_ALPHABETIC), defaultContains },
     { 1,                U_MASK(UPROPS_ASCII_HEX_DIGIT), defaultContains },
-    { UPROPS_SRC_BIDI,  0, isBidiControl },
+    { UPROPS_SRC_BIDI,  0, isBidiControle },
     { UPROPS_SRC_BIDI,  0, isMirrored },
     { 1,                U_MASK(UPROPS_DASH), defaultContains },
     { 1,                U_MASK(UPROPS_DEFAULT_IGNORABLE_CODE_POINT), defaultContains },
@@ -404,7 +404,7 @@ static const BinaryProperty binProps[UCHAR_BINARY_LIMIT]={
     { 1,                U_MASK(UPROPS_IDEOGRAPHIC), defaultContains },
     { 1,                U_MASK(UPROPS_IDS_BINARY_OPERATOR), defaultContains },
     { 1,                U_MASK(UPROPS_IDS_TRINARY_OPERATOR), defaultContains },
-    { UPROPS_SRC_BIDI,  0, isJoinControl },
+    { UPROPS_SRC_BIDI,  0, isJoinControle },
     { 1,                U_MASK(UPROPS_LOGICAL_ORDER_EXCEPTION), defaultContains },
     { UPROPS_SRC_CASE,  0, caseBinaryPropertyContains },  // UCHAR_LOWERCASE
     { 1,                U_MASK(UPROPS_MATH), defaultContains },

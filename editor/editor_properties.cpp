@@ -534,7 +534,7 @@ void EditorPropertyPath::_path_focus_exited() {
 	_path_selected(path->get_text());
 }
 
-void EditorPropertyPath::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorPropertyPath::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	const Dictionary drag_data = p_data;
 	if (!drag_data.has("type")) {
 		return;
@@ -551,7 +551,7 @@ void EditorPropertyPath::_drop_data_fw(const Point2 &p_point, const Variant &p_d
 	update_property();
 }
 
-bool EditorPropertyPath::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorPropertyPath::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	const Dictionary drag_data = p_data;
 	if (!drag_data.has("type")) {
 		return false;
@@ -1635,10 +1635,10 @@ void EditorPropertyEasing::_notification(int p_what) {
 }
 
 EditorPropertyEasing::EditorPropertyEasing() {
-	easing_draw = memnew(Control);
+	easing_draw = memnew(Controle);
 	easing_draw->connect(SceneStringName(draw), callable_mp(this, &EditorPropertyEasing::_draw_easing));
 	easing_draw->connect(SceneStringName(gui_input), callable_mp(this, &EditorPropertyEasing::_drag_easing));
-	easing_draw->set_default_cursor_shape(Control::CURSOR_MOVE);
+	easing_draw->set_default_cursor_shape(Controle::CURSOR_MOVE);
 	add_child(easing_draw);
 
 	preset = memnew(PopupMenu);
@@ -2726,7 +2726,7 @@ void EditorPropertyNodePath::_menu_option(int p_idx) {
 			const NodePath &np = _get_node_path();
 			edit->set_text(np);
 			edit->show();
-			callable_mp((Control *)edit, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)edit, &Controle::grab_focus).call_deferred();
 		} break;
 
 		case ACTION_SELECT: {
@@ -2773,11 +2773,11 @@ const NodePath EditorPropertyNodePath::_get_node_path() const {
 	}
 }
 
-bool EditorPropertyNodePath::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorPropertyNodePath::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	return !is_read_only() && is_drop_valid(p_data);
 }
 
-void EditorPropertyNodePath::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorPropertyNodePath::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	ERR_FAIL_COND(!is_drop_valid(p_data));
 	Dictionary data_dict = p_data;
 	Array nodes = data_dict["nodes"];
@@ -3372,7 +3372,7 @@ bool EditorInspectorDefaultPlugin::can_handle(Object *p_object) {
 }
 
 bool EditorInspectorDefaultPlugin::parse_property(Object *p_object, const Variant::Type p_type, const String &p_path, const PropertyHint p_hint, const String &p_hint_text, const BitField<PropertyUsageFlags> p_usage, const bool p_wide) {
-	Control *editor = EditorInspectorDefaultPlugin::get_editor_for_property(p_object, p_type, p_path, p_hint, p_hint_text, p_usage, p_wide);
+	Controle *editor = EditorInspectorDefaultPlugin::get_editor_for_property(p_object, p_type, p_path, p_hint, p_hint_text, p_usage, p_wide);
 	if (editor) {
 		add_property_editor(p_path, editor);
 	}

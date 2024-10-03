@@ -231,9 +231,9 @@ class SpriteFramesEditor : public HSplitContainer {
 	bool updating;
 	bool updating_split_settings = false; // Skip SpinBox/Range callback when setting value by code.
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _open_sprite_sheet();
 	void _auto_slice_sprite_sheet();

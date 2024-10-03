@@ -59,11 +59,11 @@ class SubViewport;
 class SubViewportContainer;
 class VSeparator;
 class VSplitContainer;
-class ViewportNavigationControl;
+class ViewportNavigationControle;
 class WorldEnvironment;
 
-class ViewportRotationControl : public Control {
-	GDCLASS(ViewportRotationControl, Control);
+class ViewportRotationControle : public Controle {
+	GDCLASS(ViewportRotationControle, Controle);
 
 	struct Axis2D {
 		Vector2 screen_point;
@@ -101,11 +101,11 @@ public:
 	void set_viewport(Node3DEditorViewport *p_viewport);
 };
 
-class Node3DEditorViewport : public Control {
-	GDCLASS(Node3DEditorViewport, Control);
+class Node3DEditorViewport : public Controle {
+	GDCLASS(Node3DEditorViewport, Controle);
 	friend class Node3DEditor;
-	friend class ViewportNavigationControl;
-	friend class ViewportRotationControl;
+	friend class ViewportNavigationControle;
+	friend class ViewportRotationControle;
 	enum {
 		VIEW_TOP,
 		VIEW_BOTTOM,
@@ -237,7 +237,7 @@ private:
 	MenuButton *view_menu = nullptr;
 	PopupMenu *display_submenu = nullptr;
 
-	Control *surface = nullptr;
+	Controle *surface = nullptr;
 	SubViewport *viewport = nullptr;
 	Camera3D *camera = nullptr;
 	bool transforming = false;
@@ -262,9 +262,9 @@ private:
 
 	VBoxContainer *top_right_vbox = nullptr;
 	VBoxContainer *bottom_center_vbox = nullptr;
-	ViewportNavigationControl *position_control = nullptr;
-	ViewportNavigationControl *look_control = nullptr;
-	ViewportRotationControl *rotation_control = nullptr;
+	ViewportNavigationControle *position_control = nullptr;
+	ViewportNavigationControle *look_control = nullptr;
+	ViewportRotationControle *rotation_control = nullptr;
 	Gradient *frame_time_gradient = nullptr;
 	PanelContainer *frame_time_panel = nullptr;
 	VBoxContainer *frame_time_vbox = nullptr;
@@ -486,8 +486,8 @@ private:
 	bool _create_audio_node(Node *p_parent, const String &p_path, const Point2 &p_point);
 	void _perform_drop_data();
 
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _project_settings_changed();
 
@@ -765,7 +765,7 @@ private:
 	// (such as MeshInstance's "Mesh" menu).
 	PanelContainer *context_toolbar_panel = nullptr;
 	HBoxContainer *context_toolbar_hbox = nullptr;
-	HashMap<Control *, VSeparator *> context_toolbar_separators;
+	HashMap<Controle *, VSeparator *> context_toolbar_separators;
 
 	void _update_context_toolbar();
 
@@ -820,7 +820,7 @@ private:
 	Label *sun_title = nullptr;
 	VBoxContainer *sun_vb = nullptr;
 	Popup *sun_environ_popup = nullptr;
-	Control *sun_direction = nullptr;
+	Controle *sun_direction = nullptr;
 	EditorSpinSlider *sun_angle_altitude = nullptr;
 	EditorSpinSlider *sun_angle_azimuth = nullptr;
 	ColorPickerButton *sun_color = nullptr;
@@ -919,17 +919,17 @@ public:
 
 	Ref<Environment> get_viewport_environment() { return viewport_environment; }
 
-	void add_control_to_menu_panel(Control *p_control);
-	void remove_control_from_menu_panel(Control *p_control);
+	void add_control_to_menu_panel(Controle *p_control);
+	void remove_control_from_menu_panel(Controle *p_control);
 
-	void add_control_to_left_panel(Control *p_control);
-	void remove_control_from_left_panel(Control *p_control);
+	void add_control_to_left_panel(Controle *p_control);
+	void remove_control_from_left_panel(Controle *p_control);
 
-	void add_control_to_right_panel(Control *p_control);
-	void remove_control_from_right_panel(Control *p_control);
+	void add_control_to_right_panel(Controle *p_control);
+	void remove_control_from_right_panel(Controle *p_control);
 
-	void move_control_to_left_panel(Control *p_control);
-	void move_control_to_right_panel(Control *p_control);
+	void move_control_to_left_panel(Controle *p_control);
+	void move_control_to_right_panel(Controle *p_control);
 
 	VSplitContainer *get_shader_split();
 
@@ -1007,8 +1007,8 @@ public:
 	~Node3DEditorPlugin();
 };
 
-class ViewportNavigationControl : public Control {
-	GDCLASS(ViewportNavigationControl, Control);
+class ViewportNavigationControle : public Controle {
+	GDCLASS(ViewportNavigationControle, Controle);
 
 	Node3DEditorViewport *viewport = nullptr;
 	Vector2i focused_mouse_start;

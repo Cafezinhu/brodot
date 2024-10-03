@@ -391,8 +391,8 @@ void BaseButton::shortcut_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-Control *BaseButton::make_custom_tooltip(const String &p_text) const {
-	Control *control = Control::make_custom_tooltip(p_text);
+Controle *BaseButton::make_custom_tooltip(const String &p_text) const {
+	Controle *control = Controle::make_custom_tooltip(p_text);
 	if (control) {
 		return control;
 	}
@@ -442,7 +442,7 @@ bool BaseButton::_was_pressed_by_mouse() const {
 }
 
 PackedStringArray BaseButton::get_configuration_warnings() const {
-	PackedStringArray warnings = Control::get_configuration_warnings();
+	PackedStringArray warnings = Controle::get_configuration_warnings();
 
 	if (get_button_group().is_valid() && !is_toggle_mode()) {
 		warnings.push_back(RTR("ButtonGroup is intended to be used only with buttons that have toggle_mode set to true."));

@@ -57,8 +57,8 @@ protected:
 
 public:
 	struct TabData {
-		Control *toolbar = nullptr;
-		Control *panel = nullptr;
+		Controle *toolbar = nullptr;
+		Controle *panel = nullptr;
 	};
 
 	virtual Vector<TabData> get_tabs() const {
@@ -66,7 +66,7 @@ public:
 	};
 
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event) { return false; };
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay) {}
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay) {}
 	virtual void tile_set_changed() {}
 	virtual void edit(ObjectID p_tile_map_layer_id) {}
 };
@@ -193,12 +193,12 @@ private:
 	bool tile_set_dragging_selection = false;
 	Vector2i tile_set_drag_start_mouse_pos;
 
-	Control *tile_atlas_control = nullptr;
+	Controle *tile_atlas_control = nullptr;
 	void _tile_atlas_control_mouse_exited();
 	void _tile_atlas_control_gui_input(const Ref<InputEvent> &p_event);
 	void _tile_atlas_control_draw();
 
-	Control *alternative_tiles_control = nullptr;
+	Controle *alternative_tiles_control = nullptr;
 	void _tile_alternatives_control_draw();
 	void _tile_alternatives_control_mouse_exited();
 	void _tile_alternatives_control_gui_input(const Ref<InputEvent> &p_event);
@@ -236,7 +236,7 @@ protected:
 public:
 	virtual Vector<TabData> get_tabs() const override;
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event) override;
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay) override;
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay) override;
 
 	virtual void edit(ObjectID p_tile_map_layer_id) override;
 
@@ -328,7 +328,7 @@ private:
 public:
 	virtual Vector<TabData> get_tabs() const override;
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event) override;
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay) override;
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay) override;
 
 	virtual void edit(ObjectID p_tile_map_layer_id) override;
 
@@ -408,11 +408,11 @@ private:
 
 protected:
 	void _notification(int p_what);
-	void _draw_shape(Control *p_control, Rect2 p_region, TileSet::TileShape p_shape, TileSet::TileOffsetAxis p_offset_axis, Color p_color);
+	void _draw_shape(Controle *p_control, Rect2 p_region, TileSet::TileShape p_shape, TileSet::TileOffsetAxis p_offset_axis, Color p_color);
 
 public:
 	bool forward_canvas_gui_input(const Ref<InputEvent> &p_event);
-	void forward_canvas_draw_over_viewport(Control *p_overlay);
+	void forward_canvas_draw_over_viewport(Controle *p_overlay);
 
 	void edit(Object *p_tile_map_layer);
 	void set_show_layer_selector(bool p_show_layer_selector);

@@ -1769,10 +1769,10 @@ msgstr "Úsáid"
 msgid "Misc"
 msgstr "MiscName"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Rialú Cliceáilte:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Cineál Rialaithe Cliceáil:"
 
 msgid "Live Edit Root:"
@@ -3942,7 +3942,7 @@ msgstr "Socruithe an Tionscadail..."
 msgid "Project Settings"
 msgstr "Socruithe an Tionscadail"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Rialú Leagain"
 
 msgid "Export..."
@@ -4138,10 +4138,10 @@ msgstr "Ná sábháil athruithe logánta agus athluchtaigh"
 msgid "Keep local changes and overwrite"
 msgstr "Coinnigh athruithe áitiúla agus forscríobh"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "Cruthaigh / Sáraigh Meiteashonraí Rialaithe Leagain..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Socruithe Rialaithe Leagain..."
 
 msgid "New Inherited"
@@ -6484,14 +6484,14 @@ msgstr "Roghanna Breise"
 msgid "Device:"
 msgstr "Gléas:"
 
-msgid "Command / Control (auto)"
+msgid "Command / Controle (auto)"
 msgstr "Ordú / Rialú (uathoibríoch)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
-"Déan athmhapáil go huathoibríoch idir 'Meta' ('Command') agus 'Control' ag "
+"Déan athmhapáil go huathoibríoch idir 'Meta' ('Command') agus 'Controle' ag "
 "brath ar an ardán reatha."
 
 msgid "Keycode (Latin Equivalent)"
@@ -6657,7 +6657,7 @@ msgstr "Gin POT"
 msgid "Add Built-in Strings to POT"
 msgstr "Cuir Teaghráin Tógtha le POT"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr ""
 "Cuir teaghráin ó chomhpháirteanna tógtha isteach, mar shampla nóid Rialaithe "
 "áirithe."
@@ -7581,7 +7581,7 @@ msgstr "Bog CanbhásItem \"%s\" Ancaire"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Scálaigh nód2D \"%s\" go (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "Athraigh méid an Rialtáin \"%s\" go (%d,%d)"
 
 msgid "Scale %d CanvasItems"
@@ -8146,7 +8146,7 @@ msgstr "Athraigh Bratach Fairsingithe Ingearach"
 msgid "Change Horizontal Expand Flag"
 msgstr "Athraigh Bratach Fairsingithe Cothrománach"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "Réamhshocruithe do luachanna ancaire agus fritháireamh nód Rialaithe."
 
 msgid "Anchor preset"
@@ -8160,7 +8160,7 @@ msgstr ""
 "Coigeartaigh ancairí agus fritháirimh chun an méid rect reatha a mheaitseáil."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
 "Nuair a bhíonn siad gníomhach, athraíonn nóid Rialaithe ag gluaiseacht a n-"
@@ -9790,10 +9790,10 @@ msgstr "Scoránaigh idir íosluach/uasmhéid agus bunluach/modhanna scaipthe."
 msgid "Remove Point from Curve"
 msgstr "Bain Pointe ón gCuar"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Bain Eis-Rialú ó Chuar"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Bain In-Rialú ó Chuar"
 
 msgid "Move Point in Curve"
@@ -9805,10 +9805,10 @@ msgstr "Cuir Pointe le Cuar"
 msgid "Split Curve"
 msgstr "Cuar Scoilte"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Bog In-Rialú i gCuar"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Bog Amach-Rialú i gCuar"
 
 msgid "Close the Curve"
@@ -9820,7 +9820,7 @@ msgstr "Glan Pointí Cuar"
 msgid "Select Points"
 msgstr "Roghnaigh Pointí"
 
-msgid "Shift+Drag: Select Control Points"
+msgid "Shift+Drag: Select Controle Points"
 msgstr "Shift + Tarraing: Roghnaigh Pointí Rialúcháin"
 
 msgid "Click: Add Point"
@@ -9832,7 +9832,7 @@ msgstr "Cliceáil ar chlé: Scoilt Deighleog (i gcuar)"
 msgid "Right Click: Delete Point"
 msgstr "Cliceáil ar dheis: Scrios Pointe"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Roghnaigh Pointí Rialúcháin (Shift+Drag)"
 
 msgid "Add Point (in empty space)"
@@ -9889,10 +9889,10 @@ msgstr "Conair Scoilte"
 msgid "Remove Path Point"
 msgstr "Bain Pointe an Chosáin"
 
-msgid "Reset Out-Control Point"
+msgid "Reset Out-Controle Point"
 msgstr "Athshocraigh an Pointe Amach-Rialúcháin"
 
-msgid "Reset In-Control Point"
+msgid "Reset In-Controle Point"
 msgstr "Athshocraigh Pointe Rialúcháin"
 
 msgid "Reset Point Tilt"
@@ -9901,10 +9901,10 @@ msgstr "Athshocraigh Pointe Tilt"
 msgid "Shift+Click: Select multiple Points"
 msgstr "Shift + Cliceáil: Roghnaigh Pointí Il"
 
-msgid "Select Control Points"
+msgid "Select Controle Points"
 msgstr "Roghnaigh Pointí Rialúcháin"
 
-msgid "Shift+Click: Drag out Control Points"
+msgid "Shift+Click: Drag out Controle Points"
 msgstr "Shift + Cliceáil: Tarraing amach Pointí Rialúcháin"
 
 msgid "Select Tilt Handles"
@@ -11570,7 +11570,7 @@ msgstr ""
 "Cosán neamhbhailí, is dócha gur bogadh nó gur baineadh an acmhainn "
 "PackedScene."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
 "Acmhainn Neamhbhailí PackedScene, ní mór nód Rialaithe a bheith ag a fhréamh."
 
@@ -12518,10 +12518,10 @@ msgstr "An bhfuil fonn ort an brainse %s a bhaint?"
 msgid "Do you want to remove the %s remote?"
 msgstr "An bhfuil fonn ort an cianda %s a bhaint?"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "Scoránaigh Painéal Bun Rialaithe Leagan"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Cruthaigh Meiteashonraí Rialaithe Leagain"
 
 msgid "Create VCS metadata files for:"
@@ -14455,7 +14455,7 @@ msgstr ""
 "Is féidir an rindreálaí a athrú níos déanaí, ach b'fhéidir go gcaithfear "
 "radhairc a choigeartú."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Meiteashonraí Rialaithe Leagain:"
 
 msgid "Git"
@@ -18070,7 +18070,7 @@ msgstr "Athraigh idir luachanna heicsidheachúlach agus códluachanna."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Ní fhreastalaíonn coimeádán ann féin ar aon chuspóir mura ndéanann script a "
 "iompar socrúcháin leanaí a chumrú.\n"
@@ -18113,7 +18113,7 @@ msgstr ""
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "Tá sé i gceist go n-oibreoidh ScrollContainer le rialú linbh amháin.\n"

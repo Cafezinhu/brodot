@@ -2801,11 +2801,11 @@ typedef enum VkCommandBufferUsageFlagBits {
 } VkCommandBufferUsageFlagBits;
 typedef VkFlags VkCommandBufferUsageFlags;
 
-typedef enum VkQueryControlFlagBits {
+typedef enum VkQueryControleFlagBits {
     VK_QUERY_CONTROL_PRECISE_BIT = 0x00000001,
     VK_QUERY_CONTROL_FLAG_BITS_MAX_ENUM = 0x7FFFFFFF
-} VkQueryControlFlagBits;
-typedef VkFlags VkQueryControlFlags;
+} VkQueryControleFlagBits;
+typedef VkFlags VkQueryControleFlags;
 
 typedef enum VkCommandBufferResetFlagBits {
     VK_COMMAND_BUFFER_RESET_RELEASE_RESOURCES_BIT = 0x00000001,
@@ -3106,10 +3106,10 @@ typedef struct VkPhysicalDeviceLimits {
     uint32_t              maxVertexOutputComponents;
     uint32_t              maxTessellationGenerationLevel;
     uint32_t              maxTessellationPatchSize;
-    uint32_t              maxTessellationControlPerVertexInputComponents;
-    uint32_t              maxTessellationControlPerVertexOutputComponents;
-    uint32_t              maxTessellationControlPerPatchOutputComponents;
-    uint32_t              maxTessellationControlTotalOutputComponents;
+    uint32_t              maxTessellationControlePerVertexInputComponents;
+    uint32_t              maxTessellationControlePerVertexOutputComponents;
+    uint32_t              maxTessellationControlePerPatchOutputComponents;
+    uint32_t              maxTessellationControleTotalOutputComponents;
     uint32_t              maxTessellationEvaluationInputComponents;
     uint32_t              maxTessellationEvaluationOutputComponents;
     uint32_t              maxGeometryShaderInvocations;
@@ -3525,7 +3525,7 @@ typedef struct VkPipelineTessellationStateCreateInfo {
     VkStructureType                           sType;
     const void*                               pNext;
     VkPipelineTessellationStateCreateFlags    flags;
-    uint32_t                                  patchControlPoints;
+    uint32_t                                  patchControlePoints;
 } VkPipelineTessellationStateCreateInfo;
 
 typedef struct VkViewport {
@@ -3850,7 +3850,7 @@ typedef struct VkCommandBufferInheritanceInfo {
     uint32_t                         subpass;
     VkFramebuffer                    framebuffer;
     VkBool32                         occlusionQueryEnable;
-    VkQueryControlFlags              queryFlags;
+    VkQueryControleFlags              queryFlags;
     VkQueryPipelineStatisticFlags    pipelineStatistics;
 } VkCommandBufferInheritanceInfo;
 
@@ -4071,7 +4071,7 @@ typedef void (VKAPI_PTR *PFN_vkCmdSetEvent)(VkCommandBuffer commandBuffer, VkEve
 typedef void (VKAPI_PTR *PFN_vkCmdResetEvent)(VkCommandBuffer commandBuffer, VkEvent event, VkPipelineStageFlags stageMask);
 typedef void (VKAPI_PTR *PFN_vkCmdWaitEvents)(VkCommandBuffer commandBuffer, uint32_t eventCount, const VkEvent* pEvents, VkPipelineStageFlags srcStageMask, VkPipelineStageFlags dstStageMask, uint32_t memoryBarrierCount, const VkMemoryBarrier* pMemoryBarriers, uint32_t bufferMemoryBarrierCount, const VkBufferMemoryBarrier* pBufferMemoryBarriers, uint32_t imageMemoryBarrierCount, const VkImageMemoryBarrier* pImageMemoryBarriers);
 typedef void (VKAPI_PTR *PFN_vkCmdPipelineBarrier)(VkCommandBuffer commandBuffer, VkPipelineStageFlags srcStageMask, VkPipelineStageFlags dstStageMask, VkDependencyFlags dependencyFlags, uint32_t memoryBarrierCount, const VkMemoryBarrier* pMemoryBarriers, uint32_t bufferMemoryBarrierCount, const VkBufferMemoryBarrier* pBufferMemoryBarriers, uint32_t imageMemoryBarrierCount, const VkImageMemoryBarrier* pImageMemoryBarriers);
-typedef void (VKAPI_PTR *PFN_vkCmdBeginQuery)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags);
+typedef void (VKAPI_PTR *PFN_vkCmdBeginQuery)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControleFlags flags);
 typedef void (VKAPI_PTR *PFN_vkCmdEndQuery)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query);
 typedef void (VKAPI_PTR *PFN_vkCmdResetQueryPool)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount);
 typedef void (VKAPI_PTR *PFN_vkCmdWriteTimestamp)(VkCommandBuffer commandBuffer, VkPipelineStageFlagBits pipelineStage, VkQueryPool queryPool, uint32_t query);
@@ -4826,7 +4826,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginQuery(
     VkCommandBuffer                             commandBuffer,
     VkQueryPool                                 queryPool,
     uint32_t                                    query,
-    VkQueryControlFlags                         flags);
+    VkQueryControleFlags                         flags);
 
 VKAPI_ATTR void VKAPI_CALL vkCmdEndQuery(
     VkCommandBuffer                             commandBuffer,
@@ -5801,7 +5801,7 @@ typedef enum VkDriverId {
     VK_DRIVER_ID_MAX_ENUM = 0x7FFFFFFF
 } VkDriverId;
 
-typedef enum VkShaderFloatControlsIndependence {
+typedef enum VkShaderFloatControlesIndependence {
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY = 0,
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL = 1,
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE = 2,
@@ -5809,7 +5809,7 @@ typedef enum VkShaderFloatControlsIndependence {
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL_KHR = VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL,
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE_KHR = VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE,
     VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_MAX_ENUM = 0x7FFFFFFF
-} VkShaderFloatControlsIndependence;
+} VkShaderFloatControlesIndependence;
 
 typedef enum VkSamplerReductionMode {
     VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE = 0,
@@ -5968,8 +5968,8 @@ typedef struct VkPhysicalDeviceVulkan12Properties {
     char                                 driverName[VK_MAX_DRIVER_NAME_SIZE];
     char                                 driverInfo[VK_MAX_DRIVER_INFO_SIZE];
     VkConformanceVersion                 conformanceVersion;
-    VkShaderFloatControlsIndependence    denormBehaviorIndependence;
-    VkShaderFloatControlsIndependence    roundingModeIndependence;
+    VkShaderFloatControlesIndependence    denormBehaviorIndependence;
+    VkShaderFloatControlesIndependence    roundingModeIndependence;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat16;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat32;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat64;
@@ -6132,11 +6132,11 @@ typedef struct VkPhysicalDeviceShaderFloat16Int8Features {
     VkBool32           shaderInt8;
 } VkPhysicalDeviceShaderFloat16Int8Features;
 
-typedef struct VkPhysicalDeviceFloatControlsProperties {
+typedef struct VkPhysicalDeviceFloatControlesProperties {
     VkStructureType                      sType;
     void*                                pNext;
-    VkShaderFloatControlsIndependence    denormBehaviorIndependence;
-    VkShaderFloatControlsIndependence    roundingModeIndependence;
+    VkShaderFloatControlesIndependence    denormBehaviorIndependence;
+    VkShaderFloatControlesIndependence    roundingModeIndependence;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat16;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat32;
     VkBool32                             shaderSignedZeroInfNanPreserveFloat64;
@@ -6152,7 +6152,7 @@ typedef struct VkPhysicalDeviceFloatControlsProperties {
     VkBool32                             shaderRoundingModeRTZFloat16;
     VkBool32                             shaderRoundingModeRTZFloat32;
     VkBool32                             shaderRoundingModeRTZFloat64;
-} VkPhysicalDeviceFloatControlsProperties;
+} VkPhysicalDeviceFloatControlesProperties;
 
 typedef struct VkDescriptorSetLayoutBindingFlagsCreateInfo {
     VkStructureType                    sType;
@@ -6798,11 +6798,11 @@ typedef struct VkPhysicalDeviceVulkan13Features {
     VkBool32           robustImageAccess;
     VkBool32           inlineUniformBlock;
     VkBool32           descriptorBindingInlineUniformBlockUpdateAfterBind;
-    VkBool32           pipelineCreationCacheControl;
+    VkBool32           pipelineCreationCacheControle;
     VkBool32           privateData;
     VkBool32           shaderDemoteToHelperInvocation;
     VkBool32           shaderTerminateInvocation;
-    VkBool32           subgroupSizeControl;
+    VkBool32           subgroupSizeControle;
     VkBool32           computeFullSubgroups;
     VkBool32           synchronization2;
     VkBool32           textureCompressionASTC_HDR;
@@ -6915,11 +6915,11 @@ typedef struct VkPrivateDataSlotCreateInfo {
     VkPrivateDataSlotCreateFlags    flags;
 } VkPrivateDataSlotCreateInfo;
 
-typedef struct VkPhysicalDevicePipelineCreationCacheControlFeatures {
+typedef struct VkPhysicalDevicePipelineCreationCacheControleFeatures {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           pipelineCreationCacheControl;
-} VkPhysicalDevicePipelineCreationCacheControlFeatures;
+    VkBool32           pipelineCreationCacheControle;
+} VkPhysicalDevicePipelineCreationCacheControleFeatures;
 
 typedef struct VkMemoryBarrier2 {
     VkStructureType          sType;
@@ -7128,21 +7128,21 @@ typedef struct VkResolveImageInfo2 {
     const VkImageResolve2*    pRegions;
 } VkResolveImageInfo2;
 
-typedef struct VkPhysicalDeviceSubgroupSizeControlFeatures {
+typedef struct VkPhysicalDeviceSubgroupSizeControleFeatures {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           subgroupSizeControl;
+    VkBool32           subgroupSizeControle;
     VkBool32           computeFullSubgroups;
-} VkPhysicalDeviceSubgroupSizeControlFeatures;
+} VkPhysicalDeviceSubgroupSizeControleFeatures;
 
-typedef struct VkPhysicalDeviceSubgroupSizeControlProperties {
+typedef struct VkPhysicalDeviceSubgroupSizeControleProperties {
     VkStructureType       sType;
     void*                 pNext;
     uint32_t              minSubgroupSize;
     uint32_t              maxSubgroupSize;
     uint32_t              maxComputeWorkgroupSubgroups;
     VkShaderStageFlags    requiredSubgroupSizeStages;
-} VkPhysicalDeviceSubgroupSizeControlProperties;
+} VkPhysicalDeviceSubgroupSizeControleProperties;
 
 typedef struct VkPipelineShaderStageRequiredSubgroupSizeCreateInfo {
     VkStructureType    sType;
@@ -8039,13 +8039,13 @@ typedef VkFlags VkVideoSessionParametersCreateFlagsKHR;
 typedef VkFlags VkVideoBeginCodingFlagsKHR;
 typedef VkFlags VkVideoEndCodingFlagsKHR;
 
-typedef enum VkVideoCodingControlFlagBitsKHR {
+typedef enum VkVideoCodingControleFlagBitsKHR {
     VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR = 0x00000001,
     VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR = 0x00000002,
     VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR = 0x00000004,
     VK_VIDEO_CODING_CONTROL_FLAG_BITS_MAX_ENUM_KHR = 0x7FFFFFFF
-} VkVideoCodingControlFlagBitsKHR;
-typedef VkFlags VkVideoCodingControlFlagsKHR;
+} VkVideoCodingControleFlagBitsKHR;
+typedef VkFlags VkVideoCodingControleFlagsKHR;
 typedef struct VkQueueFamilyQueryResultStatusPropertiesKHR {
     VkStructureType    sType;
     void*              pNext;
@@ -8181,11 +8181,11 @@ typedef struct VkVideoEndCodingInfoKHR {
     VkVideoEndCodingFlagsKHR    flags;
 } VkVideoEndCodingInfoKHR;
 
-typedef struct VkVideoCodingControlInfoKHR {
+typedef struct VkVideoCodingControleInfoKHR {
     VkStructureType                 sType;
     const void*                     pNext;
-    VkVideoCodingControlFlagsKHR    flags;
-} VkVideoCodingControlInfoKHR;
+    VkVideoCodingControleFlagsKHR    flags;
+} VkVideoCodingControleInfoKHR;
 
 typedef VkResult (VKAPI_PTR *PFN_vkGetPhysicalDeviceVideoCapabilitiesKHR)(VkPhysicalDevice physicalDevice, const VkVideoProfileInfoKHR* pVideoProfile, VkVideoCapabilitiesKHR* pCapabilities);
 typedef VkResult (VKAPI_PTR *PFN_vkGetPhysicalDeviceVideoFormatPropertiesKHR)(VkPhysicalDevice physicalDevice, const VkPhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, uint32_t* pVideoFormatPropertyCount, VkVideoFormatPropertiesKHR* pVideoFormatProperties);
@@ -8198,7 +8198,7 @@ typedef VkResult (VKAPI_PTR *PFN_vkUpdateVideoSessionParametersKHR)(VkDevice dev
 typedef void (VKAPI_PTR *PFN_vkDestroyVideoSessionParametersKHR)(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, const VkAllocationCallbacks* pAllocator);
 typedef void (VKAPI_PTR *PFN_vkCmdBeginVideoCodingKHR)(VkCommandBuffer commandBuffer, const VkVideoBeginCodingInfoKHR* pBeginInfo);
 typedef void (VKAPI_PTR *PFN_vkCmdEndVideoCodingKHR)(VkCommandBuffer commandBuffer, const VkVideoEndCodingInfoKHR* pEndCodingInfo);
-typedef void (VKAPI_PTR *PFN_vkCmdControlVideoCodingKHR)(VkCommandBuffer commandBuffer, const VkVideoCodingControlInfoKHR* pCodingControlInfo);
+typedef void (VKAPI_PTR *PFN_vkCmdControleVideoCodingKHR)(VkCommandBuffer commandBuffer, const VkVideoCodingControleInfoKHR* pCodingControleInfo);
 
 #ifndef VK_NO_PROTOTYPES
 VKAPI_ATTR VkResult VKAPI_CALL vkGetPhysicalDeviceVideoCapabilitiesKHR(
@@ -8259,9 +8259,9 @@ VKAPI_ATTR void VKAPI_CALL vkCmdEndVideoCodingKHR(
     VkCommandBuffer                             commandBuffer,
     const VkVideoEndCodingInfoKHR*              pEndCodingInfo);
 
-VKAPI_ATTR void VKAPI_CALL vkCmdControlVideoCodingKHR(
+VKAPI_ATTR void VKAPI_CALL vkCmdControleVideoCodingKHR(
     VkCommandBuffer                             commandBuffer,
-    const VkVideoCodingControlInfoKHR*          pCodingControlInfo);
+    const VkVideoCodingControleInfoKHR*          pCodingControleInfo);
 #endif
 
 
@@ -8366,15 +8366,15 @@ typedef enum VkVideoEncodeH264StdFlagBitsKHR {
 } VkVideoEncodeH264StdFlagBitsKHR;
 typedef VkFlags VkVideoEncodeH264StdFlagsKHR;
 
-typedef enum VkVideoEncodeH264RateControlFlagBitsKHR {
+typedef enum VkVideoEncodeH264RateControleFlagBitsKHR {
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR = 0x00000001,
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_REGULAR_GOP_BIT_KHR = 0x00000002,
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR = 0x00000004,
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR = 0x00000008,
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR = 0x00000010,
     VK_VIDEO_ENCODE_H264_RATE_CONTROL_FLAG_BITS_MAX_ENUM_KHR = 0x7FFFFFFF
-} VkVideoEncodeH264RateControlFlagBitsKHR;
-typedef VkFlags VkVideoEncodeH264RateControlFlagsKHR;
+} VkVideoEncodeH264RateControleFlagBitsKHR;
+typedef VkFlags VkVideoEncodeH264RateControleFlagsKHR;
 typedef struct VkVideoEncodeH264CapabilitiesKHR {
     VkStructureType                        sType;
     void*                                  pNext;
@@ -8402,7 +8402,7 @@ typedef struct VkVideoEncodeH264QpKHR {
 typedef struct VkVideoEncodeH264QualityLevelPropertiesKHR {
     VkStructureType                         sType;
     void*                                   pNext;
-    VkVideoEncodeH264RateControlFlagsKHR    preferredRateControlFlags;
+    VkVideoEncodeH264RateControleFlagsKHR    preferredRateControleFlags;
     uint32_t                                preferredGopFrameCount;
     uint32_t                                preferredIdrPeriod;
     uint32_t                                preferredConsecutiveBFrameCount;
@@ -8481,15 +8481,15 @@ typedef struct VkVideoEncodeH264ProfileInfoKHR {
     StdVideoH264ProfileIdc    stdProfileIdc;
 } VkVideoEncodeH264ProfileInfoKHR;
 
-typedef struct VkVideoEncodeH264RateControlInfoKHR {
+typedef struct VkVideoEncodeH264RateControleInfoKHR {
     VkStructureType                         sType;
     const void*                             pNext;
-    VkVideoEncodeH264RateControlFlagsKHR    flags;
+    VkVideoEncodeH264RateControleFlagsKHR    flags;
     uint32_t                                gopFrameCount;
     uint32_t                                idrPeriod;
     uint32_t                                consecutiveBFrameCount;
     uint32_t                                temporalLayerCount;
-} VkVideoEncodeH264RateControlInfoKHR;
+} VkVideoEncodeH264RateControleInfoKHR;
 
 typedef struct VkVideoEncodeH264FrameSizeKHR {
     uint32_t    frameISize;
@@ -8497,7 +8497,7 @@ typedef struct VkVideoEncodeH264FrameSizeKHR {
     uint32_t    frameBSize;
 } VkVideoEncodeH264FrameSizeKHR;
 
-typedef struct VkVideoEncodeH264RateControlLayerInfoKHR {
+typedef struct VkVideoEncodeH264RateControleLayerInfoKHR {
     VkStructureType                  sType;
     const void*                      pNext;
     VkBool32                         useMinQp;
@@ -8506,7 +8506,7 @@ typedef struct VkVideoEncodeH264RateControlLayerInfoKHR {
     VkVideoEncodeH264QpKHR           maxQp;
     VkBool32                         useMaxFrameSize;
     VkVideoEncodeH264FrameSizeKHR    maxFrameSize;
-} VkVideoEncodeH264RateControlLayerInfoKHR;
+} VkVideoEncodeH264RateControleLayerInfoKHR;
 
 typedef struct VkVideoEncodeH264GopRemainingFrameInfoKHR {
     VkStructureType    sType;
@@ -8584,15 +8584,15 @@ typedef enum VkVideoEncodeH265TransformBlockSizeFlagBitsKHR {
 } VkVideoEncodeH265TransformBlockSizeFlagBitsKHR;
 typedef VkFlags VkVideoEncodeH265TransformBlockSizeFlagsKHR;
 
-typedef enum VkVideoEncodeH265RateControlFlagBitsKHR {
+typedef enum VkVideoEncodeH265RateControleFlagBitsKHR {
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR = 0x00000001,
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_REGULAR_GOP_BIT_KHR = 0x00000002,
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR = 0x00000004,
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR = 0x00000008,
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR = 0x00000010,
     VK_VIDEO_ENCODE_H265_RATE_CONTROL_FLAG_BITS_MAX_ENUM_KHR = 0x7FFFFFFF
-} VkVideoEncodeH265RateControlFlagBitsKHR;
-typedef VkFlags VkVideoEncodeH265RateControlFlagsKHR;
+} VkVideoEncodeH265RateControleFlagBitsKHR;
+typedef VkFlags VkVideoEncodeH265RateControleFlagsKHR;
 typedef struct VkVideoEncodeH265CapabilitiesKHR {
     VkStructureType                                sType;
     void*                                          pNext;
@@ -8630,7 +8630,7 @@ typedef struct VkVideoEncodeH265QpKHR {
 typedef struct VkVideoEncodeH265QualityLevelPropertiesKHR {
     VkStructureType                         sType;
     void*                                   pNext;
-    VkVideoEncodeH265RateControlFlagsKHR    preferredRateControlFlags;
+    VkVideoEncodeH265RateControleFlagsKHR    preferredRateControleFlags;
     uint32_t                                preferredGopFrameCount;
     uint32_t                                preferredIdrPeriod;
     uint32_t                                preferredConsecutiveBFrameCount;
@@ -8706,15 +8706,15 @@ typedef struct VkVideoEncodeH265ProfileInfoKHR {
     StdVideoH265ProfileIdc    stdProfileIdc;
 } VkVideoEncodeH265ProfileInfoKHR;
 
-typedef struct VkVideoEncodeH265RateControlInfoKHR {
+typedef struct VkVideoEncodeH265RateControleInfoKHR {
     VkStructureType                         sType;
     const void*                             pNext;
-    VkVideoEncodeH265RateControlFlagsKHR    flags;
+    VkVideoEncodeH265RateControleFlagsKHR    flags;
     uint32_t                                gopFrameCount;
     uint32_t                                idrPeriod;
     uint32_t                                consecutiveBFrameCount;
     uint32_t                                subLayerCount;
-} VkVideoEncodeH265RateControlInfoKHR;
+} VkVideoEncodeH265RateControleInfoKHR;
 
 typedef struct VkVideoEncodeH265FrameSizeKHR {
     uint32_t    frameISize;
@@ -8722,7 +8722,7 @@ typedef struct VkVideoEncodeH265FrameSizeKHR {
     uint32_t    frameBSize;
 } VkVideoEncodeH265FrameSizeKHR;
 
-typedef struct VkVideoEncodeH265RateControlLayerInfoKHR {
+typedef struct VkVideoEncodeH265RateControleLayerInfoKHR {
     VkStructureType                  sType;
     const void*                      pNext;
     VkBool32                         useMinQp;
@@ -8731,7 +8731,7 @@ typedef struct VkVideoEncodeH265RateControlLayerInfoKHR {
     VkVideoEncodeH265QpKHR           maxQp;
     VkBool32                         useMaxFrameSize;
     VkVideoEncodeH265FrameSizeKHR    maxFrameSize;
-} VkVideoEncodeH265RateControlLayerInfoKHR;
+} VkVideoEncodeH265RateControleLayerInfoKHR;
 
 typedef struct VkVideoEncodeH265GopRemainingFrameInfoKHR {
     VkStructureType    sType;
@@ -10068,9 +10068,9 @@ typedef VkPhysicalDeviceDriverProperties VkPhysicalDeviceDriverPropertiesKHR;
 #define VK_KHR_shader_float_controls 1
 #define VK_KHR_SHADER_FLOAT_CONTROLS_SPEC_VERSION 4
 #define VK_KHR_SHADER_FLOAT_CONTROLS_EXTENSION_NAME "VK_KHR_shader_float_controls"
-typedef VkShaderFloatControlsIndependence VkShaderFloatControlsIndependenceKHR;
+typedef VkShaderFloatControlesIndependence VkShaderFloatControlesIndependenceKHR;
 
-typedef VkPhysicalDeviceFloatControlsProperties VkPhysicalDeviceFloatControlsPropertiesKHR;
+typedef VkPhysicalDeviceFloatControlesProperties VkPhysicalDeviceFloatControlesPropertiesKHR;
 
 
 
@@ -10277,11 +10277,11 @@ VKAPI_ATTR void VKAPI_CALL vkCmdSetRenderingInputAttachmentIndicesKHR(
 #define VK_KHR_shader_quad_control 1
 #define VK_KHR_SHADER_QUAD_CONTROL_SPEC_VERSION 1
 #define VK_KHR_SHADER_QUAD_CONTROL_EXTENSION_NAME "VK_KHR_shader_quad_control"
-typedef struct VkPhysicalDeviceShaderQuadControlFeaturesKHR {
+typedef struct VkPhysicalDeviceShaderQuadControleFeaturesKHR {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           shaderQuadControl;
-} VkPhysicalDeviceShaderQuadControlFeaturesKHR;
+    VkBool32           shaderQuadControle;
+} VkPhysicalDeviceShaderQuadControleFeaturesKHR;
 
 
 
@@ -10619,14 +10619,14 @@ typedef enum VkVideoEncodeCapabilityFlagBitsKHR {
 } VkVideoEncodeCapabilityFlagBitsKHR;
 typedef VkFlags VkVideoEncodeCapabilityFlagsKHR;
 
-typedef enum VkVideoEncodeRateControlModeFlagBitsKHR {
+typedef enum VkVideoEncodeRateControleModeFlagBitsKHR {
     VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR = 0,
     VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DISABLED_BIT_KHR = 0x00000001,
     VK_VIDEO_ENCODE_RATE_CONTROL_MODE_CBR_BIT_KHR = 0x00000002,
     VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR = 0x00000004,
     VK_VIDEO_ENCODE_RATE_CONTROL_MODE_FLAG_BITS_MAX_ENUM_KHR = 0x7FFFFFFF
-} VkVideoEncodeRateControlModeFlagBitsKHR;
-typedef VkFlags VkVideoEncodeRateControlModeFlagsKHR;
+} VkVideoEncodeRateControleModeFlagBitsKHR;
+typedef VkFlags VkVideoEncodeRateControleModeFlagsKHR;
 
 typedef enum VkVideoEncodeFeedbackFlagBitsKHR {
     VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BUFFER_OFFSET_BIT_KHR = 0x00000001,
@@ -10654,7 +10654,7 @@ typedef enum VkVideoEncodeContentFlagBitsKHR {
     VK_VIDEO_ENCODE_CONTENT_FLAG_BITS_MAX_ENUM_KHR = 0x7FFFFFFF
 } VkVideoEncodeContentFlagBitsKHR;
 typedef VkFlags VkVideoEncodeContentFlagsKHR;
-typedef VkFlags VkVideoEncodeRateControlFlagsKHR;
+typedef VkFlags VkVideoEncodeRateControleFlagsKHR;
 typedef struct VkVideoEncodeInfoKHR {
     VkStructureType                       sType;
     const void*                           pNext;
@@ -10673,8 +10673,8 @@ typedef struct VkVideoEncodeCapabilitiesKHR {
     VkStructureType                         sType;
     void*                                   pNext;
     VkVideoEncodeCapabilityFlagsKHR         flags;
-    VkVideoEncodeRateControlModeFlagsKHR    rateControlModes;
-    uint32_t                                maxRateControlLayers;
+    VkVideoEncodeRateControleModeFlagsKHR    rateControleModes;
+    uint32_t                                maxRateControleLayers;
     uint64_t                                maxBitrate;
     uint32_t                                maxQualityLevels;
     VkExtent2D                              encodeInputPictureGranularity;
@@ -10695,25 +10695,25 @@ typedef struct VkVideoEncodeUsageInfoKHR {
     VkVideoEncodeTuningModeKHR      tuningMode;
 } VkVideoEncodeUsageInfoKHR;
 
-typedef struct VkVideoEncodeRateControlLayerInfoKHR {
+typedef struct VkVideoEncodeRateControleLayerInfoKHR {
     VkStructureType    sType;
     const void*        pNext;
     uint64_t           averageBitrate;
     uint64_t           maxBitrate;
     uint32_t           frameRateNumerator;
     uint32_t           frameRateDenominator;
-} VkVideoEncodeRateControlLayerInfoKHR;
+} VkVideoEncodeRateControleLayerInfoKHR;
 
-typedef struct VkVideoEncodeRateControlInfoKHR {
+typedef struct VkVideoEncodeRateControleInfoKHR {
     VkStructureType                                sType;
     const void*                                    pNext;
-    VkVideoEncodeRateControlFlagsKHR               flags;
-    VkVideoEncodeRateControlModeFlagBitsKHR        rateControlMode;
+    VkVideoEncodeRateControleFlagsKHR               flags;
+    VkVideoEncodeRateControleModeFlagBitsKHR        rateControleMode;
     uint32_t                                       layerCount;
-    const VkVideoEncodeRateControlLayerInfoKHR*    pLayers;
+    const VkVideoEncodeRateControleLayerInfoKHR*    pLayers;
     uint32_t                                       virtualBufferSizeInMs;
     uint32_t                                       initialVirtualBufferSizeInMs;
-} VkVideoEncodeRateControlInfoKHR;
+} VkVideoEncodeRateControleInfoKHR;
 
 typedef struct VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR {
     VkStructureType                 sType;
@@ -10725,8 +10725,8 @@ typedef struct VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR {
 typedef struct VkVideoEncodeQualityLevelPropertiesKHR {
     VkStructureType                            sType;
     void*                                      pNext;
-    VkVideoEncodeRateControlModeFlagBitsKHR    preferredRateControlMode;
-    uint32_t                                   preferredRateControlLayerCount;
+    VkVideoEncodeRateControleModeFlagBitsKHR    preferredRateControleMode;
+    uint32_t                                   preferredRateControleLayerCount;
 } VkVideoEncodeQualityLevelPropertiesKHR;
 
 typedef struct VkVideoEncodeQualityLevelInfoKHR {
@@ -10893,11 +10893,11 @@ typedef struct VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR {
 #define VK_KHR_shader_subgroup_uniform_control_flow 1
 #define VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_SPEC_VERSION 1
 #define VK_KHR_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_EXTENSION_NAME "VK_KHR_shader_subgroup_uniform_control_flow"
-typedef struct VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR {
+typedef struct VkPhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           shaderSubgroupUniformControlFlow;
-} VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR;
+    VkBool32           shaderSubgroupUniformControleFlow;
+} VkPhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR;
 
 
 
@@ -11459,11 +11459,11 @@ typedef struct VkPhysicalDeviceVertexAttributeDivisorFeaturesKHR {
 #define VK_KHR_shader_float_controls2 1
 #define VK_KHR_SHADER_FLOAT_CONTROLS_2_SPEC_VERSION 1
 #define VK_KHR_SHADER_FLOAT_CONTROLS_2_EXTENSION_NAME "VK_KHR_shader_float_controls2"
-typedef struct VkPhysicalDeviceShaderFloatControls2FeaturesKHR {
+typedef struct VkPhysicalDeviceShaderFloatControles2FeaturesKHR {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           shaderFloatControls2;
-} VkPhysicalDeviceShaderFloatControls2FeaturesKHR;
+    VkBool32           shaderFloatControles2;
+} VkPhysicalDeviceShaderFloatControles2FeaturesKHR;
 
 
 
@@ -11984,7 +11984,7 @@ typedef struct VkPipelineRasterizationStateStreamCreateInfoEXT {
 typedef void (VKAPI_PTR *PFN_vkCmdBindTransformFeedbackBuffersEXT)(VkCommandBuffer commandBuffer, uint32_t firstBinding, uint32_t bindingCount, const VkBuffer* pBuffers, const VkDeviceSize* pOffsets, const VkDeviceSize* pSizes);
 typedef void (VKAPI_PTR *PFN_vkCmdBeginTransformFeedbackEXT)(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, const VkBuffer* pCounterBuffers, const VkDeviceSize* pCounterBufferOffsets);
 typedef void (VKAPI_PTR *PFN_vkCmdEndTransformFeedbackEXT)(VkCommandBuffer commandBuffer, uint32_t firstCounterBuffer, uint32_t counterBufferCount, const VkBuffer* pCounterBuffers, const VkDeviceSize* pCounterBufferOffsets);
-typedef void (VKAPI_PTR *PFN_vkCmdBeginQueryIndexedEXT)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags, uint32_t index);
+typedef void (VKAPI_PTR *PFN_vkCmdBeginQueryIndexedEXT)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControleFlags flags, uint32_t index);
 typedef void (VKAPI_PTR *PFN_vkCmdEndQueryIndexedEXT)(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, uint32_t index);
 typedef void (VKAPI_PTR *PFN_vkCmdDrawIndirectByteCountEXT)(VkCommandBuffer commandBuffer, uint32_t instanceCount, uint32_t firstInstance, VkBuffer counterBuffer, VkDeviceSize counterBufferOffset, uint32_t counterOffset, uint32_t vertexStride);
 
@@ -12015,7 +12015,7 @@ VKAPI_ATTR void VKAPI_CALL vkCmdBeginQueryIndexedEXT(
     VkCommandBuffer                             commandBuffer,
     VkQueryPool                                 queryPool,
     uint32_t                                    query,
-    VkQueryControlFlags                         flags,
+    VkQueryControleFlags                         flags,
     uint32_t                                    index);
 
 VKAPI_ATTR void VKAPI_CALL vkCmdEndQueryIndexedEXT(
@@ -12596,13 +12596,13 @@ typedef struct VkSwapchainCounterCreateInfoEXT {
     VkSurfaceCounterFlagsEXT    surfaceCounters;
 } VkSwapchainCounterCreateInfoEXT;
 
-typedef VkResult (VKAPI_PTR *PFN_vkDisplayPowerControlEXT)(VkDevice device, VkDisplayKHR display, const VkDisplayPowerInfoEXT* pDisplayPowerInfo);
+typedef VkResult (VKAPI_PTR *PFN_vkDisplayPowerControleEXT)(VkDevice device, VkDisplayKHR display, const VkDisplayPowerInfoEXT* pDisplayPowerInfo);
 typedef VkResult (VKAPI_PTR *PFN_vkRegisterDeviceEventEXT)(VkDevice device, const VkDeviceEventInfoEXT* pDeviceEventInfo, const VkAllocationCallbacks* pAllocator, VkFence* pFence);
 typedef VkResult (VKAPI_PTR *PFN_vkRegisterDisplayEventEXT)(VkDevice device, VkDisplayKHR display, const VkDisplayEventInfoEXT* pDisplayEventInfo, const VkAllocationCallbacks* pAllocator, VkFence* pFence);
 typedef VkResult (VKAPI_PTR *PFN_vkGetSwapchainCounterEXT)(VkDevice device, VkSwapchainKHR swapchain, VkSurfaceCounterFlagBitsEXT counter, uint64_t* pCounterValue);
 
 #ifndef VK_NO_PROTOTYPES
-VKAPI_ATTR VkResult VKAPI_CALL vkDisplayPowerControlEXT(
+VKAPI_ATTR VkResult VKAPI_CALL vkDisplayPowerControleEXT(
     VkDevice                                    device,
     VkDisplayKHR                                display,
     const VkDisplayPowerInfoEXT*                pDisplayPowerInfo);
@@ -14023,15 +14023,15 @@ VKAPI_ATTR void VKAPI_CALL vkCmdWriteBufferMarkerAMD(
 #define VK_AMD_PIPELINE_COMPILER_CONTROL_SPEC_VERSION 1
 #define VK_AMD_PIPELINE_COMPILER_CONTROL_EXTENSION_NAME "VK_AMD_pipeline_compiler_control"
 
-typedef enum VkPipelineCompilerControlFlagBitsAMD {
+typedef enum VkPipelineCompilerControleFlagBitsAMD {
     VK_PIPELINE_COMPILER_CONTROL_FLAG_BITS_MAX_ENUM_AMD = 0x7FFFFFFF
-} VkPipelineCompilerControlFlagBitsAMD;
-typedef VkFlags VkPipelineCompilerControlFlagsAMD;
-typedef struct VkPipelineCompilerControlCreateInfoAMD {
+} VkPipelineCompilerControleFlagBitsAMD;
+typedef VkFlags VkPipelineCompilerControleFlagsAMD;
+typedef struct VkPipelineCompilerControleCreateInfoAMD {
     VkStructureType                      sType;
     const void*                          pNext;
-    VkPipelineCompilerControlFlagsAMD    compilerControlFlags;
-} VkPipelineCompilerControlCreateInfoAMD;
+    VkPipelineCompilerControleFlagsAMD    compilerControleFlags;
+} VkPipelineCompilerControleCreateInfoAMD;
 
 
 
@@ -14551,9 +14551,9 @@ typedef VkPhysicalDeviceScalarBlockLayoutFeatures VkPhysicalDeviceScalarBlockLay
 #define VK_EXT_subgroup_size_control 1
 #define VK_EXT_SUBGROUP_SIZE_CONTROL_SPEC_VERSION 2
 #define VK_EXT_SUBGROUP_SIZE_CONTROL_EXTENSION_NAME "VK_EXT_subgroup_size_control"
-typedef VkPhysicalDeviceSubgroupSizeControlFeatures VkPhysicalDeviceSubgroupSizeControlFeaturesEXT;
+typedef VkPhysicalDeviceSubgroupSizeControleFeatures VkPhysicalDeviceSubgroupSizeControleFeaturesEXT;
 
-typedef VkPhysicalDeviceSubgroupSizeControlProperties VkPhysicalDeviceSubgroupSizeControlPropertiesEXT;
+typedef VkPhysicalDeviceSubgroupSizeControleProperties VkPhysicalDeviceSubgroupSizeControlePropertiesEXT;
 
 typedef VkPipelineShaderStageRequiredSubgroupSizeCreateInfo VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT;
 
@@ -15617,14 +15617,14 @@ typedef enum VkDepthBiasRepresentationEXT {
     VK_DEPTH_BIAS_REPRESENTATION_FLOAT_EXT = 2,
     VK_DEPTH_BIAS_REPRESENTATION_MAX_ENUM_EXT = 0x7FFFFFFF
 } VkDepthBiasRepresentationEXT;
-typedef struct VkPhysicalDeviceDepthBiasControlFeaturesEXT {
+typedef struct VkPhysicalDeviceDepthBiasControleFeaturesEXT {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           depthBiasControl;
+    VkBool32           depthBiasControle;
     VkBool32           leastRepresentableValueForceUnormRepresentation;
     VkBool32           floatRepresentation;
     VkBool32           depthBiasExact;
-} VkPhysicalDeviceDepthBiasControlFeaturesEXT;
+} VkPhysicalDeviceDepthBiasControleFeaturesEXT;
 
 typedef struct VkDepthBiasInfoEXT {
     VkStructureType    sType;
@@ -15845,7 +15845,7 @@ VKAPI_ATTR void VKAPI_CALL vkGetPrivateDataEXT(
 #define VK_EXT_pipeline_creation_cache_control 1
 #define VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_SPEC_VERSION 3
 #define VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_EXTENSION_NAME "VK_EXT_pipeline_creation_cache_control"
-typedef VkPhysicalDevicePipelineCreationCacheControlFeatures VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT;
+typedef VkPhysicalDevicePipelineCreationCacheControleFeatures VkPhysicalDevicePipelineCreationCacheControleFeaturesEXT;
 
 
 
@@ -16490,19 +16490,19 @@ typedef enum VkImageCompressionFixedRateFlagBitsEXT {
     VK_IMAGE_COMPRESSION_FIXED_RATE_FLAG_BITS_MAX_ENUM_EXT = 0x7FFFFFFF
 } VkImageCompressionFixedRateFlagBitsEXT;
 typedef VkFlags VkImageCompressionFixedRateFlagsEXT;
-typedef struct VkPhysicalDeviceImageCompressionControlFeaturesEXT {
+typedef struct VkPhysicalDeviceImageCompressionControleFeaturesEXT {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           imageCompressionControl;
-} VkPhysicalDeviceImageCompressionControlFeaturesEXT;
+    VkBool32           imageCompressionControle;
+} VkPhysicalDeviceImageCompressionControleFeaturesEXT;
 
-typedef struct VkImageCompressionControlEXT {
+typedef struct VkImageCompressionControleEXT {
     VkStructureType                         sType;
     const void*                             pNext;
     VkImageCompressionFlagsEXT              flags;
-    uint32_t                                compressionControlPlaneCount;
+    uint32_t                                compressionControlePlaneCount;
     VkImageCompressionFixedRateFlagsEXT*    pFixedRateFlags;
-} VkImageCompressionControlEXT;
+} VkImageCompressionControleEXT;
 
 typedef struct VkImageCompressionPropertiesEXT {
     VkStructureType                        sType;
@@ -16770,17 +16770,17 @@ typedef struct VkDeviceAddressBindingCallbackDataEXT {
 #define VK_EXT_depth_clip_control 1
 #define VK_EXT_DEPTH_CLIP_CONTROL_SPEC_VERSION 1
 #define VK_EXT_DEPTH_CLIP_CONTROL_EXTENSION_NAME "VK_EXT_depth_clip_control"
-typedef struct VkPhysicalDeviceDepthClipControlFeaturesEXT {
+typedef struct VkPhysicalDeviceDepthClipControleFeaturesEXT {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           depthClipControl;
-} VkPhysicalDeviceDepthClipControlFeaturesEXT;
+    VkBool32           depthClipControle;
+} VkPhysicalDeviceDepthClipControleFeaturesEXT;
 
-typedef struct VkPipelineViewportDepthClipControlCreateInfoEXT {
+typedef struct VkPipelineViewportDepthClipControleCreateInfoEXT {
     VkStructureType    sType;
     const void*        pNext;
     VkBool32           negativeOneToOne;
-} VkPipelineViewportDepthClipControlCreateInfoEXT;
+} VkPipelineViewportDepthClipControleCreateInfoEXT;
 
 
 
@@ -16976,19 +16976,19 @@ typedef struct VkPhysicalDeviceExtendedDynamicState2FeaturesEXT {
     void*              pNext;
     VkBool32           extendedDynamicState2;
     VkBool32           extendedDynamicState2LogicOp;
-    VkBool32           extendedDynamicState2PatchControlPoints;
+    VkBool32           extendedDynamicState2PatchControlePoints;
 } VkPhysicalDeviceExtendedDynamicState2FeaturesEXT;
 
-typedef void (VKAPI_PTR *PFN_vkCmdSetPatchControlPointsEXT)(VkCommandBuffer commandBuffer, uint32_t patchControlPoints);
+typedef void (VKAPI_PTR *PFN_vkCmdSetPatchControlePointsEXT)(VkCommandBuffer commandBuffer, uint32_t patchControlePoints);
 typedef void (VKAPI_PTR *PFN_vkCmdSetRasterizerDiscardEnableEXT)(VkCommandBuffer commandBuffer, VkBool32 rasterizerDiscardEnable);
 typedef void (VKAPI_PTR *PFN_vkCmdSetDepthBiasEnableEXT)(VkCommandBuffer commandBuffer, VkBool32 depthBiasEnable);
 typedef void (VKAPI_PTR *PFN_vkCmdSetLogicOpEXT)(VkCommandBuffer commandBuffer, VkLogicOp logicOp);
 typedef void (VKAPI_PTR *PFN_vkCmdSetPrimitiveRestartEnableEXT)(VkCommandBuffer commandBuffer, VkBool32 primitiveRestartEnable);
 
 #ifndef VK_NO_PROTOTYPES
-VKAPI_ATTR void VKAPI_CALL vkCmdSetPatchControlPointsEXT(
+VKAPI_ATTR void VKAPI_CALL vkCmdSetPatchControlePointsEXT(
     VkCommandBuffer                             commandBuffer,
-    uint32_t                                    patchControlPoints);
+    uint32_t                                    patchControlePoints);
 
 VKAPI_ATTR void VKAPI_CALL vkCmdSetRasterizerDiscardEnableEXT(
     VkCommandBuffer                             commandBuffer,
@@ -17542,29 +17542,29 @@ typedef struct VkPhysicalDeviceShaderCorePropertiesARM {
 #define VK_ARM_scheduling_controls 1
 #define VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION 1
 #define VK_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME "VK_ARM_scheduling_controls"
-typedef VkFlags64 VkPhysicalDeviceSchedulingControlsFlagsARM;
+typedef VkFlags64 VkPhysicalDeviceSchedulingControlesFlagsARM;
 
-// Flag bits for VkPhysicalDeviceSchedulingControlsFlagBitsARM
-typedef VkFlags64 VkPhysicalDeviceSchedulingControlsFlagBitsARM;
-static const VkPhysicalDeviceSchedulingControlsFlagBitsARM VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM = 0x00000001ULL;
+// Flag bits for VkPhysicalDeviceSchedulingControlesFlagBitsARM
+typedef VkFlags64 VkPhysicalDeviceSchedulingControlesFlagBitsARM;
+static const VkPhysicalDeviceSchedulingControlesFlagBitsARM VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM = 0x00000001ULL;
 
-typedef struct VkDeviceQueueShaderCoreControlCreateInfoARM {
+typedef struct VkDeviceQueueShaderCoreControleCreateInfoARM {
     VkStructureType    sType;
     void*              pNext;
     uint32_t           shaderCoreCount;
-} VkDeviceQueueShaderCoreControlCreateInfoARM;
+} VkDeviceQueueShaderCoreControleCreateInfoARM;
 
-typedef struct VkPhysicalDeviceSchedulingControlsFeaturesARM {
+typedef struct VkPhysicalDeviceSchedulingControlesFeaturesARM {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           schedulingControls;
-} VkPhysicalDeviceSchedulingControlsFeaturesARM;
+    VkBool32           schedulingControles;
+} VkPhysicalDeviceSchedulingControlesFeaturesARM;
 
-typedef struct VkPhysicalDeviceSchedulingControlsPropertiesARM {
+typedef struct VkPhysicalDeviceSchedulingControlesPropertiesARM {
     VkStructureType                               sType;
     void*                                         pNext;
-    VkPhysicalDeviceSchedulingControlsFlagsARM    schedulingControlsFlags;
-} VkPhysicalDeviceSchedulingControlsPropertiesARM;
+    VkPhysicalDeviceSchedulingControlesFlagsARM    schedulingControlesFlags;
+} VkPhysicalDeviceSchedulingControlesPropertiesARM;
 
 
 
@@ -17890,11 +17890,11 @@ typedef struct VkPhysicalDeviceLinearColorAttachmentFeaturesNV {
 #define VK_EXT_image_compression_control_swapchain 1
 #define VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_SPEC_VERSION 1
 #define VK_EXT_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_EXTENSION_NAME "VK_EXT_image_compression_control_swapchain"
-typedef struct VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT {
+typedef struct VkPhysicalDeviceImageCompressionControleSwapchainFeaturesEXT {
     VkStructureType    sType;
     void*              pNext;
-    VkBool32           imageCompressionControlSwapchain;
-} VkPhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
+    VkBool32           imageCompressionControleSwapchain;
+} VkPhysicalDeviceImageCompressionControleSwapchainFeaturesEXT;
 
 
 
@@ -18223,11 +18223,11 @@ typedef struct VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT {
     VkBool32           subpassMergeFeedback;
 } VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT;
 
-typedef struct VkRenderPassCreationControlEXT {
+typedef struct VkRenderPassCreationControleEXT {
     VkStructureType    sType;
     const void*        pNext;
     VkBool32           disallowMerging;
-} VkRenderPassCreationControlEXT;
+} VkRenderPassCreationControleEXT;
 
 typedef struct VkRenderPassCreationFeedbackInfoEXT {
     uint32_t    postMergeSubpassCount;

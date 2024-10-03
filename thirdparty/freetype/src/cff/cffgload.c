@@ -540,7 +540,7 @@
         goto Glyph_Build_Finished;
 
 #ifdef FT_CONFIG_OPTION_INCREMENTAL
-      /* Control data and length may not be available for incremental */
+      /* Controle data and length may not be available for incremental */
       /* fonts.                                                       */
       if ( face->root.internal->incremental_interface )
       {

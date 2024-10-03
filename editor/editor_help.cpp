@@ -351,7 +351,7 @@ void EditorHelp::_class_desc_resized(bool p_force_update_theme) {
 	}
 }
 
-static void _add_type_to_rt(const String &p_type, const String &p_enum, bool p_is_bitfield, RichTextLabel *p_rt, const Control *p_owner_node, const String &p_class) {
+static void _add_type_to_rt(const String &p_type, const String &p_enum, bool p_is_bitfield, RichTextLabel *p_rt, const Controle *p_owner_node, const String &p_class) {
 	const Color type_color = p_owner_node->get_theme_color(SNAME("type_color"), SNAME("EditorHelp"));
 
 	if (p_type.is_empty() || p_type == "void") {
@@ -529,7 +529,7 @@ void EditorHelp::_add_method(const DocData::MethodDoc &p_method, bool p_overview
 
 	if (p_overview) {
 		class_desc->push_cell();
-		class_desc->push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT, Control::TEXT_DIRECTION_AUTO, "");
+		class_desc->push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT, Controle::TEXT_DIRECTION_AUTO, "");
 	} else {
 		_add_bulletpoint();
 	}
@@ -1225,7 +1225,7 @@ void EditorHelp::_update_doc() {
 
 			// Property type.
 			class_desc->push_cell();
-			class_desc->push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT, Control::TEXT_DIRECTION_AUTO, "");
+			class_desc->push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT, Controle::TEXT_DIRECTION_AUTO, "");
 			_add_type(prop.type, prop.enumeration, prop.is_bitfield);
 			class_desc->pop(); // paragraph
 			class_desc->pop(); // cell
@@ -2388,7 +2388,7 @@ void EditorHelp::_help_callback(const String &p_topic) {
 	}
 }
 
-static void _add_text_to_rt(const String &p_bbcode, RichTextLabel *p_rt, const Control *p_owner_node, const String &p_class) {
+static void _add_text_to_rt(const String &p_bbcode, RichTextLabel *p_rt, const Controle *p_owner_node, const String &p_class) {
 	const DocTools *doc = EditorHelp::get_doc_data();
 
 	bool is_native = false;
@@ -2764,7 +2764,7 @@ static void _add_text_to_rt(const String &p_bbcode, RichTextLabel *p_rt, const C
 			pos = end_pos + 6; // `len("[/kbd]")`.
 		} else if (tag == "center") {
 			// Align to center.
-			p_rt->push_paragraph(HORIZONTAL_ALIGNMENT_CENTER, Control::TEXT_DIRECTION_AUTO, "");
+			p_rt->push_paragraph(HORIZONTAL_ALIGNMENT_CENTER, Controle::TEXT_DIRECTION_AUTO, "");
 			pos = brk_end + 1;
 			tag_stack.push_front(tag);
 		} else if (tag == "br") {
@@ -3863,7 +3863,7 @@ void EditorHelpBitTooltip::_input_from_window(const Ref<InputEvent> &p_event) {
 	}
 }
 
-void EditorHelpBitTooltip::show_tooltip(EditorHelpBit *p_help_bit, Control *p_target) {
+void EditorHelpBitTooltip::show_tooltip(EditorHelpBit *p_help_bit, Controle *p_target) {
 	ERR_FAIL_NULL(p_help_bit);
 	EditorHelpBitTooltip *tooltip = memnew(EditorHelpBitTooltip(p_target));
 	p_help_bit->connect("request_hide", callable_mp(tooltip, &EditorHelpBitTooltip::_safe_queue_free));
@@ -3914,7 +3914,7 @@ void EditorHelpBitTooltip::popup_under_cursor() {
 	popup(r);
 }
 
-EditorHelpBitTooltip::EditorHelpBitTooltip(Control *p_target) {
+EditorHelpBitTooltip::EditorHelpBitTooltip(Controle *p_target) {
 	set_theme_type_variation("TooltipPanel");
 
 	timer = memnew(Timer);
@@ -4121,7 +4121,7 @@ FindBar::FindBar() {
 	find_next->set_focus_mode(FOCUS_NONE);
 	find_next->connect(SceneStringName(pressed), callable_mp(this, &FindBar::search_next));
 
-	Control *space = memnew(Control);
+	Controle *space = memnew(Controle);
 	add_child(space);
 	space->set_custom_minimum_size(Size2(4, 0) * EDSCALE);
 

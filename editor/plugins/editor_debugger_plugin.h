@@ -39,7 +39,7 @@ class EditorDebuggerSession : public RefCounted {
 	GDCLASS(EditorDebuggerSession, RefCounted);
 
 private:
-	HashSet<Control *> tabs;
+	HashSet<Controle *> tabs;
 
 	ScriptEditorDebugger *debugger = nullptr;
 
@@ -54,8 +54,8 @@ protected:
 public:
 	void detach_debugger();
 
-	void add_session_tab(Control *p_tab);
-	void remove_session_tab(Control *p_tab);
+	void add_session_tab(Controle *p_tab);
+	void remove_session_tab(Controle *p_tab);
 	void send_message(const String &p_message, const Array &p_args = Array());
 	void toggle_profiler(const String &p_profiler, bool p_enable, const Array &p_data = Array());
 	bool is_breaked();

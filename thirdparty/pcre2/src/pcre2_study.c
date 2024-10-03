@@ -758,7 +758,7 @@ for (;;)
     return -3;
     }
   }
-/* Control never gets here */
+/* Controle never gets here */
 }
 
 

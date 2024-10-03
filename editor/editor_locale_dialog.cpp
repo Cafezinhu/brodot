@@ -397,7 +397,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 		{
 			filter_mode = memnew(OptionButton);
 			filter_mode->add_item(TTR("Show All Locales"), SHOW_ALL_LOCALES);
-			filter_mode->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			filter_mode->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			filter_mode->add_item(TTR("Show Selected Locales Only"), SHOW_ONLY_SELECTED_LOCALES);
 			filter_mode->select(0);
 			filter_mode->connect(SceneStringName(item_selected), callable_mp(this, &EditorLocaleDialog::_filter_mode_changed));
@@ -423,10 +423,10 @@ EditorLocaleDialog::EditorLocaleDialog() {
 	}
 	{
 		HBoxContainer *hb_lists = memnew(HBoxContainer);
-		hb_lists->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		hb_lists->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 		{
 			VBoxContainer *vb_lang_list = memnew(VBoxContainer);
-			vb_lang_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			vb_lang_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			{
 				Label *lang_lbl = memnew(Label);
 				lang_lbl->set_text(TTR("Language:"));
@@ -435,7 +435,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			{
 				lang_list = memnew(Tree);
 				lang_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-				lang_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+				lang_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 				lang_list->connect("cell_selected", callable_mp(this, &EditorLocaleDialog::_item_selected));
 				lang_list->set_columns(1);
 				lang_list->connect("item_edited", callable_mp(this, &EditorLocaleDialog::_filter_lang_option_changed));
@@ -445,7 +445,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 		}
 		{
 			vb_script_list = memnew(VBoxContainer);
-			vb_script_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			vb_script_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			{
 				Label *script_lbl = memnew(Label);
 				// TRANSLATORS: This is the label for a list of writing systems.
@@ -455,7 +455,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			{
 				script_list = memnew(Tree);
 				script_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-				script_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+				script_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 				script_list->connect("cell_selected", callable_mp(this, &EditorLocaleDialog::_item_selected));
 				script_list->set_columns(1);
 				script_list->connect("item_edited", callable_mp(this, &EditorLocaleDialog::_filter_script_option_changed));
@@ -465,7 +465,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 		}
 		{
 			VBoxContainer *vb_cnt_list = memnew(VBoxContainer);
-			vb_cnt_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			vb_cnt_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			{
 				Label *cnt_lbl = memnew(Label);
 				cnt_lbl->set_text(TTR("Country:"));
@@ -474,7 +474,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			{
 				cnt_list = memnew(Tree);
 				cnt_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-				cnt_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+				cnt_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 				cnt_list->connect("cell_selected", callable_mp(this, &EditorLocaleDialog::_item_selected));
 				cnt_list->set_columns(1);
 				cnt_list->connect("item_edited", callable_mp(this, &EditorLocaleDialog::_filter_cnt_option_changed));
@@ -486,11 +486,11 @@ EditorLocaleDialog::EditorLocaleDialog() {
 	}
 	{
 		hb_locale = memnew(HBoxContainer);
-		hb_locale->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		hb_locale->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		{
 			{
 				VBoxContainer *vb_language = memnew(VBoxContainer);
-				vb_language->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				vb_language->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				{
 					Label *language_lbl = memnew(Label);
 					language_lbl->set_text(TTR("Language"));
@@ -506,7 +506,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			}
 			{
 				VBoxContainer *vb_script = memnew(VBoxContainer);
-				vb_script->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				vb_script->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				{
 					Label *script_lbl = memnew(Label);
 					// TRANSLATORS: This refers to a writing system.
@@ -523,7 +523,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			}
 			{
 				VBoxContainer *vb_country = memnew(VBoxContainer);
-				vb_country->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				vb_country->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				{
 					Label *country_lbl = memnew(Label);
 					country_lbl->set_text(TTR("Country"));
@@ -539,7 +539,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 			}
 			{
 				VBoxContainer *vb_variant = memnew(VBoxContainer);
-				vb_variant->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+				vb_variant->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 				{
 					Label *variant_lbl = memnew(Label);
 					variant_lbl->set_text(TTR("Variant"));
@@ -547,7 +547,7 @@ EditorLocaleDialog::EditorLocaleDialog() {
 				}
 				{
 					variant_code = memnew(LineEdit);
-					variant_code->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+					variant_code->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 					variant_code->set_placeholder("Variant");
 					variant_code->set_tooltip_text("Variant");
 					vb_variant->add_child(variant_code);

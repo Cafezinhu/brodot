@@ -122,13 +122,13 @@ public:
 };
 
 /*
-	XRController3D is a helper node that automatically updates its position based on tracker data.
+	XRControleler3D is a helper node that automatically updates its position based on tracker data.
 
 	It must be a child node of our XROrigin node
 */
 
-class XRController3D : public XRNode3D {
-	GDCLASS(XRController3D, XRNode3D);
+class XRControleler3D : public XRNode3D {
+	GDCLASS(XRControleler3D, XRNode3D);
 
 private:
 protected:
@@ -151,8 +151,8 @@ public:
 
 	XRPositionalTracker::TrackerHand get_tracker_hand() const;
 
-	XRController3D() {}
-	~XRController3D() {}
+	XRControleler3D() {}
+	~XRControleler3D() {}
 };
 
 /*
@@ -183,7 +183,7 @@ public:
 	It is this point that you will move around the world as the player 'moves while standing still', i.e. the player moves through teleporting or controller inputs as opposed to physically moving.
 
 	Our camera and controllers will always be child nodes and thus place relative to this origin point.
-	This node will automatically locate any camera child nodes and update its position while our XRController3D node will handle tracked controllers.
+	This node will automatically locate any camera child nodes and update its position while our XRControleler3D node will handle tracked controllers.
 */
 
 class XROrigin3D : public Node3D {

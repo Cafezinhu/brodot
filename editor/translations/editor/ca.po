@@ -1486,11 +1486,11 @@ msgstr "Ús"
 msgid "Misc"
 msgstr "Miscel·lània"
 
-msgid "Clicked Control:"
-msgstr "Controls Clicats:"
+msgid "Clicked Controle:"
+msgstr "Controles Clicats:"
 
-msgid "Clicked Control Type:"
-msgstr "Tipus de Controls Clicats:"
+msgid "Clicked Controle Type:"
+msgstr "Tipus de Controles Clicats:"
 
 msgid "Live Edit Root:"
 msgstr "Arrel per l'Edició en directe:"
@@ -2470,8 +2470,8 @@ msgstr "Configuració de l'Editor..."
 msgid "Project"
 msgstr "Projecte"
 
-msgid "Version Control"
-msgstr "Control de Versions"
+msgid "Version Controle"
+msgstr "Controle de Versions"
 
 msgid "Install Android Build Template..."
 msgstr "Instal·lar Plantilla de Compilació d'Android..."
@@ -4674,11 +4674,11 @@ msgstr "Post"
 msgid "Remove Point from Curve"
 msgstr "Elimina un Punt de la Corba"
 
-msgid "Remove Out-Control from Curve"
-msgstr "Elimina Out-Control de la Corba"
+msgid "Remove Out-Controle from Curve"
+msgstr "Elimina Out-Controle de la Corba"
 
-msgid "Remove In-Control from Curve"
-msgstr "Elimina In-Control de la Corba"
+msgid "Remove In-Controle from Curve"
+msgstr "Elimina In-Controle de la Corba"
 
 msgid "Move Point in Curve"
 msgstr "Mou un Punt de la Corba"
@@ -4689,17 +4689,17 @@ msgstr "Afegeix un Punt a la Corba"
 msgid "Split Curve"
 msgstr "Partir Corba"
 
-msgid "Move In-Control in Curve"
-msgstr "Mou In-Control de la Corba"
+msgid "Move In-Controle in Curve"
+msgstr "Mou In-Controle de la Corba"
 
-msgid "Move Out-Control in Curve"
-msgstr "Mou Out-Control de la Corba"
+msgid "Move Out-Controle in Curve"
+msgstr "Mou Out-Controle de la Corba"
 
 msgid "Right Click: Delete Point"
 msgstr "Clic Dret: Elimina el Punt"
 
-msgid "Select Control Points (Shift+Drag)"
-msgstr "Selecciona Punts de Control (Maj.+Arrossegar)"
+msgid "Select Controle Points (Shift+Drag)"
+msgstr "Selecciona Punts de Controle (Maj.+Arrossegar)"
 
 msgid "Delete Point"
 msgstr "Elimina el Punt"

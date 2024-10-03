@@ -65,8 +65,8 @@ public:
 	~CSGShape3DGizmoPlugin();
 };
 
-class CSGShapeEditor : public Control {
-	GDCLASS(CSGShapeEditor, Control);
+class CSGShapeEditor : public Controle {
+	GDCLASS(CSGShapeEditor, Controle);
 
 	enum Menu {
 		MENU_OPTION_BAKE_MESH_INSTANCE,

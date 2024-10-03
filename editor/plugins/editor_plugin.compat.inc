@@ -30,11 +30,11 @@
 
 #ifndef DISABLE_DEPRECATED
 
-Button *EditorPlugin::_add_control_to_bottom_panel_compat_88081(Control *p_control, const String &p_title) {
+Button *EditorPlugin::_add_control_to_bottom_panel_compat_88081(Controle *p_control, const String &p_title) {
 	return add_control_to_bottom_panel(p_control, p_title, nullptr);
 }
 
-void EditorPlugin::_add_control_to_dock_compat_88081(DockSlot p_slot, Control *p_control) {
+void EditorPlugin::_add_control_to_dock_compat_88081(DockSlot p_slot, Controle *p_control) {
 	return add_control_to_dock(p_slot, p_control, nullptr);
 }
 

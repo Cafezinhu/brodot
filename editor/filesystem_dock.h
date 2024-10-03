@@ -54,7 +54,7 @@ class DirectoryCreateDialog;
 class EditorResourceTooltipPlugin;
 
 class FileSystemTree : public Tree {
-	virtual Control *make_custom_tooltip(const String &p_text) const;
+	virtual Controle *make_custom_tooltip(const String &p_text) const;
 };
 
 class FileSystemList : public ItemList {
@@ -65,7 +65,7 @@ class FileSystemList : public ItemList {
 	Popup *popup_editor = nullptr;
 	LineEdit *line_editor = nullptr;
 
-	virtual Control *make_custom_tooltip(const String &p_text) const override;
+	virtual Controle *make_custom_tooltip(const String &p_text) const override;
 	void _line_editor_submit(const String &p_text);
 	void _text_editor_popup_modal_close();
 
@@ -311,7 +311,7 @@ private:
 	void _change_split_mode();
 	void _split_dragged(int p_offset);
 
-	void _search_changed(const String &p_text, const Control *p_from);
+	void _search_changed(const String &p_text, const Controle *p_from);
 	bool _matches_all_search_tokens(const String &p_text);
 
 	MenuButton *_create_file_menu_button();
@@ -329,10 +329,10 @@ private:
 
 	void _set_current_path_line_edit_text(const String &p_path);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
-	void _get_drag_target_folder(String &target, bool &target_favorites, const Point2 &p_point, Control *p_from) const;
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
+	void _get_drag_target_folder(String &target, bool &target_favorites, const Point2 &p_point, Controle *p_from) const;
 
 	void _preview_invalidated(const String &p_path);
 	void _file_list_thumbnail_done(const String &p_path, const Ref<Texture2D> &p_preview, const Ref<Texture2D> &p_small_preview, const Variant &p_udata);
@@ -408,7 +408,7 @@ public:
 
 	void add_resource_tooltip_plugin(const Ref<EditorResourceTooltipPlugin> &p_plugin);
 	void remove_resource_tooltip_plugin(const Ref<EditorResourceTooltipPlugin> &p_plugin);
-	Control *create_tooltip_for_path(const String &p_path) const;
+	Controle *create_tooltip_for_path(const String &p_path) const;
 
 	void save_layout_to_config(Ref<ConfigFile> p_layout, const String &p_section) const;
 	void load_layout_from_config(Ref<ConfigFile> p_layout, const String &p_section);

@@ -153,8 +153,8 @@ class TreeItem;
 class ProgressBar;
 
 // Display search results
-class FindInFilesPanel : public Control {
-	GDCLASS(FindInFilesPanel, Control);
+class FindInFilesPanel : public Controle {
+	GDCLASS(FindInFilesPanel, Controle);
 
 public:
 	static const char *SIGNAL_RESULT_SELECTED;

@@ -30,11 +30,11 @@
 
 #ifndef DISABLE_DEPRECATED
 
-void AcceptDialog::_register_text_enter_bind_compat_89419(Control *p_line_edit) {
+void AcceptDialog::_register_text_enter_bind_compat_89419(Controle *p_line_edit) {
 	register_text_enter(Object::cast_to<LineEdit>(p_line_edit));
 }
 
-void AcceptDialog::_remove_button_bind_compat_89419(Control *p_button) {
+void AcceptDialog::_remove_button_bind_compat_89419(Controle *p_button) {
 	remove_button(Object::cast_to<Button>(p_button));
 }
 

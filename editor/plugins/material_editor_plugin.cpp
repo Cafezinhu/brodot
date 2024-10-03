@@ -63,7 +63,7 @@ void MaterialEditor::gui_input(const Ref<InputEvent> &p_event) {
 }
 
 void MaterialEditor::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.light_1_icon = get_editor_theme_icon(SNAME("MaterialPreviewLight1"));
 	theme_cache.light_2_icon = get_editor_theme_icon(SNAME("MaterialPreviewLight2"));
@@ -261,7 +261,7 @@ MaterialEditor::MaterialEditor() {
 
 	layout_3d = memnew(HBoxContainer);
 	add_child(layout_3d);
-	layout_3d->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT, Control::PRESET_MODE_MINSIZE, 2);
+	layout_3d->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT, Controle::PRESET_MODE_MINSIZE, 2);
 
 	VBoxContainer *vb_shape = memnew(VBoxContainer);
 	layout_3d->add_child(vb_shape);

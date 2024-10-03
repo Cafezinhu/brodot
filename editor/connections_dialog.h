@@ -132,7 +132,7 @@ private:
 	CheckBox *deferred = nullptr;
 	CheckBox *one_shot = nullptr;
 	CheckButton *advanced = nullptr;
-	Vector<Control *> bind_controls;
+	Vector<Controle *> bind_controls;
 
 	Label *warning_label = nullptr;
 	Label *error_label = nullptr;
@@ -193,7 +193,7 @@ public:
 
 // Custom `Tree` needed to use `EditorHelpBit` to display signal documentation.
 class ConnectionsDockTree : public Tree {
-	virtual Control *make_custom_tooltip(const String &p_text) const;
+	virtual Controle *make_custom_tooltip(const String &p_text) const;
 };
 
 class ConnectionsDock : public VBoxContainer {

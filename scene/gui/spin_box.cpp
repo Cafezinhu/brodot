@@ -412,8 +412,8 @@ void SpinBox::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_THEME_CHANGED: {
-			callable_mp((Control *)this, &Control::update_minimum_size).call_deferred();
-			callable_mp((Control *)get_line_edit(), &Control::update_minimum_size).call_deferred();
+			callable_mp((Controle *)this, &Controle::update_minimum_size).call_deferred();
+			callable_mp((Controle *)get_line_edit(), &Controle::update_minimum_size).call_deferred();
 		} break;
 
 		case NOTIFICATION_LAYOUT_DIRECTION_CHANGED: {
@@ -589,7 +589,7 @@ SpinBox::SpinBox() {
 	add_child(line_edit, false, INTERNAL_MODE_FRONT);
 
 	line_edit->set_theme_type_variation("SpinBoxInnerLineEdit");
-	line_edit->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	line_edit->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	line_edit->set_mouse_filter(MOUSE_FILTER_PASS);
 	line_edit->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_LEFT);
 

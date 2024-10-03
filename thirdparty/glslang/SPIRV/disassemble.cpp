@@ -87,7 +87,7 @@ enum ExtInstSet {
 // Container class for a single instance of a SPIR-V stream, with methods for disassembly.
 class SpirvStream {
 public:
-    SpirvStream(std::ostream& out, const std::vector<unsigned int>& stream) : out(out), stream(stream), word(0), nextNestedControl(0) { }
+    SpirvStream(std::ostream& out, const std::vector<unsigned int>& stream) : out(out), stream(stream), word(0), nextNestedControle(0) { }
     virtual ~SpirvStream() { }
 
     void validate();
@@ -127,8 +127,8 @@ protected:
     unsigned int schema;
 
     // stack of structured-merge points
-    std::stack<Id> nestedControl;
-    Id nextNestedControl;         // need a slight delay for when we are nested
+    std::stack<Id> nestedControle;
+    Id nextNestedControle;         // need a slight delay for when we are nested
 };
 
 void SpirvStream::validate()
@@ -217,7 +217,7 @@ void SpirvStream::processInstructions()
 
 void SpirvStream::outputIndent()
 {
-    for (int i = 0; i < (int)nestedControl.size(); ++i)
+    for (int i = 0; i < (int)nestedControle.size(); ++i)
         out << "  ";
 }
 
@@ -246,8 +246,8 @@ void SpirvStream::outputResultId(Id id)
     else
         out << " ";
 
-    if (nestedControl.size() && id == nestedControl.top())
-        nestedControl.pop();
+    if (nestedControle.size() && id == nestedControle.top())
+        nestedControle.pop();
 }
 
 void SpirvStream::outputTypeId(Id id)
@@ -345,11 +345,11 @@ void SpirvStream::disassembleInstruction(Id resultId, Id /*typeId*/, Op opCode, 
     out << (OpcodeString(opCode) + 2);  // leave out the "Op"
 
     if (opCode == OpLoopMerge || opCode == OpSelectionMerge)
-        nextNestedControl = stream[word];
+        nextNestedControle = stream[word];
     else if (opCode == OpBranchConditional || opCode == OpSwitch) {
-        if (nextNestedControl) {
-            nestedControl.push(nextNestedControl);
-            nextNestedControl = 0;
+        if (nextNestedControle) {
+            nestedControle.push(nextNestedControle);
+            nextNestedControle = 0;
         }
     } else if (opCode == OpExtInstImport) {
         idDescriptor[resultId] = decodeString().second;

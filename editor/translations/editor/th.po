@@ -1160,10 +1160,10 @@ msgstr "การใช้"
 msgid "Misc"
 msgstr "อื่น ๆ"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "คอนโทรลที่คลิก:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "ประเภทของคอนโทรลที่คลิก:"
 
 msgid "Live Edit Root:"
@@ -2045,7 +2045,7 @@ msgstr "ตั้งค่าตัวแก้ไข"
 msgid "Project"
 msgstr "โปรเจกต์"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "เวอร์ชันคอนโทรล"
 
 msgid "Install Android Build Template..."
@@ -3427,8 +3427,8 @@ msgstr "เลื่อนจุดยึด CanvasItem \"%s\""
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "ปรับขนาด Node2D \"%s\" ไปยัง (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "ปรับขนาด Control \"%s\" ไปยัง (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "ปรับขนาด Controle \"%s\" ไปยัง (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "ปรับขนาด %d CanvasItem"
@@ -4326,10 +4326,10 @@ msgstr "หลัง"
 msgid "Remove Point from Curve"
 msgstr "ลบจุดในเส้นโค้ง"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "ลบจุดควบคุมขาออกของเส้นโค้ง"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "ลบจุดควบคุมขาเข้าของเส้นโค้ง"
 
 msgid "Move Point in Curve"
@@ -4341,16 +4341,16 @@ msgstr "เพิ่มจุดในเส้นโค้ง"
 msgid "Split Curve"
 msgstr "แยกเส้นโค้ง"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "ย้ายจุดควบคุมขาเข้าของเส้นโค้ง"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "ย้ายจุดควบคุมขาออกของเส้นโค้ง"
 
 msgid "Right Click: Delete Point"
 msgstr "คลิกขวา: ลบจุด"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "เลือกเส้นสัมผัส (Shift+ลาก)"
 
 msgid "Delete Point"
@@ -6391,10 +6391,10 @@ msgstr "สลับระหว่างค่าฐานสิบหกแล
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "ตัวคอนเทนเนอร์เองไม่มีบทบาทเว้นแต่คุณจะตั้งค่าลักษณะการทำงานของตำแหน่งรองในสคริปต์\n"
-"หากคุณไม่ต้องการเพิ่มสคริปต์ให้ใช้โหนด Control ปกติแทน"
+"หากคุณไม่ต้องการเพิ่มสคริปต์ให้ใช้โหนด Controle ปกติแทน"
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
@@ -6408,11 +6408,11 @@ msgstr "ถ้า \"Exp Edit\" เปิดใช้งาน \"Min Value\" จ�
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer ทำงานได้เมื่อมีโหนดลูกเพียงหนึ่งโหนดเท่านั้น\n"
-"ใช้ container เป็นโหนดลูก (VBox,HBox,ฯลฯ) หรือ Control และปรับขนาดเล็กสุดด้วยตนเอง"
+"ใช้ container เป็นโหนดลูก (VBox,HBox,ฯลฯ) หรือ Controle และปรับขนาดเล็กสุดด้วยตนเอง"
 
 msgid ""
 "The sampler port is connected but not used. Consider changing the source to "

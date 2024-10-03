@@ -816,7 +816,7 @@ protected:
 
 	HashMap<int, Port> input_ports;
 	HashMap<int, Port> output_ports;
-	HashMap<int, Control *> controls;
+	HashMap<int, Controle *> controls;
 
 protected:
 	static void _bind_methods();
@@ -855,8 +855,8 @@ public:
 	int get_free_input_port_id() const;
 	int get_free_output_port_id() const;
 
-	void set_ctrl_pressed(Control *p_control, int p_index);
-	Control *is_ctrl_pressed(int p_index);
+	void set_ctrl_pressed(Controle *p_control, int p_index);
+	Controle *is_ctrl_pressed(int p_index);
 
 	void set_editable(bool p_enabled);
 	bool is_editable() const;

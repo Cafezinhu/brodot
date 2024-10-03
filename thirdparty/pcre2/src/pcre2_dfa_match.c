@@ -3308,7 +3308,7 @@ for (;;)
   ptr += clen;    /* Advance to next subject character */
   }               /* Loop to move along the subject string */
 
-/* Control gets here from "break" a few lines above. If we have a match and
+/* Controle gets here from "break" a few lines above. If we have a match and
 PCRE2_ENDANCHORED is set, the match fails. */
 
 if (match_count >= 0 &&

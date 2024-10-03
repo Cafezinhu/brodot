@@ -74,7 +74,7 @@ enum SourceLanguage {
 
 enum ExecutionModel {
     ExecutionModelVertex = 0,
-    ExecutionModelTessellationControl = 1,
+    ExecutionModelTessellationControle = 1,
     ExecutionModelTessellationEvaluation = 2,
     ExecutionModelGeometry = 3,
     ExecutionModelFragment = 4,
@@ -159,7 +159,7 @@ enum ExecutionMode {
     ExecutionModeNonCoherentColorAttachmentReadEXT = 4169,
     ExecutionModeNonCoherentDepthAttachmentReadEXT = 4170,
     ExecutionModeNonCoherentStencilAttachmentReadEXT = 4171,
-    ExecutionModeSubgroupUniformControlFlowKHR = 4421,
+    ExecutionModeSubgroupUniformControleFlowKHR = 4421,
     ExecutionModePostDepthCoverage = 4446,
     ExecutionModeDenormPreserve = 4459,
     ExecutionModeDenormFlushToZero = 4460,
@@ -739,80 +739,80 @@ enum BuiltIn {
     BuiltInMax = 0x7fffffff,
 };
 
-enum SelectionControlShift {
-    SelectionControlFlattenShift = 0,
-    SelectionControlDontFlattenShift = 1,
-    SelectionControlMax = 0x7fffffff,
+enum SelectionControleShift {
+    SelectionControleFlattenShift = 0,
+    SelectionControleDontFlattenShift = 1,
+    SelectionControleMax = 0x7fffffff,
 };
 
-enum SelectionControlMask {
-    SelectionControlMaskNone = 0,
-    SelectionControlFlattenMask = 0x00000001,
-    SelectionControlDontFlattenMask = 0x00000002,
+enum SelectionControleMask {
+    SelectionControleMaskNone = 0,
+    SelectionControleFlattenMask = 0x00000001,
+    SelectionControleDontFlattenMask = 0x00000002,
 };
 
-enum LoopControlShift {
-    LoopControlUnrollShift = 0,
-    LoopControlDontUnrollShift = 1,
-    LoopControlDependencyInfiniteShift = 2,
-    LoopControlDependencyLengthShift = 3,
-    LoopControlMinIterationsShift = 4,
-    LoopControlMaxIterationsShift = 5,
-    LoopControlIterationMultipleShift = 6,
-    LoopControlPeelCountShift = 7,
-    LoopControlPartialCountShift = 8,
-    LoopControlInitiationIntervalINTELShift = 16,
-    LoopControlMaxConcurrencyINTELShift = 17,
-    LoopControlDependencyArrayINTELShift = 18,
-    LoopControlPipelineEnableINTELShift = 19,
-    LoopControlLoopCoalesceINTELShift = 20,
-    LoopControlMaxInterleavingINTELShift = 21,
-    LoopControlSpeculatedIterationsINTELShift = 22,
-    LoopControlNoFusionINTELShift = 23,
-    LoopControlLoopCountINTELShift = 24,
-    LoopControlMaxReinvocationDelayINTELShift = 25,
-    LoopControlMax = 0x7fffffff,
+enum LoopControleShift {
+    LoopControleUnrollShift = 0,
+    LoopControleDontUnrollShift = 1,
+    LoopControleDependencyInfiniteShift = 2,
+    LoopControleDependencyLengthShift = 3,
+    LoopControleMinIterationsShift = 4,
+    LoopControleMaxIterationsShift = 5,
+    LoopControleIterationMultipleShift = 6,
+    LoopControlePeelCountShift = 7,
+    LoopControlePartialCountShift = 8,
+    LoopControleInitiationIntervalINTELShift = 16,
+    LoopControleMaxConcurrencyINTELShift = 17,
+    LoopControleDependencyArrayINTELShift = 18,
+    LoopControlePipelineEnableINTELShift = 19,
+    LoopControleLoopCoalesceINTELShift = 20,
+    LoopControleMaxInterleavingINTELShift = 21,
+    LoopControleSpeculatedIterationsINTELShift = 22,
+    LoopControleNoFusionINTELShift = 23,
+    LoopControleLoopCountINTELShift = 24,
+    LoopControleMaxReinvocationDelayINTELShift = 25,
+    LoopControleMax = 0x7fffffff,
 };
 
-enum LoopControlMask {
-    LoopControlMaskNone = 0,
-    LoopControlUnrollMask = 0x00000001,
-    LoopControlDontUnrollMask = 0x00000002,
-    LoopControlDependencyInfiniteMask = 0x00000004,
-    LoopControlDependencyLengthMask = 0x00000008,
-    LoopControlMinIterationsMask = 0x00000010,
-    LoopControlMaxIterationsMask = 0x00000020,
-    LoopControlIterationMultipleMask = 0x00000040,
-    LoopControlPeelCountMask = 0x00000080,
-    LoopControlPartialCountMask = 0x00000100,
-    LoopControlInitiationIntervalINTELMask = 0x00010000,
-    LoopControlMaxConcurrencyINTELMask = 0x00020000,
-    LoopControlDependencyArrayINTELMask = 0x00040000,
-    LoopControlPipelineEnableINTELMask = 0x00080000,
-    LoopControlLoopCoalesceINTELMask = 0x00100000,
-    LoopControlMaxInterleavingINTELMask = 0x00200000,
-    LoopControlSpeculatedIterationsINTELMask = 0x00400000,
-    LoopControlNoFusionINTELMask = 0x00800000,
-    LoopControlLoopCountINTELMask = 0x01000000,
-    LoopControlMaxReinvocationDelayINTELMask = 0x02000000,
+enum LoopControleMask {
+    LoopControleMaskNone = 0,
+    LoopControleUnrollMask = 0x00000001,
+    LoopControleDontUnrollMask = 0x00000002,
+    LoopControleDependencyInfiniteMask = 0x00000004,
+    LoopControleDependencyLengthMask = 0x00000008,
+    LoopControleMinIterationsMask = 0x00000010,
+    LoopControleMaxIterationsMask = 0x00000020,
+    LoopControleIterationMultipleMask = 0x00000040,
+    LoopControlePeelCountMask = 0x00000080,
+    LoopControlePartialCountMask = 0x00000100,
+    LoopControleInitiationIntervalINTELMask = 0x00010000,
+    LoopControleMaxConcurrencyINTELMask = 0x00020000,
+    LoopControleDependencyArrayINTELMask = 0x00040000,
+    LoopControlePipelineEnableINTELMask = 0x00080000,
+    LoopControleLoopCoalesceINTELMask = 0x00100000,
+    LoopControleMaxInterleavingINTELMask = 0x00200000,
+    LoopControleSpeculatedIterationsINTELMask = 0x00400000,
+    LoopControleNoFusionINTELMask = 0x00800000,
+    LoopControleLoopCountINTELMask = 0x01000000,
+    LoopControleMaxReinvocationDelayINTELMask = 0x02000000,
 };
 
-enum FunctionControlShift {
-    FunctionControlInlineShift = 0,
-    FunctionControlDontInlineShift = 1,
-    FunctionControlPureShift = 2,
-    FunctionControlConstShift = 3,
-    FunctionControlOptNoneINTELShift = 16,
-    FunctionControlMax = 0x7fffffff,
+enum FunctionControleShift {
+    FunctionControleInlineShift = 0,
+    FunctionControleDontInlineShift = 1,
+    FunctionControlePureShift = 2,
+    FunctionControleConstShift = 3,
+    FunctionControleOptNoneINTELShift = 16,
+    FunctionControleMax = 0x7fffffff,
 };
 
-enum FunctionControlMask {
-    FunctionControlMaskNone = 0,
-    FunctionControlInlineMask = 0x00000001,
-    FunctionControlDontInlineMask = 0x00000002,
-    FunctionControlPureMask = 0x00000004,
-    FunctionControlConstMask = 0x00000008,
-    FunctionControlOptNoneINTELMask = 0x00010000,
+enum FunctionControleMask {
+    FunctionControleMaskNone = 0,
+    FunctionControleInlineMask = 0x00000001,
+    FunctionControleDontInlineMask = 0x00000002,
+    FunctionControlePureMask = 0x00000004,
+    FunctionControleConstMask = 0x00000008,
+    FunctionControleOptNoneINTELMask = 0x00010000,
 };
 
 enum MemorySemanticsShift {
@@ -977,7 +977,7 @@ enum Capability {
     CapabilityImageMSArray = 48,
     CapabilityStorageImageExtendedFormats = 49,
     CapabilityImageQuery = 50,
-    CapabilityDerivativeControl = 51,
+    CapabilityDerivativeControle = 51,
     CapabilityInterpolationFunction = 52,
     CapabilityTransformFeedback = 53,
     CapabilityGeometryStreams = 54,
@@ -1044,7 +1044,7 @@ enum Capability {
     CapabilityImageReadWriteLodAMD = 5015,
     CapabilityInt64ImageEXT = 5016,
     CapabilityShaderClockKHR = 5055,
-    CapabilityQuadControlKHR = 5087,
+    CapabilityQuadControleKHR = 5087,
     CapabilitySampleMaskOverrideCoverageNV = 5249,
     CapabilityGeometryShaderPassthroughNV = 5251,
     CapabilityShaderViewportIndexLayerEXT = 5254,
@@ -1131,19 +1131,19 @@ enum Capability {
     CapabilitySubgroupAvcMotionEstimationIntraINTEL = 5697,
     CapabilitySubgroupAvcMotionEstimationChromaINTEL = 5698,
     CapabilityVariableLengthArrayINTEL = 5817,
-    CapabilityFunctionFloatControlINTEL = 5821,
+    CapabilityFunctionFloatControleINTEL = 5821,
     CapabilityFPGAMemoryAttributesINTEL = 5824,
     CapabilityFPFastMathModeINTEL = 5837,
     CapabilityArbitraryPrecisionIntegersINTEL = 5844,
     CapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
-    CapabilityUnstructuredLoopControlsINTEL = 5886,
-    CapabilityFPGALoopControlsINTEL = 5888,
+    CapabilityUnstructuredLoopControlesINTEL = 5886,
+    CapabilityFPGALoopControlesINTEL = 5888,
     CapabilityKernelAttributesINTEL = 5892,
     CapabilityFPGAKernelAttributesINTEL = 5897,
     CapabilityFPGAMemoryAccessesINTEL = 5898,
     CapabilityFPGAClusterAttributesINTEL = 5904,
     CapabilityLoopFuseINTEL = 5906,
-    CapabilityFPGADSPControlINTEL = 5908,
+    CapabilityFPGADSPControleINTEL = 5908,
     CapabilityMemoryAccessAliasingINTEL = 5910,
     CapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
     CapabilityFPGABufferLocationINTEL = 5920,
@@ -1517,7 +1517,7 @@ enum Op {
     OpEndPrimitive = 219,
     OpEmitStreamVertex = 220,
     OpEndStreamPrimitive = 221,
-    OpControlBarrier = 224,
+    OpControleBarrier = 224,
     OpMemoryBarrier = 225,
     OpAtomicLoad = 227,
     OpAtomicStore = 228,
@@ -1984,7 +1984,7 @@ enum Op {
     OpArbitraryFloatPowINTEL = 5880,
     OpArbitraryFloatPowRINTEL = 5881,
     OpArbitraryFloatPowNINTEL = 5882,
-    OpLoopControlINTEL = 5887,
+    OpLoopControleINTEL = 5887,
     OpAliasDomainDeclINTEL = 5911,
     OpAliasScopeDeclINTEL = 5912,
     OpAliasScopeListDeclINTEL = 5913,
@@ -2026,8 +2026,8 @@ enum Op {
     OpTypeStructContinuedINTEL = 6090,
     OpConstantCompositeContinuedINTEL = 6091,
     OpSpecConstantCompositeContinuedINTEL = 6092,
-    OpControlBarrierArriveINTEL = 6142,
-    OpControlBarrierWaitINTEL = 6143,
+    OpControleBarrierArriveINTEL = 6142,
+    OpControleBarrierWaitINTEL = 6143,
     OpGroupIMulKHR = 6401,
     OpGroupFMulKHR = 6402,
     OpGroupBitwiseAndKHR = 6403,
@@ -2252,7 +2252,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpEndPrimitive: *hasResult = false; *hasResultType = false; break;
     case OpEmitStreamVertex: *hasResult = false; *hasResultType = false; break;
     case OpEndStreamPrimitive: *hasResult = false; *hasResultType = false; break;
-    case OpControlBarrier: *hasResult = false; *hasResultType = false; break;
+    case OpControleBarrier: *hasResult = false; *hasResultType = false; break;
     case OpMemoryBarrier: *hasResult = false; *hasResultType = false; break;
     case OpAtomicLoad: *hasResult = true; *hasResultType = true; break;
     case OpAtomicStore: *hasResult = false; *hasResultType = false; break;
@@ -2706,7 +2706,7 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpArbitraryFloatPowINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatPowRINTEL: *hasResult = true; *hasResultType = true; break;
     case OpArbitraryFloatPowNINTEL: *hasResult = true; *hasResultType = true; break;
-    case OpLoopControlINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpLoopControleINTEL: *hasResult = false; *hasResultType = false; break;
     case OpAliasDomainDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case OpAliasScopeDeclINTEL: *hasResult = true; *hasResultType = false; break;
     case OpAliasScopeListDeclINTEL: *hasResult = true; *hasResultType = false; break;
@@ -2748,8 +2748,8 @@ inline void HasResultAndType(Op opcode, bool *hasResult, bool *hasResultType) {
     case OpTypeStructContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
     case OpSpecConstantCompositeContinuedINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpControlBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
-    case OpControlBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpControleBarrierArriveINTEL: *hasResult = false; *hasResultType = false; break;
+    case OpControleBarrierWaitINTEL: *hasResult = false; *hasResultType = false; break;
     case OpGroupIMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupFMulKHR: *hasResult = true; *hasResultType = true; break;
     case OpGroupBitwiseAndKHR: *hasResult = true; *hasResultType = true; break;
@@ -2772,18 +2772,18 @@ inline FPFastMathModeMask operator|(FPFastMathModeMask a, FPFastMathModeMask b) 
 inline FPFastMathModeMask operator&(FPFastMathModeMask a, FPFastMathModeMask b) { return FPFastMathModeMask(unsigned(a) & unsigned(b)); }
 inline FPFastMathModeMask operator^(FPFastMathModeMask a, FPFastMathModeMask b) { return FPFastMathModeMask(unsigned(a) ^ unsigned(b)); }
 inline FPFastMathModeMask operator~(FPFastMathModeMask a) { return FPFastMathModeMask(~unsigned(a)); }
-inline SelectionControlMask operator|(SelectionControlMask a, SelectionControlMask b) { return SelectionControlMask(unsigned(a) | unsigned(b)); }
-inline SelectionControlMask operator&(SelectionControlMask a, SelectionControlMask b) { return SelectionControlMask(unsigned(a) & unsigned(b)); }
-inline SelectionControlMask operator^(SelectionControlMask a, SelectionControlMask b) { return SelectionControlMask(unsigned(a) ^ unsigned(b)); }
-inline SelectionControlMask operator~(SelectionControlMask a) { return SelectionControlMask(~unsigned(a)); }
-inline LoopControlMask operator|(LoopControlMask a, LoopControlMask b) { return LoopControlMask(unsigned(a) | unsigned(b)); }
-inline LoopControlMask operator&(LoopControlMask a, LoopControlMask b) { return LoopControlMask(unsigned(a) & unsigned(b)); }
-inline LoopControlMask operator^(LoopControlMask a, LoopControlMask b) { return LoopControlMask(unsigned(a) ^ unsigned(b)); }
-inline LoopControlMask operator~(LoopControlMask a) { return LoopControlMask(~unsigned(a)); }
-inline FunctionControlMask operator|(FunctionControlMask a, FunctionControlMask b) { return FunctionControlMask(unsigned(a) | unsigned(b)); }
-inline FunctionControlMask operator&(FunctionControlMask a, FunctionControlMask b) { return FunctionControlMask(unsigned(a) & unsigned(b)); }
-inline FunctionControlMask operator^(FunctionControlMask a, FunctionControlMask b) { return FunctionControlMask(unsigned(a) ^ unsigned(b)); }
-inline FunctionControlMask operator~(FunctionControlMask a) { return FunctionControlMask(~unsigned(a)); }
+inline SelectionControleMask operator|(SelectionControleMask a, SelectionControleMask b) { return SelectionControleMask(unsigned(a) | unsigned(b)); }
+inline SelectionControleMask operator&(SelectionControleMask a, SelectionControleMask b) { return SelectionControleMask(unsigned(a) & unsigned(b)); }
+inline SelectionControleMask operator^(SelectionControleMask a, SelectionControleMask b) { return SelectionControleMask(unsigned(a) ^ unsigned(b)); }
+inline SelectionControleMask operator~(SelectionControleMask a) { return SelectionControleMask(~unsigned(a)); }
+inline LoopControleMask operator|(LoopControleMask a, LoopControleMask b) { return LoopControleMask(unsigned(a) | unsigned(b)); }
+inline LoopControleMask operator&(LoopControleMask a, LoopControleMask b) { return LoopControleMask(unsigned(a) & unsigned(b)); }
+inline LoopControleMask operator^(LoopControleMask a, LoopControleMask b) { return LoopControleMask(unsigned(a) ^ unsigned(b)); }
+inline LoopControleMask operator~(LoopControleMask a) { return LoopControleMask(~unsigned(a)); }
+inline FunctionControleMask operator|(FunctionControleMask a, FunctionControleMask b) { return FunctionControleMask(unsigned(a) | unsigned(b)); }
+inline FunctionControleMask operator&(FunctionControleMask a, FunctionControleMask b) { return FunctionControleMask(unsigned(a) & unsigned(b)); }
+inline FunctionControleMask operator^(FunctionControleMask a, FunctionControleMask b) { return FunctionControleMask(unsigned(a) ^ unsigned(b)); }
+inline FunctionControleMask operator~(FunctionControleMask a) { return FunctionControleMask(~unsigned(a)); }
 inline MemorySemanticsMask operator|(MemorySemanticsMask a, MemorySemanticsMask b) { return MemorySemanticsMask(unsigned(a) | unsigned(b)); }
 inline MemorySemanticsMask operator&(MemorySemanticsMask a, MemorySemanticsMask b) { return MemorySemanticsMask(unsigned(a) & unsigned(b)); }
 inline MemorySemanticsMask operator^(MemorySemanticsMask a, MemorySemanticsMask b) { return MemorySemanticsMask(unsigned(a) ^ unsigned(b)); }

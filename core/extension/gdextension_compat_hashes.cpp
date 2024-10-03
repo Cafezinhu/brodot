@@ -217,7 +217,7 @@ void GDExtensionCompatHashes::initialize() {
 		{ "is_in_comment", 3294126239, 688195400 },
 		{ "add_code_completion_option", 1629240608, 947964390 },
 	});
-	mappings.insert("Control", {
+	mappings.insert("Controle", {
 		{ "set_offsets_preset", 3651818904, 3724524307 },
 		{ "set_anchors_and_offsets_preset", 3651818904, 3724524307 },
 		{ "set_anchor", 2589937826, 2302782885 },

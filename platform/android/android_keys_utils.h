@@ -123,8 +123,8 @@ static AndroidGodotCodePair android_godot_code_pairs[] = {
 	{ AKEYCODE_PAGE_DOWN, Key::PAGEDOWN }, // (93) Page Down key.
 	{ AKEYCODE_ESCAPE, Key::ESCAPE }, // (111) Escape key.
 	{ AKEYCODE_FORWARD_DEL, Key::KEY_DELETE }, // (112) Forward Delete key.
-	{ AKEYCODE_CTRL_LEFT, Key::CTRL }, // (113) Left Control modifier key.
-	{ AKEYCODE_CTRL_RIGHT, Key::CTRL }, // (114) Right Control modifier key.
+	{ AKEYCODE_CTRL_LEFT, Key::CTRL }, // (113) Left Controle modifier key.
+	{ AKEYCODE_CTRL_RIGHT, Key::CTRL }, // (114) Right Controle modifier key.
 	{ AKEYCODE_CAPS_LOCK, Key::CAPSLOCK }, // (115) Caps Lock key.
 	{ AKEYCODE_SCROLL_LOCK, Key::SCROLLLOCK }, // (116) Scroll Lock key.
 	{ AKEYCODE_META_LEFT, Key::META }, // (117) Left Meta modifier key.

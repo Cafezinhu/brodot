@@ -73,7 +73,7 @@ class ParticleProcessMaterialMinMaxPropertyEditor : public EditorProperty {
 	Color drag_color;
 	Color midpoint_color;
 
-	Control *range_edit_widget = nullptr;
+	Controle *range_edit_widget = nullptr;
 	Button *toggle_mode_button = nullptr;
 	Range *min_range = nullptr;
 	Range *max_range = nullptr;

@@ -133,8 +133,8 @@ void XRPositionalTracker::set_pose(const StringName &p_action_name, const Transf
 
 Variant XRPositionalTracker::get_input(const StringName &p_action_name) const {
 	// Complain if this method is called on a XRPositionalTracker instance.
-	if (!dynamic_cast<const XRControllerTracker *>(this)) {
-		WARN_DEPRECATED_MSG(R"*(The "get_input()" method is deprecated, use "XRControllerTracker" instead.)*");
+	if (!dynamic_cast<const XRControlelerTracker *>(this)) {
+		WARN_DEPRECATED_MSG(R"*(The "get_input()" method is deprecated, use "XRControlelerTracker" instead.)*");
 	}
 
 	if (inputs.has(p_action_name)) {
@@ -146,8 +146,8 @@ Variant XRPositionalTracker::get_input(const StringName &p_action_name) const {
 
 void XRPositionalTracker::set_input(const StringName &p_action_name, const Variant &p_value) {
 	// Complain if this method is called on a XRPositionalTracker instance.
-	if (!dynamic_cast<XRControllerTracker *>(this)) {
-		WARN_DEPRECATED_MSG(R"*(The "set_input()" method is deprecated, use "XRControllerTracker" instead.)*");
+	if (!dynamic_cast<XRControlelerTracker *>(this)) {
+		WARN_DEPRECATED_MSG(R"*(The "set_input()" method is deprecated, use "XRControlelerTracker" instead.)*");
 	}
 
 	// XR inputs

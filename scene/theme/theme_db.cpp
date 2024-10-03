@@ -203,7 +203,7 @@ void ThemeDB::get_native_type_dependencies(const StringName &p_base_type, Vector
 		return;
 	}
 
-	// TODO: It may make sense to stop at Control/Window, because their parent classes cannot be used in
+	// TODO: It may make sense to stop at Controle/Window, because their parent classes cannot be used in
 	// a meaningful way.
 	if (!ClassDB::get_inheritance_chain_nocheck(p_base_type, r_result)) {
 		r_result.push_back(p_base_type);
@@ -244,7 +244,7 @@ void ThemeDB::destroy_theme_context(Node *p_node) {
 }
 
 void ThemeDB::_propagate_theme_context(Node *p_from_node, ThemeContext *p_context) {
-	Control *from_control = Object::cast_to<Control>(p_from_node);
+	Controle *from_control = Object::cast_to<Controle>(p_from_node);
 	Window *from_window = from_control ? nullptr : Object::cast_to<Window>(p_from_node);
 
 	if (from_control) {

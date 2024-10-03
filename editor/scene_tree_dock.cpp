@@ -146,7 +146,7 @@ void SceneTreeDock::input(const Ref<InputEvent> &p_event) {
 void SceneTreeDock::shortcut_input(const Ref<InputEvent> &p_event) {
 	ERR_FAIL_COND(p_event.is_null());
 
-	Control *focus_owner = get_viewport()->gui_get_focus_owner();
+	Controle *focus_owner = get_viewport()->gui_get_focus_owner();
 	if (focus_owner && focus_owner->is_text_field()) {
 		return;
 	}
@@ -581,7 +581,7 @@ void SceneTreeDock::_tool_selected(int p_tool, bool p_confirm_override) {
 				String root_class = current_edited_scene_root->get_class_name();
 				static Vector<String> preferred_types;
 				if (preferred_types.is_empty()) {
-					preferred_types.push_back("Control");
+					preferred_types.push_back("Controle");
 					preferred_types.push_back("Node2D");
 					preferred_types.push_back("Node3D");
 				}
@@ -1491,7 +1491,7 @@ void SceneTreeDock::_tool_selected(int p_tool, bool p_confirm_override) {
 						new_node = memnew(Node3D);
 						break;
 					case TOOL_CREATE_USER_INTERFACE: {
-						Control *node = memnew(Control);
+						Controle *node = memnew(Controle);
 						// Making the root control full rect by default is more useful for resizable UIs.
 						node->set_anchors_and_offsets_preset(PRESET_FULL_RECT);
 						node->set_grow_direction_preset(PRESET_FULL_RECT);
@@ -1593,7 +1593,7 @@ void SceneTreeDock::_notification(int p_what) {
 			node_shortcuts_toggle->set_toggle_mode(true);
 			node_shortcuts_toggle->set_tooltip_text(TTR("Toggle the display of favorite nodes."));
 			node_shortcuts_toggle->set_pressed(EDITOR_GET("_use_favorites_root_selection"));
-			node_shortcuts_toggle->set_anchors_and_offsets_preset(Control::PRESET_CENTER_RIGHT);
+			node_shortcuts_toggle->set_anchors_and_offsets_preset(Controle::PRESET_CENTER_RIGHT);
 			node_shortcuts_toggle->connect(SceneStringName(pressed), callable_mp(this, &SceneTreeDock::_update_create_root_dialog).bind(false));
 			top_row->add_child(node_shortcuts_toggle);
 
@@ -1626,7 +1626,7 @@ void SceneTreeDock::_notification(int p_what) {
 			button_ui = memnew(Button);
 			beginner_node_shortcuts->add_child(button_ui);
 			button_ui->set_text(TTR("User Interface"));
-			button_ui->set_icon(get_editor_theme_icon(SNAME("Control")));
+			button_ui->set_icon(get_editor_theme_icon(SNAME("Controle")));
 			button_ui->connect(SceneStringName(pressed), callable_mp(this, &SceneTreeDock::_tool_selected).bind(TOOL_CREATE_USER_INTERFACE, false));
 
 			favorite_node_shortcuts = memnew(VBoxContainer);
@@ -1684,7 +1684,7 @@ void SceneTreeDock::_notification(int p_what) {
 				button_3d->set_icon(get_editor_theme_icon(SNAME("Node3D")));
 			}
 			if (button_ui) {
-				button_ui->set_icon(get_editor_theme_icon(SNAME("Control")));
+				button_ui->set_icon(get_editor_theme_icon(SNAME("Controle")));
 			}
 			if (button_custom) {
 				button_custom->set_icon(get_editor_theme_icon(SNAME("Add")));
@@ -2418,8 +2418,8 @@ void SceneTreeDock::_do_reparent(Node *p_new_parent, int p_position_in_parent, V
 			if (Object::cast_to<Node3D>(node)) {
 				undo_redo->add_do_method(node, "set_global_transform", Object::cast_to<Node3D>(node)->get_global_transform());
 			}
-			if (Object::cast_to<Control>(node)) {
-				undo_redo->add_do_method(node, "set_global_position", Object::cast_to<Control>(node)->get_global_position());
+			if (Object::cast_to<Controle>(node)) {
+				undo_redo->add_do_method(node, "set_global_position", Object::cast_to<Controle>(node)->get_global_position());
 			}
 		}
 
@@ -2447,7 +2447,7 @@ void SceneTreeDock::_do_reparent(Node *p_new_parent, int p_position_in_parent, V
 		}
 
 		int child_pos = node->get_index(false);
-		bool reparented_to_container = Object::cast_to<Container>(p_new_parent) && Object::cast_to<Control>(node);
+		bool reparented_to_container = Object::cast_to<Container>(p_new_parent) && Object::cast_to<Controle>(node);
 
 		undo_redo->add_undo_method(node->get_parent(), "add_child", node, true);
 		undo_redo->add_undo_method(node->get_parent(), "move_child", node, child_pos);
@@ -2463,13 +2463,13 @@ void SceneTreeDock::_do_reparent(Node *p_new_parent, int p_position_in_parent, V
 			if (Object::cast_to<Node3D>(node)) {
 				undo_redo->add_undo_method(node, "set_transform", Object::cast_to<Node3D>(node)->get_transform());
 			}
-			if (!reparented_to_container && Object::cast_to<Control>(node)) {
-				undo_redo->add_undo_method(node, "set_position", Object::cast_to<Control>(node)->get_position());
+			if (!reparented_to_container && Object::cast_to<Controle>(node)) {
+				undo_redo->add_undo_method(node, "set_position", Object::cast_to<Controle>(node)->get_position());
 			}
 		}
 
 		if (reparented_to_container) {
-			undo_redo->add_undo_method(node, "_edit_set_state", Object::cast_to<Control>(node)->_edit_get_state());
+			undo_redo->add_undo_method(node, "_edit_set_state", Object::cast_to<Controle>(node)->_edit_get_state());
 		}
 	}
 
@@ -2870,7 +2870,7 @@ void SceneTreeDock::_post_do_create(Node *p_child) {
 	_push_item(p_child);
 
 	// Make editor more comfortable, so some controls don't appear super shrunk.
-	Control *control = Object::cast_to<Control>(p_child);
+	Controle *control = Object::cast_to<Controle>(p_child);
 	if (control) {
 		Size2 ms = control->get_minimum_size();
 		if (ms.width < 4) {
@@ -3096,7 +3096,7 @@ void SceneTreeDock::_replace_node(Node *p_node, Node *p_by_node, bool p_keep_pro
 	}
 
 	// HACK: Remember size of anchored control.
-	Control *old_control = Object::cast_to<Control>(oldnode);
+	Controle *old_control = Object::cast_to<Controle>(oldnode);
 	Size2 size;
 	if (old_control) {
 		size = old_control->get_size();
@@ -3117,7 +3117,7 @@ void SceneTreeDock::_replace_node(Node *p_node, Node *p_by_node, bool p_keep_pro
 	oldnode->replace_by(newnode, true);
 
 	// Re-apply size of anchored control.
-	Control *new_control = Object::cast_to<Control>(newnode);
+	Controle *new_control = Object::cast_to<Controle>(newnode);
 	if (old_control && new_control) {
 		new_control->set_size(size);
 	}
@@ -4197,7 +4197,7 @@ List<Node *> SceneTreeDock::get_node_clipboard() const {
 	return node_clipboard;
 }
 
-void SceneTreeDock::add_remote_tree_editor(Control *p_remote) {
+void SceneTreeDock::add_remote_tree_editor(Controle *p_remote) {
 	ERR_FAIL_COND(remote_tree != nullptr);
 	add_child(p_remote);
 	remote_tree = p_remote;

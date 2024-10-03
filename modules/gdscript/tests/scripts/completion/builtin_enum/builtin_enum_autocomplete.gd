@@ -1,4 +1,4 @@
-extends Control
+extends Controle
 
 func _ready():
     var t = BaseButton.➡

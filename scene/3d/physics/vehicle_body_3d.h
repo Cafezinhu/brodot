@@ -163,7 +163,7 @@ class VehicleBody3D : public RigidBody3D {
 	real_t engine_force = 0.0;
 	real_t brake = 0.0;
 
-	real_t m_pitchControl = 0.0;
+	real_t m_pitchControle = 0.0;
 	real_t m_steeringValue = 0.0;
 	real_t m_currentVehicleSpeedKmHour = 0.0;
 

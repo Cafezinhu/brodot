@@ -461,7 +461,7 @@ typedef enum {
                               * 0 means default, which is dynamically determined based on compression parameters.
                               * Job size must be a minimum of overlap size, or ZSTDMT_JOBSIZE_MIN (= 512 KB), whichever is largest.
                               * The minimum size is automatically and transparently enforced. */
-    ZSTD_c_overlapLog=402,   /* Control the overlap size, as a fraction of window size.
+    ZSTD_c_overlapLog=402,   /* Controle the overlap size, as a fraction of window size.
                               * The overlap size is an amount of data reloaded from previous job at the beginning of a new job.
                               * It helps preserve compression ratio, while each job is compressed in parallel.
                               * This value is enforced only when nbWorkers >= 1.
@@ -1970,13 +1970,13 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
  * even when referencing into Dictionary content (default:0) */
 #define ZSTD_c_forceMaxWindow ZSTD_c_experimentalParam3
 
-/* Controls whether the contents of a CDict
+/* Controles whether the contents of a CDict
  * are used in place, or copied into the working context.
  * Accepts values from the ZSTD_dictAttachPref_e enum.
  * See the comments on that enum for an explanation of the feature. */
 #define ZSTD_c_forceAttachDict ZSTD_c_experimentalParam4
 
-/* Controlled with ZSTD_paramSwitch_e enum.
+/* Controleled with ZSTD_paramSwitch_e enum.
  * Default is ZSTD_ps_auto.
  * Set to ZSTD_ps_disable to never compress literals.
  * Set to ZSTD_ps_enable to always compress literals. (Note: uncompressed literals
@@ -1994,7 +1994,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
  * but compression ratio may regress significantly if guess considerably underestimates */
 #define ZSTD_c_srcSizeHint ZSTD_c_experimentalParam7
 
-/* Controls whether the new and experimental "dedicated dictionary search
+/* Controles whether the new and experimental "dedicated dictionary search
  * structure" can be used. This feature is still rough around the edges, be
  * prepared for surprising behavior!
  *
@@ -2132,7 +2132,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
 #define ZSTD_c_validateSequences ZSTD_c_experimentalParam12
 
 /* ZSTD_c_useBlockSplitter
- * Controlled with ZSTD_paramSwitch_e enum.
+ * Controleled with ZSTD_paramSwitch_e enum.
  * Default is ZSTD_ps_auto.
  * Set to ZSTD_ps_disable to never use block splitter.
  * Set to ZSTD_ps_enable to always use block splitter.
@@ -2143,7 +2143,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
 #define ZSTD_c_useBlockSplitter ZSTD_c_experimentalParam13
 
 /* ZSTD_c_useRowMatchFinder
- * Controlled with ZSTD_paramSwitch_e enum.
+ * Controleled with ZSTD_paramSwitch_e enum.
  * Default is ZSTD_ps_auto.
  * Set to ZSTD_ps_disable to never use row-based matchfinder.
  * Set to ZSTD_ps_enable to force usage of row-based matchfinder.
@@ -2175,7 +2175,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
 #define ZSTD_c_deterministicRefPrefix ZSTD_c_experimentalParam15
 
 /* ZSTD_c_prefetchCDictTables
- * Controlled with ZSTD_paramSwitch_e enum. Default is ZSTD_ps_auto.
+ * Controleled with ZSTD_paramSwitch_e enum. Default is ZSTD_ps_auto.
  *
  * In some situations, zstd uses CDict tables in-place rather than copying them
  * into the working context. (See docs on ZSTD_dictAttachPref_e above for details).
@@ -2200,7 +2200,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
 /* ZSTD_c_enableSeqProducerFallback
  * Allowed values are 0 (disable) and 1 (enable). The default setting is 0.
  *
- * Controls whether zstd will fall back to an internal sequence producer if an
+ * Controles whether zstd will fall back to an internal sequence producer if an
  * external sequence producer is registered and returns an error code. This fallback
  * is block-by-block: the internal sequence producer will only be called for blocks
  * where the external sequence producer returns an error code. Fallback parsing will

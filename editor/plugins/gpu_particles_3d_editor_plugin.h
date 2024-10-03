@@ -41,8 +41,8 @@ class MenuButton;
 class OptionButton;
 class SceneTreeDialog;
 
-class GPUParticles3DEditorBase : public Control {
-	GDCLASS(GPUParticles3DEditorBase, Control);
+class GPUParticles3DEditorBase : public Controle {
+	GDCLASS(GPUParticles3DEditorBase, Controle);
 
 protected:
 	Node3D *base_node = nullptr;

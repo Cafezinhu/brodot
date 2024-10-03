@@ -338,11 +338,11 @@ protected:
 	virtual void _input_from_window(const Ref<InputEvent> &p_event) override;
 
 public:
-	static void show_tooltip(EditorHelpBit *p_help_bit, Control *p_target);
+	static void show_tooltip(EditorHelpBit *p_help_bit, Controle *p_target);
 
 	void popup_under_cursor();
 
-	EditorHelpBitTooltip(Control *p_target);
+	EditorHelpBitTooltip(Controle *p_target);
 };
 
 #if defined(MODULE_GDSCRIPT_ENABLED) || defined(MODULE_MONO_ENABLED)

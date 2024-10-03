@@ -696,7 +696,7 @@ bool EditorResourcePicker::_is_type_valid(const String &p_type_name, const HashS
 	return false;
 }
 
-Variant EditorResourcePicker::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant EditorResourcePicker::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (edited_resource.is_valid()) {
 		Dictionary drag_data = EditorNode::get_singleton()->drag_resource(edited_resource, p_from);
 		drag_data["source_picker"] = get_instance_id();
@@ -706,11 +706,11 @@ Variant EditorResourcePicker::get_drag_data_fw(const Point2 &p_point, Control *p
 	return Variant();
 }
 
-bool EditorResourcePicker::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool EditorResourcePicker::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	return editable && _is_drop_valid(p_data);
 }
 
-void EditorResourcePicker::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void EditorResourcePicker::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	ERR_FAIL_COND(!_is_drop_valid(p_data));
 
 	Dictionary drag_data = p_data;
@@ -1345,7 +1345,7 @@ void EditorAudioStreamPicker::_preview_draw() {
 
 EditorAudioStreamPicker::EditorAudioStreamPicker() :
 		EditorResourcePicker(true) {
-	stream_preview_rect = memnew(Control);
+	stream_preview_rect = memnew(Controle);
 
 	stream_preview_rect->set_anchors_and_offsets_preset(PRESET_FULL_RECT);
 	stream_preview_rect->set_offset(SIDE_TOP, 1);

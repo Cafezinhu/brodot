@@ -603,7 +603,7 @@ void OS_IOS::on_focus_out() {
 			OS::get_singleton()->get_main_loop()->notification(MainLoop::NOTIFICATION_APPLICATION_FOCUS_OUT);
 		}
 
-		[AppDelegate.viewController.godotView stopRendering];
+		[AppDelegate.viewControleler.godotView stopRendering];
 
 		audio_driver.stop();
 	}
@@ -621,7 +621,7 @@ void OS_IOS::on_focus_in() {
 			OS::get_singleton()->get_main_loop()->notification(MainLoop::NOTIFICATION_APPLICATION_FOCUS_IN);
 		}
 
-		[AppDelegate.viewController.godotView startRendering];
+		[AppDelegate.viewControleler.godotView startRendering];
 
 		audio_driver.start();
 	}

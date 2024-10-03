@@ -491,8 +491,8 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceShaderFloat16Int8Features                 = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES,
     ePhysicalDeviceFloat16Int8FeaturesKHR                    = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT16_INT8_FEATURES_KHR,
     ePhysicalDeviceShaderFloat16Int8FeaturesKHR              = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES_KHR,
-    ePhysicalDeviceFloatControlsProperties                   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES,
-    ePhysicalDeviceFloatControlsPropertiesKHR                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES_KHR,
+    ePhysicalDeviceFloatControlesProperties                   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES,
+    ePhysicalDeviceFloatControlesPropertiesKHR                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES_KHR,
     eDescriptorSetLayoutBindingFlagsCreateInfo               = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO,
     eDescriptorSetLayoutBindingFlagsCreateInfoEXT            = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO_EXT,
     ePhysicalDeviceDescriptorIndexingFeatures                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES,
@@ -576,8 +576,8 @@ namespace VULKAN_HPP_NAMESPACE
     eDevicePrivateDataCreateInfoEXT                          = VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO_EXT,
     ePrivateDataSlotCreateInfo                               = VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO,
     ePrivateDataSlotCreateInfoEXT                            = VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO_EXT,
-    ePhysicalDevicePipelineCreationCacheControlFeatures      = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES,
-    ePhysicalDevicePipelineCreationCacheControlFeaturesEXT   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT,
+    ePhysicalDevicePipelineCreationCacheControleFeatures      = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES,
+    ePhysicalDevicePipelineCreationCacheControleFeaturesEXT   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT,
     eMemoryBarrier2                                          = VK_STRUCTURE_TYPE_MEMORY_BARRIER_2,
     eMemoryBarrier2KHR                                       = VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR,
     eBufferMemoryBarrier2                                    = VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2,
@@ -620,13 +620,13 @@ namespace VULKAN_HPP_NAMESPACE
     eBufferImageCopy2KHR                                     = VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2_KHR,
     eImageResolve2                                           = VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2,
     eImageResolve2KHR                                        = VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR,
-    ePhysicalDeviceSubgroupSizeControlProperties             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES,
-    ePhysicalDeviceSubgroupSizeControlPropertiesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES_EXT,
+    ePhysicalDeviceSubgroupSizeControleProperties             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES,
+    ePhysicalDeviceSubgroupSizeControlePropertiesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES_EXT,
     ePipelineShaderStageRequiredSubgroupSizeCreateInfo       = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO,
     ePipelineShaderStageRequiredSubgroupSizeCreateInfoEXT    = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT,
     eShaderRequiredSubgroupSizeCreateInfoEXT                 = VK_STRUCTURE_TYPE_SHADER_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT,
-    ePhysicalDeviceSubgroupSizeControlFeatures               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES,
-    ePhysicalDeviceSubgroupSizeControlFeaturesEXT            = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT,
+    ePhysicalDeviceSubgroupSizeControleFeatures               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES,
+    ePhysicalDeviceSubgroupSizeControleFeaturesEXT            = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT,
     ePhysicalDeviceInlineUniformBlockFeatures                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES,
     ePhysicalDeviceInlineUniformBlockFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES_EXT,
     ePhysicalDeviceInlineUniformBlockProperties              = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES,
@@ -705,7 +705,7 @@ namespace VULKAN_HPP_NAMESPACE
     eVideoSessionParametersUpdateInfoKHR             = VK_STRUCTURE_TYPE_VIDEO_SESSION_PARAMETERS_UPDATE_INFO_KHR,
     eVideoBeginCodingInfoKHR                         = VK_STRUCTURE_TYPE_VIDEO_BEGIN_CODING_INFO_KHR,
     eVideoEndCodingInfoKHR                           = VK_STRUCTURE_TYPE_VIDEO_END_CODING_INFO_KHR,
-    eVideoCodingControlInfoKHR                       = VK_STRUCTURE_TYPE_VIDEO_CODING_CONTROL_INFO_KHR,
+    eVideoCodingControleInfoKHR                       = VK_STRUCTURE_TYPE_VIDEO_CODING_CONTROL_INFO_KHR,
     eVideoReferenceSlotInfoKHR                       = VK_STRUCTURE_TYPE_VIDEO_REFERENCE_SLOT_INFO_KHR,
     eQueueFamilyVideoPropertiesKHR                   = VK_STRUCTURE_TYPE_QUEUE_FAMILY_VIDEO_PROPERTIES_KHR,
     eVideoProfileListInfoKHR                         = VK_STRUCTURE_TYPE_VIDEO_PROFILE_LIST_INFO_KHR,
@@ -734,8 +734,8 @@ namespace VULKAN_HPP_NAMESPACE
     eVideoEncodeH264NaluSliceInfoKHR                 = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_KHR,
     eVideoEncodeH264GopRemainingFrameInfoKHR         = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_GOP_REMAINING_FRAME_INFO_KHR,
     eVideoEncodeH264ProfileInfoKHR                   = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_KHR,
-    eVideoEncodeH264RateControlInfoKHR               = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_KHR,
-    eVideoEncodeH264RateControlLayerInfoKHR          = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_KHR,
+    eVideoEncodeH264RateControleInfoKHR               = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_KHR,
+    eVideoEncodeH264RateControleLayerInfoKHR          = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_KHR,
     eVideoEncodeH264SessionCreateInfoKHR             = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_CREATE_INFO_KHR,
     eVideoEncodeH264QualityLevelPropertiesKHR        = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUALITY_LEVEL_PROPERTIES_KHR,
     eVideoEncodeH264SessionParametersGetInfoKHR      = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_GET_INFO_KHR,
@@ -748,8 +748,8 @@ namespace VULKAN_HPP_NAMESPACE
     eVideoEncodeH265NaluSliceSegmentInfoKHR          = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_KHR,
     eVideoEncodeH265GopRemainingFrameInfoKHR         = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_GOP_REMAINING_FRAME_INFO_KHR,
     eVideoEncodeH265ProfileInfoKHR                   = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_KHR,
-    eVideoEncodeH265RateControlInfoKHR               = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_KHR,
-    eVideoEncodeH265RateControlLayerInfoKHR          = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_KHR,
+    eVideoEncodeH265RateControleInfoKHR               = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_KHR,
+    eVideoEncodeH265RateControleLayerInfoKHR          = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_KHR,
     eVideoEncodeH265SessionCreateInfoKHR             = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_CREATE_INFO_KHR,
     eVideoEncodeH265QualityLevelPropertiesKHR        = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_QUALITY_LEVEL_PROPERTIES_KHR,
     eVideoEncodeH265SessionParametersGetInfoKHR      = VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_GET_INFO_KHR,
@@ -944,7 +944,7 @@ namespace VULKAN_HPP_NAMESPACE
     eMemoryHostPointerPropertiesEXT                      = VK_STRUCTURE_TYPE_MEMORY_HOST_POINTER_PROPERTIES_EXT,
     ePhysicalDeviceExternalMemoryHostPropertiesEXT       = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_HOST_PROPERTIES_EXT,
     ePhysicalDeviceShaderClockFeaturesKHR                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CLOCK_FEATURES_KHR,
-    ePipelineCompilerControlCreateInfoAMD                = VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD,
+    ePipelineCompilerControleCreateInfoAMD                = VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD,
     ePhysicalDeviceShaderCorePropertiesAMD               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_AMD,
     eVideoDecodeH265CapabilitiesKHR                      = VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_CAPABILITIES_KHR,
     eVideoDecodeH265SessionParametersCreateInfoKHR       = VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_PARAMETERS_CREATE_INFO_KHR,
@@ -1002,7 +1002,7 @@ namespace VULKAN_HPP_NAMESPACE
     eRenderingAttachmentLocationInfoKHR                       = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO_KHR,
     eRenderingInputAttachmentIndexInfoKHR                     = VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO_KHR,
     ePhysicalDeviceShaderImageAtomicInt64FeaturesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_ATOMIC_INT64_FEATURES_EXT,
-    ePhysicalDeviceShaderQuadControlFeaturesKHR               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_QUAD_CONTROL_FEATURES_KHR,
+    ePhysicalDeviceShaderQuadControleFeaturesKHR               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_QUAD_CONTROL_FEATURES_KHR,
     ePhysicalDeviceMemoryBudgetPropertiesEXT                  = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_BUDGET_PROPERTIES_EXT,
     ePhysicalDeviceMemoryPriorityFeaturesEXT                  = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PRIORITY_FEATURES_EXT,
     eMemoryPriorityAllocateInfoEXT                            = VK_STRUCTURE_TYPE_MEMORY_PRIORITY_ALLOCATE_INFO_EXT,
@@ -1077,7 +1077,7 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceTexelBufferAlignmentFeaturesEXT         = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_FEATURES_EXT,
     eCommandBufferInheritanceRenderPassTransformInfoQCOM   = VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDER_PASS_TRANSFORM_INFO_QCOM,
     eRenderPassTransformBeginInfoQCOM                      = VK_STRUCTURE_TYPE_RENDER_PASS_TRANSFORM_BEGIN_INFO_QCOM,
-    ePhysicalDeviceDepthBiasControlFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_BIAS_CONTROL_FEATURES_EXT,
+    ePhysicalDeviceDepthBiasControleFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_BIAS_CONTROL_FEATURES_EXT,
     eDepthBiasInfoEXT                                      = VK_STRUCTURE_TYPE_DEPTH_BIAS_INFO_EXT,
     eDepthBiasRepresentationInfoEXT                        = VK_STRUCTURE_TYPE_DEPTH_BIAS_REPRESENTATION_INFO_EXT,
     ePhysicalDeviceDeviceMemoryReportFeaturesEXT           = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT,
@@ -1095,8 +1095,8 @@ namespace VULKAN_HPP_NAMESPACE
     ePresentIdKHR                                          = VK_STRUCTURE_TYPE_PRESENT_ID_KHR,
     ePhysicalDevicePresentIdFeaturesKHR                    = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_ID_FEATURES_KHR,
     eVideoEncodeInfoKHR                                    = VK_STRUCTURE_TYPE_VIDEO_ENCODE_INFO_KHR,
-    eVideoEncodeRateControlInfoKHR                         = VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_INFO_KHR,
-    eVideoEncodeRateControlLayerInfoKHR                    = VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_LAYER_INFO_KHR,
+    eVideoEncodeRateControleInfoKHR                         = VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_INFO_KHR,
+    eVideoEncodeRateControleLayerInfoKHR                    = VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_LAYER_INFO_KHR,
     eVideoEncodeCapabilitiesKHR                            = VK_STRUCTURE_TYPE_VIDEO_ENCODE_CAPABILITIES_KHR,
     eVideoEncodeUsageInfoKHR                               = VK_STRUCTURE_TYPE_VIDEO_ENCODE_USAGE_INFO_KHR,
     eQueryPoolVideoEncodeFeedbackCreateInfoKHR             = VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR,
@@ -1151,7 +1151,7 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceFragmentShaderBarycentricFeaturesKHR        = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_KHR,
     ePhysicalDeviceFragmentShaderBarycentricFeaturesNV         = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_NV,
     ePhysicalDeviceFragmentShaderBarycentricPropertiesKHR      = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_PROPERTIES_KHR,
-    ePhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_FEATURES_KHR,
+    ePhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_FEATURES_KHR,
     ePhysicalDeviceFragmentShadingRateEnumsPropertiesNV        = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_PROPERTIES_NV,
     ePhysicalDeviceFragmentShadingRateEnumsFeaturesNV          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_FEATURES_NV,
     ePipelineFragmentShadingRateEnumStateCreateInfoNV          = VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_ENUM_STATE_CREATE_INFO_NV,
@@ -1165,8 +1165,8 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceFragmentDensityMap2PropertiesEXT            = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_PROPERTIES_EXT,
     eCopyCommandTransformInfoQCOM                              = VK_STRUCTURE_TYPE_COPY_COMMAND_TRANSFORM_INFO_QCOM,
     ePhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR    = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_FEATURES_KHR,
-    ePhysicalDeviceImageCompressionControlFeaturesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT,
-    eImageCompressionControlEXT                                = VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_CONTROL_EXT,
+    ePhysicalDeviceImageCompressionControleFeaturesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT,
+    eImageCompressionControleEXT                                = VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_CONTROL_EXT,
     eImageCompressionPropertiesEXT                             = VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT,
     ePhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT     = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_FEATURES_EXT,
     ePhysicalDevice4444FormatsFeaturesEXT                      = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT,
@@ -1183,8 +1183,8 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceDrmPropertiesEXT                        = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRM_PROPERTIES_EXT,
     ePhysicalDeviceAddressBindingReportFeaturesEXT         = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ADDRESS_BINDING_REPORT_FEATURES_EXT,
     eDeviceAddressBindingCallbackDataEXT                   = VK_STRUCTURE_TYPE_DEVICE_ADDRESS_BINDING_CALLBACK_DATA_EXT,
-    ePhysicalDeviceDepthClipControlFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLIP_CONTROL_FEATURES_EXT,
-    ePipelineViewportDepthClipControlCreateInfoEXT         = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLIP_CONTROL_CREATE_INFO_EXT,
+    ePhysicalDeviceDepthClipControleFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLIP_CONTROL_FEATURES_EXT,
+    ePipelineViewportDepthClipControleCreateInfoEXT         = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLIP_CONTROL_CREATE_INFO_EXT,
     ePhysicalDevicePrimitiveTopologyListRestartFeaturesEXT = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_TOPOLOGY_LIST_RESTART_FEATURES_EXT,
 #if defined( VK_USE_PLATFORM_FUCHSIA )
     eImportMemoryZirconHandleInfoFUCHSIA     = VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA,
@@ -1254,9 +1254,9 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDevicePageableDeviceLocalMemoryFeaturesEXT          = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PAGEABLE_DEVICE_LOCAL_MEMORY_FEATURES_EXT,
     ePhysicalDeviceShaderCorePropertiesARM                       = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM,
     ePhysicalDeviceShaderSubgroupRotateFeaturesKHR               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES_KHR,
-    eDeviceQueueShaderCoreControlCreateInfoARM                   = VK_STRUCTURE_TYPE_DEVICE_QUEUE_SHADER_CORE_CONTROL_CREATE_INFO_ARM,
-    ePhysicalDeviceSchedulingControlsFeaturesARM                 = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_FEATURES_ARM,
-    ePhysicalDeviceSchedulingControlsPropertiesARM               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_PROPERTIES_ARM,
+    eDeviceQueueShaderCoreControleCreateInfoARM                   = VK_STRUCTURE_TYPE_DEVICE_QUEUE_SHADER_CORE_CONTROL_CREATE_INFO_ARM,
+    ePhysicalDeviceSchedulingControlesFeaturesARM                 = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_FEATURES_ARM,
+    ePhysicalDeviceSchedulingControlesPropertiesARM               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_PROPERTIES_ARM,
     ePhysicalDeviceImageSlicedViewOf3DFeaturesEXT                = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT,
     eImageViewSlicedCreateInfoEXT                                = VK_STRUCTURE_TYPE_IMAGE_VIEW_SLICED_CREATE_INFO_EXT,
     ePhysicalDeviceDescriptorSetHostMappingFeaturesVALVE         = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_SET_HOST_MAPPING_FEATURES_VALVE,
@@ -1281,7 +1281,7 @@ namespace VULKAN_HPP_NAMESPACE
     ePipelineIndirectDeviceAddressInfoNV                         = VK_STRUCTURE_TYPE_PIPELINE_INDIRECT_DEVICE_ADDRESS_INFO_NV,
     ePhysicalDeviceLinearColorAttachmentFeaturesNV               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV,
     ePhysicalDeviceShaderMaximalReconvergenceFeaturesKHR         = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MAXIMAL_RECONVERGENCE_FEATURES_KHR,
-    ePhysicalDeviceImageCompressionControlSwapchainFeaturesEXT   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT,
+    ePhysicalDeviceImageCompressionControleSwapchainFeaturesEXT   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT,
     ePhysicalDeviceImageProcessingFeaturesQCOM                   = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_FEATURES_QCOM,
     ePhysicalDeviceImageProcessingPropertiesQCOM                 = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_PROPERTIES_QCOM,
     eImageViewSampleWeightCreateInfoQCOM                         = VK_STRUCTURE_TYPE_IMAGE_VIEW_SAMPLE_WEIGHT_CREATE_INFO_QCOM,
@@ -1291,7 +1291,7 @@ namespace VULKAN_HPP_NAMESPACE
     ePhysicalDeviceExtendedDynamicState3FeaturesEXT              = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_FEATURES_EXT,
     ePhysicalDeviceExtendedDynamicState3PropertiesEXT            = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_PROPERTIES_EXT,
     ePhysicalDeviceSubpassMergeFeedbackFeaturesEXT               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_MERGE_FEEDBACK_FEATURES_EXT,
-    eRenderPassCreationControlEXT                                = VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_CONTROL_EXT,
+    eRenderPassCreationControleEXT                                = VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_CONTROL_EXT,
     eRenderPassCreationFeedbackCreateInfoEXT                     = VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_FEEDBACK_CREATE_INFO_EXT,
     eRenderPassSubpassFeedbackCreateInfoEXT                      = VK_STRUCTURE_TYPE_RENDER_PASS_SUBPASS_FEEDBACK_CREATE_INFO_EXT,
     eDirectDriverLoadingInfoLUNARG                               = VK_STRUCTURE_TYPE_DIRECT_DRIVER_LOADING_INFO_LUNARG,
@@ -1385,7 +1385,7 @@ namespace VULKAN_HPP_NAMESPACE
     ePipelineVertexInputDivisorStateCreateInfoEXT                = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_EXT,
     ePhysicalDeviceVertexAttributeDivisorFeaturesKHR             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_KHR,
     ePhysicalDeviceVertexAttributeDivisorFeaturesEXT             = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT,
-    ePhysicalDeviceShaderFloatControls2FeaturesKHR               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES_KHR,
+    ePhysicalDeviceShaderFloatControles2FeaturesKHR               = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES_KHR,
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
     eScreenBufferPropertiesQNX                           = VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX,
     eScreenBufferFormatPropertiesQNX                     = VK_STRUCTURE_TYPE_SCREEN_BUFFER_FORMAT_PROPERTIES_QNX,
@@ -2135,7 +2135,7 @@ namespace VULKAN_HPP_NAMESPACE
     eDrawIndirect                     = VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT,
     eVertexInput                      = VK_PIPELINE_STAGE_VERTEX_INPUT_BIT,
     eVertexShader                     = VK_PIPELINE_STAGE_VERTEX_SHADER_BIT,
-    eTessellationControlShader        = VK_PIPELINE_STAGE_TESSELLATION_CONTROL_SHADER_BIT,
+    eTessellationControleShader        = VK_PIPELINE_STAGE_TESSELLATION_CONTROL_SHADER_BIT,
     eTessellationEvaluationShader     = VK_PIPELINE_STAGE_TESSELLATION_EVALUATION_SHADER_BIT,
     eGeometryShader                   = VK_PIPELINE_STAGE_GEOMETRY_SHADER_BIT,
     eFragmentShader                   = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT,
@@ -2174,7 +2174,7 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool               isBitmask = true;
     static VULKAN_HPP_CONST_OR_CONSTEXPR PipelineStageFlags allFlags =
       PipelineStageFlagBits::eTopOfPipe | PipelineStageFlagBits::eDrawIndirect | PipelineStageFlagBits::eVertexInput | PipelineStageFlagBits::eVertexShader |
-      PipelineStageFlagBits::eTessellationControlShader | PipelineStageFlagBits::eTessellationEvaluationShader | PipelineStageFlagBits::eGeometryShader |
+      PipelineStageFlagBits::eTessellationControleShader | PipelineStageFlagBits::eTessellationEvaluationShader | PipelineStageFlagBits::eGeometryShader |
       PipelineStageFlagBits::eFragmentShader | PipelineStageFlagBits::eEarlyFragmentTests | PipelineStageFlagBits::eLateFragmentTests |
       PipelineStageFlagBits::eColorAttachmentOutput | PipelineStageFlagBits::eComputeShader | PipelineStageFlagBits::eTransfer |
       PipelineStageFlagBits::eBottomOfPipe | PipelineStageFlagBits::eHost | PipelineStageFlagBits::eAllGraphics | PipelineStageFlagBits::eAllCommands |
@@ -2314,7 +2314,7 @@ namespace VULKAN_HPP_NAMESPACE
     eClippingInvocations                     = VK_QUERY_PIPELINE_STATISTIC_CLIPPING_INVOCATIONS_BIT,
     eClippingPrimitives                      = VK_QUERY_PIPELINE_STATISTIC_CLIPPING_PRIMITIVES_BIT,
     eFragmentShaderInvocations               = VK_QUERY_PIPELINE_STATISTIC_FRAGMENT_SHADER_INVOCATIONS_BIT,
-    eTessellationControlShaderPatches        = VK_QUERY_PIPELINE_STATISTIC_TESSELLATION_CONTROL_SHADER_PATCHES_BIT,
+    eTessellationControleShaderPatches        = VK_QUERY_PIPELINE_STATISTIC_TESSELLATION_CONTROL_SHADER_PATCHES_BIT,
     eTessellationEvaluationShaderInvocations = VK_QUERY_PIPELINE_STATISTIC_TESSELLATION_EVALUATION_SHADER_INVOCATIONS_BIT,
     eComputeShaderInvocations                = VK_QUERY_PIPELINE_STATISTIC_COMPUTE_SHADER_INVOCATIONS_BIT,
     eTaskShaderInvocationsEXT                = VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT,
@@ -2333,7 +2333,7 @@ namespace VULKAN_HPP_NAMESPACE
       QueryPipelineStatisticFlagBits::eVertexShaderInvocations | QueryPipelineStatisticFlagBits::eGeometryShaderInvocations |
       QueryPipelineStatisticFlagBits::eGeometryShaderPrimitives | QueryPipelineStatisticFlagBits::eClippingInvocations |
       QueryPipelineStatisticFlagBits::eClippingPrimitives | QueryPipelineStatisticFlagBits::eFragmentShaderInvocations |
-      QueryPipelineStatisticFlagBits::eTessellationControlShaderPatches | QueryPipelineStatisticFlagBits::eTessellationEvaluationShaderInvocations |
+      QueryPipelineStatisticFlagBits::eTessellationControleShaderPatches | QueryPipelineStatisticFlagBits::eTessellationEvaluationShaderInvocations |
       QueryPipelineStatisticFlagBits::eComputeShaderInvocations | QueryPipelineStatisticFlagBits::eTaskShaderInvocationsEXT |
       QueryPipelineStatisticFlagBits::eMeshShaderInvocationsEXT | QueryPipelineStatisticFlagBits::eClusterCullingShaderInvocationsHUAWEI;
   };
@@ -2781,7 +2781,7 @@ namespace VULKAN_HPP_NAMESPACE
     eExclusiveScissorNV                  = VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV,
     eFragmentShadingRateKHR              = VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR,
     eVertexInputEXT                      = VK_DYNAMIC_STATE_VERTEX_INPUT_EXT,
-    ePatchControlPointsEXT               = VK_DYNAMIC_STATE_PATCH_CONTROL_POINTS_EXT,
+    ePatchControlePointsEXT               = VK_DYNAMIC_STATE_PATCH_CONTROL_POINTS_EXT,
     eLogicOpEXT                          = VK_DYNAMIC_STATE_LOGIC_OP_EXT,
     eColorWriteEnableEXT                 = VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT,
     eDepthClampEnableEXT                 = VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT,
@@ -2958,7 +2958,7 @@ namespace VULKAN_HPP_NAMESPACE
   enum class ShaderStageFlagBits : VkShaderStageFlags
   {
     eVertex                 = VK_SHADER_STAGE_VERTEX_BIT,
-    eTessellationControl    = VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT,
+    eTessellationControle    = VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT,
     eTessellationEvaluation = VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT,
     eGeometry               = VK_SHADER_STAGE_GEOMETRY_BIT,
     eFragment               = VK_SHADER_STAGE_FRAGMENT_BIT,
@@ -2992,7 +2992,7 @@ namespace VULKAN_HPP_NAMESPACE
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool             isBitmask = true;
     static VULKAN_HPP_CONST_OR_CONSTEXPR ShaderStageFlags allFlags =
-      ShaderStageFlagBits::eVertex | ShaderStageFlagBits::eTessellationControl | ShaderStageFlagBits::eTessellationEvaluation | ShaderStageFlagBits::eGeometry |
+      ShaderStageFlagBits::eVertex | ShaderStageFlagBits::eTessellationControle | ShaderStageFlagBits::eTessellationEvaluation | ShaderStageFlagBits::eGeometry |
       ShaderStageFlagBits::eFragment | ShaderStageFlagBits::eCompute | ShaderStageFlagBits::eAllGraphics | ShaderStageFlagBits::eAll |
       ShaderStageFlagBits::eRaygenKHR | ShaderStageFlagBits::eAnyHitKHR | ShaderStageFlagBits::eClosestHitKHR | ShaderStageFlagBits::eMissKHR |
       ShaderStageFlagBits::eIntersectionKHR | ShaderStageFlagBits::eCallableKHR | ShaderStageFlagBits::eTaskEXT | ShaderStageFlagBits::eMeshEXT |
@@ -3541,18 +3541,18 @@ namespace VULKAN_HPP_NAMESPACE
       CommandBufferUsageFlagBits::eOneTimeSubmit | CommandBufferUsageFlagBits::eRenderPassContinue | CommandBufferUsageFlagBits::eSimultaneousUse;
   };
 
-  enum class QueryControlFlagBits : VkQueryControlFlags
+  enum class QueryControleFlagBits : VkQueryControleFlags
   {
     ePrecise = VK_QUERY_CONTROL_PRECISE_BIT
   };
 
-  using QueryControlFlags = Flags<QueryControlFlagBits>;
+  using QueryControleFlags = Flags<QueryControleFlagBits>;
 
   template <>
-  struct FlagTraits<QueryControlFlagBits>
+  struct FlagTraits<QueryControleFlagBits>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool              isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR QueryControlFlags allFlags  = QueryControlFlagBits::ePrecise;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR QueryControleFlags allFlags  = QueryControleFlagBits::ePrecise;
   };
 
   enum class IndexType
@@ -3952,13 +3952,13 @@ namespace VULKAN_HPP_NAMESPACE
   };
   using DriverIdKHR = DriverId;
 
-  enum class ShaderFloatControlsIndependence
+  enum class ShaderFloatControlesIndependence
   {
     e32BitOnly = VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY,
     eAll       = VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL,
     eNone      = VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE
   };
-  using ShaderFloatControlsIndependenceKHR = ShaderFloatControlsIndependence;
+  using ShaderFloatControlesIndependenceKHR = ShaderFloatControlesIndependence;
 
   enum class DescriptorBindingFlagBits : VkDescriptorBindingFlags
   {
@@ -4109,7 +4109,7 @@ namespace VULKAN_HPP_NAMESPACE
     eDrawIndirect                     = VK_PIPELINE_STAGE_2_DRAW_INDIRECT_BIT,
     eVertexInput                      = VK_PIPELINE_STAGE_2_VERTEX_INPUT_BIT,
     eVertexShader                     = VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
-    eTessellationControlShader        = VK_PIPELINE_STAGE_2_TESSELLATION_CONTROL_SHADER_BIT,
+    eTessellationControleShader        = VK_PIPELINE_STAGE_2_TESSELLATION_CONTROL_SHADER_BIT,
     eTessellationEvaluationShader     = VK_PIPELINE_STAGE_2_TESSELLATION_EVALUATION_SHADER_BIT,
     eGeometryShader                   = VK_PIPELINE_STAGE_2_GEOMETRY_SHADER_BIT,
     eFragmentShader                   = VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT,
@@ -4165,7 +4165,7 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                isBitmask = true;
     static VULKAN_HPP_CONST_OR_CONSTEXPR PipelineStageFlags2 allFlags =
       PipelineStageFlagBits2::eNone | PipelineStageFlagBits2::eTopOfPipe | PipelineStageFlagBits2::eDrawIndirect | PipelineStageFlagBits2::eVertexInput |
-      PipelineStageFlagBits2::eVertexShader | PipelineStageFlagBits2::eTessellationControlShader | PipelineStageFlagBits2::eTessellationEvaluationShader |
+      PipelineStageFlagBits2::eVertexShader | PipelineStageFlagBits2::eTessellationControleShader | PipelineStageFlagBits2::eTessellationEvaluationShader |
       PipelineStageFlagBits2::eGeometryShader | PipelineStageFlagBits2::eFragmentShader | PipelineStageFlagBits2::eEarlyFragmentTests |
       PipelineStageFlagBits2::eLateFragmentTests | PipelineStageFlagBits2::eColorAttachmentOutput | PipelineStageFlagBits2::eComputeShader |
       PipelineStageFlagBits2::eAllTransfer | PipelineStageFlagBits2::eBottomOfPipe | PipelineStageFlagBits2::eHost | PipelineStageFlagBits2::eAllGraphics |
@@ -4796,21 +4796,21 @@ namespace VULKAN_HPP_NAMESPACE
                                                                                VideoSessionCreateFlagBitsKHR::eInlineQueries;
   };
 
-  enum class VideoCodingControlFlagBitsKHR : VkVideoCodingControlFlagsKHR
+  enum class VideoCodingControleFlagBitsKHR : VkVideoCodingControleFlagsKHR
   {
     eReset              = VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR,
-    eEncodeRateControl  = VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR,
+    eEncodeRateControle  = VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR,
     eEncodeQualityLevel = VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR
   };
 
-  using VideoCodingControlFlagsKHR = Flags<VideoCodingControlFlagBitsKHR>;
+  using VideoCodingControleFlagsKHR = Flags<VideoCodingControleFlagBitsKHR>;
 
   template <>
-  struct FlagTraits<VideoCodingControlFlagBitsKHR>
+  struct FlagTraits<VideoCodingControleFlagBitsKHR>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                       isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoCodingControlFlagsKHR allFlags =
-      VideoCodingControlFlagBitsKHR::eReset | VideoCodingControlFlagBitsKHR::eEncodeRateControl | VideoCodingControlFlagBitsKHR::eEncodeQualityLevel;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoCodingControleFlagsKHR allFlags =
+      VideoCodingControleFlagBitsKHR::eReset | VideoCodingControleFlagBitsKHR::eEncodeRateControle | VideoCodingControleFlagBitsKHR::eEncodeQualityLevel;
   };
 
   enum class QueryResultStatusKHR
@@ -4996,7 +4996,7 @@ namespace VULKAN_HPP_NAMESPACE
       VideoEncodeH264StdFlagBitsKHR::eSliceQpDelta | VideoEncodeH264StdFlagBitsKHR::eDifferentSliceQpDelta;
   };
 
-  enum class VideoEncodeH264RateControlFlagBitsKHR : VkVideoEncodeH264RateControlFlagsKHR
+  enum class VideoEncodeH264RateControleFlagBitsKHR : VkVideoEncodeH264RateControleFlagsKHR
   {
     eAttemptHrdCompliance       = VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR,
     eRegularGop                 = VK_VIDEO_ENCODE_H264_RATE_CONTROL_REGULAR_GOP_BIT_KHR,
@@ -5005,16 +5005,16 @@ namespace VULKAN_HPP_NAMESPACE
     eTemporalLayerPatternDyadic = VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR
   };
 
-  using VideoEncodeH264RateControlFlagsKHR = Flags<VideoEncodeH264RateControlFlagBitsKHR>;
+  using VideoEncodeH264RateControleFlagsKHR = Flags<VideoEncodeH264RateControleFlagBitsKHR>;
 
   template <>
-  struct FlagTraits<VideoEncodeH264RateControlFlagBitsKHR>
+  struct FlagTraits<VideoEncodeH264RateControleFlagBitsKHR>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                               isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeH264RateControlFlagsKHR allFlags =
-      VideoEncodeH264RateControlFlagBitsKHR::eAttemptHrdCompliance | VideoEncodeH264RateControlFlagBitsKHR::eRegularGop |
-      VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternFlat | VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternDyadic |
-      VideoEncodeH264RateControlFlagBitsKHR::eTemporalLayerPatternDyadic;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeH264RateControleFlagsKHR allFlags =
+      VideoEncodeH264RateControleFlagBitsKHR::eAttemptHrdCompliance | VideoEncodeH264RateControleFlagBitsKHR::eRegularGop |
+      VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternFlat | VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternDyadic |
+      VideoEncodeH264RateControleFlagBitsKHR::eTemporalLayerPatternDyadic;
   };
 
   //=== VK_KHR_video_encode_h265 ===
@@ -5128,7 +5128,7 @@ namespace VULKAN_HPP_NAMESPACE
       VideoEncodeH265TransformBlockSizeFlagBitsKHR::e32;
   };
 
-  enum class VideoEncodeH265RateControlFlagBitsKHR : VkVideoEncodeH265RateControlFlagsKHR
+  enum class VideoEncodeH265RateControleFlagBitsKHR : VkVideoEncodeH265RateControleFlagsKHR
   {
     eAttemptHrdCompliance          = VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR,
     eRegularGop                    = VK_VIDEO_ENCODE_H265_RATE_CONTROL_REGULAR_GOP_BIT_KHR,
@@ -5137,16 +5137,16 @@ namespace VULKAN_HPP_NAMESPACE
     eTemporalSubLayerPatternDyadic = VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR
   };
 
-  using VideoEncodeH265RateControlFlagsKHR = Flags<VideoEncodeH265RateControlFlagBitsKHR>;
+  using VideoEncodeH265RateControleFlagsKHR = Flags<VideoEncodeH265RateControleFlagBitsKHR>;
 
   template <>
-  struct FlagTraits<VideoEncodeH265RateControlFlagBitsKHR>
+  struct FlagTraits<VideoEncodeH265RateControleFlagBitsKHR>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                               isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeH265RateControlFlagsKHR allFlags =
-      VideoEncodeH265RateControlFlagBitsKHR::eAttemptHrdCompliance | VideoEncodeH265RateControlFlagBitsKHR::eRegularGop |
-      VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternFlat | VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternDyadic |
-      VideoEncodeH265RateControlFlagBitsKHR::eTemporalSubLayerPatternDyadic;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeH265RateControleFlagsKHR allFlags =
+      VideoEncodeH265RateControleFlagBitsKHR::eAttemptHrdCompliance | VideoEncodeH265RateControleFlagBitsKHR::eRegularGop |
+      VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternFlat | VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternDyadic |
+      VideoEncodeH265RateControleFlagBitsKHR::eTemporalSubLayerPatternDyadic;
   };
 
   //=== VK_KHR_video_decode_h264 ===
@@ -5844,17 +5844,17 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_AMD_pipeline_compiler_control ===
 
-  enum class PipelineCompilerControlFlagBitsAMD : VkPipelineCompilerControlFlagsAMD
+  enum class PipelineCompilerControleFlagBitsAMD : VkPipelineCompilerControleFlagsAMD
   {
   };
 
-  using PipelineCompilerControlFlagsAMD = Flags<PipelineCompilerControlFlagBitsAMD>;
+  using PipelineCompilerControleFlagsAMD = Flags<PipelineCompilerControleFlagBitsAMD>;
 
   template <>
-  struct FlagTraits<PipelineCompilerControlFlagBitsAMD>
+  struct FlagTraits<PipelineCompilerControleFlagBitsAMD>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                            isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR PipelineCompilerControlFlagsAMD allFlags  = {};
+    static VULKAN_HPP_CONST_OR_CONSTEXPR PipelineCompilerControleFlagsAMD allFlags  = {};
   };
 
   //=== VK_KHR_global_priority ===
@@ -6030,7 +6030,7 @@ namespace VULKAN_HPP_NAMESPACE
     eDefault               = VK_FULL_SCREEN_EXCLUSIVE_DEFAULT_EXT,
     eAllowed               = VK_FULL_SCREEN_EXCLUSIVE_ALLOWED_EXT,
     eDisallowed            = VK_FULL_SCREEN_EXCLUSIVE_DISALLOWED_EXT,
-    eApplicationControlled = VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT
+    eApplicationControleled = VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT
   };
 #endif /*VK_USE_PLATFORM_WIN32_KHR*/
 
@@ -6293,7 +6293,7 @@ namespace VULKAN_HPP_NAMESPACE
     eLossless        = VK_VIDEO_ENCODE_TUNING_MODE_LOSSLESS_KHR
   };
 
-  enum class VideoEncodeRateControlModeFlagBitsKHR : VkVideoEncodeRateControlModeFlagsKHR
+  enum class VideoEncodeRateControleModeFlagBitsKHR : VkVideoEncodeRateControleModeFlagsKHR
   {
     eDefault  = VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR,
     eDisabled = VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DISABLED_BIT_KHR,
@@ -6301,15 +6301,15 @@ namespace VULKAN_HPP_NAMESPACE
     eVbr      = VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR
   };
 
-  using VideoEncodeRateControlModeFlagsKHR = Flags<VideoEncodeRateControlModeFlagBitsKHR>;
+  using VideoEncodeRateControleModeFlagsKHR = Flags<VideoEncodeRateControleModeFlagBitsKHR>;
 
   template <>
-  struct FlagTraits<VideoEncodeRateControlModeFlagBitsKHR>
+  struct FlagTraits<VideoEncodeRateControleModeFlagBitsKHR>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                               isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeRateControlModeFlagsKHR allFlags =
-      VideoEncodeRateControlModeFlagBitsKHR::eDefault | VideoEncodeRateControlModeFlagBitsKHR::eDisabled | VideoEncodeRateControlModeFlagBitsKHR::eCbr |
-      VideoEncodeRateControlModeFlagBitsKHR::eVbr;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeRateControleModeFlagsKHR allFlags =
+      VideoEncodeRateControleModeFlagBitsKHR::eDefault | VideoEncodeRateControleModeFlagBitsKHR::eDisabled | VideoEncodeRateControleModeFlagBitsKHR::eCbr |
+      VideoEncodeRateControleModeFlagBitsKHR::eVbr;
   };
 
   enum class VideoEncodeFlagBitsKHR : VkVideoEncodeFlagsKHR
@@ -6325,17 +6325,17 @@ namespace VULKAN_HPP_NAMESPACE
     static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeFlagsKHR allFlags  = {};
   };
 
-  enum class VideoEncodeRateControlFlagBitsKHR : VkVideoEncodeRateControlFlagsKHR
+  enum class VideoEncodeRateControleFlagBitsKHR : VkVideoEncodeRateControleFlagsKHR
   {
   };
 
-  using VideoEncodeRateControlFlagsKHR = Flags<VideoEncodeRateControlFlagBitsKHR>;
+  using VideoEncodeRateControleFlagsKHR = Flags<VideoEncodeRateControleFlagBitsKHR>;
 
   template <>
-  struct FlagTraits<VideoEncodeRateControlFlagBitsKHR>
+  struct FlagTraits<VideoEncodeRateControleFlagBitsKHR>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                           isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeRateControlFlagsKHR allFlags  = {};
+    static VULKAN_HPP_CONST_OR_CONSTEXPR VideoEncodeRateControleFlagsKHR allFlags  = {};
   };
 
   //=== VK_NV_device_diagnostics_config ===
@@ -6741,18 +6741,18 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_ARM_scheduling_controls ===
 
-  enum class PhysicalDeviceSchedulingControlsFlagBitsARM : VkPhysicalDeviceSchedulingControlsFlagsARM
+  enum class PhysicalDeviceSchedulingControlesFlagBitsARM : VkPhysicalDeviceSchedulingControlesFlagsARM
   {
     eShaderCoreCount = VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM
   };
 
-  using PhysicalDeviceSchedulingControlsFlagsARM = Flags<PhysicalDeviceSchedulingControlsFlagBitsARM>;
+  using PhysicalDeviceSchedulingControlesFlagsARM = Flags<PhysicalDeviceSchedulingControlesFlagBitsARM>;
 
   template <>
-  struct FlagTraits<PhysicalDeviceSchedulingControlsFlagBitsARM>
+  struct FlagTraits<PhysicalDeviceSchedulingControlesFlagBitsARM>
   {
     static VULKAN_HPP_CONST_OR_CONSTEXPR bool                                     isBitmask = true;
-    static VULKAN_HPP_CONST_OR_CONSTEXPR PhysicalDeviceSchedulingControlsFlagsARM allFlags  = PhysicalDeviceSchedulingControlsFlagBitsARM::eShaderCoreCount;
+    static VULKAN_HPP_CONST_OR_CONSTEXPR PhysicalDeviceSchedulingControlesFlagsARM allFlags  = PhysicalDeviceSchedulingControlesFlagBitsARM::eShaderCoreCount;
   };
 
   //=== VK_NV_memory_decompression ===

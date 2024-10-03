@@ -35,7 +35,7 @@
 #include <stdlib.h>
 
 Size2 TextureButton::get_minimum_size() const {
-	Size2 rscale = Control::get_minimum_size();
+	Size2 rscale = Controle::get_minimum_size();
 
 	if (!ignore_texture_size) {
 		if (normal.is_null()) {
@@ -115,7 +115,7 @@ bool TextureButton::has_point(const Point2 &p_point) const {
 		return click_mask->get_bitv(p);
 	}
 
-	return Control::has_point(p_point);
+	return Controle::has_point(p_point);
 }
 
 void TextureButton::_notification(int p_what) {

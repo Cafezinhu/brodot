@@ -187,7 +187,7 @@ void PluginConfigDialog::config(const String &p_config_path) {
 		set_title(TTR("Create a Plugin"));
 	}
 
-	for (Control *control : plugin_edit_hidden_controls) {
+	for (Controle *control : plugin_edit_hidden_controls) {
 		control->set_visible(!_edit_mode);
 	}
 
@@ -206,13 +206,13 @@ PluginConfigDialog::PluginConfigDialog() {
 	set_hide_on_ok(true);
 
 	VBoxContainer *vbox = memnew(VBoxContainer);
-	vbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	vbox->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	vbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	vbox->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_child(vbox);
 
 	GridContainer *grid = memnew(GridContainer);
 	grid->set_columns(2);
-	grid->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	grid->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	vbox->add_child(grid);
 
 	// Plugin Name
@@ -224,7 +224,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	name_edit = memnew(LineEdit);
 	name_edit->set_placeholder("MyPlugin");
 	name_edit->set_tooltip_text(TTR("Required. This name will be displayed in the list of plugins."));
-	name_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	name_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(name_edit);
 
 	// Subfolder
@@ -237,7 +237,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	subfolder_edit = memnew(LineEdit);
 	subfolder_edit->set_placeholder("\"my_plugin\" -> res://addons/my_plugin");
 	subfolder_edit->set_tooltip_text(TTR("Optional. The folder name should generally use `snake_case` naming (avoid spaces and special characters).\nIf left empty, the folder will be named after the plugin name converted to `snake_case`."));
-	subfolder_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	subfolder_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(subfolder_edit);
 	plugin_edit_hidden_controls.push_back(subfolder_edit);
 
@@ -251,8 +251,8 @@ PluginConfigDialog::PluginConfigDialog() {
 	desc_edit->set_tooltip_text(TTR("Optional. This description should be kept relatively short (up to 5 lines).\nIt will display when hovering the plugin in the list of plugins."));
 	desc_edit->set_custom_minimum_size(Size2(400, 80) * EDSCALE);
 	desc_edit->set_line_wrapping_mode(TextEdit::LineWrappingMode::LINE_WRAPPING_BOUNDARY);
-	desc_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	desc_edit->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	desc_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	desc_edit->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(desc_edit);
 
 	// Author
@@ -264,7 +264,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	author_edit = memnew(LineEdit);
 	author_edit->set_placeholder("Godette");
 	author_edit->set_tooltip_text(TTR("Optional. The author's username, full name, or organization name."));
-	author_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	author_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(author_edit);
 
 	// Version
@@ -276,7 +276,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	version_edit = memnew(LineEdit);
 	version_edit->set_tooltip_text(TTR("Optional. A human-readable version identifier used for informational purposes only."));
 	version_edit->set_placeholder("1.0");
-	version_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	version_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(version_edit);
 
 	// Language dropdown
@@ -307,7 +307,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	script_edit = memnew(LineEdit);
 	script_edit->set_tooltip_text(TTR("Optional. The path to the script (relative to the add-on folder). If left empty, will default to \"plugin.gd\"."));
 	script_edit->set_placeholder("\"plugin.gd\" -> res://addons/my_plugin/plugin.gd");
-	script_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	script_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	grid->add_child(script_edit);
 
 	// Activate now checkbox
@@ -322,7 +322,7 @@ PluginConfigDialog::PluginConfigDialog() {
 	grid->add_child(active_edit);
 	plugin_edit_hidden_controls.push_back(active_edit);
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	vbox->add_child(spacing);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 

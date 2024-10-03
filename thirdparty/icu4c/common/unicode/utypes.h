@@ -228,7 +228,7 @@ typedef double UDate;
 /*===========================================================================*/
 
 /*
- * Control of symbol import/export.
+ * Controle of symbol import/export.
  * ICU is separated into three libraries.
  */
 
@@ -371,7 +371,7 @@ typedef double UDate;
 
 /**
  * \def U_STANDARD_CPP_NAMESPACE
- * Control of C++ Namespace
+ * Controle of C++ Namespace
  * @stable ICU 2.0
  */
 #ifdef __cplusplus

@@ -393,8 +393,8 @@ msgstr "Tooltip-Verzögerung (Sek.)"
 msgid "Common"
 msgstr "Allgemein"
 
-msgid "Snap Controls to Pixels"
-msgstr "Control-Vectices auf Pixeln einrasten"
+msgid "Snap Controles to Pixels"
+msgstr "Controle-Vectices auf Pixeln einrasten"
 
 msgid "Fonts"
 msgstr "Schriftarten"
@@ -531,7 +531,7 @@ msgstr "Gerät"
 msgid "Window ID"
 msgstr "Fenster-ID"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Automatische Befehls- oder Steuerungs-Neuzuweisung"
 
 msgid "Alt Pressed"
@@ -642,11 +642,11 @@ msgstr "Anstellwinkel"
 msgid "Instrument"
 msgstr "Gerät"
 
-msgid "Controller Number"
-msgstr "Controllernummer"
+msgid "Controleler Number"
+msgstr "Controlelernummer"
 
-msgid "Controller Value"
-msgstr "Controllerwert"
+msgid "Controleler Value"
+msgstr "Controlelerwert"
 
 msgid "Shortcut"
 msgstr "Tastenkürzel"
@@ -1869,7 +1869,7 @@ msgstr "Symbolfarbe"
 msgid "Keyword Color"
 msgstr "Schlüsselwortfarbe"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Kontrollfluss-Schlüsselwortfarbe"
 
 msgid "Base Type Color"
@@ -2806,7 +2806,7 @@ msgstr "Frame-Anzahl"
 msgid "Duration"
 msgstr "Dauer"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versionsverwaltung"
 
 msgid "Username"
@@ -4039,7 +4039,7 @@ msgstr "Beschreibungs-URL"
 msgid "Service Type"
 msgstr "Diensttyp"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "IGD-Kontroll-URL"
 
 msgid "IGD Service Type"
@@ -7308,7 +7308,7 @@ msgstr "Auswahl per Drag&Drop aktiviert"
 msgid "Right Icon"
 msgstr "Rechtes Icon"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Steuerzeichen zeichnen"
 
 msgid "Select All on Focus"
@@ -7617,7 +7617,7 @@ msgstr "Syntaxhervorhebung"
 msgid "Visual Whitespace"
 msgstr "Visueller Whitespace"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Steuerzeichen"
 
 msgid "Spaces"
@@ -8044,7 +8044,7 @@ msgstr "Aktueller Bildschirm"
 msgid "Mouse Passthrough Polygon"
 msgstr "Maus-Passthrough-Polygon"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "Überlaufsteuerung"
 
 msgid "Transient"
@@ -9340,7 +9340,7 @@ msgstr "Farbregionen"
 msgid "Preserve Invalid"
 msgstr "Ungültige behalten"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Steuerung behalten"
 
 msgid "Custom Punctuation"
@@ -10621,8 +10621,8 @@ msgstr "Vertex"
 msgid "Fragment"
 msgstr "Fragment"
 
-msgid "Tesselation Control"
-msgstr "Tesselation-Control"
+msgid "Tesselation Controle"
+msgstr "Tesselation-Controle"
 
 msgid "Tesselation Evaluation"
 msgstr "Tesselation-Evaluation"

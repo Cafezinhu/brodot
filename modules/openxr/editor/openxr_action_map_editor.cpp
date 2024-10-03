@@ -57,7 +57,7 @@ void OpenXRActionMapEditor::_notification(int p_what) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
 			for (int i = 0; i < tabs->get_child_count(); i++) {
-				Control *tab = Object::cast_to<Control>(tabs->get_child(i));
+				Controle *tab = Object::cast_to<Controle>(tabs->get_child(i));
 				if (tab) {
 					tab->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SceneStringName(panel), SNAME("Tree")));
 				}
@@ -397,7 +397,7 @@ OpenXRActionMapEditor::OpenXRActionMapEditor() {
 	header_label = memnew(Label);
 	header_label->set_text(String(TTR("Action Map")));
 	header_label->set_clip_text(true);
-	header_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	header_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	top_hb->add_child(header_label);
 
 	add_action_set = memnew(Button);

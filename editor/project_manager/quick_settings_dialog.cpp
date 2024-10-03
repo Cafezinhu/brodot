@@ -144,15 +144,15 @@ void QuickSettingsDialog::_update_current_values() {
 	}
 }
 
-void QuickSettingsDialog::_add_setting_control(const String &p_text, Control *p_control) {
+void QuickSettingsDialog::_add_setting_control(const String &p_text, Controle *p_control) {
 	HBoxContainer *container = memnew(HBoxContainer);
 	settings_list->add_child(container);
 
 	Label *label = memnew(Label(p_text));
-	label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	container->add_child(label);
 
-	p_control->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	p_control->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	p_control->set_stretch_ratio(2.0);
 	container->add_child(p_control);
 }
@@ -235,7 +235,7 @@ QuickSettingsDialog::QuickSettingsDialog() {
 
 	VBoxContainer *main_vbox = memnew(VBoxContainer);
 	add_child(main_vbox);
-	main_vbox->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	main_vbox->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	// Settings grid.
 	{
@@ -282,7 +282,7 @@ QuickSettingsDialog::QuickSettingsDialog() {
 			custom_theme_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT);
 			custom_theme_label->set_custom_minimum_size(Size2(220, 0) * EDSCALE);
 			custom_theme_label->set_autowrap_mode(TextServer::AUTOWRAP_WORD);
-			custom_theme_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			custom_theme_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			custom_theme_label->set_stretch_ratio(2.0);
 			custom_theme_label->hide();
 			settings_list->add_child(custom_theme_label);
@@ -338,7 +338,7 @@ QuickSettingsDialog::QuickSettingsDialog() {
 		restart_required_label = memnew(Label(TTR("Settings changed! The project manager must be restarted for changes to take effect.")));
 		restart_required_label->set_custom_minimum_size(Size2(560, 0) * EDSCALE);
 		restart_required_label->set_autowrap_mode(TextServer::AUTOWRAP_WORD);
-		restart_required_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		restart_required_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		restart_required_label->hide();
 		main_vbox->add_child(restart_required_label);
 	}

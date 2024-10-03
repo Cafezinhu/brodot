@@ -912,7 +912,7 @@ HorizontalAlignment LineEdit::get_horizontal_alignment() const {
 }
 
 Variant LineEdit::get_drag_data(const Point2 &p_point) {
-	Variant ret = Control::get_drag_data(p_point);
+	Variant ret = Controle::get_drag_data(p_point);
 	if (ret != Variant()) {
 		return ret;
 	}
@@ -930,7 +930,7 @@ Variant LineEdit::get_drag_data(const Point2 &p_point) {
 }
 
 bool LineEdit::can_drop_data(const Point2 &p_point, const Variant &p_data) const {
-	bool drop_override = Control::can_drop_data(p_point, p_data); // In case user wants to drop custom data.
+	bool drop_override = Controle::can_drop_data(p_point, p_data); // In case user wants to drop custom data.
 	if (drop_override) {
 		return drop_override;
 	}
@@ -939,7 +939,7 @@ bool LineEdit::can_drop_data(const Point2 &p_point, const Variant &p_data) const
 }
 
 void LineEdit::drop_data(const Point2 &p_point, const Variant &p_data) {
-	Control::drop_data(p_point, p_data);
+	Controle::drop_data(p_point, p_data);
 
 	if (p_data.is_string() && is_editable()) {
 		apply_ime();
@@ -984,11 +984,11 @@ void LineEdit::drop_data(const Point2 &p_point, const Variant &p_data) {
 	}
 }
 
-Control::CursorShape LineEdit::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape LineEdit::get_cursor_shape(const Point2 &p_pos) const {
 	if ((!text.is_empty() && is_editable() && _is_over_clear_button(p_pos)) || (!is_editable() && (!is_selecting_enabled() || text.is_empty()))) {
 		return CURSOR_ARROW;
 	}
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 bool LineEdit::_is_over_clear_button(const Point2 &p_pos) const {
@@ -1001,7 +1001,7 @@ bool LineEdit::_is_over_clear_button(const Point2 &p_pos) const {
 }
 
 void LineEdit::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.base_scale = get_theme_default_base_scale();
 }
@@ -1768,7 +1768,7 @@ void LineEdit::set_text_with_selection(const String &p_text) {
 	queue_redraw();
 }
 
-void LineEdit::set_text_direction(Control::TextDirection p_text_direction) {
+void LineEdit::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -1787,7 +1787,7 @@ void LineEdit::set_text_direction(Control::TextDirection p_text_direction) {
 	}
 }
 
-Control::TextDirection LineEdit::get_text_direction() const {
+Controle::TextDirection LineEdit::get_text_direction() const {
 	return text_direction;
 }
 
@@ -2522,7 +2522,7 @@ void LineEdit::_emit_text_change() {
 }
 
 PackedStringArray LineEdit::get_configuration_warnings() const {
-	PackedStringArray warnings = Control::get_configuration_warnings();
+	PackedStringArray warnings = Controle::get_configuration_warnings();
 	if (secret_character.length() > 1) {
 		warnings.push_back("Secret Character property supports only one character. Extra characters will be ignored.");
 	}
@@ -2552,7 +2552,7 @@ void LineEdit::_shape() {
 			t = text;
 		}
 	}
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		TS->shaped_text_set_direction(text_rid, is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		TS->shaped_text_set_direction(text_rid, (TextServer::Direction)text_direction);
@@ -2682,8 +2682,8 @@ void LineEdit::_generate_context_menu() {
 	menu->add_separator();
 	menu->add_submenu_node_item(ETR("Text Writing Direction"), menu_dir, MENU_SUBMENU_TEXT_DIR);
 	menu->add_separator();
-	menu->add_check_item(ETR("Display Control Characters"), MENU_DISPLAY_UCC);
-	menu->add_submenu_node_item(ETR("Insert Control Character"), menu_ctl, MENU_SUBMENU_INSERT_UCC);
+	menu->add_check_item(ETR("Display Controle Characters"), MENU_DISPLAY_UCC);
+	menu->add_submenu_node_item(ETR("Insert Controle Character"), menu_ctl, MENU_SUBMENU_INSERT_UCC);
 
 	menu->connect(SceneStringName(id_pressed), callable_mp(this, &LineEdit::menu_option));
 	menu_dir->connect(SceneStringName(id_pressed), callable_mp(this, &LineEdit::menu_option));

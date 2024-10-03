@@ -546,8 +546,8 @@ void Sprite2DEditor::_update_zoom_and_pan(bool p_zoom_at_center) {
 void Sprite2DEditor::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_READY: {
-			v_scroll->set_anchors_and_offsets_preset(Control::PRESET_RIGHT_WIDE);
-			h_scroll->set_anchors_and_offsets_preset(Control::PRESET_BOTTOM_WIDE);
+			v_scroll->set_anchors_and_offsets_preset(Controle::PRESET_RIGHT_WIDE);
+			h_scroll->set_anchors_and_offsets_preset(Controle::PRESET_BOTTOM_WIDE);
 			// Avoid scrollbar overlapping.
 			Size2 hmin = h_scroll->get_combined_minimum_size();
 			Size2 vmin = v_scroll->get_combined_minimum_size();
@@ -556,7 +556,7 @@ void Sprite2DEditor::_notification(int p_what) {
 			[[fallthrough]];
 		}
 		case EditorSettings::NOTIFICATION_EDITOR_SETTINGS_CHANGED: {
-			panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 		} break;
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
@@ -607,7 +607,7 @@ Sprite2DEditor::Sprite2DEditor() {
 
 	zoom_widget = memnew(EditorZoomWidget);
 	debug_uv->add_child(zoom_widget);
-	zoom_widget->set_anchors_and_offsets_preset(Control::PRESET_TOP_LEFT, Control::PRESET_MODE_MINSIZE, 2 * EDSCALE);
+	zoom_widget->set_anchors_and_offsets_preset(Controle::PRESET_TOP_LEFT, Controle::PRESET_MODE_MINSIZE, 2 * EDSCALE);
 	zoom_widget->connect("zoom_changed", callable_mp(this, &Sprite2DEditor::_update_zoom_and_pan).unbind(1).bind(true));
 	zoom_widget->set_shortcut_context(nullptr);
 

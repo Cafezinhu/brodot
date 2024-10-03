@@ -47,8 +47,8 @@ class ThemeEditorPreview : public VBoxContainer {
 	MarginContainer *preview_root = nullptr;
 	ColorRect *preview_bg = nullptr;
 	MarginContainer *preview_overlay = nullptr;
-	Control *picker_overlay = nullptr;
-	Control *hovered_control = nullptr;
+	Controle *picker_overlay = nullptr;
+	Controle *hovered_control = nullptr;
 
 	struct ThemeCache {
 		Ref<StyleBox> preview_picker_overlay;
@@ -60,12 +60,12 @@ class ThemeEditorPreview : public VBoxContainer {
 
 	double time_left = 0;
 
-	void _propagate_redraw(Control *p_at);
+	void _propagate_redraw(Controle *p_at);
 	void _refresh_interval();
 	void _preview_visibility_changed();
 
 	void _picker_button_cbk();
-	Control *_find_hovered_control(Control *p_parent, Vector2 p_mouse_position);
+	Controle *_find_hovered_control(Controle *p_parent, Vector2 p_mouse_position);
 
 	void _draw_picker_overlay();
 	void _gui_input_picker_overlay(const Ref<InputEvent> &p_event);
@@ -76,7 +76,7 @@ protected:
 	MarginContainer *preview_content = nullptr;
 	Button *picker_button = nullptr;
 
-	void add_preview_overlay(Control *p_overlay);
+	void add_preview_overlay(Controle *p_overlay);
 
 	void _notification(int p_what);
 	static void _bind_methods();

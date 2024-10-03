@@ -334,8 +334,8 @@ namespace VULKAN_HPP_NAMESPACE
       result += "VertexInput | ";
     if ( value & PipelineStageFlagBits::eVertexShader )
       result += "VertexShader | ";
-    if ( value & PipelineStageFlagBits::eTessellationControlShader )
-      result += "TessellationControlShader | ";
+    if ( value & PipelineStageFlagBits::eTessellationControleShader )
+      result += "TessellationControleShader | ";
     if ( value & PipelineStageFlagBits::eTessellationEvaluationShader )
       result += "TessellationEvaluationShader | ";
     if ( value & PipelineStageFlagBits::eGeometryShader )
@@ -505,8 +505,8 @@ namespace VULKAN_HPP_NAMESPACE
       result += "ClippingPrimitives | ";
     if ( value & QueryPipelineStatisticFlagBits::eFragmentShaderInvocations )
       result += "FragmentShaderInvocations | ";
-    if ( value & QueryPipelineStatisticFlagBits::eTessellationControlShaderPatches )
-      result += "TessellationControlShaderPatches | ";
+    if ( value & QueryPipelineStatisticFlagBits::eTessellationControleShaderPatches )
+      result += "TessellationControleShaderPatches | ";
     if ( value & QueryPipelineStatisticFlagBits::eTessellationEvaluationShaderInvocations )
       result += "TessellationEvaluationShaderInvocations | ";
     if ( value & QueryPipelineStatisticFlagBits::eComputeShaderInvocations )
@@ -873,8 +873,8 @@ namespace VULKAN_HPP_NAMESPACE
     std::string result;
     if ( value & ShaderStageFlagBits::eVertex )
       result += "Vertex | ";
-    if ( value & ShaderStageFlagBits::eTessellationControl )
-      result += "TessellationControl | ";
+    if ( value & ShaderStageFlagBits::eTessellationControle )
+      result += "TessellationControle | ";
     if ( value & ShaderStageFlagBits::eTessellationEvaluation )
       result += "TessellationEvaluation | ";
     if ( value & ShaderStageFlagBits::eGeometry )
@@ -1178,13 +1178,13 @@ namespace VULKAN_HPP_NAMESPACE
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( QueryControlFlags value )
+  VULKAN_HPP_INLINE std::string to_string( QueryControleFlags value )
   {
     if ( !value )
       return "{}";
 
     std::string result;
-    if ( value & QueryControlFlagBits::ePrecise )
+    if ( value & QueryControleFlagBits::ePrecise )
       result += "Precise | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -1551,8 +1551,8 @@ namespace VULKAN_HPP_NAMESPACE
       result += "VertexInput | ";
     if ( value & PipelineStageFlagBits2::eVertexShader )
       result += "VertexShader | ";
-    if ( value & PipelineStageFlagBits2::eTessellationControlShader )
-      result += "TessellationControlShader | ";
+    if ( value & PipelineStageFlagBits2::eTessellationControleShader )
+      result += "TessellationControleShader | ";
     if ( value & PipelineStageFlagBits2::eTessellationEvaluationShader )
       result += "TessellationEvaluationShader | ";
     if ( value & PipelineStageFlagBits2::eGeometryShader )
@@ -2135,17 +2135,17 @@ namespace VULKAN_HPP_NAMESPACE
     return "{}";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoCodingControlFlagsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoCodingControleFlagsKHR value )
   {
     if ( !value )
       return "{}";
 
     std::string result;
-    if ( value & VideoCodingControlFlagBitsKHR::eReset )
+    if ( value & VideoCodingControleFlagBitsKHR::eReset )
       result += "Reset | ";
-    if ( value & VideoCodingControlFlagBitsKHR::eEncodeRateControl )
-      result += "EncodeRateControl | ";
-    if ( value & VideoCodingControlFlagBitsKHR::eEncodeQualityLevel )
+    if ( value & VideoCodingControleFlagBitsKHR::eEncodeRateControle )
+      result += "EncodeRateControle | ";
+    if ( value & VideoCodingControleFlagBitsKHR::eEncodeQualityLevel )
       result += "EncodeQualityLevel | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -2275,21 +2275,21 @@ namespace VULKAN_HPP_NAMESPACE
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH264RateControlFlagsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH264RateControleFlagsKHR value )
   {
     if ( !value )
       return "{}";
 
     std::string result;
-    if ( value & VideoEncodeH264RateControlFlagBitsKHR::eAttemptHrdCompliance )
+    if ( value & VideoEncodeH264RateControleFlagBitsKHR::eAttemptHrdCompliance )
       result += "AttemptHrdCompliance | ";
-    if ( value & VideoEncodeH264RateControlFlagBitsKHR::eRegularGop )
+    if ( value & VideoEncodeH264RateControleFlagBitsKHR::eRegularGop )
       result += "RegularGop | ";
-    if ( value & VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternFlat )
+    if ( value & VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternFlat )
       result += "ReferencePatternFlat | ";
-    if ( value & VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternDyadic )
+    if ( value & VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternDyadic )
       result += "ReferencePatternDyadic | ";
-    if ( value & VideoEncodeH264RateControlFlagBitsKHR::eTemporalLayerPatternDyadic )
+    if ( value & VideoEncodeH264RateControleFlagBitsKHR::eTemporalLayerPatternDyadic )
       result += "TemporalLayerPatternDyadic | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -2413,21 +2413,21 @@ namespace VULKAN_HPP_NAMESPACE
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH265RateControlFlagsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH265RateControleFlagsKHR value )
   {
     if ( !value )
       return "{}";
 
     std::string result;
-    if ( value & VideoEncodeH265RateControlFlagBitsKHR::eAttemptHrdCompliance )
+    if ( value & VideoEncodeH265RateControleFlagBitsKHR::eAttemptHrdCompliance )
       result += "AttemptHrdCompliance | ";
-    if ( value & VideoEncodeH265RateControlFlagBitsKHR::eRegularGop )
+    if ( value & VideoEncodeH265RateControleFlagBitsKHR::eRegularGop )
       result += "RegularGop | ";
-    if ( value & VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternFlat )
+    if ( value & VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternFlat )
       result += "ReferencePatternFlat | ";
-    if ( value & VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternDyadic )
+    if ( value & VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternDyadic )
       result += "ReferencePatternDyadic | ";
-    if ( value & VideoEncodeH265RateControlFlagBitsKHR::eTemporalSubLayerPatternDyadic )
+    if ( value & VideoEncodeH265RateControleFlagBitsKHR::eTemporalSubLayerPatternDyadic )
       result += "TemporalSubLayerPatternDyadic | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -2757,7 +2757,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_AMD_pipeline_compiler_control ===
 
-  VULKAN_HPP_INLINE std::string to_string( PipelineCompilerControlFlagsAMD )
+  VULKAN_HPP_INLINE std::string to_string( PipelineCompilerControleFlagsAMD )
   {
     return "{}";
   }
@@ -2971,22 +2971,22 @@ namespace VULKAN_HPP_NAMESPACE
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControlFlagsKHR )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControleFlagsKHR )
   {
     return "{}";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControlModeFlagsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControleModeFlagsKHR value )
   {
     if ( !value )
       return "Default";
 
     std::string result;
-    if ( value & VideoEncodeRateControlModeFlagBitsKHR::eDisabled )
+    if ( value & VideoEncodeRateControleModeFlagBitsKHR::eDisabled )
       result += "Disabled | ";
-    if ( value & VideoEncodeRateControlModeFlagBitsKHR::eCbr )
+    if ( value & VideoEncodeRateControleModeFlagBitsKHR::eCbr )
       result += "Cbr | ";
-    if ( value & VideoEncodeRateControlModeFlagBitsKHR::eVbr )
+    if ( value & VideoEncodeRateControleModeFlagBitsKHR::eVbr )
       result += "Vbr | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -3253,13 +3253,13 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_ARM_scheduling_controls ===
 
-  VULKAN_HPP_INLINE std::string to_string( PhysicalDeviceSchedulingControlsFlagsARM value )
+  VULKAN_HPP_INLINE std::string to_string( PhysicalDeviceSchedulingControlesFlagsARM value )
   {
     if ( !value )
       return "{}";
 
     std::string result;
-    if ( value & PhysicalDeviceSchedulingControlsFlagBitsARM::eShaderCoreCount )
+    if ( value & PhysicalDeviceSchedulingControlesFlagBitsARM::eShaderCoreCount )
       result += "ShaderCoreCount | ";
 
     return "{ " + result.substr( 0, result.size() - 3 ) + " }";
@@ -3732,7 +3732,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceDriverProperties: return "PhysicalDeviceDriverProperties";
       case StructureType::ePhysicalDeviceShaderAtomicInt64Features: return "PhysicalDeviceShaderAtomicInt64Features";
       case StructureType::ePhysicalDeviceShaderFloat16Int8Features: return "PhysicalDeviceShaderFloat16Int8Features";
-      case StructureType::ePhysicalDeviceFloatControlsProperties: return "PhysicalDeviceFloatControlsProperties";
+      case StructureType::ePhysicalDeviceFloatControlesProperties: return "PhysicalDeviceFloatControlesProperties";
       case StructureType::eDescriptorSetLayoutBindingFlagsCreateInfo: return "DescriptorSetLayoutBindingFlagsCreateInfo";
       case StructureType::ePhysicalDeviceDescriptorIndexingFeatures: return "PhysicalDeviceDescriptorIndexingFeatures";
       case StructureType::ePhysicalDeviceDescriptorIndexingProperties: return "PhysicalDeviceDescriptorIndexingProperties";
@@ -3775,7 +3775,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDevicePrivateDataFeatures: return "PhysicalDevicePrivateDataFeatures";
       case StructureType::eDevicePrivateDataCreateInfo: return "DevicePrivateDataCreateInfo";
       case StructureType::ePrivateDataSlotCreateInfo: return "PrivateDataSlotCreateInfo";
-      case StructureType::ePhysicalDevicePipelineCreationCacheControlFeatures: return "PhysicalDevicePipelineCreationCacheControlFeatures";
+      case StructureType::ePhysicalDevicePipelineCreationCacheControleFeatures: return "PhysicalDevicePipelineCreationCacheControleFeatures";
       case StructureType::eMemoryBarrier2: return "MemoryBarrier2";
       case StructureType::eBufferMemoryBarrier2: return "BufferMemoryBarrier2";
       case StructureType::eImageMemoryBarrier2: return "ImageMemoryBarrier2";
@@ -3797,9 +3797,9 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eImageBlit2: return "ImageBlit2";
       case StructureType::eBufferImageCopy2: return "BufferImageCopy2";
       case StructureType::eImageResolve2: return "ImageResolve2";
-      case StructureType::ePhysicalDeviceSubgroupSizeControlProperties: return "PhysicalDeviceSubgroupSizeControlProperties";
+      case StructureType::ePhysicalDeviceSubgroupSizeControleProperties: return "PhysicalDeviceSubgroupSizeControleProperties";
       case StructureType::ePipelineShaderStageRequiredSubgroupSizeCreateInfo: return "PipelineShaderStageRequiredSubgroupSizeCreateInfo";
-      case StructureType::ePhysicalDeviceSubgroupSizeControlFeatures: return "PhysicalDeviceSubgroupSizeControlFeatures";
+      case StructureType::ePhysicalDeviceSubgroupSizeControleFeatures: return "PhysicalDeviceSubgroupSizeControleFeatures";
       case StructureType::ePhysicalDeviceInlineUniformBlockFeatures: return "PhysicalDeviceInlineUniformBlockFeatures";
       case StructureType::ePhysicalDeviceInlineUniformBlockProperties: return "PhysicalDeviceInlineUniformBlockProperties";
       case StructureType::eWriteDescriptorSetInlineUniformBlock: return "WriteDescriptorSetInlineUniformBlock";
@@ -3859,7 +3859,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eVideoSessionParametersUpdateInfoKHR: return "VideoSessionParametersUpdateInfoKHR";
       case StructureType::eVideoBeginCodingInfoKHR: return "VideoBeginCodingInfoKHR";
       case StructureType::eVideoEndCodingInfoKHR: return "VideoEndCodingInfoKHR";
-      case StructureType::eVideoCodingControlInfoKHR: return "VideoCodingControlInfoKHR";
+      case StructureType::eVideoCodingControleInfoKHR: return "VideoCodingControleInfoKHR";
       case StructureType::eVideoReferenceSlotInfoKHR: return "VideoReferenceSlotInfoKHR";
       case StructureType::eQueueFamilyVideoPropertiesKHR: return "QueueFamilyVideoPropertiesKHR";
       case StructureType::eVideoProfileListInfoKHR: return "VideoProfileListInfoKHR";
@@ -3888,8 +3888,8 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eVideoEncodeH264NaluSliceInfoKHR: return "VideoEncodeH264NaluSliceInfoKHR";
       case StructureType::eVideoEncodeH264GopRemainingFrameInfoKHR: return "VideoEncodeH264GopRemainingFrameInfoKHR";
       case StructureType::eVideoEncodeH264ProfileInfoKHR: return "VideoEncodeH264ProfileInfoKHR";
-      case StructureType::eVideoEncodeH264RateControlInfoKHR: return "VideoEncodeH264RateControlInfoKHR";
-      case StructureType::eVideoEncodeH264RateControlLayerInfoKHR: return "VideoEncodeH264RateControlLayerInfoKHR";
+      case StructureType::eVideoEncodeH264RateControleInfoKHR: return "VideoEncodeH264RateControleInfoKHR";
+      case StructureType::eVideoEncodeH264RateControleLayerInfoKHR: return "VideoEncodeH264RateControleLayerInfoKHR";
       case StructureType::eVideoEncodeH264SessionCreateInfoKHR: return "VideoEncodeH264SessionCreateInfoKHR";
       case StructureType::eVideoEncodeH264QualityLevelPropertiesKHR: return "VideoEncodeH264QualityLevelPropertiesKHR";
       case StructureType::eVideoEncodeH264SessionParametersGetInfoKHR: return "VideoEncodeH264SessionParametersGetInfoKHR";
@@ -3902,8 +3902,8 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eVideoEncodeH265NaluSliceSegmentInfoKHR: return "VideoEncodeH265NaluSliceSegmentInfoKHR";
       case StructureType::eVideoEncodeH265GopRemainingFrameInfoKHR: return "VideoEncodeH265GopRemainingFrameInfoKHR";
       case StructureType::eVideoEncodeH265ProfileInfoKHR: return "VideoEncodeH265ProfileInfoKHR";
-      case StructureType::eVideoEncodeH265RateControlInfoKHR: return "VideoEncodeH265RateControlInfoKHR";
-      case StructureType::eVideoEncodeH265RateControlLayerInfoKHR: return "VideoEncodeH265RateControlLayerInfoKHR";
+      case StructureType::eVideoEncodeH265RateControleInfoKHR: return "VideoEncodeH265RateControleInfoKHR";
+      case StructureType::eVideoEncodeH265RateControleLayerInfoKHR: return "VideoEncodeH265RateControleLayerInfoKHR";
       case StructureType::eVideoEncodeH265SessionCreateInfoKHR: return "VideoEncodeH265SessionCreateInfoKHR";
       case StructureType::eVideoEncodeH265QualityLevelPropertiesKHR: return "VideoEncodeH265QualityLevelPropertiesKHR";
       case StructureType::eVideoEncodeH265SessionParametersGetInfoKHR: return "VideoEncodeH265SessionParametersGetInfoKHR";
@@ -4097,7 +4097,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eMemoryHostPointerPropertiesEXT: return "MemoryHostPointerPropertiesEXT";
       case StructureType::ePhysicalDeviceExternalMemoryHostPropertiesEXT: return "PhysicalDeviceExternalMemoryHostPropertiesEXT";
       case StructureType::ePhysicalDeviceShaderClockFeaturesKHR: return "PhysicalDeviceShaderClockFeaturesKHR";
-      case StructureType::ePipelineCompilerControlCreateInfoAMD: return "PipelineCompilerControlCreateInfoAMD";
+      case StructureType::ePipelineCompilerControleCreateInfoAMD: return "PipelineCompilerControleCreateInfoAMD";
       case StructureType::ePhysicalDeviceShaderCorePropertiesAMD: return "PhysicalDeviceShaderCorePropertiesAMD";
       case StructureType::eVideoDecodeH265CapabilitiesKHR: return "VideoDecodeH265CapabilitiesKHR";
       case StructureType::eVideoDecodeH265SessionParametersCreateInfoKHR: return "VideoDecodeH265SessionParametersCreateInfoKHR";
@@ -4151,7 +4151,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::eRenderingAttachmentLocationInfoKHR: return "RenderingAttachmentLocationInfoKHR";
       case StructureType::eRenderingInputAttachmentIndexInfoKHR: return "RenderingInputAttachmentIndexInfoKHR";
       case StructureType::ePhysicalDeviceShaderImageAtomicInt64FeaturesEXT: return "PhysicalDeviceShaderImageAtomicInt64FeaturesEXT";
-      case StructureType::ePhysicalDeviceShaderQuadControlFeaturesKHR: return "PhysicalDeviceShaderQuadControlFeaturesKHR";
+      case StructureType::ePhysicalDeviceShaderQuadControleFeaturesKHR: return "PhysicalDeviceShaderQuadControleFeaturesKHR";
       case StructureType::ePhysicalDeviceMemoryBudgetPropertiesEXT: return "PhysicalDeviceMemoryBudgetPropertiesEXT";
       case StructureType::ePhysicalDeviceMemoryPriorityFeaturesEXT: return "PhysicalDeviceMemoryPriorityFeaturesEXT";
       case StructureType::eMemoryPriorityAllocateInfoEXT: return "MemoryPriorityAllocateInfoEXT";
@@ -4224,7 +4224,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceTexelBufferAlignmentFeaturesEXT: return "PhysicalDeviceTexelBufferAlignmentFeaturesEXT";
       case StructureType::eCommandBufferInheritanceRenderPassTransformInfoQCOM: return "CommandBufferInheritanceRenderPassTransformInfoQCOM";
       case StructureType::eRenderPassTransformBeginInfoQCOM: return "RenderPassTransformBeginInfoQCOM";
-      case StructureType::ePhysicalDeviceDepthBiasControlFeaturesEXT: return "PhysicalDeviceDepthBiasControlFeaturesEXT";
+      case StructureType::ePhysicalDeviceDepthBiasControleFeaturesEXT: return "PhysicalDeviceDepthBiasControleFeaturesEXT";
       case StructureType::eDepthBiasInfoEXT: return "DepthBiasInfoEXT";
       case StructureType::eDepthBiasRepresentationInfoEXT: return "DepthBiasRepresentationInfoEXT";
       case StructureType::ePhysicalDeviceDeviceMemoryReportFeaturesEXT: return "PhysicalDeviceDeviceMemoryReportFeaturesEXT";
@@ -4242,8 +4242,8 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePresentIdKHR: return "PresentIdKHR";
       case StructureType::ePhysicalDevicePresentIdFeaturesKHR: return "PhysicalDevicePresentIdFeaturesKHR";
       case StructureType::eVideoEncodeInfoKHR: return "VideoEncodeInfoKHR";
-      case StructureType::eVideoEncodeRateControlInfoKHR: return "VideoEncodeRateControlInfoKHR";
-      case StructureType::eVideoEncodeRateControlLayerInfoKHR: return "VideoEncodeRateControlLayerInfoKHR";
+      case StructureType::eVideoEncodeRateControleInfoKHR: return "VideoEncodeRateControleInfoKHR";
+      case StructureType::eVideoEncodeRateControleLayerInfoKHR: return "VideoEncodeRateControleLayerInfoKHR";
       case StructureType::eVideoEncodeCapabilitiesKHR: return "VideoEncodeCapabilitiesKHR";
       case StructureType::eVideoEncodeUsageInfoKHR: return "VideoEncodeUsageInfoKHR";
       case StructureType::eQueryPoolVideoEncodeFeedbackCreateInfoKHR: return "QueryPoolVideoEncodeFeedbackCreateInfoKHR";
@@ -4297,7 +4297,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD: return "PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD";
       case StructureType::ePhysicalDeviceFragmentShaderBarycentricFeaturesKHR: return "PhysicalDeviceFragmentShaderBarycentricFeaturesKHR";
       case StructureType::ePhysicalDeviceFragmentShaderBarycentricPropertiesKHR: return "PhysicalDeviceFragmentShaderBarycentricPropertiesKHR";
-      case StructureType::ePhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR: return "PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR";
+      case StructureType::ePhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR: return "PhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR";
       case StructureType::ePhysicalDeviceFragmentShadingRateEnumsPropertiesNV: return "PhysicalDeviceFragmentShadingRateEnumsPropertiesNV";
       case StructureType::ePhysicalDeviceFragmentShadingRateEnumsFeaturesNV: return "PhysicalDeviceFragmentShadingRateEnumsFeaturesNV";
       case StructureType::ePipelineFragmentShadingRateEnumStateCreateInfoNV: return "PipelineFragmentShadingRateEnumStateCreateInfoNV";
@@ -4311,8 +4311,8 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceFragmentDensityMap2PropertiesEXT: return "PhysicalDeviceFragmentDensityMap2PropertiesEXT";
       case StructureType::eCopyCommandTransformInfoQCOM: return "CopyCommandTransformInfoQCOM";
       case StructureType::ePhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR: return "PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR";
-      case StructureType::ePhysicalDeviceImageCompressionControlFeaturesEXT: return "PhysicalDeviceImageCompressionControlFeaturesEXT";
-      case StructureType::eImageCompressionControlEXT: return "ImageCompressionControlEXT";
+      case StructureType::ePhysicalDeviceImageCompressionControleFeaturesEXT: return "PhysicalDeviceImageCompressionControleFeaturesEXT";
+      case StructureType::eImageCompressionControleEXT: return "ImageCompressionControleEXT";
       case StructureType::eImageCompressionPropertiesEXT: return "ImageCompressionPropertiesEXT";
       case StructureType::ePhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT: return "PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT";
       case StructureType::ePhysicalDevice4444FormatsFeaturesEXT: return "PhysicalDevice4444FormatsFeaturesEXT";
@@ -4329,8 +4329,8 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceDrmPropertiesEXT: return "PhysicalDeviceDrmPropertiesEXT";
       case StructureType::ePhysicalDeviceAddressBindingReportFeaturesEXT: return "PhysicalDeviceAddressBindingReportFeaturesEXT";
       case StructureType::eDeviceAddressBindingCallbackDataEXT: return "DeviceAddressBindingCallbackDataEXT";
-      case StructureType::ePhysicalDeviceDepthClipControlFeaturesEXT: return "PhysicalDeviceDepthClipControlFeaturesEXT";
-      case StructureType::ePipelineViewportDepthClipControlCreateInfoEXT: return "PipelineViewportDepthClipControlCreateInfoEXT";
+      case StructureType::ePhysicalDeviceDepthClipControleFeaturesEXT: return "PhysicalDeviceDepthClipControleFeaturesEXT";
+      case StructureType::ePipelineViewportDepthClipControleCreateInfoEXT: return "PipelineViewportDepthClipControleCreateInfoEXT";
       case StructureType::ePhysicalDevicePrimitiveTopologyListRestartFeaturesEXT: return "PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT";
 #if defined( VK_USE_PLATFORM_FUCHSIA )
       case StructureType::eImportMemoryZirconHandleInfoFUCHSIA: return "ImportMemoryZirconHandleInfoFUCHSIA";
@@ -4400,9 +4400,9 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDevicePageableDeviceLocalMemoryFeaturesEXT: return "PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT";
       case StructureType::ePhysicalDeviceShaderCorePropertiesARM: return "PhysicalDeviceShaderCorePropertiesARM";
       case StructureType::ePhysicalDeviceShaderSubgroupRotateFeaturesKHR: return "PhysicalDeviceShaderSubgroupRotateFeaturesKHR";
-      case StructureType::eDeviceQueueShaderCoreControlCreateInfoARM: return "DeviceQueueShaderCoreControlCreateInfoARM";
-      case StructureType::ePhysicalDeviceSchedulingControlsFeaturesARM: return "PhysicalDeviceSchedulingControlsFeaturesARM";
-      case StructureType::ePhysicalDeviceSchedulingControlsPropertiesARM: return "PhysicalDeviceSchedulingControlsPropertiesARM";
+      case StructureType::eDeviceQueueShaderCoreControleCreateInfoARM: return "DeviceQueueShaderCoreControleCreateInfoARM";
+      case StructureType::ePhysicalDeviceSchedulingControlesFeaturesARM: return "PhysicalDeviceSchedulingControlesFeaturesARM";
+      case StructureType::ePhysicalDeviceSchedulingControlesPropertiesARM: return "PhysicalDeviceSchedulingControlesPropertiesARM";
       case StructureType::ePhysicalDeviceImageSlicedViewOf3DFeaturesEXT: return "PhysicalDeviceImageSlicedViewOf3DFeaturesEXT";
       case StructureType::eImageViewSlicedCreateInfoEXT: return "ImageViewSlicedCreateInfoEXT";
       case StructureType::ePhysicalDeviceDescriptorSetHostMappingFeaturesVALVE: return "PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE";
@@ -4427,7 +4427,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePipelineIndirectDeviceAddressInfoNV: return "PipelineIndirectDeviceAddressInfoNV";
       case StructureType::ePhysicalDeviceLinearColorAttachmentFeaturesNV: return "PhysicalDeviceLinearColorAttachmentFeaturesNV";
       case StructureType::ePhysicalDeviceShaderMaximalReconvergenceFeaturesKHR: return "PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR";
-      case StructureType::ePhysicalDeviceImageCompressionControlSwapchainFeaturesEXT: return "PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT";
+      case StructureType::ePhysicalDeviceImageCompressionControleSwapchainFeaturesEXT: return "PhysicalDeviceImageCompressionControleSwapchainFeaturesEXT";
       case StructureType::ePhysicalDeviceImageProcessingFeaturesQCOM: return "PhysicalDeviceImageProcessingFeaturesQCOM";
       case StructureType::ePhysicalDeviceImageProcessingPropertiesQCOM: return "PhysicalDeviceImageProcessingPropertiesQCOM";
       case StructureType::eImageViewSampleWeightCreateInfoQCOM: return "ImageViewSampleWeightCreateInfoQCOM";
@@ -4437,7 +4437,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceExtendedDynamicState3FeaturesEXT: return "PhysicalDeviceExtendedDynamicState3FeaturesEXT";
       case StructureType::ePhysicalDeviceExtendedDynamicState3PropertiesEXT: return "PhysicalDeviceExtendedDynamicState3PropertiesEXT";
       case StructureType::ePhysicalDeviceSubpassMergeFeedbackFeaturesEXT: return "PhysicalDeviceSubpassMergeFeedbackFeaturesEXT";
-      case StructureType::eRenderPassCreationControlEXT: return "RenderPassCreationControlEXT";
+      case StructureType::eRenderPassCreationControleEXT: return "RenderPassCreationControleEXT";
       case StructureType::eRenderPassCreationFeedbackCreateInfoEXT: return "RenderPassCreationFeedbackCreateInfoEXT";
       case StructureType::eRenderPassSubpassFeedbackCreateInfoEXT: return "RenderPassSubpassFeedbackCreateInfoEXT";
       case StructureType::eDirectDriverLoadingInfoLUNARG: return "DirectDriverLoadingInfoLUNARG";
@@ -4524,7 +4524,7 @@ namespace VULKAN_HPP_NAMESPACE
       case StructureType::ePhysicalDeviceVertexAttributeDivisorPropertiesKHR: return "PhysicalDeviceVertexAttributeDivisorPropertiesKHR";
       case StructureType::ePipelineVertexInputDivisorStateCreateInfoKHR: return "PipelineVertexInputDivisorStateCreateInfoKHR";
       case StructureType::ePhysicalDeviceVertexAttributeDivisorFeaturesKHR: return "PhysicalDeviceVertexAttributeDivisorFeaturesKHR";
-      case StructureType::ePhysicalDeviceShaderFloatControls2FeaturesKHR: return "PhysicalDeviceShaderFloatControls2FeaturesKHR";
+      case StructureType::ePhysicalDeviceShaderFloatControles2FeaturesKHR: return "PhysicalDeviceShaderFloatControles2FeaturesKHR";
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
       case StructureType::eScreenBufferPropertiesQNX: return "ScreenBufferPropertiesQNX";
       case StructureType::eScreenBufferFormatPropertiesQNX: return "ScreenBufferFormatPropertiesQNX";
@@ -5144,7 +5144,7 @@ namespace VULKAN_HPP_NAMESPACE
       case PipelineStageFlagBits::eDrawIndirect: return "DrawIndirect";
       case PipelineStageFlagBits::eVertexInput: return "VertexInput";
       case PipelineStageFlagBits::eVertexShader: return "VertexShader";
-      case PipelineStageFlagBits::eTessellationControlShader: return "TessellationControlShader";
+      case PipelineStageFlagBits::eTessellationControleShader: return "TessellationControleShader";
       case PipelineStageFlagBits::eTessellationEvaluationShader: return "TessellationEvaluationShader";
       case PipelineStageFlagBits::eGeometryShader: return "GeometryShader";
       case PipelineStageFlagBits::eFragmentShader: return "FragmentShader";
@@ -5255,7 +5255,7 @@ namespace VULKAN_HPP_NAMESPACE
       case QueryPipelineStatisticFlagBits::eClippingInvocations: return "ClippingInvocations";
       case QueryPipelineStatisticFlagBits::eClippingPrimitives: return "ClippingPrimitives";
       case QueryPipelineStatisticFlagBits::eFragmentShaderInvocations: return "FragmentShaderInvocations";
-      case QueryPipelineStatisticFlagBits::eTessellationControlShaderPatches: return "TessellationControlShaderPatches";
+      case QueryPipelineStatisticFlagBits::eTessellationControleShaderPatches: return "TessellationControleShaderPatches";
       case QueryPipelineStatisticFlagBits::eTessellationEvaluationShaderInvocations: return "TessellationEvaluationShaderInvocations";
       case QueryPipelineStatisticFlagBits::eComputeShaderInvocations: return "ComputeShaderInvocations";
       case QueryPipelineStatisticFlagBits::eTaskShaderInvocationsEXT: return "TaskShaderInvocationsEXT";
@@ -5632,7 +5632,7 @@ namespace VULKAN_HPP_NAMESPACE
       case DynamicState::eExclusiveScissorNV: return "ExclusiveScissorNV";
       case DynamicState::eFragmentShadingRateKHR: return "FragmentShadingRateKHR";
       case DynamicState::eVertexInputEXT: return "VertexInputEXT";
-      case DynamicState::ePatchControlPointsEXT: return "PatchControlPointsEXT";
+      case DynamicState::ePatchControlePointsEXT: return "PatchControlePointsEXT";
       case DynamicState::eLogicOpEXT: return "LogicOpEXT";
       case DynamicState::eColorWriteEnableEXT: return "ColorWriteEnableEXT";
       case DynamicState::eDepthClampEnableEXT: return "DepthClampEnableEXT";
@@ -5793,7 +5793,7 @@ namespace VULKAN_HPP_NAMESPACE
     switch ( value )
     {
       case ShaderStageFlagBits::eVertex: return "Vertex";
-      case ShaderStageFlagBits::eTessellationControl: return "TessellationControl";
+      case ShaderStageFlagBits::eTessellationControle: return "TessellationControle";
       case ShaderStageFlagBits::eTessellationEvaluation: return "TessellationEvaluation";
       case ShaderStageFlagBits::eGeometry: return "Geometry";
       case ShaderStageFlagBits::eFragment: return "Fragment";
@@ -6204,11 +6204,11 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( QueryControlFlagBits value )
+  VULKAN_HPP_INLINE std::string to_string( QueryControleFlagBits value )
   {
     switch ( value )
     {
-      case QueryControlFlagBits::ePrecise: return "Precise";
+      case QueryControleFlagBits::ePrecise: return "Precise";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -6505,13 +6505,13 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( ShaderFloatControlsIndependence value )
+  VULKAN_HPP_INLINE std::string to_string( ShaderFloatControlesIndependence value )
   {
     switch ( value )
     {
-      case ShaderFloatControlsIndependence::e32BitOnly: return "32BitOnly";
-      case ShaderFloatControlsIndependence::eAll: return "All";
-      case ShaderFloatControlsIndependence::eNone: return "None";
+      case ShaderFloatControlesIndependence::e32BitOnly: return "32BitOnly";
+      case ShaderFloatControlesIndependence::eAll: return "All";
+      case ShaderFloatControlesIndependence::eNone: return "None";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -6617,7 +6617,7 @@ namespace VULKAN_HPP_NAMESPACE
       case PipelineStageFlagBits2::eDrawIndirect: return "DrawIndirect";
       case PipelineStageFlagBits2::eVertexInput: return "VertexInput";
       case PipelineStageFlagBits2::eVertexShader: return "VertexShader";
-      case PipelineStageFlagBits2::eTessellationControlShader: return "TessellationControlShader";
+      case PipelineStageFlagBits2::eTessellationControleShader: return "TessellationControleShader";
       case PipelineStageFlagBits2::eTessellationEvaluationShader: return "TessellationEvaluationShader";
       case PipelineStageFlagBits2::eGeometryShader: return "GeometryShader";
       case PipelineStageFlagBits2::eFragmentShader: return "FragmentShader";
@@ -7089,13 +7089,13 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoCodingControlFlagBitsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoCodingControleFlagBitsKHR value )
   {
     switch ( value )
     {
-      case VideoCodingControlFlagBitsKHR::eReset: return "Reset";
-      case VideoCodingControlFlagBitsKHR::eEncodeRateControl: return "EncodeRateControl";
-      case VideoCodingControlFlagBitsKHR::eEncodeQualityLevel: return "EncodeQualityLevel";
+      case VideoCodingControleFlagBitsKHR::eReset: return "Reset";
+      case VideoCodingControleFlagBitsKHR::eEncodeRateControle: return "EncodeRateControle";
+      case VideoCodingControleFlagBitsKHR::eEncodeQualityLevel: return "EncodeQualityLevel";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -7210,15 +7210,15 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH264RateControlFlagBitsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH264RateControleFlagBitsKHR value )
   {
     switch ( value )
     {
-      case VideoEncodeH264RateControlFlagBitsKHR::eAttemptHrdCompliance: return "AttemptHrdCompliance";
-      case VideoEncodeH264RateControlFlagBitsKHR::eRegularGop: return "RegularGop";
-      case VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternFlat: return "ReferencePatternFlat";
-      case VideoEncodeH264RateControlFlagBitsKHR::eReferencePatternDyadic: return "ReferencePatternDyadic";
-      case VideoEncodeH264RateControlFlagBitsKHR::eTemporalLayerPatternDyadic: return "TemporalLayerPatternDyadic";
+      case VideoEncodeH264RateControleFlagBitsKHR::eAttemptHrdCompliance: return "AttemptHrdCompliance";
+      case VideoEncodeH264RateControleFlagBitsKHR::eRegularGop: return "RegularGop";
+      case VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternFlat: return "ReferencePatternFlat";
+      case VideoEncodeH264RateControleFlagBitsKHR::eReferencePatternDyadic: return "ReferencePatternDyadic";
+      case VideoEncodeH264RateControleFlagBitsKHR::eTemporalLayerPatternDyadic: return "TemporalLayerPatternDyadic";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -7295,15 +7295,15 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH265RateControlFlagBitsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeH265RateControleFlagBitsKHR value )
   {
     switch ( value )
     {
-      case VideoEncodeH265RateControlFlagBitsKHR::eAttemptHrdCompliance: return "AttemptHrdCompliance";
-      case VideoEncodeH265RateControlFlagBitsKHR::eRegularGop: return "RegularGop";
-      case VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternFlat: return "ReferencePatternFlat";
-      case VideoEncodeH265RateControlFlagBitsKHR::eReferencePatternDyadic: return "ReferencePatternDyadic";
-      case VideoEncodeH265RateControlFlagBitsKHR::eTemporalSubLayerPatternDyadic: return "TemporalSubLayerPatternDyadic";
+      case VideoEncodeH265RateControleFlagBitsKHR::eAttemptHrdCompliance: return "AttemptHrdCompliance";
+      case VideoEncodeH265RateControleFlagBitsKHR::eRegularGop: return "RegularGop";
+      case VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternFlat: return "ReferencePatternFlat";
+      case VideoEncodeH265RateControleFlagBitsKHR::eReferencePatternDyadic: return "ReferencePatternDyadic";
+      case VideoEncodeH265RateControleFlagBitsKHR::eTemporalSubLayerPatternDyadic: return "TemporalSubLayerPatternDyadic";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -7900,7 +7900,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_AMD_pipeline_compiler_control ===
 
-  VULKAN_HPP_INLINE std::string to_string( PipelineCompilerControlFlagBitsAMD )
+  VULKAN_HPP_INLINE std::string to_string( PipelineCompilerControleFlagBitsAMD )
   {
     return "(void)";
   }
@@ -8095,7 +8095,7 @@ namespace VULKAN_HPP_NAMESPACE
       case FullScreenExclusiveEXT::eDefault: return "Default";
       case FullScreenExclusiveEXT::eAllowed: return "Allowed";
       case FullScreenExclusiveEXT::eDisallowed: return "Disallowed";
-      case FullScreenExclusiveEXT::eApplicationControlled: return "ApplicationControlled";
+      case FullScreenExclusiveEXT::eApplicationControleled: return "ApplicationControleled";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -8303,14 +8303,14 @@ namespace VULKAN_HPP_NAMESPACE
     }
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControlModeFlagBitsKHR value )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControleModeFlagBitsKHR value )
   {
     switch ( value )
     {
-      case VideoEncodeRateControlModeFlagBitsKHR::eDefault: return "Default";
-      case VideoEncodeRateControlModeFlagBitsKHR::eDisabled: return "Disabled";
-      case VideoEncodeRateControlModeFlagBitsKHR::eCbr: return "Cbr";
-      case VideoEncodeRateControlModeFlagBitsKHR::eVbr: return "Vbr";
+      case VideoEncodeRateControleModeFlagBitsKHR::eDefault: return "Default";
+      case VideoEncodeRateControleModeFlagBitsKHR::eDisabled: return "Disabled";
+      case VideoEncodeRateControleModeFlagBitsKHR::eCbr: return "Cbr";
+      case VideoEncodeRateControleModeFlagBitsKHR::eVbr: return "Vbr";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }
@@ -8320,7 +8320,7 @@ namespace VULKAN_HPP_NAMESPACE
     return "(void)";
   }
 
-  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControlFlagBitsKHR )
+  VULKAN_HPP_INLINE std::string to_string( VideoEncodeRateControleFlagBitsKHR )
   {
     return "(void)";
   }
@@ -8665,11 +8665,11 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_ARM_scheduling_controls ===
 
-  VULKAN_HPP_INLINE std::string to_string( PhysicalDeviceSchedulingControlsFlagBitsARM value )
+  VULKAN_HPP_INLINE std::string to_string( PhysicalDeviceSchedulingControlesFlagBitsARM value )
   {
     switch ( value )
     {
-      case PhysicalDeviceSchedulingControlsFlagBitsARM::eShaderCoreCount: return "ShaderCoreCount";
+      case PhysicalDeviceSchedulingControlesFlagBitsARM::eShaderCoreCount: return "ShaderCoreCount";
       default: return "invalid ( " + VULKAN_HPP_NAMESPACE::toHexString( static_cast<uint32_t>( value ) ) + " )";
     }
   }

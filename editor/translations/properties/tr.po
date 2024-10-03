@@ -384,7 +384,7 @@ msgstr "Araçipucu Gecikmesi (sn)"
 msgid "Common"
 msgstr "Ortak"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Kontrolleri Piksellere Tuttur"
 
 msgid "Fonts"
@@ -522,7 +522,7 @@ msgstr "Aygıt"
 msgid "Window ID"
 msgstr "Pencere Kimliği"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Komut veya Kontrol Tuşu Otomatik Tekrar-Haritala"
 
 msgid "Alt Pressed"
@@ -633,10 +633,10 @@ msgstr "Eğim (Burun)"
 msgid "Instrument"
 msgstr "Alet"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Denetleyici Numarası"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Denetleyici Değeri"
 
 msgid "Shortcut"
@@ -1860,7 +1860,7 @@ msgstr "Simge Rengi"
 msgid "Keyword Color"
 msgstr "Anahtar Kelime Rengi"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Akış Kontrolü Anahtar Kelime Rengi"
 
 msgid "Base Type Color"
@@ -2797,7 +2797,7 @@ msgstr "Kare Sayısı"
 msgid "Duration"
 msgstr "Süre"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Sürüm Kontrol"
 
 msgid "Username"
@@ -4036,7 +4036,7 @@ msgstr "Tanımlama URL'si"
 msgid "Service Type"
 msgstr "Servis Türü"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "İnternetGeçidiCihazı Denetim URL'si"
 
 msgid "IGD Service Type"
@@ -7305,7 +7305,7 @@ msgstr "Sürükle ve Bırak Seçimi Etkin"
 msgid "Right Icon"
 msgstr "Sağ Simge"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Denetim Karakterlerini Çiz"
 
 msgid "Select All on Focus"
@@ -7614,7 +7614,7 @@ msgstr "Sözdizimi Vurgulama"
 msgid "Visual Whitespace"
 msgstr "Görsel Beyazboşluk"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Denetim Karakterleri"
 
 msgid "Spaces"
@@ -8041,7 +8041,7 @@ msgstr "Şu anki Ekran"
 msgid "Mouse Passthrough Polygon"
 msgstr "Fare İçindengeçme Çokgeni"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "Denetimleri Sar"
 
 msgid "Transient"
@@ -9337,7 +9337,7 @@ msgstr "Renk Bölgeleri"
 msgid "Preserve Invalid"
 msgstr "Geçersizleri Koru"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Denetimi Koru"
 
 msgid "Custom Punctuation"
@@ -10618,7 +10618,7 @@ msgstr "Köşenokta"
 msgid "Fragment"
 msgstr "Parça"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Mozaik Denetimi"
 
 msgid "Tesselation Evaluation"

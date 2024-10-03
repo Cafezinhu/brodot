@@ -72,8 +72,8 @@ class AnimationNodeStateMachineEditor : public AnimationTreeNodeEditorPlugin {
 	HScrollBar *h_scroll = nullptr;
 	VScrollBar *v_scroll = nullptr;
 
-	Control *state_machine_draw = nullptr;
-	Control *state_machine_play_pos = nullptr;
+	Controle *state_machine_draw = nullptr;
+	Controle *state_machine_play_pos = nullptr;
 
 	PanelContainer *error_panel = nullptr;
 	Label *error_label = nullptr;

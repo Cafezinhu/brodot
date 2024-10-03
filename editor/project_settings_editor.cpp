@@ -332,7 +332,7 @@ void ProjectSettingsEditor::_tabs_tab_changed(int p_tab) {
 }
 
 void ProjectSettingsEditor::_focus_current_search_box() {
-	Control *tab = tab_container->get_current_tab_control();
+	Controle *tab = tab_container->get_current_tab_control();
 	LineEdit *current_search_box = nullptr;
 	if (tab == general_editor) {
 		current_search_box = search_box;
@@ -347,7 +347,7 @@ void ProjectSettingsEditor::_focus_current_search_box() {
 }
 
 void ProjectSettingsEditor::_focus_current_path_box() {
-	Control *tab = tab_container->get_current_tab_control();
+	Controle *tab = tab_container->get_current_tab_control();
 	LineEdit *current_path_box = nullptr;
 	if (tab == general_editor) {
 		current_path_box = property_box;
@@ -637,7 +637,7 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	general_editor = memnew(VBoxContainer);
 	general_editor->set_name(TTR("General"));
 	general_editor->set_alignment(BoxContainer::ALIGNMENT_BEGIN);
-	general_editor->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	general_editor->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tab_container->add_child(general_editor);
 
 	HBoxContainer *search_bar = memnew(HBoxContainer);
@@ -646,7 +646,7 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	search_box = memnew(LineEdit);
 	search_box->set_placeholder(TTR("Filter Settings"));
 	search_box->set_clear_button_enabled(true);
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_bar->add_child(search_box);
 
 	advanced = memnew(CheckButton);
@@ -659,7 +659,7 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 
 	property_box = memnew(LineEdit);
 	property_box->set_placeholder(TTR("Select a Setting or Type its Name"));
-	property_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	property_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	property_box->connect(SceneStringName(text_changed), callable_mp(this, &ProjectSettingsEditor::_property_box_changed));
 	custom_properties->add_child(property_box);
 
@@ -685,7 +685,7 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	custom_properties->add_child(del_button);
 
 	general_settings_inspector = memnew(SectionedInspector);
-	general_settings_inspector->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	general_settings_inspector->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	general_settings_inspector->register_search_box(search_box);
 	general_settings_inspector->register_advanced_toggle(advanced);
 	general_settings_inspector->get_inspector()->set_use_filter(true);
@@ -702,7 +702,7 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	restart_container->add_child(restart_hb);
 
 	restart_icon = memnew(TextureRect);
-	restart_icon->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	restart_icon->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	restart_hb->add_child(restart_icon);
 
 	restart_label = memnew(Label);

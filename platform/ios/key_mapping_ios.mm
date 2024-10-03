@@ -94,10 +94,10 @@ void KeyMappingIOS::initialize() {
 		keyusage_map[UIKeyboardHIDUsageKeyboardSpacebar] = Key::SPACE;
 		keyusage_map[UIKeyboardHIDUsageKeyboardCapsLock] = Key::CAPSLOCK;
 		keyusage_map[UIKeyboardHIDUsageKeyboardLeftAlt] = Key::ALT;
-		keyusage_map[UIKeyboardHIDUsageKeyboardLeftControl] = Key::CTRL;
+		keyusage_map[UIKeyboardHIDUsageKeyboardLeftControle] = Key::CTRL;
 		keyusage_map[UIKeyboardHIDUsageKeyboardLeftShift] = Key::SHIFT;
 		keyusage_map[UIKeyboardHIDUsageKeyboardRightAlt] = Key::ALT;
-		keyusage_map[UIKeyboardHIDUsageKeyboardRightControl] = Key::CTRL;
+		keyusage_map[UIKeyboardHIDUsageKeyboardRightControle] = Key::CTRL;
 		keyusage_map[UIKeyboardHIDUsageKeyboardRightShift] = Key::SHIFT;
 		keyusage_map[UIKeyboardHIDUsageKeyboardScrollLock] = Key::SCROLLLOCK;
 		keyusage_map[UIKeyboardHIDUsageKeyboardLeftArrow] = Key::LEFT;
@@ -176,8 +176,8 @@ void KeyMappingIOS::initialize() {
 
 		location_map[UIKeyboardHIDUsageKeyboardLeftAlt] = KeyLocation::LEFT;
 		location_map[UIKeyboardHIDUsageKeyboardRightAlt] = KeyLocation::RIGHT;
-		location_map[UIKeyboardHIDUsageKeyboardLeftControl] = KeyLocation::LEFT;
-		location_map[UIKeyboardHIDUsageKeyboardRightControl] = KeyLocation::RIGHT;
+		location_map[UIKeyboardHIDUsageKeyboardLeftControle] = KeyLocation::LEFT;
+		location_map[UIKeyboardHIDUsageKeyboardRightControle] = KeyLocation::RIGHT;
 		location_map[UIKeyboardHIDUsageKeyboardLeftShift] = KeyLocation::LEFT;
 		location_map[UIKeyboardHIDUsageKeyboardRightShift] = KeyLocation::RIGHT;
 		location_map[UIKeyboardHIDUsageKeyboardLeftGUI] = KeyLocation::LEFT;

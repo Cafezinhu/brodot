@@ -46,8 +46,8 @@ class SpinBox;
 class ViewPanner;
 class VScrollBar;
 
-class GraphEditFilter : public Control {
-	GDCLASS(GraphEditFilter, Control);
+class GraphEditFilter : public Controle {
+	GDCLASS(GraphEditFilter, Controle);
 
 	friend class GraphEdit;
 	friend class GraphEditMinimap;
@@ -60,8 +60,8 @@ public:
 	GraphEditFilter(GraphEdit *p_edit);
 };
 
-class GraphEditMinimap : public Control {
-	GDCLASS(GraphEditMinimap, Control);
+class GraphEditMinimap : public Controle {
+	GDCLASS(GraphEditMinimap, Controle);
 
 	friend class GraphEdit;
 	friend class GraphEditFilter;
@@ -110,8 +110,8 @@ public:
 	GraphEditMinimap(GraphEdit *p_edit);
 };
 
-class GraphEdit : public Control {
-	GDCLASS(GraphEdit, Control);
+class GraphEdit : public Controle {
+	GDCLASS(GraphEdit, Controle);
 
 public:
 	struct Connection : RefCounted {
@@ -135,7 +135,7 @@ public:
 		friend class GraphEdit;
 	};
 
-	// Should be in sync with ControlScheme in ViewPanner.
+	// Should be in sync with ControleScheme in ViewPanner.
 	enum PanningScheme {
 		SCROLL_ZOOMS,
 		SCROLL_PANS,
@@ -248,11 +248,11 @@ private:
 
 	PanelContainer *menu_panel = nullptr;
 	HBoxContainer *menu_hbox = nullptr;
-	Control *connections_layer = nullptr;
+	Controle *connections_layer = nullptr;
 
 	GraphEditFilter *top_connection_layer = nullptr; // Draws a dragged connection. Necessary since the connection line shader can't be applied to the whole top layer.
 	Line2D *dragged_connection_line = nullptr;
-	Control *top_layer = nullptr; // Used for drawing the box selection rect. Contains the minimap, menu panel and the scrollbars.
+	Controle *top_layer = nullptr; // Used for drawing the box selection rect. Contains the minimap, menu panel and the scrollbars.
 
 	GraphEditMinimap *minimap = nullptr;
 
@@ -356,7 +356,7 @@ private:
 	friend class GraphEditMinimap;
 	void _minimap_toggled();
 
-	bool _check_clickable_control(Control *p_control, const Vector2 &r_mouse_pos, const Vector2 &p_offset);
+	bool _check_clickable_control(Controle *p_control, const Vector2 &r_mouse_pos, const Vector2 &p_offset);
 
 #ifndef DISABLE_DEPRECATED
 	bool _is_arrange_nodes_button_hidden_bind_compat_81582() const;
@@ -460,7 +460,7 @@ public:
 	void set_show_arrange_button(bool p_hidden);
 	bool is_showing_arrange_button() const;
 
-	Control *get_top_layer() const { return top_layer; }
+	Controle *get_top_layer() const { return top_layer; }
 	GraphEditMinimap *get_minimap() const { return minimap; }
 
 	void override_connections_shader(const Ref<Shader> &p_shader);

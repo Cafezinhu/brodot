@@ -203,7 +203,7 @@ bool InputEventWithModifiers::is_alt_pressed() const {
 }
 
 void InputEventWithModifiers::set_ctrl_pressed(bool p_enabled) {
-	ERR_FAIL_COND_MSG(command_or_control_autoremap, "Command or Control autoremapping is enabled, cannot set Control directly!");
+	ERR_FAIL_COND_MSG(command_or_control_autoremap, "Command or Controle autoremapping is enabled, cannot set Controle directly!");
 	ctrl_pressed = p_enabled;
 	emit_changed();
 }
@@ -213,7 +213,7 @@ bool InputEventWithModifiers::is_ctrl_pressed() const {
 }
 
 void InputEventWithModifiers::set_meta_pressed(bool p_enabled) {
-	ERR_FAIL_COND_MSG(command_or_control_autoremap, "Command or Control autoremapping is enabled, cannot set Meta directly!");
+	ERR_FAIL_COND_MSG(command_or_control_autoremap, "Command or Controle autoremapping is enabled, cannot set Meta directly!");
 	meta_pressed = p_enabled;
 	emit_changed();
 }
@@ -309,7 +309,7 @@ void InputEventWithModifiers::_bind_methods() {
 
 void InputEventWithModifiers::_validate_property(PropertyInfo &p_property) const {
 	if (command_or_control_autoremap) {
-		// Cannot be used with Meta/Command or Control!
+		// Cannot be used with Meta/Command or Controle!
 		if (p_property.name == "meta_pressed") {
 			p_property.usage ^= PROPERTY_USAGE_STORAGE;
 		}
@@ -537,7 +537,7 @@ Ref<InputEventKey> InputEventKey::create_reference(Key p_keycode, bool p_physica
 	if ((p_keycode & KeyModifierMask::CMD_OR_CTRL) != Key::NONE) {
 		ie->set_command_or_control_autoremap(true);
 		if ((p_keycode & KeyModifierMask::CTRL) != Key::NONE || (p_keycode & KeyModifierMask::META) != Key::NONE) {
-			WARN_PRINT("Invalid Key Modifiers: Command or Control autoremapping is enabled, Meta and Control values are ignored!");
+			WARN_PRINT("Invalid Key Modifiers: Command or Controle autoremapping is enabled, Meta and Controle values are ignored!");
 		}
 	} else {
 		if ((p_keycode & KeyModifierMask::CTRL) != Key::NONE) {
@@ -1849,7 +1849,7 @@ String InputEventMIDI::to_string() {
 			ret = vformat("Channel Pressure: channel=%d, pressure=%d", channel, pressure);
 			break;
 		case MIDIMessage::CONTROL_CHANGE:
-			ret = vformat("Control Change: channel=%d, controller_number=%d, controller_value=%d", channel, controller_number, controller_value);
+			ret = vformat("Controle Change: channel=%d, controller_number=%d, controller_value=%d", channel, controller_number, controller_value);
 			break;
 		default:
 			ret = vformat("channel=%d, message=%d, pitch=%d, velocity=%d, pressure=%d, controller_number=%d, controller_value=%d, instrument=%d", channel, message, pitch, velocity, pressure, controller_number, controller_value, instrument);

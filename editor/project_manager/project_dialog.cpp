@@ -734,7 +734,7 @@ void ProjectDialog::show_dialog(bool p_reset_name) {
 		renderer_container->hide();
 		default_files_container->hide();
 
-		callable_mp((Control *)project_name, &Control::grab_focus).call_deferred();
+		callable_mp((Controle *)project_name, &Controle::grab_focus).call_deferred();
 		callable_mp(project_name, &LineEdit::select_all).call_deferred();
 	} else {
 		if (p_reset_name) {
@@ -777,7 +777,7 @@ void ProjectDialog::show_dialog(bool p_reset_name) {
 			renderer_container->show();
 			default_files_container->show();
 
-			callable_mp((Control *)project_name, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)project_name, &Controle::grab_focus).call_deferred();
 			callable_mp(project_name, &LineEdit::select_all).call_deferred();
 		} else if (mode == MODE_INSTALL) {
 			set_title(TTR("Install Project:") + " " + zip_title);
@@ -790,7 +790,7 @@ void ProjectDialog::show_dialog(bool p_reset_name) {
 			renderer_container->hide();
 			default_files_container->hide();
 
-			callable_mp((Control *)project_path, &Control::grab_focus).call_deferred();
+			callable_mp((Controle *)project_path, &Controle::grab_focus).call_deferred();
 		}
 
 		auto_dir = "";
@@ -843,7 +843,7 @@ ProjectDialog::ProjectDialog() {
 	name_container->add_child(l);
 
 	project_name = memnew(LineEdit);
-	project_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	project_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	name_container->add_child(project_name);
 
 	project_path_container = memnew(VBoxContainer);
@@ -854,7 +854,7 @@ ProjectDialog::ProjectDialog() {
 
 	l = memnew(Label);
 	l->set_text(TTR("Project Path:"));
-	l->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	l->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	pphb_label->add_child(l);
 
 	create_dir = memnew(CheckButton);
@@ -867,7 +867,7 @@ ProjectDialog::ProjectDialog() {
 	project_path_container->add_child(pphb);
 
 	project_path = memnew(LineEdit);
-	project_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	project_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	project_path->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	pphb->add_child(project_path);
 
@@ -882,7 +882,7 @@ ProjectDialog::ProjectDialog() {
 	install_path_container->add_child(iphb);
 
 	install_path = memnew(LineEdit);
-	install_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	install_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	install_path->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	iphb->add_child(install_path);
 
@@ -979,7 +979,7 @@ ProjectDialog::ProjectDialog() {
 
 	// Right hand side, used for text explaining each choice.
 	rvb = memnew(VBoxContainer);
-	rvb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	rvb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	rshc->add_child(rvb);
 	renderer_info = memnew(Label);
 	renderer_info->set_modulate(Color(1, 1, 1, 0.7));
@@ -1007,7 +1007,7 @@ ProjectDialog::ProjectDialog() {
 	default_files_container = memnew(HBoxContainer);
 	vb->add_child(default_files_container);
 	l = memnew(Label);
-	l->set_text(TTR("Version Control Metadata:"));
+	l->set_text(TTR("Version Controle Metadata:"));
 	default_files_container->add_child(l);
 	vcs_metadata_selection = memnew(OptionButton);
 	vcs_metadata_selection->set_custom_minimum_size(Size2(100, 20));
@@ -1015,8 +1015,8 @@ ProjectDialog::ProjectDialog() {
 	vcs_metadata_selection->add_item(TTR("Git"), (int)EditorVCSInterface::VCSMetadata::GIT);
 	vcs_metadata_selection->select((int)EditorVCSInterface::VCSMetadata::GIT);
 	default_files_container->add_child(vcs_metadata_selection);
-	Control *spacer = memnew(Control);
-	spacer->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	Controle *spacer = memnew(Controle);
+	spacer->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	default_files_container->add_child(spacer);
 	fdialog_install = memnew(EditorFileDialog);
 	fdialog_install->set_previews_enabled(false); //Crucial, otherwise the engine crashes.

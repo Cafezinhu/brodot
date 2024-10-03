@@ -56,17 +56,17 @@ void ThemeEditorPreview::set_preview_theme(const Ref<Theme> &p_theme) {
 	preview_content->set_theme(p_theme);
 }
 
-void ThemeEditorPreview::add_preview_overlay(Control *p_overlay) {
+void ThemeEditorPreview::add_preview_overlay(Controle *p_overlay) {
 	preview_overlay->add_child(p_overlay);
 	p_overlay->hide();
 }
 
-void ThemeEditorPreview::_propagate_redraw(Control *p_at) {
+void ThemeEditorPreview::_propagate_redraw(Controle *p_at) {
 	p_at->notification(NOTIFICATION_THEME_CHANGED);
 	p_at->update_minimum_size();
 	p_at->queue_redraw();
 	for (int i = 0; i < p_at->get_child_count(); i++) {
-		Control *a = Object::cast_to<Control>(p_at->get_child(i));
+		Controle *a = Object::cast_to<Controle>(p_at->get_child(i));
 		if (a) {
 			_propagate_redraw(a);
 		}
@@ -92,11 +92,11 @@ void ThemeEditorPreview::_picker_button_cbk() {
 	}
 }
 
-Control *ThemeEditorPreview::_find_hovered_control(Control *p_parent, Vector2 p_mouse_position) {
-	Control *found = nullptr;
+Controle *ThemeEditorPreview::_find_hovered_control(Controle *p_parent, Vector2 p_mouse_position) {
+	Controle *found = nullptr;
 
 	for (int i = p_parent->get_child_count() - 1; i >= 0; i--) {
-		Control *cc = Object::cast_to<Control>(p_parent->get_child(i));
+		Controle *cc = Object::cast_to<Controle>(p_parent->get_child(i));
 		if (!cc || !cc->is_visible()) {
 			continue;
 		}
@@ -277,7 +277,7 @@ ThemeEditorPreview::ThemeEditorPreview() {
 	preview_overlay->set_clip_contents(true);
 	preview_body->add_child(preview_overlay);
 
-	picker_overlay = memnew(Control);
+	picker_overlay = memnew(Controle);
 	add_preview_overlay(picker_overlay);
 	picker_overlay->connect(SceneStringName(draw), callable_mp(this, &ThemeEditorPreview::_draw_picker_overlay));
 	picker_overlay->connect(SceneStringName(gui_input), callable_mp(this, &ThemeEditorPreview::_gui_input_picker_overlay));
@@ -417,13 +417,13 @@ DefaultThemeEditorPreview::DefaultThemeEditorPreview() {
 	TabContainer *tc = memnew(TabContainer);
 	third_vb->add_child(tc);
 	tc->set_custom_minimum_size(Size2(0, 135) * EDSCALE);
-	Control *tcc = memnew(Control);
+	Controle *tcc = memnew(Controle);
 	tcc->set_name(TTR("Tab 1"));
 	tc->add_child(tcc);
-	tcc = memnew(Control);
+	tcc = memnew(Controle);
 	tcc->set_name(TTR("Tab 2"));
 	tc->add_child(tcc);
-	tcc = memnew(Control);
+	tcc = memnew(Controle);
 	tcc->set_name(TTR("Tab 3"));
 	tc->add_child(tcc);
 	tc->set_tab_disabled(2, true);
@@ -475,8 +475,8 @@ void SceneThemeEditorPreview::_reload_scene() {
 	}
 
 	Node *instance = loaded_scene->instantiate();
-	if (!instance || !Object::cast_to<Control>(instance)) {
-		EditorNode::get_singleton()->show_warning(TTR("Invalid PackedScene resource, must have a Control node at its root."));
+	if (!instance || !Object::cast_to<Controle>(instance)) {
+		EditorNode::get_singleton()->show_warning(TTR("Invalid PackedScene resource, must have a Controle node at its root."));
 		emit_signal(SNAME("scene_invalidated"));
 		return;
 	}
@@ -507,8 +507,8 @@ bool SceneThemeEditorPreview::set_preview_scene(const String &p_path) {
 	}
 
 	Node *instance = loaded_scene->instantiate();
-	if (!instance || !Object::cast_to<Control>(instance)) {
-		EditorNode::get_singleton()->show_warning(TTR("Invalid PackedScene resource, must have a Control node at its root."));
+	if (!instance || !Object::cast_to<Controle>(instance)) {
+		EditorNode::get_singleton()->show_warning(TTR("Invalid PackedScene resource, must have a Controle node at its root."));
 		return false;
 	}
 

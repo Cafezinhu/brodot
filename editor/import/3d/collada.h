@@ -178,7 +178,7 @@ public:
 		CurveData() {}
 	};
 
-	struct SkinControllerData {
+	struct SkinControlelerData {
 		String base;
 		bool use_idrefs = false;
 
@@ -212,10 +212,10 @@ public:
 
 		HashMap<String, Transform3D> bone_rest_map;
 
-		SkinControllerData() {}
+		SkinControlelerData() {}
 	};
 
-	struct MorphControllerData {
+	struct MorphControlelerData {
 		String mesh;
 		String mode;
 
@@ -229,7 +229,7 @@ public:
 		HashMap<String, Source> sources;
 
 		HashMap<String, String> targets;
-		MorphControllerData() {}
+		MorphControlelerData() {}
 	};
 
 	struct Vertex {
@@ -484,8 +484,8 @@ public:
 		HashMap<String, String> mesh_name_map;
 		HashMap<String, String> morph_name_map;
 		HashMap<String, String> morph_ownership_map;
-		HashMap<String, SkinControllerData> skin_controller_data_map;
-		HashMap<String, MorphControllerData> morph_controller_data_map;
+		HashMap<String, SkinControlelerData> skin_controller_data_map;
+		HashMap<String, MorphControlelerData> morph_controller_data_map;
 
 		HashMap<String, Image> image_map;
 		HashMap<String, Material> material_map;

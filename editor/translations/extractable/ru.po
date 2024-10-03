@@ -258,10 +258,10 @@ msgstr "Повторить"
 msgid "Text Writing Direction"
 msgstr "Направление написания текста"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Отображать управляющие символы"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Вставить управляющий символ"
 
 msgid "(Other)"

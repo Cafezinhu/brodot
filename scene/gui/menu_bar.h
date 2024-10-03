@@ -34,8 +34,8 @@
 #include "scene/gui/button.h"
 #include "scene/gui/popup_menu.h"
 
-class MenuBar : public Control {
-	GDCLASS(MenuBar, Control);
+class MenuBar : public Controle {
+	GDCLASS(MenuBar, Controle);
 
 	Mutex mutex;
 

@@ -36,8 +36,8 @@
 
 class CanvasItemEditor;
 
-class NavigationLink2DEditor : public Control {
-	GDCLASS(NavigationLink2DEditor, Control);
+class NavigationLink2DEditor : public Controle {
+	GDCLASS(NavigationLink2DEditor, Controle);
 
 	CanvasItemEditor *canvas_item_editor = nullptr;
 	NavigationLink2D *node = nullptr;
@@ -54,7 +54,7 @@ protected:
 
 public:
 	bool forward_canvas_gui_input(const Ref<InputEvent> &p_event);
-	void forward_canvas_draw_over_viewport(Control *p_overlay);
+	void forward_canvas_draw_over_viewport(Controle *p_overlay);
 	void edit(NavigationLink2D *p_node);
 };
 
@@ -65,7 +65,7 @@ class NavigationLink2DEditorPlugin : public EditorPlugin {
 
 public:
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event) override { return editor->forward_canvas_gui_input(p_event); }
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay) override { editor->forward_canvas_draw_over_viewport(p_overlay); }
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay) override { editor->forward_canvas_draw_over_viewport(p_overlay); }
 
 	virtual String get_name() const override { return "NavigationLink2D"; }
 	bool has_main_screen() const override { return false; }

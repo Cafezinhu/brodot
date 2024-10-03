@@ -149,13 +149,13 @@ FBXImporterManager::FBXImporterManager() {
 	HBoxContainer *hb = memnew(HBoxContainer);
 
 	fbx_path = memnew(LineEdit);
-	fbx_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	fbx_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->add_child(fbx_path);
 	fbx_path_browse = memnew(Button);
 	fbx_path_browse->set_text(TTR("Browse"));
 	fbx_path_browse->connect(SceneStringName(pressed), callable_mp(this, &FBXImporterManager::_browse_install));
 	hb->add_child(fbx_path_browse);
-	hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->set_custom_minimum_size(Size2(400 * EDSCALE, 0));
 
 	vb->add_child(hb);

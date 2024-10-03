@@ -152,9 +152,9 @@ protected:
     spv::Scope TranslateMemoryScope(const spv::Builder::AccessChain::CoherentFlags &coherentFlags);
     spv::BuiltIn TranslateBuiltInDecoration(glslang::TBuiltInVariable, bool memberDeclaration);
     spv::ImageFormat TranslateImageFormat(const glslang::TType& type);
-    spv::SelectionControlMask TranslateSelectionControl(const glslang::TIntermSelection&) const;
-    spv::SelectionControlMask TranslateSwitchControl(const glslang::TIntermSwitch&) const;
-    spv::LoopControlMask TranslateLoopControl(const glslang::TIntermLoop&, std::vector<unsigned int>& operands) const;
+    spv::SelectionControleMask TranslateSelectionControle(const glslang::TIntermSelection&) const;
+    spv::SelectionControleMask TranslateSwitchControle(const glslang::TIntermSwitch&) const;
+    spv::LoopControleMask TranslateLoopControle(const glslang::TIntermLoop&, std::vector<unsigned int>& operands) const;
     spv::StorageClass TranslateStorageClass(const glslang::TType&);
     void TranslateLiterals(const glslang::TVector<const glslang::TIntermConstantUnion*>&, std::vector<unsigned>&) const;
     void addIndirectionIndexCapabilities(const glslang::TType& baseType, const glslang::TType& indexType);
@@ -320,7 +320,7 @@ spv::ExecutionModel TranslateExecutionModel(EShLanguage stage, bool isMeshShader
     case EShLangVertex:           return spv::ExecutionModelVertex;
     case EShLangFragment:         return spv::ExecutionModelFragment;
     case EShLangCompute:          return spv::ExecutionModelGLCompute;
-    case EShLangTessControl:      return spv::ExecutionModelTessellationControl;
+    case EShLangTessControle:      return spv::ExecutionModelTessellationControle;
     case EShLangTessEvaluation:   return spv::ExecutionModelTessellationEvaluation;
     case EShLangGeometry:         return spv::ExecutionModelGeometry;
     case EShLangRayGen:           return spv::ExecutionModelRayGenerationKHR;
@@ -664,7 +664,7 @@ spv::BuiltIn TGlslangToSpvTraverser::TranslateBuiltInDecoration(glslang::TBuiltI
             case EShLangGeometry:
                 builder.addCapability(spv::CapabilityGeometryPointSize);
                 break;
-            case EShLangTessControl:
+            case EShLangTessControle:
             case EShLangTessEvaluation:
                 builder.addCapability(spv::CapabilityTessellationPointSize);
                 break;
@@ -714,7 +714,7 @@ spv::BuiltIn TGlslangToSpvTraverser::TranslateBuiltInDecoration(glslang::TBuiltI
             builder.addCapability(spv::CapabilityMultiViewport);
         }
         if (glslangIntermediate->getStage() == EShLangVertex ||
-            glslangIntermediate->getStage() == EShLangTessControl ||
+            glslangIntermediate->getStage() == EShLangTessControle ||
             glslangIntermediate->getStage() == EShLangTessEvaluation) {
 
             if (builder.getSpvVersion() < spv::Spv_1_5) {
@@ -746,7 +746,7 @@ spv::BuiltIn TGlslangToSpvTraverser::TranslateBuiltInDecoration(glslang::TBuiltI
             builder.addCapability(spv::CapabilityGeometry);
         }
         if (glslangIntermediate->getStage() == EShLangVertex ||
-            glslangIntermediate->getStage() == EShLangTessControl ||
+            glslangIntermediate->getStage() == EShLangTessControle ||
             glslangIntermediate->getStage() == EShLangTessEvaluation) {
 
             if (builder.getSpvVersion() < spv::Spv_1_5) {
@@ -1221,61 +1221,61 @@ spv::ImageFormat TGlslangToSpvTraverser::TranslateImageFormat(const glslang::TTy
     }
 }
 
-spv::SelectionControlMask TGlslangToSpvTraverser::TranslateSelectionControl(
+spv::SelectionControleMask TGlslangToSpvTraverser::TranslateSelectionControle(
     const glslang::TIntermSelection& selectionNode) const
 {
     if (selectionNode.getFlatten())
-        return spv::SelectionControlFlattenMask;
+        return spv::SelectionControleFlattenMask;
     if (selectionNode.getDontFlatten())
-        return spv::SelectionControlDontFlattenMask;
-    return spv::SelectionControlMaskNone;
+        return spv::SelectionControleDontFlattenMask;
+    return spv::SelectionControleMaskNone;
 }
 
-spv::SelectionControlMask TGlslangToSpvTraverser::TranslateSwitchControl(const glslang::TIntermSwitch& switchNode)
+spv::SelectionControleMask TGlslangToSpvTraverser::TranslateSwitchControle(const glslang::TIntermSwitch& switchNode)
     const
 {
     if (switchNode.getFlatten())
-        return spv::SelectionControlFlattenMask;
+        return spv::SelectionControleFlattenMask;
     if (switchNode.getDontFlatten())
-        return spv::SelectionControlDontFlattenMask;
-    return spv::SelectionControlMaskNone;
+        return spv::SelectionControleDontFlattenMask;
+    return spv::SelectionControleMaskNone;
 }
 
 // return a non-0 dependency if the dependency argument must be set
-spv::LoopControlMask TGlslangToSpvTraverser::TranslateLoopControl(const glslang::TIntermLoop& loopNode,
+spv::LoopControleMask TGlslangToSpvTraverser::TranslateLoopControle(const glslang::TIntermLoop& loopNode,
     std::vector<unsigned int>& operands) const
 {
-    spv::LoopControlMask control = spv::LoopControlMaskNone;
+    spv::LoopControleMask control = spv::LoopControleMaskNone;
 
     if (loopNode.getDontUnroll())
-        control = control | spv::LoopControlDontUnrollMask;
+        control = control | spv::LoopControleDontUnrollMask;
     if (loopNode.getUnroll())
-        control = control | spv::LoopControlUnrollMask;
+        control = control | spv::LoopControleUnrollMask;
     if (unsigned(loopNode.getLoopDependency()) == glslang::TIntermLoop::dependencyInfinite)
-        control = control | spv::LoopControlDependencyInfiniteMask;
+        control = control | spv::LoopControleDependencyInfiniteMask;
     else if (loopNode.getLoopDependency() > 0) {
-        control = control | spv::LoopControlDependencyLengthMask;
+        control = control | spv::LoopControleDependencyLengthMask;
         operands.push_back((unsigned int)loopNode.getLoopDependency());
     }
     if (glslangIntermediate->getSpv().spv >= glslang::EShTargetSpv_1_4) {
         if (loopNode.getMinIterations() > 0) {
-            control = control | spv::LoopControlMinIterationsMask;
+            control = control | spv::LoopControleMinIterationsMask;
             operands.push_back(loopNode.getMinIterations());
         }
         if (loopNode.getMaxIterations() < glslang::TIntermLoop::iterationsInfinite) {
-            control = control | spv::LoopControlMaxIterationsMask;
+            control = control | spv::LoopControleMaxIterationsMask;
             operands.push_back(loopNode.getMaxIterations());
         }
         if (loopNode.getIterationMultiple() > 1) {
-            control = control | spv::LoopControlIterationMultipleMask;
+            control = control | spv::LoopControleIterationMultipleMask;
             operands.push_back(loopNode.getIterationMultiple());
         }
         if (loopNode.getPeelCount() > 0) {
-            control = control | spv::LoopControlPeelCountMask;
+            control = control | spv::LoopControlePeelCountMask;
             operands.push_back(loopNode.getPeelCount());
         }
         if (loopNode.getPartialCount() > 0) {
-            control = control | spv::LoopControlPartialCountMask;
+            control = control | spv::LoopControlePartialCountMask;
             operands.push_back(loopNode.getPartialCount());
         }
     }
@@ -1639,9 +1639,9 @@ TGlslangToSpvTraverser::TGlslangToSpvTraverser(unsigned int spvVersion,
         builder.addCapability(spv::CapabilityRayTraversalPrimitiveCullingKHR);
     }
 
-    if (glslangIntermediate->getSubgroupUniformControlFlow()) {
+    if (glslangIntermediate->getSubgroupUniformControleFlow()) {
         builder.addExtension(spv::E_SPV_KHR_subgroup_uniform_control_flow);
-        builder.addExecutionMode(shaderEntry, spv::ExecutionModeSubgroupUniformControlFlowKHR);
+        builder.addExecutionMode(shaderEntry, spv::ExecutionModeSubgroupUniformControleFlowKHR);
     }
     if (glslangIntermediate->getMaximallyReconverges()) {
         builder.addExtension(spv::E_SPV_KHR_maximal_reconvergence);
@@ -1650,14 +1650,14 @@ TGlslangToSpvTraverser::TGlslangToSpvTraverser(unsigned int spvVersion,
 
     if (glslangIntermediate->getQuadDerivMode())
     {
-        builder.addCapability(spv::CapabilityQuadControlKHR);
+        builder.addCapability(spv::CapabilityQuadControleKHR);
         builder.addExtension(spv::E_SPV_KHR_quad_control);
         builder.addExecutionMode(shaderEntry, spv::ExecutionModeQuadDerivativesKHR);
     }
 
     if (glslangIntermediate->getReqFullQuadsMode())
     {
-        builder.addCapability(spv::CapabilityQuadControlKHR);
+        builder.addCapability(spv::CapabilityQuadControleKHR);
         builder.addExtension(spv::E_SPV_KHR_quad_control);
         builder.addExecutionMode(shaderEntry, spv::ExecutionModeRequireFullQuadsKHR);
     }
@@ -1808,12 +1808,12 @@ TGlslangToSpvTraverser::TGlslangToSpvTraverser(unsigned int spvVersion,
         break;
     }
     case EShLangTessEvaluation:
-    case EShLangTessControl:
+    case EShLangTessControle:
         builder.addCapability(spv::CapabilityTessellation);
 
         glslang::TLayoutGeometry primitive;
 
-        if (glslangIntermediate->getStage() == EShLangTessControl) {
+        if (glslangIntermediate->getStage() == EShLangTessControle) {
             builder.addExecutionMode(shaderEntry, spv::ExecutionModeOutputVertices,
                 glslangIntermediate->getVertices());
             primitive = glslangIntermediate->getOutputPrimitive();
@@ -3989,7 +3989,7 @@ bool TGlslangToSpvTraverser::visitSelection(glslang::TVisit /* visit */, glslang
                 spv::StorageClassFunction, resultType);
 
             // Selection control:
-            const spv::SelectionControlMask control = TranslateSelectionControl(*node);
+            const spv::SelectionControleMask control = TranslateSelectionControle(*node);
 
             // make an "if" based on the value created by the condition
             spv::Builder::If ifBuilder(condition, control, builder);
@@ -4022,7 +4022,7 @@ bool TGlslangToSpvTraverser::visitSelection(glslang::TVisit /* visit */, glslang
         }
 
         // Selection control:
-        const spv::SelectionControlMask control = TranslateSelectionControl(*node);
+        const spv::SelectionControleMask control = TranslateSelectionControle(*node);
 
         // make an "if" based on the value created by the condition
         spv::Builder::If ifBuilder(condition, control, builder);
@@ -4080,7 +4080,7 @@ bool TGlslangToSpvTraverser::visitSwitch(glslang::TVisit /* visit */, glslang::T
     spv::Id selector = accessChainLoad(node->getCondition()->getAsTyped()->getType());
 
     // Selection control:
-    const spv::SelectionControlMask control = TranslateSwitchControl(*node);
+    const spv::SelectionControleMask control = TranslateSwitchControle(*node);
 
     // browse the children to sort out code segments
     int defaultSegment = -1;
@@ -4146,7 +4146,7 @@ bool TGlslangToSpvTraverser::visitLoop(glslang::TVisit /* visit */, glslang::TIn
 
     // Loop control:
     std::vector<unsigned int> operands;
-    const spv::LoopControlMask control = TranslateLoopControl(*node, operands);
+    const spv::LoopControleMask control = TranslateLoopControle(*node, operands);
 
     // Spec requires back edges to target header blocks, and every header block
     // must dominate its merge block.  Make a header block first to ensure these
@@ -8387,7 +8387,7 @@ spv::Id TGlslangToSpvTraverser::createSubgroupOperation(glslang::TOperator op, s
     case glslang::EOpSubgroupQuadAll:
     case glslang::EOpSubgroupQuadAny:
         builder.addExtension(spv::E_SPV_KHR_quad_control);
-        builder.addCapability(spv::CapabilityQuadControlKHR);
+        builder.addCapability(spv::CapabilityQuadControleKHR);
         [[fallthrough]];
     case glslang::EOpSubgroupAll:
     case glslang::EOpSubgroupAny:
@@ -8702,7 +8702,7 @@ spv::Id TGlslangToSpvTraverser::createSubgroupOperation(glslang::TOperator op, s
 
     // Every operation begins with the Execution Scope operand.
     spv::IdImmediate executionScope = { true, builder.makeUintConstant(spv::ScopeSubgroup) };
-    // All other ops need the execution scope. Quad Control Ops don't need scope, it's always Quad.
+    // All other ops need the execution scope. Quad Controle Ops don't need scope, it's always Quad.
     if (opCode != spv::OpGroupNonUniformQuadAllKHR && opCode != spv::OpGroupNonUniformQuadAnyKHR) {
         spvGroupOperands.push_back(executionScope);
     }
@@ -8838,7 +8838,7 @@ spv::Id TGlslangToSpvTraverser::createMiscOperation(glslang::TOperator op, spv::
             unsigned int executionScope = builder.getConstantScalar(operands[0]);
             unsigned int memoryScope = builder.getConstantScalar(operands[1]);
             unsigned int semantics = builder.getConstantScalar(operands[2]) | builder.getConstantScalar(operands[3]);
-            builder.createControlBarrier((spv::Scope)executionScope, (spv::Scope)memoryScope,
+            builder.createControleBarrier((spv::Scope)executionScope, (spv::Scope)memoryScope,
                 (spv::MemorySemanticsMask)semantics);
             if (semantics & (spv::MemorySemanticsMakeAvailableKHRMask |
                              spv::MemorySemanticsMakeVisibleKHRMask |
@@ -9417,17 +9417,17 @@ spv::Id TGlslangToSpvTraverser::createNoArgOperation(glslang::TOperator op, spv:
 
     switch (op) {
     case glslang::EOpBarrier:
-        if (glslangIntermediate->getStage() == EShLangTessControl) {
+        if (glslangIntermediate->getStage() == EShLangTessControle) {
             if (glslangIntermediate->usingVulkanMemoryModel()) {
-                builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
+                builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
                                              spv::MemorySemanticsOutputMemoryKHRMask |
                                              spv::MemorySemanticsAcquireReleaseMask);
                 builder.addCapability(spv::CapabilityVulkanMemoryModelKHR);
             } else {
-                builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeInvocation, spv::MemorySemanticsMaskNone);
+                builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeInvocation, spv::MemorySemanticsMaskNone);
             }
         } else {
-            builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
+            builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
                                             spv::MemorySemanticsWorkgroupMemoryMask |
                                             spv::MemorySemanticsAcquireReleaseMask);
         }
@@ -9457,7 +9457,7 @@ spv::Id TGlslangToSpvTraverser::createNoArgOperation(glslang::TOperator op, spv:
                                                         spv::MemorySemanticsAcquireReleaseMask);
         return 0;
     case glslang::EOpAllMemoryBarrierWithGroupSync:
-        builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeDevice,
+        builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeDevice,
                                         spv::MemorySemanticsAllMemory |
                                         spv::MemorySemanticsAcquireReleaseMask);
         return 0;
@@ -9467,7 +9467,7 @@ spv::Id TGlslangToSpvTraverser::createNoArgOperation(glslang::TOperator op, spv:
                                                       spv::MemorySemanticsAcquireReleaseMask);
         return 0;
     case glslang::EOpDeviceMemoryBarrierWithGroupSync:
-        builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeDevice, spv::MemorySemanticsUniformMemoryMask |
+        builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeDevice, spv::MemorySemanticsUniformMemoryMask |
                                                                             spv::MemorySemanticsImageMemoryMask |
                                                                             spv::MemorySemanticsAcquireReleaseMask);
         return 0;
@@ -9476,12 +9476,12 @@ spv::Id TGlslangToSpvTraverser::createNoArgOperation(glslang::TOperator op, spv:
                                                          spv::MemorySemanticsAcquireReleaseMask);
         return 0;
     case glslang::EOpWorkgroupMemoryBarrierWithGroupSync:
-        builder.createControlBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
+        builder.createControleBarrier(spv::ScopeWorkgroup, spv::ScopeWorkgroup,
                                         spv::MemorySemanticsWorkgroupMemoryMask |
                                         spv::MemorySemanticsAcquireReleaseMask);
         return 0;
     case glslang::EOpSubgroupBarrier:
-        builder.createControlBarrier(spv::ScopeSubgroup, spv::ScopeSubgroup, spv::MemorySemanticsAllMemory |
+        builder.createControleBarrier(spv::ScopeSubgroup, spv::ScopeSubgroup, spv::MemorySemanticsAllMemory |
                                                                              spv::MemorySemanticsAcquireReleaseMask);
         return spv::NoResult;
     case glslang::EOpSubgroupMemoryBarrier:
@@ -10239,7 +10239,7 @@ spv::Id TGlslangToSpvTraverser::createShortCircuit(glslang::TOperator op, glslan
         leftId = builder.createUnaryOp(spv::OpLogicalNot, boolTypeId, leftId);
 
     // make an "if" based on the left value
-    spv::Builder::If ifBuilder(leftId, spv::SelectionControlMaskNone, builder);
+    spv::Builder::If ifBuilder(leftId, spv::SelectionControleMaskNone, builder);
 
     // emit right operand as the "then" part of the "if"
     builder.clearAccessChain();

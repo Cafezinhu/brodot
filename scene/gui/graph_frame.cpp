@@ -81,14 +81,14 @@ void GraphFrame::gui_input(const Ref<InputEvent> &p_ev) {
 	}
 }
 
-Control::CursorShape GraphFrame::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape GraphFrame::get_cursor_shape(const Point2 &p_pos) const {
 	if (resizable && !autoshrink_enabled) {
 		if (resizing || (p_pos.x > get_size().x - theme_cache.resizer->get_width() && p_pos.y > get_size().y - theme_cache.resizer->get_height())) {
 			return CURSOR_FDIAGSIZE;
 		}
 	}
 
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 void GraphFrame::_notification(int p_what) {
@@ -160,7 +160,7 @@ void GraphFrame::_resort() {
 	Point2 offset = Point2(sb_panel->get_margin(SIDE_LEFT), sb_panel->get_margin(SIDE_TOP) + titlebar_min_size.height + sb_titlebar->get_minimum_size().height);
 
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false));
+		Controle *child = as_sortable_control(get_child(i, false));
 		if (!child) {
 			continue;
 		}
@@ -325,7 +325,7 @@ Size2 GraphFrame::get_minimum_size() const {
 	Size2 minsize = titlebar_hbox->get_minimum_size() + sb_titlebar->get_minimum_size();
 
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false));
+		Controle *child = as_sortable_control(get_child(i, false));
 		if (!child) {
 			continue;
 		}

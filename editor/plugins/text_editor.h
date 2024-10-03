@@ -118,7 +118,7 @@ public:
 	virtual Ref<Texture2D> get_theme_icon() override;
 	virtual Ref<Resource> get_edited_resource() const override;
 	virtual void set_edited_resource(const Ref<Resource> &p_res) override;
-	virtual void enable_editor(Control *p_shortcut_context = nullptr) override;
+	virtual void enable_editor(Controle *p_shortcut_context = nullptr) override;
 	virtual void reload_text() override;
 	virtual void apply_code() override;
 	virtual bool is_unsaved() override;
@@ -147,13 +147,13 @@ public:
 	virtual void add_callback(const String &p_function, const PackedStringArray &p_args) override;
 	void update_toggle_scripts_button() override;
 
-	virtual Control *get_edit_menu() override;
+	virtual Controle *get_edit_menu() override;
 	virtual void clear_edit_menu() override;
 	virtual void set_find_replace_bar(FindReplaceBar *p_bar) override;
 
 	virtual void validate() override;
 
-	virtual Control *get_base_editor() const override;
+	virtual Controle *get_base_editor() const override;
 	virtual CodeTextEditor *get_code_editor() const override;
 
 	static void register_editor();

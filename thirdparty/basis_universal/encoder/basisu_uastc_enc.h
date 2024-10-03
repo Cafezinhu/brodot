@@ -64,7 +64,7 @@ namespace basisu
 
 	// pRGBAPixels: Pointer to source 4x4 block of RGBA pixels (R first in memory).
 	// block: Reference to destination UASTC block.
-	// level: Controls compression speed vs. performance tradeoff.
+	// level: Controles compression speed vs. performance tradeoff.
 	void encode_uastc(const uint8_t* pRGBAPixels, basist::uastc_block& output_block, uint32_t flags = cPackUASTCLevelDefault);
 
 	struct uastc_encode_results

@@ -88,8 +88,8 @@ protected:
 	void _cancel_pressed();
 
 #ifndef DISABLE_DEPRECATED
-	void _register_text_enter_bind_compat_89419(Control *p_line_edit);
-	void _remove_button_bind_compat_89419(Control *p_button);
+	void _register_text_enter_bind_compat_89419(Controle *p_line_edit);
+	void _remove_button_bind_compat_89419(Controle *p_button);
 
 	static void _bind_compatibility_methods();
 #endif

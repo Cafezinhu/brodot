@@ -245,7 +245,7 @@ void ColorPicker::finish_shaders() {
 }
 
 void ColorPicker::set_focus_on_line_edit() {
-	callable_mp((Control *)c_text, &Control::grab_focus).call_deferred();
+	callable_mp((Controle *)c_text, &Controle::grab_focus).call_deferred();
 }
 
 void ColorPicker::_update_controls() {
@@ -810,7 +810,7 @@ void ColorPicker::_set_mode_popup_value(ColorModeType p_mode) {
 	}
 }
 
-Variant ColorPicker::_get_drag_data_fw(const Point2 &p_point, Control *p_from_control) {
+Variant ColorPicker::_get_drag_data_fw(const Point2 &p_point, Controle *p_from_control) {
 	ColorPresetButton *dragged_preset_button = Object::cast_to<ColorPresetButton>(p_from_control);
 
 	if (!dragged_preset_button) {
@@ -827,7 +827,7 @@ Variant ColorPicker::_get_drag_data_fw(const Point2 &p_point, Control *p_from_co
 	return drag_data;
 }
 
-bool ColorPicker::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) const {
+bool ColorPicker::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) const {
 	Dictionary d = p_data;
 	if (!d.has("type") || String(d["type"]) != "color_preset") {
 		return false;
@@ -835,7 +835,7 @@ bool ColorPicker::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data
 	return true;
 }
 
-void ColorPicker::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) {
+void ColorPicker::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) {
 	Dictionary d = p_data;
 	if (!d.has("type")) {
 		return;
@@ -1125,7 +1125,7 @@ void ColorPicker::_sample_draw() {
 	}
 }
 
-void ColorPicker::_hsv_draw(int p_which, Control *c) {
+void ColorPicker::_hsv_draw(int p_which, Controle *c) {
 	if (!c) {
 		return;
 	}
@@ -1295,7 +1295,7 @@ void ColorPicker::_slider_draw(int p_which) {
 	}
 }
 
-void ColorPicker::_uv_input(const Ref<InputEvent> &p_event, Control *c) {
+void ColorPicker::_uv_input(const Ref<InputEvent> &p_event, Controle *c) {
 	Ref<InputEventMouseButton> bev = p_event;
 	PickerShapeType actual_shape = _get_actual_shape();
 
@@ -1552,18 +1552,18 @@ void ColorPicker::_pick_button_pressed_legacy() {
 		add_child(picker_window, false, INTERNAL_MODE_FRONT);
 
 		picker_texture_rect = memnew(TextureRect);
-		picker_texture_rect->set_anchors_preset(Control::PRESET_FULL_RECT);
+		picker_texture_rect->set_anchors_preset(Controle::PRESET_FULL_RECT);
 		picker_window->add_child(picker_texture_rect);
 		picker_texture_rect->set_default_cursor_shape(CURSOR_POINTING_HAND);
 		picker_texture_rect->connect(SceneStringName(gui_input), callable_mp(this, &ColorPicker::_picker_texture_input));
 
 		picker_preview = memnew(Panel);
-		picker_preview->set_anchors_preset(Control::PRESET_CENTER_TOP);
+		picker_preview->set_anchors_preset(Controle::PRESET_CENTER_TOP);
 		picker_preview->set_mouse_filter(MOUSE_FILTER_IGNORE);
 		picker_window->add_child(picker_preview);
 
 		picker_preview_label = memnew(Label);
-		picker_preview->set_anchors_preset(Control::PRESET_CENTER_TOP);
+		picker_preview->set_anchors_preset(Controle::PRESET_CENTER_TOP);
 		picker_preview_label->set_text(ETR("Color Picking active"));
 		picker_preview->add_child(picker_preview_label);
 
@@ -1830,7 +1830,7 @@ ColorPicker::ColorPicker() {
 	real_vbox->add_child(hb_edit);
 	hb_edit->set_v_size_flags(SIZE_SHRINK_BEGIN);
 
-	uv_edit = memnew(Control);
+	uv_edit = memnew(Controle);
 	hb_edit->add_child(uv_edit);
 	uv_edit->connect(SceneStringName(gui_input), callable_mp(this, &ColorPicker::_uv_input).bind(uv_edit));
 	uv_edit->set_mouse_filter(MOUSE_FILTER_PASS);
@@ -1967,17 +1967,17 @@ ColorPicker::ColorPicker() {
 	wheel_margin->add_theme_constant_override("margin_bottom", 8);
 	wheel_edit->add_child(wheel_margin);
 
-	wheel = memnew(Control);
+	wheel = memnew(Controle);
 	wheel_margin->add_child(wheel);
 	wheel->set_mouse_filter(MOUSE_FILTER_PASS);
 	wheel->connect(SceneStringName(draw), callable_mp(this, &ColorPicker::_hsv_draw).bind(2, wheel));
 
-	wheel_uv = memnew(Control);
+	wheel_uv = memnew(Controle);
 	wheel_margin->add_child(wheel_uv);
 	wheel_uv->connect(SceneStringName(gui_input), callable_mp(this, &ColorPicker::_uv_input).bind(wheel_uv));
 	wheel_uv->connect(SceneStringName(draw), callable_mp(this, &ColorPicker::_hsv_draw).bind(0, wheel_uv));
 
-	w_edit = memnew(Control);
+	w_edit = memnew(Controle);
 	hb_edit->add_child(w_edit);
 	w_edit->set_h_size_flags(SIZE_FILL);
 	w_edit->set_v_size_flags(SIZE_EXPAND_FILL);

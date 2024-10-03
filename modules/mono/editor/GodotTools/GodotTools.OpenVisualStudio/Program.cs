@@ -61,7 +61,7 @@ namespace GodotTools.OpenVisualStudio
                     }
                 }
 
-                dte.UserControl = true;
+                dte.UserControle = true;
 
                 try
                 {

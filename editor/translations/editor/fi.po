@@ -1616,10 +1616,10 @@ msgstr "Käyttö"
 msgid "Misc"
 msgstr "Sekalaista"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Napsautettu kontrolli:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Napsautetun kontrollin tyyppi:"
 
 msgid "Live Edit Root:"
@@ -3242,7 +3242,7 @@ msgstr "Projekti"
 msgid "Project Settings"
 msgstr "Projektin Asetukset"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versionhallinta"
 
 msgid "Install Android Build Template..."
@@ -3372,7 +3372,7 @@ msgstr ""
 "Seuraavat tiedostot ovat uudempia levyllä.\n"
 "Mikä toimenpide tulisi suorittaa?"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Versionhallintajärjestelmän Asetukset..."
 
 msgid "New Inherited"
@@ -5856,8 +5856,8 @@ msgstr "Siirrä CanvasItem \"%s\":n ankkuri"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Skaalaa Node2D \"%s\" kokoon (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Muuta Control \"%s\" kokoon (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Muuta Controle \"%s\" kokoon (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "Skaalaa %d CanvasItemiä"
@@ -7233,10 +7233,10 @@ msgstr "Lisää Ympäristö Kohtaukseen"
 msgid "Remove Point from Curve"
 msgstr "Poista pisteet käyrästä"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Poista lähtöohjain käyrästä"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Poista tulo-ohjain käyrästä"
 
 msgid "Move Point in Curve"
@@ -7248,16 +7248,16 @@ msgstr "Lisää käyrään piste"
 msgid "Split Curve"
 msgstr "Puolita käyrä"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Siirrä tulo-ohjainta käyrällä"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Siirrä lähtöohjainta käyrällä"
 
 msgid "Right Click: Delete Point"
 msgstr "Oikea painallus: poista piste"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Valitse ohjauspisteitä (Shift+vedä)"
 
 msgid "Delete Point"
@@ -8483,9 +8483,9 @@ msgstr ""
 "Virheellinen polku, PackedScene resurssi oli todennäköisesti siirretty tai "
 "poistettu."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
-"Virheellinen PackedScene resurssi, juurisolmuna täytyy olla Control solmu."
+"Virheellinen PackedScene resurssi, juurisolmuna täytyy olla Controle solmu."
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "Virheellinen tiedosto, ei ole PackedScene resurssi."
@@ -9495,7 +9495,7 @@ msgstr "Projektin asennuspolku:"
 msgid "Renderer:"
 msgstr "Renderöijä:"
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Versionhallinnan Metadata:"
 
 msgid "Error: Project is missing on the filesystem."
@@ -10725,11 +10725,11 @@ msgstr "Vaihda heksadesimaali- ja koodiarvojen välillä."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Säilöllä ei ole itsessään mitään merkitystä, ellei jokin skripti säädä sen "
 "alisolmujen sijoitustapaa.\n"
-"Jos et aio lisätä skriptiä, ole hyvä ja käytä sen sijaan tavallista Control "
+"Jos et aio lisätä skriptiä, ole hyvä ja käytä sen sijaan tavallista Controle "
 "solmua."
 
 msgid ""
@@ -10745,11 +10745,11 @@ msgstr "Jos \"Exp Edit\" on päällä, \"Min Value\" täytyy olla suurempi kuin 
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer on tarkoitettu toimimaan yhdellä alikontrollilla.\n"
-"Käytä alisolmuna jotakin säilöä (VBox, HBox, jne), tai Control solmua ja "
+"Käytä alisolmuna jotakin säilöä (VBox, HBox, jne), tai Controle solmua ja "
 "aseta haluttu minimikoko käsin."
 
 msgid ""

@@ -414,7 +414,7 @@ public abstract class DownloaderService extends CustomIntentService implements I
     /**
      * Download state
      */
-    private int mControl;
+    private int mControle;
     private int mStatus;
 
     public boolean isWiFi() {
@@ -553,13 +553,13 @@ public abstract class DownloaderService extends CustomIntentService implements I
                 if (isServiceRunning()) {
                     if (mIsRoaming) {
                         mStatus = STATUS_WAITING_FOR_NETWORK;
-                        mControl = CONTROL_PAUSED;
+                        mControle = CONTROL_PAUSED;
                     } else if (mIsCellularConnection) {
                         DownloadsDB db = DownloadsDB.getDB(this);
                         int flags = db.getFlags();
                         if (0 == (flags & FLAGS_DOWNLOAD_OVER_CELLULAR)) {
                             mStatus = STATUS_QUEUED_FOR_WIFI;
-                            mControl = CONTROL_PAUSED;
+                            mControle = CONTROL_PAUSED;
                         }
                     }
                 }
@@ -712,13 +712,13 @@ public abstract class DownloaderService extends CustomIntentService implements I
 
     @Override
     public void requestAbortDownload() {
-        mControl = CONTROL_PAUSED;
+        mControle = CONTROL_PAUSED;
         mStatus = STATUS_CANCELED;
     }
 
     @Override
     public void requestPauseDownload() {
-        mControl = CONTROL_PAUSED;
+        mControle = CONTROL_PAUSED;
         mStatus = STATUS_PAUSED_BY_APP;
     }
 
@@ -729,8 +729,8 @@ public abstract class DownloaderService extends CustomIntentService implements I
 
     @Override
     public void requestContinueDownload() {
-        if (mControl == CONTROL_PAUSED) {
-            mControl = CONTROL_RUN;
+        if (mControle == CONTROL_PAUSED) {
+            mControle = CONTROL_RUN;
         }
         Intent fileIntent = new Intent(this, this.getClass());
         fileIntent.putExtra(EXTRA_PENDING_INTENT, mPendingIntent);
@@ -1278,8 +1278,8 @@ public abstract class DownloaderService extends CustomIntentService implements I
         }
     }
 
-    public int getControl() {
-        return mControl;
+    public int getControle() {
+        return mControle;
     }
 
     public int getStatus() {

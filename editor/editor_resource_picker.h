@@ -102,9 +102,9 @@ class EditorResourcePicker : public HBoxContainer {
 	bool _is_drop_valid(const Dictionary &p_drag_data) const;
 	bool _is_type_valid(const String &p_type_name, const HashSet<StringName> &p_allowed_types) const;
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _ensure_resource_menu();
 	void _gather_resources_to_duplicate(const Ref<Resource> p_resource, TreeItem *p_item, const String &p_property_name = "") const;
@@ -192,7 +192,7 @@ class EditorAudioStreamPicker : public EditorResourcePicker {
 	GDCLASS(EditorAudioStreamPicker, EditorResourcePicker);
 
 	uint64_t last_preview_version = 0;
-	Control *stream_preview_rect = nullptr;
+	Controle *stream_preview_rect = nullptr;
 
 	enum {
 		MAX_TAGGED_FRAMES = 8

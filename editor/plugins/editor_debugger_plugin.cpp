@@ -64,13 +64,13 @@ void EditorDebuggerSession::_bind_methods() {
 	ADD_SIGNAL(MethodInfo("continued"));
 }
 
-void EditorDebuggerSession::add_session_tab(Control *p_tab) {
+void EditorDebuggerSession::add_session_tab(Controle *p_tab) {
 	ERR_FAIL_COND(!p_tab || !debugger);
 	debugger->add_debugger_tab(p_tab);
 	tabs.insert(p_tab);
 }
 
-void EditorDebuggerSession::remove_session_tab(Control *p_tab) {
+void EditorDebuggerSession::remove_session_tab(Controle *p_tab) {
 	ERR_FAIL_COND(!p_tab || !debugger);
 	debugger->remove_debugger_tab(p_tab);
 	tabs.erase(p_tab);
@@ -114,7 +114,7 @@ void EditorDebuggerSession::detach_debugger() {
 	debugger->disconnect("stopped", callable_mp(this, &EditorDebuggerSession::_stopped));
 	debugger->disconnect("breaked", callable_mp(this, &EditorDebuggerSession::_breaked));
 	debugger->disconnect(SceneStringName(tree_exited), callable_mp(this, &EditorDebuggerSession::_debugger_gone_away));
-	for (Control *tab : tabs) {
+	for (Controle *tab : tabs) {
 		debugger->remove_debugger_tab(tab);
 	}
 	tabs.clear();

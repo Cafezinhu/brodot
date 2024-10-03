@@ -216,12 +216,12 @@ void AnimationBezierTrackEdit::_notification(int p_what) {
 	switch (p_what) {
 		case EditorSettings::NOTIFICATION_EDITOR_SETTINGS_CHANGED: {
 			if (EditorSettings::get_singleton()->check_changed_settings_in_group("editors/panning")) {
-				panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+				panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 			}
 		} break;
 
 		case NOTIFICATION_ENTER_TREE: {
-			panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/animation_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 			[[fallthrough]];
 		}
 		case NOTIFICATION_THEME_CHANGED: {
@@ -851,7 +851,7 @@ void AnimationBezierTrackEdit::_update_hidden_tracks_after(int p_track) {
 }
 
 String AnimationBezierTrackEdit::get_tooltip(const Point2 &p_pos) const {
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void AnimationBezierTrackEdit::_clear_selection() {
@@ -1193,7 +1193,7 @@ void AnimationBezierTrackEdit::gui_input(const Ref<InputEvent> &p_event) {
 		}
 
 		// First, check keyframe.
-		// Command/Control makes it ignore the keyframe, so control point editors can be force-edited.
+		// Command/Controle makes it ignore the keyframe, so control point editors can be force-edited.
 		if (!mb->is_command_or_control_pressed()) {
 			if (_try_select_at_ui_pos(mb->get_position(), mb->is_shift_pressed(), true)) {
 				return;
@@ -1991,7 +1991,7 @@ AnimationBezierTrackEdit::AnimationBezierTrackEdit() {
 	panner.instantiate();
 	panner->set_callbacks(callable_mp(this, &AnimationBezierTrackEdit::_pan_callback), callable_mp(this, &AnimationBezierTrackEdit::_zoom_callback));
 
-	play_position = memnew(Control);
+	play_position = memnew(Controle);
 	play_position->set_mouse_filter(MOUSE_FILTER_PASS);
 	add_child(play_position);
 	play_position->set_anchors_and_offsets_preset(PRESET_FULL_RECT);

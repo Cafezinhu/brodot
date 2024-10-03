@@ -1705,7 +1705,7 @@ msgstr "Проект"
 msgid "Project Settings"
 msgstr "Настройки на проекта"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Контрол на версиите"
 
 msgid "Open User Data Folder"

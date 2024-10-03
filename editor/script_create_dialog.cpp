@@ -820,7 +820,7 @@ void ScriptCreateDialog::_bind_methods() {
 ScriptCreateDialog::ScriptCreateDialog() {
 	EDITOR_DEF("_script_setup_templates_dictionary", Dictionary());
 
-	/* Main Controls */
+	/* Main Controles */
 
 	GridContainer *gc = memnew(GridContainer);
 	gc->set_columns(2);
@@ -837,7 +837,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 
 	/* Spacing */
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 
 	VBoxContainer *vb = memnew(VBoxContainer);
@@ -850,7 +850,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 
 	language_menu = memnew(OptionButton);
 	language_menu->set_custom_minimum_size(Size2(350, 0) * EDSCALE);
-	language_menu->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	language_menu->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	gc->add_child(memnew(Label(TTR("Language:"))));
 	gc->add_child(language_menu);
 
@@ -873,10 +873,10 @@ ScriptCreateDialog::ScriptCreateDialog() {
 	base_type = "Object";
 
 	HBoxContainer *hb = memnew(HBoxContainer);
-	hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	parent_name = memnew(LineEdit);
 	parent_name->connect(SceneStringName(text_changed), callable_mp(this, &ScriptCreateDialog::_parent_name_changed));
-	parent_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	parent_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->add_child(parent_name);
 	register_text_enter(parent_name);
 	parent_search_button = memnew(Button);
@@ -891,7 +891,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 	/* Templates */
 	gc->add_child(memnew(Label(TTR("Template:"))));
 	HBoxContainer *template_hb = memnew(HBoxContainer);
-	template_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	template_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	use_templates = memnew(CheckBox);
 	use_templates->set_pressed(is_using_templates);
@@ -901,7 +901,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 	template_inactive_message = "";
 
 	template_menu = memnew(OptionButton);
-	template_menu->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	template_menu->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	template_menu->connect(SceneStringName(item_selected), callable_mp(this, &ScriptCreateDialog::_template_changed));
 	template_hb->add_child(template_menu);
 
@@ -921,7 +921,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 	hb->connect(SceneStringName(sort_children), callable_mp(this, &ScriptCreateDialog::_path_hbox_sorted));
 	file_path = memnew(LineEdit);
 	file_path->connect(SceneStringName(text_changed), callable_mp(this, &ScriptCreateDialog::_path_changed));
-	file_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	file_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->add_child(file_path);
 	register_text_enter(file_path);
 	path_button = memnew(Button);
@@ -936,7 +936,7 @@ ScriptCreateDialog::ScriptCreateDialog() {
 	/* Name */
 
 	built_in_name = memnew(LineEdit);
-	built_in_name->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	built_in_name->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	register_text_enter(built_in_name);
 	label = memnew(Label(TTR("Name:")));
 	gc->add_child(label);

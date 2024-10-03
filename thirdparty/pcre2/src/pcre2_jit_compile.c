@@ -10227,7 +10227,7 @@ if (end_block_size > 0)
 memset(&altbacktrack, 0, sizeof(backtrack_common));
 if (conditional || (opcode == OP_ASSERT_NOT || opcode == OP_ASSERTBACK_NOT))
   {
-  /* Control verbs cannot escape from these asserts. */
+  /* Controle verbs cannot escape from these asserts. */
   local_quit_available = TRUE;
   common->local_quit_available = TRUE;
   common->quit_label = NULL;

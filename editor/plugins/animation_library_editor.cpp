@@ -856,7 +856,7 @@ AnimationLibraryEditor::AnimationLibraryEditor() {
 	tree->set_column_expand(1, false);
 	tree->set_hide_root(true);
 	tree->set_hide_folding(true);
-	tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	tree->connect("item_edited", callable_mp(this, &AnimationLibraryEditor::_item_renamed));
 	tree->connect("button_clicked", callable_mp(this, &AnimationLibraryEditor::_button_pressed));

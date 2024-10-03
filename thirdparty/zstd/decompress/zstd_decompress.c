@@ -2221,7 +2221,7 @@ size_t ZSTD_decompressStream(ZSTD_DStream* zds, ZSTD_outBuffer* output, ZSTD_inB
             }
 
             /* control buffer memory usage */
-            DEBUGLOG(4, "Control max memory usage (%u KB <= max %u KB)",
+            DEBUGLOG(4, "Controle max memory usage (%u KB <= max %u KB)",
                         (U32)(zds->fParams.windowSize >>10),
                         (U32)(zds->maxWindowSize >> 10) );
             zds->fParams.windowSize = MAX(zds->fParams.windowSize, 1U << ZSTD_WINDOWLOG_ABSOLUTEMIN);

@@ -953,7 +953,7 @@ void PopupMenu::_shape_item(int p_idx) {
 		Ref<Font> font = items[p_idx].separator ? theme_cache.font_separator : theme_cache.font;
 		int font_size = items[p_idx].separator ? theme_cache.font_separator_size : theme_cache.font_size;
 
-		if (items[p_idx].text_direction == Control::TEXT_DIRECTION_INHERITED) {
+		if (items[p_idx].text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 			items.write[p_idx].text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 		} else {
 			items.write[p_idx].text_buf->set_direction((TextServer::Direction)items[p_idx].text_direction);
@@ -1031,7 +1031,7 @@ void PopupMenu::_notification(int p_what) {
 
 			[[fallthrough]];
 		}
-		case Control::NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
+		case Controle::NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
 		case NOTIFICATION_TRANSLATION_CHANGED: {
 			NativeMenu *nmenu = NativeMenu::get_singleton();
 			bool is_global = global_menu.is_valid();
@@ -1612,7 +1612,7 @@ void PopupMenu::set_item_text(int p_idx, const String &p_text) {
 	_menu_changed();
 }
 
-void PopupMenu::set_item_text_direction(int p_idx, Control::TextDirection p_text_direction) {
+void PopupMenu::set_item_text_direction(int p_idx, Controle::TextDirection p_text_direction) {
 	if (p_idx < 0) {
 		p_idx += get_item_count();
 	}
@@ -1867,8 +1867,8 @@ String PopupMenu::get_item_xl_text(int p_idx) const {
 	return items[p_idx].xl_text;
 }
 
-Control::TextDirection PopupMenu::get_item_text_direction(int p_idx) const {
-	ERR_FAIL_INDEX_V(p_idx, items.size(), Control::TEXT_DIRECTION_INHERITED);
+Controle::TextDirection PopupMenu::get_item_text_direction(int p_idx) const {
+	ERR_FAIL_INDEX_V(p_idx, items.size(), Controle::TEXT_DIRECTION_INHERITED);
 	return items[p_idx].text_direction;
 }
 
@@ -2870,16 +2870,16 @@ void PopupMenu::set_visible(bool p_visible) {
 PopupMenu::PopupMenu() {
 	// Scroll Container
 	scroll_container = memnew(ScrollContainer);
-	scroll_container->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	scroll_container->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	scroll_container->set_clip_contents(true);
 	add_child(scroll_container, false, INTERNAL_MODE_FRONT);
 
 	// The control which will display the items
-	control = memnew(Control);
+	control = memnew(Controle);
 	control->set_clip_contents(false);
-	control->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-	control->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	control->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	control->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+	control->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	control->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	scroll_container->add_child(control, false, INTERNAL_MODE_FRONT);
 	control->connect(SceneStringName(draw), callable_mp(this, &PopupMenu::_draw_items));
 

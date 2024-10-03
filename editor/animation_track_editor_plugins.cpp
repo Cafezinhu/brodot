@@ -1153,9 +1153,9 @@ void AnimationTrackEditTypeAudio::gui_input(const Ref<InputEvent> &p_event) {
 	AnimationTrackEdit::gui_input(p_event);
 }
 
-Control::CursorShape AnimationTrackEditTypeAudio::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape AnimationTrackEditTypeAudio::get_cursor_shape(const Point2 &p_pos) const {
 	if (over_drag_position || len_resizing) {
-		return Control::CURSOR_HSIZE;
+		return Controle::CURSOR_HSIZE;
 	} else {
 		return get_default_cursor_shape();
 	}

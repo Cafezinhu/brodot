@@ -40,8 +40,8 @@ class EditorSelection;
 class TextureRect;
 class Timer;
 
-class SceneTreeEditor : public Control {
-	GDCLASS(SceneTreeEditor, Control);
+class SceneTreeEditor : public Controle {
+	GDCLASS(SceneTreeEditor, Controle);
 
 	EditorSelection *editor_selection = nullptr;
 
@@ -134,9 +134,9 @@ class SceneTreeEditor : public Control {
 	void _selection_changed();
 	Node *get_scene_node() const;
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _empty_clicked(const Vector2 &p_pos, MouseButton p_button);
 	void _rmb_select(const Vector2 &p_pos, MouseButton p_button = MouseButton::RIGHT);

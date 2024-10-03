@@ -109,7 +109,7 @@ void Label::_shape() {
 		if (dirty) {
 			TS->shaped_text_clear(text_rid);
 		}
-		if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+		if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 			TS->shaped_text_set_direction(text_rid, is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 		} else {
 			TS->shaped_text_set_direction(text_rid, (TextServer::Direction)text_direction);
@@ -336,7 +336,7 @@ inline void draw_glyph_outline(const Glyph &p_gl, const RID &p_canvas, const Col
 }
 
 PackedStringArray Label::get_configuration_warnings() const {
-	PackedStringArray warnings = Control::get_configuration_warnings();
+	PackedStringArray warnings = Controle::get_configuration_warnings();
 
 	// FIXME: This is not ideal and the sizing model should be fixed,
 	// but for now we have to warn about this impossible to resolve combination.
@@ -899,7 +899,7 @@ Ref<LabelSettings> Label::get_label_settings() const {
 	return settings;
 }
 
-void Label::set_text_direction(Control::TextDirection p_text_direction) {
+void Label::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -934,7 +934,7 @@ Array Label::get_structured_text_bidi_override_options() const {
 	return st_args;
 }
 
-Control::TextDirection Label::get_text_direction() const {
+Controle::TextDirection Label::get_text_direction() const {
 	return text_direction;
 }
 

@@ -2697,9 +2697,9 @@ void Builder::createNoResultOp(Op opCode, const std::vector<IdImmediate>& operan
     addInstruction(std::unique_ptr<Instruction>(op));
 }
 
-void Builder::createControlBarrier(Scope execution, Scope memory, MemorySemanticsMask semantics)
+void Builder::createControleBarrier(Scope execution, Scope memory, MemorySemanticsMask semantics)
 {
-    Instruction* op = new Instruction(OpControlBarrier);
+    Instruction* op = new Instruction(OpControleBarrier);
     op->reserveOperands(3);
     op->addIdOperand(makeUintConstant(execution));
     op->addIdOperand(makeUintConstant(memory));

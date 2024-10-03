@@ -39,7 +39,7 @@
 #include "servers/audio_server.h"
 
 #import <AudioToolbox/AudioServices.h>
-#import <GameController/GameController.h>
+#import <GameControleler/GameControleler.h>
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>

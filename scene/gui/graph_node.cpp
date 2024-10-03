@@ -130,7 +130,7 @@ bool GraphNode::_get(const StringName &p_name, Variant &r_ret) const {
 void GraphNode::_get_property_list(List<PropertyInfo> *p_list) const {
 	int idx = 0;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false), SortableVisbilityMode::IGNORE);
+		Controle *child = as_sortable_control(get_child(i, false), SortableVisbilityMode::IGNORE);
 		if (!child) {
 			continue;
 		}
@@ -172,10 +172,10 @@ void GraphNode::_resort() {
 	int stretch_min = 0;
 	int available_stretch_space = 0;
 	float stretch_ratio_total = 0;
-	HashMap<Control *, _MinSizeCache> min_size_cache;
+	HashMap<Controle *, _MinSizeCache> min_size_cache;
 
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false));
+		Controle *child = as_sortable_control(get_child(i, false));
 		if (!child) {
 			continue;
 		}
@@ -217,7 +217,7 @@ void GraphNode::_resort() {
 		bool refit_successful = true;
 
 		for (int i = 0; i < get_child_count(false); i++) {
-			Control *child = as_sortable_control(get_child(i, false));
+			Controle *child = as_sortable_control(get_child(i, false));
 			if (!child) {
 				continue;
 			}
@@ -228,7 +228,7 @@ void GraphNode::_resort() {
 			if (msc.will_stretch) {
 				int final_pixel_size = available_stretch_space * child->get_stretch_ratio() / stretch_ratio_total;
 				if (final_pixel_size < msc.min_size) {
-					// If the available stretching area is too small for a Control,
+					// If the available stretching area is too small for a Controle,
 					// then remove it from stretching area.
 					msc.will_stretch = false;
 					stretch_ratio_total -= child->get_stretch_ratio();
@@ -255,7 +255,7 @@ void GraphNode::_resort() {
 	int width = new_size.width - sb_panel->get_minimum_size().width;
 	int valid_children_idx = 0;
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false));
+		Controle *child = as_sortable_control(get_child(i, false));
 		if (!child) {
 			continue;
 		}
@@ -359,7 +359,7 @@ void GraphNode::_notification(int p_what) {
 
 					// Draw slot stylebox.
 					if (slot.draw_stylebox) {
-						Control *child = Object::cast_to<Control>(get_child(E.key, false));
+						Controle *child = Object::cast_to<Controle>(get_child(E.key, false));
 						if (!child || !child->is_visible_in_tree()) {
 							continue;
 						}
@@ -621,7 +621,7 @@ Size2 GraphNode::get_minimum_size() const {
 	Size2 minsize = titlebar_hbox->get_minimum_size() + sb_titlebar->get_minimum_size();
 
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false));
+		Controle *child = as_sortable_control(get_child(i, false));
 		if (!child) {
 			continue;
 		}
@@ -658,7 +658,7 @@ void GraphNode::_port_pos_update() {
 	int slot_index = 0;
 
 	for (int i = 0; i < get_child_count(false); i++) {
-		Control *child = as_sortable_control(get_child(i, false), SortableVisbilityMode::IGNORE);
+		Controle *child = as_sortable_control(get_child(i, false), SortableVisbilityMode::IGNORE);
 		if (!child) {
 			continue;
 		}
@@ -801,14 +801,14 @@ HBoxContainer *GraphNode::get_titlebar_hbox() {
 	return titlebar_hbox;
 }
 
-Control::CursorShape GraphNode::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape GraphNode::get_cursor_shape(const Point2 &p_pos) const {
 	if (resizable) {
 		if (resizing || (p_pos.x > get_size().x - theme_cache.resizer->get_width() && p_pos.y > get_size().y - theme_cache.resizer->get_height())) {
 			return CURSOR_FDIAGSIZE;
 		}
 	}
 
-	return Control::get_cursor_shape(p_pos);
+	return Controle::get_cursor_shape(p_pos);
 }
 
 Vector<int> GraphNode::get_allowed_size_flags_horizontal() const {

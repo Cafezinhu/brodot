@@ -1285,7 +1285,7 @@ void TileMapLayer::_scenes_update_cell(CellData &r_cell_data) {
 				Ref<PackedScene> packed_scene = scenes_collection_source->get_scene_tile_scene(c.alternative_tile);
 				if (packed_scene.is_valid()) {
 					Node *scene = packed_scene->instantiate();
-					Control *scene_as_control = Object::cast_to<Control>(scene);
+					Controle *scene_as_control = Object::cast_to<Controle>(scene);
 					Node2D *scene_as_node2d = Object::cast_to<Node2D>(scene);
 					if (scene_as_control) {
 						scene_as_control->set_position(tile_set->map_to_local(r_cell_data.coords) + scene_as_control->get_position());

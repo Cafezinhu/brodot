@@ -179,7 +179,7 @@ void VoxelGIEditorPlugin::_voxel_gi_save_path_and_bake(const String &p_path) {
 
 VoxelGIEditorPlugin::VoxelGIEditorPlugin() {
 	bake_hb = memnew(HBoxContainer);
-	bake_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	bake_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	bake_hb->hide();
 	bake = memnew(Button);
 	bake->set_theme_type_variation("FlatButton");

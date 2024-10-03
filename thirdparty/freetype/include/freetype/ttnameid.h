@@ -848,7 +848,7 @@ FT_BEGIN_HEADER
 
   /* Bit  0   Basic Latin */
 #define TT_UCR_BASIC_LATIN                     (1L <<  0) /* U+0020-U+007E */
-  /* Bit  1   C1 Controls and Latin-1 Supplement */
+  /* Bit  1   C1 Controles and Latin-1 Supplement */
 #define TT_UCR_LATIN1_SUPPLEMENT               (1L <<  1) /* U+0080-U+00FF */
   /* Bit  2   Latin Extended-A */
 #define TT_UCR_LATIN_EXTENDED_A                (1L <<  2) /* U+0100-U+017F */
@@ -967,7 +967,7 @@ FT_BEGIN_HEADER
                                                           /* U+2980-U+29FF */
   /* Bit 39 Miscellaneous Technical */
 #define TT_UCR_MISCELLANEOUS_TECHNICAL         (1L <<  7) /* U+2300-U+23FF */
-  /* Bit 40   Control Pictures */
+  /* Bit 40   Controle Pictures */
 #define TT_UCR_CONTROL_PICTURES                (1L <<  8) /* U+2400-U+243F */
   /* Bit 41   Optical Character Recognition */
 #define TT_UCR_OCR                             (1L <<  9) /* U+2440-U+245F */

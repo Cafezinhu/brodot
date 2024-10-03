@@ -41,10 +41,10 @@ class HBoxContainer;
 class Label;
 class NavigationRegion3D;
 
-class NavigationMeshEditor : public Control {
+class NavigationMeshEditor : public Controle {
 	friend class NavigationMeshEditorPlugin;
 
-	GDCLASS(NavigationMeshEditor, Control);
+	GDCLASS(NavigationMeshEditor, Controle);
 
 	AcceptDialog *err_dialog = nullptr;
 

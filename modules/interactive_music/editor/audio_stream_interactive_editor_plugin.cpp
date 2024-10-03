@@ -334,7 +334,7 @@ AudioStreamInteractiveTransitionEditor::AudioStreamInteractiveTransitionEditor()
 	tree->set_custom_minimum_size(Size2(400, 0) * EDSCALE);
 	split->add_child(tree);
 
-	tree->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	tree->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	tree->connect("multi_selected", callable_mp(this, &AudioStreamInteractiveTransitionEditor::_cell_selected));
 	VBoxContainer *edit_vb = memnew(VBoxContainer);
 	split->add_child(edit_vb);

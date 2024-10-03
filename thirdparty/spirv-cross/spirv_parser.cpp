@@ -934,7 +934,7 @@ void Parser::parse(const Instruction &instruction)
 	{
 		uint32_t res = ops[0];
 		uint32_t id = ops[1];
-		// Control
+		// Controle
 		uint32_t type = ops[3];
 
 		if (current_function)
@@ -1178,9 +1178,9 @@ void Parser::parse(const Instruction &instruction)
 
 		if (length >= 2)
 		{
-			if (ops[1] & SelectionControlFlattenMask)
+			if (ops[1] & SelectionControleFlattenMask)
 				current_block->hint = SPIRBlock::HintFlatten;
-			else if (ops[1] & SelectionControlDontFlattenMask)
+			else if (ops[1] & SelectionControleDontFlattenMask)
 				current_block->hint = SPIRBlock::HintDontFlatten;
 		}
 		break;
@@ -1208,9 +1208,9 @@ void Parser::parse(const Instruction &instruction)
 
 		if (length >= 3)
 		{
-			if (ops[2] & LoopControlUnrollMask)
+			if (ops[2] & LoopControleUnrollMask)
 				current_block->hint = SPIRBlock::HintUnroll;
-			else if (ops[2] & LoopControlDontUnrollMask)
+			else if (ops[2] & LoopControleDontUnrollMask)
 				current_block->hint = SPIRBlock::HintDontUnroll;
 		}
 		break;

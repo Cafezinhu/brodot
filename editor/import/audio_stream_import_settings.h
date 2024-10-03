@@ -55,7 +55,7 @@ class AudioStreamImportSettingsDialog : public ConfirmationDialog {
 	Ref<AudioStream> stream;
 	AudioStreamPlayer *_player = nullptr;
 	ColorRect *_preview = nullptr;
-	Control *_indicator = nullptr;
+	Controle *_indicator = nullptr;
 	Label *_current_label = nullptr;
 	Label *_duration_label = nullptr;
 

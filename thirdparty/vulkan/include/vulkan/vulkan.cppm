@@ -189,8 +189,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PipelineViewportStateCreateFlags;
   using VULKAN_HPP_NAMESPACE::PolygonMode;
   using VULKAN_HPP_NAMESPACE::PrimitiveTopology;
-  using VULKAN_HPP_NAMESPACE::QueryControlFlagBits;
-  using VULKAN_HPP_NAMESPACE::QueryControlFlags;
+  using VULKAN_HPP_NAMESPACE::QueryControleFlagBits;
+  using VULKAN_HPP_NAMESPACE::QueryControleFlags;
   using VULKAN_HPP_NAMESPACE::QueryPipelineStatisticFlagBits;
   using VULKAN_HPP_NAMESPACE::QueryPipelineStatisticFlags;
   using VULKAN_HPP_NAMESPACE::QueryPoolCreateFlagBits;
@@ -297,8 +297,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::SemaphoreWaitFlagBits;
   using VULKAN_HPP_NAMESPACE::SemaphoreWaitFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::SemaphoreWaitFlags;
-  using VULKAN_HPP_NAMESPACE::ShaderFloatControlsIndependence;
-  using VULKAN_HPP_NAMESPACE::ShaderFloatControlsIndependenceKHR;
+  using VULKAN_HPP_NAMESPACE::ShaderFloatControlesIndependence;
+  using VULKAN_HPP_NAMESPACE::ShaderFloatControlesIndependenceKHR;
 
   //=== VK_VERSION_1_3 ===
   using VULKAN_HPP_NAMESPACE::AccessFlagBits2;
@@ -396,8 +396,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoChromaSubsamplingFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoCodecOperationFlagsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoCodingControlFlagBitsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoCodingControlFlagsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoCodingControleFlagBitsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoCodingControleFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoComponentBitDepthFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEndCodingFlagBitsKHR;
@@ -422,8 +422,8 @@ export namespace VULKAN_HPP_NAMESPACE
   //=== VK_KHR_video_encode_h264 ===
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264CapabilityFlagsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagBitsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlFlagsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControleFlagBitsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControleFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264StdFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264StdFlagsKHR;
 
@@ -432,8 +432,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265CapabilityFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265CtbSizeFlagsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagBitsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlFlagsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControleFlagBitsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControleFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265StdFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265StdFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265TransformBlockSizeFlagBitsKHR;
@@ -586,8 +586,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::AccelerationStructureMemoryRequirementsTypeNV;
 
   //=== VK_AMD_pipeline_compiler_control ===
-  using VULKAN_HPP_NAMESPACE::PipelineCompilerControlFlagBitsAMD;
-  using VULKAN_HPP_NAMESPACE::PipelineCompilerControlFlagsAMD;
+  using VULKAN_HPP_NAMESPACE::PipelineCompilerControleFlagBitsAMD;
+  using VULKAN_HPP_NAMESPACE::PipelineCompilerControleFlagsAMD;
 
   //=== VK_KHR_global_priority ===
   using VULKAN_HPP_NAMESPACE::QueueGlobalPriorityEXT;
@@ -684,10 +684,10 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoEncodeFeedbackFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeFlagsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlFlagBitsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlFlagsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagBitsKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlModeFlagsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleFlagBitsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleFlagsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleModeFlagBitsKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleModeFlagsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeTuningModeKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeUsageFlagBitsKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeUsageFlagsKHR;
@@ -773,8 +773,8 @@ export namespace VULKAN_HPP_NAMESPACE
 #endif /*VK_ENABLE_BETA_EXTENSIONS*/
 
   //=== VK_ARM_scheduling_controls ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagBitsARM;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFlagsARM;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlesFlagBitsARM;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlesFlagsARM;
 
   //=== VK_NV_memory_decompression ===
   using VULKAN_HPP_NAMESPACE::MemoryDecompressionMethodFlagBitsNV;
@@ -1274,8 +1274,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::EXTDisplaySurfaceCounterSpecVersion;
 
   //=== VK_EXT_display_control ===
-  using VULKAN_HPP_NAMESPACE::EXTDisplayControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTDisplayControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTDisplayControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTDisplayControleSpecVersion;
 
   //=== VK_GOOGLE_display_timing ===
   using VULKAN_HPP_NAMESPACE::GOOGLEDisplayTimingExtensionName;
@@ -1586,8 +1586,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRShaderClockSpecVersion;
 
   //=== VK_AMD_pipeline_compiler_control ===
-  using VULKAN_HPP_NAMESPACE::AMDPipelineCompilerControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::AMDPipelineCompilerControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::AMDPipelineCompilerControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::AMDPipelineCompilerControleSpecVersion;
 
   //=== VK_EXT_calibrated_timestamps ===
   using VULKAN_HPP_NAMESPACE::EXTCalibratedTimestampsExtensionName;
@@ -1631,8 +1631,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::MaxDriverNameSizeKHR;
 
   //=== VK_KHR_shader_float_controls ===
-  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControlsExtensionName;
-  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControlsSpecVersion;
+  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControlesExtensionName;
+  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControlesSpecVersion;
 
   //=== VK_NV_shader_subgroup_partitioned ===
   using VULKAN_HPP_NAMESPACE::NVShaderSubgroupPartitionedExtensionName;
@@ -1727,8 +1727,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::GOOGLEDecorateStringSpecVersion;
 
   //=== VK_EXT_subgroup_size_control ===
-  using VULKAN_HPP_NAMESPACE::EXTSubgroupSizeControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTSubgroupSizeControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTSubgroupSizeControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTSubgroupSizeControleSpecVersion;
 
   //=== VK_KHR_fragment_shading_rate ===
   using VULKAN_HPP_NAMESPACE::KHRFragmentShadingRateExtensionName;
@@ -1751,8 +1751,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::EXTShaderImageAtomicInt64SpecVersion;
 
   //=== VK_KHR_shader_quad_control ===
-  using VULKAN_HPP_NAMESPACE::KHRShaderQuadControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::KHRShaderQuadControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::KHRShaderQuadControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::KHRShaderQuadControleSpecVersion;
 
   //=== VK_KHR_spirv_1_4 ===
   using VULKAN_HPP_NAMESPACE::KHRSpirv14ExtensionName;
@@ -1913,8 +1913,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::QCOMRenderPassTransformSpecVersion;
 
   //=== VK_EXT_depth_bias_control ===
-  using VULKAN_HPP_NAMESPACE::EXTDepthBiasControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTDepthBiasControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTDepthBiasControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTDepthBiasControleSpecVersion;
 
   //=== VK_EXT_device_memory_report ===
   using VULKAN_HPP_NAMESPACE::EXTDeviceMemoryReportExtensionName;
@@ -1957,8 +1957,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::EXTPrivateDataSpecVersion;
 
   //=== VK_EXT_pipeline_creation_cache_control ===
-  using VULKAN_HPP_NAMESPACE::EXTPipelineCreationCacheControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTPipelineCreationCacheControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTPipelineCreationCacheControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTPipelineCreationCacheControleSpecVersion;
 
   //=== VK_KHR_video_encode_queue ===
   using VULKAN_HPP_NAMESPACE::KHRVideoEncodeQueueExtensionName;
@@ -2009,8 +2009,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRFragmentShaderBarycentricSpecVersion;
 
   //=== VK_KHR_shader_subgroup_uniform_control_flow ===
-  using VULKAN_HPP_NAMESPACE::KHRShaderSubgroupUniformControlFlowExtensionName;
-  using VULKAN_HPP_NAMESPACE::KHRShaderSubgroupUniformControlFlowSpecVersion;
+  using VULKAN_HPP_NAMESPACE::KHRShaderSubgroupUniformControleFlowExtensionName;
+  using VULKAN_HPP_NAMESPACE::KHRShaderSubgroupUniformControleFlowSpecVersion;
 
   //=== VK_KHR_zero_initialize_workgroup_memory ===
   using VULKAN_HPP_NAMESPACE::KHRZeroInitializeWorkgroupMemoryExtensionName;
@@ -2053,8 +2053,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRCopyCommands2SpecVersion;
 
   //=== VK_EXT_image_compression_control ===
-  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControleSpecVersion;
 
   //=== VK_EXT_attachment_feedback_loop_layout ===
   using VULKAN_HPP_NAMESPACE::EXTAttachmentFeedbackLoopLayoutExtensionName;
@@ -2105,8 +2105,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::EXTDeviceAddressBindingReportSpecVersion;
 
   //=== VK_EXT_depth_clip_control ===
-  using VULKAN_HPP_NAMESPACE::EXTDepthClipControlExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTDepthClipControlSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTDepthClipControleExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTDepthClipControleSpecVersion;
 
   //=== VK_EXT_primitive_topology_list_restart ===
   using VULKAN_HPP_NAMESPACE::EXTPrimitiveTopologyListRestartExtensionName;
@@ -2244,8 +2244,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRShaderSubgroupRotateSpecVersion;
 
   //=== VK_ARM_scheduling_controls ===
-  using VULKAN_HPP_NAMESPACE::ARMSchedulingControlsExtensionName;
-  using VULKAN_HPP_NAMESPACE::ARMSchedulingControlsSpecVersion;
+  using VULKAN_HPP_NAMESPACE::ARMSchedulingControlesExtensionName;
+  using VULKAN_HPP_NAMESPACE::ARMSchedulingControlesSpecVersion;
 
   //=== VK_EXT_image_sliced_view_of_3d ===
   using VULKAN_HPP_NAMESPACE::EXTImageSlicedViewOf3DExtensionName;
@@ -2297,8 +2297,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRShaderMaximalReconvergenceSpecVersion;
 
   //=== VK_EXT_image_compression_control_swapchain ===
-  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControlSwapchainExtensionName;
-  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControlSwapchainSpecVersion;
+  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControleSwapchainExtensionName;
+  using VULKAN_HPP_NAMESPACE::EXTImageCompressionControleSwapchainSpecVersion;
 
   //=== VK_QCOM_image_processing ===
   using VULKAN_HPP_NAMESPACE::QCOMImageProcessingExtensionName;
@@ -2457,8 +2457,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::KHRLoadStoreOpNoneSpecVersion;
 
   //=== VK_KHR_shader_float_controls2 ===
-  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControls2ExtensionName;
-  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControls2SpecVersion;
+  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControles2ExtensionName;
+  using VULKAN_HPP_NAMESPACE::KHRShaderFloatControles2SpecVersion;
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
   //=== VK_QNX_external_memory_screen_buffer ===
@@ -2832,8 +2832,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceDriverProperties;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceDriverPropertiesKHR;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceFloat16Int8FeaturesKHR;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceFloatControlsProperties;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceFloatControlsPropertiesKHR;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceFloatControlesProperties;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceFloatControlesPropertiesKHR;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceHostQueryResetFeatures;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceHostQueryResetFeaturesEXT;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceImagelessFramebufferFeatures;
@@ -2942,8 +2942,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceMaintenance4FeaturesKHR;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceMaintenance4Properties;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceMaintenance4PropertiesKHR;
-  using VULKAN_HPP_NAMESPACE::PhysicalDevicePipelineCreationCacheControlFeatures;
-  using VULKAN_HPP_NAMESPACE::PhysicalDevicePipelineCreationCacheControlFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDevicePipelineCreationCacheControleFeatures;
+  using VULKAN_HPP_NAMESPACE::PhysicalDevicePipelineCreationCacheControleFeaturesEXT;
   using VULKAN_HPP_NAMESPACE::PhysicalDevicePrivateDataFeatures;
   using VULKAN_HPP_NAMESPACE::PhysicalDevicePrivateDataFeaturesEXT;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderDemoteToHelperInvocationFeatures;
@@ -2954,10 +2954,10 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderIntegerDotProductPropertiesKHR;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderTerminateInvocationFeatures;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderTerminateInvocationFeaturesKHR;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControlFeatures;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControlFeaturesEXT;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControlProperties;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControlPropertiesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControleFeatures;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControleFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControleProperties;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubgroupSizeControlePropertiesEXT;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceSynchronization2Features;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceSynchronization2FeaturesKHR;
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceTexelBufferAlignmentProperties;
@@ -3063,7 +3063,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::QueueFamilyVideoPropertiesKHR;
   using VULKAN_HPP_NAMESPACE::VideoBeginCodingInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoCapabilitiesKHR;
-  using VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEndCodingInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoFormatPropertiesKHR;
   using VULKAN_HPP_NAMESPACE::VideoPictureResourceInfoKHR;
@@ -3109,8 +3109,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264ProfileInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264QpKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264QualityLevelPropertiesKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlInfoKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControlLayerInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControleInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH264RateControleLayerInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionCreateInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionParametersAddInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH264SessionParametersCreateInfoKHR;
@@ -3127,8 +3127,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265ProfileInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265QpKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265QualityLevelPropertiesKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlInfoKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControlLayerInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControleInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeH265RateControleLayerInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionCreateInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionParametersAddInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeH265SessionParametersCreateInfoKHR;
@@ -3488,7 +3488,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderClockFeaturesKHR;
 
   //=== VK_AMD_pipeline_compiler_control ===
-  using VULKAN_HPP_NAMESPACE::PipelineCompilerControlCreateInfoAMD;
+  using VULKAN_HPP_NAMESPACE::PipelineCompilerControleCreateInfoAMD;
 
   //=== VK_AMD_shader_core_properties ===
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderCorePropertiesAMD;
@@ -3597,7 +3597,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderImageAtomicInt64FeaturesEXT;
 
   //=== VK_KHR_shader_quad_control ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderQuadControlFeaturesKHR;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderQuadControleFeaturesKHR;
 
   //=== VK_EXT_memory_budget ===
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceMemoryBudgetPropertiesEXT;
@@ -3736,7 +3736,7 @@ export namespace VULKAN_HPP_NAMESPACE
   //=== VK_EXT_depth_bias_control ===
   using VULKAN_HPP_NAMESPACE::DepthBiasInfoEXT;
   using VULKAN_HPP_NAMESPACE::DepthBiasRepresentationInfoEXT;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceDepthBiasControlFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceDepthBiasControleFeaturesEXT;
 
   //=== VK_EXT_device_memory_report ===
   using VULKAN_HPP_NAMESPACE::DeviceDeviceMemoryReportCreateInfoEXT;
@@ -3771,8 +3771,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VideoEncodeInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeQualityLevelInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeQualityLevelPropertiesKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlInfoKHR;
-  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControlLayerInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleInfoKHR;
+  using VULKAN_HPP_NAMESPACE::VideoEncodeRateControleLayerInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeSessionParametersFeedbackInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeSessionParametersGetInfoKHR;
   using VULKAN_HPP_NAMESPACE::VideoEncodeUsageInfoKHR;
@@ -3843,7 +3843,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceFragmentShaderBarycentricPropertiesKHR;
 
   //=== VK_KHR_shader_subgroup_uniform_control_flow ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR;
 
   //=== VK_NV_fragment_shading_rate_enums ===
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceFragmentShadingRateEnumsFeaturesNV;
@@ -3879,9 +3879,9 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR;
 
   //=== VK_EXT_image_compression_control ===
-  using VULKAN_HPP_NAMESPACE::ImageCompressionControlEXT;
+  using VULKAN_HPP_NAMESPACE::ImageCompressionControleEXT;
   using VULKAN_HPP_NAMESPACE::ImageCompressionPropertiesEXT;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceImageCompressionControlFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceImageCompressionControleFeaturesEXT;
 
   //=== VK_EXT_attachment_feedback_loop_layout ===
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT;
@@ -3918,8 +3918,8 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceAddressBindingReportFeaturesEXT;
 
   //=== VK_EXT_depth_clip_control ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceDepthClipControlFeaturesEXT;
-  using VULKAN_HPP_NAMESPACE::PipelineViewportDepthClipControlCreateInfoEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceDepthClipControleFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PipelineViewportDepthClipControleCreateInfoEXT;
 
   //=== VK_EXT_primitive_topology_list_restart ===
   using VULKAN_HPP_NAMESPACE::PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT;
@@ -4052,9 +4052,9 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderSubgroupRotateFeaturesKHR;
 
   //=== VK_ARM_scheduling_controls ===
-  using VULKAN_HPP_NAMESPACE::DeviceQueueShaderCoreControlCreateInfoARM;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsFeaturesARM;
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlsPropertiesARM;
+  using VULKAN_HPP_NAMESPACE::DeviceQueueShaderCoreControleCreateInfoARM;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlesFeaturesARM;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceSchedulingControlesPropertiesARM;
 
   //=== VK_EXT_image_sliced_view_of_3d ===
   using VULKAN_HPP_NAMESPACE::ImageViewSlicedCreateInfoEXT;
@@ -4107,7 +4107,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR;
 
   //=== VK_EXT_image_compression_control_swapchain ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceImageCompressionControleSwapchainFeaturesEXT;
 
   //=== VK_QCOM_image_processing ===
   using VULKAN_HPP_NAMESPACE::ImageViewSampleWeightCreateInfoQCOM;
@@ -4129,7 +4129,7 @@ export namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_subpass_merge_feedback ===
   using VULKAN_HPP_NAMESPACE::PhysicalDeviceSubpassMergeFeedbackFeaturesEXT;
-  using VULKAN_HPP_NAMESPACE::RenderPassCreationControlEXT;
+  using VULKAN_HPP_NAMESPACE::RenderPassCreationControleEXT;
   using VULKAN_HPP_NAMESPACE::RenderPassCreationFeedbackCreateInfoEXT;
   using VULKAN_HPP_NAMESPACE::RenderPassCreationFeedbackInfoEXT;
   using VULKAN_HPP_NAMESPACE::RenderPassSubpassFeedbackCreateInfoEXT;
@@ -4296,7 +4296,7 @@ export namespace VULKAN_HPP_NAMESPACE
   using VULKAN_HPP_NAMESPACE::VertexInputBindingDivisorDescriptionKHR;
 
   //=== VK_KHR_shader_float_controls2 ===
-  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderFloatControls2FeaturesKHR;
+  using VULKAN_HPP_NAMESPACE::PhysicalDeviceShaderFloatControles2FeaturesKHR;
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
   //=== VK_QNX_external_memory_screen_buffer ===

@@ -33,9 +33,9 @@
 
 #include "openxr_extension_wrapper.h"
 
-class OpenXRWMRControllerExtension : public OpenXRExtensionWrapper {
+class OpenXRWMRControlelerExtension : public OpenXRExtensionWrapper {
 public:
-	enum WMRControllers {
+	enum WMRControlelers {
 		WMR_HPMR,
 		WMR_SAMSUNG_ODESSY,
 		WMR_HAND_INTERACTION,
@@ -44,7 +44,7 @@ public:
 
 	virtual HashMap<String, bool *> get_requested_extensions() override;
 
-	bool is_available(WMRControllers p_type);
+	bool is_available(WMRControlelers p_type);
 
 	virtual void on_register_metadata() override;
 

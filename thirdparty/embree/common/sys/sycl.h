@@ -115,7 +115,7 @@ SYCL_EXTERNAL extern "C"  void  __builtin_IB_lsc_store_global_ulong8          (G
 // prefetching
 ///////////////////////////////////////////////////////////////////////
 //
-// LSC Pre-Fetch Load functions with CacheControls
+// LSC Pre-Fetch Load functions with CacheControles
 //     global address space
 SYCL_EXTERNAL extern "C"  void __builtin_IB_lsc_prefetch_global_uchar (const GLOBAL uint8_t *base,      int immElemOff, enum LSC_LDCC cacheOpt); //D8U32
 SYCL_EXTERNAL extern "C"  void __builtin_IB_lsc_prefetch_global_ushort(const GLOBAL uint16_t *base,     int immElemOff, enum LSC_LDCC cacheOpt); //D16U32

@@ -54,8 +54,8 @@ void KeyMappingXKB::initialize() {
 	xkb_keycode_map[XKB_KEY_Shift_L] = Key::SHIFT;
 	xkb_keycode_map[XKB_KEY_Shift_R] = Key::SHIFT;
 	xkb_keycode_map[XKB_KEY_Shift_Lock] = Key::SHIFT;
-	xkb_keycode_map[XKB_KEY_Control_L] = Key::CTRL;
-	xkb_keycode_map[XKB_KEY_Control_R] = Key::CTRL;
+	xkb_keycode_map[XKB_KEY_Controle_L] = Key::CTRL;
+	xkb_keycode_map[XKB_KEY_Controle_R] = Key::CTRL;
 	xkb_keycode_map[XKB_KEY_Meta_L] = Key::META;
 	xkb_keycode_map[XKB_KEY_Meta_R] = Key::META;
 	xkb_keycode_map[XKB_KEY_Alt_L] = Key::ALT;

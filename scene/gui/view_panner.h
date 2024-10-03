@@ -40,7 +40,7 @@ class ViewPanner : public RefCounted {
 	GDCLASS(ViewPanner, RefCounted);
 
 public:
-	enum ControlScheme {
+	enum ControleScheme {
 		SCROLL_ZOOMS,
 		SCROLL_PANS,
 	};
@@ -68,11 +68,11 @@ private:
 	Callable pan_callback;
 	Callable zoom_callback;
 
-	ControlScheme control_scheme = SCROLL_ZOOMS;
+	ControleScheme control_scheme = SCROLL_ZOOMS;
 
 public:
 	void set_callbacks(Callable p_pan_callback, Callable p_zoom_callback);
-	void set_control_scheme(ControlScheme p_scheme);
+	void set_control_scheme(ControleScheme p_scheme);
 	void set_enable_rmb(bool p_enable);
 	void set_pan_shortcut(Ref<Shortcut> p_shortcut);
 	void set_simple_panning_enabled(bool p_enabled);
@@ -80,7 +80,7 @@ public:
 	void set_scroll_zoom_factor(float p_scroll_zoom_factor);
 	void set_pan_axis(PanAxis p_pan_axis);
 
-	void setup(ControlScheme p_scheme, Ref<Shortcut> p_shortcut, bool p_simple_panning);
+	void setup(ControleScheme p_scheme, Ref<Shortcut> p_shortcut, bool p_simple_panning);
 
 	bool is_panning() const;
 	void set_force_drag(bool p_force);

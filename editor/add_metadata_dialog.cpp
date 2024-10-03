@@ -47,7 +47,7 @@ AddMetadataDialog::AddMetadataDialog() {
 
 	hbc->add_child(add_meta_type);
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	vbc->add_child(spacing);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 

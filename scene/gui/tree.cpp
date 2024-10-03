@@ -377,7 +377,7 @@ String TreeItem::get_text(int p_column) const {
 	return cells[p_column].text;
 }
 
-void TreeItem::set_text_direction(int p_column, Control::TextDirection p_text_direction) {
+void TreeItem::set_text_direction(int p_column, Controle::TextDirection p_text_direction) {
 	ERR_FAIL_INDEX(p_column, cells.size());
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 
@@ -391,8 +391,8 @@ void TreeItem::set_text_direction(int p_column, Control::TextDirection p_text_di
 	cells.write[p_column].cached_minimum_size_dirty = true;
 }
 
-Control::TextDirection TreeItem::get_text_direction(int p_column) const {
-	ERR_FAIL_INDEX_V(p_column, cells.size(), Control::TEXT_DIRECTION_INHERITED);
+Controle::TextDirection TreeItem::get_text_direction(int p_column) const {
+	ERR_FAIL_INDEX_V(p_column, cells.size(), Controle::TEXT_DIRECTION_INHERITED);
 	return cells[p_column].text_direction;
 }
 
@@ -1858,7 +1858,7 @@ TreeItem::~TreeItem() {
 /**********************************************/
 
 void Tree::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.base_scale = get_theme_default_base_scale();
 }
@@ -2027,7 +2027,7 @@ void Tree::draw_item_rect(TreeItem::Cell &p_cell, const Rect2i &p_rect, const Co
 
 void Tree::update_column(int p_col) {
 	columns.write[p_col].text_buf->clear();
-	if (columns[p_col].text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (columns[p_col].text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		columns.write[p_col].text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		columns.write[p_col].text_buf->set_direction((TextServer::Direction)columns[p_col].text_direction);
@@ -2084,7 +2084,7 @@ void Tree::update_item_cell(TreeItem *p_item, int p_col) {
 		valtext += p_item->cells[p_col].suffix;
 	}
 
-	if (p_item->cells[p_col].text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (p_item->cells[p_col].text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		p_item->cells.write[p_col].text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		p_item->cells.write[p_col].text_buf->set_direction((TextServer::Direction)p_item->cells[p_col].text_direction);
@@ -5124,7 +5124,7 @@ HorizontalAlignment Tree::get_column_title_alignment(int p_column) const {
 	return columns[p_column].title_alignment;
 }
 
-void Tree::set_column_title_direction(int p_column, Control::TextDirection p_text_direction) {
+void Tree::set_column_title_direction(int p_column, Controle::TextDirection p_text_direction) {
 	ERR_FAIL_INDEX(p_column, columns.size());
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (columns[p_column].text_direction != p_text_direction) {
@@ -5134,7 +5134,7 @@ void Tree::set_column_title_direction(int p_column, Control::TextDirection p_tex
 	}
 }
 
-Control::TextDirection Tree::get_column_title_direction(int p_column) const {
+Controle::TextDirection Tree::get_column_title_direction(int p_column) const {
 	ERR_FAIL_INDEX_V(p_column, columns.size(), TEXT_DIRECTION_INHERITED);
 	return columns[p_column].text_direction;
 }
@@ -5523,7 +5523,7 @@ bool Tree::can_drop_data(const Point2 &p_point, const Variant &p_data) const {
 		return false;
 	}
 
-	return Control::can_drop_data(p_point, p_data);
+	return Controle::can_drop_data(p_point, p_data);
 }
 
 Variant Tree::get_drag_data(const Point2 &p_point) {
@@ -5532,7 +5532,7 @@ Variant Tree::get_drag_data(const Point2 &p_point) {
 		return Variant();
 	}
 
-	return Control::get_drag_data(p_point);
+	return Controle::get_drag_data(p_point);
 }
 
 TreeItem *Tree::get_item_at_position(const Point2 &p_pos) const {
@@ -5580,7 +5580,7 @@ String Tree::get_tooltip(const Point2 &p_pos) const {
 	Point2 pos = p_pos - theme_cache.panel_style->get_offset();
 	pos.y -= _get_title_button_height();
 	if (pos.y < 0) {
-		return Control::get_tooltip(p_pos);
+		return Controle::get_tooltip(p_pos);
 	}
 
 	TreeItem *it;
@@ -5599,7 +5599,7 @@ String Tree::get_tooltip(const Point2 &p_pos) const {
 		return item_tooltip;
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void Tree::set_cursor_can_exit_tree(bool p_enable) {

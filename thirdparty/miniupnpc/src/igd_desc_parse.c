@@ -44,7 +44,7 @@ void IGDendelt(void * d, const char * name, int l)
 		           "urn:schemas-upnp-org:service:WANCommonInterfaceConfig:")) {
 			memcpy(&datas->CIF, &datas->tmp, sizeof(struct IGDdatas_service));
 		} else if(COMPARE(datas->tmp.servicetype,
-			                "urn:schemas-upnp-org:service:WANIPv6FirewallControl:")) {
+			                "urn:schemas-upnp-org:service:WANIPv6FirewallControle:")) {
 			memcpy(&datas->IPv6FC, &datas->tmp, sizeof(struct IGDdatas_service));
 		} else if(COMPARE(datas->tmp.servicetype,
 		                  "urn:schemas-upnp-org:service:WANIPConnection:")
@@ -112,7 +112,7 @@ void printIGD(struct IGDdatas * d)
 	printf(" controlURL = '%s'\n", d->second.controlurl);
 	printf(" eventSubURL = '%s'\n", d->second.eventsuburl);
 	printf(" SCPDURL = '%s'\n", d->second.scpdurl);
-	printf("WAN IPv6 Firewall Control :\n");
+	printf("WAN IPv6 Firewall Controle :\n");
 	/*printf(" deviceType = '%s'\n", d->IPv6FC.devicetype);*/
 	printf(" servicetype = '%s'\n", d->IPv6FC.servicetype);
 	printf(" controlURL = '%s'\n", d->IPv6FC.controlurl);

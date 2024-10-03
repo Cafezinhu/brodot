@@ -253,7 +253,7 @@ void ResourcePreloaderEditor::edit(ResourcePreloader *p_preloader) {
 	}
 }
 
-Variant ResourcePreloaderEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant ResourcePreloaderEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *ti = tree->get_item_at_position(p_point);
 	if (!ti) {
 		return Variant();
@@ -269,7 +269,7 @@ Variant ResourcePreloaderEditor::get_drag_data_fw(const Point2 &p_point, Control
 	return EditorNode::get_singleton()->drag_resource(res, p_from);
 }
 
-bool ResourcePreloaderEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ResourcePreloaderEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 
 	if (!d.has("type")) {
@@ -294,7 +294,7 @@ bool ResourcePreloaderEditor::can_drop_data_fw(const Point2 &p_point, const Vari
 	return false;
 }
 
-void ResourcePreloaderEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ResourcePreloaderEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}

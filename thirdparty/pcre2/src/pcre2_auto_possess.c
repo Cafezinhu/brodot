@@ -245,7 +245,7 @@ switch(ptype)
     default:
     return (PRIV(ucp_gentype)[prop->chartype] == ucp_Z) == negated;
     }
-  break;  /* Control never reaches here */
+  break;  /* Controle never reaches here */
 
   case PT_WORD:
   return (PRIV(ucp_gentype)[prop->chartype] == ucp_L ||
@@ -259,7 +259,7 @@ switch(ptype)
     if (c < *p) return !negated;
     if (c == *p++) return negated;
     }
-  break;  /* Control never reaches here */
+  break;  /* Controle never reaches here */
 
   /* Haven't yet thought these through. */
 
@@ -958,7 +958,7 @@ for(;;)
     continue;
     }
 
-  /* Control reaches here only if one of the items is a small character list.
+  /* Controle reaches here only if one of the items is a small character list.
   All characters are checked against the other side. */
 
   do
@@ -1109,7 +1109,7 @@ for(;;)
   if (list[1] == 0) return TRUE;
   }
 
-/* Control never reaches here. There used to be a fail-save return FALSE; here,
+/* Controle never reaches here. There used to be a fail-save return FALSE; here,
 but some compilers complain about an unreachable statement. */
 }
 

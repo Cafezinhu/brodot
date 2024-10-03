@@ -326,7 +326,7 @@ void TabBar::gui_input(const Ref<InputEvent> &p_event) {
 String TabBar::get_tooltip(const Point2 &p_pos) const {
 	int tab_idx = get_tab_idx_at_point(p_pos);
 	if (tab_idx < 0) {
-		return Control::get_tooltip(p_pos);
+		return Controle::get_tooltip(p_pos);
 	}
 
 	if (tabs[tab_idx].tooltip.is_empty() && tabs[tab_idx].truncated) {
@@ -339,7 +339,7 @@ String TabBar::get_tooltip(const Point2 &p_pos) const {
 void TabBar::_shape(int p_tab) {
 	tabs.write[p_tab].text_buf->clear();
 	tabs.write[p_tab].text_buf->set_width(-1);
-	if (tabs[p_tab].text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (tabs[p_tab].text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		tabs.write[p_tab].text_buf->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		tabs.write[p_tab].text_buf->set_direction((TextServer::Direction)tabs[p_tab].text_direction);
@@ -782,7 +782,7 @@ String TabBar::get_tab_tooltip(int p_tab) const {
 	return tabs[p_tab].tooltip;
 }
 
-void TabBar::set_tab_text_direction(int p_tab, Control::TextDirection p_text_direction) {
+void TabBar::set_tab_text_direction(int p_tab, Controle::TextDirection p_text_direction) {
 	ERR_FAIL_INDEX(p_tab, tabs.size());
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 
@@ -793,8 +793,8 @@ void TabBar::set_tab_text_direction(int p_tab, Control::TextDirection p_text_dir
 	}
 }
 
-Control::TextDirection TabBar::get_tab_text_direction(int p_tab) const {
-	ERR_FAIL_INDEX_V(p_tab, tabs.size(), Control::TEXT_DIRECTION_INHERITED);
+Controle::TextDirection TabBar::get_tab_text_direction(int p_tab) const {
+	ERR_FAIL_INDEX_V(p_tab, tabs.size(), Controle::TEXT_DIRECTION_INHERITED);
 	return tabs[p_tab].text_direction;
 }
 
@@ -1208,21 +1208,21 @@ void TabBar::remove_tab(int p_idx) {
 
 Variant TabBar::get_drag_data(const Point2 &p_point) {
 	if (!drag_to_rearrange_enabled) {
-		return Control::get_drag_data(p_point); // Allow stuff like TabContainer to override it.
+		return Controle::get_drag_data(p_point); // Allow stuff like TabContainer to override it.
 	}
 	return _handle_get_drag_data("tab_bar_tab", p_point);
 }
 
 bool TabBar::can_drop_data(const Point2 &p_point, const Variant &p_data) const {
 	if (!drag_to_rearrange_enabled) {
-		return Control::can_drop_data(p_point, p_data); // Allow stuff like TabContainer to override it.
+		return Controle::can_drop_data(p_point, p_data); // Allow stuff like TabContainer to override it.
 	}
 	return _handle_can_drop_data("tab_bar_tab", p_point, p_data);
 }
 
 void TabBar::drop_data(const Point2 &p_point, const Variant &p_data) {
 	if (!drag_to_rearrange_enabled) {
-		Control::drop_data(p_point, p_data); // Allow stuff like TabContainer to override it.
+		Controle::drop_data(p_point, p_data); // Allow stuff like TabContainer to override it.
 		return;
 	}
 

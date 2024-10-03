@@ -1430,7 +1430,7 @@ FileDialog::FileDialog() {
 	dir = memnew(LineEdit);
 	dir->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	hbc->add_child(dir);
-	dir->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	dir->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	refresh = memnew(Button);
 	refresh->set_theme_type_variation("FlatButton");
@@ -1462,7 +1462,7 @@ FileDialog::FileDialog() {
 
 	message = memnew(Label);
 	message->hide();
-	message->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	message->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	message->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	message->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	tree->add_child(message);
@@ -1472,17 +1472,17 @@ FileDialog::FileDialog() {
 	file = memnew(LineEdit);
 	file->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	file->set_stretch_ratio(4);
-	file->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	file->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	file_box->add_child(file);
 	filter = memnew(OptionButton);
 	filter->set_stretch_ratio(3);
-	filter->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	filter->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	filter->set_clip_text(true); // too many extensions overflows it
 	file_box->add_child(filter);
 	vbox->add_child(file_box);
 
 	grid_options = memnew(GridContainer);
-	grid_options->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	grid_options->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	grid_options->set_columns(2);
 	vbox->add_child(grid_options);
 

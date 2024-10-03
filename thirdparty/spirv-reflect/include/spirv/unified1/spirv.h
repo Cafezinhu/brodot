@@ -83,7 +83,7 @@ typedef enum SpvSourceLanguage_ {
 
 typedef enum SpvExecutionModel_ {
   SpvExecutionModelVertex = 0,
-  SpvExecutionModelTessellationControl = 1,
+  SpvExecutionModelTessellationControle = 1,
   SpvExecutionModelTessellationEvaluation = 2,
   SpvExecutionModelGeometry = 3,
   SpvExecutionModelFragment = 4,
@@ -168,7 +168,7 @@ typedef enum SpvExecutionMode_ {
   SpvExecutionModeNonCoherentColorAttachmentReadEXT = 4169,
   SpvExecutionModeNonCoherentDepthAttachmentReadEXT = 4170,
   SpvExecutionModeNonCoherentStencilAttachmentReadEXT = 4171,
-  SpvExecutionModeSubgroupUniformControlFlowKHR = 4421,
+  SpvExecutionModeSubgroupUniformControleFlowKHR = 4421,
   SpvExecutionModePostDepthCoverage = 4446,
   SpvExecutionModeDenormPreserve = 4459,
   SpvExecutionModeDenormFlushToZero = 4460,
@@ -595,8 +595,8 @@ typedef enum SpvDecoration_ {
   SpvDecorationSingleElementVectorINTEL = 6085,
   SpvDecorationVectorComputeCallableFunctionINTEL = 6087,
   SpvDecorationMediaBlockIOINTEL = 6140,
-  SpvDecorationLatencyControlLabelINTEL = 6172,
-  SpvDecorationLatencyControlConstraintINTEL = 6173,
+  SpvDecorationLatencyControleLabelINTEL = 6172,
+  SpvDecorationLatencyControleConstraintINTEL = 6173,
   SpvDecorationConduitKernelArgumentINTEL = 6175,
   SpvDecorationRegisterMapKernelArgumentINTEL = 6176,
   SpvDecorationMMHostInterfaceAddressWidthINTEL = 6177,
@@ -745,81 +745,81 @@ typedef enum SpvBuiltIn_ {
   SpvBuiltInMax = 0x7fffffff,
 } SpvBuiltIn;
 
-typedef enum SpvSelectionControlShift_ {
-  SpvSelectionControlFlattenShift = 0,
-  SpvSelectionControlDontFlattenShift = 1,
-  SpvSelectionControlMax = 0x7fffffff,
-} SpvSelectionControlShift;
+typedef enum SpvSelectionControleShift_ {
+  SpvSelectionControleFlattenShift = 0,
+  SpvSelectionControleDontFlattenShift = 1,
+  SpvSelectionControleMax = 0x7fffffff,
+} SpvSelectionControleShift;
 
-typedef enum SpvSelectionControlMask_ {
-  SpvSelectionControlMaskNone = 0,
-  SpvSelectionControlFlattenMask = 0x00000001,
-  SpvSelectionControlDontFlattenMask = 0x00000002,
-} SpvSelectionControlMask;
+typedef enum SpvSelectionControleMask_ {
+  SpvSelectionControleMaskNone = 0,
+  SpvSelectionControleFlattenMask = 0x00000001,
+  SpvSelectionControleDontFlattenMask = 0x00000002,
+} SpvSelectionControleMask;
 
-typedef enum SpvLoopControlShift_ {
-  SpvLoopControlUnrollShift = 0,
-  SpvLoopControlDontUnrollShift = 1,
-  SpvLoopControlDependencyInfiniteShift = 2,
-  SpvLoopControlDependencyLengthShift = 3,
-  SpvLoopControlMinIterationsShift = 4,
-  SpvLoopControlMaxIterationsShift = 5,
-  SpvLoopControlIterationMultipleShift = 6,
-  SpvLoopControlPeelCountShift = 7,
-  SpvLoopControlPartialCountShift = 8,
-  SpvLoopControlInitiationIntervalINTELShift = 16,
-  SpvLoopControlMaxConcurrencyINTELShift = 17,
-  SpvLoopControlDependencyArrayINTELShift = 18,
-  SpvLoopControlPipelineEnableINTELShift = 19,
-  SpvLoopControlLoopCoalesceINTELShift = 20,
-  SpvLoopControlMaxInterleavingINTELShift = 21,
-  SpvLoopControlSpeculatedIterationsINTELShift = 22,
-  SpvLoopControlNoFusionINTELShift = 23,
-  SpvLoopControlLoopCountINTELShift = 24,
-  SpvLoopControlMaxReinvocationDelayINTELShift = 25,
-  SpvLoopControlMax = 0x7fffffff,
-} SpvLoopControlShift;
+typedef enum SpvLoopControleShift_ {
+  SpvLoopControleUnrollShift = 0,
+  SpvLoopControleDontUnrollShift = 1,
+  SpvLoopControleDependencyInfiniteShift = 2,
+  SpvLoopControleDependencyLengthShift = 3,
+  SpvLoopControleMinIterationsShift = 4,
+  SpvLoopControleMaxIterationsShift = 5,
+  SpvLoopControleIterationMultipleShift = 6,
+  SpvLoopControlePeelCountShift = 7,
+  SpvLoopControlePartialCountShift = 8,
+  SpvLoopControleInitiationIntervalINTELShift = 16,
+  SpvLoopControleMaxConcurrencyINTELShift = 17,
+  SpvLoopControleDependencyArrayINTELShift = 18,
+  SpvLoopControlePipelineEnableINTELShift = 19,
+  SpvLoopControleLoopCoalesceINTELShift = 20,
+  SpvLoopControleMaxInterleavingINTELShift = 21,
+  SpvLoopControleSpeculatedIterationsINTELShift = 22,
+  SpvLoopControleNoFusionINTELShift = 23,
+  SpvLoopControleLoopCountINTELShift = 24,
+  SpvLoopControleMaxReinvocationDelayINTELShift = 25,
+  SpvLoopControleMax = 0x7fffffff,
+} SpvLoopControleShift;
 
-typedef enum SpvLoopControlMask_ {
-  SpvLoopControlMaskNone = 0,
-  SpvLoopControlUnrollMask = 0x00000001,
-  SpvLoopControlDontUnrollMask = 0x00000002,
-  SpvLoopControlDependencyInfiniteMask = 0x00000004,
-  SpvLoopControlDependencyLengthMask = 0x00000008,
-  SpvLoopControlMinIterationsMask = 0x00000010,
-  SpvLoopControlMaxIterationsMask = 0x00000020,
-  SpvLoopControlIterationMultipleMask = 0x00000040,
-  SpvLoopControlPeelCountMask = 0x00000080,
-  SpvLoopControlPartialCountMask = 0x00000100,
-  SpvLoopControlInitiationIntervalINTELMask = 0x00010000,
-  SpvLoopControlMaxConcurrencyINTELMask = 0x00020000,
-  SpvLoopControlDependencyArrayINTELMask = 0x00040000,
-  SpvLoopControlPipelineEnableINTELMask = 0x00080000,
-  SpvLoopControlLoopCoalesceINTELMask = 0x00100000,
-  SpvLoopControlMaxInterleavingINTELMask = 0x00200000,
-  SpvLoopControlSpeculatedIterationsINTELMask = 0x00400000,
-  SpvLoopControlNoFusionINTELMask = 0x00800000,
-  SpvLoopControlLoopCountINTELMask = 0x01000000,
-  SpvLoopControlMaxReinvocationDelayINTELMask = 0x02000000,
-} SpvLoopControlMask;
+typedef enum SpvLoopControleMask_ {
+  SpvLoopControleMaskNone = 0,
+  SpvLoopControleUnrollMask = 0x00000001,
+  SpvLoopControleDontUnrollMask = 0x00000002,
+  SpvLoopControleDependencyInfiniteMask = 0x00000004,
+  SpvLoopControleDependencyLengthMask = 0x00000008,
+  SpvLoopControleMinIterationsMask = 0x00000010,
+  SpvLoopControleMaxIterationsMask = 0x00000020,
+  SpvLoopControleIterationMultipleMask = 0x00000040,
+  SpvLoopControlePeelCountMask = 0x00000080,
+  SpvLoopControlePartialCountMask = 0x00000100,
+  SpvLoopControleInitiationIntervalINTELMask = 0x00010000,
+  SpvLoopControleMaxConcurrencyINTELMask = 0x00020000,
+  SpvLoopControleDependencyArrayINTELMask = 0x00040000,
+  SpvLoopControlePipelineEnableINTELMask = 0x00080000,
+  SpvLoopControleLoopCoalesceINTELMask = 0x00100000,
+  SpvLoopControleMaxInterleavingINTELMask = 0x00200000,
+  SpvLoopControleSpeculatedIterationsINTELMask = 0x00400000,
+  SpvLoopControleNoFusionINTELMask = 0x00800000,
+  SpvLoopControleLoopCountINTELMask = 0x01000000,
+  SpvLoopControleMaxReinvocationDelayINTELMask = 0x02000000,
+} SpvLoopControleMask;
 
-typedef enum SpvFunctionControlShift_ {
-  SpvFunctionControlInlineShift = 0,
-  SpvFunctionControlDontInlineShift = 1,
-  SpvFunctionControlPureShift = 2,
-  SpvFunctionControlConstShift = 3,
-  SpvFunctionControlOptNoneINTELShift = 16,
-  SpvFunctionControlMax = 0x7fffffff,
-} SpvFunctionControlShift;
+typedef enum SpvFunctionControleShift_ {
+  SpvFunctionControleInlineShift = 0,
+  SpvFunctionControleDontInlineShift = 1,
+  SpvFunctionControlePureShift = 2,
+  SpvFunctionControleConstShift = 3,
+  SpvFunctionControleOptNoneINTELShift = 16,
+  SpvFunctionControleMax = 0x7fffffff,
+} SpvFunctionControleShift;
 
-typedef enum SpvFunctionControlMask_ {
-  SpvFunctionControlMaskNone = 0,
-  SpvFunctionControlInlineMask = 0x00000001,
-  SpvFunctionControlDontInlineMask = 0x00000002,
-  SpvFunctionControlPureMask = 0x00000004,
-  SpvFunctionControlConstMask = 0x00000008,
-  SpvFunctionControlOptNoneINTELMask = 0x00010000,
-} SpvFunctionControlMask;
+typedef enum SpvFunctionControleMask_ {
+  SpvFunctionControleMaskNone = 0,
+  SpvFunctionControleInlineMask = 0x00000001,
+  SpvFunctionControleDontInlineMask = 0x00000002,
+  SpvFunctionControlePureMask = 0x00000004,
+  SpvFunctionControleConstMask = 0x00000008,
+  SpvFunctionControleOptNoneINTELMask = 0x00010000,
+} SpvFunctionControleMask;
 
 typedef enum SpvMemorySemanticsShift_ {
   SpvMemorySemanticsAcquireShift = 1,
@@ -983,7 +983,7 @@ typedef enum SpvCapability_ {
   SpvCapabilityImageMSArray = 48,
   SpvCapabilityStorageImageExtendedFormats = 49,
   SpvCapabilityImageQuery = 50,
-  SpvCapabilityDerivativeControl = 51,
+  SpvCapabilityDerivativeControle = 51,
   SpvCapabilityInterpolationFunction = 52,
   SpvCapabilityTransformFeedback = 53,
   SpvCapabilityGeometryStreams = 54,
@@ -1132,19 +1132,19 @@ typedef enum SpvCapability_ {
   SpvCapabilitySubgroupAvcMotionEstimationIntraINTEL = 5697,
   SpvCapabilitySubgroupAvcMotionEstimationChromaINTEL = 5698,
   SpvCapabilityVariableLengthArrayINTEL = 5817,
-  SpvCapabilityFunctionFloatControlINTEL = 5821,
+  SpvCapabilityFunctionFloatControleINTEL = 5821,
   SpvCapabilityFPGAMemoryAttributesINTEL = 5824,
   SpvCapabilityFPFastMathModeINTEL = 5837,
   SpvCapabilityArbitraryPrecisionIntegersINTEL = 5844,
   SpvCapabilityArbitraryPrecisionFloatingPointINTEL = 5845,
-  SpvCapabilityUnstructuredLoopControlsINTEL = 5886,
-  SpvCapabilityFPGALoopControlsINTEL = 5888,
+  SpvCapabilityUnstructuredLoopControlesINTEL = 5886,
+  SpvCapabilityFPGALoopControlesINTEL = 5888,
   SpvCapabilityKernelAttributesINTEL = 5892,
   SpvCapabilityFPGAKernelAttributesINTEL = 5897,
   SpvCapabilityFPGAMemoryAccessesINTEL = 5898,
   SpvCapabilityFPGAClusterAttributesINTEL = 5904,
   SpvCapabilityLoopFuseINTEL = 5906,
-  SpvCapabilityFPGADSPControlINTEL = 5908,
+  SpvCapabilityFPGADSPControleINTEL = 5908,
   SpvCapabilityMemoryAccessAliasingINTEL = 5910,
   SpvCapabilityFPGAInvocationPipeliningAttributesINTEL = 5916,
   SpvCapabilityFPGABufferLocationINTEL = 5920,
@@ -1175,7 +1175,7 @@ typedef enum SpvCapability_ {
   SpvCapabilityBFloat16ConversionINTEL = 6115,
   SpvCapabilitySplitBarrierINTEL = 6141,
   SpvCapabilityFPGAKernelAttributesv2INTEL = 6161,
-  SpvCapabilityFPGALatencyControlINTEL = 6171,
+  SpvCapabilityFPGALatencyControleINTEL = 6171,
   SpvCapabilityFPGAArgumentInterfacesINTEL = 6174,
   SpvCapabilityGroupUniformArithmeticKHR = 6400,
   SpvCapabilityMax = 0x7fffffff,
@@ -1524,7 +1524,7 @@ typedef enum SpvOp_ {
   SpvOpEndPrimitive = 219,
   SpvOpEmitStreamVertex = 220,
   SpvOpEndStreamPrimitive = 221,
-  SpvOpControlBarrier = 224,
+  SpvOpControleBarrier = 224,
   SpvOpMemoryBarrier = 225,
   SpvOpAtomicLoad = 227,
   SpvOpAtomicStore = 228,
@@ -1988,7 +1988,7 @@ typedef enum SpvOp_ {
   SpvOpArbitraryFloatPowINTEL = 5880,
   SpvOpArbitraryFloatPowRINTEL = 5881,
   SpvOpArbitraryFloatPowNINTEL = 5882,
-  SpvOpLoopControlINTEL = 5887,
+  SpvOpLoopControleINTEL = 5887,
   SpvOpAliasDomainDeclINTEL = 5911,
   SpvOpAliasScopeDeclINTEL = 5912,
   SpvOpAliasScopeListDeclINTEL = 5913,
@@ -2032,8 +2032,8 @@ typedef enum SpvOp_ {
   SpvOpSpecConstantCompositeContinuedINTEL = 6092,
   SpvOpConvertFToBF16INTEL = 6116,
   SpvOpConvertBF16ToFINTEL = 6117,
-  SpvOpControlBarrierArriveINTEL = 6142,
-  SpvOpControlBarrierWaitINTEL = 6143,
+  SpvOpControleBarrierArriveINTEL = 6142,
+  SpvOpControleBarrierWaitINTEL = 6143,
   SpvOpGroupIMulKHR = 6401,
   SpvOpGroupFMulKHR = 6402,
   SpvOpGroupBitwiseAndKHR = 6403,
@@ -2875,7 +2875,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool* hasResult,
       *hasResult = false;
       *hasResultType = false;
       break;
-    case SpvOpControlBarrier:
+    case SpvOpControleBarrier:
       *hasResult = false;
       *hasResultType = false;
       break;
@@ -4667,7 +4667,7 @@ inline void SpvHasResultAndType(SpvOp opcode, bool* hasResult,
       *hasResult = true;
       *hasResultType = true;
       break;
-    case SpvOpLoopControlINTEL:
+    case SpvOpLoopControleINTEL:
       *hasResult = false;
       *hasResultType = false;
       break;
@@ -4843,11 +4843,11 @@ inline void SpvHasResultAndType(SpvOp opcode, bool* hasResult,
       *hasResult = true;
       *hasResultType = true;
       break;
-    case SpvOpControlBarrierArriveINTEL:
+    case SpvOpControleBarrierArriveINTEL:
       *hasResult = false;
       *hasResultType = false;
       break;
-    case SpvOpControlBarrierWaitINTEL:
+    case SpvOpControleBarrierWaitINTEL:
       *hasResult = false;
       *hasResultType = false;
       break;

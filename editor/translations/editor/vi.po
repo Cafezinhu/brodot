@@ -2072,7 +2072,7 @@ msgstr "Cài đặt trình chỉnh sửa..."
 msgid "Project"
 msgstr "Dự án"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Theo dõi phiên bản"
 
 msgid "Install Android Build Template..."
@@ -3769,7 +3769,7 @@ msgstr "Di chuyển neo CanvasItem \"%s\""
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Thu phóng Node2D \"%s\" thành (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "Chỉnh kích cỡ Nút Điều khiển \"%s\" thành (%d, %d)"
 
 msgid "Scale %d CanvasItems"

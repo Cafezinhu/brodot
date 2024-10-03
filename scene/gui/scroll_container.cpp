@@ -40,7 +40,7 @@ Size2 ScrollContainer::get_minimum_size() const {
 	largest_child_min_size = Size2();
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
+		Controle *c = as_sortable_control(get_child(i), SortableVisbilityMode::VISIBLE);
 		if (!c) {
 			continue;
 		}
@@ -277,13 +277,13 @@ void ScrollContainer::_update_scrollbar_position() {
 	_updating_scrollbars = false;
 }
 
-void ScrollContainer::_gui_focus_changed(Control *p_control) {
+void ScrollContainer::_gui_focus_changed(Controle *p_control) {
 	if (follow_focus && is_ancestor_of(p_control)) {
 		ensure_control_visible(p_control);
 	}
 }
 
-void ScrollContainer::ensure_control_visible(Control *p_control) {
+void ScrollContainer::ensure_control_visible(Controle *p_control) {
 	ERR_FAIL_COND_MSG(!is_ancestor_of(p_control), "Must be an ancestor of the control.");
 
 	Rect2 global_rect = get_global_rect();
@@ -316,7 +316,7 @@ void ScrollContainer::_reposition_children() {
 	}
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -547,7 +547,7 @@ PackedStringArray ScrollContainer::get_configuration_warnings() const {
 	int found = 0;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = as_sortable_control(get_child(i));
+		Controle *c = as_sortable_control(get_child(i));
 		if (!c) {
 			continue;
 		}
@@ -559,7 +559,7 @@ PackedStringArray ScrollContainer::get_configuration_warnings() const {
 	}
 
 	if (found != 1) {
-		warnings.push_back(RTR("ScrollContainer is intended to work with a single child control.\nUse a container as child (VBox, HBox, etc.), or a Control and set the custom minimum size manually."));
+		warnings.push_back(RTR("ScrollContainer is intended to work with a single child control.\nUse a container as child (VBox, HBox, etc.), or a Controle and set the custom minimum size manually."));
 	}
 
 	return warnings;

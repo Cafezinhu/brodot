@@ -320,7 +320,7 @@ msgstr "증분 검색의 최대 간격 밀리초"
 msgid "Common"
 msgstr "일반"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "픽셀에 컨트롤 스냅"
 
 msgid "Fonts"
@@ -449,7 +449,7 @@ msgstr "기기"
 msgid "Window ID"
 msgstr "창 ID"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Command와 Ctrl 자동 리매핑"
 
 msgid "Alt Pressed"
@@ -554,10 +554,10 @@ msgstr "피치"
 msgid "Instrument"
 msgstr "장비"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "컨트롤러 번호"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "컨트롤러 값"
 
 msgid "Shortcut"
@@ -1667,7 +1667,7 @@ msgstr "심볼 색상"
 msgid "Keyword Color"
 msgstr "키워드 색상"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "흐름 제어 키워드 색상"
 
 msgid "Base Type Color"
@@ -2459,7 +2459,7 @@ msgstr "프레임 카운트"
 msgid "Duration"
 msgstr "지속 시간"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "버전 컨트롤"
 
 msgid "Username"
@@ -3422,7 +3422,7 @@ msgstr "설명 URL"
 msgid "Service Type"
 msgstr "서비스 유형"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "IGD 제어 URL"
 
 msgid "IGD Service Type"
@@ -6128,7 +6128,7 @@ msgstr "포커스 잃을 시 텍스트 선택 해제"
 msgid "Right Icon"
 msgstr "우측 아이콘"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "제어 문자 표시"
 
 msgid "Select All on Focus"

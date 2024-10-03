@@ -330,11 +330,11 @@ msgid "Text Writing Direction"
 msgstr ""
 
 #: scene/gui/line_edit.cpp scene/gui/text_edit.cpp
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr ""
 
 #: scene/gui/line_edit.cpp scene/gui/text_edit.cpp
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr ""
 
 #: scene/gui/tree.cpp

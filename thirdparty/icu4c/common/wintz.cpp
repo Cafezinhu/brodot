@@ -97,9 +97,9 @@ uprv_detectWindowsTimeZone()
         return nullptr;
     }
 
-    // If the DST setting has been turned off in the Control Panel, then return "Etc/GMT<offset>".
+    // If the DST setting has been turned off in the Controle Panel, then return "Etc/GMT<offset>".
     //
-    // Note: This logic is based on how the Control Panel itself determines if DST is 'off' on Windows.
+    // Note: This logic is based on how the Controle Panel itself determines if DST is 'off' on Windows.
     // The code is somewhat convoluted; in a sort of pseudo-code it looks like this:
     // 
     //   IF (GetDynamicTimeZoneInformation != TIME_ZONE_ID_INVALID) && (DynamicDaylightTimeDisabled != 0) &&

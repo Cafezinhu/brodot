@@ -291,7 +291,7 @@ TextureLayeredEditor::TextureLayeredEditor() {
 	set_texture_repeat(TextureRepeat::TEXTURE_REPEAT_ENABLED);
 	set_custom_minimum_size(Size2(0, 256.0) * EDSCALE);
 
-	texture_rect = memnew(Control);
+	texture_rect = memnew(Controle);
 	texture_rect->set_mouse_filter(MOUSE_FILTER_IGNORE);
 	texture_rect->connect(SceneStringName(draw), callable_mp(this, &TextureLayeredEditor::_texture_rect_draw));
 
@@ -318,8 +318,8 @@ TextureLayeredEditor::TextureLayeredEditor() {
 
 	info->set_h_grow_direction(GROW_DIRECTION_BEGIN);
 	info->set_v_grow_direction(GROW_DIRECTION_BEGIN);
-	info->set_h_size_flags(Control::SIZE_SHRINK_END);
-	info->set_v_size_flags(Control::SIZE_SHRINK_END);
+	info->set_h_size_flags(Controle::SIZE_SHRINK_END);
+	info->set_v_size_flags(Controle::SIZE_SHRINK_END);
 	info->set_anchor(SIDE_RIGHT, 1);
 	info->set_anchor(SIDE_LEFT, 1);
 	info->set_anchor(SIDE_BOTTOM, 1);

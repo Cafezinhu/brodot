@@ -305,16 +305,16 @@ AtlasMergingDialog::AtlasMergingDialog() {
 	merge_button->set_disabled(true);
 
 	HSplitContainer *atlas_merging_h_split_container = memnew(HSplitContainer);
-	atlas_merging_h_split_container->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	atlas_merging_h_split_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	atlas_merging_h_split_container->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	atlas_merging_h_split_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_child(atlas_merging_h_split_container);
 
 	// Atlas sources item list.
 	atlas_merging_atlases_list = memnew(ItemList);
 	atlas_merging_atlases_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	atlas_merging_atlases_list->set_fixed_icon_size(Size2(60, 60) * EDSCALE);
-	atlas_merging_atlases_list->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	atlas_merging_atlases_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	atlas_merging_atlases_list->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	atlas_merging_atlases_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	atlas_merging_atlases_list->set_texture_filter(CanvasItem::TEXTURE_FILTER_NEAREST_WITH_MIPMAPS);
 	atlas_merging_atlases_list->set_custom_minimum_size(Size2(100, 200));
 	atlas_merging_atlases_list->set_select_mode(ItemList::SELECT_MULTI);
@@ -322,7 +322,7 @@ AtlasMergingDialog::AtlasMergingDialog() {
 	atlas_merging_h_split_container->add_child(atlas_merging_atlases_list);
 
 	VBoxContainer *atlas_merging_right_panel = memnew(VBoxContainer);
-	atlas_merging_right_panel->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	atlas_merging_right_panel->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	atlas_merging_right_panel->set_texture_filter(CanvasItem::TEXTURE_FILTER_NEAREST_WITH_MIPMAPS);
 	atlas_merging_h_split_container->add_child(atlas_merging_right_panel);
 
@@ -344,16 +344,16 @@ AtlasMergingDialog::AtlasMergingDialog() {
 	atlas_merging_right_panel->add_child(preview_label);
 
 	preview = memnew(TextureRect);
-	preview->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	preview->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	preview->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	preview->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	preview->set_expand_mode(TextureRect::EXPAND_IGNORE_SIZE);
 	preview->hide();
 	preview->set_stretch_mode(TextureRect::STRETCH_KEEP_ASPECT_CENTERED);
 	atlas_merging_right_panel->add_child(preview);
 
 	select_2_atlases_label = memnew(Label);
-	select_2_atlases_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	select_2_atlases_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	select_2_atlases_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	select_2_atlases_label->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	select_2_atlases_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	select_2_atlases_label->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	select_2_atlases_label->set_text(TTR("Please select two atlases or more."));

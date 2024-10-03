@@ -490,7 +490,7 @@ bool AbstractPolygon2DEditor::forward_gui_input(const Ref<InputEvent> &p_event) 
 	return false;
 }
 
-void AbstractPolygon2DEditor::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void AbstractPolygon2DEditor::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	if (!_get_node()) {
 		return;
 	}

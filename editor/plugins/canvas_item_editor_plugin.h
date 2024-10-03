@@ -193,8 +193,8 @@ private:
 	bool selection_menu_additive_selection = false;
 
 	Tool tool = TOOL_SELECT;
-	Control *viewport = nullptr;
-	Control *viewport_scrollable = nullptr;
+	Controle *viewport = nullptr;
+	Controle *viewport_scrollable = nullptr;
 
 	HScrollBar *h_scroll = nullptr;
 	VScrollBar *v_scroll = nullptr;
@@ -203,7 +203,7 @@ private:
 	// (such as MeshInstance's "Mesh" menu).
 	PanelContainer *context_toolbar_panel = nullptr;
 	HBoxContainer *context_toolbar_hbox = nullptr;
-	HashMap<Control *, VSeparator *> context_toolbar_separators;
+	HashMap<Controle *, VSeparator *> context_toolbar_separators;
 
 	void _update_context_toolbar();
 
@@ -352,8 +352,8 @@ private:
 	PopupMenu *selection_menu = nullptr;
 	PopupMenu *add_node_menu = nullptr;
 
-	Control *top_ruler = nullptr;
-	Control *left_ruler = nullptr;
+	Controle *top_ruler = nullptr;
+	Controle *left_ruler = nullptr;
 
 	Point2 drag_start_origin;
 	DragType drag_type = DRAG_NONE;
@@ -401,8 +401,8 @@ private:
 	void _restore_canvas_item_state(const List<CanvasItem *> &p_canvas_items, bool restore_bones = false);
 	void _commit_canvas_item_state(const List<CanvasItem *> &p_canvas_items, const String &action_name, bool commit_bones = false);
 
-	Vector2 _anchor_to_position(const Control *p_control, Vector2 anchor);
-	Vector2 _position_to_anchor(const Control *p_control, Vector2 position);
+	Vector2 _anchor_to_position(const Controle *p_control, Vector2 anchor);
+	Vector2 _position_to_anchor(const Controle *p_control, Vector2 position);
 
 	void _popup_callback(int p_op);
 	bool updating_scroll = false;
@@ -456,8 +456,8 @@ private:
 	void _draw_focus();
 	void _draw_grid();
 	void _draw_ruler_tool();
-	void _draw_control_anchors(Control *control);
-	void _draw_control_helpers(Control *control);
+	void _draw_control_anchors(Controle *control);
+	void _draw_control_helpers(Controle *control);
 	void _draw_selection();
 	void _draw_axis();
 	void _draw_invisible_nodes_positions(Node *p_node, const Transform2D &p_parent_xform = Transform2D(), const Transform2D &p_canvas_xform = Transform2D());
@@ -564,20 +564,20 @@ public:
 	void set_state(const Dictionary &p_state);
 	void clear();
 
-	void add_control_to_menu_panel(Control *p_control);
-	void remove_control_from_menu_panel(Control *p_control);
+	void add_control_to_menu_panel(Controle *p_control);
+	void remove_control_from_menu_panel(Controle *p_control);
 
-	void add_control_to_left_panel(Control *p_control);
-	void remove_control_from_left_panel(Control *p_control);
+	void add_control_to_left_panel(Controle *p_control);
+	void remove_control_from_left_panel(Controle *p_control);
 
-	void add_control_to_right_panel(Control *p_control);
-	void remove_control_from_right_panel(Control *p_control);
+	void add_control_to_right_panel(Controle *p_control);
+	void remove_control_from_right_panel(Controle *p_control);
 
 	VSplitContainer *get_bottom_split();
 
-	Control *get_viewport_control() { return viewport; }
+	Controle *get_viewport_control() { return viewport; }
 
-	Control *get_controls_container() { return controls_vb; }
+	Controle *get_controls_container() { return controls_vb; }
 
 	void update_viewport();
 
@@ -622,8 +622,8 @@ public:
 	~CanvasItemEditorPlugin();
 };
 
-class CanvasItemEditorViewport : public Control {
-	GDCLASS(CanvasItemEditorViewport, Control);
+class CanvasItemEditorViewport : public Controle {
+	GDCLASS(CanvasItemEditorViewport, Controle);
 
 	// The type of node that will be created when dropping texture into the viewport.
 	String default_texture_node_type;
@@ -635,7 +635,7 @@ class CanvasItemEditorViewport : public Control {
 	Point2 drop_pos;
 
 	CanvasItemEditor *canvas_item_editor = nullptr;
-	Control *preview_node = nullptr;
+	Controle *preview_node = nullptr;
 	AcceptDialog *accept = nullptr;
 	AcceptDialog *texture_node_type_selector = nullptr;
 	Label *label = nullptr;

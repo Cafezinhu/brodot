@@ -340,7 +340,7 @@ protected:
 // The different reasons for reaching a block in the inReadableOrder traversal.
 enum ReachReason {
     // Reachable from the entry block via transfers of control, i.e. branches.
-    ReachViaControlFlow = 0,
+    ReachViaControleFlow = 0,
     // A continue target that is not reachable via control flow.
     ReachDeadContinue,
     // A merge block that is not reachable via control flow.
@@ -527,7 +527,7 @@ __inline Function::Function(Id id, Id resultType, Id functionType, Id firstParam
 {
     // OpFunction
     functionInstruction.reserveOperands(2);
-    functionInstruction.addImmediateOperand(FunctionControlMaskNone);
+    functionInstruction.addImmediateOperand(FunctionControleMaskNone);
     functionInstruction.addIdOperand(functionType);
     parent.mapInstruction(&functionInstruction);
     parent.addFunction(this);

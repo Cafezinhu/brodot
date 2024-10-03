@@ -1517,7 +1517,7 @@ void TIntermediate::output(TInfoSink& infoSink, bool tree)
     if (xfbMode)
         infoSink.debug << "in xfb mode\n";
 
-    if (getSubgroupUniformControlFlow())
+    if (getSubgroupUniformControleFlow())
         infoSink.debug << "subgroup_uniform_control_flow\n";
 
     if (getMaximallyReconverges())
@@ -1527,7 +1527,7 @@ void TIntermediate::output(TInfoSink& infoSink, bool tree)
     case EShLangVertex:
         break;
 
-    case EShLangTessControl:
+    case EShLangTessControle:
         infoSink.debug << "vertices = " << vertices << "\n";
 
         if (inputPrimitive != ElgNone)

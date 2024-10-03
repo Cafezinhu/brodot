@@ -1055,7 +1055,7 @@ DisplayServerWeb::DisplayServerWeb(const String &p_rendering_driver, WindowMode 
 		attributes.alpha = OS::get_singleton()->is_layered_allowed();
 		attributes.antialias = false;
 		attributes.majorVersion = 2;
-		attributes.explicitSwapControl = true;
+		attributes.explicitSwapControle = true;
 
 		webgl_ctx = emscripten_webgl_create_context(canvas_id, &attributes);
 		webgl2_inited = webgl_ctx && emscripten_webgl_make_context_current(webgl_ctx) == EMSCRIPTEN_RESULT_SUCCESS;

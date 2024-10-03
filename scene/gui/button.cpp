@@ -49,7 +49,7 @@ void Button::_queue_update_size_cache() {
 }
 
 void Button::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	const bool rtl = is_layout_rtl();
 	if (rtl && has_theme_stylebox(SNAME("normal_mirrored"))) {
@@ -569,7 +569,7 @@ void Button::_shape(Ref<TextParagraph> p_paragraph, String p_text) {
 	autowrap_flags = autowrap_flags | TextServer::BREAK_TRIM_EDGE_SPACES;
 	p_paragraph->set_break_flags(autowrap_flags);
 
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		p_paragraph->set_direction(is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR);
 	} else {
 		p_paragraph->set_direction((TextServer::Direction)text_direction);
@@ -624,7 +624,7 @@ TextServer::AutowrapMode Button::get_autowrap_mode() const {
 	return autowrap_mode;
 }
 
-void Button::set_text_direction(Control::TextDirection p_text_direction) {
+void Button::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	if (text_direction != p_text_direction) {
 		text_direction = p_text_direction;
@@ -633,7 +633,7 @@ void Button::set_text_direction(Control::TextDirection p_text_direction) {
 	}
 }
 
-Control::TextDirection Button::get_text_direction() const {
+Controle::TextDirection Button::get_text_direction() const {
 	return text_direction;
 }
 

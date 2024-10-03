@@ -1593,7 +1593,7 @@ Size2 Window::_get_contents_minimum_size() const {
 	Size2 max;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i));
+		Controle *c = Object::cast_to<Controle>(get_child(i));
 		if (c) {
 			Point2i pos = c->get_position();
 			Size2i min = c->get_combined_minimum_size();
@@ -2051,7 +2051,7 @@ void Window::set_theme(const Ref<Theme> &p_theme) {
 		return;
 	}
 
-	Control *parent_c = Object::cast_to<Control>(get_parent());
+	Controle *parent_c = Object::cast_to<Controle>(get_parent());
 	if (parent_c && parent_c->has_theme_owner_node()) {
 		theme_owner->propagate_theme_changed(this, parent_c->get_theme_owner_node(), is_inside_tree(), true);
 		return;
@@ -2638,7 +2638,7 @@ void Window::set_layout_direction(Window::LayoutDirection p_direction) {
 	ERR_FAIL_INDEX((int)p_direction, 4);
 
 	layout_dir = p_direction;
-	propagate_notification(Control::NOTIFICATION_LAYOUT_DIRECTION_CHANGED);
+	propagate_notification(Controle::NOTIFICATION_LAYOUT_DIRECTION_CHANGED);
 }
 
 Window::LayoutDirection Window::get_layout_direction() const {
@@ -2677,7 +2677,7 @@ bool Window::is_layout_rtl() const {
 #endif
 		Node *parent_node = get_parent();
 		while (parent_node) {
-			Control *parent_control = Object::cast_to<Control>(parent_node);
+			Controle *parent_control = Object::cast_to<Controle>(parent_node);
 			if (parent_control) {
 				return parent_control->is_layout_rtl();
 			}

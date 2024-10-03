@@ -39,7 +39,7 @@ extern "C" {
  * representation that can be understood by the kernel. The topology core
  * currently recognises the following object types :-
  *
- *  * Controls (mixer, enumerated and byte) including TLV data.
+ *  * Controles (mixer, enumerated and byte) including TLV data.
  *  * PCMs (Front End DAI & DAI link)
  *  * DAPM widgets
  *  * DAPM graph elements.
@@ -55,7 +55,7 @@ extern "C" {
  * can be shared amongst many control objects that use the same TLV data.
  *
  *
- * <h4>Controls</h4>
+ * <h4>Controles</h4>
  * Topology audio controls can belong to three different types :-
  *   * Mixer control
  *   * Enumerated control
@@ -64,7 +64,7 @@ extern "C" {
  * Each control type can contain TLV data, private data, operations and also
  * belong to widget objects.<br>
  *
- * <h5>Control Operations</h5>
+ * <h5>Controle Operations</h5>
  * Driver Kcontrol callback info(), get() and put() operations are mapped with
  * the CTL ops section in topology configuration files. The ctl ops section can
  * assign operations using the standard names (listed below) for the standard
@@ -94,8 +94,8 @@ extern "C" {
  *  * range
  *  * strobe
  *
-* <h5>Control Access</h5>
- * Controls access can be specified using the "access" section. If no "access"
+* <h5>Controle Access</h5>
+ * Controles access can be specified using the "access" section. If no "access"
  * section is defined then default RW access flags are set for normal and TLV
  * controls.
  *
@@ -123,8 +123,8 @@ extern "C" {
  *  * tlv_callback
  *  * user
  *
- * <h5>Control TLV Data</h5>
- * Controls can also use TLV data to represent dB information. This can be done
+ * <h5>Controle TLV Data</h5>
+ * Controles can also use TLV data to represent dB information. This can be done
  * by defining a TLV section and using the TLV section within the control.
  * The TLV data for DBScale types are defined as follows :-
  *
@@ -139,8 +139,8 @@ extern "C" {
  * Where the meanings and values for min, step and mute are exactly the same
  * as defined in driver code.
  *
- * <h5>Control Channel Mapping</h5>
- * Controls can also specify which channels they are mapped with. This is useful
+ * <h5>Controle Channel Mapping</h5>
+ * Controles can also specify which channels they are mapped with. This is useful
  * for userspace as it allows applications to determine the correct control
  * channel for Left and Right etc. Channel maps are defined as follows :-
  *
@@ -193,8 +193,8 @@ extern "C" {
  *  * brc		# bottom right center
  * </pre>
  *
- *  <h5>Control Private Data</h5>
- * Controls can also have private data. This can be done by defining a private
+ *  <h5>Controle Private Data</h5>
+ * Controles can also have private data. This can be done by defining a private
  * data section and including the section within the control. The private data
  * section is defined as follows :-
  *
@@ -327,13 +327,13 @@ extern "C" {
  *
  * </pre>
  *
- * <h5>Mixer Controls</h5>
+ * <h5>Mixer Controles</h5>
  * A mixer control is defined as a new section that can include channel mapping,
  * TLV data, callback operations and private data. The mixer section also
  * includes a few other config options that are shown here :-
  *
  * <pre>
- * SectionControlMixer."mixer name" {
+ * SectionControleMixer."mixer name" {
  *	comment "optional comments"
  *
  *	index "1"			# Index number
@@ -360,13 +360,13 @@ extern "C" {
  * objects with index number N and can be used to add/remove pipelines of
  * objects whilst other objects are unaffected.
  *
- * <h5>Byte Controls</h5>
+ * <h5>Byte Controles</h5>
  * A byte control is defined as a new section that can include channel mapping,
  * TLV data, callback operations and private data. The bytes section also
  * includes a few other config options that are shown here :-
  *
  * <pre>
- * SectionControlBytes."name" {
+ * SectionControleBytes."name" {
  *	comment "optional comments"
  *
  *	index "1"			# Index number
@@ -390,7 +390,7 @@ extern "C" {
  * }
  * </pre>
  *
- * <h5>Enumerated Controls</h5>
+ * <h5>Enumerated Controles</h5>
  * A enumerated control is defined as a new section (like mixer and byte) that
  * can include channel mapping, callback operations, private data and
  * text strings to represent the enumerated control options.<br>
@@ -414,7 +414,7 @@ extern "C" {
  * follows :-
  *
  * <pre>
- * SectionControlMixer."name" {
+ * SectionControleMixer."name" {
  *	comment "optional comments"
  *
  *	index "1"			# Index number
@@ -495,8 +495,8 @@ extern "C" {
  *	event_type "1"			# DAPM widget event type
  *	event_flags "1"			# DAPM widget event flags
  *
- *	mixer "name"			# Optional Mixer Control
- *	enum "name"			# Optional Enum Control
+ *	mixer "name"			# Optional Mixer Controle
+ *	enum "name"			# Optional Enum Controle
  *
  *	data "name"			# optional private data
  * }
@@ -509,7 +509,7 @@ extern "C" {
  *
  * <h5>Widget Private Data</h5>
  * Widget can have private data. For the format of the private data, please
- * refer to section Control Private Data.
+ * refer to section Controle Private Data.
  *
  * <h4>PCM Capabilities</h4>
  * Topology can also define the PCM capabilities of front end or physical DAIs.
@@ -837,9 +837,9 @@ struct snd_tplg_io_ops_template {
  * \brief Template type for control objects.
  */
 struct snd_tplg_ctl_template {
-	int type;		/*!< Control type */
-	const char *name;	/*!< Control name */
-	int access;		/*!< Control access */
+	int type;		/*!< Controle type */
+	const char *name;	/*!< Controle name */
+	int access;		/*!< Controle access */
 	struct snd_tplg_io_ops_template ops;	/*!< operations */
 	struct snd_tplg_tlv_template *tlv; /*!< non NULL means we have TLV data */
 };

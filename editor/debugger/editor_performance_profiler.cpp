@@ -403,7 +403,7 @@ EditorPerformanceProfiler::EditorPerformanceProfiler() {
 	monitor_tree->set_hide_root(true);
 	add_child(monitor_tree);
 
-	monitor_draw = memnew(Control);
+	monitor_draw = memnew(Controle);
 	monitor_draw->set_clip_contents(true);
 	monitor_draw->connect(SceneStringName(draw), callable_mp(this, &EditorPerformanceProfiler::_monitor_draw));
 	monitor_draw->connect(SceneStringName(gui_input), callable_mp(this, &EditorPerformanceProfiler::_marker_input));

@@ -132,9 +132,9 @@ Key dom_code2godot_scancode(EM_UTF8 const p_code[32], EM_UTF8 const p_key[32], b
 	DOM2GODOT("Backspace", BACKSPACE);
 	DOM2GODOT("CapsLock", CAPSLOCK);
 	DOM2GODOT("ContextMenu", MENU);
-	DOM2GODOT("Control", CTRL);
-	DOM2GODOT("ControlLeft", CTRL);
-	DOM2GODOT("ControlRight", CTRL);
+	DOM2GODOT("Controle", CTRL);
+	DOM2GODOT("ControleLeft", CTRL);
+	DOM2GODOT("ControleRight", CTRL);
 	DOM2GODOT("Enter", ENTER);
 	DOM2GODOT("Meta", META);
 	DOM2GODOT("MetaLeft", META);
@@ -147,7 +147,7 @@ Key dom_code2godot_scancode(EM_UTF8 const p_code[32], EM_UTF8 const p_key[32], b
 	DOM2GODOT("Space", SPACE);
 	DOM2GODOT("Tab", TAB);
 
-	// ControlPad section.
+	// ControlePad section.
 	DOM2GODOT("Delete", KEY_DELETE);
 	DOM2GODOT("End", END);
 	DOM2GODOT("Help", HELP);
@@ -232,8 +232,8 @@ KeyLocation dom_code2godot_key_location(EM_UTF8 const p_code[32]) {
 
 	DOM2GODOT("AltLeft", LEFT);
 	DOM2GODOT("AltRight", RIGHT);
-	DOM2GODOT("ControlLeft", LEFT);
-	DOM2GODOT("ControlRight", RIGHT);
+	DOM2GODOT("ControleLeft", LEFT);
+	DOM2GODOT("ControleRight", RIGHT);
 	DOM2GODOT("MetaLeft", LEFT);
 	DOM2GODOT("MetaRight", RIGHT);
 	DOM2GODOT("OSLeft", LEFT);

@@ -166,8 +166,8 @@ bool WebXRInterfaceJS::is_input_source_active(int p_input_source_id) const {
 	return input_sources[p_input_source_id].active;
 }
 
-Ref<XRControllerTracker> WebXRInterfaceJS::get_input_source_tracker(int p_input_source_id) const {
-	ERR_FAIL_INDEX_V(p_input_source_id, input_source_count, Ref<XRControllerTracker>());
+Ref<XRControlelerTracker> WebXRInterfaceJS::get_input_source_tracker(int p_input_source_id) const {
+	ERR_FAIL_INDEX_V(p_input_source_id, input_source_count, Ref<XRControlelerTracker>());
 	return input_sources[p_input_source_id].tracker;
 }
 
@@ -657,7 +657,7 @@ void WebXRInterfaceJS::_update_input_source(int p_input_source_id) {
 	input_source.target_ray_mode = (WebXRInterface::TargetRayMode)tmp_target_ray_mode;
 	input_source.touch_index = touch_index;
 
-	Ref<XRControllerTracker> &tracker = input_source.tracker;
+	Ref<XRControlelerTracker> &tracker = input_source.tracker;
 
 	if (tracker.is_null()) {
 		tracker.instantiate();

@@ -1629,7 +1629,7 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 	action_menu->set_text(TTR("Actions..."));
 	// Style the MenuButton like a regular Button to make it more noticeable.
 	action_menu->set_flat(false);
-	action_menu->set_focus_mode(Control::FOCUS_ALL);
+	action_menu->set_focus_mode(Controle::FOCUS_ALL);
 	menu_hb->add_child(action_menu);
 
 	action_menu->get_popup()->add_item(TTR("Extract Materials"), ACTION_EXTRACT_MATERIALS);
@@ -1641,7 +1641,7 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 
 	tree_split = memnew(HSplitContainer);
 	main_vb->add_child(tree_split);
-	tree_split->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tree_split->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	data_mode = memnew(TabContainer);
 	tree_split->add_child(data_mode);
@@ -1650,7 +1650,7 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 
 	property_split = memnew(HSplitContainer);
 	tree_split->add_child(property_split);
-	property_split->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	property_split->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	scene_tree = memnew(Tree);
 	scene_tree->set_name(TTR("Scene"));
@@ -1674,13 +1674,13 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 	material_tree->set_hide_root(true);
 
 	VBoxContainer *vp_vb = memnew(VBoxContainer);
-	vp_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	vp_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	vp_vb->set_anchors_and_offsets_preset(Control::LayoutPreset::PRESET_FULL_RECT);
+	vp_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	vp_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
+	vp_vb->set_anchors_and_offsets_preset(Controle::LayoutPreset::PRESET_FULL_RECT);
 	property_split->add_child(vp_vb);
 
 	SubViewportContainer *vp_container = memnew(SubViewportContainer);
-	vp_container->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	vp_container->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	vp_container->set_custom_minimum_size(Size2(10, 10));
 	vp_container->set_stretch(true);
 	vp_container->connect(SceneStringName(gui_input), callable_mp(this, &SceneImportSettingsDialog::_viewport_input));
@@ -1690,7 +1690,7 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 	vp_container->add_child(base_viewport);
 
 	animation_preview = memnew(PanelContainer);
-	animation_preview->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	animation_preview->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	vp_vb->add_child(animation_preview);
 	animation_preview->hide();
 
@@ -1700,32 +1700,32 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 	animation_play_button = memnew(Button);
 	animation_hbox->add_child(animation_play_button);
 	animation_play_button->set_flat(true);
-	animation_play_button->set_focus_mode(Control::FOCUS_NONE);
+	animation_play_button->set_focus_mode(Controle::FOCUS_NONE);
 	animation_play_button->set_shortcut(ED_SHORTCUT("scene_import_settings/play_selected_animation", TTR("Selected Animation Play/Pause"), Key::SPACE));
 	animation_play_button->connect(SceneStringName(pressed), callable_mp(this, &SceneImportSettingsDialog::_play_animation));
 
 	animation_stop_button = memnew(Button);
 	animation_hbox->add_child(animation_stop_button);
 	animation_stop_button->set_flat(true);
-	animation_stop_button->set_focus_mode(Control::FOCUS_NONE);
+	animation_stop_button->set_focus_mode(Controle::FOCUS_NONE);
 	animation_stop_button->set_tooltip_text(TTR("Selected Animation Stop"));
 	animation_stop_button->connect(SceneStringName(pressed), callable_mp(this, &SceneImportSettingsDialog::_stop_current_animation));
 
 	animation_slider = memnew(HSlider);
 	animation_hbox->add_child(animation_slider);
-	animation_slider->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-	animation_slider->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	animation_slider->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+	animation_slider->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	animation_slider->set_max(1.0);
 	animation_slider->set_step(1.0 / 100.0);
 	animation_slider->set_value_no_signal(0.0);
-	animation_slider->set_focus_mode(Control::FOCUS_NONE);
+	animation_slider->set_focus_mode(Controle::FOCUS_NONE);
 	animation_slider->connect(SceneStringName(value_changed), callable_mp(this, &SceneImportSettingsDialog::_animation_slider_value_changed));
 
 	animation_toggle_skeleton_visibility = memnew(Button);
 	animation_hbox->add_child(animation_toggle_skeleton_visibility);
 	animation_toggle_skeleton_visibility->set_toggle_mode(true);
 	animation_toggle_skeleton_visibility->set_flat(true);
-	animation_toggle_skeleton_visibility->set_focus_mode(Control::FOCUS_NONE);
+	animation_toggle_skeleton_visibility->set_focus_mode(Controle::FOCUS_NONE);
 	animation_toggle_skeleton_visibility->set_tooltip_text(TTR("Toggle Animation Skeleton Visibility"));
 
 	animation_toggle_skeleton_visibility->connect(SceneStringName(pressed), callable_mp(this, &SceneImportSettingsDialog::_animation_update_skeleton_visibility));
@@ -1734,12 +1734,12 @@ SceneImportSettingsDialog::SceneImportSettingsDialog() {
 
 	HBoxContainer *viewport_hbox = memnew(HBoxContainer);
 	vp_container->add_child(viewport_hbox);
-	viewport_hbox->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT, Control::PRESET_MODE_MINSIZE, 2);
+	viewport_hbox->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT, Controle::PRESET_MODE_MINSIZE, 2);
 
 	viewport_hbox->add_spacer();
 
 	VBoxContainer *vb_light = memnew(VBoxContainer);
-	vb_light->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	vb_light->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	viewport_hbox->add_child(vb_light);
 
 	light_rotate_switch = memnew(Button);

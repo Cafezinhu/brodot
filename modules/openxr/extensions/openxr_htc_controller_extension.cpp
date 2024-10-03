@@ -32,7 +32,7 @@
 
 #include "../action_map/openxr_interaction_profile_metadata.h"
 
-HashMap<String, bool *> OpenXRHTCControllerExtension::get_requested_extensions() {
+HashMap<String, bool *> OpenXRHTCControlelerExtension::get_requested_extensions() {
 	HashMap<String, bool *> request_extensions;
 
 	request_extensions[XR_HTC_VIVE_COSMOS_CONTROLLER_INTERACTION_EXTENSION_NAME] = &available[HTC_VIVE_COSMOS];
@@ -42,7 +42,7 @@ HashMap<String, bool *> OpenXRHTCControllerExtension::get_requested_extensions()
 	return request_extensions;
 }
 
-PackedStringArray OpenXRHTCControllerExtension::get_suggested_tracker_names() {
+PackedStringArray OpenXRHTCControlelerExtension::get_suggested_tracker_names() {
 	PackedStringArray arr = {
 		"/user/hand_htc/left",
 		"/user/hand_htc/right",
@@ -50,11 +50,11 @@ PackedStringArray OpenXRHTCControllerExtension::get_suggested_tracker_names() {
 	return arr;
 }
 
-bool OpenXRHTCControllerExtension::is_available(HTCControllers p_type) {
+bool OpenXRHTCControlelerExtension::is_available(HTCControlelers p_type) {
 	return available[p_type];
 }
 
-void OpenXRHTCControllerExtension::on_register_metadata() {
+void OpenXRHTCControlelerExtension::on_register_metadata() {
 	OpenXRInteractionProfileMetadata *metadata = OpenXRInteractionProfileMetadata::get_singleton();
 	ERR_FAIL_NULL(metadata);
 

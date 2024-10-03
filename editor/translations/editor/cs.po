@@ -1539,10 +1539,10 @@ msgstr "Používání"
 msgid "Misc"
 msgstr "Různé"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Klikací ovládací prvek:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Typ klikacího prvku:"
 
 msgid "Live Edit Root:"
@@ -3271,7 +3271,7 @@ msgstr "Projekt"
 msgid "Project Settings"
 msgstr "Nastavení projektu"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Správa verzí"
 
 msgid "Install Android Build Template..."
@@ -5326,8 +5326,8 @@ msgstr "Přemístit CanvasItem \"%s\" kotva"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Škálovat Node2D \"%s\" na (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Škálovat Control \"%s\" na (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Škálovat Controle \"%s\" na (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "Škálovat %d CanvasItems"
@@ -6439,10 +6439,10 @@ msgstr "Energie nebe"
 msgid "Remove Point from Curve"
 msgstr "Odstranit bod z křivky"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Odstranit odchozí kontrolní bod křivky"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Odstranit příchozí kontrolní bod křivky"
 
 msgid "Move Point in Curve"
@@ -6454,16 +6454,16 @@ msgstr "Přidat bod do křivky"
 msgid "Split Curve"
 msgstr "Rozdělit křivku"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Odstranit vnitřní kontrolní bod křivky"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Přesunout odchozí kontrolní bod křivky"
 
 msgid "Right Click: Delete Point"
 msgstr "Pravý klik: Smazat bod"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Vybrat kontrolní body křivky (Shift+Drag)"
 
 msgid "Delete Point"
@@ -9105,7 +9105,7 @@ msgstr "Přepni mezi hexadecimálními a kódovými hodnotami."
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Kontejner sám o sobě neslouží žádnému účelu, pokud nějaký skript "
 "nenakonfiguruje nastavení podřízených uzlů.\n"
@@ -9125,11 +9125,11 @@ msgstr ""
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer je navržen tak, aby běžel s jedním ovládacím potomkem.\n"
-"Použijte kontejner (VBox, HBox atd.) nebo uzel Control jako potomka a "
+"Použijte kontejner (VBox, HBox atd.) nebo uzel Controle jako potomka a "
 "nastavte minimální velikost ručně."
 
 msgid ""

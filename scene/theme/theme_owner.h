@@ -34,7 +34,7 @@
 #include "core/object/object.h"
 #include "scene/resources/theme.h"
 
-class Control;
+class Controle;
 class Node;
 class ThemeContext;
 class Window;
@@ -42,7 +42,7 @@ class Window;
 class ThemeOwner : public Object {
 	Node *holder = nullptr;
 
-	Control *owner_control = nullptr;
+	Controle *owner_control = nullptr;
 	Window *owner_window = nullptr;
 	ThemeContext *owner_context = nullptr;
 

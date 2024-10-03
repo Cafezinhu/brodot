@@ -543,7 +543,7 @@ void ShaderCreateDialog::_bind_methods() {
 ShaderCreateDialog::ShaderCreateDialog() {
 	_update_language_info();
 
-	// Main Controls.
+	// Main Controles.
 
 	gc = memnew(GridContainer);
 	gc->set_columns(2);
@@ -559,7 +559,7 @@ ShaderCreateDialog::ShaderCreateDialog() {
 
 	// Spacing.
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 
 	VBoxContainer *vb = memnew(VBoxContainer);
@@ -572,7 +572,7 @@ ShaderCreateDialog::ShaderCreateDialog() {
 
 	type_menu = memnew(OptionButton);
 	type_menu->set_custom_minimum_size(Size2(250, 0) * EDSCALE);
-	type_menu->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	type_menu->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	gc->add_child(memnew(Label(TTR("Type:"))));
 	gc->add_child(type_menu);
 
@@ -636,11 +636,11 @@ ShaderCreateDialog::ShaderCreateDialog() {
 	// Path.
 
 	HBoxContainer *hb = memnew(HBoxContainer);
-	hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->connect(SceneStringName(sort_children), callable_mp(this, &ShaderCreateDialog::_path_hbox_sorted));
 	file_path = memnew(LineEdit);
 	file_path->connect(SceneStringName(text_changed), callable_mp(this, &ShaderCreateDialog::_path_changed));
-	file_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	file_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hb->add_child(file_path);
 	register_text_enter(file_path);
 	path_button = memnew(Button);

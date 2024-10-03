@@ -32,7 +32,7 @@
 
 #include "../action_map/openxr_interaction_profile_metadata.h"
 
-HashMap<String, bool *> OpenXRHuaweiControllerExtension::get_requested_extensions() {
+HashMap<String, bool *> OpenXRHuaweiControlelerExtension::get_requested_extensions() {
 	HashMap<String, bool *> request_extensions;
 
 	request_extensions[XR_HUAWEI_CONTROLLER_INTERACTION_EXTENSION_NAME] = &available;
@@ -40,11 +40,11 @@ HashMap<String, bool *> OpenXRHuaweiControllerExtension::get_requested_extension
 	return request_extensions;
 }
 
-bool OpenXRHuaweiControllerExtension::is_available() {
+bool OpenXRHuaweiControlelerExtension::is_available() {
 	return available;
 }
 
-void OpenXRHuaweiControllerExtension::on_register_metadata() {
+void OpenXRHuaweiControlelerExtension::on_register_metadata() {
 	OpenXRInteractionProfileMetadata *metadata = OpenXRInteractionProfileMetadata::get_singleton();
 	ERR_FAIL_NULL(metadata);
 

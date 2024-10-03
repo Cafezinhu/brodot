@@ -1798,10 +1798,10 @@ msgstr "Використання"
 msgid "Misc"
 msgstr "Інше"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Натиснутий елемент керування:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Натиснутий тип керування:"
 
 msgid "Live Edit Root:"
@@ -3798,7 +3798,7 @@ msgstr "Налаштування проекту..."
 msgid "Project Settings"
 msgstr "Параметри проекту"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Керування версіями"
 
 msgid "Install Android Build Template..."
@@ -3965,7 +3965,7 @@ msgstr ""
 msgid "Keep local changes and overwrite"
 msgstr "Зберегти локальні зміни та перезаписати"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Налаштування контролю версій..."
 
 msgid "New Inherited"
@@ -6135,14 +6135,14 @@ msgstr "Додаткові параметри"
 msgid "Device:"
 msgstr "Пристрій:"
 
-msgid "Command / Control (auto)"
-msgstr "Command / Control (автоматично)"
+msgid "Command / Controle (auto)"
+msgstr "Command / Controle (автоматично)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
-"Автоматичне перемикається між 'Meta' ('Command') і 'Control' залежно від "
+"Автоматичне перемикається між 'Meta' ('Command') і 'Controle' залежно від "
 "поточної платформи."
 
 msgid "Keycode (Latin Equivalent)"
@@ -6303,9 +6303,9 @@ msgstr "Згенерувати POT"
 msgid "Add Built-in Strings to POT"
 msgstr "Додати вбудовані рядки до POT"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr ""
-"Додавання рядків з вбудованих компонентів, таких як деякі вузли Control."
+"Додавання рядків з вбудованих компонентів, таких як деякі вузли Controle."
 
 msgid "Set %s on %d nodes"
 msgstr "Встановити %s на вузлах %d"
@@ -7188,7 +7188,7 @@ msgstr "Пересунути прив'язку CanvasItem «%s»"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Масштабувати Node2D «%s» до (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
 msgstr "Змінити розміри елемента керування «%s» до (%d, %d)"
 
 msgid "Scale %d CanvasItems"
@@ -7710,7 +7710,7 @@ msgstr "Змінити позначки вертикального розмір�
 msgid "Change Horizontal Size Flags"
 msgstr "Змінити позначки горизонтального розміру"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "Шаблони для прив'язок та зміщень вузла Керування."
 
 msgid "Anchor preset"
@@ -7725,10 +7725,10 @@ msgstr ""
 "прямокутника."
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
-"Якщо активовано, пересування вузлів Control змінюватиме їхні прив'язки, а не "
+"Якщо активовано, пересування вузлів Controle змінюватиме їхні прив'язки, а не "
 "їх зміщення."
 
 msgid "Sizing settings for children of a Container node."
@@ -9223,10 +9223,10 @@ msgstr "Перемикання між режимами мінімум/макси
 msgid "Remove Point from Curve"
 msgstr "Видалити точку з кривої"
 
-msgid "Remove Out-Control from Curve"
+msgid "Remove Out-Controle from Curve"
 msgstr "Вилучити з кривої вихідний промінь"
 
-msgid "Remove In-Control from Curve"
+msgid "Remove In-Controle from Curve"
 msgstr "Вилучити з кривої вхідний промінь"
 
 msgid "Move Point in Curve"
@@ -9238,16 +9238,16 @@ msgstr "Додавання точки до кривої"
 msgid "Split Curve"
 msgstr "Розділити криву"
 
-msgid "Move In-Control in Curve"
+msgid "Move In-Controle in Curve"
 msgstr "Пересунути вхідний промінь кривої"
 
-msgid "Move Out-Control in Curve"
+msgid "Move Out-Controle in Curve"
 msgstr "Пересунути вихідний промінь кривої"
 
 msgid "Right Click: Delete Point"
 msgstr "Клацніть правою кнопкою миші: видалити точку"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "Вибір керувальних точок (Shift+перетяг)"
 
 msgid "Delete Point"
@@ -10814,10 +10814,10 @@ msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr ""
 "Некоректний шлях. Ймовірно, ресурс PackedScene було пересунуто або вилучено."
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
 msgstr ""
 "Некоректний ресурс PackedScene. Кореневим вузлом ресурсу має бути вузол "
-"Control."
+"Controle."
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "Некоректний файл. Файл не є ресурсом PackedScene."
@@ -11611,7 +11611,7 @@ msgstr "Хочете вилучити гілку %s?"
 msgid "Do you want to remove the %s remote?"
 msgstr "Ви справді хочете вилучити віддалене сховище %s?"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Створення метаданих керування версіями"
 
 msgid "Create VCS metadata files for:"
@@ -13275,7 +13275,7 @@ msgstr ""
 "Обробник можна змінити пізніше, але, можливо, виникне потреба у коригуванні "
 "сцен."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Метадані керування версіями:"
 
 msgid "Git"
@@ -15865,12 +15865,12 @@ msgstr "Перемикання між шістнадцятковими знач�
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "Сам контейнер не має призначення, якщо скрипт не налаштовує поведінку щодо "
 "розташування його дочірніх об'єктів.\n"
 "Якщо ви не маєте наміру додавати скрипт, будь ласка, скористайтеся замість "
-"контейнера звичайним вузлом «Control»."
+"контейнера звичайним вузлом «Controle»."
 
 msgid ""
 "The Hint Tooltip won't be displayed as the control's Mouse Filter is set to "
@@ -15908,13 +15908,13 @@ msgstr "Якщо увімкнено «Exp Edit», «Min Value» має бути 
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
 "ScrollContainer призначено для роботи із одинарним дочірнім засобом "
 "керування.\n"
 "Скористайтеся контейнером як дочірнім об'єктом (VBox, HBox тощо) або вузлом "
-"Control і встановіть нетиповий мінімальний розмір вручну."
+"Controle і встановіть нетиповий мінімальний розмір вручну."
 
 msgid ""
 "This node doesn't have a SubViewport as child, so it can't display its "

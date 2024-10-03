@@ -75,10 +75,10 @@ GotoLineDialog::GotoLineDialog() {
 	set_title(TTR("Go to Line"));
 
 	VBoxContainer *vbc = memnew(VBoxContainer);
-	vbc->set_anchor_and_offset(SIDE_LEFT, Control::ANCHOR_BEGIN, 8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_TOP, Control::ANCHOR_BEGIN, 8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_RIGHT, Control::ANCHOR_END, -8 * EDSCALE);
-	vbc->set_anchor_and_offset(SIDE_BOTTOM, Control::ANCHOR_END, -8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_LEFT, Controle::ANCHOR_BEGIN, 8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_TOP, Controle::ANCHOR_BEGIN, 8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_RIGHT, Controle::ANCHOR_END, -8 * EDSCALE);
+	vbc->set_anchor_and_offset(SIDE_BOTTOM, Controle::ANCHOR_END, -8 * EDSCALE);
 	add_child(vbc);
 
 	Label *l = memnew(Label);
@@ -136,7 +136,7 @@ void FindReplaceBar::unhandled_input(const Ref<InputEvent> &p_event) {
 	Ref<InputEventKey> k = p_event;
 
 	if (k.is_valid() && k->is_action_pressed(SNAME("ui_cancel"), false, true)) {
-		Control *focus_owner = get_viewport()->gui_get_focus_owner();
+		Controle *focus_owner = get_viewport()->gui_get_focus_owner();
 
 		if (text_editor->has_focus() || (focus_owner && is_ancestor_of(focus_owner))) {
 			_hide_bar();
@@ -563,10 +563,10 @@ void FindReplaceBar::_show_search(bool p_with_replace, bool p_show_only) {
 
 	if (focus_replace) {
 		search_text->deselect();
-		callable_mp((Control *)replace_text, &Control::grab_focus).call_deferred();
+		callable_mp((Controle *)replace_text, &Controle::grab_focus).call_deferred();
 	} else {
 		replace_text->deselect();
-		callable_mp((Control *)search_text, &Control::grab_focus).call_deferred();
+		callable_mp((Controle *)search_text, &Controle::grab_focus).call_deferred();
 	}
 
 	if (on_one_line) {
@@ -1499,7 +1499,7 @@ void CodeTextEditor::_update_text_editor_theme() {
 
 	int count = status_bar->get_child_count();
 	for (int i = 0; i < count; i++) {
-		Control *n = Object::cast_to<Control>(status_bar->get_child(i));
+		Controle *n = Object::cast_to<Controle>(status_bar->get_child(i));
 		if (n) {
 			n->add_theme_font_override(SceneStringName(font), status_bar_font);
 			n->add_theme_font_size_override(SceneStringName(font_size), status_bar_font_size);
@@ -1758,7 +1758,7 @@ void CodeTextEditor::set_code_complete_func(CodeTextEditorCodeCompleteFunc p_cod
 	code_complete_ud = p_ud;
 }
 
-void CodeTextEditor::set_toggle_list_control(Control *p_control) {
+void CodeTextEditor::set_toggle_list_control(Controle *p_control) {
 	toggle_scripts_list = p_control;
 }
 

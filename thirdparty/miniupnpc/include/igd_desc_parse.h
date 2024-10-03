@@ -33,7 +33,7 @@ struct IGDdatas {
 	struct IGDdatas_service first;
 	/* if both WANIPConnection and WANPPPConnection are present */
 	struct IGDdatas_service second;
-	/* "urn:schemas-upnp-org:service:WANIPv6FirewallControl:1" */
+	/* "urn:schemas-upnp-org:service:WANIPv6FirewallControle:1" */
 	struct IGDdatas_service IPv6FC;
 	/* tmp */
 	struct IGDdatas_service tmp;

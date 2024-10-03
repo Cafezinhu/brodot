@@ -250,10 +250,10 @@ msgstr "Yinele"
 msgid "Text Writing Direction"
 msgstr "Metin Yazım Yönü"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Denetim Karakterlerini Görüntüle"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Denetim Karakteri Ekle"
 
 msgid "(Other)"

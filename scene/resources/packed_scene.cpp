@@ -276,8 +276,8 @@ Node *SceneState::instantiate(GenEditState p_edit_state) const {
 				} else {
 					WARN_PRINT(vformat("Node %s of type %s cannot be created. A placeholder will be created instead.", snames[n.name], snames[n.type]).ascii().get_data());
 					if (n.parent >= 0 && n.parent < nc && ret_nodes[n.parent]) {
-						if (Object::cast_to<Control>(ret_nodes[n.parent])) {
-							obj = memnew(Control);
+						if (Object::cast_to<Controle>(ret_nodes[n.parent])) {
+							obj = memnew(Controle);
 						} else if (Object::cast_to<Node2D>(ret_nodes[n.parent])) {
 							obj = memnew(Node2D);
 #ifndef _3D_DISABLED

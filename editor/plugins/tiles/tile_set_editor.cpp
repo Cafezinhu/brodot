@@ -48,7 +48,7 @@
 
 TileSetEditor *TileSetEditor::singleton = nullptr;
 
-void TileSetEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void TileSetEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	ERR_FAIL_COND(!tile_set.is_valid());
 
 	if (!_can_drop_data_fw(p_point, p_data, p_from)) {
@@ -63,7 +63,7 @@ void TileSetEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, 
 	}
 }
 
-bool TileSetEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool TileSetEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	ERR_FAIL_COND_V(!tile_set.is_valid(), false);
 
 	if (read_only) {
@@ -750,13 +750,13 @@ void TileSetEditor::edit(Ref<TileSet> p_tile_set) {
 	}
 }
 
-void TileSetEditor::add_expanded_editor(Control *p_editor) {
+void TileSetEditor::add_expanded_editor(Controle *p_editor) {
 	expanded_editor = p_editor;
 	expanded_editor_parent = p_editor->get_parent()->get_instance_id();
 
 	// Find the scrollable control this node belongs to.
 	Node *check_parent = expanded_editor->get_parent();
-	Control *parent_container = nullptr;
+	Controle *parent_container = nullptr;
 	while (check_parent) {
 		parent_container = Object::cast_to<EditorInspector>(check_parent);
 		if (parent_container) {
@@ -945,7 +945,7 @@ TileSetEditor::TileSetEditor() {
 	patterns_item_list->set_fixed_column_width(thumbnail_size * 3 / 2);
 	patterns_item_list->set_max_text_lines(2);
 	patterns_item_list->set_fixed_icon_size(Size2(thumbnail_size, thumbnail_size));
-	patterns_item_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	patterns_item_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	patterns_item_list->connect(SceneStringName(gui_input), callable_mp(this, &TileSetEditor::_patterns_item_list_gui_input));
 	main_vb->add_child(patterns_item_list);
 	patterns_item_list->hide();
@@ -953,7 +953,7 @@ TileSetEditor::TileSetEditor() {
 	patterns_help_label = memnew(Label);
 	patterns_help_label->set_text(TTR("Add new patterns in the TileMap editing mode."));
 	patterns_help_label->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
-	patterns_help_label->set_anchors_and_offsets_preset(Control::PRESET_CENTER);
+	patterns_help_label->set_anchors_and_offsets_preset(Controle::PRESET_CENTER);
 	patterns_item_list->add_child(patterns_help_label);
 
 	// Expanded editor
@@ -988,7 +988,7 @@ void TileSourceInspectorPlugin::_show_id_edit_dialog(Object *p_for_source) {
 	edited_source = p_for_source;
 	id_input->set_value(p_for_source->get("id"));
 	id_edit_dialog->popup_centered(Vector2i(400, 0) * EDSCALE);
-	callable_mp((Control *)id_input->get_line_edit(), &Control::grab_focus).call_deferred();
+	callable_mp((Controle *)id_input->get_line_edit(), &Controle::grab_focus).call_deferred();
 }
 
 void TileSourceInspectorPlugin::_confirm_change_id() {
@@ -1013,11 +1013,11 @@ bool TileSourceInspectorPlugin::parse_property(Object *p_object, const Variant::
 		hbox->set_alignment(BoxContainer::ALIGNMENT_CENTER);
 
 		id_label = memnew(Label(itos(value)));
-		id_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		id_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		hbox->add_child(id_label);
 
 		Button *button = memnew(Button(TTR("Edit")));
-		button->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		button->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		hbox->add_child(button);
 		button->connect(SceneStringName(pressed), callable_mp(this, &TileSourceInspectorPlugin::_show_id_edit_dialog).bind(p_object));
 

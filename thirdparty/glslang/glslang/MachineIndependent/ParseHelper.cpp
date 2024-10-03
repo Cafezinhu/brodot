@@ -89,7 +89,7 @@ TParseContext::TParseContext(TSymbolTable& symbolTable, TIntermediate& interm, b
     // feedback capturing mode have an initial global default of
     //     layout(xfb_buffer = 0) out;"
     if (language == EShLangVertex ||
-        language == EShLangTessControl ||
+        language == EShLangTessControle ||
         language == EShLangTessEvaluation ||
         language == EShLangGeometry)
         globalOutputDefaults.layoutXfbBuffer = 0;
@@ -710,7 +710,7 @@ bool TParseContext::isIoResizeArray(const TType& type) const
 {
     return type.isArray() &&
            ((language == EShLangGeometry    && type.getQualifier().storage == EvqVaryingIn) ||
-            (language == EShLangTessControl && type.getQualifier().storage == EvqVaryingOut &&
+            (language == EShLangTessControle && type.getQualifier().storage == EvqVaryingOut &&
                 ! type.getQualifier().patch) ||
             (language == EShLangFragment && type.getQualifier().storage == EvqVaryingIn &&
                 (type.getQualifier().pervertexNV || type.getQualifier().pervertexEXT)) ||
@@ -729,7 +729,7 @@ void TParseContext::fixIoArraySize(const TSourceLoc& loc, TType& type)
     if (type.getQualifier().storage != EvqVaryingIn || type.getQualifier().patch)
         return;
 
-    if (language == EShLangTessControl || language == EShLangTessEvaluation) {
+    if (language == EShLangTessControle || language == EShLangTessEvaluation) {
         if (type.getOuterArraySize() != resources.maxPatchVertices) {
             if (type.isSizedArray())
                 error(loc, "tessellation input array size must be gl_MaxPatchVertices or implicitly sized", "[]", "");
@@ -813,7 +813,7 @@ int TParseContext::getIoArrayImplicitSize(const TQualifier &qualifier, TString *
         expectedSize = TQualifier::mapGeometryToSize(intermediate.getInputPrimitive());
         str = TQualifier::getGeometryString(intermediate.getInputPrimitive());
     }
-    else if (language == EShLangTessControl) {
+    else if (language == EShLangTessControle) {
         expectedSize = maxVertices;
         str = "vertices";
     } else if (language == EShLangFragment) {
@@ -854,7 +854,7 @@ void TParseContext::checkIoArrayConsistency(const TSourceLoc& loc, int requiredS
     else if (type.getOuterArraySize() != requiredSize) {
         if (language == EShLangGeometry)
             error(loc, "inconsistent input primitive for array size of", feature, name.c_str());
-        else if (language == EShLangTessControl)
+        else if (language == EShLangTessControle)
             error(loc, "inconsistent output number of vertices for array size of", feature, name.c_str());
         else if (language == EShLangFragment) {
             if (type.getOuterArraySize() > requiredSize)
@@ -1690,7 +1690,7 @@ void TParseContext::checkLocation(const TSourceLoc& loc, TOperator op)
 {
     switch (op) {
     case EOpBarrier:
-        if (language == EShLangTessControl) {
+        if (language == EShLangTessControle) {
             if (controlFlowNestingLevel > 0)
                 error(loc, "tessellation control barrier() cannot be placed within flow control", "", "");
             if (! inMain)
@@ -3119,7 +3119,7 @@ bool TParseContext::lValueErrorCheck(const TSourceLoc& loc, const char* op, TInt
             // If a per-vertex output variable is used as an l-value, it is a
             // compile-time or link-time error if the expression indicating the
             // vertex index is not the identifier gl_InvocationID.
-            if (language == EShLangTessControl) {
+            if (language == EShLangTessControle) {
                 const TType& leftType = binaryNode->getLeft()->getType();
                 if (leftType.getQualifier().storage == EvqVaryingOut && ! leftType.getQualifier().patch && binaryNode->getLeft()->getAsSymbolNode()) {
                     // we have a per-vertex output
@@ -4123,7 +4123,7 @@ void TParseContext::globalQualifierTypeCheck(const TSourceLoc& loc, const TQuali
             if (! symbolTable.atBuiltInLevel())
                 error(loc, "global storage input qualifier cannot be used in a compute shader", "in", "");
             break;
-       case EShLangTessControl:
+       case EShLangTessControle:
             if (qualifier.patch)
                 error(loc, "can only use on output in tessellation-control shader", "patch", "");
             break;
@@ -4588,7 +4588,7 @@ void TParseContext::arraySizesCheck(const TSourceLoc& loc, const TQualifier& qua
                 extensionsTurnedOn(Num_AEP_geometry_shader, AEP_geometry_shader))
                 return;
         break;
-    case EShLangTessControl:
+    case EShLangTessControle:
         if ( qualifier.storage == EvqVaryingIn ||
             (qualifier.storage == EvqVaryingOut && ! qualifier.isPatch()))
             if ((isEsProfile() && version >= 320) ||
@@ -5562,7 +5562,7 @@ void TParseContext::finish()
         if (isEsProfile() && version == 310)
             requireExtensions(getCurrentLoc(), Num_AEP_geometry_shader, AEP_geometry_shader, "geometry shaders");
         break;
-    case EShLangTessControl:
+    case EShLangTessControle:
     case EShLangTessEvaluation:
         if (isEsProfile() && version == 310)
             requireExtensions(getCurrentLoc(), Num_AEP_tessellation_shader, AEP_tessellation_shader, "tessellation shaders");
@@ -5906,7 +5906,7 @@ void TParseContext::setLayoutQualifier(const TSourceLoc& loc, TPublicType& publi
         }
     }
     if (language == EShLangVertex ||
-        language == EShLangTessControl ||
+        language == EShLangTessControle ||
         language == EShLangTessEvaluation ||
         language == EShLangGeometry ) {
         if (id == "viewport_relative") {
@@ -6091,7 +6091,7 @@ void TParseContext::setLayoutQualifier(const TSourceLoc& loc, TPublicType& publi
         // setup."
         intermediate.setXfbMode();
         const char* feature = "transform feedback qualifier";
-        requireStage(loc, (EShLanguageMask)(EShLangVertexMask | EShLangGeometryMask | EShLangTessControlMask | EShLangTessEvaluationMask), feature);
+        requireStage(loc, (EShLanguageMask)(EShLangVertexMask | EShLangGeometryMask | EShLangTessControleMask | EShLangTessEvaluationMask), feature);
         requireProfile(loc, ECoreProfile | ECompatibilityProfile, feature);
         profileRequires(loc, ECoreProfile | ECompatibilityProfile, 440, E_GL_ARB_enhanced_layouts, feature);
         if (id == "xfb_buffer") {
@@ -6148,7 +6148,7 @@ void TParseContext::setLayoutQualifier(const TSourceLoc& loc, TPublicType& publi
         return;
     }
     if (language == EShLangVertex ||
-        language == EShLangTessControl ||
+        language == EShLangTessControle ||
         language == EShLangTessEvaluation ||
         language == EShLangGeometry) {
         if (id == "secondary_view_offset") {
@@ -6172,7 +6172,7 @@ void TParseContext::setLayoutQualifier(const TSourceLoc& loc, TPublicType& publi
     }
 
     switch (language) {
-    case EShLangTessControl:
+    case EShLangTessControle:
         if (id == "vertices") {
             if (value == 0)
                 error(loc, "must be greater than 0", "vertices", "");
@@ -6915,7 +6915,7 @@ void TParseContext::checkNoShaderLayouts(const TSourceLoc& loc, const TShaderQua
     if (shaderQualifiers.vertices != TQualifier::layoutNotSet) {
         if (language == EShLangGeometry || language == EShLangMesh)
             error(loc, message, "max_vertices", "");
-        else if (language == EShLangTessControl)
+        else if (language == EShLangTessControle)
             error(loc, message, "vertices", "");
         else
             assert(0);
@@ -9204,7 +9204,7 @@ void TParseContext::blockStageIoCheck(const TSourceLoc& loc, const TQualifier& q
         profileRequires(loc, ~EEsProfile, 150, E_GL_ARB_separate_shader_objects, "input block");
         // It is a compile-time error to have an input block in a vertex shader or an output block in a fragment shader
         // "Compute shaders do not permit user-defined input variables..."
-        requireStage(loc, (EShLanguageMask)(EShLangTessControlMask|EShLangTessEvaluationMask|EShLangGeometryMask|
+        requireStage(loc, (EShLanguageMask)(EShLangTessControleMask|EShLangTessEvaluationMask|EShLangGeometryMask|
             EShLangFragmentMask|EShLangMeshMask), "input block");
         if (language == EShLangFragment) {
             profileRequires(loc, EEsProfile, 320, Num_AEP_shader_io_blocks, AEP_shader_io_blocks, "fragment input block");
@@ -9214,7 +9214,7 @@ void TParseContext::blockStageIoCheck(const TSourceLoc& loc, const TQualifier& q
         break;
     case EvqVaryingOut:
         profileRequires(loc, ~EEsProfile, 150, E_GL_ARB_separate_shader_objects, "output block");
-        requireStage(loc, (EShLanguageMask)(EShLangVertexMask|EShLangTessControlMask|EShLangTessEvaluationMask|
+        requireStage(loc, (EShLanguageMask)(EShLangVertexMask|EShLangTessControleMask|EShLangTessEvaluationMask|
             EShLangGeometryMask|EShLangMeshMask|EShLangTaskMask), "output block");
         // ES 310 can have a block before shader_io is turned on, so skip this test for built-ins
         if (language == EShLangVertex && ! parsingBuiltins) {
@@ -9635,15 +9635,15 @@ void TParseContext::invariantCheck(const TSourceLoc& loc, const TQualifier& qual
 void TParseContext::updateStandaloneQualifierDefaults(const TSourceLoc& loc, const TPublicType& publicType)
 {
     if (publicType.shaderQualifiers.vertices != TQualifier::layoutNotSet) {
-        assert(language == EShLangTessControl || language == EShLangGeometry || language == EShLangMesh);
-        const char* id = (language == EShLangTessControl) ? "vertices" : "max_vertices";
+        assert(language == EShLangTessControle || language == EShLangGeometry || language == EShLangMesh);
+        const char* id = (language == EShLangTessControle) ? "vertices" : "max_vertices";
 
         if (publicType.qualifier.storage != EvqVaryingOut)
             error(loc, "can only apply to 'out'", id, "");
         if (! intermediate.setVertices(publicType.shaderQualifiers.vertices))
             error(loc, "cannot change previously set layout value", id, "");
 
-        if (language == EShLangTessControl)
+        if (language == EShLangTessControle)
             checkIoArraysConsistency(loc);
     }
     if (publicType.shaderQualifiers.primitives != TQualifier::layoutNotSet) {

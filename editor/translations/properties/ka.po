@@ -278,7 +278,7 @@ msgstr "ინკრემენტული ძებნის მაქს ი
 msgid "Common"
 msgstr "ჩვეულებრივი"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "კონტროლების მიმაგრება პიქსელებზე"
 
 msgid "Fonts"
@@ -503,10 +503,10 @@ msgstr "ხმის სიმაღლე"
 msgid "Instrument"
 msgstr "ინსტრუმენტი"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "კონტროლერის ნომერი"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "კონტროლერის მნიშვნელობა"
 
 msgid "Shortcut"
@@ -1806,7 +1806,7 @@ msgstr "კადრების რაოდენობა"
 msgid "Duration"
 msgstr "ხანგრძლივობა"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "ვერსიის კონტროლი"
 
 msgid "Username"
@@ -4544,7 +4544,7 @@ msgstr "მრავალი"
 msgid "Visual Whitespace"
 msgstr "ვიზუალური გამოტოვება"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "საკონტროლო სიმბოლოები"
 
 msgid "Spaces"

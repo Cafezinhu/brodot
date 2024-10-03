@@ -110,7 +110,7 @@ EditorExpressionEvaluator::EditorExpressionEvaluator() {
 	add_child(hb);
 
 	expression_input = memnew(LineEdit);
-	expression_input->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	expression_input->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	expression_input->set_placeholder(TTR("Expression to evaluate"));
 	expression_input->set_clear_button_enabled(true);
 	expression_input->connect("text_submitted", callable_mp(this, &EditorExpressionEvaluator::_evaluate).unbind(1));
@@ -118,19 +118,19 @@ EditorExpressionEvaluator::EditorExpressionEvaluator() {
 	hb->add_child(expression_input);
 
 	clear_on_run_checkbox = memnew(CheckBox);
-	clear_on_run_checkbox->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	clear_on_run_checkbox->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	clear_on_run_checkbox->set_text(TTR("Clear on Run"));
 	clear_on_run_checkbox->set_pressed(true);
 	hb->add_child(clear_on_run_checkbox);
 
 	evaluate_btn = memnew(Button);
-	evaluate_btn->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	evaluate_btn->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	evaluate_btn->set_text(TTR("Evaluate"));
 	evaluate_btn->connect(SceneStringName(pressed), callable_mp(this, &EditorExpressionEvaluator::_evaluate));
 	hb->add_child(evaluate_btn);
 
 	clear_btn = memnew(Button);
-	clear_btn->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	clear_btn->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	clear_btn->set_text(TTR("Clear"));
 	clear_btn->connect(SceneStringName(pressed), callable_mp(this, &EditorExpressionEvaluator::_clear));
 	hb->add_child(clear_btn);

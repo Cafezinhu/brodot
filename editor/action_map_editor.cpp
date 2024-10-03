@@ -244,7 +244,7 @@ void ActionMapEditor::_search_by_event(const Ref<InputEvent> &p_event) {
 	}
 }
 
-Variant ActionMapEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant ActionMapEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *selected = action_tree->get_selected();
 	if (!selected) {
 		return Variant();
@@ -272,7 +272,7 @@ Variant ActionMapEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from
 	return drag_data;
 }
 
-bool ActionMapEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool ActionMapEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary d = p_data;
 	if (!d.has("input_type")) {
 		return false;
@@ -297,7 +297,7 @@ bool ActionMapEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_d
 	return true;
 }
 
-void ActionMapEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void ActionMapEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -541,14 +541,14 @@ ActionMapEditor::ActionMapEditor() {
 	main_vbox->add_child(top_hbox);
 
 	action_list_search = memnew(LineEdit);
-	action_list_search->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	action_list_search->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	action_list_search->set_placeholder(TTR("Filter by Name"));
 	action_list_search->set_clear_button_enabled(true);
 	action_list_search->connect(SceneStringName(text_changed), callable_mp(this, &ActionMapEditor::_search_term_updated));
 	top_hbox->add_child(action_list_search);
 
 	action_list_search_by_event = memnew(EventListenerLineEdit);
-	action_list_search_by_event->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	action_list_search_by_event->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	action_list_search_by_event->set_stretch_ratio(0.75);
 	action_list_search_by_event->connect("event_changed", callable_mp(this, &ActionMapEditor::_search_by_event));
 	action_list_search_by_event->connect(SceneStringName(focus_entered), callable_mp(this, &ActionMapEditor::_on_filter_focused));
@@ -564,10 +564,10 @@ ActionMapEditor::ActionMapEditor() {
 
 	// Adding Action line edit + button
 	add_hbox = memnew(HBoxContainer);
-	add_hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	add_hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	add_edit = memnew(LineEdit);
-	add_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	add_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_edit->set_placeholder(TTR("Add New Action"));
 	add_edit->set_clear_button_enabled(true);
 	add_edit->connect(SceneStringName(text_changed), callable_mp(this, &ActionMapEditor::_add_edit_text_changed));
@@ -595,7 +595,7 @@ ActionMapEditor::ActionMapEditor() {
 
 	// Action Editor Tree
 	action_tree = memnew(Tree);
-	action_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	action_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	action_tree->set_columns(3);
 	action_tree->set_hide_root(true);
 	action_tree->set_column_titles_visible(true);

@@ -152,8 +152,8 @@ TexturePreview::TexturePreview(Ref<Texture2D> p_texture, bool p_show_metadata) {
 		metadata_label->add_theme_color_override("font_outline_color", Color(0, 0, 0));
 		metadata_label->add_theme_constant_override("outline_size", 8 * EDSCALE);
 
-		metadata_label->set_h_size_flags(Control::SIZE_SHRINK_END);
-		metadata_label->set_v_size_flags(Control::SIZE_SHRINK_END);
+		metadata_label->set_h_size_flags(Controle::SIZE_SHRINK_END);
+		metadata_label->set_v_size_flags(Controle::SIZE_SHRINK_END);
 
 		add_child(metadata_label);
 	}

@@ -455,7 +455,7 @@ string CompilerReflection::execution_model_to_str(spv::ExecutionModel model)
 	{
 	case ExecutionModelVertex:
 		return "vert";
-	case ExecutionModelTessellationControl:
+	case ExecutionModelTessellationControle:
 		return "tesc";
 	case ExecutionModelTessellationEvaluation:
 		return "tese";

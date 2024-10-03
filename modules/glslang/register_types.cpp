@@ -46,7 +46,7 @@ static Vector<uint8_t> _compile_shader_glsl(RenderingDevice::ShaderStage p_stage
 	EShLanguage stages[RenderingDevice::SHADER_STAGE_MAX] = {
 		EShLangVertex,
 		EShLangFragment,
-		EShLangTessControl,
+		EShLangTessControle,
 		EShLangTessEvaluation,
 		EShLangCompute
 	};

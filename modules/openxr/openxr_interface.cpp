@@ -171,8 +171,8 @@ PackedStringArray OpenXRInterface::get_suggested_tracker_names() const {
 
 	PackedStringArray arr = {
 		"head", // XRPositionalTracker for the users head (Mapped from OpenXR /user/head)
-		"left_hand", // XRControllerTracker for the users left hand (Mapped from OpenXR /user/hand/left)
-		"right_hand", // XRControllerTracker for the users right hand (Mapped from OpenXR /user/hand/right)
+		"left_hand", // XRControlelerTracker for the users left hand (Mapped from OpenXR /user/hand/left)
+		"right_hand", // XRControlelerTracker for the users right hand (Mapped from OpenXR /user/hand/right)
 		"/user/hand_tracker/left", // XRHandTracker for the users left hand
 		"/user/hand_tracker/right", // XRHandTracker for the users right hand
 		"/user/body_tracker", // XRBodyTracker for the users body
@@ -452,7 +452,7 @@ OpenXRInterface::Tracker *OpenXRInterface::find_tracker(const String &p_tracker_
 	ERR_FAIL_COND_V(tracker_rid.is_null(), nullptr);
 
 	// Create our controller tracker.
-	Ref<XRControllerTracker> controller_tracker;
+	Ref<XRControlelerTracker> controller_tracker;
 	controller_tracker.instantiate();
 
 	// We have standardized some names to make things nicer to the user so lets recognize the toplevel paths related to these.

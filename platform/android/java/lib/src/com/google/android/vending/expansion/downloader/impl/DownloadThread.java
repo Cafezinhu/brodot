@@ -377,7 +377,7 @@ public class DownloadThread {
      * appropriately if it has been.
      */
     private void checkPausedOrCanceled(State state) throws StopRequest {
-        if (mService.getControl() == DownloaderService.CONTROL_PAUSED) {
+        if (mService.getControle() == DownloaderService.CONTROL_PAUSED) {
             int status = mService.getStatus();
             switch (status) {
                 case DownloaderService.STATUS_PAUSED_BY_APP:

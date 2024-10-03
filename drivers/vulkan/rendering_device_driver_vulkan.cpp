@@ -687,7 +687,7 @@ Error RenderingDeviceDriverVulkan::_check_device_capabilities() {
 		VkPhysicalDeviceFragmentShadingRateFeaturesKHR vrs_features = {};
 		VkPhysicalDevice16BitStorageFeaturesKHR storage_feature = {};
 		VkPhysicalDeviceMultiviewFeatures multiview_features = {};
-		VkPhysicalDevicePipelineCreationCacheControlFeatures pipeline_cache_control_features = {};
+		VkPhysicalDevicePipelineCreationCacheControleFeatures pipeline_cache_control_features = {};
 
 		const bool use_1_2_features = physical_device_properties.apiVersion >= VK_API_VERSION_1_2;
 		if (use_1_2_features) {
@@ -764,7 +764,7 @@ Error RenderingDeviceDriverVulkan::_check_device_capabilities() {
 		}
 
 		if (enabled_device_extension_names.has(VK_EXT_PIPELINE_CREATION_CACHE_CONTROL_EXTENSION_NAME)) {
-			pipeline_cache_control_support = pipeline_cache_control_features.pipelineCreationCacheControl;
+			pipeline_cache_control_support = pipeline_cache_control_features.pipelineCreationCacheControle;
 		}
 
 		if (enabled_device_extension_names.has(VK_EXT_DEVICE_FAULT_EXTENSION_NAME)) {
@@ -782,7 +782,7 @@ Error RenderingDeviceDriverVulkan::_check_device_capabilities() {
 		VkPhysicalDeviceFragmentShadingRatePropertiesKHR vrs_properties = {};
 		VkPhysicalDeviceMultiviewProperties multiview_properties = {};
 		VkPhysicalDeviceSubgroupProperties subgroup_properties = {};
-		VkPhysicalDeviceSubgroupSizeControlProperties subgroup_size_control_properties = {};
+		VkPhysicalDeviceSubgroupSizeControleProperties subgroup_size_control_properties = {};
 		VkPhysicalDeviceProperties2 physical_device_properties_2 = {};
 
 		const bool use_1_1_properties = physical_device_properties.apiVersion >= VK_API_VERSION_1_1;
@@ -935,11 +935,11 @@ Error RenderingDeviceDriverVulkan::_initialize_device(const LocalVector<VkDevice
 		create_info_next = &vrs_features;
 	}
 
-	VkPhysicalDevicePipelineCreationCacheControlFeatures pipeline_cache_control_features = {};
+	VkPhysicalDevicePipelineCreationCacheControleFeatures pipeline_cache_control_features = {};
 	if (pipeline_cache_control_support) {
 		pipeline_cache_control_features.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES;
 		pipeline_cache_control_features.pNext = create_info_next;
-		pipeline_cache_control_features.pipelineCreationCacheControl = pipeline_cache_control_support;
+		pipeline_cache_control_features.pipelineCreationCacheControle = pipeline_cache_control_support;
 		create_info_next = &pipeline_cache_control_features;
 	}
 
@@ -4563,7 +4563,7 @@ RDD::PipelineID RenderingDeviceDriverVulkan::render_pipeline_create(
 	VkPipelineTessellationStateCreateInfo tessellation_create_info = {};
 	tessellation_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_STATE_CREATE_INFO;
 	ERR_FAIL_COND_V(physical_device_properties.limits.maxTessellationPatchSize > 0 && (p_rasterization_state.patch_control_points < 1 || p_rasterization_state.patch_control_points > physical_device_properties.limits.maxTessellationPatchSize), PipelineID());
-	tessellation_create_info.patchControlPoints = p_rasterization_state.patch_control_points;
+	tessellation_create_info.patchControlePoints = p_rasterization_state.patch_control_points;
 
 	// Viewport.
 	VkPipelineViewportStateCreateInfo viewport_state_create_info = {};

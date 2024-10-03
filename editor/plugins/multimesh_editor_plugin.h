@@ -42,8 +42,8 @@ class MenuButton;
 class OptionButton;
 class SceneTreeDialog;
 
-class MultiMeshEditor : public Control {
-	GDCLASS(MultiMeshEditor, Control);
+class MultiMeshEditor : public Controle {
+	GDCLASS(MultiMeshEditor, Controle);
 
 	friend class MultiMeshEditorPlugin;
 

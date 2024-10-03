@@ -33,9 +33,9 @@
 
 #include "openxr_extension_wrapper.h"
 
-class OpenXRHTCControllerExtension : public OpenXRExtensionWrapper {
+class OpenXRHTCControlelerExtension : public OpenXRExtensionWrapper {
 public:
-	enum HTCControllers {
+	enum HTCControlelers {
 		// Note, HTC Vive Wand controllers are part of the core spec and not part of our extension.
 		HTC_VIVE_COSMOS,
 		HTC_VIVE_FOCUS3,
@@ -47,7 +47,7 @@ public:
 
 	PackedStringArray get_suggested_tracker_names() override;
 
-	bool is_available(HTCControllers p_type);
+	bool is_available(HTCControlelers p_type);
 
 	virtual void on_register_metadata() override;
 

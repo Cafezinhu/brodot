@@ -33,8 +33,8 @@
 
 #include "scene/gui/control.h"
 
-class Range : public Control {
-	GDCLASS(Range, Control);
+class Range : public Controle {
+	GDCLASS(Range, Controle);
 
 	struct Shared {
 		double val = 0.0;

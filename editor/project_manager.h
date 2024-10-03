@@ -51,8 +51,8 @@ class RichTextLabel;
 class TabContainer;
 class VBoxContainer;
 
-class ProjectManager : public Control {
-	GDCLASS(ProjectManager, Control);
+class ProjectManager : public Controle {
+	GDCLASS(ProjectManager, Controle);
 
 	static ProjectManager *singleton;
 
@@ -78,10 +78,10 @@ class ProjectManager : public Control {
 	VBoxContainer *main_vbox = nullptr;
 
 	EditorTitleBar *title_bar = nullptr;
-	Control *left_menu_spacer = nullptr;
-	Control *left_spacer = nullptr;
-	Control *right_menu_spacer = nullptr;
-	Control *right_spacer = nullptr;
+	Controle *left_menu_spacer = nullptr;
+	Controle *left_spacer = nullptr;
+	Controle *right_menu_spacer = nullptr;
+	Controle *right_spacer = nullptr;
 	Button *title_bar_logo = nullptr;
 	HBoxContainer *main_view_toggles = nullptr;
 	Button *quick_settings_button = nullptr;
@@ -93,13 +93,13 @@ class ProjectManager : public Control {
 	};
 
 	MainViewTab current_main_view = MAIN_VIEW_PROJECTS;
-	HashMap<MainViewTab, Control *> main_view_map;
+	HashMap<MainViewTab, Controle *> main_view_map;
 	HashMap<MainViewTab, Button *> main_view_toggle_map;
 
 	PanelContainer *main_view_container = nullptr;
 	Ref<ButtonGroup> main_view_toggles_group;
 
-	Button *_add_main_view(MainViewTab p_id, const String &p_name, const Ref<Texture2D> &p_icon, Control *p_view_control);
+	Button *_add_main_view(MainViewTab p_id, const String &p_name, const Ref<Texture2D> &p_icon, Controle *p_view_control);
 	void _set_main_view_icon(MainViewTab p_id, const Ref<Texture2D> &p_icon);
 	void _select_main_view(int p_id);
 

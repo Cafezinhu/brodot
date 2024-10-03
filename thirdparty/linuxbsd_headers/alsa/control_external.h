@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /**
- *  \defgroup CtlPlugin_SDK External Control Plugin SDK
+ *  \defgroup CtlPlugin_SDK External Controle Plugin SDK
  *  \{
  */
 

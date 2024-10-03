@@ -93,7 +93,7 @@ const char* ExecutionModelString(int model)
 {
     switch (model) {
     case 0:  return "Vertex";
-    case 1:  return "TessellationControl";
+    case 1:  return "TessellationControle";
     case 2:  return "TessellationEvaluation";
     case 3:  return "Geometry";
     case 4:  return "Fragment";
@@ -198,7 +198,7 @@ const char* ExecutionModeString(int mode)
     case ExecutionModeStencilRefLessFrontAMD:        return "StencilRefLessFrontAMD";
     case ExecutionModeStencilRefGreaterBackAMD:      return "StencilRefGreaterBackAMD";
     case ExecutionModeStencilRefReplacingEXT:        return "StencilRefReplacingEXT";
-    case ExecutionModeSubgroupUniformControlFlowKHR: return "SubgroupUniformControlFlow";
+    case ExecutionModeSubgroupUniformControleFlowKHR: return "SubgroupUniformControleFlow";
     case ExecutionModeMaximallyReconvergesKHR:       return "MaximallyReconverges";
 
     case ExecutionModeOutputLinesNV:                 return "OutputLinesNV";
@@ -718,42 +718,42 @@ const char* AccessQualifierString(int attr)
     }
 }
 
-const int SelectControlCeiling = 2;
+const int SelectControleCeiling = 2;
 
-const char* SelectControlString(int cont)
+const char* SelectControleString(int cont)
 {
     switch (cont) {
     case 0:  return "Flatten";
     case 1:  return "DontFlatten";
 
-    case SelectControlCeiling:
+    case SelectControleCeiling:
     default: return "Bad";
     }
 }
 
-const int LoopControlCeiling = LoopControlPartialCountShift + 1;
+const int LoopControleCeiling = LoopControlePartialCountShift + 1;
 
-const char* LoopControlString(int cont)
+const char* LoopControleString(int cont)
 {
     switch (cont) {
-    case LoopControlUnrollShift:             return "Unroll";
-    case LoopControlDontUnrollShift:         return "DontUnroll";
-    case LoopControlDependencyInfiniteShift: return "DependencyInfinite";
-    case LoopControlDependencyLengthShift:   return "DependencyLength";
-    case LoopControlMinIterationsShift:      return "MinIterations";
-    case LoopControlMaxIterationsShift:      return "MaxIterations";
-    case LoopControlIterationMultipleShift:  return "IterationMultiple";
-    case LoopControlPeelCountShift:          return "PeelCount";
-    case LoopControlPartialCountShift:       return "PartialCount";
+    case LoopControleUnrollShift:             return "Unroll";
+    case LoopControleDontUnrollShift:         return "DontUnroll";
+    case LoopControleDependencyInfiniteShift: return "DependencyInfinite";
+    case LoopControleDependencyLengthShift:   return "DependencyLength";
+    case LoopControleMinIterationsShift:      return "MinIterations";
+    case LoopControleMaxIterationsShift:      return "MaxIterations";
+    case LoopControleIterationMultipleShift:  return "IterationMultiple";
+    case LoopControlePeelCountShift:          return "PeelCount";
+    case LoopControlePartialCountShift:       return "PartialCount";
 
-    case LoopControlCeiling:
+    case LoopControleCeiling:
     default: return "Bad";
     }
 }
 
-const int FunctionControlCeiling = 4;
+const int FunctionControleCeiling = 4;
 
-const char* FunctionControlString(int cont)
+const char* FunctionControleString(int cont)
 {
     switch (cont) {
     case 0:  return "Inline";
@@ -761,7 +761,7 @@ const char* FunctionControlString(int cont)
     case 2:  return "Pure";
     case 3:  return "Const";
 
-    case FunctionControlCeiling:
+    case FunctionControleCeiling:
     default: return "Bad";
     }
 }
@@ -925,7 +925,7 @@ const char* CapabilityString(int info)
     case 48: return "ImageMSArray";
     case 49: return "StorageImageExtendedFormats";
     case 50: return "ImageQuery";
-    case 51: return "DerivativeControl";
+    case 51: return "DerivativeControle";
     case 52: return "InterpolationFunction";
     case 53: return "TransformFeedback";
     case 54: return "GeometryStreams";
@@ -1040,7 +1040,7 @@ const char* CapabilityString(int info)
     case CapabilityDemoteToHelperInvocationEXT:             return "DemoteToHelperInvocationEXT";
     case CapabilityAtomicFloat16VectorNV:                   return "AtomicFloat16VectorNV";
     case CapabilityShaderClockKHR:                          return "ShaderClockKHR";
-    case CapabilityQuadControlKHR:                          return "QuadControlKHR";
+    case CapabilityQuadControleKHR:                          return "QuadControleKHR";
     case CapabilityInt64ImageEXT:                           return "Int64ImageEXT";
 
     case CapabilityIntegerFunctions2INTEL:              return "CapabilityIntegerFunctions2INTEL";
@@ -1298,7 +1298,7 @@ const char* OpcodeString(int op)
     case 221: return "OpEndStreamPrimitive";
     case 222: return "Bad";
     case 223: return "Bad";
-    case 224: return "OpControlBarrier";
+    case 224: return "OpControleBarrier";
     case 225: return "OpMemoryBarrier";
     case 226: return "Bad";
     case 227: return "OpAtomicLoad";
@@ -1599,9 +1599,9 @@ EnumDefinition OperandClassParams[OperandCount];
 EnumParameters ExecutionModeParams[ExecutionModeCeiling];
 EnumParameters ImageOperandsParams[ImageOperandsCeiling];
 EnumParameters DecorationParams[DecorationCeiling];
-EnumParameters LoopControlParams[FunctionControlCeiling];
-EnumParameters SelectionControlParams[SelectControlCeiling];
-EnumParameters FunctionControlParams[FunctionControlCeiling];
+EnumParameters LoopControleParams[FunctionControleCeiling];
+EnumParameters SelectionControleParams[SelectControleCeiling];
+EnumParameters FunctionControleParams[FunctionControleCeiling];
 EnumParameters MemoryAccessParams[MemoryAccessCeiling];
 EnumParameters CooperativeMatrixOperandsParams[CooperativeMatrixOperandsCeiling];
 
@@ -1669,7 +1669,7 @@ void Parameterize()
         InstructionDesc[OpEndPrimitive].setResultAndType(false, false);
         InstructionDesc[OpEmitStreamVertex].setResultAndType(false, false);
         InstructionDesc[OpEndStreamPrimitive].setResultAndType(false, false);
-        InstructionDesc[OpControlBarrier].setResultAndType(false, false);
+        InstructionDesc[OpControleBarrier].setResultAndType(false, false);
         InstructionDesc[OpMemoryBarrier].setResultAndType(false, false);
         InstructionDesc[OpAtomicStore].setResultAndType(false, false);
         InstructionDesc[OpLoopMerge].setResultAndType(false, false);
@@ -1761,9 +1761,9 @@ void Parameterize()
         OperandClassParams[OperandDecoration].set(DecorationCeiling, DecorationString, DecorationParams);
         OperandClassParams[OperandDecoration].setOperands(DecorationOperands);
         OperandClassParams[OperandBuiltIn].set(0, BuiltInString, nullptr);
-        OperandClassParams[OperandSelect].set(SelectControlCeiling, SelectControlString, SelectionControlParams, true);
-        OperandClassParams[OperandLoop].set(LoopControlCeiling, LoopControlString, LoopControlParams, true);
-        OperandClassParams[OperandFunction].set(FunctionControlCeiling, FunctionControlString, FunctionControlParams, true);
+        OperandClassParams[OperandSelect].set(SelectControleCeiling, SelectControleString, SelectionControleParams, true);
+        OperandClassParams[OperandLoop].set(LoopControleCeiling, LoopControleString, LoopControleParams, true);
+        OperandClassParams[OperandFunction].set(FunctionControleCeiling, FunctionControleString, FunctionControleParams, true);
         OperandClassParams[OperandMemorySemantics].set(0, MemorySemanticsString, nullptr, true);
         OperandClassParams[OperandMemoryAccess].set(MemoryAccessCeiling, MemoryAccessString, MemoryAccessParams, true);
         OperandClassParams[OperandScope].set(0, ScopeString, nullptr);
@@ -2424,9 +2424,9 @@ void Parameterize()
 
         InstructionDesc[OpEndStreamPrimitive].operands.push(OperandId, "'Stream'");
 
-        InstructionDesc[OpControlBarrier].operands.push(OperandScope, "'Execution'");
-        InstructionDesc[OpControlBarrier].operands.push(OperandScope, "'Memory'");
-        InstructionDesc[OpControlBarrier].operands.push(OperandMemorySemantics, "'Semantics'");
+        InstructionDesc[OpControleBarrier].operands.push(OperandScope, "'Execution'");
+        InstructionDesc[OpControleBarrier].operands.push(OperandScope, "'Memory'");
+        InstructionDesc[OpControleBarrier].operands.push(OperandMemorySemantics, "'Semantics'");
 
         InstructionDesc[OpMemoryBarrier].operands.push(OperandScope, "'Memory'");
         InstructionDesc[OpMemoryBarrier].operands.push(OperandMemorySemantics, "'Semantics'");

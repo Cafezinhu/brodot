@@ -383,7 +383,7 @@ msgstr "Opóźnienie podpowiedzi (s)"
 msgid "Common"
 msgstr "Pospolite"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Przyciągaj kontrolki do pikseli"
 
 msgid "Fonts"
@@ -521,8 +521,8 @@ msgstr "Urządzenie"
 msgid "Window ID"
 msgstr "ID Okna"
 
-msgid "Command or Control Autoremap"
-msgstr "Automatyczne przemapowanie Command i Control"
+msgid "Command or Controle Autoremap"
+msgstr "Automatyczne przemapowanie Command i Controle"
 
 msgid "Alt Pressed"
 msgstr "Alt Wciśnięty"
@@ -632,10 +632,10 @@ msgstr "Poziom"
 msgid "Instrument"
 msgstr "Instrument"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Numer kontrolera"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Wartość kontrolera"
 
 msgid "Shortcut"
@@ -1860,7 +1860,7 @@ msgstr "Kolor symbolu"
 msgid "Keyword Color"
 msgstr "Kolor słowa kluczowego"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Kolor słowa kluczowego kontroli przepływu"
 
 msgid "Base Type Color"
@@ -2761,7 +2761,7 @@ msgstr "Liczba klatek"
 msgid "Duration"
 msgstr "Czas trwania"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Kontrola wersji"
 
 msgid "Username"
@@ -4207,7 +4207,7 @@ msgstr "Wierzchołki"
 msgid "Fragment"
 msgstr "Fragmenty"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Kontrola tesselacji"
 
 msgid "Compute"

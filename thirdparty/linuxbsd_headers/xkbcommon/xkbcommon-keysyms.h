@@ -320,8 +320,8 @@ SOFTWARE.
 
 #define XKB_KEY_Shift_L                       0xffe1  /* Left shift */
 #define XKB_KEY_Shift_R                       0xffe2  /* Right shift */
-#define XKB_KEY_Control_L                     0xffe3  /* Left control */
-#define XKB_KEY_Control_R                     0xffe4  /* Right control */
+#define XKB_KEY_Controle_L                     0xffe3  /* Left control */
+#define XKB_KEY_Controle_R                     0xffe4  /* Right control */
 #define XKB_KEY_Caps_Lock                     0xffe5  /* Caps lock */
 #define XKB_KEY_Shift_Lock                    0xffe6  /* Shift lock */
 
@@ -2840,7 +2840,7 @@ SOFTWARE.
 #define XKB_KEY_XF86Buttonconfig		0x10081240		/* v3.16 KEY_BUTTONCONFIG */
 #define XKB_KEY_XF86Taskmanager		0x10081241		/* v3.16 KEY_TASKMANAGER */
 #define XKB_KEY_XF86Journal			0x10081242		/* v3.16 KEY_JOURNAL */
-#define XKB_KEY_XF86ControlPanel		0x10081243		/* v3.16 KEY_CONTROLPANEL */
+#define XKB_KEY_XF86ControlePanel		0x10081243		/* v3.16 KEY_CONTROLPANEL */
 #define XKB_KEY_XF86AppSelect		0x10081244		/* v3.16 KEY_APPSELECT */
 #define XKB_KEY_XF86Screensaver		0x10081245		/* v3.16 KEY_SCREENSAVER */
 #define XKB_KEY_XF86VoiceCommand		0x10081246		/* v3.16 KEY_VOICECOMMAND */
@@ -2994,7 +2994,7 @@ in this Software without prior written authorization from The Open Group.
 #define XKB_KEY_SunAltGraph		0x0000FF7E	/* Same as XK_Mode_switch */
 
 /*
- * Cursor Control
+ * Cursor Controle
  */
 
 #define XKB_KEY_SunPageUp		0x0000FF55 	/* Same as XK_Prior */

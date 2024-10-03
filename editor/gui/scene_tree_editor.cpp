@@ -1318,7 +1318,7 @@ void SceneTreeEditor::_cell_collapsed(Object *p_obj) {
 	n->set_display_folded(collapsed);
 }
 
-Variant SceneTreeEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant SceneTreeEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	if (!can_rename) {
 		return Variant(); //not editable tree
 	}
@@ -1386,7 +1386,7 @@ bool SceneTreeEditor::_is_script_type(const StringName &p_type) const {
 	return (script_types->find(p_type));
 }
 
-bool SceneTreeEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool SceneTreeEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (!can_rename) {
 		return false; //not editable tree
 	}
@@ -1480,7 +1480,7 @@ bool SceneTreeEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_d
 	return false;
 }
 
-void SceneTreeEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void SceneTreeEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -1702,7 +1702,7 @@ void SceneTreeDialog::set_valid_types(const Vector<StringName> &p_valid) {
 
 	HFlowContainer *hflow = memnew(HFlowContainer);
 	hbox->add_child(hflow);
-	hflow->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hflow->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	for (const StringName &type : p_valid) {
 		HBoxContainer *hb = memnew(HBoxContainer);
@@ -1744,7 +1744,7 @@ void SceneTreeDialog::_notification(int p_what) {
 				tree->update_tree();
 
 				// Select the search bar by default.
-				callable_mp((Control *)filter, &Control::grab_focus).call_deferred();
+				callable_mp((Controle *)filter, &Controle::grab_focus).call_deferred();
 			}
 		} break;
 
@@ -1812,7 +1812,7 @@ SceneTreeDialog::SceneTreeDialog() {
 	content->add_child(filter_hbc);
 
 	filter = memnew(LineEdit);
-	filter->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	filter->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	filter->set_placeholder(TTR("Filter Nodes"));
 	filter->set_clear_button_enabled(true);
 	filter->add_theme_constant_override("minimum_character_width", 0);
@@ -1827,12 +1827,12 @@ SceneTreeDialog::SceneTreeDialog() {
 	show_all_nodes = memnew(CheckButton);
 	show_all_nodes->set_text(TTR("Show All"));
 	show_all_nodes->connect(SceneStringName(toggled), callable_mp(this, &SceneTreeDialog::_show_all_nodes_changed));
-	show_all_nodes->set_h_size_flags(Control::SIZE_SHRINK_BEGIN);
+	show_all_nodes->set_h_size_flags(Controle::SIZE_SHRINK_BEGIN);
 	show_all_nodes->hide();
 	filter_hbc->add_child(show_all_nodes);
 
 	tree = memnew(SceneTreeEditor(false, false, true));
-	tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	tree->get_scene_tree()->connect("item_activated", callable_mp(this, &SceneTreeDialog::_select));
 	// Initialize button state, must be done after the tree has been created to update its 'show_all_nodes' flag.
 	// This is also done before adding the tree to the content to avoid triggering unnecessary tree filtering.

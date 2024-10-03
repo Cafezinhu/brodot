@@ -1026,7 +1026,7 @@ CurveEditor::CurveEditor() {
 	add_child(curve_editor_rect);
 
 	// Some empty space below. Not a part of the curve editor so it can't draw in it.
-	Control *empty_space = memnew(Control);
+	Controle *empty_space = memnew(Controle);
 	empty_space->set_custom_minimum_size(Vector2(0, spacing));
 	add_child(empty_space);
 

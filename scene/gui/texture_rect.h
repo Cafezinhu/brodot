@@ -33,8 +33,8 @@
 
 #include "scene/gui/control.h"
 
-class TextureRect : public Control {
-	GDCLASS(TextureRect, Control);
+class TextureRect : public Controle {
+	GDCLASS(TextureRect, Controle);
 
 public:
 	enum ExpandMode {

@@ -71,7 +71,7 @@ private:
 		String language;
 		TextServer::StructuredTextParser st_parser = TextServer::STRUCTURED_TEXT_DEFAULT;
 		Array st_args;
-		Control::TextDirection text_direction = Control::TEXT_DIRECTION_INHERITED;
+		Controle::TextDirection text_direction = Controle::TEXT_DIRECTION_INHERITED;
 		TextServer::AutowrapMode autowrap_mode = TextServer::AUTOWRAP_OFF;
 		bool dirty = true;
 		double min = 0.0;
@@ -241,8 +241,8 @@ public:
 	void set_text(int p_column, String p_text);
 	String get_text(int p_column) const;
 
-	void set_text_direction(int p_column, Control::TextDirection p_text_direction);
-	Control::TextDirection get_text_direction(int p_column) const;
+	void set_text_direction(int p_column, Controle::TextDirection p_text_direction);
+	Controle::TextDirection get_text_direction(int p_column) const;
 
 	void set_autowrap_mode(int p_column, TextServer::AutowrapMode p_mode);
 	TextServer::AutowrapMode get_autowrap_mode(int p_column) const;
@@ -411,8 +411,8 @@ VARIANT_ENUM_CAST(TreeItem::TreeCellMode);
 
 class VBoxContainer;
 
-class Tree : public Control {
-	GDCLASS(Tree, Control);
+class Tree : public Controle {
+	GDCLASS(Tree, Controle);
 
 public:
 	enum SelectMode {
@@ -480,7 +480,7 @@ private:
 		HorizontalAlignment title_alignment = HORIZONTAL_ALIGNMENT_CENTER;
 		Ref<TextParagraph> text_buf;
 		String language;
-		Control::TextDirection text_direction = Control::TEXT_DIRECTION_INHERITED;
+		Controle::TextDirection text_direction = Controle::TEXT_DIRECTION_INHERITED;
 
 		mutable int cached_minimum_width = 0;
 		mutable bool cached_minimum_width_dirty = true;
@@ -758,8 +758,8 @@ public:
 	void set_column_title_alignment(int p_column, HorizontalAlignment p_alignment);
 	HorizontalAlignment get_column_title_alignment(int p_column) const;
 
-	void set_column_title_direction(int p_column, Control::TextDirection p_text_direction);
-	Control::TextDirection get_column_title_direction(int p_column) const;
+	void set_column_title_direction(int p_column, Controle::TextDirection p_text_direction);
+	Controle::TextDirection get_column_title_direction(int p_column) const;
 
 	void set_column_title_language(int p_column, const String &p_language);
 	String get_column_title_language(int p_column) const;

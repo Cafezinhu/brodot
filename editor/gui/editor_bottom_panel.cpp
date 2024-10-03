@@ -50,7 +50,7 @@ void EditorBottomPanel::_notification(int p_what) {
 	}
 }
 
-void EditorBottomPanel::_switch_by_control(bool p_visible, Control *p_control) {
+void EditorBottomPanel::_switch_by_control(bool p_visible, Controle *p_control) {
 	for (int i = 0; i < items.size(); i++) {
 		if (items[i].control == p_control) {
 			_switch_to_item(p_visible, i);
@@ -105,7 +105,7 @@ void EditorBottomPanel::_expand_button_toggled(bool p_pressed) {
 	EditorNode::get_top_split()->set_visible(!p_pressed);
 }
 
-bool EditorBottomPanel::_button_drag_hover(const Vector2 &, const Variant &, Button *p_button, Control *p_control) {
+bool EditorBottomPanel::_button_drag_hover(const Vector2 &, const Variant &, Button *p_button, Controle *p_control) {
 	if (!p_button->is_pressed()) {
 		_switch_by_control(true, p_control);
 	}
@@ -146,7 +146,7 @@ void EditorBottomPanel::load_layout_from_config(Ref<ConfigFile> p_config_file, c
 	}
 }
 
-Button *EditorBottomPanel::add_item(String p_text, Control *p_item, const Ref<Shortcut> &p_shortcut, bool p_at_front) {
+Button *EditorBottomPanel::add_item(String p_text, Controle *p_item, const Ref<Shortcut> &p_shortcut, bool p_at_front) {
 	Button *tb = memnew(Button);
 	tb->set_theme_type_variation("BottomPanelButton");
 	tb->connect(SceneStringName(toggled), callable_mp(this, &EditorBottomPanel::_switch_by_control).bind(p_item));
@@ -154,7 +154,7 @@ Button *EditorBottomPanel::add_item(String p_text, Control *p_item, const Ref<Sh
 	tb->set_text(p_text);
 	tb->set_shortcut(p_shortcut);
 	tb->set_toggle_mode(true);
-	tb->set_focus_mode(Control::FOCUS_NONE);
+	tb->set_focus_mode(Controle::FOCUS_NONE);
 	item_vbox->add_child(p_item);
 
 	bottom_hbox->move_to_front();
@@ -162,7 +162,7 @@ Button *EditorBottomPanel::add_item(String p_text, Control *p_item, const Ref<Sh
 	if (p_at_front) {
 		button_hbox->move_child(tb, 0);
 	}
-	p_item->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	p_item->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	p_item->hide();
 
 	BottomPanelItem bpi;
@@ -178,7 +178,7 @@ Button *EditorBottomPanel::add_item(String p_text, Control *p_item, const Ref<Sh
 	return tb;
 }
 
-void EditorBottomPanel::remove_item(Control *p_item) {
+void EditorBottomPanel::remove_item(Controle *p_item) {
 	bool was_visible = false;
 	for (int i = 0; i < items.size(); i++) {
 		if (items[i].control == p_item) {
@@ -204,11 +204,11 @@ void EditorBottomPanel::remove_item(Control *p_item) {
 	}
 }
 
-void EditorBottomPanel::make_item_visible(Control *p_item, bool p_visible) {
+void EditorBottomPanel::make_item_visible(Controle *p_item, bool p_visible) {
 	_switch_by_control(p_visible, p_item);
 }
 
-void EditorBottomPanel::move_item_to_end(Control *p_item) {
+void EditorBottomPanel::move_item_to_end(Controle *p_item) {
 	for (int i = 0; i < items.size(); i++) {
 		if (items[i].control == p_item) {
 			items[i].button->move_to_front();
@@ -247,7 +247,7 @@ EditorBottomPanel::EditorBottomPanel() {
 	item_vbox->add_child(bottom_hbox);
 
 	button_hbox = memnew(HBoxContainer);
-	button_hbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	button_hbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	bottom_hbox->add_child(button_hbox);
 
 	editor_toaster = memnew(EditorToaster);
@@ -256,11 +256,11 @@ EditorBottomPanel::EditorBottomPanel() {
 	EditorVersionButton *version_btn = memnew(EditorVersionButton(EditorVersionButton::FORMAT_BASIC));
 	// Fade out the version label to be less prominent, but still readable.
 	version_btn->set_self_modulate(Color(1, 1, 1, 0.65));
-	version_btn->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	version_btn->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	bottom_hbox->add_child(version_btn);
 
 	// Add a dummy control node for horizontal spacing.
-	Control *h_spacer = memnew(Control);
+	Controle *h_spacer = memnew(Controle);
 	bottom_hbox->add_child(h_spacer);
 
 	expand_button = memnew(Button);

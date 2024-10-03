@@ -33,7 +33,7 @@ public class DownloadInfo {
     public long mCurrentBytes;
     public long mLastMod;
     public int mStatus;
-    public int mControl;
+    public int mControle;
     public int mNumFailed;
     public int mRetryAfter;
     public int mRedirectCount;
@@ -53,7 +53,7 @@ public class DownloadInfo {
         mETag = "";
         mLastMod = 0;
         mStatus = 0;
-        mControl = 0;
+        mControle = 0;
         mNumFailed = 0;
         mRetryAfter = 0;
         mRedirectCount = 0;
@@ -79,7 +79,7 @@ public class DownloadInfo {
         Log.v(Constants.TAG, "FILENAME: " + mFileName);
         Log.v(Constants.TAG, "URI     : " + mUri);
         Log.v(Constants.TAG, "FILENAME: " + mFileName);
-        Log.v(Constants.TAG, "CONTROL : " + mControl);
+        Log.v(Constants.TAG, "CONTROL : " + mControle);
         Log.v(Constants.TAG, "STATUS  : " + mStatus);
         Log.v(Constants.TAG, "FAILED_C: " + mNumFailed);
         Log.v(Constants.TAG, "RETRY_AF: " + mRetryAfter);

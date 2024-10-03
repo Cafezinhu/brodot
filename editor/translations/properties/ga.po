@@ -292,7 +292,7 @@ msgstr "Moill leideanna (soic)"
 msgid "Common"
 msgstr "Coitianta"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Rialuithe Léime go Picteilíní"
 
 msgid "Fonts"
@@ -430,7 +430,7 @@ msgstr "Gléas"
 msgid "Window ID"
 msgstr "Aitheantas na Fuinneoige"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Uathmhapa ordaithe nó rialaithe"
 
 msgid "Alt Pressed"
@@ -541,10 +541,10 @@ msgstr "Páirc Imeartha"
 msgid "Instrument"
 msgstr "Ionstraim"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Uimhir an Rialaitheora"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Luach an Rialaitheora"
 
 msgid "Shortcut"
@@ -1768,7 +1768,7 @@ msgstr "Dath na Siombaile"
 msgid "Keyword Color"
 msgstr "Dath Eochairfhocal"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Rialú Shreabhadh Eochairfhocal Dath"
 
 msgid "Base Type Color"
@@ -2705,7 +2705,7 @@ msgstr "Líon na bhFrámaí"
 msgid "Duration"
 msgstr "Fad ama"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Rialú Leagain"
 
 msgid "Username"
@@ -3944,7 +3944,7 @@ msgstr "Cur síos URL"
 msgid "Service Type"
 msgstr "Cineál Seirbhíse"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL Rialaithe IGD"
 
 msgid "IGD Service Type"
@@ -7213,7 +7213,7 @@ msgstr "Tarraing agus scaoil an roghnúchán cumasaithe"
 msgid "Right Icon"
 msgstr "Deilbhín Ar Dheis"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Tarraing Carachtair Rialaithe"
 
 msgid "Select All on Focus"
@@ -7522,7 +7522,7 @@ msgstr "Aibhsitheoir Comhréire"
 msgid "Visual Whitespace"
 msgstr "Spás Bán Amhairc"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Chars Rialaithe"
 
 msgid "Spaces"
@@ -7949,7 +7949,7 @@ msgstr "Scáileán Reatha"
 msgid "Mouse Passthrough Polygon"
 msgstr "Polagán Passthrough Luiche"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "Timfhilleadh Rialtáin"
 
 msgid "Transient"
@@ -9245,7 +9245,7 @@ msgstr "Réigiúin Datha"
 msgid "Preserve Invalid"
 msgstr "Caomhnaigh Neamhbhailí"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Caomhnaigh Rialú"
 
 msgid "Custom Punctuation"
@@ -10526,7 +10526,7 @@ msgstr "Stuaic"
 msgid "Fragment"
 msgstr "Blúire"
 
-msgid "Tesselation Control"
+msgid "Tesselation Controle"
 msgstr "Rialú Tesselation"
 
 msgid "Tesselation Evaluation"

@@ -36,8 +36,8 @@
 #include "servers/audio/audio_rb_resampler.h"
 #include "servers/audio_server.h"
 
-class VideoStreamPlayer : public Control {
-	GDCLASS(VideoStreamPlayer, Control);
+class VideoStreamPlayer : public Controle {
+	GDCLASS(VideoStreamPlayer, Controle);
 
 	struct Output {
 		AudioFrame vol;

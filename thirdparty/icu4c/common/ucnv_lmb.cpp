@@ -244,13 +244,13 @@ static const char * const OptGroupByteToCPName[ULMBCS_GRP_LAST + 1] = {
    /* 0x0006 */ "ibm-852",
    /* 0x0007 */ nullptr,      /* Unused */
    /* 0x0008 */ "windows-1254",
-   /* 0x0009 */ nullptr,      /* Control char HT */
-   /* 0x000A */ nullptr,      /* Control char LF */
+   /* 0x0009 */ nullptr,      /* Controle char HT */
+   /* 0x000A */ nullptr,      /* Controle char LF */
    /* 0x000B */ "windows-874",
    /* 0x000C */ nullptr,      /* Unused */
-   /* 0x000D */ nullptr,      /* Control char CR */
+   /* 0x000D */ nullptr,      /* Controle char CR */
    /* 0x000E */ nullptr,      /* Unused */
-   /* 0x000F */ nullptr,      /* Control chars: 0x0F20 + C0/C1 character: algorithmic */
+   /* 0x000F */ nullptr,      /* Controle chars: 0x0F20 + C0/C1 character: algorithmic */
    /* 0x0010 */ "windows-932",
    /* 0x0011 */ "windows-949",
    /* 0x0012 */ "windows-950",
@@ -1158,7 +1158,7 @@ _LMBCSGetNextUCharWorker(UConverterToUnicodeArgs*   args,
         ulmbcs_byte_t group; 
         UConverterSharedData *cnv; 
         
-        if (CurByte == ULMBCS_GRP_CTRL)  /* Control character group - no opt group update */
+        if (CurByte == ULMBCS_GRP_CTRL)  /* Controle character group - no opt group update */
         {
             ulmbcs_byte_t  C0C1byte;
             CHECK_SOURCE_LIMIT(1);

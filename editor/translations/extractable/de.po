@@ -248,10 +248,10 @@ msgstr "Wiederherstellen"
 msgid "Text Writing Direction"
 msgstr "Schreibrichtung"
 
-msgid "Display Control Characters"
+msgid "Display Controle Characters"
 msgstr "Steuerzeichen anzeigen"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Steuerzeichen eingeben"
 
 msgid "(Other)"

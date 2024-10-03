@@ -36,8 +36,8 @@
 
 class ButtonGroup;
 
-class BaseButton : public Control {
-	GDCLASS(BaseButton, Control);
+class BaseButton : public Controle {
+	GDCLASS(BaseButton, Controle);
 
 public:
 	enum ActionMode {
@@ -134,7 +134,7 @@ public:
 	void set_shortcut(const Ref<Shortcut> &p_shortcut);
 	Ref<Shortcut> get_shortcut() const;
 
-	virtual Control *make_custom_tooltip(const String &p_text) const override;
+	virtual Controle *make_custom_tooltip(const String &p_text) const override;
 
 	void set_button_group(const Ref<ButtonGroup> &p_group);
 	Ref<ButtonGroup> get_button_group() const;

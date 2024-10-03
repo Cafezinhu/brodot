@@ -712,10 +712,10 @@ void Viewport::_process_picking() {
 	PhysicsDirectSpaceState2D *ss2d = PhysicsServer2D::get_singleton()->space_get_direct_state(find_world_2d()->get_space());
 
 	SubViewportContainer *parent_svc = Object::cast_to<SubViewportContainer>(get_parent());
-	bool parent_ignore_mouse = (parent_svc && parent_svc->get_mouse_filter() == Control::MOUSE_FILTER_IGNORE);
+	bool parent_ignore_mouse = (parent_svc && parent_svc->get_mouse_filter() == Controle::MOUSE_FILTER_IGNORE);
 	bool create_passive_hover_event = true;
 	if (gui.mouse_over || parent_ignore_mouse) {
-		// When the mouse is over a Control node, passive hovering would cause input events for Colliders, that are behind Control nodes.
+		// When the mouse is over a Controle node, passive hovering would cause input events for Colliders, that are behind Controle nodes.
 		// When parent SubViewportContainer ignores mouse, that setting should be respected.
 		create_passive_hover_event = false;
 	} else {
@@ -1377,7 +1377,7 @@ void Viewport::_gui_sort_roots() {
 		return;
 	}
 
-	gui.roots.sort_custom<Control::CComparator>();
+	gui.roots.sort_custom<Controle::CComparator>();
 
 	gui.roots_order_dirty = false;
 }
@@ -1395,7 +1395,7 @@ void Viewport::_gui_cancel_tooltip() {
 	}
 }
 
-String Viewport::_gui_get_tooltip(Control *p_control, const Vector2 &p_pos, Control **r_tooltip_owner) {
+String Viewport::_gui_get_tooltip(Controle *p_control, const Vector2 &p_pos, Controle **r_tooltip_owner) {
 	Vector2 pos = p_pos;
 	String tooltip;
 
@@ -1419,7 +1419,7 @@ String Viewport::_gui_get_tooltip(Control *p_control, const Vector2 &p_pos, Cont
 
 		// Otherwise, we check parent controls unless some conditions prevent it.
 
-		if (p_control->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+		if (p_control->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 			break;
 		}
 		if (p_control->is_set_as_top_level()) {
@@ -1440,8 +1440,8 @@ void Viewport::_gui_show_tooltip() {
 		return;
 	}
 
-	// Get the Control under cursor and the relevant tooltip text, if any.
-	Control *tooltip_owner = nullptr;
+	// Get the Controle under cursor and the relevant tooltip text, if any.
+	Controle *tooltip_owner = nullptr;
 	gui.tooltip_text = _gui_get_tooltip(
 			gui.tooltip_control,
 			gui.tooltip_control->get_global_transform_with_canvas().affine_inverse().xform(gui.last_mouse_pos),
@@ -1469,9 +1469,9 @@ void Viewport::_gui_show_tooltip() {
 	// Ensure no opaque background behind the panel as its StyleBox can be partially transparent (e.g. corners).
 	panel->set_transparent_background(true);
 
-	// Controls can implement `make_custom_tooltip` to provide their own tooltip.
-	// This should be a Control node which will be added as child to a TooltipPanel.
-	Control *base_tooltip = tooltip_owner->make_custom_tooltip(gui.tooltip_text);
+	// Controles can implement `make_custom_tooltip` to provide their own tooltip.
+	// This should be a Controle node which will be added as child to a TooltipPanel.
+	Controle *base_tooltip = tooltip_owner->make_custom_tooltip(gui.tooltip_text);
 
 	// If no custom tooltip is given, use a default implementation.
 	if (!base_tooltip) {
@@ -1482,7 +1482,7 @@ void Viewport::_gui_show_tooltip() {
 		panel->connect(SceneStringName(mouse_entered), callable_mp(this, &Viewport::_gui_cancel_tooltip));
 	}
 
-	base_tooltip->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	base_tooltip->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	base_tooltip->set_auto_translate_mode(tooltip_owner->get_tooltip_auto_translate_mode());
 
 	panel->set_transient(true);
@@ -1552,7 +1552,7 @@ void Viewport::_gui_show_tooltip() {
 	gui.tooltip_popup->child_controls_changed();
 }
 
-void Viewport::_gui_call_input(Control *p_control, const Ref<InputEvent> &p_input) {
+void Viewport::_gui_call_input(Controle *p_control, const Ref<InputEvent> &p_input) {
 	Ref<InputEvent> ev = p_input;
 
 	// Returns true if an event should be impacted by a control's mouse filter.
@@ -1567,16 +1567,16 @@ void Viewport::_gui_call_input(Control *p_control, const Ref<InputEvent> &p_inpu
 
 	CanvasItem *ci = p_control;
 	while (ci) {
-		Control *control = Object::cast_to<Control>(ci);
+		Controle *control = Object::cast_to<Controle>(ci);
 		if (control) {
-			if (control->data.mouse_filter != Control::MOUSE_FILTER_IGNORE) {
+			if (control->data.mouse_filter != Controle::MOUSE_FILTER_IGNORE) {
 				control->_call_gui_input(ev);
 			}
 
 			if (!control->is_inside_tree() || control->is_set_as_top_level()) {
 				break;
 			}
-			if (control->data.mouse_filter == Control::MOUSE_FILTER_STOP && is_pointer_event && !(is_scroll_event && control->data.force_pass_scroll_events)) {
+			if (control->data.mouse_filter == Controle::MOUSE_FILTER_STOP && is_pointer_event && !(is_scroll_event && control->data.force_pass_scroll_events)) {
 				// Mouse, ScreenDrag and ScreenTouch events are stopped by default with MOUSE_FILTER_STOP, unless we have a scroll event and force_pass_scroll_events set to true
 				set_input_as_handled();
 				break;
@@ -1584,7 +1584,7 @@ void Viewport::_gui_call_input(Control *p_control, const Ref<InputEvent> &p_inpu
 		}
 
 		if (is_input_handled()) {
-			// Break when the event is set to handled in a child Control node or after physics picking in SubViewport.
+			// Break when the event is set to handled in a child Controle node or after physics picking in SubViewport.
 			break;
 		}
 
@@ -1597,12 +1597,12 @@ void Viewport::_gui_call_input(Control *p_control, const Ref<InputEvent> &p_inpu
 	}
 }
 
-void Viewport::_gui_call_notification(Control *p_control, int p_what) {
+void Viewport::_gui_call_notification(Controle *p_control, int p_what) {
 	CanvasItem *ci = p_control;
 	while (ci) {
-		Control *control = Object::cast_to<Control>(ci);
+		Controle *control = Object::cast_to<Controle>(ci);
 		if (control) {
-			if (control->data.mouse_filter != Control::MOUSE_FILTER_IGNORE) {
+			if (control->data.mouse_filter != Controle::MOUSE_FILTER_IGNORE) {
 				control->notification(p_what);
 			}
 
@@ -1613,7 +1613,7 @@ void Viewport::_gui_call_notification(Control *p_control, int p_what) {
 			if (!control->is_inside_tree() || control->is_set_as_top_level()) {
 				break;
 			}
-			if (control->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+			if (control->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 				break;
 			}
 		}
@@ -1626,13 +1626,13 @@ void Viewport::_gui_call_notification(Control *p_control, int p_what) {
 	}
 }
 
-Control *Viewport::gui_find_control(const Point2 &p_global) {
+Controle *Viewport::gui_find_control(const Point2 &p_global) {
 	ERR_MAIN_THREAD_GUARD_V(nullptr);
 	// Handle subwindows.
 	_gui_sort_roots();
 
-	for (List<Control *>::Element *E = gui.roots.back(); E; E = E->prev()) {
-		Control *sw = E->get();
+	for (List<Controle *>::Element *E = gui.roots.back(); E; E = E->prev()) {
+		Controle *sw = E->get();
 		if (!sw->is_visible_in_tree()) {
 			continue;
 		}
@@ -1645,7 +1645,7 @@ Control *Viewport::gui_find_control(const Point2 &p_global) {
 			xform = sw->get_canvas_transform();
 		}
 
-		Control *ret = _gui_find_control_at_pos(sw, p_global, xform);
+		Controle *ret = _gui_find_control_at_pos(sw, p_global, xform);
 		if (ret) {
 			return ret;
 		}
@@ -1654,7 +1654,7 @@ Control *Viewport::gui_find_control(const Point2 &p_global) {
 	return nullptr;
 }
 
-Control *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_global, const Transform2D &p_xform) {
+Controle *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_global, const Transform2D &p_xform) {
 	if (!p_node->is_visible()) {
 		return nullptr; // Canvas item hidden, discard.
 	}
@@ -1665,7 +1665,7 @@ Control *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_
 		return nullptr;
 	}
 
-	Control *c = Object::cast_to<Control>(p_node);
+	Controle *c = Object::cast_to<Controle>(p_node);
 
 	if (!c || !c->is_clipping_contents() || c->has_point(matrix.affine_inverse().xform(p_global))) {
 		for (int i = p_node->get_child_count() - 1; i >= 0; i--) {
@@ -1674,14 +1674,14 @@ Control *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_
 				continue;
 			}
 
-			Control *ret = _gui_find_control_at_pos(ci, p_global, matrix);
+			Controle *ret = _gui_find_control_at_pos(ci, p_global, matrix);
 			if (ret) {
 				return ret;
 			}
 		}
 	}
 
-	if (!c || c->data.mouse_filter == Control::MOUSE_FILTER_IGNORE) {
+	if (!c || c->data.mouse_filter == Controle::MOUSE_FILTER_IGNORE) {
 		return nullptr;
 	}
 
@@ -1690,7 +1690,7 @@ Control *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_
 		return nullptr;
 	}
 
-	Control *drag_preview = _gui_get_drag_preview();
+	Controle *drag_preview = _gui_get_drag_preview();
 	if (!drag_preview || (c != drag_preview && !drag_preview->is_ancestor_of(c))) {
 		return c;
 	}
@@ -1698,12 +1698,12 @@ Control *Viewport::_gui_find_control_at_pos(CanvasItem *p_node, const Point2 &p_
 	return nullptr;
 }
 
-bool Viewport::_gui_drop(Control *p_at_control, Point2 p_at_pos, bool p_just_check) {
+bool Viewport::_gui_drop(Controle *p_at_control, Point2 p_at_pos, bool p_just_check) {
 	// Attempt drop, try parent controls too.
 	CanvasItem *ci = p_at_control;
 	Viewport *section_root = get_section_root_viewport();
 	while (ci) {
-		Control *control = Object::cast_to<Control>(ci);
+		Controle *control = Object::cast_to<Controle>(ci);
 		if (control) {
 			if (control->can_drop_data(p_at_pos, section_root->gui.drag_data)) {
 				if (!p_just_check) {
@@ -1713,7 +1713,7 @@ bool Viewport::_gui_drop(Control *p_at_control, Point2 p_at_pos, bool p_just_che
 				return true;
 			}
 
-			if (control->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+			if (control->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 				break;
 			}
 		}
@@ -1774,9 +1774,9 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 			if (mb->get_button_index() == MouseButton::LEFT) { // Assign focus.
 				CanvasItem *ci = gui.mouse_focus;
 				while (ci) {
-					Control *control = Object::cast_to<Control>(ci);
+					Controle *control = Object::cast_to<Controle>(ci);
 					if (control) {
-						if (control->get_focus_mode() != Control::FOCUS_NONE) {
+						if (control->get_focus_mode() != Controle::FOCUS_NONE) {
 							// Grabbing unhovered focus can cause issues when mouse is dragged
 							// with another button held down.
 							if (control != gui.key_focus && gui.mouse_over_hierarchy.has(control)) {
@@ -1785,7 +1785,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 							break;
 						}
 
-						if (control->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+						if (control->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 							break;
 						}
 					}
@@ -1824,7 +1824,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 			Point2 pos = gui.mouse_focus->get_global_transform_with_canvas().affine_inverse().xform(mpos);
 			mb->set_position(pos);
 
-			Control *mouse_focus = gui.mouse_focus;
+			Controle *mouse_focus = gui.mouse_focus;
 
 			// Disable mouse focus if needed before calling input,
 			// this makes popups on mouse press event work better,
@@ -1852,7 +1852,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 				{ // Attempt grab, try parent controls too.
 					CanvasItem *ci = gui.mouse_focus;
 					while (ci) {
-						Control *control = Object::cast_to<Control>(ci);
+						Controle *control = Object::cast_to<Controle>(ci);
 						if (control) {
 							section_root->gui.global_dragging = true;
 							section_root->gui.drag_data = control->get_drag_data(control->get_global_transform_with_canvas().affine_inverse().xform(mpos - gui.drag_accum));
@@ -1862,7 +1862,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 								gui.dragging = true;
 								break;
 							} else {
-								Control *drag_preview = _gui_get_drag_preview();
+								Controle *drag_preview = _gui_get_drag_preview();
 								if (drag_preview) {
 									ERR_PRINT("Don't set a drag preview and return null data. Preview was deleted and drag request ignored.");
 									memdelete(drag_preview);
@@ -1871,7 +1871,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 								section_root->gui.global_dragging = false;
 							}
 
-							if (control->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+							if (control->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 								break;
 							}
 						}
@@ -1891,7 +1891,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 			}
 		}
 
-		Control *over = nullptr;
+		Controle *over = nullptr;
 		if (gui.mouse_focus) {
 			over = gui.mouse_focus;
 		} else if (gui.mouse_in_viewport) {
@@ -1951,21 +1951,21 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 
 			mm->set_position(pos);
 
-			Control::CursorShape cursor_shape = Control::CURSOR_ARROW;
+			Controle::CursorShape cursor_shape = Controle::CURSOR_ARROW;
 			{
-				Control *c = over;
+				Controle *c = over;
 				Vector2 cpos = pos;
 				while (c) {
 					if (!gui.mouse_focus_mask.is_empty() || c->has_point(cpos)) {
 						cursor_shape = c->get_cursor_shape(cpos);
 					} else {
-						cursor_shape = Control::CURSOR_ARROW;
+						cursor_shape = Controle::CURSOR_ARROW;
 					}
 					cpos = c->get_transform().xform(cpos);
-					if (cursor_shape != Control::CURSOR_ARROW) {
+					if (cursor_shape != Controle::CURSOR_ARROW) {
 						break;
 					}
-					if (c->data.mouse_filter == Control::MOUSE_FILTER_STOP) {
+					if (c->data.mouse_filter == Controle::MOUSE_FILTER_STOP) {
 						break;
 					}
 					if (c->is_set_as_top_level()) {
@@ -1985,7 +1985,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 		if (gui.dragging) {
 			// Handle drag & drop. This happens in the viewport where dragging started.
 
-			Control *drag_preview = _gui_get_drag_preview();
+			Controle *drag_preview = _gui_get_drag_preview();
 			if (drag_preview) {
 				drag_preview->set_position(mpos);
 			}
@@ -2015,7 +2015,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 		Size2 pos = touch_event->get_position();
 		const int touch_index = touch_event->get_index();
 		if (touch_event->is_pressed()) {
-			Control *over = gui_find_control(pos);
+			Controle *over = gui_find_control(pos);
 			if (over) {
 				gui.touch_focus[touch_index] = over->get_instance_id();
 				if (over->can_process()) {
@@ -2028,7 +2028,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 			}
 		} else {
 			ObjectID control_id = gui.touch_focus[touch_index];
-			Control *over = control_id.is_valid() ? Object::cast_to<Control>(ObjectDB::get_instance(control_id)) : nullptr;
+			Controle *over = control_id.is_valid() ? Object::cast_to<Controle>(ObjectDB::get_instance(control_id)) : nullptr;
 			if (over && over->can_process()) {
 				touch_event = touch_event->xformed_by(Transform2D()); // Make a copy.
 				pos = over->get_global_transform_with_canvas().affine_inverse().xform(pos);
@@ -2047,7 +2047,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 
 		Size2 pos = gesture_event->get_position();
 
-		Control *over = gui_find_control(pos);
+		Controle *over = gui_find_control(pos);
 		if (over) {
 			if (over->can_process()) {
 				gesture_event = gesture_event->xformed_by(Transform2D()); // Make a copy.
@@ -2063,7 +2063,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 	if (drag_event.is_valid()) {
 		const int drag_event_index = drag_event->get_index();
 		ObjectID control_id = gui.touch_focus[drag_event_index];
-		Control *over = control_id.is_valid() ? Object::cast_to<Control>(ObjectDB::get_instance(control_id)) : nullptr;
+		Controle *over = control_id.is_valid() ? Object::cast_to<Controle>(ObjectDB::get_instance(control_id)) : nullptr;
 		if (!over) {
 			over = gui_find_control(drag_event->get_position());
 		}
@@ -2120,10 +2120,10 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 			}
 		}
 
-		Control *from = gui.key_focus ? gui.key_focus : nullptr;
+		Controle *from = gui.key_focus ? gui.key_focus : nullptr;
 
 		if (from && p_event->is_pressed()) {
-			Control *next = nullptr;
+			Controle *next = nullptr;
 
 			Ref<InputEventJoypadMotion> joypadmotion_event = p_event;
 			if (joypadmotion_event.is_valid()) {
@@ -2185,7 +2185,7 @@ void Viewport::_gui_input_event(Ref<InputEvent> p_event) {
 	}
 }
 
-void Viewport::_perform_drop(Control *p_control) {
+void Viewport::_perform_drop(Controle *p_control) {
 	// Without any arguments, simply cancel Drag and Drop.
 	if (p_control) {
 		gui.drag_successful = _gui_drop(p_control, p_control->get_local_mouse_position(), false);
@@ -2193,7 +2193,7 @@ void Viewport::_perform_drop(Control *p_control) {
 		gui.drag_successful = false;
 	}
 
-	Control *drag_preview = _gui_get_drag_preview();
+	Controle *drag_preview = _gui_get_drag_preview();
 	if (drag_preview) {
 		memdelete(drag_preview);
 		gui.drag_preview_id = ObjectID();
@@ -2220,7 +2220,7 @@ void Viewport::_gui_cleanup_internal_state(Ref<InputEvent> p_event) {
 	}
 }
 
-List<Control *>::Element *Viewport::_gui_add_root_control(Control *p_control) {
+List<Controle *>::Element *Viewport::_gui_add_root_control(Controle *p_control) {
 	gui.roots_order_dirty = true;
 	return gui.roots.push_back(p_control);
 }
@@ -2230,7 +2230,7 @@ void Viewport::gui_set_root_order_dirty() {
 	gui.roots_order_dirty = true;
 }
 
-void Viewport::_gui_force_drag(Control *p_base, const Variant &p_data, Control *p_control) {
+void Viewport::_gui_force_drag(Controle *p_base, const Variant &p_data, Controle *p_control) {
 	ERR_FAIL_COND_MSG(p_data.get_type() == Variant::NIL, "Drag data must be a value.");
 
 	gui.dragging = true;
@@ -2246,12 +2246,12 @@ void Viewport::_gui_force_drag(Control *p_base, const Variant &p_data, Control *
 	Viewport::_propagate_drag_notification(section_root, NOTIFICATION_DRAG_BEGIN);
 }
 
-void Viewport::_gui_set_drag_preview(Control *p_base, Control *p_control) {
+void Viewport::_gui_set_drag_preview(Controle *p_base, Controle *p_control) {
 	ERR_FAIL_NULL(p_control);
 	ERR_FAIL_COND(p_control->is_inside_tree());
 	ERR_FAIL_COND(p_control->get_parent() != nullptr);
 
-	Control *drag_preview = _gui_get_drag_preview();
+	Controle *drag_preview = _gui_get_drag_preview();
 	if (drag_preview) {
 		memdelete(drag_preview);
 	}
@@ -2263,11 +2263,11 @@ void Viewport::_gui_set_drag_preview(Control *p_base, Control *p_control) {
 	gui.drag_preview_id = p_control->get_instance_id();
 }
 
-Control *Viewport::_gui_get_drag_preview() {
+Controle *Viewport::_gui_get_drag_preview() {
 	if (gui.drag_preview_id.is_null()) {
 		return nullptr;
 	} else {
-		Control *drag_preview = Object::cast_to<Control>(ObjectDB::get_instance(gui.drag_preview_id));
+		Controle *drag_preview = Object::cast_to<Controle>(ObjectDB::get_instance(gui.drag_preview_id));
 		if (!drag_preview) {
 			ERR_PRINT("Don't free the control set as drag preview.");
 			gui.drag_preview_id = ObjectID();
@@ -2276,17 +2276,17 @@ Control *Viewport::_gui_get_drag_preview() {
 	}
 }
 
-void Viewport::_gui_remove_root_control(List<Control *>::Element *RI) {
+void Viewport::_gui_remove_root_control(List<Controle *>::Element *RI) {
 	gui.roots.erase(RI);
 }
 
-void Viewport::_gui_unfocus_control(Control *p_control) {
+void Viewport::_gui_unfocus_control(Controle *p_control) {
 	if (gui.key_focus == p_control) {
 		gui.key_focus->release_focus();
 	}
 }
 
-void Viewport::_gui_hide_control(Control *p_control) {
+void Viewport::_gui_hide_control(Controle *p_control) {
 	if (gui.mouse_focus == p_control) {
 		_drop_mouse_focus();
 	}
@@ -2305,7 +2305,7 @@ void Viewport::_gui_hide_control(Control *p_control) {
 	}
 }
 
-void Viewport::_gui_remove_control(Control *p_control) {
+void Viewport::_gui_remove_control(Controle *p_control) {
 	if (gui.mouse_focus == p_control) {
 		gui.mouse_focus = nullptr;
 		gui.mouse_focus_mask.clear();
@@ -2342,20 +2342,20 @@ void Viewport::_gui_update_mouse_over() {
 	}
 
 	// Rebuild the mouse over hierarchy.
-	LocalVector<Control *> new_mouse_over_hierarchy;
-	LocalVector<Control *> needs_enter;
+	LocalVector<Controle *> new_mouse_over_hierarchy;
+	LocalVector<Controle *> needs_enter;
 	LocalVector<int> needs_exit;
 
 	CanvasItem *ancestor = gui.mouse_over;
 	bool removing = false;
 	bool reached_top = false;
 	while (ancestor) {
-		Control *ancestor_control = Object::cast_to<Control>(ancestor);
+		Controle *ancestor_control = Object::cast_to<Controle>(ancestor);
 		if (ancestor_control) {
 			int found = gui.mouse_over_hierarchy.find(ancestor_control);
 			if (found >= 0) {
 				// Remove the node if the propagation chain has been broken or it is now MOUSE_FILTER_IGNORE.
-				if (removing || ancestor_control->get_mouse_filter() == Control::MOUSE_FILTER_IGNORE) {
+				if (removing || ancestor_control->get_mouse_filter() == Controle::MOUSE_FILTER_IGNORE) {
 					needs_exit.push_back(found);
 				}
 			}
@@ -2366,14 +2366,14 @@ void Viewport::_gui_update_mouse_over() {
 				}
 				reached_top = true;
 			}
-			if (!removing && ancestor_control->get_mouse_filter() != Control::MOUSE_FILTER_IGNORE) {
+			if (!removing && ancestor_control->get_mouse_filter() != Controle::MOUSE_FILTER_IGNORE) {
 				new_mouse_over_hierarchy.push_back(ancestor_control);
 				// Add the node if it was not found and it is now not MOUSE_FILTER_IGNORE.
 				if (found < 0) {
 					needs_enter.push_back(ancestor_control);
 				}
 			}
-			if (ancestor_control->get_mouse_filter() == Control::MOUSE_FILTER_STOP) {
+			if (ancestor_control->get_mouse_filter() == Controle::MOUSE_FILTER_STOP) {
 				// MOUSE_FILTER_STOP breaks the propagation chain.
 				if (reached_top) {
 					break;
@@ -2401,13 +2401,13 @@ void Viewport::_gui_update_mouse_over() {
 
 	// Send Mouse Exit Self notification.
 	if (gui.mouse_over && !needs_exit.is_empty() && needs_exit[0] == (int)gui.mouse_over_hierarchy.size() - 1) {
-		gui.mouse_over->notification(Control::NOTIFICATION_MOUSE_EXIT_SELF);
+		gui.mouse_over->notification(Controle::NOTIFICATION_MOUSE_EXIT_SELF);
 		gui.mouse_over = nullptr;
 	}
 
 	// Send Mouse Exit notifications.
 	for (int exit_control_index : needs_exit) {
-		gui.mouse_over_hierarchy[exit_control_index]->notification(Control::NOTIFICATION_MOUSE_EXIT);
+		gui.mouse_over_hierarchy[exit_control_index]->notification(Controle::NOTIFICATION_MOUSE_EXIT);
 	}
 
 	// Update the mouse over hierarchy.
@@ -2418,7 +2418,7 @@ void Viewport::_gui_update_mouse_over() {
 
 	// Send Mouse Enter notifications.
 	for (int i = needs_enter.size() - 1; i >= 0; i--) {
-		needs_enter[i]->notification(Control::NOTIFICATION_MOUSE_ENTER);
+		needs_enter[i]->notification(Controle::NOTIFICATION_MOUSE_ENTER);
 	}
 
 	gui.sending_mouse_enter_exit_notifications = false;
@@ -2444,11 +2444,11 @@ void Viewport::_gui_remove_focus_for_window(Node *p_window) {
 	}
 }
 
-bool Viewport::_gui_control_has_focus(const Control *p_control) {
+bool Viewport::_gui_control_has_focus(const Controle *p_control) {
 	return gui.key_focus == p_control;
 }
 
-void Viewport::_gui_control_grab_focus(Control *p_control) {
+void Viewport::_gui_control_grab_focus(Controle *p_control) {
 	if (gui.key_focus && gui.key_focus == p_control) {
 		// No need for change.
 		return;
@@ -2457,7 +2457,7 @@ void Viewport::_gui_control_grab_focus(Control *p_control) {
 	if (p_control->is_inside_tree() && p_control->get_viewport() == this) {
 		gui.key_focus = p_control;
 		emit_signal(SNAME("gui_focus_changed"), p_control);
-		p_control->notification(Control::NOTIFICATION_FOCUS_ENTER);
+		p_control->notification(Controle::NOTIFICATION_FOCUS_ENTER);
 		p_control->queue_redraw();
 	}
 }
@@ -2469,7 +2469,7 @@ void Viewport::_gui_accept_event() {
 }
 
 void Viewport::_drop_mouse_focus() {
-	Control *c = gui.mouse_focus;
+	Controle *c = gui.mouse_focus;
 	BitField<MouseButtonMask> mask = gui.mouse_focus_mask;
 	gui.mouse_focus = nullptr;
 	gui.mouse_focus_mask.clear();
@@ -2512,13 +2512,13 @@ void Viewport::_drop_physics_mouseover(bool p_paused_only) {
 #endif // _3D_DISABLED
 }
 
-void Viewport::_gui_grab_click_focus(Control *p_control) {
+void Viewport::_gui_grab_click_focus(Controle *p_control) {
 	gui.mouse_click_grabber = p_control;
 	callable_mp(this, &Viewport::_post_gui_grab_click_focus).call_deferred();
 }
 
 void Viewport::_post_gui_grab_click_focus() {
-	Control *focus_grabber = gui.mouse_click_grabber;
+	Controle *focus_grabber = gui.mouse_click_grabber;
 	if (!focus_grabber) {
 		// Redundant grab requests were made.
 		return;
@@ -2562,7 +2562,7 @@ void Viewport::_post_gui_grab_click_focus() {
 				mb->set_button_index(MouseButton(i + 1));
 				mb->set_pressed(true);
 				mb->set_device(InputEvent::DEVICE_ID_INTERNAL);
-				callable_mp(gui.mouse_focus, &Control::_call_gui_input).call_deferred(mb);
+				callable_mp(gui.mouse_focus, &Controle::_call_gui_input).call_deferred(mb);
 			}
 		}
 	}
@@ -2976,22 +2976,22 @@ void Viewport::_update_mouse_over(Vector2 p_pos) {
 		}
 	}
 
-	// Look for Controls at mouse position.
-	Control *over = gui_find_control(p_pos);
+	// Look for Controles at mouse position.
+	Controle *over = gui_find_control(p_pos);
 	get_section_root_viewport()->gui.target_control = over;
 	bool notify_embedded_viewports = false;
 	if (over != gui.mouse_over || (!over && !gui.mouse_over_hierarchy.is_empty())) {
 		// Find the common ancestor of `gui.mouse_over` and `over`.
-		Control *common_ancestor = nullptr;
-		LocalVector<Control *> over_ancestors;
+		Controle *common_ancestor = nullptr;
+		LocalVector<Controle *> over_ancestors;
 
 		if (over) {
 			// Get all ancestors that the mouse is currently over and need an enter signal.
 			CanvasItem *ancestor = over;
 			while (ancestor) {
-				Control *ancestor_control = Object::cast_to<Control>(ancestor);
+				Controle *ancestor_control = Object::cast_to<Controle>(ancestor);
 				if (ancestor_control) {
-					if (ancestor_control->get_mouse_filter() != Control::MOUSE_FILTER_IGNORE) {
+					if (ancestor_control->get_mouse_filter() != Controle::MOUSE_FILTER_IGNORE) {
 						int found = gui.mouse_over_hierarchy.find(ancestor_control);
 						if (found >= 0) {
 							common_ancestor = gui.mouse_over_hierarchy[found];
@@ -2999,7 +2999,7 @@ void Viewport::_update_mouse_over(Vector2 p_pos) {
 						}
 						over_ancestors.push_back(ancestor_control);
 					}
-					if (ancestor_control->get_mouse_filter() == Control::MOUSE_FILTER_STOP) {
+					if (ancestor_control->get_mouse_filter() == Controle::MOUSE_FILTER_STOP) {
 						// MOUSE_FILTER_STOP breaks the propagation chain.
 						break;
 					}
@@ -3028,12 +3028,12 @@ void Viewport::_update_mouse_over(Vector2 p_pos) {
 			// Send Mouse Enter notifications to parents first.
 			for (int i = over_ancestors.size() - 1; i >= 0; i--) {
 				gui.mouse_over_hierarchy.push_back(over_ancestors[i]);
-				over_ancestors[i]->notification(Control::NOTIFICATION_MOUSE_ENTER);
+				over_ancestors[i]->notification(Controle::NOTIFICATION_MOUSE_ENTER);
 			}
 
 			// Send Mouse Enter Self notification.
 			if (gui.mouse_over) {
-				gui.mouse_over->notification(Control::NOTIFICATION_MOUSE_ENTER_SELF);
+				gui.mouse_over->notification(Controle::NOTIFICATION_MOUSE_ENTER_SELF);
 			}
 
 			gui.sending_mouse_enter_exit_notifications = false;
@@ -3078,7 +3078,7 @@ void Viewport::_mouse_leave_viewport() {
 	notification(NOTIFICATION_VP_MOUSE_EXIT);
 }
 
-void Viewport::_drop_mouse_over(Control *p_until_control) {
+void Viewport::_drop_mouse_over(Controle *p_until_control) {
 	if (gui.sending_mouse_enter_exit_notifications) {
 		// If notifications are already being sent, defer call.
 		callable_mp(this, &Viewport::_drop_mouse_over).call_deferred(p_until_control);
@@ -3099,7 +3099,7 @@ void Viewport::_drop_mouse_over(Control *p_until_control) {
 
 	gui.sending_mouse_enter_exit_notifications = true;
 	if (gui.mouse_over && gui.mouse_over->is_inside_tree()) {
-		gui.mouse_over->notification(Control::NOTIFICATION_MOUSE_EXIT_SELF);
+		gui.mouse_over->notification(Controle::NOTIFICATION_MOUSE_EXIT_SELF);
 	}
 	Viewport *section_root = get_section_root_viewport();
 	if (section_root && section_root->gui.target_control == gui.mouse_over) {
@@ -3111,7 +3111,7 @@ void Viewport::_drop_mouse_over(Control *p_until_control) {
 	int notification_until = p_until_control ? gui.mouse_over_hierarchy.find(p_until_control) + 1 : 0;
 	for (int i = gui.mouse_over_hierarchy.size() - 1; i >= notification_until; i--) {
 		if (gui.mouse_over_hierarchy[i]->is_inside_tree()) {
-			gui.mouse_over_hierarchy[i]->notification(Control::NOTIFICATION_MOUSE_EXIT);
+			gui.mouse_over_hierarchy[i]->notification(Controle::NOTIFICATION_MOUSE_EXIT);
 		}
 	}
 	gui.mouse_over_hierarchy.resize(notification_until);
@@ -3339,19 +3339,19 @@ int Viewport::gui_get_canvas_sort_index() {
 void Viewport::gui_release_focus() {
 	ERR_MAIN_THREAD_GUARD;
 	if (gui.key_focus) {
-		Control *f = gui.key_focus;
+		Controle *f = gui.key_focus;
 		gui.key_focus = nullptr;
-		f->notification(Control::NOTIFICATION_FOCUS_EXIT, true);
+		f->notification(Controle::NOTIFICATION_FOCUS_EXIT, true);
 		f->queue_redraw();
 	}
 }
 
-Control *Viewport::gui_get_focus_owner() const {
+Controle *Viewport::gui_get_focus_owner() const {
 	ERR_READ_THREAD_GUARD_V(nullptr);
 	return gui.key_focus;
 }
 
-Control *Viewport::gui_get_hovered_control() const {
+Controle *Viewport::gui_get_hovered_control() const {
 	ERR_READ_THREAD_GUARD_V(nullptr);
 	return gui.mouse_over;
 }
@@ -3845,7 +3845,7 @@ Transform2D Viewport::get_screen_transform_internal(bool p_absolute_position) co
 }
 
 void Viewport::update_mouse_cursor_state() {
-	// Updates need to happen in Window, because SubViewportContainers might be hidden behind other Controls.
+	// Updates need to happen in Window, because SubViewportContainers might be hidden behind other Controles.
 	Window *base_window = get_base_window();
 	if (base_window) {
 		base_window->update_mouse_cursor_state();
@@ -4778,7 +4778,7 @@ void Viewport::_bind_methods() {
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "canvas_cull_mask", PROPERTY_HINT_LAYERS_2D_RENDER), "set_canvas_cull_mask", "get_canvas_cull_mask");
 
 	ADD_SIGNAL(MethodInfo("size_changed"));
-	ADD_SIGNAL(MethodInfo("gui_focus_changed", PropertyInfo(Variant::OBJECT, "node", PROPERTY_HINT_RESOURCE_TYPE, "Control")));
+	ADD_SIGNAL(MethodInfo("gui_focus_changed", PropertyInfo(Variant::OBJECT, "node", PROPERTY_HINT_RESOURCE_TYPE, "Controle")));
 
 	BIND_ENUM_CONSTANT(SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED);
 	BIND_ENUM_CONSTANT(SHADOW_ATLAS_QUADRANT_SUBDIV_1);
@@ -4930,8 +4930,8 @@ Viewport::Viewport() {
 	set_sdf_oversize(sdf_oversize); // Set to server.
 
 	// Physics interpolation mode for viewports is a special case.
-	// Typically viewports will be housed within Controls,
-	// and Controls default to PHYSICS_INTERPOLATION_MODE_OFF.
+	// Typically viewports will be housed within Controles,
+	// and Controles default to PHYSICS_INTERPOLATION_MODE_OFF.
 	// Viewports can thus inherit physics interpolation OFF, which is unexpected.
 	// Setting to ON allows each viewport to have a fresh interpolation state.
 	set_physics_interpolation_mode(Node::PHYSICS_INTERPOLATION_MODE_ON);

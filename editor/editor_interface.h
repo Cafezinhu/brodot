@@ -36,7 +36,7 @@
 #include "core/object/object.h"
 #include "core/object/script_language.h"
 
-class Control;
+class Controle;
 class EditorCommandPalette;
 class EditorFileSystem;
 class EditorInspector;
@@ -112,7 +112,7 @@ public:
 
 	Ref<Theme> get_editor_theme() const;
 
-	Control *get_base_control() const;
+	Controle *get_base_control() const;
 	VBoxContainer *get_editor_main_screen() const;
 	ScriptEditor *get_script_editor() const;
 	SubViewport *get_editor_viewport_2d() const;

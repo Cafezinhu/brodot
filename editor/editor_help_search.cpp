@@ -330,7 +330,7 @@ EditorHelpSearch::EditorHelpSearch() {
 
 	search_box = memnew(LineEdit);
 	search_box->set_custom_minimum_size(Size2(200, 0) * EDSCALE);
-	search_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	search_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	search_box->set_clear_button_enabled(true);
 	search_box->connect(SceneStringName(gui_input), callable_mp(this, &EditorHelpSearch::_search_box_gui_input));
 	search_box->connect(SceneStringName(text_changed), callable_mp(this, &EditorHelpSearch::_search_box_text_changed));
@@ -342,7 +342,7 @@ EditorHelpSearch::EditorHelpSearch() {
 	case_sensitive_button->set_tooltip_text(TTR("Case Sensitive"));
 	case_sensitive_button->connect(SceneStringName(pressed), callable_mp(this, &EditorHelpSearch::_update_results));
 	case_sensitive_button->set_toggle_mode(true);
-	case_sensitive_button->set_focus_mode(Control::FOCUS_NONE);
+	case_sensitive_button->set_focus_mode(Controle::FOCUS_NONE);
 	hbox->add_child(case_sensitive_button);
 
 	hierarchy_button = memnew(Button);
@@ -351,7 +351,7 @@ EditorHelpSearch::EditorHelpSearch() {
 	hierarchy_button->connect(SceneStringName(pressed), callable_mp(this, &EditorHelpSearch::_update_results));
 	hierarchy_button->set_toggle_mode(true);
 	hierarchy_button->set_pressed(true);
-	hierarchy_button->set_focus_mode(Control::FOCUS_NONE);
+	hierarchy_button->set_focus_mode(Controle::FOCUS_NONE);
 	hbox->add_child(hierarchy_button);
 
 	filter_combo = memnew(OptionButton);
@@ -374,7 +374,7 @@ EditorHelpSearch::EditorHelpSearch() {
 	// Create the results tree.
 	results_tree = memnew(Tree);
 	results_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	results_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	results_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	results_tree->set_columns(2);
 	results_tree->set_column_title(0, TTR("Name"));
 	results_tree->set_column_clip_content(0, true);
@@ -1306,7 +1306,7 @@ bool EditorHelpSearch::Runner::work(uint64_t slot) {
 	return true;
 }
 
-EditorHelpSearch::Runner::Runner(Control *p_icon_service, Tree *p_results_tree, TreeCache *p_tree_cache, const String &p_term, int p_search_flags) :
+EditorHelpSearch::Runner::Runner(Controle *p_icon_service, Tree *p_results_tree, TreeCache *p_tree_cache, const String &p_term, int p_search_flags) :
 		ui_service(p_icon_service),
 		results_tree(p_results_tree),
 		tree_cache(p_tree_cache),

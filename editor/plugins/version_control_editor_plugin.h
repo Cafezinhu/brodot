@@ -42,8 +42,8 @@
 #include "scene/gui/text_edit.h"
 #include "scene/gui/tree.h"
 
-class VersionControlEditorPlugin : public EditorPlugin {
-	GDCLASS(VersionControlEditorPlugin, EditorPlugin)
+class VersionControleEditorPlugin : public EditorPlugin {
+	GDCLASS(VersionControleEditorPlugin, EditorPlugin)
 
 public:
 	enum ButtonType {
@@ -63,7 +63,7 @@ public:
 	};
 
 private:
-	static VersionControlEditorPlugin *singleton;
+	static VersionControleEditorPlugin *singleton;
 
 	List<StringName> available_plugins;
 
@@ -201,10 +201,10 @@ protected:
 	static void _bind_methods();
 
 public:
-	static VersionControlEditorPlugin *get_singleton();
+	static VersionControleEditorPlugin *get_singleton();
 
 	void popup_vcs_metadata_dialog();
-	void popup_vcs_set_up_dialog(const Control *p_gui_base);
+	void popup_vcs_set_up_dialog(const Controle *p_gui_base);
 
 	PopupMenu *get_version_control_actions_panel() const { return version_control_actions; }
 
@@ -212,8 +212,8 @@ public:
 	void fetch_available_vcs_plugin_names();
 	void shut_down();
 
-	VersionControlEditorPlugin();
-	~VersionControlEditorPlugin();
+	VersionControleEditorPlugin();
+	~VersionControleEditorPlugin();
 };
 
 #endif // VERSION_CONTROL_EDITOR_PLUGIN_H

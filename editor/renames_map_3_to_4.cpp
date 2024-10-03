@@ -179,7 +179,7 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	// { "get_points", "get_points_id" }, // AStar -- Breaks Line2D, ConvexPolygonShape.
 	// { "get_process_mode", "get_process_callback" }, // ClippedCamera3D -- Breaks Node, Sky.
 	// { "get_render_info", "get_rendering_info" }, // RenderingServer -- Breaks Viewport.
-	// { "get_stylebox", "get_theme_stylebox" }, // Control -- Would rename the method in Theme as well, skipping.
+	// { "get_stylebox", "get_theme_stylebox" }, // Controle -- Would rename the method in Theme as well, skipping.
 	// { "get_type", "get_tracker_type" }, // XRPositionalTracker -- Breaks GLTFAccessor, GLTFLight.
 	// { "get_v_offset", "get_drag_vertical_offset" }, // Camera2D -- Breaks PathFollow, Camera.
 	// { "get_v_scroll", "get_v_scroll_bar" }, // ItemList -- Breaks TextView.
@@ -200,13 +200,13 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	// { "set_extents", "set_size"}, // BoxShape, RectangleShape -- Breaks ReflectionProbe.
 	// { "set_flag", "set_particle_flag"}, // ParticleProcessMaterial -- Breaks Window, HingeJoint3D.
 	// { "set_h_offset", "set_drag_horizontal_offset" }, // Camera2D -- Breaks Camera3D, PathFollow3D, PathFollow2D.
-	// { "set_margin", "set_offset" }, // Control -- Breaks Shape3D, AtlasTexture.
+	// { "set_margin", "set_offset" }, // Controle -- Breaks Shape3D, AtlasTexture.
 	// { "set_mode", "set_mode_file_mode" }, // FileDialog -- Breaks Panel, Shader, CSGPolygon, TileMap.
 	// { "set_normal", "surface_set_normal"}, // ImmediateGeometry -- Breaks SurfaceTool, WorldMarginShape2D.
 	// { "set_offset", "set_progress" }, // PathFollow2D, PathFollow3D -- Too common.
 	// { "set_process_mode", "set_process_callback" }, // AnimationTree -- Breaks Node, Tween, Sky.
 	// { "set_refuse_new_network_connections", "set_refuse_new_connections"}, // MultiplayerAPI -- Breaks SceneTree.
-	// { "set_tooltip", "set_tooltip_text" }, // Control -- Breaks TreeItem, at least for now.
+	// { "set_tooltip", "set_tooltip_text" }, // Controle -- Breaks TreeItem, at least for now.
 	// { "set_uv", "surface_set_uv" }, // ImmediateMesh -- Breaks Polygon2D.
 	// { "set_v_offset", "set_drag_vertical_offset" }, // Camera2D -- Breaks Camera3D, PathFollow3D, PathFollow2D.
 
@@ -218,14 +218,14 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "add_cancel", "add_cancel_button" }, // AcceptDialog
 	{ "add_central_force", "apply_central_force" }, //RigidBody2D
 	{ "add_child_below_node", "add_sibling" }, // Node
-	{ "add_color_override", "add_theme_color_override" }, // Control
-	{ "add_constant_override", "add_theme_constant_override" }, // Control
-	{ "add_font_override", "add_theme_font_override" }, // Control
+	{ "add_color_override", "add_theme_color_override" }, // Controle
+	{ "add_constant_override", "add_theme_constant_override" }, // Controle
+	{ "add_font_override", "add_theme_font_override" }, // Controle
 	{ "add_force", "apply_force" }, //RigidBody2D
-	{ "add_icon_override", "add_theme_icon_override" }, // Control
+	{ "add_icon_override", "add_theme_icon_override" }, // Controle
 	{ "add_scene_import_plugin", "add_scene_format_importer_plugin" }, //EditorPlugin
 	{ "add_spatial_gizmo_plugin", "add_node_3d_gizmo_plugin" }, // EditorPlugin
-	{ "add_stylebox_override", "add_theme_stylebox_override" }, // Control
+	{ "add_stylebox_override", "add_theme_stylebox_override" }, // Controle
 	{ "add_torque", "apply_torque" }, //RigidBody2D
 	{ "agent_set_neighbor_dist", "agent_set_neighbor_distance" }, // NavigationServer2D, NavigationServer3D
 	{ "apply_changes", "_apply_changes" }, // EditorPlugin
@@ -233,7 +233,7 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "body_add_torque", "body_apply_torque" }, // PhysicsServer2D
 	{ "bumpmap_to_normalmap", "bump_map_to_normal_map" }, // Image
 	{ "can_be_hidden", "_can_be_hidden" }, // EditorNode3DGizmoPlugin
-	{ "can_drop_data", "_can_drop_data" }, // Control
+	{ "can_drop_data", "_can_drop_data" }, // Controle
 	{ "can_generate_small_preview", "_can_generate_small_preview" }, // EditorResourcePreviewGenerator
 	{ "can_instance", "can_instantiate" }, // PackedScene, Script
 	{ "canvas_light_set_scale", "canvas_light_set_texture_scale" }, // RenderingServer
@@ -262,7 +262,7 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "delete_char_at_cursor", "delete_char_at_caret" }, // LineEdit
 	{ "deselect_items", "deselect_all" }, // FileDialog
 	{ "disable_plugin", "_disable_plugin" }, // EditorPlugin
-	{ "drop_data", "_drop_data" }, // Control
+	{ "drop_data", "_drop_data" }, // Controle
 	{ "exclude_polygons_2d", "exclude_polygons" }, // Geometry2D
 	{ "find_node", "find_child" }, // Node
 	{ "find_scancode_from_string", "find_keycode_from_string" }, // OS
@@ -303,14 +303,14 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "get_depth_bias_enable", "get_depth_bias_enabled" }, // RDPipelineRasterizationState
 	{ "get_device", "get_output_device" }, // AudioServer
 	{ "get_device_list", "get_output_device_list" }, // AudioServer
-	{ "get_drag_data", "_get_drag_data" }, // Control
+	{ "get_drag_data", "_get_drag_data" }, // Controle
 	{ "get_editor_viewport", "get_editor_main_screen" }, // EditorPlugin
 	{ "get_enabled_focus_mode", "get_focus_mode" }, // BaseButton
 	{ "get_endian_swap", "is_big_endian" }, // File
 	{ "get_error_string", "get_error_message" }, // JSON
 	{ "get_filename", "get_scene_file_path" }, // Node -- WARNING: This may be used in a lot of other places.
 	{ "get_final_location", "get_final_position" }, // NavigationAgent2D, NavigationAgent3D
-	{ "get_focus_neighbour", "get_focus_neighbor" }, // Control
+	{ "get_focus_neighbour", "get_focus_neighbor" }, // Controle
 	{ "get_follow_smoothing", "get_position_smoothing_speed" }, // Camera2D
 	{ "get_font_types", "get_font_type_list" }, // Theme
 	{ "get_frame_color", "get_color" }, // ColorRect
@@ -405,19 +405,19 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "groove_joint_create", "joint_make_groove" }, // PhysicsServer2D
 	{ "handle_menu_selected", "_handle_menu_selected" }, // EditorResourcePicker
 	{ "handles_type", "_handles_type" }, // ResourceFormatLoader
-	{ "has_color", "has_theme_color" }, // Control -- Breaks Theme
-	{ "has_color_override", "has_theme_color_override" }, // Control -- Breaks Theme
-	{ "has_constant", "has_theme_constant" }, // Control
-	{ "has_constant_override", "has_theme_constant_override" }, // Control
+	{ "has_color", "has_theme_color" }, // Controle -- Breaks Theme
+	{ "has_color_override", "has_theme_color_override" }, // Controle -- Breaks Theme
+	{ "has_constant", "has_theme_constant" }, // Controle
+	{ "has_constant_override", "has_theme_constant_override" }, // Controle
 	{ "has_filter", "_has_filter" }, // AnimationNode
-	{ "has_font", "has_theme_font" }, // Control -- Breaks Theme
-	{ "has_font_override", "has_theme_font_override" }, // Control
-	{ "has_icon", "has_theme_icon" }, // Control -- Breaks Theme
-	{ "has_icon_override", "has_theme_icon_override" }, // Control
+	{ "has_font", "has_theme_font" }, // Controle -- Breaks Theme
+	{ "has_font_override", "has_theme_font_override" }, // Controle
+	{ "has_icon", "has_theme_icon" }, // Controle -- Breaks Theme
+	{ "has_icon_override", "has_theme_icon_override" }, // Controle
 	{ "has_main_screen", "_has_main_screen" }, // EditorPlugin
 	{ "has_network_peer", "has_multiplayer_peer" }, // Multiplayer API
-	{ "has_stylebox", "has_theme_stylebox" }, // Control -- Breaks Theme
-	{ "has_stylebox_override", "has_theme_stylebox_override" }, // Control
+	{ "has_stylebox", "has_theme_stylebox" }, // Controle -- Breaks Theme
+	{ "has_stylebox_override", "has_theme_stylebox_override" }, // Controle
 	{ "http_escape", "uri_encode" }, // String
 	{ "http_unescape", "uri_decode" }, // String
 	{ "import_scene_from_other_importer", "_import_scene" }, // EditorSceneFormatImporter
@@ -479,21 +479,21 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "region_set_navmesh", "region_set_navigation_mesh" }, // Navigation3DServer
 	{ "region_set_navpoly", "region_set_navigation_polygon" }, // Navigation2DServer
 	{ "remove_animation", "remove_animation_library" }, // AnimationPlayer
-	{ "remove_color_override", "remove_theme_color_override" }, // Control
-	{ "remove_constant_override", "remove_theme_constant_override" }, // Control
-	{ "remove_font_override", "remove_theme_font_override" }, // Control
-	{ "remove_icon_override", "remove_theme_icon_override" }, // Control
+	{ "remove_color_override", "remove_theme_color_override" }, // Controle
+	{ "remove_constant_override", "remove_theme_constant_override" }, // Controle
+	{ "remove_font_override", "remove_theme_font_override" }, // Controle
+	{ "remove_icon_override", "remove_theme_icon_override" }, // Controle
 	{ "remove_scene_import_plugin", "remove_scene_format_importer_plugin" }, //EditorPlugin
 	{ "remove_spatial_gizmo_plugin", "remove_node_3d_gizmo_plugin" }, // EditorPlugin
-	{ "remove_stylebox_override", "remove_theme_stylebox_override" }, // Control
+	{ "remove_stylebox_override", "remove_theme_stylebox_override" }, // Controle
 	{ "rename_animation", "rename_animation_library" }, // AnimationPlayer
 	{ "rename_dependencies", "_rename_dependencies" }, // ResourceFormatLoader
 	{ "save_external_data", "_save_external_data" }, // EditorPlugin
 	{ "segment_intersects_segment_2d", "segment_intersects_segment" }, // Geometry2D
 	{ "set_adjustment_enable", "set_adjustment_enabled" }, // Environment
 	{ "set_alt", "set_alt_pressed" }, // InputEventWithModifiers
-	{ "set_anchor_and_margin", "set_anchor_and_offset" }, // Control
-	{ "set_anchors_and_margins_preset", "set_anchors_and_offsets_preset" }, // Control
+	{ "set_anchor_and_margin", "set_anchor_and_offset" }, // Controle
+	{ "set_anchors_and_margins_preset", "set_anchors_and_offsets_preset" }, // Controle
 	{ "set_animation_process_mode", "set_process_callback" }, // AnimationPlayer
 	{ "set_as_bulk_array", "set_buffer" }, // MultiMesh
 	{ "set_as_normalmap", "set_as_normal_map" }, // NoiseTexture
@@ -520,7 +520,7 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "set_endian_swap", "set_big_endian" }, // File
 	{ "set_expand_to_text_length", "set_expand_to_text_length_enabled" }, // LineEdit
 	{ "set_filename", "set_scene_file_path" }, // Node -- WARNING: This may be used in a lot of other places.
-	{ "set_focus_neighbour", "set_focus_neighbor" }, // Control
+	{ "set_focus_neighbour", "set_focus_neighbor" }, // Controle
 	{ "set_follow_smoothing", "set_position_smoothing_speed" }, // Camera2D
 	{ "set_frame_color", "set_color" }, // ColorRect
 	{ "set_global_rate_scale", "set_playback_speed_scale" }, // AudioServer
@@ -537,7 +537,7 @@ const char *RenamesMap3To4::gdscript_function_renames[][2] = {
 	{ "set_item_navmesh_transform", "set_item_navigation_mesh_transform" }, // MeshLibrary
 	{ "set_iterations_per_second", "set_physics_ticks_per_second" }, // Engine
 	{ "set_layer_mask_bit", "set_layer_mask_value" }, // VisualInstance3D
-	{ "set_margins_preset", "set_offsets_preset" }, //  Control
+	{ "set_margins_preset", "set_offsets_preset" }, //  Controle
 	{ "set_max_atlas_size", "set_max_texture_size" }, // LightmapGI
 	{ "set_metakey", "set_meta_pressed" }, // InputEventWithModifiers
 	{ "set_mid_height", "set_height" }, // CapsuleMesh
@@ -645,20 +645,20 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "AddCancel", "AddCancelButton" }, // AcceptDialog
 	{ "AddCentralForce", "AddConstantCentralForce" }, //RigidBody2D
 	{ "AddChildBelowNode", "AddSibling" }, // Node
-	{ "AddColorOverride", "AddThemeColorOverride" }, // Control
-	{ "AddConstantOverride", "AddThemeConstantOverride" }, // Control
-	{ "AddFontOverride", "AddThemeFontOverride" }, // Control
+	{ "AddColorOverride", "AddThemeColorOverride" }, // Controle
+	{ "AddConstantOverride", "AddThemeConstantOverride" }, // Controle
+	{ "AddFontOverride", "AddThemeFontOverride" }, // Controle
 	{ "AddForce", "AddConstantForce" }, //RigidBody2D
-	{ "AddIconOverride", "AddThemeIconOverride" }, // Control
+	{ "AddIconOverride", "AddThemeIconOverride" }, // Controle
 	{ "AddSceneImportPlugin", "AddSceneFormatImporterPlugin" }, //EditorPlugin
 	{ "AddSpatialGizmoPlugin", "AddNode3dGizmoPlugin" }, // EditorPlugin
-	{ "AddStyleboxOverride", "AddThemeStyleboxOverride" }, // Control
+	{ "AddStyleboxOverride", "AddThemeStyleboxOverride" }, // Controle
 	{ "AddTorque", "AddConstantTorque" }, //RigidBody2D
 	{ "AgentSetNeighborDist", "AgentSetNeighborDistance" }, // NavigationServer2D, NavigationServer3D
 	{ "BindChildNodeToBone", "SetBoneChildren" }, // Skeleton3D
 	{ "BumpmapToNormalmap", "BumpMapToNormalMap" }, // Image
 	{ "CanBeHidden", "_CanBeHidden" }, // EditorNode3DGizmoPlugin
-	{ "CanDropData", "_CanDropData" }, // Control
+	{ "CanDropData", "_CanDropData" }, // Controle
 	{ "CanDropDataFw", "_CanDropDataFw" }, // ScriptEditor
 	{ "CanGenerateSmallPreview", "_CanGenerateSmallPreview" }, // EditorResourcePreviewGenerator
 	{ "CanInstance", "CanInstantiate" }, // PackedScene, Script
@@ -685,7 +685,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "DampedStringJointSetParam", "DampedSpringJointSetParam" }, // PhysicsServer2D
 	{ "DeleteCharAtCursor", "DeleteCharAtCaret" }, // LineEdit
 	{ "DeselectItems", "DeselectAll" }, // FileDialog
-	{ "DropData", "_DropData" }, // Control
+	{ "DropData", "_DropData" }, // Controle
 	{ "DropDataFw", "_DropDataFw" }, // ScriptEditor
 	{ "ExcludePolygons2d", "ExcludePolygons" }, // Geometry2D
 	{ "FindScancodeFromString", "FindKeycodeFromString" }, // OS
@@ -718,7 +718,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "GetColorTypes", "GetColorTypeList" }, // Theme
 	{ "GetCommand", "IsCommandPressed" }, // InputEventWithModifiers
 	{ "GetConstantTypes", "GetConstantTypeList" }, // Theme
-	{ "GetControl", "IsCtrlPressed" }, // InputEventWithModifiers
+	{ "GetControle", "IsCtrlPressed" }, // InputEventWithModifiers
 	{ "GetCullMaskBit", "GetCullMaskValue" }, // Camera3D
 	{ "GetCursorPosition", "GetCaretColumn" }, // LineEdit
 	{ "GetD", "GetDistance" }, // LineShape2D
@@ -732,7 +732,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "GetEndianSwap", "IsBigEndian" }, // File
 	{ "GetErrorString", "GetErrorMessage" }, // JSON
 	{ "GetFinalLocation", "GetFinalPosition" }, // NavigationAgent2D, NavigationAgent3D
-	{ "GetFocusNeighbour", "GetFocusNeighbor" }, // Control
+	{ "GetFocusNeighbour", "GetFocusNeighbor" }, // Controle
 	{ "GetFollowSmoothing", "GetPositionSmoothingSpeed" }, // Camera2D
 	{ "GetFontTypes", "GetFontTypeList" }, // Theme
 	{ "GetFrameColor", "GetColor" }, // ColorRect
@@ -824,19 +824,19 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "GrooveJointCreate", "JointMakeGroove" }, // PhysicsServer2D
 	{ "HandleMenuSelected", "_HandleMenuSelected" }, // EditorResourcePicker
 	{ "HandlesType", "_HandlesType" }, // ResourceFormatLoader
-	{ "HasColor", "HasThemeColor" }, // Control -- Breaks Theme
-	{ "HasColorOverride", "HasThemeColorOverride" }, // Control -- Breaks Theme
-	{ "HasConstant", "HasThemeConstant" }, // Control
-	{ "HasConstantOverride", "HasThemeConstantOverride" }, // Control
+	{ "HasColor", "HasThemeColor" }, // Controle -- Breaks Theme
+	{ "HasColorOverride", "HasThemeColorOverride" }, // Controle -- Breaks Theme
+	{ "HasConstant", "HasThemeConstant" }, // Controle
+	{ "HasConstantOverride", "HasThemeConstantOverride" }, // Controle
 	{ "HasFilter", "_HasFilter" }, // AnimationNode
-	{ "HasFont", "HasThemeFont" }, // Control -- Breaks Theme
-	{ "HasFontOverride", "HasThemeFontOverride" }, // Control
-	{ "HasIcon", "HasThemeIcon" }, // Control -- Breaks Theme
-	{ "HasIconOverride", "HasThemeIconOverride" }, // Control
+	{ "HasFont", "HasThemeFont" }, // Controle -- Breaks Theme
+	{ "HasFontOverride", "HasThemeFontOverride" }, // Controle
+	{ "HasIcon", "HasThemeIcon" }, // Controle -- Breaks Theme
+	{ "HasIconOverride", "HasThemeIconOverride" }, // Controle
 	{ "HasMainScreen", "_HasMainScreen" }, // EditorPlugin
 	{ "HasNetworkPeer", "HasMultiplayerPeer" }, // Multiplayer API
-	{ "HasStylebox", "HasThemeStylebox" }, // Control -- Breaks Theme
-	{ "HasStyleboxOverride", "HasThemeStyleboxOverride" }, // Control
+	{ "HasStylebox", "HasThemeStylebox" }, // Controle -- Breaks Theme
+	{ "HasStyleboxOverride", "HasThemeStyleboxOverride" }, // Controle
 	{ "HttpEscape", "UriEncode" }, // String
 	{ "HttpUnescape", "UriDecode" }, // String
 	{ "ImportAnimationFromOtherImporter", "_ImportAnimation" }, // EditorSceneFormatImporter
@@ -894,20 +894,20 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "RegionSetNavmesh", "RegionSetNavigationMesh" }, // Navigation3DServer
 	{ "RegionSetNavpoly", "RegionSetNavigationPolygon" }, // Navigation2DServer
 	{ "RemoveAnimation", "RemoveAnimationLibrary" }, // AnimationPlayer
-	{ "RemoveColorOverride", "RemoveThemeColorOverride" }, // Control
-	{ "RemoveConstantOverride", "RemoveThemeConstantOverride" }, // Control
-	{ "RemoveFontOverride", "RemoveThemeFontOverride" }, // Control
+	{ "RemoveColorOverride", "RemoveThemeColorOverride" }, // Controle
+	{ "RemoveConstantOverride", "RemoveThemeConstantOverride" }, // Controle
+	{ "RemoveFontOverride", "RemoveThemeFontOverride" }, // Controle
 	{ "RemoveSceneImportPlugin", "RemoveSceneFormatImporterPlugin" }, //EditorPlugin
 	{ "RemoveSpatialGizmoPlugin", "RemoveNode3dGizmoPlugin" }, // EditorPlugin
-	{ "RemoveStyleboxOverride", "RemoveThemeStyleboxOverride" }, // Control
+	{ "RemoveStyleboxOverride", "RemoveThemeStyleboxOverride" }, // Controle
 	{ "RenameAnimation", "RenameAnimationLibrary" }, // AnimationPlayer
 	{ "RenameDependencies", "_RenameDependencies" }, // ResourceFormatLoader
 	{ "SaveExternalData", "_SaveExternalData" }, // EditorPlugin
 	{ "SegmentIntersectsSegment2d", "SegmentIntersectsSegment" }, // Geometry2D
 	{ "SetAdjustmentEnable", "SetAdjustmentEnabled" }, // Environment
 	{ "SetAlt", "SetAltPressed" }, // InputEventWithModifiers
-	{ "SetAnchorAndMargin", "SetAnchorAndOffset" }, // Control
-	{ "SetAnchorsAndMarginsPreset", "SetAnchorsAndOffsetsPreset" }, // Control
+	{ "SetAnchorAndMargin", "SetAnchorAndOffset" }, // Controle
+	{ "SetAnchorsAndMarginsPreset", "SetAnchorsAndOffsetsPreset" }, // Controle
 	{ "SetAnimationProcessMode", "SetProcessCallback" }, // AnimationPlayer
 	{ "SetAsBulkArray", "SetBuffer" }, // MultiMesh
 	{ "SetAsNormalmap", "SetAsNormalMap" }, // NoiseTexture
@@ -919,7 +919,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "SetCollisionMaskBit", "SetCollisionMaskValue" }, // CSGShape3D, and a lot of others like GridMap.
 	{ "SetColumnMinWidth", "SetColumnCustomMinimumWidth" }, // Tree
 	{ "SetCommand", "SetCommandPressed" }, // InputEventWithModifiers
-	{ "SetControl", "SetCtrlPressed" }, // InputEventWithModifiers
+	{ "SetControle", "SetCtrlPressed" }, // InputEventWithModifiers
 	{ "SetCreateOptions", "_SetCreateOptions" }, //  EditorResourcePicker
 	{ "SetCullMaskBit", "SetCullMaskValue" }, // Camera3D
 	{ "SetCursorPosition", "SetCaretColumn" }, // LineEdit
@@ -932,7 +932,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "SetEnabledFocusMode", "SetFocusMode" }, // BaseButton
 	{ "SetEndianSwap", "SetBigEndian" }, // File
 	{ "SetExpandToTextLength", "SetExpandToTextLengthEnabled" }, // LineEdit
-	{ "SetFocusNeighbour", "SetFocusNeighbor" }, // Control
+	{ "SetFocusNeighbour", "SetFocusNeighbor" }, // Controle
 	{ "SetFollowSmoothing", "SetPositionSmoothingSpeed" }, // Camera2D
 	{ "SetFrameColor", "SetColor" }, // ColorRect
 	{ "SetGlobalRateScale", "SetPlaybackSpeedScale" }, // AudioServer
@@ -948,7 +948,7 @@ const char *RenamesMap3To4::csharp_function_renames[][2] = {
 	{ "SetItemNavmeshTransform", "SetItemNavigationMeshTransform" }, // MeshLibrary
 	{ "SetIterationsPerSecond", "SetPhysicsTicksPerSecond" }, // Engine
 	{ "SetLayerMaskBit", "SetLayerMaskValue" }, // VisualInstance3D
-	{ "SetMarginsPreset", "SetOffsetsPreset" }, // Control
+	{ "SetMarginsPreset", "SetOffsetsPreset" }, // Controle
 	{ "SetMaxAtlasSize", "SetMaxTextureSize" }, // LightmapGI
 	{ "SetMetakey", "SetMetaPressed" }, // InputEventWithModifiers
 	{ "SetMidHeight", "SetHeight" }, // CapsuleMesh
@@ -1098,10 +1098,10 @@ const char *RenamesMap3To4::gdscript_properties_renames[][2] = {
 	{ "enabled_focus_mode", "focus_mode" }, // BaseButton - Removed
 	{ "extra_spacing_bottom", "spacing_bottom" }, // Font
 	{ "extra_spacing_top", "spacing_top" }, // Font
-	{ "focus_neighbour_bottom", "focus_neighbor_bottom" }, // Control
-	{ "focus_neighbour_left", "focus_neighbor_left" }, // Control
-	{ "focus_neighbour_right", "focus_neighbor_right" }, // Control
-	{ "focus_neighbour_top", "focus_neighbor_top" }, // Control
+	{ "focus_neighbour_bottom", "focus_neighbor_bottom" }, // Controle
+	{ "focus_neighbour_left", "focus_neighbor_left" }, // Controle
+	{ "focus_neighbour_right", "focus_neighbor_right" }, // Controle
+	{ "focus_neighbour_top", "focus_neighbor_top" }, // Controle
 	{ "follow_viewport_enable", "follow_viewport_enabled" }, // CanvasItem
 	{ "file_icon_modulate", "file_icon_color" }, // Theme
 	{ "files_disabled", "file_disabled_color" }, // Theme
@@ -1110,15 +1110,15 @@ const char *RenamesMap3To4::gdscript_properties_renames[][2] = {
 	{ "global_translation", "global_position" }, // Node3D
 	{ "gravity_distance_scale", "gravity_point_unit_distance" }, // Area(2D/3D)
 	{ "gravity_vec", "gravity_direction" }, // Area(2D/3D)
-	{ "hint_tooltip", "tooltip_text" }, // Control
+	{ "hint_tooltip", "tooltip_text" }, // Controle
 	{ "hseparation", "h_separation" }, // Theme
 	{ "icon_align", "icon_alignment" }, // Button
 	{ "iterations_per_second", "physics_ticks_per_second" }, // Engine
 	{ "invert_enable", "invert_enabled" }, // Polygon2D
-	{ "margin_bottom", "offset_bottom" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "margin_left", "offset_left" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "margin_right", "offset_right" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "margin_top", "offset_top" }, // Control -- Breaks NinePatchRect, StyleBox.
+	{ "margin_bottom", "offset_bottom" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "margin_left", "offset_left" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "margin_right", "offset_right" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "margin_top", "offset_top" }, // Controle -- Breaks NinePatchRect, StyleBox.
 	{ "mid_height", "height" }, // CapsuleMesh
 	{ "navpoly", "navigation_polygon" }, // NavigationRegion2D
 	{ "navmesh", "navigation_mesh" }, // NavigationRegion3D
@@ -1135,14 +1135,14 @@ const char *RenamesMap3To4::gdscript_properties_renames[][2] = {
 	{ "polygon_verts_per_poly", "polygon_vertices_per_polyon" }, // NavigationMesh
 	{ "popup_exclusive", "exclusive" }, // Window
 	{ "proximity_fade_enable", "proximity_fade_enabled" }, // Material
-	{ "rect_position", "position" }, // Control
-	{ "rect_global_position", "global_position" }, // Control
-	{ "rect_size", "size" }, // Control
-	{ "rect_min_size", "custom_minimum_size" }, // Control
-	{ "rect_rotation", "rotation" }, // Control
-	{ "rect_scale", "scale" }, // Control
-	{ "rect_pivot_offset", "pivot_offset" }, // Control
-	{ "rect_clip_content", "clip_contents" }, // Control
+	{ "rect_position", "position" }, // Controle
+	{ "rect_global_position", "global_position" }, // Controle
+	{ "rect_size", "size" }, // Controle
+	{ "rect_min_size", "custom_minimum_size" }, // Controle
+	{ "rect_rotation", "rotation" }, // Controle
+	{ "rect_scale", "scale" }, // Controle
+	{ "rect_pivot_offset", "pivot_offset" }, // Controle
+	{ "rect_clip_content", "clip_contents" }, // Controle
 	{ "refuse_new_network_connections", "refuse_new_connections" }, // MultiplayerAPI
 	{ "region_filter_clip", "region_filter_clip_enabled" }, // Sprite2D
 	{ "reverb_bus_enable", "reverb_bus_enabled" }, // Area3D
@@ -1197,10 +1197,10 @@ const char *RenamesMap3To4::csharp_properties_renames[][2] = {
 	{ "EnabledFocusMode", "FocusMode" }, // BaseButton - Removed
 	{ "ExtraSpacingBottom", "SpacingBottom" }, // Font
 	{ "ExtraSpacingTop", "SpacingTop" }, // Font
-	{ "FocusNeighbourBottom", "FocusNeighborBottom" }, // Control
-	{ "FocusNeighbourLeft", "FocusNeighborLeft" }, // Control
-	{ "FocusNeighbourRight", "FocusNeighborRight" }, // Control
-	{ "FocusNeighbourTop", "FocusNeighborTop" }, // Control
+	{ "FocusNeighbourBottom", "FocusNeighborBottom" }, // Controle
+	{ "FocusNeighbourLeft", "FocusNeighborLeft" }, // Controle
+	{ "FocusNeighbourRight", "FocusNeighborRight" }, // Controle
+	{ "FocusNeighbourTop", "FocusNeighborTop" }, // Controle
 	{ "FollowViewportEnable", "FollowViewportEnabled" }, // CanvasItem
 	{ "FileIconModulate", "FileIconColor" }, // Theme
 	{ "FilesDisabled", "FileDisabledColor" }, // Theme
@@ -1208,15 +1208,15 @@ const char *RenamesMap3To4::csharp_properties_renames[][2] = {
 	{ "GlobalRateScale", "PlaybackSpeedScale" }, // AudioServer
 	{ "GravityDistanceScale", "GravityPointDistanceScale" }, // Area2D
 	{ "GravityVec", "GravityDirection" }, // Area2D
-	{ "HintTooltip", "TooltipText" }, // Control
+	{ "HintTooltip", "TooltipText" }, // Controle
 	{ "Hseparation", "HSeparation" }, // Theme
 	{ "IconAlign", "IconAlignment" }, // Button
 	{ "IterationsPerSecond", "PhysicsTicksPerSecond" }, // Engine
 	{ "InvertEnable", "InvertEnabled" }, // Polygon2D
-	{ "MarginBottom", "OffsetBottom" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginLeft", "OffsetLeft" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginRight", "OffsetRight" }, // Control -- Breaks NinePatchRect, StyleBox.
-	{ "MarginTop", "OffsetTop" }, // Control -- Breaks NinePatchRect, StyleBox.
+	{ "MarginBottom", "OffsetBottom" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "MarginLeft", "OffsetLeft" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "MarginRight", "OffsetRight" }, // Controle -- Breaks NinePatchRect, StyleBox.
+	{ "MarginTop", "OffsetTop" }, // Controle -- Breaks NinePatchRect, StyleBox.
 	{ "MidHeight", "Height" }, // CapsuleMesh
 	{ "Navpoly", "NavigationPolygon" }, // NavigationRegion2D
 	{ "Navmesh", "NavigationMesh" }, // NavigationRegion3D
@@ -1233,14 +1233,14 @@ const char *RenamesMap3To4::csharp_properties_renames[][2] = {
 	{ "PhysicalScancode", "PhysicalKeycode" }, // InputEventKey
 	{ "PopupExclusive", "Exclusive" }, // Window
 	{ "ProximityFadeEnable", "ProximityFadeEnabled" }, // Material
-	{ "RectPosition", "Position" }, // Control
-	{ "RectGlobalPosition", "GlobalPosition" }, // Control
-	{ "RectSize", "Size" }, // Control
-	{ "RectMinSize", "CustomMinimumSize" }, // Control
-	{ "RectRotation", "Rotation" }, // Control
-	{ "RectScale", "Scale" }, // Control
-	{ "RectPivotOffset", "PivotOffset" }, // Control
-	{ "RectClipContent", "ClipContents" }, // Control
+	{ "RectPosition", "Position" }, // Controle
+	{ "RectGlobalPosition", "GlobalPosition" }, // Controle
+	{ "RectSize", "Size" }, // Controle
+	{ "RectMinSize", "CustomMinimumSize" }, // Controle
+	{ "RectRotation", "Rotation" }, // Controle
+	{ "RectScale", "Scale" }, // Controle
+	{ "RectPivotOffset", "PivotOffset" }, // Controle
+	{ "RectClipContent", "ClipContents" }, // Controle
 	{ "RefuseNewNetworkConnections", "RefuseNewConnections" }, // MultiplayerAPI
 	{ "RegionFilterClip", "RegionFilterClipEnabled" }, // Sprite2D
 	{ "ReverbBusEnable", "ReverbBusEnabled" }, // Area3D
@@ -1283,7 +1283,7 @@ const char *RenamesMap3To4::gdscript_signals_renames[][2] = {
 	// { "changed", "settings_changed" }, // EditorSettings
 
 	{ "about_to_show", "about_to_popup" }, // Popup
-	{ "button_release", "button_released" }, // XRController3D
+	{ "button_release", "button_released" }, // XRControleler3D
 	{ "cancelled", "canceled" }, // AcceptDialog
 	{ "item_double_clicked", "item_icon_double_clicked" }, // Tree
 	{ "network_peer_connected", "peer_connected" }, // MultiplayerAPI
@@ -1302,7 +1302,7 @@ const char *RenamesMap3To4::gdscript_signals_renames[][2] = {
 
 const char *RenamesMap3To4::csharp_signals_renames[][2] = {
 	{ "AboutToShow", "AboutToPopup" }, // Popup
-	{ "ButtonRelease", "ButtonReleased" }, // XRController3D
+	{ "ButtonRelease", "ButtonReleased" }, // XRControleler3D
 	{ "Cancelled", "Canceled" }, // AcceptDialog
 	{ "ItemDoubleClicked", "ItemIconDoubleClicked" }, // Tree
 	{ "NetworkPeerConnected", "PeerConnected" }, // MultiplayerAPI
@@ -1469,7 +1469,7 @@ const char *RenamesMap3To4::class_renames[][2] = {
 
 	{ "ARVRAnchor", "XRAnchor3D" },
 	{ "ARVRCamera", "XRCamera3D" },
-	{ "ARVRController", "XRController3D" },
+	{ "ARVRControleler", "XRControleler3D" },
 	{ "ARVRInterface", "XRInterface" },
 	{ "ARVRInterfaceGDNative", "Node3D" },
 	{ "ARVROrigin", "XROrigin3D" },
@@ -1657,7 +1657,7 @@ const char *RenamesMap3To4::class_renames[][2] = {
 	{ "WebRTCPeerConnectionGDNative", "WebRTCPeerConnectionExtension" },
 	{ "WindowDialog", "Window" },
 	{ "XRAnchor", "XRAnchor3D" },
-	{ "XRController", "XRController3D" },
+	{ "XRControleler", "XRControleler3D" },
 	{ "XROrigin", "XROrigin3D" },
 	{ "YSort", "Node2D" }, // CanvasItem has a new "y_sort_enabled" property.
 

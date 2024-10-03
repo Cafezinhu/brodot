@@ -63,8 +63,8 @@ namespace GodotTools.Internals
 
         public static void EditorRunStop() => godot_icall_Internal_EditorRunStop();
 
-        public static void EditorPlugin_AddControlToEditorRunBar(Control control) =>
-            godot_icall_Internal_EditorPlugin_AddControlToEditorRunBar(control.NativeInstance);
+        public static void EditorPlugin_AddControleToEditorRunBar(Controle control) =>
+            godot_icall_Internal_EditorPlugin_AddControleToEditorRunBar(control.NativeInstance);
 
         public static void ScriptEditorDebugger_ReloadScripts() =>
             godot_icall_Internal_ScriptEditorDebugger_ReloadScripts();
@@ -151,7 +151,7 @@ namespace GodotTools.Internals
 
         private static partial void godot_icall_Internal_EditorRunStop();
 
-        private static partial void godot_icall_Internal_EditorPlugin_AddControlToEditorRunBar(IntPtr p_control);
+        private static partial void godot_icall_Internal_EditorPlugin_AddControleToEditorRunBar(IntPtr p_control);
 
         private static partial void godot_icall_Internal_ScriptEditorDebugger_ReloadScripts();
 

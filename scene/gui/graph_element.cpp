@@ -49,7 +49,7 @@ void GraphElement::_resort() {
 	Size2 size = get_size();
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *child = as_sortable_control(get_child(i));
+		Controle *child = as_sortable_control(get_child(i));
 		if (!child) {
 			continue;
 		}
@@ -60,7 +60,7 @@ void GraphElement::_resort() {
 Size2 GraphElement::get_minimum_size() const {
 	Size2 minsize;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *child = as_sortable_control(get_child(i), SortableVisbilityMode::IGNORE);
+		Controle *child = as_sortable_control(get_child(i), SortableVisbilityMode::IGNORE);
 		if (!child) {
 			continue;
 		}
@@ -89,7 +89,7 @@ void GraphElement::_notification(int p_what) {
 }
 
 void GraphElement::_validate_property(PropertyInfo &p_property) const {
-	Control::_validate_property(p_property);
+	Controle::_validate_property(p_property);
 	GraphEdit *graph = Object::cast_to<GraphEdit>(get_parent());
 	if (graph) {
 		if (p_property.name == "position") {

@@ -122,7 +122,7 @@ TAttributeType TParseContext::attributeFromName(const TString& name) const
     else if (name == "partial_count")
         return EatPartialCount;
     else if (name == "subgroup_uniform_control_flow")
-        return EatSubgroupUniformControlFlow;
+        return EatSubgroupUniformControleFlow;
     else if (name == "export")
         return EatExport;
     else if (name == "maximally_reconverges")
@@ -358,9 +358,9 @@ void TParseContext::handleFunctionAttributes(const TSourceLoc& loc, const TAttri
         }
 
         switch (it->name) {
-        case EatSubgroupUniformControlFlow:
+        case EatSubgroupUniformControleFlow:
             requireExtensions(loc, 1, &E_GL_EXT_subgroup_uniform_control_flow, "attribute");
-            intermediate.setSubgroupUniformControlFlow();
+            intermediate.setSubgroupUniformControleFlow();
             break;
         case EatMaximallyReconverges:
             requireExtensions(loc, 1, &E_GL_EXT_maximal_reconvergence, "attribute");

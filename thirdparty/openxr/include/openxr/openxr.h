@@ -2749,73 +2749,73 @@ typedef struct XrSecondaryViewConfigurationSwapchainCreateInfoMSFT {
 
 #define XR_NULL_CONTROLLER_MODEL_KEY_MSFT 0
 
-XR_DEFINE_ATOM(XrControllerModelKeyMSFT)
+XR_DEFINE_ATOM(XrControlelerModelKeyMSFT)
 #define XR_MAX_CONTROLLER_MODEL_NODE_NAME_SIZE_MSFT 64
 #define XR_MSFT_controller_model_SPEC_VERSION 2
 #define XR_MSFT_CONTROLLER_MODEL_EXTENSION_NAME "XR_MSFT_controller_model"
-typedef struct XrControllerModelKeyStateMSFT {
+typedef struct XrControlelerModelKeyStateMSFT {
     XrStructureType             type;
     void* XR_MAY_ALIAS          next;
-    XrControllerModelKeyMSFT    modelKey;
-} XrControllerModelKeyStateMSFT;
+    XrControlelerModelKeyMSFT    modelKey;
+} XrControlelerModelKeyStateMSFT;
 
-typedef struct XrControllerModelNodePropertiesMSFT {
+typedef struct XrControlelerModelNodePropertiesMSFT {
     XrStructureType       type;
     void* XR_MAY_ALIAS    next;
     char                  parentNodeName[XR_MAX_CONTROLLER_MODEL_NODE_NAME_SIZE_MSFT];
     char                  nodeName[XR_MAX_CONTROLLER_MODEL_NODE_NAME_SIZE_MSFT];
-} XrControllerModelNodePropertiesMSFT;
+} XrControlelerModelNodePropertiesMSFT;
 
-typedef struct XrControllerModelPropertiesMSFT {
+typedef struct XrControlelerModelPropertiesMSFT {
     XrStructureType                         type;
     void* XR_MAY_ALIAS                      next;
     uint32_t                                nodeCapacityInput;
     uint32_t                                nodeCountOutput;
-    XrControllerModelNodePropertiesMSFT*    nodeProperties;
-} XrControllerModelPropertiesMSFT;
+    XrControlelerModelNodePropertiesMSFT*    nodeProperties;
+} XrControlelerModelPropertiesMSFT;
 
-typedef struct XrControllerModelNodeStateMSFT {
+typedef struct XrControlelerModelNodeStateMSFT {
     XrStructureType       type;
     void* XR_MAY_ALIAS    next;
     XrPosef               nodePose;
-} XrControllerModelNodeStateMSFT;
+} XrControlelerModelNodeStateMSFT;
 
-typedef struct XrControllerModelStateMSFT {
+typedef struct XrControlelerModelStateMSFT {
     XrStructureType                    type;
     void* XR_MAY_ALIAS                 next;
     uint32_t                           nodeCapacityInput;
     uint32_t                           nodeCountOutput;
-    XrControllerModelNodeStateMSFT*    nodeStates;
-} XrControllerModelStateMSFT;
+    XrControlelerModelNodeStateMSFT*    nodeStates;
+} XrControlelerModelStateMSFT;
 
-typedef XrResult (XRAPI_PTR *PFN_xrGetControllerModelKeyMSFT)(XrSession session, XrPath topLevelUserPath, XrControllerModelKeyStateMSFT* controllerModelKeyState);
-typedef XrResult (XRAPI_PTR *PFN_xrLoadControllerModelMSFT)(XrSession session, XrControllerModelKeyMSFT modelKey, uint32_t bufferCapacityInput, uint32_t* bufferCountOutput, uint8_t* buffer);
-typedef XrResult (XRAPI_PTR *PFN_xrGetControllerModelPropertiesMSFT)(XrSession session, XrControllerModelKeyMSFT modelKey, XrControllerModelPropertiesMSFT* properties);
-typedef XrResult (XRAPI_PTR *PFN_xrGetControllerModelStateMSFT)(XrSession session, XrControllerModelKeyMSFT modelKey, XrControllerModelStateMSFT* state);
+typedef XrResult (XRAPI_PTR *PFN_xrGetControlelerModelKeyMSFT)(XrSession session, XrPath topLevelUserPath, XrControlelerModelKeyStateMSFT* controllerModelKeyState);
+typedef XrResult (XRAPI_PTR *PFN_xrLoadControlelerModelMSFT)(XrSession session, XrControlelerModelKeyMSFT modelKey, uint32_t bufferCapacityInput, uint32_t* bufferCountOutput, uint8_t* buffer);
+typedef XrResult (XRAPI_PTR *PFN_xrGetControlelerModelPropertiesMSFT)(XrSession session, XrControlelerModelKeyMSFT modelKey, XrControlelerModelPropertiesMSFT* properties);
+typedef XrResult (XRAPI_PTR *PFN_xrGetControlelerModelStateMSFT)(XrSession session, XrControlelerModelKeyMSFT modelKey, XrControlelerModelStateMSFT* state);
 
 #ifndef XR_NO_PROTOTYPES
 #ifdef XR_EXTENSION_PROTOTYPES
-XRAPI_ATTR XrResult XRAPI_CALL xrGetControllerModelKeyMSFT(
+XRAPI_ATTR XrResult XRAPI_CALL xrGetControlelerModelKeyMSFT(
     XrSession                                   session,
     XrPath                                      topLevelUserPath,
-    XrControllerModelKeyStateMSFT*              controllerModelKeyState);
+    XrControlelerModelKeyStateMSFT*              controllerModelKeyState);
 
-XRAPI_ATTR XrResult XRAPI_CALL xrLoadControllerModelMSFT(
+XRAPI_ATTR XrResult XRAPI_CALL xrLoadControlelerModelMSFT(
     XrSession                                   session,
-    XrControllerModelKeyMSFT                    modelKey,
+    XrControlelerModelKeyMSFT                    modelKey,
     uint32_t                                    bufferCapacityInput,
     uint32_t*                                   bufferCountOutput,
     uint8_t*                                    buffer);
 
-XRAPI_ATTR XrResult XRAPI_CALL xrGetControllerModelPropertiesMSFT(
+XRAPI_ATTR XrResult XRAPI_CALL xrGetControlelerModelPropertiesMSFT(
     XrSession                                   session,
-    XrControllerModelKeyMSFT                    modelKey,
-    XrControllerModelPropertiesMSFT*            properties);
+    XrControlelerModelKeyMSFT                    modelKey,
+    XrControlelerModelPropertiesMSFT*            properties);
 
-XRAPI_ATTR XrResult XRAPI_CALL xrGetControllerModelStateMSFT(
+XRAPI_ATTR XrResult XRAPI_CALL xrGetControlelerModelStateMSFT(
     XrSession                                   session,
-    XrControllerModelKeyMSFT                    modelKey,
-    XrControllerModelStateMSFT*                 state);
+    XrControlelerModelKeyMSFT                    modelKey,
+    XrControlelerModelStateMSFT*                 state);
 #endif /* XR_EXTENSION_PROTOTYPES */
 #endif /* !XR_NO_PROTOTYPES */
 
@@ -5804,24 +5804,24 @@ XRAPI_ATTR XrResult XRAPI_CALL xrGetSpaceRoomLayoutFB(
 #define XR_ALMALENCE_digital_lens_control 1
 #define XR_ALMALENCE_digital_lens_control_SPEC_VERSION 1
 #define XR_ALMALENCE_DIGITAL_LENS_CONTROL_EXTENSION_NAME "XR_ALMALENCE_digital_lens_control"
-typedef XrFlags64 XrDigitalLensControlFlagsALMALENCE;
+typedef XrFlags64 XrDigitalLensControleFlagsALMALENCE;
 
-// Flag bits for XrDigitalLensControlFlagsALMALENCE
-static const XrDigitalLensControlFlagsALMALENCE XR_DIGITAL_LENS_CONTROL_PROCESSING_DISABLE_BIT_ALMALENCE = 0x00000001;
+// Flag bits for XrDigitalLensControleFlagsALMALENCE
+static const XrDigitalLensControleFlagsALMALENCE XR_DIGITAL_LENS_CONTROL_PROCESSING_DISABLE_BIT_ALMALENCE = 0x00000001;
 
-typedef struct XrDigitalLensControlALMALENCE {
+typedef struct XrDigitalLensControleALMALENCE {
     XrStructureType                       type;
     const void* XR_MAY_ALIAS              next;
-    XrDigitalLensControlFlagsALMALENCE    flags;
-} XrDigitalLensControlALMALENCE;
+    XrDigitalLensControleFlagsALMALENCE    flags;
+} XrDigitalLensControleALMALENCE;
 
-typedef XrResult (XRAPI_PTR *PFN_xrSetDigitalLensControlALMALENCE)(XrSession session, const XrDigitalLensControlALMALENCE* digitalLensControl);
+typedef XrResult (XRAPI_PTR *PFN_xrSetDigitalLensControleALMALENCE)(XrSession session, const XrDigitalLensControleALMALENCE* digitalLensControle);
 
 #ifndef XR_NO_PROTOTYPES
 #ifdef XR_EXTENSION_PROTOTYPES
-XRAPI_ATTR XrResult XRAPI_CALL xrSetDigitalLensControlALMALENCE(
+XRAPI_ATTR XrResult XRAPI_CALL xrSetDigitalLensControleALMALENCE(
     XrSession                                   session,
-    const XrDigitalLensControlALMALENCE*        digitalLensControl);
+    const XrDigitalLensControleALMALENCE*        digitalLensControle);
 #endif /* XR_EXTENSION_PROTOTYPES */
 #endif /* !XR_NO_PROTOTYPES */
 

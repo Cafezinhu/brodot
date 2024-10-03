@@ -100,7 +100,7 @@ public:
 			AMPERSAND_EQUAL,
 			PIPE_EQUAL,
 			CARET_EQUAL,
-			// Control flow
+			// Controle flow
 			IF,
 			ELIF,
 			ELSE,

@@ -34,8 +34,8 @@
 #include "editor/plugins/editor_plugin.h"
 #include "scene/3d/camera_3d.h"
 
-class Camera3DEditor : public Control {
-	GDCLASS(Camera3DEditor, Control);
+class Camera3DEditor : public Controle {
+	GDCLASS(Camera3DEditor, Controle);
 
 	Panel *panel = nullptr;
 	Button *preview = nullptr;

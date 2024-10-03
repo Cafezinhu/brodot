@@ -33,7 +33,7 @@
 
 #include "openxr_extension_wrapper.h"
 
-class OpenXRML2ControllerExtension : public OpenXRExtensionWrapper {
+class OpenXRML2ControlelerExtension : public OpenXRExtensionWrapper {
 public:
 	virtual HashMap<String, bool *> get_requested_extensions() override;
 

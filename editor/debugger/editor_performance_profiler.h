@@ -63,7 +63,7 @@ private:
 
 	HashMap<StringName, TreeItem *> base_map;
 	Tree *monitor_tree = nullptr;
-	Control *monitor_draw = nullptr;
+	Controle *monitor_draw = nullptr;
 	Label *info_message = nullptr;
 	StringName marker_key;
 	int marker_frame = 0;

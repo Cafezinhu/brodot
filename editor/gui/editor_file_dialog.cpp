@@ -214,7 +214,7 @@ void EditorFileDialog::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_THEME_CHANGED:
-		case Control::NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
+		case Controle::NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
 		case NOTIFICATION_TRANSLATION_CHANGED: {
 			_update_icons();
 			invalidate();
@@ -2093,12 +2093,12 @@ bool EditorFileDialog::are_previews_enabled() {
 	return previews_enabled;
 }
 
-void EditorFileDialog::add_side_menu(Control *p_menu, const String &p_title) {
+void EditorFileDialog::add_side_menu(Controle *p_menu, const String &p_title) {
 	// HSplitContainer has 3 children at maximum capacity, 1 of them is the SplitContainerDragger.
 	ERR_FAIL_COND_MSG(body_hsplit->get_child_count() > 2, "EditorFileDialog: Only one side menu can be added.");
 	// Everything for the side menu goes inside of a VBoxContainer.
 	side_vbox = memnew(VBoxContainer);
-	side_vbox->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	side_vbox->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	side_vbox->set_stretch_ratio(0.5);
 	body_hsplit->add_child(side_vbox);
 	// Add a Label to the VBoxContainer.
@@ -2108,7 +2108,7 @@ void EditorFileDialog::add_side_menu(Control *p_menu, const String &p_title) {
 		side_vbox->add_child(title_label);
 	}
 	// Add the given menu to the VBoxContainer.
-	p_menu->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	p_menu->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	side_vbox->add_child(p_menu);
 }
 
@@ -2185,7 +2185,7 @@ EditorFileDialog::EditorFileDialog() {
 	dir = memnew(LineEdit);
 	dir->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	pathhb->add_child(dir);
-	dir->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	dir->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	refresh = memnew(Button);
 	refresh->set_theme_type_variation("FlatButton");
@@ -2247,16 +2247,16 @@ EditorFileDialog::EditorFileDialog() {
 	pathhb->add_child(makedir);
 
 	body_hsplit = memnew(HSplitContainer);
-	body_hsplit->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	body_hsplit->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	vbc->add_child(body_hsplit);
 
 	grid_options = memnew(GridContainer);
-	grid_options->set_h_size_flags(Control::SIZE_SHRINK_CENTER);
+	grid_options->set_h_size_flags(Controle::SIZE_SHRINK_CENTER);
 	grid_options->set_columns(2);
 	vbc->add_child(grid_options);
 
 	list_hb = memnew(HSplitContainer);
-	list_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	list_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	body_hsplit->add_child(list_hb);
 
 	VSplitContainer *vsc = memnew(VSplitContainer);
@@ -2265,7 +2265,7 @@ EditorFileDialog::EditorFileDialog() {
 	VBoxContainer *fav_vb = memnew(VBoxContainer);
 	vsc->add_child(fav_vb);
 	fav_vb->set_custom_minimum_size(Size2(150, 100) * EDSCALE);
-	fav_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	fav_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	HBoxContainer *fav_hb = memnew(HBoxContainer);
 	fav_vb->add_child(fav_hb);
 
@@ -2286,13 +2286,13 @@ EditorFileDialog::EditorFileDialog() {
 	favorites = memnew(ItemList);
 	favorites->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	fav_vb->add_child(favorites);
-	favorites->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	favorites->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	favorites->connect(SceneStringName(item_selected), callable_mp(this, &EditorFileDialog::_favorite_selected));
 
 	VBoxContainer *rec_vb = memnew(VBoxContainer);
 	vsc->add_child(rec_vb);
 	rec_vb->set_custom_minimum_size(Size2(150, 100) * EDSCALE);
-	rec_vb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	rec_vb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	recent = memnew(ItemList);
 	recent->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	recent->set_allow_reselect(true);
@@ -2304,14 +2304,14 @@ EditorFileDialog::EditorFileDialog() {
 	item_vb->set_custom_minimum_size(Size2(320, 0) * EDSCALE);
 
 	HBoxContainer *preview_hb = memnew(HBoxContainer);
-	preview_hb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	preview_hb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	item_vb->add_child(preview_hb);
 
 	VBoxContainer *list_vb = memnew(VBoxContainer);
-	list_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	list_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	HBoxContainer *lower_hb = memnew(HBoxContainer);
-	lower_hb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	lower_hb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	l = memnew(Label(TTR("Directories & Files:")));
 	l->set_theme_type_variation("HeaderSmall");
@@ -2321,7 +2321,7 @@ EditorFileDialog::EditorFileDialog() {
 	preview_hb->add_child(list_vb);
 
 	filter_box = memnew(LineEdit);
-	filter_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	filter_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	filter_box->set_placeholder(TTR("Filter"));
 	filter_box->connect(SceneStringName(text_changed), callable_mp(this, &EditorFileDialog::_filter_changed));
 	lower_hb->add_child(filter_box);
@@ -2345,7 +2345,7 @@ EditorFileDialog::EditorFileDialog() {
 
 	item_list = memnew(ItemList);
 	item_list->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	item_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	item_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	item_list->connect("item_clicked", callable_mp(this, &EditorFileDialog::_item_list_item_rmb_clicked));
 	item_list->connect("empty_clicked", callable_mp(this, &EditorFileDialog::_item_list_empty_clicked));
 	item_list->set_allow_rmb_select(true);
@@ -2375,14 +2375,14 @@ EditorFileDialog::EditorFileDialog() {
 	file = memnew(LineEdit);
 	file->set_structured_text_bidi_override(TextServer::STRUCTURED_TEXT_FILE);
 	file->set_stretch_ratio(4);
-	file->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	file->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	file_box->add_child(file);
 	filter = memnew(OptionButton);
 	filter->set_stretch_ratio(3);
-	filter->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	filter->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	filter->set_clip_text(true); // Too many extensions overflow it.
 	file_box->add_child(filter);
-	file_box->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	file_box->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	item_vb->add_child(file_box);
 
 	dir_access = DirAccess::create(DirAccess::ACCESS_RESOURCES);

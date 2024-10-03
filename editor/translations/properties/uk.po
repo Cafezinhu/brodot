@@ -310,7 +310,7 @@ msgstr "Затримка підказки (секунд)"
 msgid "Common"
 msgstr "Загальні"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "Прив'язка елементів керування до пікселів"
 
 msgid "Fonts"
@@ -421,7 +421,7 @@ msgstr "Пристрій"
 msgid "Window ID"
 msgstr "Ідентифікатор вікна"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "Командна або керуюча автомапа"
 
 msgid "Alt Pressed"
@@ -511,10 +511,10 @@ msgstr "Висота тону"
 msgid "Instrument"
 msgstr "Інструмент"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Номер контролера"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Значення контролера"
 
 msgid "Shortcut"
@@ -1525,7 +1525,7 @@ msgstr "Колір символу"
 msgid "Keyword Color"
 msgstr "Колір ключових слів"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Колір ключових слів керівної логіки"
 
 msgid "Base Type Color"
@@ -2125,7 +2125,7 @@ msgstr "Розділення"
 msgid "Speed"
 msgstr "Швидкість"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Керування версіями"
 
 msgid "Username"
@@ -2776,7 +2776,7 @@ msgstr "Адрес опису"
 msgid "Service Type"
 msgstr "Тип служби"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "Адреса керування IGD"
 
 msgid "IGD Service Type"

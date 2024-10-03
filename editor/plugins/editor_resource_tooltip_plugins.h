@@ -48,14 +48,14 @@ protected:
 	static void _bind_methods();
 
 	GDVIRTUAL1RC(bool, _handles, String)
-	GDVIRTUAL3RC(Control *, _make_tooltip_for_path, String, Dictionary, Control *)
+	GDVIRTUAL3RC(Controle *, _make_tooltip_for_path, String, Dictionary, Controle *)
 
 public:
 	static VBoxContainer *make_default_tooltip(const String &p_resource_path);
 	void request_thumbnail(const String &p_path, TextureRect *p_for_control) const;
 
 	virtual bool handles(const String &p_resource_type) const;
-	virtual Control *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const;
+	virtual Controle *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const;
 };
 
 class EditorTextureTooltipPlugin : public EditorResourceTooltipPlugin {
@@ -63,7 +63,7 @@ class EditorTextureTooltipPlugin : public EditorResourceTooltipPlugin {
 
 public:
 	virtual bool handles(const String &p_resource_type) const override;
-	virtual Control *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const override;
+	virtual Controle *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const override;
 };
 
 class EditorAudioStreamTooltipPlugin : public EditorResourceTooltipPlugin {
@@ -71,7 +71,7 @@ class EditorAudioStreamTooltipPlugin : public EditorResourceTooltipPlugin {
 
 public:
 	virtual bool handles(const String &p_resource_type) const override;
-	virtual Control *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const override;
+	virtual Controle *make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const override;
 };
 
 #endif // EDITOR_RESOURCE_TOOLTIP_PLUGINS_H

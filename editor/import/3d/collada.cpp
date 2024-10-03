@@ -1071,8 +1071,8 @@ void Collada::_parse_mesh_geometry(XMLParser &p_parser, const String &p_id, cons
 }
 
 void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
-	state.skin_controller_data_map[p_id] = SkinControllerData();
-	SkinControllerData &skindata = state.skin_controller_data_map[p_id];
+	state.skin_controller_data_map[p_id] = SkinControlelerData();
+	SkinControlelerData &skindata = state.skin_controller_data_map[p_id];
 
 	skindata.base = _uri_to_id(p_parser.get_named_attribute_value("source"));
 
@@ -1092,7 +1092,7 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 
 			} else if (section == "source") {
 				String id = p_parser.get_named_attribute_value("id");
-				skindata.sources[id] = SkinControllerData::Source();
+				skindata.sources[id] = SkinControlelerData::Source();
 				current_source = id;
 				COLLADA_PRINT("source data: " + id);
 
@@ -1133,7 +1133,7 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 				}
 
 			} else if (section == "joints") {
-				SkinControllerData::Joints joint;
+				SkinControlelerData::Joints joint;
 
 				while (p_parser.read() == OK) {
 					if (p_parser.get_node_type() == XMLParser::NODE_ELEMENT) {
@@ -1153,7 +1153,7 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 				skindata.joints = joint;
 
 			} else if (section == "vertex_weights") {
-				SkinControllerData::Weights weights;
+				SkinControlelerData::Weights weights;
 
 				weights.count = p_parser.get_named_attribute_value("count").to_int();
 
@@ -1165,7 +1165,7 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 
 							int offset = p_parser.get_named_attribute_value("offset").to_int();
 
-							SkinControllerData::Weights::SourceRef sref;
+							SkinControlelerData::Weights::SourceRef sref;
 							sref.source = source;
 							sref.offset = offset;
 							weights.sources[semantic] = sref;
@@ -1208,8 +1208,8 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 	ERR_FAIL_COND(!skindata.sources.has(joint_arr));
 	ERR_FAIL_COND(!skindata.sources.has(ibm));
 
-	SkinControllerData::Source &joint_source = skindata.sources[joint_arr];
-	SkinControllerData::Source &ibm_source = skindata.sources[ibm];
+	SkinControlelerData::Source &joint_source = skindata.sources[joint_arr];
+	SkinControlelerData::Source &ibm_source = skindata.sources[ibm];
 
 	ERR_FAIL_COND(joint_source.sarray.size() != ibm_source.array.size() / 16);
 
@@ -1225,8 +1225,8 @@ void Collada::_parse_skin_controller(XMLParser &p_parser, const String &p_id) {
 }
 
 void Collada::_parse_morph_controller(XMLParser &p_parser, const String &p_id) {
-	state.morph_controller_data_map[p_id] = MorphControllerData();
-	MorphControllerData &morphdata = state.morph_controller_data_map[p_id];
+	state.morph_controller_data_map[p_id] = MorphControlelerData();
+	MorphControlelerData &morphdata = state.morph_controller_data_map[p_id];
 
 	morphdata.mesh = _uri_to_id(p_parser.get_named_attribute_value("source"));
 	morphdata.mode = p_parser.get_named_attribute_value("method");
@@ -1238,7 +1238,7 @@ void Collada::_parse_morph_controller(XMLParser &p_parser, const String &p_id) {
 
 			if (section == "source") {
 				String id = p_parser.get_named_attribute_value("id");
-				morphdata.sources[id] = MorphControllerData::Source();
+				morphdata.sources[id] = MorphControlelerData::Source();
 				current_source = id;
 				COLLADA_PRINT("source data: " + id);
 
@@ -1354,12 +1354,12 @@ Collada::Node *Collada::_parse_visual_instance_geometry(XMLParser &p_parser) {
 			//XSI style
 
 			if (state.skin_controller_data_map.has(geom->source)) {
-				SkinControllerData *skin = &state.skin_controller_data_map[geom->source];
+				SkinControlelerData *skin = &state.skin_controller_data_map[geom->source];
 				//case where skeletons reference bones with IDREF (XSI)
 				ERR_FAIL_COND_V(!skin->joints.sources.has("JOINT"), geom);
 				String joint_arr = skin->joints.sources["JOINT"];
 				ERR_FAIL_COND_V(!skin->sources.has(joint_arr), geom);
-				Collada::SkinControllerData::Source &joint_source = skin->sources[joint_arr];
+				Collada::SkinControlelerData::Source &joint_source = skin->sources[joint_arr];
 				geom->skeletons = joint_source.sarray; //quite crazy, but should work.
 			}
 		}
@@ -2072,8 +2072,8 @@ void Collada::_merge_skeletons(VisualScene *p_vscene, Node *p_node) {
 }
 
 void Collada::_merge_skeletons2(VisualScene *p_vscene) {
-	for (KeyValue<String, SkinControllerData> &E : state.skin_controller_data_map) {
-		SkinControllerData &cd = E.value;
+	for (KeyValue<String, SkinControlelerData> &E : state.skin_controller_data_map) {
+		SkinControlelerData &cd = E.value;
 
 		NodeSkeleton *skeleton = nullptr;
 
@@ -2216,7 +2216,7 @@ bool Collada::_move_geometry_to_skeletons(VisualScene *p_vscene, Node *p_node, L
 
 			//this should be correct
 			ERR_FAIL_COND_V(!state.skin_controller_data_map.has(ng->source), false);
-			SkinControllerData &skin = state.skin_controller_data_map[ng->source];
+			SkinControlelerData &skin = state.skin_controller_data_map[ng->source];
 			Transform3D skel_inv = sk->get_global_transform().affine_inverse();
 			p_node->default_transform = skel_inv * (skin.bind_shape /* p_node->get_global_transform()*/); // i honestly have no idea what to do with a previous model xform.. most exporters ignore it
 
@@ -2257,7 +2257,7 @@ void Collada::_find_morph_nodes(VisualScene *p_vscene, Node *p_node) {
 
 			while (!base.is_empty() && !state.mesh_data_map.has(base)) {
 				if (state.skin_controller_data_map.has(base)) {
-					SkinControllerData &sk = state.skin_controller_data_map[base];
+					SkinControlelerData &sk = state.skin_controller_data_map[base];
 					base = sk.base;
 				} else if (state.morph_controller_data_map.has(base)) {
 					state.morph_ownership_map[base] = nj->id;

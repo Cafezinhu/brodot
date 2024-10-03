@@ -1267,7 +1267,7 @@ void SceneTree::_call_input_pause(const StringName &p_group, CallInputType p_cal
 				n->_call_input(p_input);
 				break;
 			case CALL_INPUT_TYPE_SHORTCUT_INPUT: {
-				const Control *c = Object::cast_to<Control>(n);
+				const Controle *c = Object::cast_to<Controle>(n);
 				if (c) {
 					// If calling shortcut input on a control, ensure it respects the shortcut context.
 					// Shortcut context (based on focus) only makes sense for controls (UI), so don't need to worry about it for nodes

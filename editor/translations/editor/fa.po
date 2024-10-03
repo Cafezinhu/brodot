@@ -1722,10 +1722,10 @@ msgstr "استفاده"
 msgid "Misc"
 msgstr "متفرقه"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "کنترل کلیک‌شده:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "گونهٔ کنترل کلیک‌شده:"
 
 msgid "Live Edit Root:"
@@ -3010,7 +3010,7 @@ msgstr "پروژه"
 msgid "Project Settings"
 msgstr "تنظیمات پروژه"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "کنترل نسخه"
 
 msgid "Open User Data Folder"
@@ -5181,7 +5181,7 @@ msgstr "تاریخ:"
 msgid "Subtitle:"
 msgstr "زیرنویس:"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "ساخت فراداده کنترل نسخه"
 
 msgid "Username"
@@ -5603,7 +5603,7 @@ msgid "The renderer can be changed later, but scenes may need to be adjusted."
 msgstr ""
 "رندرر می‌تواند بعدا تغییر کند، اما صحنه‌ها ممکن است نیاز به تنظیم داشته باشند."
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "فراداده کنترل نسخه:"
 
 msgid "Git"

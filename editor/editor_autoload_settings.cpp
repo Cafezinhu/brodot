@@ -614,7 +614,7 @@ LineEdit *EditorAutoloadSettings::get_path_box() const {
 	return autoload_add_path;
 }
 
-Variant EditorAutoloadSettings::get_drag_data_fw(const Point2 &p_point, Control *p_control) {
+Variant EditorAutoloadSettings::get_drag_data_fw(const Point2 &p_point, Controle *p_control) {
 	if (autoload_cache.size() <= 1) {
 		return false;
 	}
@@ -654,7 +654,7 @@ Variant EditorAutoloadSettings::get_drag_data_fw(const Point2 &p_point, Control 
 	return drop_data;
 }
 
-bool EditorAutoloadSettings::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_control) const {
+bool EditorAutoloadSettings::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_control) const {
 	if (updating_autoload) {
 		return false;
 	}
@@ -680,7 +680,7 @@ bool EditorAutoloadSettings::can_drop_data_fw(const Point2 &p_point, const Varia
 	return false;
 }
 
-void EditorAutoloadSettings::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_control) {
+void EditorAutoloadSettings::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_control) {
 	TreeItem *ti = tree->get_item_at_position(p_point);
 
 	if (!ti) {
@@ -896,7 +896,7 @@ EditorAutoloadSettings::EditorAutoloadSettings() {
 
 	autoload_add_path = memnew(LineEdit);
 	hbc->add_child(autoload_add_path);
-	autoload_add_path->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	autoload_add_path->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	autoload_add_path->set_clear_button_enabled(true);
 	autoload_add_path->set_placeholder(vformat(TTR("Set path or press \"%s\" to create a script."), TTR("Add")));
 	autoload_add_path->connect(SceneStringName(text_changed), callable_mp(this, &EditorAutoloadSettings::_autoload_path_text_changed));

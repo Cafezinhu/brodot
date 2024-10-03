@@ -107,7 +107,7 @@ void Polygon2DEditor::_notification(int p_what) {
 			[[fallthrough]];
 		}
 		case NOTIFICATION_ENTER_TREE: {
-			uv_panner->setup((ViewPanner::ControlScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
+			uv_panner->setup((ViewPanner::ControleScheme)EDITOR_GET("editors/panning/sub_editors_panning_scheme").operator int(), ED_GET_SHORTCUT("canvas_item_editor/pan_view"), bool(EDITOR_GET("editors/panning/simple_panning")));
 		} break;
 
 		case NOTIFICATION_READY: {
@@ -1376,7 +1376,7 @@ Polygon2DEditor::Polygon2DEditor() {
 	uv_button[UV_MODE_CREATE_INTERNAL]->set_tooltip_text(TTR("Create Internal Vertex"));
 	uv_button[UV_MODE_REMOVE_INTERNAL]->set_tooltip_text(TTR("Remove Internal Vertex"));
 	Key key = (OS::get_singleton()->has_feature("macos") || OS::get_singleton()->has_feature("web_macos") || OS::get_singleton()->has_feature("web_ios")) ? Key::META : Key::CTRL;
-	// TRANSLATORS: %s is Control or Command key name.
+	// TRANSLATORS: %s is Controle or Command key name.
 	uv_button[UV_MODE_EDIT_POINT]->set_tooltip_text(TTR("Move Points") + "\n" + vformat(TTR("%s: Rotate"), find_keycode_name(key)) + "\n" + TTR("Shift: Move All") + "\n" + vformat(TTR("%s + Shift: Scale"), find_keycode_name(key)));
 	uv_button[UV_MODE_MOVE]->set_tooltip_text(TTR("Move Polygon"));
 	uv_button[UV_MODE_ROTATE]->set_tooltip_text(TTR("Rotate Polygon"));
@@ -1430,11 +1430,11 @@ Polygon2DEditor::Polygon2DEditor() {
 	preview_polygon = memnew(Polygon2D);
 	uv_edit_background->add_child(preview_polygon);
 
-	uv_edit_draw = memnew(Control);
+	uv_edit_draw = memnew(Controle);
 	uv_edit_background->add_child(uv_edit_draw);
-	uv_edit_draw->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	uv_edit_draw->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
-	Control *space = memnew(Control);
+	Controle *space = memnew(Controle);
 	uv_mode_hb->add_child(space);
 	space->set_h_size_flags(SIZE_EXPAND_FILL);
 
@@ -1517,7 +1517,7 @@ Polygon2DEditor::Polygon2DEditor() {
 
 	zoom_widget = memnew(EditorZoomWidget);
 	uv_edit_draw->add_child(zoom_widget);
-	zoom_widget->set_anchors_and_offsets_preset(Control::PRESET_TOP_LEFT, Control::PRESET_MODE_MINSIZE, 2 * EDSCALE);
+	zoom_widget->set_anchors_and_offsets_preset(Controle::PRESET_TOP_LEFT, Controle::PRESET_MODE_MINSIZE, 2 * EDSCALE);
 	zoom_widget->connect("zoom_changed", callable_mp(this, &Polygon2DEditor::_update_zoom_and_pan).unbind(1).bind(true));
 	zoom_widget->set_shortcut_context(nullptr);
 

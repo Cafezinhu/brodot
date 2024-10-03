@@ -116,13 +116,13 @@ typedef struct _XkbStateNotifyEvent {
 	char 		req_minor;	/* Minor opcode of request */
 } XkbStateNotifyEvent;
 
-typedef struct _XkbControlsNotify {
+typedef struct _XkbControlesNotify {
 	int 		type;		/* XkbAnyEvent */
 	unsigned long 	serial;		/* of last req processed by server */
 	Bool 		send_event;	/* is this from a SendEvent request? */
 	Display *	display;	/* Display the event was read from */
 	Time 		time;		/* milliseconds */
-	int 		xkb_type;	/* XkbControlsNotify */
+	int 		xkb_type;	/* XkbControlesNotify */
 	int 		device;		/* device ID */
 	unsigned int	changed_ctrls;	/* controls with changed sub-values */
 	unsigned int 	enabled_ctrls;	/* controls currently enabled */
@@ -132,7 +132,7 @@ typedef struct _XkbControlsNotify {
 	char 		event_type;	/* type of event that caused change */
 	char 		req_major;	/* if keycode==0, major and minor */
 	char 		req_minor;	/* opcode of req that caused change */
-} XkbControlsNotifyEvent;
+} XkbControlesNotifyEvent;
 
 typedef struct _XkbIndicatorNotify {
 	int 		type;		/* XkbAnyEvent */
@@ -257,7 +257,7 @@ typedef union _XkbEvent {
 	XkbNewKeyboardNotifyEvent	new_kbd;
 	XkbMapNotifyEvent		map;
 	XkbStateNotifyEvent		state;
-	XkbControlsNotifyEvent		ctrls;
+	XkbControlesNotifyEvent		ctrls;
 	XkbIndicatorNotifyEvent 	indicators;
 	XkbNamesNotifyEvent		names;
 	XkbCompatMapNotifyEvent		compat;
@@ -282,13 +282,13 @@ typedef struct	_XkbKbdDpyState	XkbKbdDpyStateRec,*XkbKbdDpyStatePtr;
 #define	XkbLC_ConsumeLookupMods		(1<<1)
 #define	XkbLC_AlwaysConsumeShiftAndLock (1<<2)
 #define	XkbLC_IgnoreNewKeyboards	(1<<3)
-#define	XkbLC_ControlFallback		(1<<4)
+#define	XkbLC_ControleFallback		(1<<4)
 #define	XkbLC_ConsumeKeysOnComposeFail	(1<<29)
 #define	XkbLC_ComposeLED		(1<<30)
 #define	XkbLC_BeepOnComposeFail		(1<<31)
 
-#define	XkbLC_AllComposeControls	(0xc0000000)
-#define	XkbLC_AllControls		(0xc000001f)
+#define	XkbLC_AllComposeControles	(0xc0000000)
+#define	XkbLC_AllControles		(0xc000001f)
 
 _XFUNCPROTOBEGIN
 
@@ -325,17 +325,17 @@ extern	Bool	XkbLibraryVersion(
 	int *			/* libMinorRtrn */
 );
 
-extern	unsigned int	XkbSetXlibControls(
+extern	unsigned int	XkbSetXlibControles(
 	Display*		/* dpy */,
 	unsigned int		/* affect */,
 	unsigned int		/* values */
 );
 
-extern	unsigned int	XkbGetXlibControls(
+extern	unsigned int	XkbGetXlibControles(
 	Display*		/* dpy */
 );
 
-extern	unsigned int	XkbXlibControlsImplemented(void);
+extern	unsigned int	XkbXlibControlesImplemented(void);
 
 typedef	Atom	(*XkbInternAtomFunc)(
 	Display *		/* dpy */,
@@ -417,7 +417,7 @@ extern	Bool	XkbGetAutoRepeatRate(
 	unsigned int *		/* intervalRtrn */
 );
 
-extern	Bool	XkbChangeEnabledControls(
+extern	Bool	XkbChangeEnabledControles(
 	Display *		/* dpy */,
 	unsigned int		/* deviceSpec */,
 	unsigned int		/* affect */,
@@ -766,37 +766,37 @@ extern	Status	XkbGetKeyVirtualModMap(
 	XkbDescPtr		/* xkb */
 );
 
-extern	Status	XkbAllocControls(
+extern	Status	XkbAllocControles(
 	XkbDescPtr		/* xkb */,
 	unsigned int		/* which*/
 );
 
-extern	void	XkbFreeControls(
+extern	void	XkbFreeControles(
 	XkbDescPtr		/* xkb */,
 	unsigned int		/* which */,
 	Bool			/* freeMap */
 );
 
-extern	Status	XkbGetControls(
+extern	Status	XkbGetControles(
 	Display *		/* dpy */,
 	unsigned long		/* which */,
 	XkbDescPtr		/* desc */
 );
 
-extern	Bool	XkbSetControls(
+extern	Bool	XkbSetControles(
 	Display *		/* dpy */,
 	unsigned long		/* which */,
 	XkbDescPtr		/* desc */
 );
 
-extern	void	XkbNoteControlsChanges(
-    XkbControlsChangesPtr	/* old */,
-    XkbControlsNotifyEvent *	/* new */,
+extern	void	XkbNoteControlesChanges(
+    XkbControlesChangesPtr	/* old */,
+    XkbControlesNotifyEvent *	/* new */,
     unsigned int	 	/* wanted */
 );
 
-#define	XkbGetControlsChanges(d,x,c)	XkbGetControls(d,(c)->changed_ctrls,x)
-#define	XkbChangeControls(d,x,c)	XkbSetControls(d,(c)->changed_ctrls,x)
+#define	XkbGetControlesChanges(d,x,c)	XkbGetControles(d,(c)->changed_ctrls,x)
+#define	XkbChangeControles(d,x,c)	XkbSetControles(d,(c)->changed_ctrls,x)
 
 extern	Status	XkbAllocCompatMap(
     XkbDescPtr			/* xkb */,
@@ -893,26 +893,26 @@ extern	Bool	XkbGetDetectableAutoRepeat(
 	Bool *			/* supported */
 );
 
-extern	Bool	XkbSetAutoResetControls(
+extern	Bool	XkbSetAutoResetControles(
     Display *			/* dpy */,
     unsigned int 		/* changes */,
     unsigned int *		/* auto_ctrls */,
     unsigned int *		/* auto_values */
 );
 
-extern	Bool	XkbGetAutoResetControls(
+extern	Bool	XkbGetAutoResetControles(
     Display *			/* dpy */,
     unsigned int *		/* auto_ctrls */,
     unsigned int *		/* auto_ctrl_values */
 );
 
-extern	Bool	XkbSetPerClientControls(
+extern	Bool	XkbSetPerClientControles(
     Display *			/* dpy */,
     unsigned int		/* change */,
     unsigned int *		/* values */
 );
 
-extern	Bool	XkbGetPerClientControls(
+extern	Bool	XkbGetPerClientControles(
     Display *			/* dpy */,
     unsigned int *		/* ctrls */
 );
@@ -1108,7 +1108,7 @@ extern	Bool XkbSetDeviceButtonActions(
 
 /***====================================================================***/
 
-extern	char	XkbToControl(
+extern	char	XkbToControle(
 	char		/* c */
 );
 

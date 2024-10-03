@@ -130,7 +130,7 @@ class SceneTreeDock : public VBoxContainer {
 	HBoxContainer *button_hb = nullptr;
 	Button *edit_local, *edit_remote;
 	SceneTreeEditor *scene_tree = nullptr;
-	Control *remote_tree = nullptr;
+	Controle *remote_tree = nullptr;
 
 	HBoxContainer *tool_hbc = nullptr;
 	void _tool_selected(int p_tool, bool p_confirm_override = false);
@@ -334,7 +334,7 @@ public:
 	SceneTreeEditor *get_tree_editor() { return scene_tree; }
 	EditorData *get_editor_data() { return editor_data; }
 
-	void add_remote_tree_editor(Control *p_remote);
+	void add_remote_tree_editor(Controle *p_remote);
 	void show_remote_tree();
 	void hide_remote_tree();
 	void show_tab_buttons();

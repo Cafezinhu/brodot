@@ -84,7 +84,7 @@ void JoypadIOS::start_processing() {
 - (void)startProcessing {
 	self.isProcessing = YES;
 
-	for (GCController *controller in self.joypadsQueue) {
+	for (GCControleler *controller in self.joypadsQueue) {
 		[self addiOSJoypad:controller];
 	}
 
@@ -106,14 +106,14 @@ void JoypadIOS::start_processing() {
 	[[NSNotificationCenter defaultCenter]
 			addObserver:self
 			   selector:@selector(controllerWasConnected:)
-				   name:GCControllerDidConnectNotification
+				   name:GCControlelerDidConnectNotification
 				 object:nil];
 
 	// get told when controllers disconnect
 	[[NSNotificationCenter defaultCenter]
 			addObserver:self
 			   selector:@selector(controllerWasDisconnected:)
-				   name:GCControllerDidDisconnectNotification
+				   name:GCControlelerDidDisconnectNotification
 				 object:nil];
 }
 
@@ -133,7 +133,7 @@ void JoypadIOS::start_processing() {
 	[self finishObserving];
 }
 
-- (int)getJoyIdForController:(GCController *)controller {
+- (int)getJoyIdForControleler:(GCControleler *)controller {
 	NSArray *keys = [self.connectedJoypads allKeysForObject:controller];
 
 	for (NSNumber *key in keys) {
@@ -144,7 +144,7 @@ void JoypadIOS::start_processing() {
 	return -1;
 }
 
-- (void)addiOSJoypad:(GCController *)controller {
+- (void)addiOSJoypad:(GCControleler *)controller {
 	//     get a new id for our controller
 	int joy_id = Input::get_singleton()->get_unused_joy_id();
 
@@ -154,7 +154,7 @@ void JoypadIOS::start_processing() {
 	}
 
 	// assign our player index
-	if (controller.playerIndex == GCControllerPlayerIndexUnset) {
+	if (controller.playerIndex == GCControlelerPlayerIndexUnset) {
 		controller.playerIndex = [self getFreePlayerIndex];
 	}
 
@@ -165,12 +165,12 @@ void JoypadIOS::start_processing() {
 	[self.connectedJoypads setObject:controller forKey:[NSNumber numberWithInt:joy_id]];
 
 	// set our input handler
-	[self setControllerInputHandler:controller];
+	[self setControlelerInputHandler:controller];
 }
 
 - (void)controllerWasConnected:(NSNotification *)notification {
 	// get our controller
-	GCController *controller = (GCController *)notification.object;
+	GCControleler *controller = (GCControleler *)notification.object;
 
 	if (!controller) {
 		print_verbose("Couldn't retrieve new controller.");
@@ -178,7 +178,7 @@ void JoypadIOS::start_processing() {
 	}
 
 	if ([[self.connectedJoypads allKeysForObject:controller] count] > 0) {
-		print_verbose("Controller is already registered.");
+		print_verbose("Controleler is already registered.");
 	} else if (!self.isProcessing) {
 		[self.joypadsQueue addObject:controller];
 	} else {
@@ -188,7 +188,7 @@ void JoypadIOS::start_processing() {
 
 - (void)controllerWasDisconnected:(NSNotification *)notification {
 	// find our joystick, there should be only one in our dictionary
-	GCController *controller = (GCController *)notification.object;
+	GCControleler *controller = (GCControleler *)notification.object;
 
 	if (!controller) {
 		return;
@@ -205,7 +205,7 @@ void JoypadIOS::start_processing() {
 	}
 }
 
-- (GCControllerPlayerIndex)getFreePlayerIndex {
+- (GCControlelerPlayerIndex)getFreePlayerIndex {
 	bool have_player_1 = false;
 	bool have_player_2 = false;
 	bool have_player_3 = false;
@@ -214,33 +214,33 @@ void JoypadIOS::start_processing() {
 	if (self.connectedJoypads == nil) {
 		NSArray *keys = [self.connectedJoypads allKeys];
 		for (NSNumber *key in keys) {
-			GCController *controller = [self.connectedJoypads objectForKey:key];
-			if (controller.playerIndex == GCControllerPlayerIndex1) {
+			GCControleler *controller = [self.connectedJoypads objectForKey:key];
+			if (controller.playerIndex == GCControlelerPlayerIndex1) {
 				have_player_1 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex2) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex2) {
 				have_player_2 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex3) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex3) {
 				have_player_3 = true;
-			} else if (controller.playerIndex == GCControllerPlayerIndex4) {
+			} else if (controller.playerIndex == GCControlelerPlayerIndex4) {
 				have_player_4 = true;
 			}
 		}
 	}
 
 	if (!have_player_1) {
-		return GCControllerPlayerIndex1;
+		return GCControlelerPlayerIndex1;
 	} else if (!have_player_2) {
-		return GCControllerPlayerIndex2;
+		return GCControlelerPlayerIndex2;
 	} else if (!have_player_3) {
-		return GCControllerPlayerIndex3;
+		return GCControlelerPlayerIndex3;
 	} else if (!have_player_4) {
-		return GCControllerPlayerIndex4;
+		return GCControlelerPlayerIndex4;
 	} else {
-		return GCControllerPlayerIndexUnset;
+		return GCControlelerPlayerIndexUnset;
 	}
 }
 
-- (void)setControllerInputHandler:(GCController *)controller {
+- (void)setControlelerInputHandler:(GCControleler *)controller {
 	// Hook in the callback handler for the correct gamepad profile.
 	// This is a bit of a weird design choice on Apples part.
 	// You need to select the most capable gamepad profile for the
@@ -252,11 +252,11 @@ void JoypadIOS::start_processing() {
 		_weakify(self);
 		_weakify(controller);
 
-		controller.extendedGamepad.valueChangedHandler = ^(GCExtendedGamepad *gamepad, GCControllerElement *element) {
+		controller.extendedGamepad.valueChangedHandler = ^(GCExtendedGamepad *gamepad, GCControlelerElement *element) {
 			_strongify(self);
 			_strongify(controller);
 
-			int joy_id = [self getJoyIdForController:controller];
+			int joy_id = [self getJoyIdForControleler:controller];
 
 			if (element == gamepad.buttonA) {
 				Input::get_singleton()->joy_button(joy_id, JoyButton::A,
@@ -329,11 +329,11 @@ void JoypadIOS::start_processing() {
 		_weakify(self);
 		_weakify(controller);
 
-		controller.microGamepad.valueChangedHandler = ^(GCMicroGamepad *gamepad, GCControllerElement *element) {
+		controller.microGamepad.valueChangedHandler = ^(GCMicroGamepad *gamepad, GCControlelerElement *element) {
 			_strongify(self);
 			_strongify(controller);
 
-			int joy_id = [self getJoyIdForController:controller];
+			int joy_id = [self getJoyIdForControleler:controller];
 
 			if (element == gamepad.buttonA) {
 				Input::get_singleton()->joy_button(joy_id, JoyButton::A,

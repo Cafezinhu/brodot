@@ -673,7 +673,7 @@ void Skeleton3DEditor::_file_selected(const String &p_file) {
 	}
 }
 
-Variant Skeleton3DEditor::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant Skeleton3DEditor::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	TreeItem *selected = joint_tree->get_selected();
 
 	if (!selected) {
@@ -702,7 +702,7 @@ Variant Skeleton3DEditor::get_drag_data_fw(const Point2 &p_point, Control *p_fro
 	return drag_data;
 }
 
-bool Skeleton3DEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool Skeleton3DEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	TreeItem *target = joint_tree->get_item_at_position(p_point);
 	if (!target) {
 		return false;
@@ -726,7 +726,7 @@ bool Skeleton3DEditor::can_drop_data_fw(const Point2 &p_point, const Variant &p_
 	return true;
 }
 
-void Skeleton3DEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void Skeleton3DEditor::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -1097,7 +1097,7 @@ void Skeleton3DEditor::create_editors() {
 	joint_tree = memnew(Tree);
 	joint_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	joint_tree->set_columns(1);
-	joint_tree->set_focus_mode(Control::FOCUS_NONE);
+	joint_tree->set_focus_mode(Controle::FOCUS_NONE);
 	joint_tree->set_select_mode(Tree::SELECT_SINGLE);
 	joint_tree->set_hide_root(true);
 	joint_tree->set_v_size_flags(SIZE_EXPAND_FILL);

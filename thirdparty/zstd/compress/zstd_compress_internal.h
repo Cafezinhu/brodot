@@ -246,7 +246,7 @@ struct ZSTD_matchState_t {
     ZSTD_compressionParameters cParams;
     const rawSeqStore_t* ldmSeqStore;
 
-    /* Controls prefetching in some dictMatchState matchfinders.
+    /* Controles prefetching in some dictMatchState matchfinders.
      * This behavior is controlled from the cctx ms.
      * This parameter has no effect in the cdict ms. */
     int prefetchCDictTables;
@@ -354,10 +354,10 @@ struct ZSTD_CCtx_params_s {
     /* Internal use, for createCCtxParams() and freeCCtxParams() only */
     ZSTD_customMem customMem;
 
-    /* Controls prefetching in some dictMatchState matchfinders */
+    /* Controles prefetching in some dictMatchState matchfinders */
     ZSTD_paramSwitch_e prefetchCDictTables;
 
-    /* Controls whether zstd will fall back to an internal matchfinder
+    /* Controles whether zstd will fall back to an internal matchfinder
      * if the external matchfinder returns an error code. */
     int enableMatchFinderFallback;
 
@@ -370,7 +370,7 @@ struct ZSTD_CCtx_params_s {
     /* Adjust the max block size*/
     size_t maxBlockSize;
 
-    /* Controls repcode search in external sequence parsing */
+    /* Controles repcode search in external sequence parsing */
     ZSTD_paramSwitch_e searchForExternalRepcodes;
 };  /* typedef'd to ZSTD_CCtx_params within "zstd.h" */
 

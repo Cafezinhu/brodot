@@ -170,7 +170,7 @@ DirectoryCreateDialog::DirectoryCreateDialog() {
 	vb->add_child(dir_path);
 	register_text_enter(dir_path);
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 	vb->add_child(spacing);
 

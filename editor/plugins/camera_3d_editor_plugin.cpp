@@ -67,8 +67,8 @@ Camera3DEditor::Camera3DEditor() {
 
 	preview->set_text(TTR("Preview"));
 	preview->set_toggle_mode(true);
-	preview->set_anchor(SIDE_LEFT, Control::ANCHOR_END);
-	preview->set_anchor(SIDE_RIGHT, Control::ANCHOR_END);
+	preview->set_anchor(SIDE_LEFT, Controle::ANCHOR_END);
+	preview->set_anchor(SIDE_RIGHT, Controle::ANCHOR_END);
 	preview->set_offset(SIDE_LEFT, -60);
 	preview->set_offset(SIDE_RIGHT, 0);
 	preview->set_offset(SIDE_TOP, 0);
@@ -97,8 +97,8 @@ Camera3DEditorPlugin::Camera3DEditorPlugin() {
 	/*	camera_editor = memnew( CameraEditor );
 	EditorNode::get_singleton()->get_main_screen_control()->add_child(camera_editor);
 
-	camera_editor->set_anchor(SIDE_LEFT,Control::ANCHOR_END);
-	camera_editor->set_anchor(SIDE_RIGHT,Control::ANCHOR_END);
+	camera_editor->set_anchor(SIDE_LEFT,Controle::ANCHOR_END);
+	camera_editor->set_anchor(SIDE_RIGHT,Controle::ANCHOR_END);
 	camera_editor->set_offset(SIDE_LEFT,60);
 	camera_editor->set_offset(SIDE_RIGHT,0);
 	camera_editor->set_offset(SIDE_TOP,0);

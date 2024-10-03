@@ -65,7 +65,7 @@
 #include "scene/resources/packed_scene.h"
 #include "servers/display_server.h"
 
-Control *FileSystemTree::make_custom_tooltip(const String &p_text) const {
+Controle *FileSystemTree::make_custom_tooltip(const String &p_text) const {
 	TreeItem *item = get_item_at_position(get_local_mouse_position());
 	if (!item) {
 		return nullptr;
@@ -73,7 +73,7 @@ Control *FileSystemTree::make_custom_tooltip(const String &p_text) const {
 	return FileSystemDock::get_singleton()->create_tooltip_for_path(item->get_metadata(0));
 }
 
-Control *FileSystemList::make_custom_tooltip(const String &p_text) const {
+Controle *FileSystemList::make_custom_tooltip(const String &p_text) const {
 	int idx = get_item_at_position(get_local_mouse_position());
 	if (idx == -1) {
 		return nullptr;
@@ -2672,7 +2672,7 @@ void FileSystemDock::_resource_created() {
 	EditorNode::get_singleton()->save_resource_as(Ref<Resource>(r), fpath);
 }
 
-void FileSystemDock::_search_changed(const String &p_text, const Control *p_from) {
+void FileSystemDock::_search_changed(const String &p_text, const Controle *p_from) {
 	if (searched_tokens.is_empty()) {
 		// Register the uncollapsed paths before they change.
 		uncollapsed_paths_before_search = get_uncollapsed_paths();
@@ -2804,7 +2804,7 @@ void FileSystemDock::remove_resource_tooltip_plugin(const Ref<EditorResourceTool
 	tooltip_plugins.remove_at(index);
 }
 
-Control *FileSystemDock::create_tooltip_for_path(const String &p_path) const {
+Controle *FileSystemDock::create_tooltip_for_path(const String &p_path) const {
 	if (p_path == "Favorites") {
 		// No tooltip for the "Favorites" group.
 		return nullptr;
@@ -2816,7 +2816,7 @@ Control *FileSystemDock::create_tooltip_for_path(const String &p_path) const {
 	ERR_FAIL_COND_V(!FileAccess::exists(p_path), nullptr);
 
 	const String type = ResourceLoader::get_resource_type(p_path);
-	Control *tooltip = EditorResourceTooltipPlugin::make_default_tooltip(p_path);
+	Controle *tooltip = EditorResourceTooltipPlugin::make_default_tooltip(p_path);
 
 	for (const Ref<EditorResourceTooltipPlugin> &plugin : tooltip_plugins) {
 		if (plugin->handles(type)) {
@@ -2826,7 +2826,7 @@ Control *FileSystemDock::create_tooltip_for_path(const String &p_path) const {
 	return tooltip;
 }
 
-Variant FileSystemDock::get_drag_data_fw(const Point2 &p_point, Control *p_from) {
+Variant FileSystemDock::get_drag_data_fw(const Point2 &p_point, Controle *p_from) {
 	bool all_favorites = true;
 	bool all_not_favorites = true;
 
@@ -2873,7 +2873,7 @@ Variant FileSystemDock::get_drag_data_fw(const Point2 &p_point, Control *p_from)
 	return drag_data;
 }
 
-bool FileSystemDock::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool FileSystemDock::can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	Dictionary drag_data = p_data;
 
 	if (drag_data.has("favorite")) {
@@ -2951,7 +2951,7 @@ bool FileSystemDock::can_drop_data_fw(const Point2 &p_point, const Variant &p_da
 	return false;
 }
 
-void FileSystemDock::drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void FileSystemDock::drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -3085,7 +3085,7 @@ void FileSystemDock::drop_data_fw(const Point2 &p_point, const Variant &p_data, 
 	}
 }
 
-void FileSystemDock::_get_drag_target_folder(String &target, bool &target_favorites, const Point2 &p_point, Control *p_from) const {
+void FileSystemDock::_get_drag_target_folder(String &target, bool &target_favorites, const Point2 &p_point, Controle *p_from) const {
 	target = String();
 	target_favorites = false;
 

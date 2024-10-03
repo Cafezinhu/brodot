@@ -32,7 +32,7 @@
 
 #include "../action_map/openxr_interaction_profile_metadata.h"
 
-HashMap<String, bool *> OpenXRPicoControllerExtension::get_requested_extensions() {
+HashMap<String, bool *> OpenXRPicoControlelerExtension::get_requested_extensions() {
 	HashMap<String, bool *> request_extensions;
 
 	// Note, this used to be XR_PICO_controller_interaction but that has since been retired
@@ -44,11 +44,11 @@ HashMap<String, bool *> OpenXRPicoControllerExtension::get_requested_extensions(
 	return request_extensions;
 }
 
-bool OpenXRPicoControllerExtension::is_available() {
+bool OpenXRPicoControlelerExtension::is_available() {
 	return available;
 }
 
-void OpenXRPicoControllerExtension::on_register_metadata() {
+void OpenXRPicoControlelerExtension::on_register_metadata() {
 	OpenXRInteractionProfileMetadata *metadata = OpenXRInteractionProfileMetadata::get_singleton();
 	ERR_FAIL_NULL(metadata);
 

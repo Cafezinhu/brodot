@@ -124,7 +124,7 @@ msgstr "Ångra"
 msgid "Redo"
 msgstr "Återställ"
 
-msgid "Insert Control Character"
+msgid "Insert Controle Character"
 msgstr "Infoga kontroltecken"
 
 msgid "(Other)"

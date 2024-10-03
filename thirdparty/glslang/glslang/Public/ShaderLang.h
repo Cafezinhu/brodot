@@ -91,7 +91,7 @@ GLSLANG_EXPORT int ShFinalize();
 //
 typedef enum {
     EShLangVertex,
-    EShLangTessControl,
+    EShLangTessControle,
     EShLangTessEvaluation,
     EShLangGeometry,
     EShLangFragment,
@@ -117,7 +117,7 @@ typedef enum {
 
 typedef enum : unsigned {
     EShLangVertexMask         = (1 << EShLangVertex),
-    EShLangTessControlMask    = (1 << EShLangTessControl),
+    EShLangTessControleMask    = (1 << EShLangTessControle),
     EShLangTessEvaluationMask = (1 << EShLangTessEvaluation),
     EShLangGeometryMask       = (1 << EShLangGeometry),
     EShLangFragmentMask       = (1 << EShLangFragment),

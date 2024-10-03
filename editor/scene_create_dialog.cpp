@@ -51,7 +51,7 @@ void SceneCreateDialog::_notification(int p_what) {
 			select_node_button->set_icon(get_editor_theme_icon(SNAME("ClassList")));
 			node_type_2d->set_icon(get_editor_theme_icon(SNAME("Node2D")));
 			node_type_3d->set_icon(get_editor_theme_icon(SNAME("Node3D")));
-			node_type_gui->set_icon(get_editor_theme_icon(SNAME("Control")));
+			node_type_gui->set_icon(get_editor_theme_icon(SNAME("Controle")));
 			node_type_other->add_theme_icon_override(SNAME("icon"), get_editor_theme_icon(SNAME("Node")));
 		} break;
 
@@ -65,7 +65,7 @@ void SceneCreateDialog::config(const String &p_dir) {
 	directory = p_dir;
 	root_name_edit->set_text("");
 	scene_name_edit->set_text("");
-	callable_mp((Control *)scene_name_edit, &Control::grab_focus).call_deferred();
+	callable_mp((Controle *)scene_name_edit, &Controle::grab_focus).call_deferred();
 	validation_panel->update();
 }
 
@@ -163,10 +163,10 @@ Node *SceneCreateDialog::create_scene_root() {
 			root = memnew(Node3D);
 			break;
 		case ROOT_USER_INTERFACE: {
-			Control *gui_ctl = memnew(Control);
+			Controle *gui_ctl = memnew(Controle);
 			// Making the root control full rect by default is more useful for resizable UIs.
-			gui_ctl->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-			gui_ctl->set_grow_direction_preset(Control::PRESET_FULL_RECT);
+			gui_ctl->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+			gui_ctl->set_grow_direction_preset(Controle::PRESET_FULL_RECT);
 			root = gui_ctl;
 		} break;
 		case ROOT_OTHER:
@@ -195,7 +195,7 @@ SceneCreateDialog::SceneCreateDialog() {
 	{
 		Label *label = memnew(Label(TTR("Root Type:")));
 		gc->add_child(label);
-		label->set_v_size_flags(Control::SIZE_SHRINK_BEGIN);
+		label->set_v_size_flags(Controle::SIZE_SHRINK_BEGIN);
 
 		VBoxContainer *vb = memnew(VBoxContainer);
 		gc->add_child(vb);
@@ -229,13 +229,13 @@ SceneCreateDialog::SceneCreateDialog() {
 		node_type_other->set_button_group(node_type_group);
 		node_type_other->set_meta(type_meta, ROOT_OTHER);
 
-		Control *spacing = memnew(Control);
+		Controle *spacing = memnew(Controle);
 		hb->add_child(spacing);
 		spacing->set_custom_minimum_size(Size2(4 * EDSCALE, 0));
 
 		other_type_display = memnew(LineEdit);
 		hb->add_child(other_type_display);
-		other_type_display->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		other_type_display->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		other_type_display->set_editable(false);
 		other_type_display->set_text("Node");
 
@@ -253,7 +253,7 @@ SceneCreateDialog::SceneCreateDialog() {
 
 		scene_name_edit = memnew(LineEdit);
 		hb->add_child(scene_name_edit);
-		scene_name_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		scene_name_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		scene_name_edit->connect("text_submitted", callable_mp(this, &SceneCreateDialog::accept_create).unbind(1));
 
 		List<String> extensions;
@@ -276,11 +276,11 @@ SceneCreateDialog::SceneCreateDialog() {
 		gc->add_child(root_name_edit);
 		root_name_edit->set_tooltip_text(TTR("When empty, the root node name is derived from the scene name based on the \"editor/naming/node_name_casing\" project setting."));
 		root_name_edit->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-		root_name_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		root_name_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		root_name_edit->connect("text_submitted", callable_mp(this, &SceneCreateDialog::accept_create).unbind(1));
 	}
 
-	Control *spacing = memnew(Control);
+	Controle *spacing = memnew(Controle);
 	main_vb->add_child(spacing);
 	spacing->set_custom_minimum_size(Size2(0, 10 * EDSCALE));
 

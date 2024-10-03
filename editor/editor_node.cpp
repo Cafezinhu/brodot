@@ -316,10 +316,10 @@ void EditorNode::disambiguate_filenames(const Vector<String> p_full_paths, Vecto
 void EditorNode::_version_control_menu_option(int p_idx) {
 	switch (vcs_actions_menu->get_item_id(p_idx)) {
 		case RUN_VCS_METADATA: {
-			VersionControlEditorPlugin::get_singleton()->popup_vcs_metadata_dialog();
+			VersionControleEditorPlugin::get_singleton()->popup_vcs_metadata_dialog();
 		} break;
 		case RUN_VCS_SETTINGS: {
-			VersionControlEditorPlugin::get_singleton()->popup_vcs_set_up_dialog(gui_base);
+			VersionControleEditorPlugin::get_singleton()->popup_vcs_set_up_dialog(gui_base);
 		} break;
 	}
 }
@@ -526,7 +526,7 @@ void EditorNode::_update_theme(bool p_skip_creation) {
 	// Update styles.
 	{
 		gui_base->add_theme_style_override(SceneStringName(panel), theme->get_stylebox(SNAME("Background"), EditorStringName(EditorStyles)));
-		main_vbox->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT, Control::PRESET_MODE_MINSIZE, theme->get_constant(SNAME("window_border_margin"), EditorStringName(Editor)));
+		main_vbox->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT, Controle::PRESET_MODE_MINSIZE, theme->get_constant(SNAME("window_border_margin"), EditorStringName(Editor)));
 		main_vbox->add_theme_constant_override("separation", theme->get_constant(SNAME("top_bar_separation"), EditorStringName(Editor)));
 
 		editor_main_screen->add_theme_style_override(SceneStringName(panel), theme->get_stylebox(SNAME("Content"), EditorStringName(EditorStyles)));
@@ -3228,7 +3228,7 @@ void EditorNode::_screenshot(bool p_use_utc) {
 }
 
 void EditorNode::_save_screenshot(NodePath p_path) {
-	Control *main_screen_control = editor_main_screen->get_control();
+	Controle *main_screen_control = editor_main_screen->get_control();
 	ERR_FAIL_NULL_MSG(main_screen_control, "Cannot get the editor main screen control.");
 	Viewport *viewport = main_screen_control->get_viewport();
 	ERR_FAIL_NULL_MSG(viewport, "Cannot get a viewport from the editor main screen.");
@@ -5677,8 +5677,8 @@ bool EditorNode::is_distraction_free_mode_enabled() const {
 	return distraction_free->is_pressed();
 }
 
-Dictionary EditorNode::drag_resource(const Ref<Resource> &p_res, Control *p_from) {
-	Control *drag_control = memnew(Control);
+Dictionary EditorNode::drag_resource(const Ref<Resource> &p_res, Controle *p_from) {
+	Controle *drag_control = memnew(Controle);
 	TextureRect *drag_preview = memnew(TextureRect);
 	Label *label = memnew(Label);
 	label->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
@@ -5718,7 +5718,7 @@ Dictionary EditorNode::drag_resource(const Ref<Resource> &p_res, Control *p_from
 	return drag_data;
 }
 
-Dictionary EditorNode::drag_files_and_dirs(const Vector<String> &p_paths, Control *p_from) {
+Dictionary EditorNode::drag_files_and_dirs(const Vector<String> &p_paths, Controle *p_from) {
 	bool has_folder = false;
 	bool has_file = false;
 	for (int i = 0; i < p_paths.size(); i++) {
@@ -6823,7 +6823,7 @@ EditorNode::EditorNode() {
 	}
 
 	int ed_root_dir = EDITOR_GET("interface/editor/ui_layout_direction");
-	Control::set_root_layout_direction(ed_root_dir);
+	Controle::set_root_layout_direction(ed_root_dir);
 	Window::set_root_layout_direction(ed_root_dir);
 
 	ResourceLoader::set_abort_on_missing_resources(false);
@@ -6985,9 +6985,9 @@ EditorNode::EditorNode() {
 	add_child(gui_base);
 
 	// Take up all screen.
-	gui_base->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-	gui_base->set_anchor(SIDE_RIGHT, Control::ANCHOR_END);
-	gui_base->set_anchor(SIDE_BOTTOM, Control::ANCHOR_END);
+	gui_base->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+	gui_base->set_anchor(SIDE_RIGHT, Controle::ANCHOR_END);
+	gui_base->set_anchor(SIDE_BOTTOM, Controle::ANCHOR_END);
 	gui_base->set_end(Point2(0, 0));
 
 	main_vbox = memnew(VBoxContainer);
@@ -7000,7 +7000,7 @@ EditorNode::EditorNode() {
 	left_l_hsplit->set_name("DockHSplitLeftL");
 	main_vbox->add_child(left_l_hsplit);
 
-	left_l_hsplit->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	left_l_hsplit->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	left_l_vsplit = memnew(DockSplitContainer);
 	left_l_vsplit->set_name("DockVSplitLeftL");
@@ -7035,12 +7035,12 @@ EditorNode::EditorNode() {
 	VBoxContainer *center_vb = memnew(VBoxContainer);
 	main_hsplit->add_child(center_vb);
 
-	center_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	center_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	center_split = memnew(DockSplitContainer);
 	center_split->set_name("DockVSplitCenter");
 	center_split->set_vertical(true);
-	center_split->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	center_split->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	center_split->set_collapsed(false);
 	center_vb->add_child(center_split);
 
@@ -7101,11 +7101,11 @@ EditorNode::EditorNode() {
 
 	top_split = memnew(VSplitContainer);
 	center_split->add_child(top_split);
-	top_split->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	top_split->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	top_split->set_collapsed(true);
 
 	VBoxContainer *srt = memnew(VBoxContainer);
-	srt->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	srt->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	srt->add_theme_constant_override("separation", 0);
 	top_split->add_child(srt);
 
@@ -7129,7 +7129,7 @@ EditorNode::EditorNode() {
 	editor_main_screen->set_custom_minimum_size(Size2(0, 80) * EDSCALE);
 	editor_main_screen->set_draw_behind_parent(true);
 	srt->add_child(editor_main_screen);
-	editor_main_screen->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	editor_main_screen->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 	scene_root = memnew(SubViewport);
 	scene_root->set_embedding_subwindows(true);
@@ -7142,13 +7142,13 @@ EditorNode::EditorNode() {
 
 	if (can_expand) {
 		// Add spacer to avoid other controls under window minimize/maximize/close buttons (left side).
-		left_menu_spacer = memnew(Control);
-		left_menu_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		left_menu_spacer = memnew(Controle);
+		left_menu_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 		title_bar->add_child(left_menu_spacer);
 	}
 
 	main_menu = memnew(MenuBar);
-	main_menu->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	main_menu->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	title_bar->add_child(main_menu);
 	main_menu->set_theme_type_variation("MainMenuBar");
 	main_menu->set_start_index(0); // Main menu, add to the start of global menu.
@@ -7288,7 +7288,7 @@ EditorNode::EditorNode() {
 	project_menu->connect(SceneStringName(id_pressed), callable_mp(this, &EditorNode::_menu_option));
 
 	project_menu->add_separator();
-	project_menu->add_item(TTR("Version Control"), VCS_MENU);
+	project_menu->add_item(TTR("Version Controle"), VCS_MENU);
 
 	project_menu->add_separator();
 	project_menu->add_shortcut(ED_SHORTCUT_AND_COMMAND("editor/export", TTR("Export..."), Key::NONE, TTR("Export")), FILE_EXPORT_PROJECT);
@@ -7314,24 +7314,24 @@ EditorNode::EditorNode() {
 
 	// Spacer to center 2D / 3D / Script buttons.
 	HBoxContainer *left_spacer = memnew(HBoxContainer);
-	left_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
-	left_spacer->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	left_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
+	left_spacer->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	title_bar->add_child(left_spacer);
 
 	if (can_expand && global_menu) {
 		project_title = memnew(Label);
 		project_title->add_theme_font_override(SceneStringName(font), theme->get_font(SNAME("bold"), EditorStringName(EditorFonts)));
 		project_title->add_theme_font_size_override(SceneStringName(font_size), theme->get_font_size(SNAME("bold_size"), EditorStringName(EditorFonts)));
-		project_title->set_focus_mode(Control::FOCUS_NONE);
+		project_title->set_focus_mode(Controle::FOCUS_NONE);
 		project_title->set_text_overrun_behavior(TextServer::OVERRUN_TRIM_ELLIPSIS);
 		project_title->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
-		project_title->set_h_size_flags(Control::SIZE_EXPAND_FILL);
-		project_title->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		project_title->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
+		project_title->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 		left_spacer->add_child(project_title);
 	}
 
 	HBoxContainer *main_editor_button_hb = memnew(HBoxContainer);
-	main_editor_button_hb->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	main_editor_button_hb->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	editor_main_screen->set_button_container(main_editor_button_hb);
 	title_bar->add_child(main_editor_button_hb);
 
@@ -7421,19 +7421,19 @@ EditorNode::EditorNode() {
 	help_menu->add_icon_shortcut(theme->get_icon(SNAME("Heart"), EditorStringName(EditorIcons)), ED_SHORTCUT_AND_COMMAND("editor/support_development", TTR("Support Godot Development")), HELP_SUPPORT_GODOT_DEVELOPMENT);
 
 	// Spacer to center 2D / 3D / Script buttons.
-	Control *right_spacer = memnew(Control);
-	right_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
-	right_spacer->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	Controle *right_spacer = memnew(Controle);
+	right_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
+	right_spacer->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	title_bar->add_child(right_spacer);
 
 	project_run_bar = memnew(EditorRunBar);
-	project_run_bar->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	project_run_bar->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	title_bar->add_child(project_run_bar);
 	project_run_bar->connect("play_pressed", callable_mp(this, &EditorNode::_project_run_started));
 	project_run_bar->connect("stop_pressed", callable_mp(this, &EditorNode::_project_run_stopped));
 
 	HBoxContainer *right_menu_hb = memnew(HBoxContainer);
-	right_menu_hb->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	right_menu_hb->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	title_bar->add_child(right_menu_hb);
 
 	renderer = memnew(OptionButton);
@@ -7441,15 +7441,15 @@ EditorNode::EditorNode() {
 	renderer->set_flat(true);
 	renderer->set_theme_type_variation("TopBarOptionButton");
 	renderer->set_fit_to_longest_item(false);
-	renderer->set_focus_mode(Control::FOCUS_NONE);
+	renderer->set_focus_mode(Controle::FOCUS_NONE);
 	renderer->set_tooltip_text(TTR("Choose a rendering method.\n\nNotes:\n- On mobile platforms, the Mobile rendering method is used if Forward+ is selected here.\n- On the web platform, the Compatibility rendering method is always used."));
 
 	right_menu_hb->add_child(renderer);
 
 	if (can_expand) {
 		// Add spacer to avoid other controls under the window minimize/maximize/close buttons (right side).
-		right_menu_spacer = memnew(Control);
-		right_menu_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
+		right_menu_spacer = memnew(Controle);
+		right_menu_spacer->set_mouse_filter(Controle::MOUSE_FILTER_PASS);
 		title_bar->add_child(right_menu_spacer);
 	}
 
@@ -7697,7 +7697,7 @@ EditorNode::EditorNode() {
 
 		disk_changed_list = memnew(Tree);
 		vbc->add_child(disk_changed_list);
-		disk_changed_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+		disk_changed_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 
 		disk_changed->connect(SceneStringName(confirmed), callable_mp(this, &EditorNode::_reload_modified_scenes));
 		disk_changed->connect(SceneStringName(confirmed), callable_mp(this, &EditorNode::_reload_project_settings));
@@ -7730,12 +7730,12 @@ EditorNode::EditorNode() {
 	// More visually meaningful to have this later.
 	bottom_panel->move_item_to_end(AnimationPlayerEditor::get_singleton());
 
-	add_editor_plugin(VersionControlEditorPlugin::get_singleton());
+	add_editor_plugin(VersionControleEditorPlugin::get_singleton());
 
-	vcs_actions_menu = VersionControlEditorPlugin::get_singleton()->get_version_control_actions_panel();
+	vcs_actions_menu = VersionControleEditorPlugin::get_singleton()->get_version_control_actions_panel();
 	vcs_actions_menu->connect("index_pressed", callable_mp(this, &EditorNode::_version_control_menu_option));
-	vcs_actions_menu->add_item(TTR("Create/Override Version Control Metadata..."), RUN_VCS_METADATA);
-	vcs_actions_menu->add_item(TTR("Version Control Settings..."), RUN_VCS_SETTINGS);
+	vcs_actions_menu->add_item(TTR("Create/Override Version Controle Metadata..."), RUN_VCS_METADATA);
+	vcs_actions_menu->add_item(TTR("Version Controle Settings..."), RUN_VCS_SETTINGS);
 	project_menu->set_item_submenu_node(project_menu->get_item_index(VCS_MENU), vcs_actions_menu);
 
 	add_editor_plugin(memnew(AudioBusesEditorPlugin(audio_bus_editor)));
@@ -8035,25 +8035,25 @@ EditorPlugin::AfterGUIInput EditorPluginList::forward_3d_gui_input(Camera3D *p_c
 	return after;
 }
 
-void EditorPluginList::forward_canvas_draw_over_viewport(Control *p_overlay) {
+void EditorPluginList::forward_canvas_draw_over_viewport(Controle *p_overlay) {
 	for (int i = 0; i < plugins_list.size(); i++) {
 		plugins_list[i]->forward_canvas_draw_over_viewport(p_overlay);
 	}
 }
 
-void EditorPluginList::forward_canvas_force_draw_over_viewport(Control *p_overlay) {
+void EditorPluginList::forward_canvas_force_draw_over_viewport(Controle *p_overlay) {
 	for (int i = 0; i < plugins_list.size(); i++) {
 		plugins_list[i]->forward_canvas_force_draw_over_viewport(p_overlay);
 	}
 }
 
-void EditorPluginList::forward_3d_draw_over_viewport(Control *p_overlay) {
+void EditorPluginList::forward_3d_draw_over_viewport(Controle *p_overlay) {
 	for (int i = 0; i < plugins_list.size(); i++) {
 		plugins_list[i]->forward_3d_draw_over_viewport(p_overlay);
 	}
 }
 
-void EditorPluginList::forward_3d_force_draw_over_viewport(Control *p_overlay) {
+void EditorPluginList::forward_3d_force_draw_over_viewport(Controle *p_overlay) {
 	for (int i = 0; i < plugins_list.size(); i++) {
 		plugins_list[i]->forward_3d_force_draw_over_viewport(p_overlay);
 	}

@@ -33,8 +33,8 @@
 
 #include "scene/gui/container.h"
 
-class SplitContainerDragger : public Control {
-	GDCLASS(SplitContainerDragger, Control);
+class SplitContainerDragger : public Controle {
+	GDCLASS(SplitContainerDragger, Controle);
 	friend class SplitContainer;
 	Rect2 split_bar_rect;
 
@@ -92,7 +92,7 @@ private:
 	void _compute_split_offset(bool p_clamp);
 	int _get_separation() const;
 	void _resort();
-	Control *_get_sortable_child(int p_idx, SortableVisbilityMode p_visibility_mode = SortableVisbilityMode::VISIBLE_IN_TREE) const;
+	Controle *_get_sortable_child(int p_idx, SortableVisbilityMode p_visibility_mode = SortableVisbilityMode::VISIBLE_IN_TREE) const;
 
 protected:
 	bool is_fixed = false;
@@ -135,7 +135,7 @@ public:
 	void set_show_drag_area_enabled(bool p_enabled);
 	bool is_show_drag_area_enabled() const;
 
-	Control *get_drag_area_control() { return dragging_area_control; }
+	Controle *get_drag_area_control() { return dragging_area_control; }
 
 	SplitContainer(bool p_vertical = false);
 };

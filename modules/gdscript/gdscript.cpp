@@ -2719,7 +2719,7 @@ void GDScriptLanguage::frame() {
 void GDScriptLanguage::get_reserved_words(List<String> *p_words) const {
 	// Please keep alphabetical order within categories.
 	static const char *_reserved_words[] = {
-		// Control flow.
+		// Controle flow.
 		"break",
 		"continue",
 		"elif",

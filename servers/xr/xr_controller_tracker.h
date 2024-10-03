@@ -38,15 +38,15 @@
 	The controller tracker object as an object that represents the position and orientation of a controller.
 */
 
-class XRControllerTracker : public XRPositionalTracker {
-	GDCLASS(XRControllerTracker, XRPositionalTracker);
+class XRControlelerTracker : public XRPositionalTracker {
+	GDCLASS(XRControlelerTracker, XRPositionalTracker);
 	_THREAD_SAFE_CLASS_
 
 protected:
 	static void _bind_methods();
 
 public:
-	XRControllerTracker();
+	XRControlelerTracker();
 };
 
 #endif // XR_CONTROLLER_TRACKER_H

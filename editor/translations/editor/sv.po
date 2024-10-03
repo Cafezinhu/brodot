@@ -1781,10 +1781,10 @@ msgstr "Användning"
 msgid "Misc"
 msgstr "Övrigt"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "Klickad Kontroll:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "Klickad Kontrolltyp:"
 
 msgid "Live Edit Root:"
@@ -3592,7 +3592,7 @@ msgstr "Projekt"
 msgid "Project Settings"
 msgstr "Projektinställningar"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "Versionshantering"
 
 msgid "Install Android Build Template..."
@@ -3740,7 +3740,7 @@ msgstr ""
 msgid "Keep local changes and overwrite"
 msgstr "Behåll lokala ändringar och skriv över"
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "Versionshanteringsinställningar..."
 
 msgid "New Inherited"
@@ -5268,7 +5268,7 @@ msgstr "Resurser:"
 msgid "Files with translation strings:"
 msgstr "Filer utan översättningssträngar:"
 
-msgid "Add strings from built-in components such as certain Control nodes."
+msgid "Add strings from built-in components such as certain Controle nodes."
 msgstr ""
 "Lägg till strängar från inbyggda komponenter såsom vissa Kontroll-noder."
 
@@ -5787,8 +5787,8 @@ msgstr "Rotera CanvasItem \"%s\" till %d grader"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Skala Node2D \"%s\" till (%s, %s)"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Ändra storlek på Control \"%s\" till (%d, %d)"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Ändra storlek på Controle \"%s\" till (%d, %d)"
 
 msgid "Scale %d CanvasItems"
 msgstr "Skala %d CanvasItems"
@@ -6653,7 +6653,7 @@ msgstr "Vill du ta bort grenen %s?"
 msgid "Do you want to remove the %s remote?"
 msgstr "Vill du ta bort fjärren %s?"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "Skapa metadata för versionshantering"
 
 msgid "Create VCS metadata files for:"
@@ -7176,7 +7176,7 @@ msgstr "Sökväg till projektet:"
 msgid "Renderer:"
 msgstr "Renderare:"
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "Versionshanteringsmetadata:"
 
 msgid "Git"

@@ -224,18 +224,18 @@ private:
 
 	/// Maximum concavity. [Range: 0.0 -> 1.0]
 	real_t max_concavity = 1.0;
-	/// Controls the bias toward clipping along symmetry planes. [Range: 0.0 -> 1.0]
+	/// Controles the bias toward clipping along symmetry planes. [Range: 0.0 -> 1.0]
 	real_t symmetry_planes_clipping_bias = 0.05;
-	/// Controls the bias toward clipping along revolution axes. [Range: 0.0 -> 1.0]
+	/// Controles the bias toward clipping along revolution axes. [Range: 0.0 -> 1.0]
 	real_t revolution_axes_clipping_bias = 0.05;
 	real_t min_volume_per_convex_hull = 0.0001;
 	/// Maximum number of voxels generated during the voxelization stage.
 	uint32_t resolution = 10'000;
 	uint32_t max_num_vertices_per_convex_hull = 32;
-	/// Controls the granularity of the search for the "best" clipping plane.
+	/// Controles the granularity of the search for the "best" clipping plane.
 	/// [Range: 1 -> 16]
 	uint32_t plane_downsampling = 4;
-	/// Controls the precision of the convex-hull generation process during the
+	/// Controles the precision of the convex-hull generation process during the
 	/// clipping plane selection stage.
 	/// [Range: 1 -> 16]
 	uint32_t convex_hull_downsampling = 4;

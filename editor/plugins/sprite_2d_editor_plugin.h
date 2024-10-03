@@ -42,8 +42,8 @@ class MenuButton;
 class Panel;
 class ViewPanner;
 
-class Sprite2DEditor : public Control {
-	GDCLASS(Sprite2DEditor, Control);
+class Sprite2DEditor : public Controle {
+	GDCLASS(Sprite2DEditor, Controle);
 
 	enum Menu {
 		MENU_OPTION_CONVERT_TO_MESH_2D,

@@ -294,8 +294,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceShaderFloat16Int8Features;
   using PhysicalDeviceFloat16Int8FeaturesKHR       = PhysicalDeviceShaderFloat16Int8Features;
   using PhysicalDeviceShaderFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features;
-  struct PhysicalDeviceFloatControlsProperties;
-  using PhysicalDeviceFloatControlsPropertiesKHR = PhysicalDeviceFloatControlsProperties;
+  struct PhysicalDeviceFloatControlesProperties;
+  using PhysicalDeviceFloatControlesPropertiesKHR = PhysicalDeviceFloatControlesProperties;
   struct DescriptorSetLayoutBindingFlagsCreateInfo;
   using DescriptorSetLayoutBindingFlagsCreateInfoEXT = DescriptorSetLayoutBindingFlagsCreateInfo;
   struct PhysicalDeviceDescriptorIndexingFeatures;
@@ -383,8 +383,8 @@ namespace VULKAN_HPP_NAMESPACE
   using DevicePrivateDataCreateInfoEXT = DevicePrivateDataCreateInfo;
   struct PrivateDataSlotCreateInfo;
   using PrivateDataSlotCreateInfoEXT = PrivateDataSlotCreateInfo;
-  struct PhysicalDevicePipelineCreationCacheControlFeatures;
-  using PhysicalDevicePipelineCreationCacheControlFeaturesEXT = PhysicalDevicePipelineCreationCacheControlFeatures;
+  struct PhysicalDevicePipelineCreationCacheControleFeatures;
+  using PhysicalDevicePipelineCreationCacheControleFeaturesEXT = PhysicalDevicePipelineCreationCacheControleFeatures;
   struct MemoryBarrier2;
   using MemoryBarrier2KHR = MemoryBarrier2;
   struct BufferMemoryBarrier2;
@@ -427,10 +427,10 @@ namespace VULKAN_HPP_NAMESPACE
   using BufferImageCopy2KHR = BufferImageCopy2;
   struct ImageResolve2;
   using ImageResolve2KHR = ImageResolve2;
-  struct PhysicalDeviceSubgroupSizeControlFeatures;
-  using PhysicalDeviceSubgroupSizeControlFeaturesEXT = PhysicalDeviceSubgroupSizeControlFeatures;
-  struct PhysicalDeviceSubgroupSizeControlProperties;
-  using PhysicalDeviceSubgroupSizeControlPropertiesEXT = PhysicalDeviceSubgroupSizeControlProperties;
+  struct PhysicalDeviceSubgroupSizeControleFeatures;
+  using PhysicalDeviceSubgroupSizeControleFeaturesEXT = PhysicalDeviceSubgroupSizeControleFeatures;
+  struct PhysicalDeviceSubgroupSizeControleProperties;
+  using PhysicalDeviceSubgroupSizeControlePropertiesEXT = PhysicalDeviceSubgroupSizeControleProperties;
   struct PipelineShaderStageRequiredSubgroupSizeCreateInfo;
   using PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT = PipelineShaderStageRequiredSubgroupSizeCreateInfo;
   using ShaderRequiredSubgroupSizeCreateInfoEXT              = PipelineShaderStageRequiredSubgroupSizeCreateInfo;
@@ -550,7 +550,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct VideoSessionParametersUpdateInfoKHR;
   struct VideoBeginCodingInfoKHR;
   struct VideoEndCodingInfoKHR;
-  struct VideoCodingControlInfoKHR;
+  struct VideoCodingControleInfoKHR;
 
   //=== VK_KHR_video_decode_queue ===
   struct VideoDecodeCapabilitiesKHR;
@@ -588,8 +588,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct VideoEncodeH264DpbSlotInfoKHR;
   struct VideoEncodeH264NaluSliceInfoKHR;
   struct VideoEncodeH264ProfileInfoKHR;
-  struct VideoEncodeH264RateControlInfoKHR;
-  struct VideoEncodeH264RateControlLayerInfoKHR;
+  struct VideoEncodeH264RateControleInfoKHR;
+  struct VideoEncodeH264RateControleLayerInfoKHR;
   struct VideoEncodeH264QpKHR;
   struct VideoEncodeH264FrameSizeKHR;
   struct VideoEncodeH264GopRemainingFrameInfoKHR;
@@ -606,8 +606,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct VideoEncodeH265DpbSlotInfoKHR;
   struct VideoEncodeH265NaluSliceSegmentInfoKHR;
   struct VideoEncodeH265ProfileInfoKHR;
-  struct VideoEncodeH265RateControlInfoKHR;
-  struct VideoEncodeH265RateControlLayerInfoKHR;
+  struct VideoEncodeH265RateControleInfoKHR;
+  struct VideoEncodeH265RateControleLayerInfoKHR;
   struct VideoEncodeH265QpKHR;
   struct VideoEncodeH265FrameSizeKHR;
   struct VideoEncodeH265GopRemainingFrameInfoKHR;
@@ -965,7 +965,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceShaderClockFeaturesKHR;
 
   //=== VK_AMD_pipeline_compiler_control ===
-  struct PipelineCompilerControlCreateInfoAMD;
+  struct PipelineCompilerControleCreateInfoAMD;
 
   //=== VK_AMD_shader_core_properties ===
   struct PhysicalDeviceShaderCorePropertiesAMD;
@@ -1074,7 +1074,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceShaderImageAtomicInt64FeaturesEXT;
 
   //=== VK_KHR_shader_quad_control ===
-  struct PhysicalDeviceShaderQuadControlFeaturesKHR;
+  struct PhysicalDeviceShaderQuadControleFeaturesKHR;
 
   //=== VK_EXT_memory_budget ===
   struct PhysicalDeviceMemoryBudgetPropertiesEXT;
@@ -1211,7 +1211,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct CommandBufferInheritanceRenderPassTransformInfoQCOM;
 
   //=== VK_EXT_depth_bias_control ===
-  struct PhysicalDeviceDepthBiasControlFeaturesEXT;
+  struct PhysicalDeviceDepthBiasControleFeaturesEXT;
   struct DepthBiasInfoEXT;
   struct DepthBiasRepresentationInfoEXT;
 
@@ -1246,8 +1246,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct VideoEncodeCapabilitiesKHR;
   struct QueryPoolVideoEncodeFeedbackCreateInfoKHR;
   struct VideoEncodeUsageInfoKHR;
-  struct VideoEncodeRateControlInfoKHR;
-  struct VideoEncodeRateControlLayerInfoKHR;
+  struct VideoEncodeRateControleInfoKHR;
+  struct VideoEncodeRateControleLayerInfoKHR;
   struct PhysicalDeviceVideoEncodeQualityLevelInfoKHR;
   struct VideoEncodeQualityLevelPropertiesKHR;
   struct VideoEncodeQualityLevelInfoKHR;
@@ -1320,7 +1320,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceFragmentShaderBarycentricPropertiesKHR;
 
   //=== VK_KHR_shader_subgroup_uniform_control_flow ===
-  struct PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR;
+  struct PhysicalDeviceShaderSubgroupUniformControleFlowFeaturesKHR;
 
   //=== VK_NV_fragment_shading_rate_enums ===
   struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV;
@@ -1356,8 +1356,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR;
 
   //=== VK_EXT_image_compression_control ===
-  struct PhysicalDeviceImageCompressionControlFeaturesEXT;
-  struct ImageCompressionControlEXT;
+  struct PhysicalDeviceImageCompressionControleFeaturesEXT;
+  struct ImageCompressionControleEXT;
   struct ImageCompressionPropertiesEXT;
 
   //=== VK_EXT_attachment_feedback_loop_layout ===
@@ -1395,8 +1395,8 @@ namespace VULKAN_HPP_NAMESPACE
   struct DeviceAddressBindingCallbackDataEXT;
 
   //=== VK_EXT_depth_clip_control ===
-  struct PhysicalDeviceDepthClipControlFeaturesEXT;
-  struct PipelineViewportDepthClipControlCreateInfoEXT;
+  struct PhysicalDeviceDepthClipControleFeaturesEXT;
+  struct PipelineViewportDepthClipControleCreateInfoEXT;
 
   //=== VK_EXT_primitive_topology_list_restart ===
   struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT;
@@ -1529,9 +1529,9 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceShaderSubgroupRotateFeaturesKHR;
 
   //=== VK_ARM_scheduling_controls ===
-  struct DeviceQueueShaderCoreControlCreateInfoARM;
-  struct PhysicalDeviceSchedulingControlsFeaturesARM;
-  struct PhysicalDeviceSchedulingControlsPropertiesARM;
+  struct DeviceQueueShaderCoreControleCreateInfoARM;
+  struct PhysicalDeviceSchedulingControlesFeaturesARM;
+  struct PhysicalDeviceSchedulingControlesPropertiesARM;
 
   //=== VK_EXT_image_sliced_view_of_3d ===
   struct PhysicalDeviceImageSlicedViewOf3DFeaturesEXT;
@@ -1584,7 +1584,7 @@ namespace VULKAN_HPP_NAMESPACE
   struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR;
 
   //=== VK_EXT_image_compression_control_swapchain ===
-  struct PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
+  struct PhysicalDeviceImageCompressionControleSwapchainFeaturesEXT;
 
   //=== VK_QCOM_image_processing ===
   struct ImageViewSampleWeightCreateInfoQCOM;
@@ -1606,7 +1606,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   //=== VK_EXT_subpass_merge_feedback ===
   struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT;
-  struct RenderPassCreationControlEXT;
+  struct RenderPassCreationControleEXT;
   struct RenderPassCreationFeedbackInfoEXT;
   struct RenderPassCreationFeedbackCreateInfoEXT;
   struct RenderPassSubpassFeedbackInfoEXT;
@@ -1773,7 +1773,7 @@ namespace VULKAN_HPP_NAMESPACE
   using PhysicalDeviceVertexAttributeDivisorFeaturesEXT = PhysicalDeviceVertexAttributeDivisorFeaturesKHR;
 
   //=== VK_KHR_shader_float_controls2 ===
-  struct PhysicalDeviceShaderFloatControls2FeaturesKHR;
+  struct PhysicalDeviceShaderFloatControles2FeaturesKHR;
 
 #if defined( VK_USE_PLATFORM_SCREEN_QNX )
   //=== VK_QNX_external_memory_screen_buffer ===
@@ -4920,7 +4920,7 @@ namespace VULKAN_HPP_NAMESPACE
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
     void beginQuery( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                      uint32_t                                query,
-                     VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                     VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                      Dispatch const & d                      VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
@@ -5302,11 +5302,11 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /* VULKAN_HPP_DISABLE_ENHANCED_MODE */
 
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
-    void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR * pCodingControlInfo,
+    void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR * pCodingControleInfo,
                                 Dispatch const & d                                      VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 #ifndef VULKAN_HPP_DISABLE_ENHANCED_MODE
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
-    void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR & codingControlInfo,
+    void controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR & codingControleInfo,
                                 Dispatch const & d                                      VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 #endif /* VULKAN_HPP_DISABLE_ENHANCED_MODE */
 
@@ -5373,7 +5373,7 @@ namespace VULKAN_HPP_NAMESPACE
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
     void beginQueryIndexedEXT( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                uint32_t                                query,
-                               VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                               VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                                uint32_t                                index,
                                Dispatch const & d                      VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 
@@ -6357,7 +6357,7 @@ namespace VULKAN_HPP_NAMESPACE
     //=== VK_EXT_extended_dynamic_state2 ===
 
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
-    void setPatchControlPointsEXT( uint32_t patchControlPoints, Dispatch const & d VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
+    void setPatchControlePointsEXT( uint32_t patchControlePoints, Dispatch const & d VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
     void setRasterizerDiscardEnableEXT( VULKAN_HPP_NAMESPACE::Bool32 rasterizerDiscardEnable,
@@ -11677,12 +11677,12 @@ namespace VULKAN_HPP_NAMESPACE
     //=== VK_EXT_display_control ===
 
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
-    VULKAN_HPP_NODISCARD Result displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
+    VULKAN_HPP_NODISCARD Result displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
                                                         const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT * pDisplayPowerInfo,
                                                         Dispatch const & d VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const VULKAN_HPP_NOEXCEPT;
 #ifndef VULKAN_HPP_DISABLE_ENHANCED_MODE
     template <typename Dispatch = VULKAN_HPP_DEFAULT_DISPATCHER_TYPE>
-    typename ResultValueType<void>::type displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
+    typename ResultValueType<void>::type displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
                                                                  const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT & displayPowerInfo,
                                                                  Dispatch const & d VULKAN_HPP_DEFAULT_DISPATCHER_ASSIGNMENT ) const;
 #endif /* VULKAN_HPP_DISABLE_ENHANCED_MODE */

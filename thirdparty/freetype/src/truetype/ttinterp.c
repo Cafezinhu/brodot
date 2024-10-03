@@ -4272,7 +4272,7 @@
 
   /**************************************************************************
    *
-   * SCVTCI[]:     Set Control Value Table Cut In
+   * SCVTCI[]:     Set Controle Value Table Cut In
    * Opcode range: 0x1D
    * Stack:        f26.6 -->
    */

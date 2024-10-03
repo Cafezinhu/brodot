@@ -86,8 +86,8 @@ private:
 	void _pick_new_property();
 	void _pick_node_property_selected(String p_name);
 
-	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	void _add_sync_property(String p_path);
 

@@ -94,7 +94,7 @@
    *   module_specific
    *
    * @title:
-   *   Controlling FreeType Modules
+   *   Controleling FreeType Modules
    *
    * @sections:
    *   auto_hinter

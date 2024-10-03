@@ -129,7 +129,7 @@ typedef enum D3D10_SB_TOKENIZED_PROGRAM_TYPE
 // }
 // else // standard opcode token
 // {
-//    [23:11] Opcode-Specific Controls
+//    [23:11] Opcode-Specific Controles
 //    [30:24] Instruction length in DWORDs including the opcode token.
 //    [31]    0 normally. 1 if extended operand definition, meaning next DWORD
 //            contains extended opcode token.
@@ -937,7 +937,7 @@ typedef enum D3D10_SB_OPERAND_TYPE
     D3D11_SB_OPERAND_TYPE_INTERFACE      = 19, // Reference to an interface
     D3D11_SB_OPERAND_TYPE_FUNCTION_INPUT = 20, // Reference to an input parameter to a function
     D3D11_SB_OPERAND_TYPE_FUNCTION_OUTPUT = 21, // Reference to an output parameter to a function
-    D3D11_SB_OPERAND_TYPE_OUTPUT_CONTROL_POINT_ID = 22, // HS Control Point phase input saying which output control point ID this is
+    D3D11_SB_OPERAND_TYPE_OUTPUT_CONTROL_POINT_ID = 22, // HS Controle Point phase input saying which output control point ID this is
     D3D11_SB_OPERAND_TYPE_INPUT_FORK_INSTANCE_ID = 23, // HS Fork Phase input instance ID
     D3D11_SB_OPERAND_TYPE_INPUT_JOIN_INSTANCE_ID = 24, // HS Join Phase input instance ID
     D3D11_SB_OPERAND_TYPE_INPUT_CONTROL_POINT = 25, // HS Fork+Join, DS phase input control points (array of them)
@@ -1871,12 +1871,12 @@ typedef enum D3D11_SB_SHADER_MESSAGE_FORMAT
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
-// Hull Shader Declaration Phase: HS/DS Input Control Point Count
+// Hull Shader Declaration Phase: HS/DS Input Controle Point Count
 //
 // OpcodeToken0:
 //
 // [10:00] D3D11_SB_OPCODE_DCL_INPUT_CONTROL_POINT_COUNT
-// [16:11] Control point count 
+// [16:11] Controle point count 
 // [23:17] Ignored, 0
 // [30:24] Instruction length in DWORDs including the opcode token. == 1
 // [31]    0 normally. 1 if extended operand definition, meaning next DWORD
@@ -1895,12 +1895,12 @@ typedef enum D3D11_SB_SHADER_MESSAGE_FORMAT
 #define ENCODE_D3D11_SB_INPUT_CONTROL_POINT_COUNT(Count) (((Count)<<D3D11_SB_INPUT_CONTROL_POINT_COUNT_SHIFT)&D3D11_SB_INPUT_CONTROL_POINT_COUNT_MASK)
 
 // ----------------------------------------------------------------------------
-// Hull Shader Declaration Phase: HS Output Control Point Count
+// Hull Shader Declaration Phase: HS Output Controle Point Count
 //
 // OpcodeToken0:
 //
 // [10:00] D3D11_SB_OPCODE_DCL_OUTPUT_CONTROL_POINT_COUNT
-// [16:11] Control point count 
+// [16:11] Controle point count 
 // [23:17] Ignored, 0
 // [30:24] Instruction length in DWORDs including the opcode token. == 1
 // [31]    0 normally. 1 if extended operand definition, meaning next DWORD

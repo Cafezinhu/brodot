@@ -333,7 +333,7 @@ public class DownloadsDB {
         cv.put(DownloadColumns.CURRENTBYTES, di.mCurrentBytes);
         cv.put(DownloadColumns.LASTMOD, di.mLastMod);
         cv.put(DownloadColumns.STATUS, di.mStatus);
-        cv.put(DownloadColumns.CONTROL, di.mControl);
+        cv.put(DownloadColumns.CONTROL, di.mControle);
         cv.put(DownloadColumns.NUM_FAILED, di.mNumFailed);
         cv.put(DownloadColumns.RETRY_AFTER, di.mRetryAfter);
         cv.put(DownloadColumns.REDIRECT_COUNT, di.mRedirectCount);
@@ -470,7 +470,7 @@ public class DownloadsDB {
         di.mCurrentBytes = cur.getLong(CURRENTBYTES_IDX);
         di.mLastMod = cur.getLong(LASTMOD_IDX);
         di.mStatus = cur.getInt(STATUS_IDX);
-        di.mControl = cur.getInt(CONTROL_IDX);
+        di.mControle = cur.getInt(CONTROL_IDX);
         di.mNumFailed = cur.getInt(NUM_FAILED_IDX);
         di.mRetryAfter = cur.getInt(RETRY_AFTER_IDX);
         di.mRedirectCount = cur.getInt(REDIRECT_COUNT_IDX);

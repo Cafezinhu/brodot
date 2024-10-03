@@ -2871,7 +2871,7 @@ wl_data_device_release(struct wl_data_device *wl_data_device)
  * - If no modifiers are pressed, the first match (in bit order)
  * will be used.
  * - Pressing Shift selects "move", if enabled in the mask.
- * - Pressing Control selects "copy", if enabled in the mask.
+ * - Pressing Controle selects "copy", if enabled in the mask.
  *
  * Behavior beyond that is considered implementation-dependent.
  * Compositors may for example bind other modifiers (like Alt/Meta)

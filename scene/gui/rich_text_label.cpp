@@ -1787,7 +1787,7 @@ _FORCE_INLINE_ float RichTextLabel::_calculate_line_vertical_offset(const RichTe
 }
 
 void RichTextLabel::_update_theme_item_cache() {
-	Control::_update_theme_item_cache();
+	Controle::_update_theme_item_cache();
 
 	theme_cache.base_scale = get_theme_default_base_scale();
 	use_selected_font_color = theme_cache.font_selected_color != Color(0, 0, 0, 0);
@@ -1934,7 +1934,7 @@ void RichTextLabel::_notification(int p_what) {
 	}
 }
 
-Control::CursorShape RichTextLabel::get_cursor_shape(const Point2 &p_pos) const {
+Controle::CursorShape RichTextLabel::get_cursor_shape(const Point2 &p_pos) const {
 	if (selection.click_item) {
 		return CURSOR_IBEAM;
 	}
@@ -2248,7 +2248,7 @@ String RichTextLabel::get_tooltip(const Point2 &p_pos) const {
 		}
 	}
 
-	return Control::get_tooltip(p_pos);
+	return Controle::get_tooltip(p_pos);
 }
 
 void RichTextLabel::_find_frame(Item *p_item, ItemFrame **r_frame, int *r_line) {
@@ -2571,7 +2571,7 @@ TextServer::Direction RichTextLabel::_find_direction(Item *p_item) {
 	while (item) {
 		if (item->type == ITEM_PARAGRAPH) {
 			ItemParagraph *p = static_cast<ItemParagraph *>(item);
-			if (p->direction != Control::TEXT_DIRECTION_INHERITED) {
+			if (p->direction != Controle::TEXT_DIRECTION_INHERITED) {
 				return (TextServer::Direction)p->direction;
 			}
 		}
@@ -2579,7 +2579,7 @@ TextServer::Direction RichTextLabel::_find_direction(Item *p_item) {
 		item = item->parent;
 	}
 
-	if (text_direction == Control::TEXT_DIRECTION_INHERITED) {
+	if (text_direction == Controle::TEXT_DIRECTION_INHERITED) {
 		return is_layout_rtl() ? TextServer::DIRECTION_RTL : TextServer::DIRECTION_LTR;
 	} else {
 		return (TextServer::Direction)text_direction;
@@ -3653,7 +3653,7 @@ void RichTextLabel::push_strikethrough() {
 	_add_item(item, true);
 }
 
-void RichTextLabel::push_paragraph(HorizontalAlignment p_alignment, Control::TextDirection p_direction, const String &p_language, TextServer::StructuredTextParser p_st_parser, BitField<TextServer::JustificationFlag> p_jst_flags, const PackedFloat32Array &p_tab_stops) {
+void RichTextLabel::push_paragraph(HorizontalAlignment p_alignment, Controle::TextDirection p_direction, const String &p_language, TextServer::StructuredTextParser p_st_parser, BitField<TextServer::JustificationFlag> p_jst_flags, const PackedFloat32Array &p_tab_stops) {
 	_stop_thread();
 	MutexLock data_lock(data_mutex);
 
@@ -4603,7 +4603,7 @@ void RichTextLabel::append_text(const String &p_bbcode) {
 			tag_stack.push_front("p");
 		} else if (tag.begins_with("p ")) {
 			HorizontalAlignment alignment = HORIZONTAL_ALIGNMENT_LEFT;
-			Control::TextDirection dir = Control::TEXT_DIRECTION_INHERITED;
+			Controle::TextDirection dir = Controle::TEXT_DIRECTION_INHERITED;
 			String lang = language;
 			PackedFloat32Array tab_stops = default_tab_stops;
 			TextServer::StructuredTextParser st_parser_type = TextServer::STRUCTURED_TEXT_DEFAULT;
@@ -4659,11 +4659,11 @@ void RichTextLabel::append_text(const String &p_bbcode) {
 			}
 			if (direction_option) {
 				if (direction_option->value == "a" || direction_option->value == "auto") {
-					dir = Control::TEXT_DIRECTION_AUTO;
+					dir = Controle::TEXT_DIRECTION_AUTO;
 				} else if (direction_option->value == "l" || direction_option->value == "ltr") {
-					dir = Control::TEXT_DIRECTION_LTR;
+					dir = Controle::TEXT_DIRECTION_LTR;
 				} else if (direction_option->value == "r" || direction_option->value == "rtl") {
-					dir = Control::TEXT_DIRECTION_RTL;
+					dir = Controle::TEXT_DIRECTION_RTL;
 				}
 			}
 			OptionMap::Iterator language_option = bbcode_options.find("language");
@@ -5433,7 +5433,7 @@ void RichTextLabel::set_deselect_on_focus_loss_enabled(const bool p_enabled) {
 }
 
 Variant RichTextLabel::get_drag_data(const Point2 &p_point) {
-	Variant ret = Control::get_drag_data(p_point);
+	Variant ret = Controle::get_drag_data(p_point);
 	if (ret != Variant()) {
 		return ret;
 	}
@@ -5875,7 +5875,7 @@ String RichTextLabel::get_parsed_text() const {
 	return txt;
 }
 
-void RichTextLabel::set_text_direction(Control::TextDirection p_text_direction) {
+void RichTextLabel::set_text_direction(Controle::TextDirection p_text_direction) {
 	ERR_FAIL_COND((int)p_text_direction < -1 || (int)p_text_direction > 3);
 	_stop_thread();
 
@@ -5891,7 +5891,7 @@ void RichTextLabel::set_text_direction(Control::TextDirection p_text_direction) 
 	}
 }
 
-Control::TextDirection RichTextLabel::get_text_direction() const {
+Controle::TextDirection RichTextLabel::get_text_direction() const {
 	return text_direction;
 }
 

@@ -132,8 +132,8 @@ private:
 	void _update_scenes_list();
 	void _update_action_buttons();
 
-	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
-	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
+	void _drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
+	bool _can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
 
 protected:
 	void _notification(int p_what);

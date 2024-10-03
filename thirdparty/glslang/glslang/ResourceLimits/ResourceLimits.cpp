@@ -83,7 +83,7 @@ const TBuiltInResource DefaultTBuiltInResource = {
     /* .MaxCombinedShaderOutputResources = */ 8,
     /* .MaxImageSamples = */ 0,
     /* .MaxVertexImageUniforms = */ 0,
-    /* .MaxTessControlImageUniforms = */ 0,
+    /* .MaxTessControleImageUniforms = */ 0,
     /* .MaxTessEvaluationImageUniforms = */ 0,
     /* .MaxGeometryImageUniforms = */ 0,
     /* .MaxFragmentImageUniforms = */ 8,
@@ -93,11 +93,11 @@ const TBuiltInResource DefaultTBuiltInResource = {
     /* .MaxGeometryTotalOutputComponents = */ 1024,
     /* .MaxGeometryUniformComponents = */ 1024,
     /* .MaxGeometryVaryingComponents = */ 64,
-    /* .MaxTessControlInputComponents = */ 128,
-    /* .MaxTessControlOutputComponents = */ 128,
-    /* .MaxTessControlTextureImageUnits = */ 16,
-    /* .MaxTessControlUniformComponents = */ 1024,
-    /* .MaxTessControlTotalOutputComponents = */ 4096,
+    /* .MaxTessControleInputComponents = */ 128,
+    /* .MaxTessControleOutputComponents = */ 128,
+    /* .MaxTessControleTextureImageUnits = */ 16,
+    /* .MaxTessControleUniformComponents = */ 1024,
+    /* .MaxTessControleTotalOutputComponents = */ 4096,
     /* .MaxTessEvaluationInputComponents = */ 128,
     /* .MaxTessEvaluationOutputComponents = */ 128,
     /* .MaxTessEvaluationTextureImageUnits = */ 16,
@@ -107,14 +107,14 @@ const TBuiltInResource DefaultTBuiltInResource = {
     /* .MaxTessGenLevel = */ 64,
     /* .MaxViewports = */ 16,
     /* .MaxVertexAtomicCounters = */ 0,
-    /* .MaxTessControlAtomicCounters = */ 0,
+    /* .MaxTessControleAtomicCounters = */ 0,
     /* .MaxTessEvaluationAtomicCounters = */ 0,
     /* .MaxGeometryAtomicCounters = */ 0,
     /* .MaxFragmentAtomicCounters = */ 8,
     /* .MaxCombinedAtomicCounters = */ 8,
     /* .MaxAtomicCounterBindings = */ 1,
     /* .MaxVertexAtomicCounterBuffers = */ 0,
-    /* .MaxTessControlAtomicCounterBuffers = */ 0,
+    /* .MaxTessControleAtomicCounterBuffers = */ 0,
     /* .MaxTessEvaluationAtomicCounterBuffers = */ 0,
     /* .MaxGeometryAtomicCounterBuffers = */ 0,
     /* .MaxFragmentAtomicCounterBuffers = */ 1,
@@ -202,7 +202,7 @@ std::string GetDefaultTBuiltInResourceString()
             << "MaxCombinedShaderOutputResources "          << DefaultTBuiltInResource.maxCombinedShaderOutputResources << "\n"
             << "MaxImageSamples "                           << DefaultTBuiltInResource.maxImageSamples << "\n"
             << "MaxVertexImageUniforms "                    << DefaultTBuiltInResource.maxVertexImageUniforms << "\n"
-            << "MaxTessControlImageUniforms "               << DefaultTBuiltInResource.maxTessControlImageUniforms << "\n"
+            << "MaxTessControleImageUniforms "               << DefaultTBuiltInResource.maxTessControleImageUniforms << "\n"
             << "MaxTessEvaluationImageUniforms "            << DefaultTBuiltInResource.maxTessEvaluationImageUniforms << "\n"
             << "MaxGeometryImageUniforms "                  << DefaultTBuiltInResource.maxGeometryImageUniforms << "\n"
             << "MaxFragmentImageUniforms "                  << DefaultTBuiltInResource.maxFragmentImageUniforms << "\n"
@@ -212,11 +212,11 @@ std::string GetDefaultTBuiltInResourceString()
             << "MaxGeometryTotalOutputComponents "          << DefaultTBuiltInResource.maxGeometryTotalOutputComponents << "\n"
             << "MaxGeometryUniformComponents "              << DefaultTBuiltInResource.maxGeometryUniformComponents << "\n"
             << "MaxGeometryVaryingComponents "              << DefaultTBuiltInResource.maxGeometryVaryingComponents << "\n"
-            << "MaxTessControlInputComponents "             << DefaultTBuiltInResource.maxTessControlInputComponents << "\n"
-            << "MaxTessControlOutputComponents "            << DefaultTBuiltInResource.maxTessControlOutputComponents << "\n"
-            << "MaxTessControlTextureImageUnits "           << DefaultTBuiltInResource.maxTessControlTextureImageUnits << "\n"
-            << "MaxTessControlUniformComponents "           << DefaultTBuiltInResource.maxTessControlUniformComponents << "\n"
-            << "MaxTessControlTotalOutputComponents "       << DefaultTBuiltInResource.maxTessControlTotalOutputComponents << "\n"
+            << "MaxTessControleInputComponents "             << DefaultTBuiltInResource.maxTessControleInputComponents << "\n"
+            << "MaxTessControleOutputComponents "            << DefaultTBuiltInResource.maxTessControleOutputComponents << "\n"
+            << "MaxTessControleTextureImageUnits "           << DefaultTBuiltInResource.maxTessControleTextureImageUnits << "\n"
+            << "MaxTessControleUniformComponents "           << DefaultTBuiltInResource.maxTessControleUniformComponents << "\n"
+            << "MaxTessControleTotalOutputComponents "       << DefaultTBuiltInResource.maxTessControleTotalOutputComponents << "\n"
             << "MaxTessEvaluationInputComponents "          << DefaultTBuiltInResource.maxTessEvaluationInputComponents << "\n"
             << "MaxTessEvaluationOutputComponents "         << DefaultTBuiltInResource.maxTessEvaluationOutputComponents << "\n"
             << "MaxTessEvaluationTextureImageUnits "        << DefaultTBuiltInResource.maxTessEvaluationTextureImageUnits << "\n"
@@ -226,14 +226,14 @@ std::string GetDefaultTBuiltInResourceString()
             << "MaxTessGenLevel "                           << DefaultTBuiltInResource.maxTessGenLevel << "\n"
             << "MaxViewports "                              << DefaultTBuiltInResource.maxViewports << "\n"
             << "MaxVertexAtomicCounters "                   << DefaultTBuiltInResource.maxVertexAtomicCounters << "\n"
-            << "MaxTessControlAtomicCounters "              << DefaultTBuiltInResource.maxTessControlAtomicCounters << "\n"
+            << "MaxTessControleAtomicCounters "              << DefaultTBuiltInResource.maxTessControleAtomicCounters << "\n"
             << "MaxTessEvaluationAtomicCounters "           << DefaultTBuiltInResource.maxTessEvaluationAtomicCounters << "\n"
             << "MaxGeometryAtomicCounters "                 << DefaultTBuiltInResource.maxGeometryAtomicCounters << "\n"
             << "MaxFragmentAtomicCounters "                 << DefaultTBuiltInResource.maxFragmentAtomicCounters << "\n"
             << "MaxCombinedAtomicCounters "                 << DefaultTBuiltInResource.maxCombinedAtomicCounters << "\n"
             << "MaxAtomicCounterBindings "                  << DefaultTBuiltInResource.maxAtomicCounterBindings << "\n"
             << "MaxVertexAtomicCounterBuffers "             << DefaultTBuiltInResource.maxVertexAtomicCounterBuffers << "\n"
-            << "MaxTessControlAtomicCounterBuffers "        << DefaultTBuiltInResource.maxTessControlAtomicCounterBuffers << "\n"
+            << "MaxTessControleAtomicCounterBuffers "        << DefaultTBuiltInResource.maxTessControleAtomicCounterBuffers << "\n"
             << "MaxTessEvaluationAtomicCounterBuffers "     << DefaultTBuiltInResource.maxTessEvaluationAtomicCounterBuffers << "\n"
             << "MaxGeometryAtomicCounterBuffers "           << DefaultTBuiltInResource.maxGeometryAtomicCounterBuffers << "\n"
             << "MaxFragmentAtomicCounterBuffers "           << DefaultTBuiltInResource.maxFragmentAtomicCounterBuffers << "\n"
@@ -385,8 +385,8 @@ void DecodeResourceLimits(TBuiltInResource* resources, char* config)
             resources->maxImageSamples = value;
         else if (tokenStr == "MaxVertexImageUniforms")
             resources->maxVertexImageUniforms = value;
-        else if (tokenStr == "MaxTessControlImageUniforms")
-            resources->maxTessControlImageUniforms = value;
+        else if (tokenStr == "MaxTessControleImageUniforms")
+            resources->maxTessControleImageUniforms = value;
         else if (tokenStr == "MaxTessEvaluationImageUniforms")
             resources->maxTessEvaluationImageUniforms = value;
         else if (tokenStr == "MaxGeometryImageUniforms")
@@ -405,16 +405,16 @@ void DecodeResourceLimits(TBuiltInResource* resources, char* config)
             resources->maxGeometryUniformComponents = value;
         else if (tokenStr == "MaxGeometryVaryingComponents")
             resources->maxGeometryVaryingComponents = value;
-        else if (tokenStr == "MaxTessControlInputComponents")
-            resources->maxTessControlInputComponents = value;
-        else if (tokenStr == "MaxTessControlOutputComponents")
-            resources->maxTessControlOutputComponents = value;
-        else if (tokenStr == "MaxTessControlTextureImageUnits")
-            resources->maxTessControlTextureImageUnits = value;
-        else if (tokenStr == "MaxTessControlUniformComponents")
-            resources->maxTessControlUniformComponents = value;
-        else if (tokenStr == "MaxTessControlTotalOutputComponents")
-            resources->maxTessControlTotalOutputComponents = value;
+        else if (tokenStr == "MaxTessControleInputComponents")
+            resources->maxTessControleInputComponents = value;
+        else if (tokenStr == "MaxTessControleOutputComponents")
+            resources->maxTessControleOutputComponents = value;
+        else if (tokenStr == "MaxTessControleTextureImageUnits")
+            resources->maxTessControleTextureImageUnits = value;
+        else if (tokenStr == "MaxTessControleUniformComponents")
+            resources->maxTessControleUniformComponents = value;
+        else if (tokenStr == "MaxTessControleTotalOutputComponents")
+            resources->maxTessControleTotalOutputComponents = value;
         else if (tokenStr == "MaxTessEvaluationInputComponents")
             resources->maxTessEvaluationInputComponents = value;
         else if (tokenStr == "MaxTessEvaluationOutputComponents")
@@ -433,8 +433,8 @@ void DecodeResourceLimits(TBuiltInResource* resources, char* config)
             resources->maxViewports = value;
         else if (tokenStr == "MaxVertexAtomicCounters")
             resources->maxVertexAtomicCounters = value;
-        else if (tokenStr == "MaxTessControlAtomicCounters")
-            resources->maxTessControlAtomicCounters = value;
+        else if (tokenStr == "MaxTessControleAtomicCounters")
+            resources->maxTessControleAtomicCounters = value;
         else if (tokenStr == "MaxTessEvaluationAtomicCounters")
             resources->maxTessEvaluationAtomicCounters = value;
         else if (tokenStr == "MaxGeometryAtomicCounters")
@@ -447,8 +447,8 @@ void DecodeResourceLimits(TBuiltInResource* resources, char* config)
             resources->maxAtomicCounterBindings = value;
         else if (tokenStr == "MaxVertexAtomicCounterBuffers")
             resources->maxVertexAtomicCounterBuffers = value;
-        else if (tokenStr == "MaxTessControlAtomicCounterBuffers")
-            resources->maxTessControlAtomicCounterBuffers = value;
+        else if (tokenStr == "MaxTessControleAtomicCounterBuffers")
+            resources->maxTessControleAtomicCounterBuffers = value;
         else if (tokenStr == "MaxTessEvaluationAtomicCounterBuffers")
             resources->maxTessEvaluationAtomicCounterBuffers = value;
         else if (tokenStr == "MaxGeometryAtomicCounterBuffers")

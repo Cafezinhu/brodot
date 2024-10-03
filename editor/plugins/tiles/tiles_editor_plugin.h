@@ -138,7 +138,7 @@ public:
 	virtual void make_visible(bool p_visible) override;
 
 	virtual bool forward_canvas_gui_input(const Ref<InputEvent> &p_event) override;
-	virtual void forward_canvas_draw_over_viewport(Control *p_overlay) override;
+	virtual void forward_canvas_draw_over_viewport(Controle *p_overlay) override;
 
 	void hide_editor();
 	bool is_editor_visible() const;

@@ -5561,11 +5561,11 @@ namespace VULKAN_HPP_NAMESPACE
   template <typename Dispatch>
   VULKAN_HPP_INLINE void CommandBuffer::beginQuery( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                                     uint32_t                                query,
-                                                    VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                                                    VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                                                     Dispatch const &                        d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
-    d.vkCmdBeginQuery( m_commandBuffer, static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControlFlags>( flags ) );
+    d.vkCmdBeginQuery( m_commandBuffer, static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControleFlags>( flags ) );
   }
 
   template <typename Dispatch>
@@ -10923,24 +10923,24 @@ namespace VULKAN_HPP_NAMESPACE
 #endif /* VULKAN_HPP_DISABLE_ENHANCED_MODE */
 
   template <typename Dispatch>
-  VULKAN_HPP_INLINE void CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR * pCodingControlInfo,
+  VULKAN_HPP_INLINE void CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR * pCodingControleInfo,
                                                                Dispatch const &                                        d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
-    d.vkCmdControlVideoCodingKHR( m_commandBuffer, reinterpret_cast<const VkVideoCodingControlInfoKHR *>( pCodingControlInfo ) );
+    d.vkCmdControleVideoCodingKHR( m_commandBuffer, reinterpret_cast<const VkVideoCodingControleInfoKHR *>( pCodingControleInfo ) );
   }
 
 #ifndef VULKAN_HPP_DISABLE_ENHANCED_MODE
   template <typename Dispatch>
-  VULKAN_HPP_INLINE void CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControlInfoKHR & codingControlInfo,
+  VULKAN_HPP_INLINE void CommandBuffer::controlVideoCodingKHR( const VULKAN_HPP_NAMESPACE::VideoCodingControleInfoKHR & codingControleInfo,
                                                                Dispatch const &                                        d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
 #  if ( VULKAN_HPP_DISPATCH_LOADER_DYNAMIC == 1 )
-    VULKAN_HPP_ASSERT( d.vkCmdControlVideoCodingKHR && "Function <vkCmdControlVideoCodingKHR> requires <VK_KHR_video_queue>" );
+    VULKAN_HPP_ASSERT( d.vkCmdControleVideoCodingKHR && "Function <vkCmdControleVideoCodingKHR> requires <VK_KHR_video_queue>" );
 #  endif
 
-    d.vkCmdControlVideoCodingKHR( m_commandBuffer, reinterpret_cast<const VkVideoCodingControlInfoKHR *>( &codingControlInfo ) );
+    d.vkCmdControleVideoCodingKHR( m_commandBuffer, reinterpret_cast<const VkVideoCodingControleInfoKHR *>( &codingControleInfo ) );
   }
 #endif /* VULKAN_HPP_DISABLE_ENHANCED_MODE */
 
@@ -11114,12 +11114,12 @@ namespace VULKAN_HPP_NAMESPACE
   template <typename Dispatch>
   VULKAN_HPP_INLINE void CommandBuffer::beginQueryIndexedEXT( VULKAN_HPP_NAMESPACE::QueryPool         queryPool,
                                                               uint32_t                                query,
-                                                              VULKAN_HPP_NAMESPACE::QueryControlFlags flags,
+                                                              VULKAN_HPP_NAMESPACE::QueryControleFlags flags,
                                                               uint32_t                                index,
                                                               Dispatch const &                        d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
-    d.vkCmdBeginQueryIndexedEXT( m_commandBuffer, static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControlFlags>( flags ), index );
+    d.vkCmdBeginQueryIndexedEXT( m_commandBuffer, static_cast<VkQueryPool>( queryPool ), query, static_cast<VkQueryControleFlags>( flags ), index );
   }
 
   template <typename Dispatch>
@@ -13178,29 +13178,29 @@ namespace VULKAN_HPP_NAMESPACE
   //=== VK_EXT_display_control ===
 
   template <typename Dispatch>
-  VULKAN_HPP_NODISCARD VULKAN_HPP_INLINE Result Device::displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
+  VULKAN_HPP_NODISCARD VULKAN_HPP_INLINE Result Device::displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
                                                                                 const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT * pDisplayPowerInfo,
                                                                                 Dispatch const &                                  d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
     return static_cast<Result>(
-      d.vkDisplayPowerControlEXT( m_device, static_cast<VkDisplayKHR>( display ), reinterpret_cast<const VkDisplayPowerInfoEXT *>( pDisplayPowerInfo ) ) );
+      d.vkDisplayPowerControleEXT( m_device, static_cast<VkDisplayKHR>( display ), reinterpret_cast<const VkDisplayPowerInfoEXT *>( pDisplayPowerInfo ) ) );
   }
 
 #ifndef VULKAN_HPP_DISABLE_ENHANCED_MODE
   template <typename Dispatch>
-  VULKAN_HPP_INLINE typename ResultValueType<void>::type Device::displayPowerControlEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
+  VULKAN_HPP_INLINE typename ResultValueType<void>::type Device::displayPowerControleEXT( VULKAN_HPP_NAMESPACE::DisplayKHR                  display,
                                                                                          const VULKAN_HPP_NAMESPACE::DisplayPowerInfoEXT & displayPowerInfo,
                                                                                          Dispatch const &                                  d ) const
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
 #  if ( VULKAN_HPP_DISPATCH_LOADER_DYNAMIC == 1 )
-    VULKAN_HPP_ASSERT( d.vkDisplayPowerControlEXT && "Function <vkDisplayPowerControlEXT> requires <VK_EXT_display_control>" );
+    VULKAN_HPP_ASSERT( d.vkDisplayPowerControleEXT && "Function <vkDisplayPowerControleEXT> requires <VK_EXT_display_control>" );
 #  endif
 
     VULKAN_HPP_NAMESPACE::Result result = static_cast<VULKAN_HPP_NAMESPACE::Result>(
-      d.vkDisplayPowerControlEXT( m_device, static_cast<VkDisplayKHR>( display ), reinterpret_cast<const VkDisplayPowerInfoEXT *>( &displayPowerInfo ) ) );
-    VULKAN_HPP_NAMESPACE::detail::resultCheck( result, VULKAN_HPP_NAMESPACE_STRING "::Device::displayPowerControlEXT" );
+      d.vkDisplayPowerControleEXT( m_device, static_cast<VkDisplayKHR>( display ), reinterpret_cast<const VkDisplayPowerInfoEXT *>( &displayPowerInfo ) ) );
+    VULKAN_HPP_NAMESPACE::detail::resultCheck( result, VULKAN_HPP_NAMESPACE_STRING "::Device::displayPowerControleEXT" );
 
     return VULKAN_HPP_NAMESPACE::detail::createResultValueType( result );
   }
@@ -23294,10 +23294,10 @@ namespace VULKAN_HPP_NAMESPACE
   //=== VK_EXT_extended_dynamic_state2 ===
 
   template <typename Dispatch>
-  VULKAN_HPP_INLINE void CommandBuffer::setPatchControlPointsEXT( uint32_t patchControlPoints, Dispatch const & d ) const VULKAN_HPP_NOEXCEPT
+  VULKAN_HPP_INLINE void CommandBuffer::setPatchControlePointsEXT( uint32_t patchControlePoints, Dispatch const & d ) const VULKAN_HPP_NOEXCEPT
   {
     VULKAN_HPP_ASSERT( d.getVkHeaderVersion() == VK_HEADER_VERSION );
-    d.vkCmdSetPatchControlPointsEXT( m_commandBuffer, patchControlPoints );
+    d.vkCmdSetPatchControlePointsEXT( m_commandBuffer, patchControlePoints );
   }
 
   template <typename Dispatch>

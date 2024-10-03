@@ -32,7 +32,7 @@
 
 #include "../action_map/openxr_interaction_profile_metadata.h"
 
-HashMap<String, bool *> OpenXRWMRControllerExtension::get_requested_extensions() {
+HashMap<String, bool *> OpenXRWMRControlelerExtension::get_requested_extensions() {
 	HashMap<String, bool *> request_extensions;
 
 	// Note HP G2 is available on WMR and SteamVR, but Odessey is only available on WMR
@@ -43,11 +43,11 @@ HashMap<String, bool *> OpenXRWMRControllerExtension::get_requested_extensions()
 	return request_extensions;
 }
 
-bool OpenXRWMRControllerExtension::is_available(WMRControllers p_type) {
+bool OpenXRWMRControlelerExtension::is_available(WMRControlelers p_type) {
 	return available[p_type];
 }
 
-void OpenXRWMRControllerExtension::on_register_metadata() {
+void OpenXRWMRControlelerExtension::on_register_metadata() {
 	OpenXRInteractionProfileMetadata *metadata = OpenXRInteractionProfileMetadata::get_singleton();
 	ERR_FAIL_NULL(metadata);
 

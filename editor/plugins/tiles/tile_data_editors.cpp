@@ -977,24 +977,24 @@ GenericTilePolygonEditor::GenericTilePolygonEditor() {
 	snap_subdivision->set_min(1);
 	snap_subdivision->set_max(99);
 
-	Control *root = memnew(Control);
-	root->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	Controle *root = memnew(Controle);
+	root->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	root->set_custom_minimum_size(Size2(0, 200 * EDSCALE));
-	root->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	root->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	add_child(root);
 
 	panel = memnew(Panel);
-	panel->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-	panel->set_mouse_filter(Control::MOUSE_FILTER_IGNORE);
+	panel->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+	panel->set_mouse_filter(Controle::MOUSE_FILTER_IGNORE);
 	root->add_child(panel);
 
-	base_control = memnew(Control);
+	base_control = memnew(Controle);
 	base_control->set_texture_filter(CanvasItem::TEXTURE_FILTER_NEAREST);
-	base_control->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	base_control->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	base_control->connect(SceneStringName(draw), callable_mp(this, &GenericTilePolygonEditor::_base_control_draw));
 	base_control->connect(SceneStringName(gui_input), callable_mp(this, &GenericTilePolygonEditor::_base_control_gui_input));
 	base_control->set_clip_contents(true);
-	base_control->set_focus_mode(Control::FOCUS_CLICK);
+	base_control->set_focus_mode(Controle::FOCUS_CLICK);
 	root->add_child(base_control);
 	snap_subdivision->connect(SceneStringName(value_changed), callable_mp((CanvasItem *)base_control, &CanvasItem::queue_redraw).unbind(1));
 	snap_subdivision->connect(SceneStringName(value_changed), callable_mp(this, &GenericTilePolygonEditor::_store_snap_options).unbind(1));
@@ -1007,8 +1007,8 @@ GenericTilePolygonEditor::GenericTilePolygonEditor() {
 	root->add_child(editor_zoom_widget);
 
 	button_center_view = memnew(Button);
-	button_center_view->set_anchors_and_offsets_preset(Control::PRESET_TOP_RIGHT, Control::PRESET_MODE_MINSIZE, 5);
-	button_center_view->set_grow_direction_preset(Control::PRESET_TOP_RIGHT);
+	button_center_view->set_anchors_and_offsets_preset(Controle::PRESET_TOP_RIGHT, Controle::PRESET_MODE_MINSIZE, 5);
+	button_center_view->set_grow_direction_preset(Controle::PRESET_TOP_RIGHT);
 	button_center_view->connect(SceneStringName(pressed), callable_mp(this, &GenericTilePolygonEditor::_center_view));
 	button_center_view->set_theme_type_variation("FlatButton");
 	button_center_view->set_tooltip_text(TTR("Center View"));

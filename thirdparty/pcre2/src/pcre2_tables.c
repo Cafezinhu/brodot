@@ -188,7 +188,7 @@ are implementing).
 const uint32_t PRIV(ucp_gbtable)[] = {
    (1u<<ucp_gbLF),                                      /*  0 CR */
    0,                                                   /*  1 LF */
-   0,                                                   /*  2 Control */
+   0,                                                   /*  2 Controle */
    ESZ,                                                 /*  3 Extend */
    ESZ|(1u<<ucp_gbPrepend)|                             /*  4 Prepend */
        (1u<<ucp_gbL)|(1u<<ucp_gbV)|(1u<<ucp_gbT)|

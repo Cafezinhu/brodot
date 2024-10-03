@@ -222,7 +222,7 @@ void Builder::postProcess(Instruction& inst)
     case OpDPdxCoarse:
     case OpDPdyCoarse:
     case OpFwidthCoarse:
-        addCapability(CapabilityDerivativeControl);
+        addCapability(CapabilityDerivativeControle);
         break;
 
     case OpImageQueryLod:

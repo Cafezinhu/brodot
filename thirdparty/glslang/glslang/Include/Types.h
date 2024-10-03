@@ -827,7 +827,7 @@ public:
         switch (language) {
         case EShLangGeometry:
             return isPipeInput();
-        case EShLangTessControl:
+        case EShLangTessControle:
             return ! patch && (isPipeInput() || isPipeOutput());
         case EShLangTessEvaluation:
             return ! patch && isPipeInput();

@@ -5117,7 +5117,7 @@ for (;;)
     return code;
     }
   }
-/* Control never reaches here */
+/* Controle never reaches here */
 }
 
 
@@ -8335,7 +8335,7 @@ for (;; pptr++)
     }         /* End of big switch */
   }           /* End of big loop */
 
-/* Control never reaches here. */
+/* Controle never reaches here. */
 }
 
 
@@ -8640,7 +8640,7 @@ for (;;)
   lookbehindlength = META_DATA(*pptr);
   pptr++;
   }
-/* Control never reaches here */
+/* Controle never reaches here */
 }
 
 
@@ -9335,7 +9335,7 @@ for (;; pptr++)
   if (meta >= sizeof(meta_extra_lengths)) return NULL;
   pptr += meta_extra_lengths[meta];
   }
-/* Control never reaches here */
+/* Controle never reaches here */
 return pptr;
 }
 
@@ -10946,7 +10946,7 @@ if ((re->overall_options & PCRE2_NO_START_OPTIMIZE) == 0)
   if (re->minlength < minminlength) re->minlength = minminlength;
   }   /* End of start-of-match optimizations. */
 
-/* Control ends up here in all cases. When running under valgrind, make a
+/* Controle ends up here in all cases. When running under valgrind, make a
 pattern's terminating zero defined again. If memory was obtained for the parsed
 version of the pattern, free it before returning. Also free the list of named
 groups if a larger one had to be obtained, and likewise the group information

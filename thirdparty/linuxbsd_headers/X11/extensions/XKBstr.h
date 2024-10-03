@@ -266,7 +266,7 @@ typedef	union _XkbAction {
 	unsigned char 		type;
 } XkbAction;
 
-typedef	struct _XkbControls {
+typedef	struct _XkbControles {
 	unsigned char	mk_dflt_btn;
 	unsigned char	num_groups;
 	unsigned char	groups_wrap;
@@ -289,7 +289,7 @@ typedef	struct _XkbControls {
 	unsigned int	axt_ctrls_mask;
 	unsigned int	axt_ctrls_values;
 	unsigned char	per_key_repeat[XkbPerKeyBitArraySize];
-} XkbControlsRec, *XkbControlsPtr;
+} XkbControlesRec, *XkbControlesPtr;
 
 #define	XkbAX_AnyFeedback(c)	((c)->enabled_ctrls&XkbAccessXFeedbackMask)
 #define	XkbAX_NeedOption(c,w)	((c)->ax_options&(w))
@@ -447,7 +447,7 @@ typedef	struct _XkbDesc {
 	KeyCode			min_key_code;
 	KeyCode			max_key_code;
 
-	XkbControlsPtr		ctrls;
+	XkbControlesPtr		ctrls;
 	XkbServerMapPtr		server;
 	XkbClientMapPtr		map;
 	XkbIndicatorPtr		indicators;
@@ -506,11 +506,11 @@ typedef struct _XkbMapChanges {
 	unsigned short		 vmods;
 } XkbMapChangesRec,*XkbMapChangesPtr;
 
-typedef struct _XkbControlsChanges {
+typedef struct _XkbControlesChanges {
 	unsigned int 		 changed_ctrls;
 	unsigned int		 enabled_ctrls_changes;
 	Bool			 num_groups_changed;
-} XkbControlsChangesRec,*XkbControlsChangesPtr;
+} XkbControlesChangesRec,*XkbControlesChangesPtr;
 
 typedef struct _XkbIndicatorChanges {
 	unsigned int		 state_changes;
@@ -542,7 +542,7 @@ typedef struct _XkbChanges {
 	unsigned short		 device_spec;
 	unsigned short		 state_changes;
 	XkbMapChangesRec	 map;
-	XkbControlsChangesRec	 ctrls;
+	XkbControlesChangesRec	 ctrls;
 	XkbIndicatorChangesRec	 indicators;
 	XkbNameChangesRec	 names;
 	XkbCompatChangesRec	 compat;

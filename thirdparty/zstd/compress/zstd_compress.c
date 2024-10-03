@@ -1931,7 +1931,7 @@ static void ZSTD_invalidateMatchState(ZSTD_matchState_t* ms)
 }
 
 /**
- * Controls, for this matchState reset, whether the tables need to be cleared /
+ * Controles, for this matchState reset, whether the tables need to be cleared /
  * prepared for the coming compression (ZSTDcrp_makeClean), or whether the
  * tables can be left unclean (ZSTDcrp_leaveDirty), because we know that a
  * subsequent operation will overwrite the table space anyways (e.g., copying
@@ -1943,7 +1943,7 @@ typedef enum {
 } ZSTD_compResetPolicy_e;
 
 /**
- * Controls, for this matchState reset, whether indexing can continue where it
+ * Controles, for this matchState reset, whether indexing can continue where it
  * left off (ZSTDirp_continue), or whether it needs to be restarted from zero
  * (ZSTDirp_reset).
  */

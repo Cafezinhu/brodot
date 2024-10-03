@@ -83,7 +83,7 @@ private:
 		Label *message_label = nullptr;
 		Label *message_count_label = nullptr;
 	};
-	HashMap<Control *, Toast> toasts;
+	HashMap<Controle *, Toast> toasts;
 
 	bool is_processing_error = false; // Makes sure that we don't handle errors that are triggered within the EditorToaster error processing.
 
@@ -96,12 +96,12 @@ private:
 	void _auto_hide_or_free_toasts();
 
 	void _draw_button();
-	void _draw_progress(Control *panel);
+	void _draw_progress(Controle *panel);
 
 	void _set_notifications_enabled(bool p_enabled);
 	void _repop_old();
 	void _popup_str(const String &p_message, Severity p_severity, const String &p_tooltip);
-	void _close_button_theme_changed(Control *p_close_button);
+	void _close_button_theme_changed(Controle *p_close_button);
 
 protected:
 	static EditorToaster *singleton;
@@ -111,9 +111,9 @@ protected:
 public:
 	static EditorToaster *get_singleton();
 
-	Control *popup(Control *p_control, Severity p_severity = SEVERITY_INFO, double p_time = 0.0, const String &p_tooltip = String());
+	Controle *popup(Controle *p_control, Severity p_severity = SEVERITY_INFO, double p_time = 0.0, const String &p_tooltip = String());
 	void popup_str(const String &p_message, Severity p_severity = SEVERITY_INFO, const String &p_tooltip = String());
-	void close(Control *p_control);
+	void close(Controle *p_control);
 
 	EditorToaster();
 	~EditorToaster();

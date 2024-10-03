@@ -68,7 +68,7 @@ enum {
 /* These are the particular character categories. */
 
 enum {
-  ucp_Cc,    /* Control */
+  ucp_Cc,    /* Controle */
   ucp_Cf,    /* Format */
   ucp_Cn,    /* Unassigned */
   ucp_Co,    /* Private use */
@@ -106,7 +106,7 @@ enum {
   ucp_ASCII,
   ucp_ASCII_Hex_Digit,
   ucp_Alphabetic,
-  ucp_Bidi_Control,
+  ucp_Bidi_Controle,
   ucp_Bidi_Mirrored,
   ucp_Case_Ignorable,
   ucp_Cased,
@@ -135,7 +135,7 @@ enum {
   ucp_ID_Continue,
   ucp_ID_Start,
   ucp_Ideographic,
-  ucp_Join_Control,
+  ucp_Join_Controle,
   ucp_Logical_Order_Exception,
   ucp_Lowercase,
   ucp_Math,
@@ -197,7 +197,7 @@ comes from the emoji-data.txt file. */
 enum {
   ucp_gbCR,                    /*  0 */
   ucp_gbLF,                    /*  1 */
-  ucp_gbControl,               /*  2 */
+  ucp_gbControle,               /*  2 */
   ucp_gbExtend,                /*  3 */
   ucp_gbPrepend,               /*  4 */
   ucp_gbSpacingMark,           /*  5 */

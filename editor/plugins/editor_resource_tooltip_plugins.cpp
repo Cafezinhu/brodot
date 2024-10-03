@@ -88,8 +88,8 @@ bool EditorResourceTooltipPlugin::handles(const String &p_resource_type) const {
 	return ret;
 }
 
-Control *EditorResourceTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const {
-	Control *ret = nullptr;
+Controle *EditorResourceTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const {
+	Controle *ret = nullptr;
 	GDVIRTUAL_CALL(_make_tooltip_for_path, p_resource_path, p_metadata, p_base, ret);
 	return ret;
 }
@@ -100,7 +100,7 @@ bool EditorTextureTooltipPlugin::handles(const String &p_resource_type) const {
 	return ClassDB::is_parent_class(p_resource_type, "Texture2D") || ClassDB::is_parent_class(p_resource_type, "Image");
 }
 
-Control *EditorTextureTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const {
+Controle *EditorTextureTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const {
 	HBoxContainer *hb = memnew(HBoxContainer);
 	VBoxContainer *vb = Object::cast_to<VBoxContainer>(p_base);
 	DEV_ASSERT(vb);
@@ -111,7 +111,7 @@ Control *EditorTextureTooltipPlugin::make_tooltip_for_path(const String &p_resou
 	vb->add_child(label);
 
 	TextureRect *tr = memnew(TextureRect);
-	tr->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+	tr->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 	hb->add_child(tr);
 	request_thumbnail(p_resource_path, tr);
 
@@ -125,7 +125,7 @@ bool EditorAudioStreamTooltipPlugin::handles(const String &p_resource_type) cons
 	return ClassDB::is_parent_class(p_resource_type, "AudioStream");
 }
 
-Control *EditorAudioStreamTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Control *p_base) const {
+Controle *EditorAudioStreamTooltipPlugin::make_tooltip_for_path(const String &p_resource_path, const Dictionary &p_metadata, Controle *p_base) const {
 	VBoxContainer *vb = Object::cast_to<VBoxContainer>(p_base);
 	DEV_ASSERT(vb);
 

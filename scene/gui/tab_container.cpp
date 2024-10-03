@@ -199,7 +199,7 @@ void TabContainer::_notification(int p_what) {
 			// As the visibility change notification will be triggered for all children soon after,
 			// beat it to the punch and make sure that the correct node is the only one visible first.
 			// Otherwise, it can prevent a tab change done right before this container was made visible.
-			Vector<Control *> controls = _get_tab_controls();
+			Vector<Controle *> controls = _get_tab_controls();
 			int current = get_current_tab();
 			for (int i = 0; i < controls.size(); i++) {
 				controls[i]->set_visible(i == current);
@@ -264,7 +264,7 @@ void TabContainer::_on_theme_changed() {
 }
 
 void TabContainer::_repaint() {
-	Vector<Control *> controls = _get_tab_controls();
+	Vector<Controle *> controls = _get_tab_controls();
 	int current = get_current_tab();
 
 	// Move the TabBar to the top or bottom.
@@ -279,11 +279,11 @@ void TabContainer::_repaint() {
 
 	updating_visibility = true;
 	for (int i = 0; i < controls.size(); i++) {
-		Control *c = controls[i];
+		Controle *c = controls[i];
 
 		if (i == current) {
 			c->show();
-			c->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+			c->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 			if (tabs_visible) {
 				if (tabs_position == POSITION_BOTTOM) {
@@ -362,10 +362,10 @@ void TabContainer::_on_mouse_exited() {
 	}
 }
 
-Vector<Control *> TabContainer::_get_tab_controls() const {
-	Vector<Control *> controls;
+Vector<Controle *> TabContainer::_get_tab_controls() const {
+	Vector<Controle *> controls;
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *control = as_sortable_control(get_child(i), SortableVisbilityMode::IGNORE);
+		Controle *control = as_sortable_control(get_child(i), SortableVisbilityMode::IGNORE);
 		if (!control || control == tab_bar || children_removing.has(control)) {
 			continue;
 		}
@@ -376,21 +376,21 @@ Vector<Control *> TabContainer::_get_tab_controls() const {
 	return controls;
 }
 
-Variant TabContainer::_get_drag_data_fw(const Point2 &p_point, Control *p_from_control) {
+Variant TabContainer::_get_drag_data_fw(const Point2 &p_point, Controle *p_from_control) {
 	if (!drag_to_rearrange_enabled) {
 		return Variant();
 	}
 	return tab_bar->_handle_get_drag_data("tab_container_tab", p_point);
 }
 
-bool TabContainer::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) const {
+bool TabContainer::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) const {
 	if (!drag_to_rearrange_enabled) {
 		return false;
 	}
 	return tab_bar->_handle_can_drop_data("tab_container_tab", p_point, p_data);
 }
 
-void TabContainer::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from_control) {
+void TabContainer::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from_control) {
 	if (!drag_to_rearrange_enabled) {
 		return;
 	}
@@ -428,7 +428,7 @@ void TabContainer::move_tab_from_tab_container(TabContainer *p_from, int p_from_
 	Variant tab_metadata = p_from->get_tab_metadata(p_from_index);
 	int tab_icon_max_width = p_from->get_tab_bar()->get_tab_icon_max_width(p_from_index);
 
-	Control *moving_tabc = p_from->get_tab_control(p_from_index);
+	Controle *moving_tabc = p_from->get_tab_control(p_from_index);
 	p_from->remove_child(moving_tabc);
 	add_child(moving_tabc, true);
 
@@ -482,7 +482,7 @@ void TabContainer::_on_active_tab_rearranged(int p_tab) {
 	emit_signal(SNAME("active_tab_rearranged"), p_tab);
 }
 
-void TabContainer::_on_tab_visibility_changed(Control *p_child) {
+void TabContainer::_on_tab_visibility_changed(Controle *p_child) {
 	if (updating_visibility) {
 		return;
 	}
@@ -520,14 +520,14 @@ void TabContainer::_on_tab_visibility_changed(Control *p_child) {
 }
 
 void TabContainer::_refresh_tab_indices() {
-	Vector<Control *> controls = _get_tab_controls();
+	Vector<Controle *> controls = _get_tab_controls();
 	for (int i = 0; i < controls.size(); i++) {
 		controls[i]->set_meta("_tab_index", i);
 	}
 }
 
 void TabContainer::_refresh_tab_names() {
-	Vector<Control *> controls = _get_tab_controls();
+	Vector<Controle *> controls = _get_tab_controls();
 	for (int i = 0; i < controls.size(); i++) {
 		if (!controls[i]->has_meta("_tab_name") && String(controls[i]->get_name()) != get_tab_title(i)) {
 			tab_bar->set_tab_title(i, controls[i]->get_name());
@@ -542,7 +542,7 @@ void TabContainer::add_child_notify(Node *p_child) {
 		return;
 	}
 
-	Control *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
+	Controle *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
 	if (!c) {
 		return;
 	}
@@ -572,7 +572,7 @@ void TabContainer::move_child_notify(Node *p_child) {
 		return;
 	}
 
-	Control *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
+	Controle *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
 	if (c) {
 		tab_bar->move_tab(c->get_meta("_tab_index"), get_tab_idx_from_control(c));
 	}
@@ -587,7 +587,7 @@ void TabContainer::remove_child_notify(Node *p_child) {
 		return;
 	}
 
-	Control *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
+	Controle *c = as_sortable_control(p_child, SortableVisbilityMode::IGNORE);
 	if (!c) {
 		return;
 	}
@@ -659,8 +659,8 @@ bool TabContainer::get_deselect_enabled() const {
 	return tab_bar->get_deselect_enabled();
 }
 
-Control *TabContainer::get_tab_control(int p_idx) const {
-	Vector<Control *> controls = _get_tab_controls();
+Controle *TabContainer::get_tab_control(int p_idx) const {
+	Vector<Controle *> controls = _get_tab_controls();
 	if (p_idx >= 0 && p_idx < controls.size()) {
 		return controls[p_idx];
 	} else {
@@ -668,7 +668,7 @@ Control *TabContainer::get_tab_control(int p_idx) const {
 	}
 }
 
-Control *TabContainer::get_current_tab_control() const {
+Controle *TabContainer::get_current_tab_control() const {
 	return get_tab_control(tab_bar->get_current_tab());
 }
 
@@ -676,11 +676,11 @@ int TabContainer::get_tab_idx_at_point(const Point2 &p_point) const {
 	return tab_bar->get_tab_idx_at_point(p_point);
 }
 
-int TabContainer::get_tab_idx_from_control(Control *p_child) const {
+int TabContainer::get_tab_idx_from_control(Controle *p_child) const {
 	ERR_FAIL_NULL_V(p_child, -1);
 	ERR_FAIL_COND_V(p_child->get_parent() != this, -1);
 
-	Vector<Control *> controls = _get_tab_controls();
+	Vector<Controle *> controls = _get_tab_controls();
 	for (int i = 0; i < controls.size(); i++) {
 		if (controls[i] == p_child) {
 			return i;
@@ -720,11 +720,11 @@ TabContainer::TabPosition TabContainer::get_tabs_position() const {
 	return tabs_position;
 }
 
-void TabContainer::set_tab_focus_mode(Control::FocusMode p_focus_mode) {
+void TabContainer::set_tab_focus_mode(Controle::FocusMode p_focus_mode) {
 	tab_bar->set_focus_mode(p_focus_mode);
 }
 
-Control::FocusMode TabContainer::get_tab_focus_mode() const {
+Controle::FocusMode TabContainer::get_tab_focus_mode() const {
 	return tab_bar->get_focus_mode();
 }
 
@@ -768,7 +768,7 @@ bool TabContainer::is_all_tabs_in_front() const {
 }
 
 void TabContainer::set_tab_title(int p_tab, const String &p_title) {
-	Control *child = get_tab_control(p_tab);
+	Controle *child = get_tab_control(p_tab);
 	ERR_FAIL_NULL(child);
 
 	if (tab_bar->get_tab_title(p_tab) == p_title) {
@@ -849,7 +849,7 @@ bool TabContainer::is_tab_disabled(int p_tab) const {
 }
 
 void TabContainer::set_tab_hidden(int p_tab, bool p_hidden) {
-	Control *child = get_tab_control(p_tab);
+	Controle *child = get_tab_control(p_tab);
 	ERR_FAIL_NULL(child);
 
 	if (tab_bar->is_tab_hidden(p_tab) == p_hidden) {
@@ -907,10 +907,10 @@ Size2 TabContainer::get_minimum_size() const {
 		}
 	}
 
-	Vector<Control *> controls = _get_tab_controls();
+	Vector<Controle *> controls = _get_tab_controls();
 	Size2 largest_child_min_size;
 	for (int i = 0; i < controls.size(); i++) {
-		Control *c = controls[i];
+		Controle *c = controls[i];
 
 		if (!c->is_visible() && !use_hidden_tabs_for_min_size) {
 			continue;
@@ -1116,7 +1116,7 @@ TabContainer::TabContainer() {
 	tab_bar = memnew(TabBar);
 	SET_DRAG_FORWARDING_GCDU(tab_bar, TabContainer);
 	add_child(tab_bar, false, INTERNAL_MODE_FRONT);
-	tab_bar->set_anchors_and_offsets_preset(Control::PRESET_TOP_WIDE);
+	tab_bar->set_anchors_and_offsets_preset(Controle::PRESET_TOP_WIDE);
 	tab_bar->connect("tab_changed", callable_mp(this, &TabContainer::_on_tab_changed));
 	tab_bar->connect("tab_clicked", callable_mp(this, &TabContainer::_on_tab_clicked));
 	tab_bar->connect("tab_hovered", callable_mp(this, &TabContainer::_on_tab_hovered));

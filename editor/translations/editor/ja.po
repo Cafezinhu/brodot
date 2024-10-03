@@ -1821,10 +1821,10 @@ msgstr "消費量"
 msgid "Misc"
 msgstr "その他"
 
-msgid "Clicked Control:"
+msgid "Clicked Controle:"
 msgstr "クリックされたコントロール:"
 
-msgid "Clicked Control Type:"
+msgid "Clicked Controle Type:"
 msgstr "クリックされたコントロールのタイプ:"
 
 msgid "Live Edit Root:"
@@ -3914,7 +3914,7 @@ msgstr "プロジェクト設定..."
 msgid "Project Settings"
 msgstr "プロジェクト設定"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "バージョンコントロール"
 
 msgid "Export..."
@@ -4110,10 +4110,10 @@ msgstr "ローカルの変更を破棄してリロード"
 msgid "Keep local changes and overwrite"
 msgstr "ローカルの変更を保持して上書き"
 
-msgid "Create/Override Version Control Metadata..."
+msgid "Create/Override Version Controle Metadata..."
 msgstr "バージョン管理用メタデータの作成/上書き..."
 
-msgid "Version Control Settings..."
+msgid "Version Controle Settings..."
 msgstr "バージョン管理設定..."
 
 msgid "New Inherited"
@@ -6415,14 +6415,14 @@ msgstr "追加のオプション"
 msgid "Device:"
 msgstr "デバイス:"
 
-msgid "Command / Control (auto)"
-msgstr "Command / Control (自動)"
+msgid "Command / Controle (auto)"
+msgstr "Command / Controle (自動)"
 
 msgid ""
-"Automatically remaps between 'Meta' ('Command') and 'Control' depending on "
+"Automatically remaps between 'Meta' ('Command') and 'Controle' depending on "
 "current platform."
 msgstr ""
-"現在のプラットフォームに応じて、'Meta' ('Command') と 'Control' の間で自動的に"
+"現在のプラットフォームに応じて、'Meta' ('Command') と 'Controle' の間で自動的に"
 "再マップします。"
 
 msgid "Keycode (Latin Equivalent)"
@@ -6577,8 +6577,8 @@ msgstr "POTを生成"
 msgid "Add Built-in Strings to POT"
 msgstr "組み込み文字列をPOTに追加"
 
-msgid "Add strings from built-in components such as certain Control nodes."
-msgstr "特定のControlノードなどの組み込みコンポーネントから文字列を追加する。"
+msgid "Add strings from built-in components such as certain Controle nodes."
+msgstr "特定のControleノードなどの組み込みコンポーネントから文字列を追加する。"
 
 msgid "Set %s on %d nodes"
 msgstr "%d ノードに %s を設定"
@@ -7492,8 +7492,8 @@ msgstr "CanvasItem \"%s\" のアンカーを移動"
 msgid "Scale Node2D \"%s\" to (%s, %s)"
 msgstr "Node2D \"%s\" を (%s, %s) にスケールします"
 
-msgid "Resize Control \"%s\" to (%d, %d)"
-msgstr "Control \"%s\" を (%d, %d) にリサイズします"
+msgid "Resize Controle \"%s\" to (%d, %d)"
+msgstr "Controle \"%s\" を (%d, %d) にリサイズします"
 
 msgid "Scale %d CanvasItems"
 msgstr "%d 個の CanvasItem を拡大縮小"
@@ -8052,7 +8052,7 @@ msgstr "垂直の拡張フラグの変更"
 msgid "Change Horizontal Expand Flag"
 msgstr "水平の拡張フラグの変更"
 
-msgid "Presets for the anchor and offset values of a Control node."
+msgid "Presets for the anchor and offset values of a Controle node."
 msgstr "コントロールノードのアンカーおよびオフセットの値のプリセット。"
 
 msgid "Anchor preset"
@@ -8065,7 +8065,7 @@ msgid "Adjust anchors and offsets to match the current rect size."
 msgstr "アンカーとオフセットを調整して、現在の矩形サイズに合わせます。"
 
 msgid ""
-"When active, moving Control nodes changes their anchors instead of their "
+"When active, moving Controle nodes changes their anchors instead of their "
 "offsets."
 msgstr ""
 "オンの場合、コントロールノードを移動すると、オフセットの代わりにアンカーが変更"
@@ -9685,11 +9685,11 @@ msgstr "最小値/最大値モードと基本値/スプレッドモードを切�
 msgid "Remove Point from Curve"
 msgstr "曲線からポイントを除去"
 
-msgid "Remove Out-Control from Curve"
-msgstr "曲線からOut-Controlを削除"
+msgid "Remove Out-Controle from Curve"
+msgstr "曲線からOut-Controleを削除"
 
-msgid "Remove In-Control from Curve"
-msgstr "曲線からIn-Controlを削除"
+msgid "Remove In-Controle from Curve"
+msgstr "曲線からIn-Controleを削除"
 
 msgid "Move Point in Curve"
 msgstr "曲線内の点を移動"
@@ -9700,11 +9700,11 @@ msgstr "点を曲線に追加"
 msgid "Split Curve"
 msgstr "曲線を分割する"
 
-msgid "Move In-Control in Curve"
-msgstr "曲線内のIn-Controlを移動する"
+msgid "Move In-Controle in Curve"
+msgstr "曲線内のIn-Controleを移動する"
 
-msgid "Move Out-Control in Curve"
-msgstr "曲線内のOut-Controlを移動する"
+msgid "Move Out-Controle in Curve"
+msgstr "曲線内のOut-Controleを移動する"
 
 msgid "Close the Curve"
 msgstr "曲線を閉じる"
@@ -9715,7 +9715,7 @@ msgstr "カーブポイントをクリア"
 msgid "Select Points"
 msgstr "ポイントを選択"
 
-msgid "Shift+Drag: Select Control Points"
+msgid "Shift+Drag: Select Controle Points"
 msgstr "Shift+ドラッグ: コントロールポイントを選択"
 
 msgid "Click: Add Point"
@@ -9727,7 +9727,7 @@ msgstr "左クリック: セグメントの分割 (曲線内)"
 msgid "Right Click: Delete Point"
 msgstr "右クリック: ポイントの削除"
 
-msgid "Select Control Points (Shift+Drag)"
+msgid "Select Controle Points (Shift+Drag)"
 msgstr "コントロールポイントを選ぶ (Shift+ドラッグ)"
 
 msgid "Add Point (in empty space)"
@@ -9770,10 +9770,10 @@ msgid "Set Curve Point Position"
 msgstr "カーブポイントの位置を設定"
 
 msgid "Set Curve Out Position"
-msgstr "曲線のOut-Controlの位置を指定"
+msgstr "曲線のOut-Controleの位置を指定"
 
 msgid "Set Curve In Position"
-msgstr "曲線のIn-Controlの位置を指定"
+msgstr "曲線のIn-Controleの位置を指定"
 
 msgid "Set Curve Point Tilt"
 msgstr "カーブポイントのTiltを設定"
@@ -9784,11 +9784,11 @@ msgstr "パスを分割"
 msgid "Remove Path Point"
 msgstr "パスのポイントを除去"
 
-msgid "Reset Out-Control Point"
-msgstr "Out-Controlポイントをリセット"
+msgid "Reset Out-Controle Point"
+msgstr "Out-Controleポイントをリセット"
 
-msgid "Reset In-Control Point"
-msgstr "In-Controlポイントをリセット"
+msgid "Reset In-Controle Point"
+msgstr "In-Controleポイントをリセット"
 
 msgid "Reset Point Tilt"
 msgstr "ポイントの傾きをリセット"
@@ -9796,10 +9796,10 @@ msgstr "ポイントの傾きをリセット"
 msgid "Shift+Click: Select multiple Points"
 msgstr "Shift+クリック: 複数のポイントを選択"
 
-msgid "Select Control Points"
+msgid "Select Controle Points"
 msgstr "コントロールポイントを選択"
 
-msgid "Shift+Click: Drag out Control Points"
+msgid "Shift+Click: Drag out Controle Points"
 msgstr "Shift+クリック: コントロールポイントをドラッグアウト"
 
 msgid "Select Tilt Handles"
@@ -11411,8 +11411,8 @@ msgid "Invalid path, the PackedScene resource was probably moved or removed."
 msgstr ""
 "無効なパスです。おそらくPackedSceneリソースは移動または削除されています。"
 
-msgid "Invalid PackedScene resource, must have a Control node at its root."
-msgstr "無効な PackedScene リソースです。ルートには Control ノードが必要です。"
+msgid "Invalid PackedScene resource, must have a Controle node at its root."
+msgstr "無効な PackedScene リソースです。ルートには Controle ノードが必要です。"
 
 msgid "Invalid file, not a PackedScene resource."
 msgstr "無効なファイルです。PackedScene のリソースではありません。"
@@ -12182,10 +12182,10 @@ msgstr "%s ブランチを削除しますか?"
 msgid "Do you want to remove the %s remote?"
 msgstr "リモート %s を削除しますか？"
 
-msgid "Toggle Version Control Bottom Panel"
+msgid "Toggle Version Controle Bottom Panel"
 msgstr "バージョン管理の下部パネルの切り替え"
 
-msgid "Create Version Control Metadata"
+msgid "Create Version Controle Metadata"
 msgstr "バージョン管理用メタデータの作成"
 
 msgid "Create VCS metadata files for:"
@@ -14052,7 +14052,7 @@ msgid "The renderer can be changed later, but scenes may need to be adjusted."
 msgstr ""
 "レンダラーは後で変更できますが、シーンの調整が必要となる場合があります。"
 
-msgid "Version Control Metadata:"
+msgid "Version Controle Metadata:"
 msgstr "バージョン管理メタデータ:"
 
 msgid "Git"
@@ -17368,7 +17368,7 @@ msgstr "16進数とコード値を切り替えます。"
 msgid ""
 "Container by itself serves no purpose unless a script configures its children "
 "placement behavior.\n"
-"If you don't intend to add a script, use a plain Control node instead."
+"If you don't intend to add a script, use a plain Controle node instead."
 msgstr ""
 "コンテナ自体は、スクリプトで子の配置動作を設定しない限り、何の役割も果たしませ"
 "ん。\n"
@@ -17410,11 +17410,11 @@ msgstr "「Exp Edit」がtrueの場合、「Min Value」は0より大きい必�
 
 msgid ""
 "ScrollContainer is intended to work with a single child control.\n"
-"Use a container as child (VBox, HBox, etc.), or a Control and set the custom "
+"Use a container as child (VBox, HBox, etc.), or a Controle and set the custom "
 "minimum size manually."
 msgstr ""
-"ScrollContainer はひとつの子Controlと合わせて動作するようになっています。\n"
-"コンテナ (VBox, HBoxなど) を子とするか、Controlをカスタム最小サイズを手動設定"
+"ScrollContainer はひとつの子Controleと合わせて動作するようになっています。\n"
+"コンテナ (VBox, HBoxなど) を子とするか、Controleをカスタム最小サイズを手動設定"
 "して使用してください。"
 
 msgid ""

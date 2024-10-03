@@ -618,14 +618,14 @@ EditorPlugin::AfterGUIInput Path3DEditorPlugin::forward_3d_gui_input(Camera3D *p
 					return EditorPlugin::AFTER_GUI_INPUT_STOP;
 				} else if (dist_to_p_out < click_dist) {
 					EditorUndoRedoManager *ur = EditorUndoRedoManager::get_singleton();
-					ur->create_action(TTR("Reset Out-Control Point"));
+					ur->create_action(TTR("Reset Out-Controle Point"));
 					ur->add_do_method(c.ptr(), "set_point_out", i, Vector3());
 					ur->add_undo_method(c.ptr(), "set_point_out", i, c->get_point_out(i));
 					ur->commit_action();
 					return EditorPlugin::AFTER_GUI_INPUT_STOP;
 				} else if (dist_to_p_in < click_dist) {
 					EditorUndoRedoManager *ur = EditorUndoRedoManager::get_singleton();
-					ur->create_action(TTR("Reset In-Control Point"));
+					ur->create_action(TTR("Reset In-Controle Point"));
 					ur->add_do_method(c.ptr(), "set_point_in", i, Vector3());
 					ur->add_undo_method(c.ptr(), "set_point_in", i, c->get_point_in(i));
 					ur->commit_action();
@@ -835,7 +835,7 @@ Path3DEditorPlugin::Path3DEditorPlugin() {
 	curve_edit = memnew(Button);
 	curve_edit->set_theme_type_variation("FlatButton");
 	curve_edit->set_toggle_mode(true);
-	curve_edit->set_focus_mode(Control::FOCUS_NONE);
+	curve_edit->set_focus_mode(Controle::FOCUS_NONE);
 	curve_edit->set_tooltip_text(TTR("Select Points") + "\n" + TTR("Shift+Click: Select multiple Points") + "\n" + keycode_get_string((Key)KeyModifierMask::CMD_OR_CTRL) + TTR("Click: Add Point") + "\n" + TTR("Right Click: Delete Point"));
 	toolbar->add_child(curve_edit);
 	curve_edit->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_mode_changed).bind(MODE_EDIT));
@@ -843,15 +843,15 @@ Path3DEditorPlugin::Path3DEditorPlugin() {
 	curve_edit_curve = memnew(Button);
 	curve_edit_curve->set_theme_type_variation("FlatButton");
 	curve_edit_curve->set_toggle_mode(true);
-	curve_edit_curve->set_focus_mode(Control::FOCUS_NONE);
-	curve_edit_curve->set_tooltip_text(TTR("Select Control Points") + "\n" + TTR("Shift+Click: Drag out Control Points"));
+	curve_edit_curve->set_focus_mode(Controle::FOCUS_NONE);
+	curve_edit_curve->set_tooltip_text(TTR("Select Controle Points") + "\n" + TTR("Shift+Click: Drag out Controle Points"));
 	toolbar->add_child(curve_edit_curve);
 	curve_edit_curve->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_mode_changed).bind(MODE_EDIT_CURVE));
 
 	curve_edit_tilt = memnew(Button);
 	curve_edit_tilt->set_theme_type_variation("FlatButton");
 	curve_edit_tilt->set_toggle_mode(true);
-	curve_edit_tilt->set_focus_mode(Control::FOCUS_NONE);
+	curve_edit_tilt->set_focus_mode(Controle::FOCUS_NONE);
 	curve_edit_tilt->set_tooltip_text(TTR("Select Tilt Handles"));
 	toolbar->add_child(curve_edit_tilt);
 	curve_edit_tilt->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_mode_changed).bind(MODE_EDIT_TILT));
@@ -859,7 +859,7 @@ Path3DEditorPlugin::Path3DEditorPlugin() {
 	curve_create = memnew(Button);
 	curve_create->set_theme_type_variation("FlatButton");
 	curve_create->set_toggle_mode(true);
-	curve_create->set_focus_mode(Control::FOCUS_NONE);
+	curve_create->set_focus_mode(Controle::FOCUS_NONE);
 	curve_create->set_tooltip_text(TTR("Add Point (in empty space)") + "\n" + TTR("Split Segment (in curve)"));
 	toolbar->add_child(curve_create);
 	curve_create->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_mode_changed).bind(MODE_CREATE));
@@ -867,21 +867,21 @@ Path3DEditorPlugin::Path3DEditorPlugin() {
 	curve_del = memnew(Button);
 	curve_del->set_theme_type_variation("FlatButton");
 	curve_del->set_toggle_mode(true);
-	curve_del->set_focus_mode(Control::FOCUS_NONE);
+	curve_del->set_focus_mode(Controle::FOCUS_NONE);
 	curve_del->set_tooltip_text(TTR("Delete Point"));
 	toolbar->add_child(curve_del);
 	curve_del->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_mode_changed).bind(MODE_DELETE));
 
 	curve_close = memnew(Button);
 	curve_close->set_theme_type_variation("FlatButton");
-	curve_close->set_focus_mode(Control::FOCUS_NONE);
+	curve_close->set_focus_mode(Controle::FOCUS_NONE);
 	curve_close->set_tooltip_text(TTR("Close Curve"));
 	toolbar->add_child(curve_close);
 	curve_close->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_close_curve));
 
 	curve_clear_points = memnew(Button);
 	curve_clear_points->set_theme_type_variation("FlatButton");
-	curve_clear_points->set_focus_mode(Control::FOCUS_NONE);
+	curve_clear_points->set_focus_mode(Controle::FOCUS_NONE);
 	curve_clear_points->set_tooltip_text(TTR("Clear Points"));
 	curve_clear_points->connect(SceneStringName(pressed), callable_mp(this, &Path3DEditorPlugin::_confirm_clear_points));
 	toolbar->add_child(curve_clear_points);

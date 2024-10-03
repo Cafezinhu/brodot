@@ -84,8 +84,8 @@ class ScriptCreateDialog : public ConfirmationDialog {
 	int default_language;
 	bool re_check_path = false;
 
-	Control *path_controls[2];
-	Control *name_controls[2];
+	Controle *path_controls[2];
+	Controle *name_controls[2];
 
 	Vector<ScriptLanguage::ScriptTemplate> template_list;
 	ScriptLanguage *language = nullptr;

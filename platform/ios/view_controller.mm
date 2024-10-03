@@ -40,9 +40,9 @@
 #include "core/config/project_settings.h"
 
 #import <AVFoundation/AVFoundation.h>
-#import <GameController/GameController.h>
+#import <GameControleler/GameControleler.h>
 
-@interface ViewController () <GodotViewDelegate>
+@interface ViewControleler () <GodotViewDelegate>
 
 @property(strong, nonatomic) GodotViewRenderer *renderer;
 @property(strong, nonatomic) GodotKeyboardInputView *keyboardView;
@@ -51,7 +51,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewControleler
 
 - (GodotView *)godotView {
 	return (GodotView *)self.view;
@@ -196,7 +196,7 @@
 
 	UIStoryboard *launchStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:bundle];
 
-	UIViewController *controller = [launchStoryboard instantiateInitialViewController];
+	UIViewControleler *controller = [launchStoryboard instantiateInitialViewControleler];
 	self.godotLoadingOverlay = controller.view;
 	self.godotLoadingOverlay.frame = self.view.bounds;
 	self.godotLoadingOverlay.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;

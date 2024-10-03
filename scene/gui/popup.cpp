@@ -226,7 +226,7 @@ Size2 PopupPanel::_get_contents_minimum_size() const {
 	Size2 ms;
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i));
+		Controle *c = Object::cast_to<Controle>(get_child(i));
 		if (!c || c == panel) {
 			continue;
 		}
@@ -248,7 +248,7 @@ void PopupPanel::_update_child_rects() {
 	Vector2 csize = panel_size - theme_cache.panel_style->get_minimum_size();
 
 	for (int i = 0; i < get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(get_child(i));
+		Controle *c = Object::cast_to<Controle>(get_child(i));
 		if (!c) {
 			continue;
 		}

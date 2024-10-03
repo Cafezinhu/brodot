@@ -332,7 +332,7 @@ EditorNetworkProfiler::EditorNetworkProfiler() {
 	incoming_bandwidth_text->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_RIGHT);
 	hb->add_child(incoming_bandwidth_text);
 
-	Control *down_up_spacer = memnew(Control);
+	Controle *down_up_spacer = memnew(Controle);
 	down_up_spacer->set_custom_minimum_size(Size2(30, 0) * EDSCALE);
 	hb->add_child(down_up_spacer);
 

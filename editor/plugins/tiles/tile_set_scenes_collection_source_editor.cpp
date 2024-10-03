@@ -444,7 +444,7 @@ void TileSetScenesCollectionSourceEditor::edit(Ref<TileSet> p_tile_set, TileSetS
 	_update_tile_inspector();
 }
 
-void TileSetScenesCollectionSourceEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) {
+void TileSetScenesCollectionSourceEditor::_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) {
 	if (!_can_drop_data_fw(p_point, p_data, p_from)) {
 		return;
 	}
@@ -471,7 +471,7 @@ void TileSetScenesCollectionSourceEditor::_drop_data_fw(const Point2 &p_point, c
 	}
 }
 
-bool TileSetScenesCollectionSourceEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const {
+bool TileSetScenesCollectionSourceEditor::_can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const {
 	if (p_from == scene_tiles_list) {
 		Dictionary d = p_data;
 

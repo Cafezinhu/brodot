@@ -328,7 +328,7 @@ msgstr "ツールチップの表示遅延 (秒)"
 msgid "Common"
 msgstr "一般"
 
-msgid "Snap Controls to Pixels"
+msgid "Snap Controles to Pixels"
 msgstr "コントロールをピクセル単位でスナップ"
 
 msgid "Fonts"
@@ -454,7 +454,7 @@ msgstr "デバイス"
 msgid "Window ID"
 msgstr "ウィンドウID"
 
-msgid "Command or Control Autoremap"
+msgid "Command or Controle Autoremap"
 msgstr "コマンドまたはコントロールの自動再マップ"
 
 msgid "Alt Pressed"
@@ -559,10 +559,10 @@ msgstr "ピッチ"
 msgid "Instrument"
 msgstr "楽器"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "コントローラー番号"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "コントローラー値"
 
 msgid "Shortcut"
@@ -1657,7 +1657,7 @@ msgstr "シンボルの色"
 msgid "Keyword Color"
 msgstr "キーワードの色"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "制御フローのキーワードの色"
 
 msgid "Base Type Color"
@@ -2368,7 +2368,7 @@ msgstr "代替ID"
 msgid "Speed"
 msgstr "速さ"
 
-msgid "Version Control"
+msgid "Version Controle"
 msgstr "バージョンコントロール"
 
 msgid "Username"

@@ -215,8 +215,8 @@ public:
 
 /*************************************************************************/
 
-class FontPreview : public Control {
-	GDCLASS(FontPreview, Control);
+class FontPreview : public Controle {
+	GDCLASS(FontPreview, Controle);
 
 protected:
 	void _notification(int p_what);

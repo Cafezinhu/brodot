@@ -914,13 +914,13 @@ ThemeItemImportTree::ThemeItemImportTree() {
 	import_items_filter->connect(SceneStringName(text_changed), callable_mp(this, &ThemeItemImportTree::_filter_text_changed));
 
 	HBoxContainer *import_main_hb = memnew(HBoxContainer);
-	import_main_hb->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	import_main_hb->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_child(import_main_hb);
 
 	import_items_tree = memnew(Tree);
 	import_items_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
 	import_items_tree->set_hide_root(true);
-	import_items_tree->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	import_items_tree->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	import_main_hb->add_child(import_items_tree);
 	import_items_tree->connect("item_edited", callable_mp(this, &ThemeItemImportTree::_tree_item_edited));
 	import_items_tree->connect("check_propagated_to_item", callable_mp(this, &ThemeItemImportTree::_check_propagated_to_tree_item));
@@ -944,7 +944,7 @@ ThemeItemImportTree::ThemeItemImportTree() {
 	import_bulk_sc->set_horizontal_scroll_mode(ScrollContainer::SCROLL_MODE_DISABLED);
 	import_main_hb->add_child(import_bulk_sc);
 	VBoxContainer *import_bulk_vb = memnew(VBoxContainer);
-	import_bulk_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	import_bulk_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	import_bulk_sc->add_child(import_bulk_vb);
 
 	Label *import_bulk_label = memnew(Label);
@@ -1105,11 +1105,11 @@ ThemeItemImportTree::ThemeItemImportTree() {
 		import_bulk_vb->add_child(all_set);
 
 		HBoxContainer *label_set = memnew(HBoxContainer);
-		label_set->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		label_set->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		all_set->add_child(label_set);
-		select_items_icon->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+		select_items_icon->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 		label_set->add_child(select_items_icon);
-		select_items_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+		select_items_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 		select_items_label->set_clip_text(true);
 		select_items_label->set_text(items_title);
 		label_set->add_child(select_items_label);
@@ -1139,13 +1139,13 @@ ThemeItemImportTree::ThemeItemImportTree() {
 			import_bulk_vb->add_child(select_icons_warning_hb);
 
 			select_icons_warning_icon = memnew(TextureRect);
-			select_icons_warning_icon->set_v_size_flags(Control::SIZE_SHRINK_CENTER);
+			select_icons_warning_icon->set_v_size_flags(Controle::SIZE_SHRINK_CENTER);
 			select_icons_warning_hb->add_child(select_icons_warning_icon);
 
 			select_icons_warning = memnew(Label);
 			select_icons_warning->set_text(TTR("Caution: Adding icon data may considerably increase the size of your Theme resource."));
 			select_icons_warning->set_autowrap_mode(TextServer::AUTOWRAP_WORD_SMART);
-			select_icons_warning->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+			select_icons_warning->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 			select_icons_warning_hb->add_child(select_icons_warning);
 		}
 	}
@@ -1884,7 +1884,7 @@ void ThemeItemEditorDialog::_notification(int p_what) {
 			edit_items_add_icon->set_icon(get_editor_theme_icon(SNAME("ImageTexture")));
 			edit_items_add_stylebox->set_icon(get_editor_theme_icon(SNAME("StyleBoxFlat")));
 
-			edit_items_remove_class->set_icon(get_editor_theme_icon(SNAME("Control")));
+			edit_items_remove_class->set_icon(get_editor_theme_icon(SNAME("Controle")));
 			edit_items_remove_custom->set_icon(get_editor_theme_icon(SNAME("ThemeRemoveCustomItems")));
 			edit_items_remove_all->set_icon(get_editor_theme_icon(SNAME("ThemeRemoveAllItems")));
 
@@ -1933,7 +1933,7 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 	edit_type_list->set_hide_root(true);
 	edit_type_list->set_hide_folding(true);
 	edit_type_list->set_columns(1);
-	edit_type_list->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	edit_type_list->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	edit_dialog_side_vb->add_child(edit_type_list);
 	edit_type_list->connect(SceneStringName(item_selected), callable_mp(this, &ThemeItemEditorDialog::_edited_type_selected));
 	edit_type_list->connect("button_clicked", callable_mp(this, &ThemeItemEditorDialog::_edited_type_button_pressed));
@@ -1945,7 +1945,7 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 	HBoxContainer *edit_add_type_hb = memnew(HBoxContainer);
 	edit_dialog_side_vb->add_child(edit_add_type_hb);
 	edit_add_type_value = memnew(LineEdit);
-	edit_add_type_value->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	edit_add_type_value->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	edit_add_type_value->connect("text_submitted", callable_mp(this, &ThemeItemEditorDialog::_add_theme_type));
 	edit_add_type_hb->add_child(edit_add_type_value);
 	edit_add_type_button = memnew(Button);
@@ -1953,7 +1953,7 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 	edit_add_type_button->connect(SceneStringName(pressed), callable_mp(this, &ThemeItemEditorDialog::_add_theme_type).bind(""));
 
 	VBoxContainer *edit_items_vb = memnew(VBoxContainer);
-	edit_items_vb->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	edit_items_vb->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	edit_dialog_hs->add_child(edit_items_vb);
 
 	HBoxContainer *edit_items_toolbar = memnew(HBoxContainer);
@@ -2034,15 +2034,15 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 
 	edit_items_tree = memnew(Tree);
 	edit_items_tree->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	edit_items_tree->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	edit_items_tree->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	edit_items_tree->set_hide_root(true);
 	edit_items_tree->set_columns(1);
 	edit_items_vb->add_child(edit_items_tree);
 	edit_items_tree->connect("button_clicked", callable_mp(this, &ThemeItemEditorDialog::_item_tree_button_pressed));
 
 	edit_items_message = memnew(Label);
-	edit_items_message->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
-	edit_items_message->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	edit_items_message->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
+	edit_items_message->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	edit_items_message->set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER);
 	edit_items_message->set_vertical_alignment(VERTICAL_ALIGNMENT_CENTER);
 	edit_items_message->set_autowrap_mode(TextServer::AUTOWRAP_WORD);
@@ -2091,7 +2091,7 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 	HBoxContainer *import_another_file_hb = memnew(HBoxContainer);
 	import_another_theme_vb->add_child(import_another_file_hb);
 	import_another_theme_value = memnew(LineEdit);
-	import_another_theme_value->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	import_another_theme_value->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	import_another_theme_value->set_editable(false);
 	import_another_file_hb->add_child(import_another_theme_value);
 	import_another_theme_button = memnew(Button);
@@ -2110,7 +2110,7 @@ ThemeItemEditorDialog::ThemeItemEditorDialog(ThemeTypeEditor *p_theme_type_edito
 	import_another_theme_dialog->connect("file_selected", callable_mp(this, &ThemeItemEditorDialog::_select_another_theme_cbk));
 
 	import_other_theme_items = memnew(ThemeItemImportTree);
-	import_other_theme_items->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	import_other_theme_items->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	import_another_theme_vb->add_child(import_other_theme_items);
 
 	import_tc->add_child(import_another_theme_vb);
@@ -2265,7 +2265,7 @@ ThemeTypeDialog::ThemeTypeDialog() {
 
 	add_type_options = memnew(ItemList);
 	add_type_options->set_auto_translate_mode(AUTO_TRANSLATE_MODE_DISABLED);
-	add_type_options->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	add_type_options->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	add_type_vb->add_child(add_type_options);
 	add_type_options->connect(SceneStringName(item_selected), callable_mp(this, &ThemeTypeDialog::_add_type_options_cbk));
 	add_type_options->connect("item_activated", callable_mp(this, &ThemeTypeDialog::_add_type_dialog_activated));
@@ -2279,10 +2279,10 @@ ThemeTypeDialog::ThemeTypeDialog() {
 
 ///////////////////////
 
-Control *ThemeItemLabel::make_custom_tooltip(const String &p_text) const {
+Controle *ThemeItemLabel::make_custom_tooltip(const String &p_text) const {
 	EditorHelpBit *help_bit = memnew(EditorHelpBit(p_text));
 	EditorHelpBitTooltip::show_tooltip(help_bit, const_cast<ThemeItemLabel *>(this));
-	return memnew(Control); // Make the standard tooltip invisible.
+	return memnew(Controle); // Make the standard tooltip invisible.
 }
 
 VBoxContainer *ThemeTypeEditor::_create_item_list(Theme::DataType p_data_type) {
@@ -2324,7 +2324,7 @@ void ThemeTypeEditor::_update_type_list() {
 	}
 	updating = true;
 
-	Control *focused = get_viewport()->gui_get_focus_owner();
+	Controle *focused = get_viewport()->gui_get_focus_owner();
 	if (focused) {
 		if (focusables.has(focused)) {
 			// If focus is currently on one of the internal property editors, don't update.
@@ -2334,7 +2334,7 @@ void ThemeTypeEditor::_update_type_list() {
 
 		Node *focus_parent = focused->get_parent();
 		while (focus_parent) {
-			Control *c = Object::cast_to<Control>(focus_parent);
+			Controle *c = Object::cast_to<Controle>(focus_parent);
 			if (c && focusables.has(c)) {
 				// If focus is currently on one of the internal property editors, don't update.
 				updating = false;
@@ -2469,7 +2469,7 @@ HBoxContainer *ThemeTypeEditor::_create_property_control(Theme::DataType p_data_
 	item_name->set_text(p_item_name);
 	// `|` separators used in `EditorHelpBit`.
 	item_name->set_tooltip_text("theme_item|" + edited_type + "|" + p_item_name);
-	item_name->set_mouse_filter(Control::MOUSE_FILTER_STOP);
+	item_name->set_mouse_filter(Controle::MOUSE_FILTER_STOP);
 	item_name_container->add_child(item_name);
 
 	if (p_editable) {
@@ -2523,7 +2523,7 @@ HBoxContainer *ThemeTypeEditor::_create_property_control(Theme::DataType p_data_
 	return item_control;
 }
 
-void ThemeTypeEditor::_add_focusable(Control *p_control) {
+void ThemeTypeEditor::_add_focusable(Controle *p_control) {
 	focusables.append(p_control);
 }
 
@@ -2899,7 +2899,7 @@ void ThemeTypeEditor::_update_add_button(const String &p_text, LineEdit *p_for_e
 	button->set_disabled(p_text.strip_edges().is_empty());
 }
 
-void ThemeTypeEditor::_item_add_cbk(int p_data_type, Control *p_control) {
+void ThemeTypeEditor::_item_add_cbk(int p_data_type, Controle *p_control) {
 	LineEdit *le = Object::cast_to<LineEdit>(p_control);
 	if (le->get_text().strip_edges().is_empty()) {
 		return;
@@ -2947,7 +2947,7 @@ void ThemeTypeEditor::_item_add_cbk(int p_data_type, Control *p_control) {
 	_update_add_button("", le);
 }
 
-void ThemeTypeEditor::_item_add_lineedit_cbk(String p_value, int p_data_type, Control *p_control) {
+void ThemeTypeEditor::_item_add_lineedit_cbk(String p_value, int p_data_type, Controle *p_control) {
 	_item_add_cbk(p_data_type, p_control);
 }
 
@@ -3042,7 +3042,7 @@ void ThemeTypeEditor::_item_remove_cbk(int p_data_type, String p_item_name) {
 	ur->commit_action();
 }
 
-void ThemeTypeEditor::_item_rename_cbk(int p_data_type, String p_item_name, Control *p_control) {
+void ThemeTypeEditor::_item_rename_cbk(int p_data_type, String p_item_name, Controle *p_control) {
 	// Label
 	Object::cast_to<Label>(p_control->get_child(0))->hide();
 	// Label buttons
@@ -3057,7 +3057,7 @@ void ThemeTypeEditor::_item_rename_cbk(int p_data_type, String p_item_name, Cont
 	Object::cast_to<Button>(p_control->get_child(5))->show();
 }
 
-void ThemeTypeEditor::_item_rename_confirmed(int p_data_type, String p_item_name, Control *p_control) {
+void ThemeTypeEditor::_item_rename_confirmed(int p_data_type, String p_item_name, Controle *p_control) {
 	LineEdit *le = Object::cast_to<LineEdit>(p_control->get_child(1));
 	if (le->get_text().strip_edges().is_empty()) {
 		return;
@@ -3106,11 +3106,11 @@ void ThemeTypeEditor::_item_rename_confirmed(int p_data_type, String p_item_name
 	ur->commit_action();
 }
 
-void ThemeTypeEditor::_item_rename_entered(String p_value, int p_data_type, String p_item_name, Control *p_control) {
+void ThemeTypeEditor::_item_rename_entered(String p_value, int p_data_type, String p_item_name, Controle *p_control) {
 	_item_rename_confirmed(p_data_type, p_item_name, p_control);
 }
 
-void ThemeTypeEditor::_item_rename_canceled(int p_data_type, String p_item_name, Control *p_control) {
+void ThemeTypeEditor::_item_rename_canceled(int p_data_type, String p_item_name, Controle *p_control) {
 	// LineEdit
 	Object::cast_to<LineEdit>(p_control->get_child(1))->hide();
 	// LineEdit buttons
@@ -3224,7 +3224,7 @@ void ThemeTypeEditor::_change_pinned_stylebox() {
 	}
 }
 
-void ThemeTypeEditor::_on_pin_leader_button_pressed(Control *p_editor, String p_item_name) {
+void ThemeTypeEditor::_on_pin_leader_button_pressed(Controle *p_editor, String p_item_name) {
 	Ref<StyleBox> stylebox;
 	if (Object::cast_to<EditorResourcePicker>(p_editor)) {
 		stylebox = Object::cast_to<EditorResourcePicker>(p_editor)->get_edited_resource();
@@ -3514,10 +3514,10 @@ ThemeTypeEditor::ThemeTypeEditor() {
 	Label *type_variation_label = memnew(Label);
 	type_variation_hb->add_child(type_variation_label);
 	type_variation_label->set_text(TTR("Base Type"));
-	type_variation_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	type_variation_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	type_variation_edit = memnew(LineEdit);
 	type_variation_hb->add_child(type_variation_edit);
-	type_variation_edit->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	type_variation_edit->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	type_variation_edit->connect(SceneStringName(text_changed), callable_mp(this, &ThemeTypeEditor::_type_variation_changed));
 	type_variation_edit->connect(SceneStringName(focus_exited), callable_mp(this, &ThemeTypeEditor::_update_type_items));
 	type_variation_button = memnew(Button);
@@ -3626,7 +3626,7 @@ void ThemeEditor::_change_preview_tab(int p_tab) {
 	ERR_FAIL_INDEX_MSG(p_tab, preview_tabs_content->get_child_count(), "Attempting to open a preview tab that doesn't exist.");
 
 	for (int i = 0; i < preview_tabs_content->get_child_count(); i++) {
-		Control *c = Object::cast_to<Control>(preview_tabs_content->get_child(i));
+		Controle *c = Object::cast_to<Controle>(preview_tabs_content->get_child(i));
 		if (!c) {
 			continue;
 		}

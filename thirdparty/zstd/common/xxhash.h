@@ -2022,7 +2022,7 @@ XXH3_128bits_reset_withSecretandSeed(XXH_NOESCAPE XXH3_state_t* statePtr,
 #  define XXH_NO_LONG_LONG
 #  undef XXH_NO_LONG_LONG /* don't actually */
 /*!
- * @brief Controls how unaligned memory is accessed.
+ * @brief Controles how unaligned memory is accessed.
  *
  * By default, access to unaligned memory is controlled by `memcpy()`, which is
  * safe and portable.
@@ -2075,7 +2075,7 @@ XXH3_128bits_reset_withSecretandSeed(XXH_NOESCAPE XXH3_state_t* statePtr,
 
 /*!
  * @def XXH_SIZE_OPT
- * @brief Controls how much xxHash optimizes for size.
+ * @brief Controles how much xxHash optimizes for size.
  *
  * xxHash, when compiled, tends to result in a rather large binary size. This
  * is mostly due to heavy usage to forced inlining and constant folding of the
@@ -3862,7 +3862,7 @@ enum XXH_VECTOR_TYPE /* fake enum */ {
 #endif
 
 /*
- * Controls the alignment of the accumulator,
+ * Controles the alignment of the accumulator,
  * for compatibility with aligned vector loads, which are usually faster.
  */
 #ifndef XXH_ACC_ALIGN
@@ -4004,7 +4004,7 @@ XXH_vmlal_high_u32(uint64x2_t acc, uint32x4_t lhs, uint32x4_t rhs)
 
 /*!
  * @ingroup tuning
- * @brief Controls the NEON to scalar ratio for XXH3
+ * @brief Controles the NEON to scalar ratio for XXH3
  *
  * This can be set to 2, 4, 6, or 8.
  *

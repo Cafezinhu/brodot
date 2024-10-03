@@ -934,16 +934,16 @@ void main() {
 	// in the feature being evaluated. Therefore, smaller values are likely to cause more noise to appear, but will also
 	// cause less features to be erased in the process.
 
-	// Controls how much the spatial distance of the pixels influences the denoising weight.
+	// Controles how much the spatial distance of the pixels influences the denoising weight.
 	const float SIGMA_SPATIAL = denoise_params.spatial_bandwidth;
 
-	// Controls how much the light color distance of the pixels influences the denoising weight.
+	// Controles how much the light color distance of the pixels influences the denoising weight.
 	const float SIGMA_LIGHT = denoise_params.light_bandwidth;
 
-	// Controls how much the albedo color distance of the pixels influences the denoising weight.
+	// Controles how much the albedo color distance of the pixels influences the denoising weight.
 	const float SIGMA_ALBEDO = denoise_params.albedo_bandwidth;
 
-	// Controls how much the normal vector distance of the pixels influences the denoising weight.
+	// Controles how much the normal vector distance of the pixels influences the denoising weight.
 	const float SIGMA_NORMAL = denoise_params.normal_bandwidth;
 
 	// Strength of the filter. The original paper recommends values around 10 to 15 times the Sigma parameter.

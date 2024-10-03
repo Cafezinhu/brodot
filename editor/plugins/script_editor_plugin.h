@@ -162,7 +162,7 @@ public:
 	virtual Ref<Resource> get_edited_resource() const = 0;
 	virtual Vector<String> get_functions() = 0;
 	virtual void set_edited_resource(const Ref<Resource> &p_res) = 0;
-	virtual void enable_editor(Control *p_shortcut_context = nullptr) = 0;
+	virtual void enable_editor(Controle *p_shortcut_context = nullptr) = 0;
 	virtual void reload_text() = 0;
 	virtual String get_name() = 0;
 	virtual Ref<Texture2D> get_theme_icon() = 0;
@@ -192,11 +192,11 @@ public:
 	virtual bool show_members_overview() = 0;
 
 	virtual void set_tooltip_request_func(const Callable &p_toolip_callback) = 0;
-	virtual Control *get_edit_menu() = 0;
+	virtual Controle *get_edit_menu() = 0;
 	virtual void clear_edit_menu() = 0;
 	virtual void set_find_replace_bar(FindReplaceBar *p_bar) = 0;
 
-	virtual Control *get_base_editor() const = 0;
+	virtual Controle *get_base_editor() const = 0;
 	virtual CodeTextEditor *get_code_editor() const = 0;
 
 	virtual void validate() = 0;
@@ -336,7 +336,7 @@ class ScriptEditor : public PanelContainer {
 	Vector<Ref<EditorSyntaxHighlighter>> syntax_highlighters;
 
 	struct ScriptHistory {
-		Control *control = nullptr;
+		Controle *control = nullptr;
 		Variant state;
 	};
 
@@ -461,9 +461,9 @@ class ScriptEditor : public PanelContainer {
 
 	void _split_dragged(float);
 
-	Variant get_drag_data_fw(const Point2 &p_point, Control *p_from);
-	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from) const;
-	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Control *p_from);
+	Variant get_drag_data_fw(const Point2 &p_point, Controle *p_from);
+	bool can_drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from) const;
+	void drop_data_fw(const Point2 &p_point, const Variant &p_data, Controle *p_from);
 
 	virtual void input(const Ref<InputEvent> &p_event) override;
 	virtual void shortcut_input(const Ref<InputEvent> &p_event) override;

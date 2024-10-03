@@ -39,8 +39,8 @@ class ConfirmationDialog;
 class MenuButton;
 class MeshInstance3D;
 
-class MeshLibraryEditor : public Control {
-	GDCLASS(MeshLibraryEditor, Control);
+class MeshLibraryEditor : public Controle {
+	GDCLASS(MeshLibraryEditor, Controle);
 
 	Ref<MeshLibrary> mesh_library;
 

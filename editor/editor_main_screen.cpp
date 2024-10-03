@@ -246,7 +246,7 @@ void EditorMainScreen::add_main_plugin(EditorPlugin *p_editor) {
 	if (icon.is_valid()) {
 		tb->set_icon(icon);
 		// Make sure the control is updated if the icon is reimported.
-		icon->connect_changed(callable_mp((Control *)tb, &Control::update_minimum_size));
+		icon->connect_changed(callable_mp((Controle *)tb, &Controle::update_minimum_size));
 	}
 
 	tb->connect(SceneStringName(pressed), callable_mp(this, &EditorMainScreen::select).bind(buttons.size()));
@@ -285,7 +285,7 @@ void EditorMainScreen::remove_main_plugin(EditorPlugin *p_editor) {
 EditorMainScreen::EditorMainScreen() {
 	main_screen_vbox = memnew(VBoxContainer);
 	main_screen_vbox->set_name("MainScreen");
-	main_screen_vbox->set_v_size_flags(Control::SIZE_EXPAND_FILL);
+	main_screen_vbox->set_v_size_flags(Controle::SIZE_EXPAND_FILL);
 	main_screen_vbox->add_theme_constant_override("separation", 0);
 	add_child(main_screen_vbox);
 }

@@ -4898,11 +4898,11 @@ int VisualShaderNodeGroupBase::get_free_output_port_id() const {
 	return output_ports.size();
 }
 
-void VisualShaderNodeGroupBase::set_ctrl_pressed(Control *p_control, int p_index) {
+void VisualShaderNodeGroupBase::set_ctrl_pressed(Controle *p_control, int p_index) {
 	controls[p_index] = p_control;
 }
 
-Control *VisualShaderNodeGroupBase::is_ctrl_pressed(int p_index) {
+Controle *VisualShaderNodeGroupBase::is_ctrl_pressed(int p_index) {
 	ERR_FAIL_COND_V(!controls.has(p_index), nullptr);
 	return controls[p_index];
 }

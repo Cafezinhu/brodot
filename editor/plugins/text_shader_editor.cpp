@@ -731,7 +731,7 @@ void TextShaderEditor::_menu_option(int p_option) {
 		} break;
 	}
 	if (p_option != SEARCH_FIND && p_option != SEARCH_REPLACE && p_option != SEARCH_GOTO_LINE) {
-		callable_mp((Control *)code_editor->get_text_editor(), &Control::grab_focus).call_deferred();
+		callable_mp((Controle *)code_editor->get_text_editor(), &Controle::grab_focus).call_deferred();
 	}
 }
 
@@ -1121,7 +1121,7 @@ TextShaderEditor::TextShaderEditor() {
 
 	code_editor->set_v_size_flags(SIZE_EXPAND_FILL);
 	code_editor->add_theme_constant_override("separation", 0);
-	code_editor->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	code_editor->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 
 	code_editor->connect("show_warnings_panel", callable_mp(this, &TextShaderEditor::_show_warnings_panel));
 	code_editor->connect(CoreStringName(script_changed), callable_mp(this, &TextShaderEditor::apply_shaders));
@@ -1141,7 +1141,7 @@ TextShaderEditor::TextShaderEditor() {
 	context_menu->connect(SceneStringName(id_pressed), callable_mp(this, &TextShaderEditor::_menu_option));
 
 	VBoxContainer *main_container = memnew(VBoxContainer);
-	main_container->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	main_container->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	HBoxContainer *hbc = memnew(HBoxContainer);
 
 	edit_menu = memnew(MenuButton);
@@ -1214,7 +1214,7 @@ TextShaderEditor::TextShaderEditor() {
 
 	VSplitContainer *editor_box = memnew(VSplitContainer);
 	main_container->add_child(editor_box);
-	editor_box->set_anchors_and_offsets_preset(Control::PRESET_FULL_RECT);
+	editor_box->set_anchors_and_offsets_preset(Controle::PRESET_FULL_RECT);
 	editor_box->set_v_size_flags(SIZE_EXPAND_FILL);
 	editor_box->add_child(code_editor);
 

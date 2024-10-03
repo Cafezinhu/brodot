@@ -374,8 +374,8 @@ msgstr "Ritardo dei tooltip (sec)"
 msgid "Common"
 msgstr "Comuni"
 
-msgid "Snap Controls to Pixels"
-msgstr "Scatta i nodi Control ai pixel"
+msgid "Snap Controles to Pixels"
+msgstr "Scatta i nodi Controle ai pixel"
 
 msgid "Fonts"
 msgstr "Font"
@@ -503,8 +503,8 @@ msgstr "Dispositivo"
 msgid "Window ID"
 msgstr "ID finestra"
 
-msgid "Command or Control Autoremap"
-msgstr "Rimappa automaticamente Controllo o Comando"
+msgid "Command or Controle Autoremap"
+msgstr "Rimappa automaticamente Controlelo o Comando"
 
 msgid "Alt Pressed"
 msgstr "Alt premuto"
@@ -611,10 +611,10 @@ msgstr "Tono"
 msgid "Instrument"
 msgstr "Strumento"
 
-msgid "Controller Number"
+msgid "Controleler Number"
 msgstr "Numero del controller"
 
-msgid "Controller Value"
+msgid "Controleler Value"
 msgstr "Valore del controller"
 
 msgid "Shortcut"
@@ -1772,7 +1772,7 @@ msgstr "Colore per i simboli"
 msgid "Keyword Color"
 msgstr "Colore per parola chiave"
 
-msgid "Control Flow Keyword Color"
+msgid "Controle Flow Keyword Color"
 msgstr "Colore per parola chiave di controllo di flusso"
 
 msgid "Base Type Color"
@@ -2686,8 +2686,8 @@ msgstr "Numero di fotogrammi"
 msgid "Duration"
 msgstr "Durata"
 
-msgid "Version Control"
-msgstr "Controllo della versione"
+msgid "Version Controle"
+msgstr "Controlelo della versione"
 
 msgid "Username"
 msgstr "Nome utente"
@@ -3877,7 +3877,7 @@ msgstr "URL di descrizione"
 msgid "Service Type"
 msgstr "Tipo di servizio"
 
-msgid "IGD Control URL"
+msgid "IGD Controle URL"
 msgstr "URL di controllo IGD"
 
 msgid "IGD Service Type"
@@ -7080,7 +7080,7 @@ msgstr "Abilita selezione con trascino e rilascio"
 msgid "Right Icon"
 msgstr "Icona destra"
 
-msgid "Draw Control Chars"
+msgid "Draw Controle Chars"
 msgstr "Disegna caratteri di controllo"
 
 msgid "Select All on Focus"
@@ -7386,7 +7386,7 @@ msgstr "Evidenziatore di sintassi"
 msgid "Visual Whitespace"
 msgstr "Visualizza spazio vuoto"
 
-msgid "Control Chars"
+msgid "Controle Chars"
 msgstr "Caratteri di controllo"
 
 msgid "Spaces"
@@ -7810,7 +7810,7 @@ msgstr "Schermo attuale"
 msgid "Mouse Passthrough Polygon"
 msgstr "Poligono per l'oltrepassaggio del mouse"
 
-msgid "Wrap Controls"
+msgid "Wrap Controles"
 msgstr "Avvolgi controlli"
 
 msgid "Transient"
@@ -9103,7 +9103,7 @@ msgstr "Regioni di colori"
 msgid "Preserve Invalid"
 msgstr "Preserva non validi"
 
-msgid "Preserve Control"
+msgid "Preserve Controle"
 msgstr "Preserva controllo"
 
 msgid "Custom Punctuation"
@@ -10369,8 +10369,8 @@ msgstr "Vertice"
 msgid "Fragment"
 msgstr "Frammento"
 
-msgid "Tesselation Control"
-msgstr "Controllo di tassellazione"
+msgid "Tesselation Controle"
+msgstr "Controlelo di tassellazione"
 
 msgid "Tesselation Evaluation"
 msgstr "Valutazione di tasselazione"

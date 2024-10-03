@@ -227,7 +227,7 @@ enum SpvOp
 	SpvOpEndPrimitive = 219,
 	SpvOpEmitStreamVertex = 220,
 	SpvOpEndStreamPrimitive = 221,
-	SpvOpControlBarrier = 224,
+	SpvOpControleBarrier = 224,
 	SpvOpMemoryBarrier = 225,
 	SpvOpAtomicLoad = 227,
 	SpvOpAtomicStore = 228,
@@ -592,7 +592,7 @@ static const char* kSpirvOpNames[] =
 	"EndStreamPrimitive",
 	"#222",
 	"#223",
-	"ControlBarrier",
+	"ControleBarrier",
 	"MemoryBarrier",
 	"#226",
 	"AtomicLoad",
@@ -972,7 +972,7 @@ static const OpData kSpirvOpData[] =
 	{0, 0, 0, 0}, // EndStreamPrimitive
 	{1, 1, 0, 0}, // #222
 	{1, 1, 0, 0}, // #223
-	{0, 0, 3, 0}, // ControlBarrier
+	{0, 0, 3, 0}, // ControleBarrier
 	{0, 0, 2, 0}, // MemoryBarrier
 	{1, 1, 0, 0}, // #226
 	{1, 1, 0, 0}, // AtomicLoad
@@ -1749,7 +1749,7 @@ bool smolv::Decode(const void* smolvData, size_t smolvSize, void* spirvOutputBuf
 		bool zigDecodeVals = true;
 		if (beforeZeroVersion)
 		{
-			if (op != SpvOpControlBarrier && op != SpvOpMemoryBarrier && op != SpvOpLoopMerge && op != SpvOpSelectionMerge && op != SpvOpBranch && op != SpvOpBranchConditional && op != SpvOpMemoryNamedBarrier)
+			if (op != SpvOpControleBarrier && op != SpvOpMemoryBarrier && op != SpvOpLoopMerge && op != SpvOpSelectionMerge && op != SpvOpBranch && op != SpvOpBranchConditional && op != SpvOpMemoryNamedBarrier)
 				zigDecodeVals = false;
 		}
 		for (int i = 0; i < relativeCount && ioffs < instrLen; ++i, ++ioffs)

@@ -42,7 +42,7 @@
 
 // Inspector controls.
 
-void ControlPositioningWarning::_update_warning() {
+void ControlePositioningWarning::_update_warning() {
 	if (!control_node) {
 		title_icon->set_texture(nullptr);
 		title_label->set_text("");
@@ -60,7 +60,7 @@ void ControlPositioningWarning::_update_warning() {
 		title_label->set_text(TTR("This node is a child of a container."));
 		hint_label->set_text(TTR("Use container properties for positioning."));
 	} else {
-		title_icon->set_texture(get_editor_theme_icon(SNAME("ControlLayout")));
+		title_icon->set_texture(get_editor_theme_icon(SNAME("ControleLayout")));
 		title_label->set_text(TTR("This node is a child of a regular control."));
 		hint_label->set_text(TTR("Use anchors and the rectangle for positioning."));
 	}
@@ -68,7 +68,7 @@ void ControlPositioningWarning::_update_warning() {
 	bg_panel->add_theme_style_override(SceneStringName(panel), get_theme_stylebox(SNAME("bg_group_note"), SNAME("EditorProperty")));
 }
 
-void ControlPositioningWarning::_update_toggler() {
+void ControlePositioningWarning::_update_toggler() {
 	Ref<Texture2D> arrow;
 	if (hint_label->is_visible()) {
 		arrow = get_theme_icon(SNAME("arrow"), SNAME("Tree"));
@@ -85,12 +85,12 @@ void ControlPositioningWarning::_update_toggler() {
 	hint_icon->set_texture(arrow);
 }
 
-void ControlPositioningWarning::set_control(Control *p_node) {
+void ControlePositioningWarning::set_control(Controle *p_node) {
 	control_node = p_node;
 	_update_warning();
 }
 
-void ControlPositioningWarning::gui_input(const Ref<InputEvent> &p_event) {
+void ControlePositioningWarning::gui_input(const Ref<InputEvent> &p_event) {
 	Ref<InputEventMouseButton> mb = p_event;
 	if (mb.is_valid() && mb->is_pressed() && mb->get_button_index() == MouseButton::LEFT) {
 		bool state = !hint_label->is_visible();
@@ -103,7 +103,7 @@ void ControlPositioningWarning::gui_input(const Ref<InputEvent> &p_event) {
 	}
 }
 
-void ControlPositioningWarning::_notification(int p_notification) {
+void ControlePositioningWarning::_notification(int p_notification) {
 	switch (p_notification) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED:
@@ -113,7 +113,7 @@ void ControlPositioningWarning::_notification(int p_notification) {
 	}
 }
 
-ControlPositioningWarning::ControlPositioningWarning() {
+ControlePositioningWarning::ControlePositioningWarning() {
 	set_mouse_filter(MOUSE_FILTER_STOP);
 
 	bg_panel = memnew(PanelContainer);
@@ -130,7 +130,7 @@ ControlPositioningWarning::ControlPositioningWarning() {
 
 	title_label = memnew(Label);
 	title_label->set_autowrap_mode(TextServer::AutowrapMode::AUTOWRAP_WORD);
-	title_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	title_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	title_label->set_vertical_alignment(VerticalAlignment::VERTICAL_ALIGNMENT_CENTER);
 	grid->add_child(title_label);
 
@@ -139,19 +139,19 @@ ControlPositioningWarning::ControlPositioningWarning() {
 	grid->add_child(hint_icon);
 
 	// Filler.
-	hint_filler_left = memnew(Control);
+	hint_filler_left = memnew(Controle);
 	hint_filler_left->hide();
 	grid->add_child(hint_filler_left);
 
 	hint_label = memnew(Label);
 	hint_label->set_autowrap_mode(TextServer::AutowrapMode::AUTOWRAP_WORD);
-	hint_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
+	hint_label->set_h_size_flags(Controle::SIZE_EXPAND_FILL);
 	hint_label->set_vertical_alignment(VerticalAlignment::VERTICAL_ALIGNMENT_CENTER);
 	hint_label->hide();
 	grid->add_child(hint_label);
 
 	// Filler.
-	hint_filler_right = memnew(Control);
+	hint_filler_right = memnew(Controle);
 	hint_filler_right->hide();
 	grid->add_child(hint_filler_right);
 }
@@ -194,7 +194,7 @@ void EditorPropertyAnchorsPreset::setup(const Vector<String> &p_options) {
 		if (option_name.begins_with("Preset")) {
 			String preset_name = option_name.trim_prefix("Preset");
 			String humanized_name = preset_name.capitalize();
-			String icon_name = "ControlAlign" + preset_name;
+			String icon_name = "ControleAlign" + preset_name;
 			options->add_icon_item(EditorNode::get_singleton()->get_editor_theme()->get_icon(icon_name, EditorStringName(EditorIcons)), humanized_name);
 		} else {
 			options->add_item(option_name);
@@ -235,22 +235,22 @@ void EditorPropertySizeFlags::_preset_selected(int p_which) {
 	uint32_t value = 0;
 	switch (preset) {
 		case SIZE_FLAGS_PRESET_FILL:
-			value = Control::SIZE_FILL;
+			value = Controle::SIZE_FILL;
 			break;
 		case SIZE_FLAGS_PRESET_SHRINK_BEGIN:
-			value = Control::SIZE_SHRINK_BEGIN;
+			value = Controle::SIZE_SHRINK_BEGIN;
 			break;
 		case SIZE_FLAGS_PRESET_SHRINK_CENTER:
-			value = Control::SIZE_SHRINK_CENTER;
+			value = Controle::SIZE_SHRINK_CENTER;
 			break;
 		case SIZE_FLAGS_PRESET_SHRINK_END:
-			value = Control::SIZE_SHRINK_END;
+			value = Controle::SIZE_SHRINK_END;
 			break;
 	}
 
 	bool is_expand = flag_expand->is_visible() && flag_expand->is_pressed();
 	if (is_expand) {
-		value |= Control::SIZE_EXPAND;
+		value |= Controle::SIZE_EXPAND;
 	}
 
 	emit_changed(get_edited_property(), value);
@@ -260,9 +260,9 @@ void EditorPropertySizeFlags::_expand_toggled() {
 	uint32_t value = get_edited_property_value();
 
 	if (flag_expand->is_visible() && flag_expand->is_pressed()) {
-		value |= Control::SIZE_EXPAND;
+		value |= Controle::SIZE_EXPAND;
 	} else {
-		value ^= Control::SIZE_EXPAND;
+		value ^= Controle::SIZE_EXPAND;
 	}
 
 	// Keep the custom preset selected as we toggle individual flags.
@@ -281,7 +281,7 @@ void EditorPropertySizeFlags::_flag_toggled() {
 
 	bool is_expand = flag_expand->is_visible() && flag_expand->is_pressed();
 	if (is_expand) {
-		value |= Control::SIZE_EXPAND;
+		value |= Controle::SIZE_EXPAND;
 	}
 
 	// Keep the custom preset selected as we toggle individual flags.
@@ -301,7 +301,7 @@ void EditorPropertySizeFlags::update_property() {
 		}
 	}
 
-	bool is_expand = value & Control::SIZE_EXPAND;
+	bool is_expand = value & Controle::SIZE_EXPAND;
 	flag_expand->set_pressed(is_expand);
 
 	if (keep_selected_preset) {
@@ -310,13 +310,13 @@ void EditorPropertySizeFlags::update_property() {
 	}
 
 	FlagPreset preset = SIZE_FLAGS_PRESET_CUSTOM;
-	if (value == Control::SIZE_FILL || value == (Control::SIZE_FILL | Control::SIZE_EXPAND)) {
+	if (value == Controle::SIZE_FILL || value == (Controle::SIZE_FILL | Controle::SIZE_EXPAND)) {
 		preset = SIZE_FLAGS_PRESET_FILL;
-	} else if (value == Control::SIZE_SHRINK_BEGIN || value == (Control::SIZE_SHRINK_BEGIN | Control::SIZE_EXPAND)) {
+	} else if (value == Controle::SIZE_SHRINK_BEGIN || value == (Controle::SIZE_SHRINK_BEGIN | Controle::SIZE_EXPAND)) {
 		preset = SIZE_FLAGS_PRESET_SHRINK_BEGIN;
-	} else if (value == Control::SIZE_SHRINK_CENTER || value == (Control::SIZE_SHRINK_CENTER | Control::SIZE_EXPAND)) {
+	} else if (value == Controle::SIZE_SHRINK_CENTER || value == (Controle::SIZE_SHRINK_CENTER | Controle::SIZE_EXPAND)) {
 		preset = SIZE_FLAGS_PRESET_SHRINK_CENTER;
-	} else if (value == Control::SIZE_SHRINK_END || value == (Control::SIZE_SHRINK_END | Control::SIZE_EXPAND)) {
+	} else if (value == Controle::SIZE_SHRINK_END || value == (Controle::SIZE_SHRINK_END | Controle::SIZE_EXPAND)) {
 		preset = SIZE_FLAGS_PRESET_SHRINK_END;
 	}
 
@@ -359,14 +359,14 @@ void EditorPropertySizeFlags::setup(const Vector<String> &p_options, bool p_vert
 		flag_checks.append(cb);
 	}
 
-	Control *gui_base = EditorNode::get_singleton()->get_gui_base();
-	StringName wide_preset_icon = SNAME("ControlAlignHCenterWide");
-	StringName begin_preset_icon = SNAME("ControlAlignCenterLeft");
-	StringName end_preset_icon = SNAME("ControlAlignCenterRight");
+	Controle *gui_base = EditorNode::get_singleton()->get_gui_base();
+	StringName wide_preset_icon = SNAME("ControleAlignHCenterWide");
+	StringName begin_preset_icon = SNAME("ControleAlignCenterLeft");
+	StringName end_preset_icon = SNAME("ControleAlignCenterRight");
 	if (vertical) {
-		wide_preset_icon = SNAME("ControlAlignVCenterWide");
-		begin_preset_icon = SNAME("ControlAlignCenterTop");
-		end_preset_icon = SNAME("ControlAlignCenterBottom");
+		wide_preset_icon = SNAME("ControleAlignVCenterWide");
+		begin_preset_icon = SNAME("ControleAlignCenterTop");
+		end_preset_icon = SNAME("ControleAlignCenterBottom");
 	}
 
 	flag_presets->clear();
@@ -376,7 +376,7 @@ void EditorPropertySizeFlags::setup(const Vector<String> &p_options, bool p_vert
 	// Shrink Begin is the same as no flags at all, as such it cannot be disabled.
 	flag_presets->add_icon_item(gui_base->get_editor_theme_icon(begin_preset_icon), TTR("Shrink Begin"), SIZE_FLAGS_PRESET_SHRINK_BEGIN);
 	if (flags.has(SIZE_SHRINK_CENTER)) {
-		flag_presets->add_icon_item(gui_base->get_editor_theme_icon(SNAME("ControlAlignCenter")), TTR("Shrink Center"), SIZE_FLAGS_PRESET_SHRINK_CENTER);
+		flag_presets->add_icon_item(gui_base->get_editor_theme_icon(SNAME("ControleAlignCenter")), TTR("Shrink Center"), SIZE_FLAGS_PRESET_SHRINK_CENTER);
 	}
 	if (flags.has(SIZE_SHRINK_END)) {
 		flag_presets->add_icon_item(gui_base->get_editor_theme_icon(end_preset_icon), TTR("Shrink End"), SIZE_FLAGS_PRESET_SHRINK_END);
@@ -410,31 +410,31 @@ EditorPropertySizeFlags::EditorPropertySizeFlags() {
 	flag_expand->connect(SceneStringName(pressed), callable_mp(this, &EditorPropertySizeFlags::_expand_toggled));
 }
 
-bool EditorInspectorPluginControl::can_handle(Object *p_object) {
-	return Object::cast_to<Control>(p_object) != nullptr;
+bool EditorInspectorPluginControle::can_handle(Object *p_object) {
+	return Object::cast_to<Controle>(p_object) != nullptr;
 }
 
-void EditorInspectorPluginControl::parse_category(Object *p_object, const String &p_category) {
-	inside_control_category = p_category == "Control";
+void EditorInspectorPluginControle::parse_category(Object *p_object, const String &p_category) {
+	inside_control_category = p_category == "Controle";
 }
 
-void EditorInspectorPluginControl::parse_group(Object *p_object, const String &p_group) {
+void EditorInspectorPluginControle::parse_group(Object *p_object, const String &p_group) {
 	if (!inside_control_category) {
 		return;
 	}
 
-	Control *control = Object::cast_to<Control>(p_object);
+	Controle *control = Object::cast_to<Controle>(p_object);
 	if (!control || p_group != "Layout") {
 		return;
 	}
 
-	ControlPositioningWarning *pos_warning = memnew(ControlPositioningWarning);
+	ControlePositioningWarning *pos_warning = memnew(ControlePositioningWarning);
 	pos_warning->set_control(control);
 	add_custom_control(pos_warning);
 }
 
-bool EditorInspectorPluginControl::parse_property(Object *p_object, const Variant::Type p_type, const String &p_path, const PropertyHint p_hint, const String &p_hint_text, const BitField<PropertyUsageFlags> p_usage, const bool p_wide) {
-	Control *control = Object::cast_to<Control>(p_object);
+bool EditorInspectorPluginControle::parse_property(Object *p_object, const Variant::Type p_type, const String &p_path, const PropertyHint p_hint, const String &p_hint_text, const BitField<PropertyUsageFlags> p_usage, const bool p_wide) {
+	Controle *control = Object::cast_to<Controle>(p_object);
 	if (!control) {
 		return false;
 	}
@@ -465,7 +465,7 @@ bool EditorInspectorPluginControl::parse_property(Object *p_object, const Varian
 
 // Toolbars controls.
 
-Size2 ControlEditorPopupButton::get_minimum_size() const {
+Size2 ControleEditorPopupButton::get_minimum_size() const {
 	Vector2 base_size = Vector2(26, 26) * EDSCALE;
 
 	if (arrow_icon.is_null()) {
@@ -479,7 +479,7 @@ Size2 ControlEditorPopupButton::get_minimum_size() const {
 	return final_size;
 }
 
-void ControlEditorPopupButton::toggled(bool p_pressed) {
+void ControleEditorPopupButton::toggled(bool p_pressed) {
 	if (!p_pressed) {
 		return;
 	}
@@ -497,11 +497,11 @@ void ControlEditorPopupButton::toggled(bool p_pressed) {
 	popup_panel->popup();
 }
 
-void ControlEditorPopupButton::_popup_visibility_changed(bool p_visible) {
+void ControleEditorPopupButton::_popup_visibility_changed(bool p_visible) {
 	set_pressed(p_visible);
 }
 
-void ControlEditorPopupButton::_notification(int p_what) {
+void ControleEditorPopupButton::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
@@ -528,22 +528,22 @@ void ControlEditorPopupButton::_notification(int p_what) {
 	}
 }
 
-ControlEditorPopupButton::ControlEditorPopupButton() {
+ControleEditorPopupButton::ControleEditorPopupButton() {
 	set_theme_type_variation("FlatButton");
 	set_toggle_mode(true);
 	set_focus_mode(FOCUS_NONE);
 
 	popup_panel = memnew(PopupPanel);
-	popup_panel->set_theme_type_variation("ControlEditorPopupPanel");
+	popup_panel->set_theme_type_variation("ControleEditorPopupPanel");
 	add_child(popup_panel);
-	popup_panel->connect("about_to_popup", callable_mp(this, &ControlEditorPopupButton::_popup_visibility_changed).bind(true));
-	popup_panel->connect("popup_hide", callable_mp(this, &ControlEditorPopupButton::_popup_visibility_changed).bind(false));
+	popup_panel->connect("about_to_popup", callable_mp(this, &ControleEditorPopupButton::_popup_visibility_changed).bind(true));
+	popup_panel->connect("popup_hide", callable_mp(this, &ControleEditorPopupButton::_popup_visibility_changed).bind(false));
 
 	popup_vbox = memnew(VBoxContainer);
 	popup_panel->add_child(popup_vbox);
 }
 
-void ControlEditorPresetPicker::_add_row_button(HBoxContainer *p_row, const int p_preset, const String &p_name) {
+void ControleEditorPresetPicker::_add_row_button(HBoxContainer *p_row, const int p_preset, const String &p_name) {
 	ERR_FAIL_COND(preset_buttons.has(p_preset));
 
 	Button *b = memnew(Button);
@@ -552,12 +552,12 @@ void ControlEditorPresetPicker::_add_row_button(HBoxContainer *p_row, const int 
 	b->set_tooltip_text(p_name);
 	b->set_flat(true);
 	p_row->add_child(b);
-	b->connect(SceneStringName(pressed), callable_mp(this, &ControlEditorPresetPicker::_preset_button_pressed).bind(p_preset));
+	b->connect(SceneStringName(pressed), callable_mp(this, &ControleEditorPresetPicker::_preset_button_pressed).bind(p_preset));
 
 	preset_buttons[p_preset] = b;
 }
 
-void ControlEditorPresetPicker::_add_separator(BoxContainer *p_box, Separator *p_separator) {
+void ControleEditorPresetPicker::_add_separator(BoxContainer *p_box, Separator *p_separator) {
 	p_separator->add_theme_constant_override("separation", grid_separation);
 	p_separator->set_custom_minimum_size(Size2i(1, 1));
 	p_box->add_child(p_separator);
@@ -571,27 +571,27 @@ void AnchorPresetPicker::_notification(int p_notification) {
 	switch (p_notification) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
-			preset_buttons[PRESET_TOP_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignTopLeft")));
-			preset_buttons[PRESET_CENTER_TOP]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterTop")));
-			preset_buttons[PRESET_TOP_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignTopRight")));
+			preset_buttons[PRESET_TOP_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignTopLeft")));
+			preset_buttons[PRESET_CENTER_TOP]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterTop")));
+			preset_buttons[PRESET_TOP_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignTopRight")));
 
-			preset_buttons[PRESET_CENTER_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterLeft")));
-			preset_buttons[PRESET_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenter")));
-			preset_buttons[PRESET_CENTER_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterRight")));
+			preset_buttons[PRESET_CENTER_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterLeft")));
+			preset_buttons[PRESET_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenter")));
+			preset_buttons[PRESET_CENTER_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterRight")));
 
-			preset_buttons[PRESET_BOTTOM_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignBottomLeft")));
-			preset_buttons[PRESET_CENTER_BOTTOM]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterBottom")));
-			preset_buttons[PRESET_BOTTOM_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignBottomRight")));
+			preset_buttons[PRESET_BOTTOM_LEFT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignBottomLeft")));
+			preset_buttons[PRESET_CENTER_BOTTOM]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterBottom")));
+			preset_buttons[PRESET_BOTTOM_RIGHT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignBottomRight")));
 
-			preset_buttons[PRESET_TOP_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignTopWide")));
-			preset_buttons[PRESET_HCENTER_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignHCenterWide")));
-			preset_buttons[PRESET_BOTTOM_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignBottomWide")));
+			preset_buttons[PRESET_TOP_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignTopWide")));
+			preset_buttons[PRESET_HCENTER_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignHCenterWide")));
+			preset_buttons[PRESET_BOTTOM_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignBottomWide")));
 
-			preset_buttons[PRESET_LEFT_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignLeftWide")));
-			preset_buttons[PRESET_VCENTER_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignVCenterWide")));
-			preset_buttons[PRESET_RIGHT_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControlAlignRightWide")));
+			preset_buttons[PRESET_LEFT_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignLeftWide")));
+			preset_buttons[PRESET_VCENTER_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignVCenterWide")));
+			preset_buttons[PRESET_RIGHT_WIDE]->set_icon(get_editor_theme_icon(SNAME("ControleAlignRightWide")));
 
-			preset_buttons[PRESET_FULL_RECT]->set_icon(get_editor_theme_icon(SNAME("ControlAlignFullRect")));
+			preset_buttons[PRESET_FULL_RECT]->set_icon(get_editor_theme_icon(SNAME("ControleAlignFullRect")));
 		} break;
 	}
 }
@@ -689,17 +689,17 @@ void SizeFlagPresetPicker::_notification(int p_notification) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
 			if (vertical) {
-				preset_buttons[SIZE_SHRINK_BEGIN]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterTop")));
-				preset_buttons[SIZE_SHRINK_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenter")));
-				preset_buttons[SIZE_SHRINK_END]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterBottom")));
+				preset_buttons[SIZE_SHRINK_BEGIN]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterTop")));
+				preset_buttons[SIZE_SHRINK_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenter")));
+				preset_buttons[SIZE_SHRINK_END]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterBottom")));
 
-				preset_buttons[SIZE_FILL]->set_icon(get_editor_theme_icon(SNAME("ControlAlignVCenterWide")));
+				preset_buttons[SIZE_FILL]->set_icon(get_editor_theme_icon(SNAME("ControleAlignVCenterWide")));
 			} else {
-				preset_buttons[SIZE_SHRINK_BEGIN]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterLeft")));
-				preset_buttons[SIZE_SHRINK_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenter")));
-				preset_buttons[SIZE_SHRINK_END]->set_icon(get_editor_theme_icon(SNAME("ControlAlignCenterRight")));
+				preset_buttons[SIZE_SHRINK_BEGIN]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterLeft")));
+				preset_buttons[SIZE_SHRINK_CENTER]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenter")));
+				preset_buttons[SIZE_SHRINK_END]->set_icon(get_editor_theme_icon(SNAME("ControleAlignCenterRight")));
 
-				preset_buttons[SIZE_FILL]->set_icon(get_editor_theme_icon(SNAME("ControlAlignHCenterWide")));
+				preset_buttons[SIZE_FILL]->set_icon(get_editor_theme_icon(SNAME("ControleAlignHCenterWide")));
 			}
 		} break;
 	}
@@ -737,7 +737,7 @@ SizeFlagPresetPicker::SizeFlagPresetPicker(bool p_vertical) {
 
 // Toolbar.
 
-void ControlEditorToolbar::_anchors_preset_selected(int p_preset) {
+void ControleEditorToolbar::_anchors_preset_selected(int p_preset) {
 	LayoutPreset preset = (LayoutPreset)p_preset;
 	List<Node *> selection = editor_selection->get_selected_node_list();
 
@@ -745,7 +745,7 @@ void ControlEditorToolbar::_anchors_preset_selected(int p_preset) {
 	undo_redo->create_action(TTR("Change Anchors, Offsets, Grow Direction"));
 
 	for (Node *E : selection) {
-		Control *control = Object::cast_to<Control>(E);
+		Controle *control = Object::cast_to<Controle>(E);
 		if (control) {
 			undo_redo->add_do_property(control, "layout_mode", LayoutMode::LAYOUT_MODE_ANCHORS);
 			undo_redo->add_do_property(control, "anchors_preset", preset);
@@ -759,14 +759,14 @@ void ControlEditorToolbar::_anchors_preset_selected(int p_preset) {
 	anchor_mode_button->set_pressed(anchors_mode);
 }
 
-void ControlEditorToolbar::_anchors_to_current_ratio() {
+void ControleEditorToolbar::_anchors_to_current_ratio() {
 	List<Node *> selection = editor_selection->get_selected_node_list();
 
 	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
 	undo_redo->create_action(TTR("Change Anchors, Offsets (Keep Ratio)"));
 
 	for (Node *E : selection) {
-		Control *control = Object::cast_to<Control>(E);
+		Controle *control = Object::cast_to<Controle>(E);
 		if (control) {
 			Point2 top_left_anchor = _position_to_anchor(control, Point2());
 			Point2 bottom_right_anchor = _position_to_anchor(control, control->get_size());
@@ -792,9 +792,9 @@ void ControlEditorToolbar::_anchors_to_current_ratio() {
 	undo_redo->commit_action();
 }
 
-void ControlEditorToolbar::_anchor_mode_toggled(bool p_status) {
-	List<Control *> selection = _get_edited_controls();
-	for (Control *E : selection) {
+void ControleEditorToolbar::_anchor_mode_toggled(bool p_status) {
+	List<Controle *> selection = _get_edited_controls();
+	for (Controle *E : selection) {
 		if (Object::cast_to<Container>(E->get_parent())) {
 			continue;
 		}
@@ -810,7 +810,7 @@ void ControlEditorToolbar::_anchor_mode_toggled(bool p_status) {
 	CanvasItemEditor::get_singleton()->update_viewport();
 }
 
-void ControlEditorToolbar::_container_flags_selected(int p_flags, bool p_vertical) {
+void ControleEditorToolbar::_container_flags_selected(int p_flags, bool p_vertical) {
 	List<Node *> selection = editor_selection->get_selected_node_list();
 
 	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
@@ -821,7 +821,7 @@ void ControlEditorToolbar::_container_flags_selected(int p_flags, bool p_vertica
 	}
 
 	for (Node *E : selection) {
-		Control *control = Object::cast_to<Control>(E);
+		Controle *control = Object::cast_to<Controle>(E);
 		if (control) {
 			int old_flags = p_vertical ? control->get_v_size_flags() : control->get_h_size_flags();
 			if (p_vertical) {
@@ -837,7 +837,7 @@ void ControlEditorToolbar::_container_flags_selected(int p_flags, bool p_vertica
 	undo_redo->commit_action();
 }
 
-void ControlEditorToolbar::_expand_flag_toggled(bool p_expand, bool p_vertical) {
+void ControleEditorToolbar::_expand_flag_toggled(bool p_expand, bool p_vertical) {
 	List<Node *> selection = editor_selection->get_selected_node_list();
 
 	EditorUndoRedoManager *undo_redo = EditorUndoRedoManager::get_singleton();
@@ -848,15 +848,15 @@ void ControlEditorToolbar::_expand_flag_toggled(bool p_expand, bool p_vertical) 
 	}
 
 	for (Node *E : selection) {
-		Control *control = Object::cast_to<Control>(E);
+		Controle *control = Object::cast_to<Controle>(E);
 		if (control) {
 			int old_flags = p_vertical ? control->get_v_size_flags() : control->get_h_size_flags();
 			int new_flags = old_flags;
 
 			if (p_expand) {
-				new_flags |= Control::SIZE_EXPAND;
+				new_flags |= Controle::SIZE_EXPAND;
 			} else {
-				new_flags &= ~Control::SIZE_EXPAND;
+				new_flags &= ~Controle::SIZE_EXPAND;
 			}
 
 			if (p_vertical) {
@@ -872,7 +872,7 @@ void ControlEditorToolbar::_expand_flag_toggled(bool p_expand, bool p_vertical) 
 	undo_redo->commit_action();
 }
 
-Vector2 ControlEditorToolbar::_position_to_anchor(const Control *p_control, Vector2 position) {
+Vector2 ControleEditorToolbar::_position_to_anchor(const Controle *p_control, Vector2 position) {
 	ERR_FAIL_NULL_V(p_control, Vector2());
 
 	Rect2 parent_rect = p_control->get_parent_anchorable_rect();
@@ -887,14 +887,14 @@ Vector2 ControlEditorToolbar::_position_to_anchor(const Control *p_control, Vect
 	return output;
 }
 
-bool ControlEditorToolbar::_is_node_locked(const Node *p_node) {
+bool ControleEditorToolbar::_is_node_locked(const Node *p_node) {
 	return p_node->get_meta("_edit_lock_", false);
 }
 
-List<Control *> ControlEditorToolbar::_get_edited_controls() {
-	List<Control *> selection;
+List<Controle *> ControleEditorToolbar::_get_edited_controls() {
+	List<Controle *> selection;
 	for (const KeyValue<Node *, Object *> &E : editor_selection->get_selection()) {
-		Control *control = Object::cast_to<Control>(E.key);
+		Controle *control = Object::cast_to<Controle>(E.key);
 		if (control && control->is_visible_in_tree() && control->get_viewport() == EditorNode::get_singleton()->get_scene_root() && !_is_node_locked(control)) {
 			selection.push_back(control);
 		}
@@ -903,7 +903,7 @@ List<Control *> ControlEditorToolbar::_get_edited_controls() {
 	return selection;
 }
 
-void ControlEditorToolbar::_selection_changed() {
+void ControleEditorToolbar::_selection_changed() {
 	// Update toolbar visibility.
 	bool has_controls = false;
 	bool has_control_parents = false;
@@ -926,13 +926,13 @@ void ControlEditorToolbar::_selection_changed() {
 	};
 
 	for (const KeyValue<Node *, Object *> &E : editor_selection->get_selection()) {
-		Control *control = Object::cast_to<Control>(E.key);
+		Controle *control = Object::cast_to<Controle>(E.key);
 		if (!control) {
 			continue;
 		}
 		has_controls = true;
 
-		if (Object::cast_to<Control>(control->get_parent())) {
+		if (Object::cast_to<Controle>(control->get_parent())) {
 			has_control_parents = true;
 		}
 		if (Object::cast_to<Container>(control->get_parent())) {
@@ -974,7 +974,7 @@ void ControlEditorToolbar::_selection_changed() {
 
 		List<Node *> selection = editor_selection->get_selected_node_list();
 		for (Node *E : selection) {
-			Control *control = Object::cast_to<Control>(E);
+			Controle *control = Object::cast_to<Controle>(E);
 			if (!control) {
 				continue;
 			}
@@ -1024,16 +1024,16 @@ void ControlEditorToolbar::_selection_changed() {
 
 		List<Node *> selection = editor_selection->get_selected_node_list();
 		for (Node *E : selection) {
-			Control *control = Object::cast_to<Control>(E);
+			Controle *control = Object::cast_to<Controle>(E);
 			if (!control) {
 				continue;
 			}
 
 			nb_valid_controls++;
-			if (control->get_h_size_flags() & Control::SIZE_EXPAND) {
+			if (control->get_h_size_flags() & Controle::SIZE_EXPAND) {
 				nb_h_expand++;
 			}
-			if (control->get_v_size_flags() & Control::SIZE_EXPAND) {
+			if (control->get_v_size_flags() & Controle::SIZE_EXPAND) {
 				nb_v_expand++;
 			}
 		}
@@ -1045,21 +1045,21 @@ void ControlEditorToolbar::_selection_changed() {
 	}
 }
 
-void ControlEditorToolbar::_notification(int p_what) {
+void ControleEditorToolbar::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_ENTER_TREE:
 		case NOTIFICATION_THEME_CHANGED: {
-			anchors_button->set_icon(get_editor_theme_icon(SNAME("ControlLayout")));
+			anchors_button->set_icon(get_editor_theme_icon(SNAME("ControleLayout")));
 			anchor_mode_button->set_icon(get_editor_theme_icon(SNAME("Anchor")));
 			containers_button->set_icon(get_editor_theme_icon(SNAME("ContainerLayout")));
 		} break;
 	}
 }
 
-ControlEditorToolbar::ControlEditorToolbar() {
+ControleEditorToolbar::ControleEditorToolbar() {
 	// Anchor and offset tools.
-	anchors_button = memnew(ControlEditorPopupButton);
-	anchors_button->set_tooltip_text(TTR("Presets for the anchor and offset values of a Control node."));
+	anchors_button = memnew(ControleEditorPopupButton);
+	anchors_button->set_tooltip_text(TTR("Presets for the anchor and offset values of a Controle node."));
 	add_child(anchors_button);
 
 	Label *anchors_label = memnew(Label);
@@ -1068,7 +1068,7 @@ ControlEditorToolbar::ControlEditorToolbar() {
 	AnchorPresetPicker *anchors_picker = memnew(AnchorPresetPicker);
 	anchors_picker->set_h_size_flags(SIZE_SHRINK_CENTER);
 	anchors_button->get_popup_hbox()->add_child(anchors_picker);
-	anchors_picker->connect("anchors_preset_selected", callable_mp(this, &ControlEditorToolbar::_anchors_preset_selected));
+	anchors_picker->connect("anchors_preset_selected", callable_mp(this, &ControleEditorToolbar::_anchors_preset_selected));
 
 	anchors_button->get_popup_hbox()->add_child(memnew(HSeparator));
 
@@ -1077,17 +1077,17 @@ ControlEditorToolbar::ControlEditorToolbar() {
 	keep_ratio_button->set_text(TTR("Set to Current Ratio"));
 	keep_ratio_button->set_tooltip_text(TTR("Adjust anchors and offsets to match the current rect size."));
 	anchors_button->get_popup_hbox()->add_child(keep_ratio_button);
-	keep_ratio_button->connect(SceneStringName(pressed), callable_mp(this, &ControlEditorToolbar::_anchors_to_current_ratio));
+	keep_ratio_button->connect(SceneStringName(pressed), callable_mp(this, &ControleEditorToolbar::_anchors_to_current_ratio));
 
 	anchor_mode_button = memnew(Button);
 	anchor_mode_button->set_theme_type_variation("FlatButton");
 	anchor_mode_button->set_toggle_mode(true);
-	anchor_mode_button->set_tooltip_text(TTR("When active, moving Control nodes changes their anchors instead of their offsets."));
+	anchor_mode_button->set_tooltip_text(TTR("When active, moving Controle nodes changes their anchors instead of their offsets."));
 	add_child(anchor_mode_button);
-	anchor_mode_button->connect(SceneStringName(toggled), callable_mp(this, &ControlEditorToolbar::_anchor_mode_toggled));
+	anchor_mode_button->connect(SceneStringName(toggled), callable_mp(this, &ControleEditorToolbar::_anchor_mode_toggled));
 
 	// Container tools.
-	containers_button = memnew(ControlEditorPopupButton);
+	containers_button = memnew(ControleEditorPopupButton);
 	containers_button->set_tooltip_text(TTR("Sizing settings for children of a Container node."));
 	add_child(containers_button);
 
@@ -1096,8 +1096,8 @@ ControlEditorToolbar::ControlEditorToolbar() {
 	containers_button->get_popup_hbox()->add_child(container_h_label);
 	container_h_picker = memnew(SizeFlagPresetPicker(false));
 	containers_button->get_popup_hbox()->add_child(container_h_picker);
-	container_h_picker->connect("size_flags_selected", callable_mp(this, &ControlEditorToolbar::_container_flags_selected).bind(false));
-	container_h_picker->connect("expand_flag_toggled", callable_mp(this, &ControlEditorToolbar::_expand_flag_toggled).bind(false));
+	container_h_picker->connect("size_flags_selected", callable_mp(this, &ControleEditorToolbar::_container_flags_selected).bind(false));
+	container_h_picker->connect("expand_flag_toggled", callable_mp(this, &ControleEditorToolbar::_expand_flag_toggled).bind(false));
 
 	containers_button->get_popup_hbox()->add_child(memnew(HSeparator));
 
@@ -1106,27 +1106,27 @@ ControlEditorToolbar::ControlEditorToolbar() {
 	containers_button->get_popup_hbox()->add_child(container_v_label);
 	container_v_picker = memnew(SizeFlagPresetPicker(true));
 	containers_button->get_popup_hbox()->add_child(container_v_picker);
-	container_v_picker->connect("size_flags_selected", callable_mp(this, &ControlEditorToolbar::_container_flags_selected).bind(true));
-	container_v_picker->connect("expand_flag_toggled", callable_mp(this, &ControlEditorToolbar::_expand_flag_toggled).bind(true));
+	container_v_picker->connect("size_flags_selected", callable_mp(this, &ControleEditorToolbar::_container_flags_selected).bind(true));
+	container_v_picker->connect("expand_flag_toggled", callable_mp(this, &ControleEditorToolbar::_expand_flag_toggled).bind(true));
 
 	// Editor connections.
 	editor_selection = EditorNode::get_singleton()->get_editor_selection();
 	editor_selection->add_editor_plugin(this);
-	editor_selection->connect("selection_changed", callable_mp(this, &ControlEditorToolbar::_selection_changed));
+	editor_selection->connect("selection_changed", callable_mp(this, &ControleEditorToolbar::_selection_changed));
 
 	singleton = this;
 }
 
-ControlEditorToolbar *ControlEditorToolbar::singleton = nullptr;
+ControleEditorToolbar *ControleEditorToolbar::singleton = nullptr;
 
 // Editor plugin.
 
-ControlEditorPlugin::ControlEditorPlugin() {
-	toolbar = memnew(ControlEditorToolbar);
+ControleEditorPlugin::ControleEditorPlugin() {
+	toolbar = memnew(ControleEditorToolbar);
 	toolbar->hide();
 	add_control_to_container(CONTAINER_CANVAS_EDITOR_MENU, toolbar);
 
-	Ref<EditorInspectorPluginControl> plugin;
+	Ref<EditorInspectorPluginControle> plugin;
 	plugin.instantiate();
 	add_inspector_plugin(plugin);
 }

@@ -250,13 +250,13 @@ static NSMutableArray<ApplicationDelegateService *> *services = nil;
 	return result;
 }
 
-- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray<NSString *> *)identifierComponents coder:(NSCoder *)coder {
+- (UIViewControleler *)application:(UIApplication *)application viewControlelerWithRestorationIdentifierPath:(NSArray<NSString *> *)identifierComponents coder:(NSCoder *)coder {
 	for (ApplicationDelegateService *service in services) {
 		if (![service respondsToSelector:_cmd]) {
 			continue;
 		}
 
-		UIViewController *controller = [service application:application viewControllerWithRestorationIdentifierPath:identifierComponents coder:coder];
+		UIViewControleler *controller = [service application:application viewControlelerWithRestorationIdentifierPath:identifierComponents coder:coder];
 
 		if (controller) {
 			return controller;

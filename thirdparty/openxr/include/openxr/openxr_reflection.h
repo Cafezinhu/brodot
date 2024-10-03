@@ -1682,7 +1682,7 @@ XR_ENUM_STR(XrResult);
     _(XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_DESK_TO_TABLE_MIGRATION_BIT_FB, 0x00000002) \
     _(XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_INVISIBLE_WALL_FACE_BIT_FB, 0x00000004) \
 
-#define XR_LIST_BITS_XrDigitalLensControlFlagsALMALENCE(_) \
+#define XR_LIST_BITS_XrDigitalLensControleFlagsALMALENCE(_) \
     _(XR_DIGITAL_LENS_CONTROL_PROCESSING_DISABLE_BIT_ALMALENCE, 0x00000001) \
 
 #define XR_LIST_BITS_XrFoveationEyeTrackedProfileCreateFlagsMETA(_)
@@ -2967,35 +2967,35 @@ XR_ENUM_STR(XrResult);
     _(next) \
     _(viewConfigurationType) \
 
-/// Calls your macro with the name of each member of XrControllerModelKeyStateMSFT, in order.
-#define XR_LIST_STRUCT_XrControllerModelKeyStateMSFT(_) \
+/// Calls your macro with the name of each member of XrControlelerModelKeyStateMSFT, in order.
+#define XR_LIST_STRUCT_XrControlelerModelKeyStateMSFT(_) \
     _(type) \
     _(next) \
     _(modelKey) \
 
-/// Calls your macro with the name of each member of XrControllerModelNodePropertiesMSFT, in order.
-#define XR_LIST_STRUCT_XrControllerModelNodePropertiesMSFT(_) \
+/// Calls your macro with the name of each member of XrControlelerModelNodePropertiesMSFT, in order.
+#define XR_LIST_STRUCT_XrControlelerModelNodePropertiesMSFT(_) \
     _(type) \
     _(next) \
     _(parentNodeName) \
     _(nodeName) \
 
-/// Calls your macro with the name of each member of XrControllerModelPropertiesMSFT, in order.
-#define XR_LIST_STRUCT_XrControllerModelPropertiesMSFT(_) \
+/// Calls your macro with the name of each member of XrControlelerModelPropertiesMSFT, in order.
+#define XR_LIST_STRUCT_XrControlelerModelPropertiesMSFT(_) \
     _(type) \
     _(next) \
     _(nodeCapacityInput) \
     _(nodeCountOutput) \
     _(nodeProperties) \
 
-/// Calls your macro with the name of each member of XrControllerModelNodeStateMSFT, in order.
-#define XR_LIST_STRUCT_XrControllerModelNodeStateMSFT(_) \
+/// Calls your macro with the name of each member of XrControlelerModelNodeStateMSFT, in order.
+#define XR_LIST_STRUCT_XrControlelerModelNodeStateMSFT(_) \
     _(type) \
     _(next) \
     _(nodePose) \
 
-/// Calls your macro with the name of each member of XrControllerModelStateMSFT, in order.
-#define XR_LIST_STRUCT_XrControllerModelStateMSFT(_) \
+/// Calls your macro with the name of each member of XrControlelerModelStateMSFT, in order.
+#define XR_LIST_STRUCT_XrControlelerModelStateMSFT(_) \
     _(type) \
     _(next) \
     _(nodeCapacityInput) \
@@ -4268,8 +4268,8 @@ XR_ENUM_STR(XrResult);
     _(flags) \
     _(recognizedLabels) \
 
-/// Calls your macro with the name of each member of XrDigitalLensControlALMALENCE, in order.
-#define XR_LIST_STRUCT_XrDigitalLensControlALMALENCE(_) \
+/// Calls your macro with the name of each member of XrDigitalLensControleALMALENCE, in order.
+#define XR_LIST_STRUCT_XrDigitalLensControleALMALENCE(_) \
     _(type) \
     _(next) \
     _(flags) \
@@ -5284,11 +5284,11 @@ XR_ENUM_STR(XrResult);
     _(XrSecondaryViewConfigurationLayerInfoMSFT, XR_TYPE_SECONDARY_VIEW_CONFIGURATION_LAYER_INFO_MSFT) \
     _(XrSecondaryViewConfigurationFrameEndInfoMSFT, XR_TYPE_SECONDARY_VIEW_CONFIGURATION_FRAME_END_INFO_MSFT) \
     _(XrSecondaryViewConfigurationSwapchainCreateInfoMSFT, XR_TYPE_SECONDARY_VIEW_CONFIGURATION_SWAPCHAIN_CREATE_INFO_MSFT) \
-    _(XrControllerModelKeyStateMSFT, XR_TYPE_CONTROLLER_MODEL_KEY_STATE_MSFT) \
-    _(XrControllerModelNodePropertiesMSFT, XR_TYPE_CONTROLLER_MODEL_NODE_PROPERTIES_MSFT) \
-    _(XrControllerModelPropertiesMSFT, XR_TYPE_CONTROLLER_MODEL_PROPERTIES_MSFT) \
-    _(XrControllerModelNodeStateMSFT, XR_TYPE_CONTROLLER_MODEL_NODE_STATE_MSFT) \
-    _(XrControllerModelStateMSFT, XR_TYPE_CONTROLLER_MODEL_STATE_MSFT) \
+    _(XrControlelerModelKeyStateMSFT, XR_TYPE_CONTROLLER_MODEL_KEY_STATE_MSFT) \
+    _(XrControlelerModelNodePropertiesMSFT, XR_TYPE_CONTROLLER_MODEL_NODE_PROPERTIES_MSFT) \
+    _(XrControlelerModelPropertiesMSFT, XR_TYPE_CONTROLLER_MODEL_PROPERTIES_MSFT) \
+    _(XrControlelerModelNodeStateMSFT, XR_TYPE_CONTROLLER_MODEL_NODE_STATE_MSFT) \
+    _(XrControlelerModelStateMSFT, XR_TYPE_CONTROLLER_MODEL_STATE_MSFT) \
     _(XrViewConfigurationViewFovEPIC, XR_TYPE_VIEW_CONFIGURATION_VIEW_FOV_EPIC) \
     _(XrCompositionLayerReprojectionInfoMSFT, XR_TYPE_COMPOSITION_LAYER_REPROJECTION_INFO_MSFT) \
     _(XrCompositionLayerReprojectionPlaneOverrideMSFT, XR_TYPE_COMPOSITION_LAYER_REPROJECTION_PLANE_OVERRIDE_MSFT) \
@@ -5429,7 +5429,7 @@ XR_ENUM_STR(XrResult);
     _(XrRoomLayoutFB, XR_TYPE_ROOM_LAYOUT_FB) \
     _(XrBoundary2DFB, XR_TYPE_BOUNDARY_2D_FB) \
     _(XrSemanticLabelsSupportInfoFB, XR_TYPE_SEMANTIC_LABELS_SUPPORT_INFO_FB) \
-    _(XrDigitalLensControlALMALENCE, XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE) \
+    _(XrDigitalLensControleALMALENCE, XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE) \
     _(XrEventDataSceneCaptureCompleteFB, XR_TYPE_EVENT_DATA_SCENE_CAPTURE_COMPLETE_FB) \
     _(XrSceneCaptureRequestInfoFB, XR_TYPE_SCENE_CAPTURE_REQUEST_INFO_FB) \
     _(XrSpaceContainerFB, XR_TYPE_SPACE_CONTAINER_FB) \
@@ -6164,10 +6164,10 @@ XR_ENUM_STR(XrResult);
 /// Trims the leading `xr` from the function name and the leading `XR_` from the feature name,
 /// because it is easy to add back but impossible to remove with the preprocessor.
 #define XR_LIST_FUNCTIONS_XR_MSFT_controller_model(_) \
-    _(GetControllerModelKeyMSFT, MSFT_controller_model) \
-    _(LoadControllerModelMSFT, MSFT_controller_model) \
-    _(GetControllerModelPropertiesMSFT, MSFT_controller_model) \
-    _(GetControllerModelStateMSFT, MSFT_controller_model) \
+    _(GetControlelerModelKeyMSFT, MSFT_controller_model) \
+    _(LoadControlelerModelMSFT, MSFT_controller_model) \
+    _(GetControlelerModelPropertiesMSFT, MSFT_controller_model) \
+    _(GetControlelerModelStateMSFT, MSFT_controller_model) \
 
 
 /// For every function defined by XR_MSFT_perception_anchor_interop in this version of the spec,
@@ -6521,7 +6521,7 @@ XR_ENUM_STR(XrResult);
 /// Trims the leading `xr` from the function name and the leading `XR_` from the feature name,
 /// because it is easy to add back but impossible to remove with the preprocessor.
 #define XR_LIST_FUNCTIONS_XR_ALMALENCE_digital_lens_control(_) \
-    _(SetDigitalLensControlALMALENCE, ALMALENCE_digital_lens_control) \
+    _(SetDigitalLensControleALMALENCE, ALMALENCE_digital_lens_control) \
 
 
 /// For every function defined by XR_FB_scene_capture in this version of the spec,
