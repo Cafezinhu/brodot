@@ -6,6 +6,9 @@
   </a>
 </p>
 
+## O que é esse projeto?
+Do nada decidi fazer uma versão abrasileirada do Godot. Esse projeto não tem o objetivo de competir com o projeto original.
+
 ## 2D and 3D cross-platform game engine
 
 **[Godot Engine](https://godotengine.org) is a feature-packed, cross-platform
