@@ -9,8 +9,8 @@
 ## O que é esse projeto?
 Do nada decidi fazer uma versão abrasileirada do Godot. Esse projeto não tem o objetivo de competir com o projeto original.
 
-## 2D and 3D cross-platform game engine
-
+## Motor de jogos 2D e 3D multi-plataforma
+# A FAZER: traduzir o resto desse readme
 **[Godot Engine](https://godotengine.org) is a feature-packed, cross-platform
 game engine to create 2D and 3D games from a unified interface.** It provides a
 comprehensive set of [common tools](https://godotengine.org/features), so that
